@@ -1,0 +1,197 @@
+﻿@{
+    ViewBag.Title = "Music playlist online - Tumblr music player";
+    ViewBag.Desc = "Make a playlist online for free, tumblr music player: create player for tumblr or blogger, listen to our 10 million playlists, create your own playlist online for free.";
+    ViewBag.ActivePage = "hypster";
+    Layout = "/Views/Shared/_Layout_NA.cshtml";
+}
+@Scripts.Render("~/scripts/jquery.cycle.all.latest.js")
+
+
+
+<script type="text/javascript">
+    
+    $(document).ready(function () { RenderPage(); RenderHome(); RenderShare(); setTimeout('StartSlideshow()', 2000); });
+    $(window).resize(function () { RenderPage(); ReRenderHome(); RenderShare(); });
+</script>
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:474px; ">
+            
+
+            @*Html.Partial("~/Views/Home/pr_ShareBox.cshtml")*@
+
+
+            <div class="sld1_topCont">
+        
+                    <div class="topLeft">
+                        <div class="mainSlideshow">
+                            @Html.Action("Get_Home_Slideshow", "home")
+                        </div>
+                    </div>
+
+
+                    <div class="topRight">
+                        <div id="SideAd2_28329"></div>
+                        <!-- 06_25 -->
+                        <script type="text/javascript">
+                            $(document).ready(function () {
+                                
+                            });
+                        </script>
+                    </div>
+
+            </div>
+
+            
+            <div id="listenSlide1_textBoxes" class="sld1_middleCont">
+                    
+                    <div class="middleC1">
+                        <div class="head11">Free music playlist</div>
+                        <div class="cont21">Listen to millions of songs available to you for free. Uncover a great range of songs from our vast library of free music online.</div>
+                        <a class="btn111" href="/playlists">Read More</a>
+                    </div>
+
+
+                    <div class="middleC2">
+                        <H1 class="head11" style=" margin:0px;">Tumblr Music Player</H1>
+                        <div class="cont21">Find out more details about music player on your blog. How to embed, why songs not working etc...</div>
+                        <a class="btn333" href="/Tumblr_Music_Player">Read More</a>
+                    </div>
+                    
+
+                    <div class="middleC3">
+                        <div class="head11">Listen with no limitations</div>
+                        <div class="cont21">Listen to music with no limitations and no commercials, skip an unlimited amount of songs and create as many playlists as you want.</div>
+                        <a class="btn222" href="/account/Register">Sign Up</a>
+                    </div>
+            </div>
+
+
+
+
+
+
+            <div class="sld1_bottomCont">
+                <div class="sld1_bottomContInnr">
+                    
+                        <input type="text" id="txtSearchString" name="txtSearchString" onKeyUp="SearchString_KeyUp(event)" value=" Enter Artist, Song or Genre"  onfocus="if(this.value == ' Enter Artist, Song or Genre') this.value = '';" onblur="if(this.value == '') this.value = ' Enter Artist, Song or Genre';" />
+                        <div id="btnSearch" onclick="StartMusicSearch()"></div>
+                        @*Html.Action("visualSearchBar", "home")*@
+
+                </div>
+            </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide2" class="slideLeft" style=" min-height:420px;">
+            @Html.Action("PopularRadioStations_NA", "popular")
+    </div>
+</div>
+
+
+
+
+
+
+<div class="boxContRight">
+    <div id="listenSlide3" class="slideRight" style=" min-height:600px;">
+        
+
+            <div class="popularHomeContHolder">
+                <div class="popularHomeInner">
+                        <div class="headerCont"><a href="/featured">Popular on Hypster</a></div>
+                        @Html.Action("Get_MostPopularSong_Random", "home")
+                </div>
+            </div>
+
+
+            <div class="popularHomeAdCont">
+                <div id="SideAdNews_o8273w"></div>
+                <!-- 06_25 -->
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                    });
+                </script>
+            </div>
+
+
+            <div id="listenSlide3_cont">
+                
+                <div class="NewsInnrContHldr">
+
+                    
+                    <div style=" float:left; width:100%;">
+                    
+                        <div class="hypDesktop_back" style=" float:left; width:390px; height:580px; margin:12px 0 0 12px; margin-top:10px; border-radius:3px;">
+                            
+                            <img alt="Hypster" src="/imgs/hypDesktop_logo.png" style=" float:left; margin:70px 0 0 110px;" />
+
+
+                            <div style=" float:left; color:#231d1f; font-size:33px; margin:40px 0 0 0px; line-height:33px; text-align:center;">
+                                Hypster For Desktop<br />
+
+                                <br />
+                                <span style=" font-size:23px;">Listen to your favorite music directly from your desktop using hot keys</span>
+                            </div>
+
+                            <a href="/hypster_for_desktop?rtg=hd2" style=" display:block; float:right; width:200px; height:27px; line-height:24px; margin:210px 17px 0 0; background-color:#232323; font-size:16px; text-align:center; border-radius:3px; cursor:pointer;">
+                                Learn More
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide4" class="slideLeft" style=" min-height:490px;">
+            
+            @Html.Partial("~/Views/Home/pr_HomExpCont_NA.cshtml")
+
+    </div>
+</div>
+
+
+
+<div id="DynamicContentHoler1" style=" float:left; width:100%;">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

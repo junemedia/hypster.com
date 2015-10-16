@@ -1,0 +1,150 @@
+﻿@model hypster.ViewModels.createStation_ViewModel
+@{
+    ViewBag.Title = "Create Free Station | Hypster - free music online - player for tumblr";
+    ViewBag.Desc = "Create free playlists, and listen commercial free music.";
+    Layout = "~/Areas/apps/Views/Shared/_Layout_Apps.cshtml";
+}
+
+
+
+
+<script type="text/javascript">
+    active_menu = ".mCreate";
+    $(".mCreate").css("color", "#FFFFFF");
+</script>
+
+
+
+
+
+
+<!--div class="crtPlstHdr1"></div-->
+<img alt="" src="/imgs/create_back.png" style=" float:left; width:100%;" />
+
+
+<div class="listenMenuCont">
+                
+    <div id="CreatePlaylistSection1" onclick="window.location='/apps/appCreate/player';" title="Search Music">
+        CREATE PLAYER
+    </div>
+
+    <div id="CreatePlaylistSection2" onclick="window.location='/apps/appCreate/playlist';" title="Listen Playlists">
+        CREATE PLAYLIST
+    </div>
+
+    <div id="CreatePlaylistSection3_sel" onclick="window.location='/apps/appCreate/station';" title="Listen Radio Stations">
+        CREATE STATION
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="CreateRadioContHolder">
+    
+            
+
+            
+        @using (Html.BeginForm("pr_CreateRadioStation_POST", "appRadio", FormMethod.Post))
+        {
+            <div class="StatNameCont">
+                                    
+                <div class="statHtitle1">
+                    <span style=" margin:0 0 0 20px;">PLEASE ENTER SEARCH TERM FOR YOUR STATION.</span>
+                </div>
+                                    
+                <input type="text" id="RadioStationSearchTerm" name="RadioStationSearchTerm" value=" Enter Artist, Song or Genre"onfocus="if(this.value == ' Enter Artist, Song or Genre') this.value = '';" onblur="if(this.value == '') this.value = ' Enter Artist, Song or Genre';" />
+                <input id="RadioStationSave" type="submit" value="Create Radio Station" />
+            </div>
+                                
+
+                                
+            <div class="StatSaveCont">
+            </div>
+                            
+            if (ViewBag.ErrorMessage != null)
+            {
+                <div style=" float:left; width:100%; ">
+                    <div class="errMsg1" >@ViewBag.ErrorMessage</div>
+                </div>
+            }
+        }
+
+
+                            
+                                   
+
+        <div class="rdoStationsCH1">
+            @foreach (var item in @Model.stations_list)
+            {
+                if (item.RadioStationName != null && item.RadioStationQuery != null)
+                {
+                    <div class="rdoItem1">
+                            
+                        <div class="plBtn2" onclick="OPLRRadio('@item.RadioStationQuery.Replace(" ", "+")')">
+                            <div></div>
+                        </div>
+
+                        <div class="itmBtn2" onclick="OPLRRadio('@item.RadioStationQuery.Replace(" ", "+")')">
+                            @item.RadioStationName
+                        </div>
+
+                        <div class="actBtn2" onclick="if(confirm('Are you sure you want to delete?') == true){window.location='/apps/appAccount/deleteStation?station=@item.RadioStation_ID&gb=cs';}">
+                            <div></div>
+                        </div>
+
+                    </div>
+                }
+            }
+        </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $(".SbTop").draggable({ axis: "x" });
+        $(".SbBottom").draggable({ axis: "x" });
+    });
+
+
+    var isMouseDown = false;
+    var isMoving = false;
+    var clickAllowed = true;
+
+    function lockClick() {
+        isMouseDown = true;
+    }
+
+    function unlockClick() {
+        isMouseDown = false;
+    }
+
+    function mouseVS_move() {
+        if (isMouseDown == true) {
+            isMoving = true;
+        }
+    }
+
+
+    function PopulateRadioStationF(object) {
+        if (isMoving == false)
+            $('#RadioStationSearchTerm').val(object);
+
+        isMoving = false;
+    }
+</script>
+

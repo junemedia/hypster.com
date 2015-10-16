@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "BaronsMedia";
+    Layout = null;
+}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>BaronsMedia</title> 
+<script type="text/javascript" src="http://videocdn.baronsoffers.com/jwplayer5/jwplayer.js"></script> 
+</head> 
+<body> 
+<div id="test">JW Player</div> 
+   <script type="text/javascript">
+       jwplayer('test').setup({
+           "flashplayer": "http://videocdn.baronsoffers.com/jwplayer5/player.swf",
+           "playlist": [
+    {
+        "file": "http://avideos.5min.com//692/5174692/517469175_2.mp4"
+    }
+     ],
+           "width": 300,
+           "height": 250,
+           "image": "http://pthumbnails.5min.com/10349384/517469175_c_140_105.jpg",
+           "autostart": true,
+           "controlbar": {
+               "position": "bottom"
+           },
+           "plugins": {
+               "http://videocdn.baronsoffers.com/jwplayer5/ova-jw.swf": {
+                   "ads": {
+                       "skipAd": {
+                           "enabled": true,
+                           "showAfterSeconds": 1
+                       },
+                       "schedule": [
+       {
+           "zone": "2",
+           "position": "pre-roll",
+           "tag": "http://cache.vindicosuite.com/sugr/swf/?rt=xml-vast2-single&rid=SMUNV_42096&rc=xrpeg&vpaid=1" // YOUR TAG HERE 
+       },
+      {
+          /* 
+       
+          "zone":"1", 
+          "region": "auto:bottom", 
+          "startTime": "00:00:03", 
+          "duration": "recommended:15", 
+          "enableScaling": true, 
+          "width": 300, 
+          "height": 250, 
+          "alwaysMatch": true, 
+          "tag": "YOUR_TAG_HERE_FOR_OVERLAY_IF_NEEDED"*/
+      }
+     ]
+                   },
+                   "debug": {
+                       "levels": "fatal, config, vast_template"
+                   }
+               }
+           }
+       }); 
+    
+   </script>
+</body> 
+</html>

@@ -1,0 +1,149 @@
+﻿@model hypster_tv_DAL.Player
+@{
+    ViewBag.Title = "Hypster - Classic custom player";
+    ViewBag.Desc = "";
+    Layout = "~/Areas/apps/Views/Shared/_Layout_Apps.cshtml";
+}
+
+
+
+
+
+
+
+
+<div style=" float:left; width:100%; " >
+
+
+
+            <div id="captchaCont1" style=" float:left; width:100%;" >
+
+                <div style=" float:left; width:100%; min-height:300px; overflow:hidden; border-radius:2px; margin-top:0px; ">
+
+
+                    <div style=" float:left; width:100%; text-align:left; margin-top:10px;">
+                        
+                        <h2 style=" float:left; width:98%; margin-left:2%; margin-bottom:0px; color:#FCF088; font:23px/1.5 Hypster-Font,Arial,sans-serif;">
+                            Copy and Paste code on your website
+                        </h2>
+
+                        <div style=" float:left; width:98%; margin-left:2%; color:#FCF088; font-size:16px;">
+                            Please paste the following code between &lt;body&gt; &lt;/body&gt; tags <br />
+                        </div>
+
+                    </div>
+
+
+                    <textarea id="PlayerCodeArea" style=" width:96%; margin:2%; height:300px;">
+            
+                            <embed quality="high" style="width:@(ViewBag.Custom_Size_Sel_W)px; visibility:visible; height:@(ViewBag.Custom_Size_Sel_H)px;" type="application/x-shockwave-flash" height="@(ViewBag.Custom_Size_Sel_W)" width="@(ViewBag.Custom_Size_Sel_H)"  pluginspage="http://www.macromedia.com/go/getflashplayer" border="0" src="http://www.hypster.com/flash/player.swf?id=@(Model.user_ID):@(Model.playlist_ID):@if (Model.CLASSIC_shufflePlayback.Value == true){<text>1</text>}else{<text>0</text>}&autoplay=@if (Model.CLASSIC_autostart.Value == true){<text>true</text>}else{<text>false</text>}" FlashVars="color_bg=0x@(ViewBag.hf_BackgroundColor)&color_border=0x9A0000&color_box=0x9A0000&color_songbg=0x@(ViewBag.hf_SongBackground)&color_song_clicked=0x@(ViewBag.hf_SongClicked)&color_Title=0x000000&color_btns=0x@(ViewBag.hf_Buttons)&color_title=0x000000" />
+                            <br />
+                            <a href="http://www.hypster.com/?src=player-text" style="font-weight:bold;font-size:12px">Get Your Own Free Hypster.com Playlist.</a>
+                        
+                    </textarea>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div id="SampleCodeHolder" style=" display:none; float:left; width:950px; margin:15px 0 15px 15px;" >
+
+                <div style=" float:left; width:100%; min-height:300px; overflow:hidden; border-radius:2px; margin-top:0px; ">
+
+
+                    <div style=" float:left; width:100%; text-align:left; margin-top:10px;">
+                        
+                        <h2 style=" float:left; width:98%; margin-left:2%; margin-bottom:0px; color:#d4ae52; font:23px/1.5 Hypster-Font,Arial,sans-serif;">
+                            Copy and Paste code on your website
+                        </h2>
+
+                        <div style=" float:left; width:98%; margin-left:2%; color:#d4ae52; font-size:16px;">
+                            Please paste the following code between &lt;body&gt; &lt;/body&gt; tags <br />
+                        </div>
+
+                    </div>
+
+
+                    <textarea id="PlayerCodeArea" style=" width:96%; margin:2%; height:300px;">
+            
+                        @if(Model.CLASSIC_playerSkin == "1")
+                        {
+                            <embed quality="high" style="width:370px;visibility:visible; height:450px;" type="application/x-shockwave-flash" height="300" width="450"  pluginspage="http://www.macromedia.com/go/getflashplayer" border="0" src="http://www.hypster.com/flash/player.swf?id=@(Model.user_ID):@(Model.playlist_ID):@if(Model.CLASSIC_shufflePlayback.Value == true){<text>1</text>}else{<text>0</text>}&autoplay=@if(Model.CLASSIC_autostart.Value == true){<text>true</text>}else{<text>false</text>}" FlashVars="color_bg=0x9A0000&color_border=0x9A0000&color_box=0x9A0000&color_songbg=0xFF9700&color_song_clicked=0xFECB81&color_Title=0x000000&color_btns=0xD4D0C7&color_title=0x000000" />
+                            <br />
+                            <a href="http://www.hypster.com/?src=player-text" style="font-weight:bold;font-size:12px">Get Your Own Free Hypster.com Playlist.</a>
+                        }
+
+                        @if (Model.CLASSIC_playerSkin == "2")
+                        {
+                            <embed quality="high" style="width:370px;visibility:visible; height:450px;" type="application/x-shockwave-flash" height="300" width="450"  pluginspage="http://www.macromedia.com/go/getflashplayer" border="0" src="http://www.hypster.com/flash/player.swf?id=@(Model.user_ID):@(Model.playlist_ID):@if(Model.CLASSIC_shufflePlayback.Value == true){<text>1</text>}else{<text>0</text>}&autoplay=@if(Model.CLASSIC_autostart.Value == true){<text>true</text>}else{<text>false</text>}" FlashVars="color_bg=0x3653E6&color_border=0x3653E6&color_box=0x3653E6&color_songbg=0x6F9AC2&color_song_clicked=0x163554&color_Title=0xffffff&color_btns=0x4D6786&color_title=0xffffff" />
+                            <br />
+                            <a href="http://www.hypster.com/?src=player-text" style="font-weight:bold;font-size:12px">Get Your Own Free Hypster.com Playlist.</a>
+                        }
+
+                        @if (Model.CLASSIC_playerSkin == "3")
+                        {
+                            <embed quality="high" style="width:370px;visibility:visible; height:450px;" type="application/x-shockwave-flash" height="300" width="450"  pluginspage="http://www.macromedia.com/go/getflashplayer" border="0" src="http://www.hypster.com/flash/player.swf?id=@(Model.user_ID):@(Model.playlist_ID):@if(Model.CLASSIC_shufflePlayback.Value == true){<text>1</text>}else{<text>0</text>}&autoplay=@if(Model.CLASSIC_autostart.Value == true){<text>true</text>}else{<text>false</text>}" FlashVars="color_bg=0xC97B89&color_border=0xC97B89&color_box=0xC97B89&color_songbg=0xE62933&color_song_clicked=0x661217&color_Title=0xffffff&color_btns=0x663134&color_title=0xffffff" />
+                            <br />
+                            <a href="http://www.hypster.com/?src=player-text" style="font-weight:bold;font-size:12px">Get Your Own Free Hypster.com Playlist.</a>
+                        }
+
+                        @if (Model.CLASSIC_playerSkin == "4")
+                        {
+                            <embed quality="high" style="width:370px;visibility:visible; height:450px;" type="application/x-shockwave-flash" height="300" width="450"  pluginspage="http://www.macromedia.com/go/getflashplayer" border="0" src="http://www.hypster.com/flash/player.swf?id=@(Model.user_ID):@(Model.playlist_ID):@if(Model.CLASSIC_shufflePlayback.Value == true){<text>1</text>}else{<text>0</text>}&autoplay=@if(Model.CLASSIC_autostart.Value == true){<text>true</text>}else{<text>false</text>}" FlashVars="color_bg=0xB0FCC6&color_border=0xB0FCC6&color_box=0xB0FCC6&color_songbg=0x65FC91&color_song_clicked=0x42A45F&color_Title=0xffffff&color_btns=0x2D7141&color_title=0xffffff" />
+                            <br />
+                            <a href="http://www.hypster.com/?src=player-text" style="font-weight:bold;font-size:12px">Get Your Own Free Hypster.com Playlist.</a>
+                        }
+
+                        @if (Model.CLASSIC_playerSkin == "5")
+                        {
+                            <embed quality="high" style="width:370px;visibility:visible; height:450px;" type="application/x-shockwave-flash" height="300" width="450"  pluginspage="http://www.macromedia.com/go/getflashplayer" border="0" src="http://www.hypster.com/flash/player.swf?id=@(Model.user_ID):@(Model.playlist_ID):@if(Model.CLASSIC_shufflePlayback.Value == true){<text>1</text>}else{<text>0</text>}&autoplay=@if(Model.CLASSIC_autostart.Value == true){<text>true</text>}else{<text>false</text>}" FlashVars="color_bg=0xeedd82&color_border=0xeedd82&color_box=0xeedd82&color_songbg=0xffff00&color_song_clicked=0xffd700&color_Title=0x000000&color_btns=0xb8860b&color_title=0x000000" />
+                            <br />
+                            <a href="http://www.hypster.com/?src=player-text" style="font-weight:bold;font-size:12px">Get Your Own Free Hypster.com Playlist.</a>
+                        }
+                    </textarea>
+
+
+
+                    <div style=" float:left; width:100%; margin-bottom:10px;">
+                        
+                        <div onclick="window.location='/apps/appAccount/music';" style="float:left; width:190px; height:48px; line-height:48px; margin:0 4px 3px 17px; padding-left:3px; background-color:#42606e; color:#FFFFFF; border-radius:2px; text-align:center; cursor:pointer; ">
+                            Go to my players
+                        </div>
+
+
+                        <div class="mFollowUsCont1">
+                        
+                            <div class="fuText">
+                                Follow Us:
+                            </div>
+                            <div style=" float:left; margin:0px 0 0 5px;">
+                                <a class="flwUs_wt_fbk" href="https://www.facebook.com/Hypster" target="_blank"></a>
+                                <a class="flwUs_wt_twr" href="https://twitter.com/Hypsterdotcom" target="_blank"></a>
+                                <a class="flwUs_wt_tum" href="http://hypsterblog.tumblr.com/" target="_blank"></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+</div>
+
+
+
+<script type="text/javascript">
+    function processCaptcha() {
+        $('#SampleCodeHolder').css('display', 'block');
+        $('#captchaCont1').css('display', 'none');
+    }
+</script>

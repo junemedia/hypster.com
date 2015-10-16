@@ -1,0 +1,33 @@
+﻿@model List<hypster_tv_DAL.sp_Compatibility_CompCheck_Result_Ex>
+@{
+    Layout = null;
+}
+
+
+
+@if (Model.Count > 0)
+{
+        <div class="MagWHead">&nbsp;<span>PLAYLISTS WITH</span> @ViewBag.Curr_Song</div>
+
+
+        <div class="PopularPlstsCont">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            if (i < Model.Count && Model[i].playlist_id.ToString() != ViewBag.playlist_id)
+            {
+                <div class="magItm" onclick="OpenPlayerM('/playlists/user/@(Model[i].username)?@(Model[i].playlist_id)&rtg=20354');" onmouseover="DispPlstMagDetails(this, @Model[i].playlist_id, @Model[i].userid);" onmouseout="HidePlstMagDetails(event, this);" >
+                    <div class="magItm_name">@Model[i].name</div>
+                    
+                    <a class="magItm_views" title="@Model[i].ViewsNum views">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(Model[i].ViewsNum)</a>
+                    <a class="magItm_likes" title="@Model[i].Likes likes">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(Model[i].Likes)</a>
+                </div>
+            }
+
+            if (i > 3)
+            {
+                break;
+            }
+        }
+        </div>
+        <!--div id="MAG_PlstPreview"><div class="LdingPrev"></div></div-->
+}

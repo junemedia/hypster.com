@@ -1,0 +1,111 @@
+﻿@model List<hypster_tv_DAL.AolSeedVideo>
+@{
+    ViewBag.Title = "Related Videos";
+    ViewBag.Desc = "Related Videos";
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () { RenderPage(); });
+    $(window).resize(function () { RenderPage(); });
+
+
+    $(document).ready(function () {
+
+    });
+
+</script>
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div class="slideRight" style=" min-height:600px; font-size:16px; ">
+        
+
+        <div id="RvideoMC">
+            
+            <div style=" float:left; ">
+                <object type="application/x-shockwave-flash" data="@ViewBag.active_video" width="840" height="600"> 
+                    <param name="movie" value="@ViewBag.active_video" />
+                    <param name="quality" value="high" />
+                </object>
+            </div>
+
+
+            <div style=" float:left; width:160px; height:600px; margin:0 0 0 12px; border-radius:3px; overflow:hidden; background-color:#131313;">
+                <div id="SideAdConnect_o2112ouw">
+                    @Html.Partial("~/Views/hypAds/ad_160x600.cshtml")
+                </div>
+                <!-- 06_25 -->
+                
+            </div>
+
+        </div>
+
+
+        
+
+        
+    </div>
+</div>
+
+
+
+
+<div class="boxContLeft">
+    <div class="slideLeft" style=" min-height:530px; font-size:16px;">
+        
+        <div class="rlVidCont">
+            @foreach (var item in Model)
+            {
+                <div class="rvSeedsVC" onclick="createFlashMarkup('@item.enclosure');" onmouseover="this.style.backgroundColor='#8d9598';" onmouseout="this.style.backgroundColor='#747E83';">
+                    <img alt="" src="@item.image" />
+                    <div>
+                        @item.title
+                    </div>
+                </div>
+            }
+        </div>
+
+
+
+
+        <div class="NPFT_BHead" style=" margin-top:15px;">
+                    
+            <div class="NPFT_BottomAd">
+                <div id="TopAdd1_e92837uw">
+                    @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+                </div>
+                <!-- 06_25 -->
+                
+            </div>
+
+            <div class="NPFT_GoOnTop" onclick="$(document).scrollTop(0);">
+                Go To Top
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+    function createFlashMarkup(uri) {
+        var embed = document.createElement('embed');
+        embed.setAttribute('width', 840);
+        embed.setAttribute('height', 600);
+        embed.setAttribute('src', uri);
+
+        $('#RvideoMC').html(embed);
+        $('html').scrollTop(0);
+    }
+</script>

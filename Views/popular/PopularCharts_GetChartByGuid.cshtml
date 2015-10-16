@@ -1,0 +1,89 @@
+﻿@model List<hypster_tv_DAL.PlaylistData_Song>
+@{
+    Layout = null;
+}
+
+
+
+
+<h1 class="ChartHeader">
+    <div class="radioButton" style=" width:140px; margin-left:-4px;" onclick="OPLRPlst(@(ViewBag.chart_playlist_id), @(ViewBag.chart_user_id));">Listen Chart</div>
+    <a class="radioButton" style=" margin-left:10px; color:#fbdda7;" href="/charts?rtg=dc1">More Charts</a>
+
+    <div style=" float:left; cursor:pointer; margin-left:12px;" onclick="OPLRPlst(@(ViewBag.chart_playlist_id), @(ViewBag.chart_user_id));">
+        @ViewBag.chart_name
+    </div>
+
+    <div class="chartIntr">You may drag chart from left to right</div>
+</h1>
+
+
+
+
+
+<div style=" float:left; width:100%; height:275px; background-color:#202020; padding-top:15px;">
+    
+    <div class="ChartScrlArea">
+    
+            @{ int chart_height = 180;}
+            @{ int margin_top = 10;}
+            @{ int chart_position = 1; }
+            @{ int cont_width = 0; }
+
+            <div class="MainChartCont" id="MainChartCont_@(ViewBag.chart_user_id)_@(ViewBag.chart_playlist_id)">
+            @foreach (var item in Model)
+            {
+                <div class="chartItem" > 
+                        <div class="chrtImage" style=" height:@(chart_height)px; margin-top:@(margin_top)px; background:#1d1d1c url(http://i.ytimg.com/vi/@(item.YoutubeId)/0.jpg) center; background-size: 220%;">
+                            <div>@chart_position</div>
+                        </div>
+                    
+                        <div class="chrtTitle" style=" height:50px;">@item.Title</div>
+                </div>
+        
+        
+                chart_height -= 0;
+                margin_top += 0;
+                chart_position += 1;
+
+                cont_width += 165;
+            }
+            </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+<div style=" margin-top:1px; float:left; width:1024px;  text-align:left;">
+    
+    <div class="NPFT_GoOnTop" onclick="$(document).scrollTop(0);" style=" background-color:#303030; margin:0 11px 0 0;">
+        Go To Top
+    </div>
+                    
+    <div class="NPFT_BottomAd" style=" background-color:#303030; border: 3px solid #303030; margin-left:0 0 0 0;">
+        <div id="TopAdd1_chart_@(ViewBag.chart_user_id)_@(ViewBag.chart_playlist_id)">
+            @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+        </div>
+        <!-- 06_25 -->
+        
+    </div>
+
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#MainChartCont_@(ViewBag.chart_user_id)_@(ViewBag.chart_playlist_id)").css("width", "@(cont_width)px");
+        $("#MainChartCont_@(ViewBag.chart_user_id)_@(ViewBag.chart_playlist_id)").draggable({ axis: "x" });
+    });
+</script>

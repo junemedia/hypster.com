@@ -1,0 +1,73 @@
+﻿@model List<hypster_tv_DAL.newsPost>
+@{
+    Layout = null;
+
+    int OFFSET = 1872;
+}
+
+ 
+<div class="breakingMCH_Home" >
+    
+  
+    <div class="hmBrkTitle" onclick="window.location='/apps/appBreaking';">
+        #BREAKING
+    </div>
+    
+
+    
+
+    <div class="breakingMCH_MC">
+
+        <div class="arrLeft" onclick="MoveRight()">&nbsp;</div>
+
+        <div id="newsContHH1">
+            <div id="newsContHHInn">
+            @for (int i = 0; i < 15; i++)
+            {
+                if (i < Model.Count)
+                {
+                    <div class="brkngItm" onclick="window.location='/apps/appBreaking/details/@Model[i].post_guid';">
+                        <div class="brkngItmPost" style=" background-image:url('http://news.hypster.com/imgs/i_posts/@Model[i].post_image');"></div>
+                        <div class="txtBreakingT">@Model[i].post_title</div>
+                        <div class="txtBreakingD">@Model[i].post_short_content</div>
+                    </div>
+                }
+            }
+            </div>
+        </div>
+
+        <div class="arrRight" onclick="MoveLeft()">&nbsp;</div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+    var SRL_POS = @(OFFSET);
+    $("#newsContHH1").scrollLeft(SRL_POS);
+
+    function MoveLeft() {
+        SRL_POS += 936;
+        if(SRL_POS > 3744)
+        {
+            SRL_POS = 3744;
+        }
+        $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
+    }
+
+    function MoveRight() {
+        SRL_POS -= 936;
+        if(SRL_POS < 0)
+        {
+            SRL_POS = 0;
+        }
+        $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
+    }
+</script>

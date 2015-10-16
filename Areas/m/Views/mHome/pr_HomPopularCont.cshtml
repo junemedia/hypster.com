@@ -1,0 +1,55 @@
+﻿@model hypster.ViewModels.HomPopularCont_ViewModel
+@{
+    Layout = null;
+    int count = 0;
+}
+
+
+<div class="HomPopularCont">
+    
+
+    <div class="hpcCol1">
+        <div class="hpcHeader">Charts</div>
+
+        
+        @{ count = 0; }
+        @foreach (var item in Model.charts_list)
+        {
+            <div class="hpcPlstC" onclick="OpenPlayerM('/m/mplaylists/chart/@(item.Chart_GUID)');">
+                <div>&nbsp;@item.Chart_Name</div>
+                <a title="play"></a>
+            </div>
+            
+            if (count == 8)
+            {
+                break;
+            }
+            count++;
+        }
+
+    </div>            
+
+
+
+   
+    <div class="hpcCol3">
+        <div class="hpcHeader">Popular</div>
+
+        @{ count = 0; }
+        @foreach (var item in Model.popular_playlists)
+        {
+            <div class="hpcPlstC3" onclick="OpenPlayerM('/m/mplaylists/user/@(item.username)?@(item.id)');">
+                <div>&nbsp;@item.name</div>
+                <a title="play"></a>
+            </div>
+            
+            if (count == 8)
+            {
+                break;
+            }
+            count++;
+        }
+    </div>
+
+
+</div>

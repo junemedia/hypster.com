@@ -1,0 +1,132 @@
+﻿@model hypster.ViewModels.createPlayer_ViewModel
+@{
+    ViewBag.Title = "Create Free Player | Hypster - free music online - player for tumblr";
+    ViewBag.Desc = "Create music player for tumblr or website.";
+    Layout = "~/Areas/m/Views/Shared/_Layout_Mobile.cshtml";
+}
+
+
+
+<script type="text/javascript">
+    active_menu = ".mCreate";
+    $(".mCreate").css("background-color", "#191919");
+    $("#CreateSub").css("display", "block");
+
+    $(document).ready(function () { RenderPage(); RenderShare(); });
+    $(window).resize(function () { RenderPage(); RenderShare(); });
+</script>
+
+
+
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div class="slideRight" style=" min-height:570px;">
+
+            
+            <div style=" float:left; width:100%;">
+                <div id="ShrContH1" style=" float:left; height:1px;">
+                    <div style=" position:relative; top:5px; left:-1045px;">
+                    
+                        <div style=" float:right; width:70px; ">
+                                <div class="pw-widget pw-vertical" pw:image="" pw:url="">
+                                <a class="pw-button-tumblr pw-look-native"></a>
+	                            <a class="pw-button-facebook pw-look-native"></a>
+	                            <a class="pw-button-twitter pw-look-native"></a>
+	                            <a class="pw-button-post-share"></a>
+                                </div>
+                                <script src="http://i.po.st/static/v3/post-widget.js#publisherKey=caq8eudavn7j6erou9n3" type="text/javascript"></script>
+                        </div>
+
+                    </div>      
+                </div> 
+            </div>
+
+
+
+
+            <div id="CreatePlayerSection1" onclick="window.location='/m/mcreate/player';">
+                <img alt="" src="/imgs/create/create_player_icon_sm.png" /><br />
+                Create Player
+            </div>
+
+
+            <div id="CreatePlayerSection2" onclick="window.location='/m/mcreate/playlist';">
+                <img alt="" src="/imgs/create/create_playlist_icon_sm.png" /><br />
+                Create Playlist
+            </div>
+
+
+            <div id="CreatePlayerSection3" onclick="window.location='/m/mcreate/station';">
+                <img alt="" src="/imgs/create/create_station_icon_sm.png" /><br />
+                Create Station
+            </div>
+
+
+
+
+
+            <div id="CreateContHolder" style=" float:left; width:100%; background-color:#1d1d1c; margin-top:-1px; ">
+                @if (ViewBag.Action == "EDT")
+                {
+                    Html.RenderAction("getPlayer", "mplayer", new { id = ViewBag.PlType });
+                }
+                else
+                {
+                    Html.RenderAction("getPlayer", "mplayer", new { id = "" });   
+                }
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div class="slideLeft" style=" min-height:420px;">
+        
+            @Html.Action("PopularPlaylists", "mpopular")
+
+    </div>
+</div>
+
+
+
+
+
+<div class="boxContRight">
+    <div class="slideRight" style=" min-height:355px; background-color:#202020;">
+                    
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/m/mpopular/PopularCharts_Chart",
+                        async: true,
+                        success: function (data) {
+                            $('#PopularCharts_ChartCont').html(data);
+                        }
+                    });
+                });
+            </script>
+
+            <div id="PopularCharts_ChartCont"></div>
+    </div>
+</div>
+
+
+

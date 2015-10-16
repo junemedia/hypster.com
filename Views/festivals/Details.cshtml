@@ -1,0 +1,14 @@
+﻿@model hypster.ViewModels.festivalViewModel
+@{
+    ViewBag.Title = Model.festival.Festival_Name + " | Festival Details";
+    ViewBag.Desc = Model.festival.Festival_Desc;
+}
+
+
+
+
+
+<div class="chartHoldCont" style=" margin-top:-20px;">
+    @{ Html.RenderPartial("~/Views/festivals/BuildFestival_Details.cshtml", Model); }
+</div>
+

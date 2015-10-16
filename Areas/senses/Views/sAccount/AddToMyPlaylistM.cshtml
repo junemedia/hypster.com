@@ -1,0 +1,74 @@
+﻿@model List<hypster_tv_DAL.Playlist>
+@{
+    Layout = null;
+}
+
+
+<div style=" float:left; margin:20px 0 0 0;">
+
+    <div style=" float:left; width:100%; height:28px; line-height:28px; color:#000000; background-color:#f5f3f3; border-radius:7px; cursor:pointer; text-align:center; padding:10px; font-size:27px; " onclick="CancelSubmitAddToMyDefaultPlaylist(this);">
+        Added to you playlist. Click to cancel.
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    //startSpeechOn('Press 1 to add to your default playlist.');
+
+    var isAddCanceled = false;
+
+    function CancelSubmitAddToMyDefaultPlaylist(sender) {
+        isAddCanceled = true;
+        LOCK_SOUND = false;
+        $(sender).css("display","none");
+    }
+
+
+    function SubmitAddToMyDefaultPlaylist() {
+
+        $.ajax({
+            type: "POST",
+            url: "/senses/sAccount/SubmitAddToMyPlaylist/@ViewBag.song_guid",
+            async: true,
+            success: function (data) {
+    
+
+                startSpeechOn('Added');
+
+
+                isExecuted = false;
+
+                $(".MyPlaylist_Actions_CH1_M").html("");
+            }
+        });
+    }
+
+
+    //need to cancel prev timer !!!!!
+    setTimeout(function () {
+
+        if (isAddCanceled == false) {
+            SubmitAddToMyDefaultPlaylist();
+        }
+
+        LOCK_SOUND = false;
+        CURR_ACTION = "";
+
+        isExecuted = false;
+
+        
+    }, 7000);
+
+
+
+</script>
+
+

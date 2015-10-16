@@ -1,0 +1,90 @@
+﻿body 
+{
+    margin:0px; padding:0px;
+}
+
+#mch1
+{
+    width:625px; min-height:20px;
+}
+
+#RvideoMC
+{
+    float:left; width:625px; height:275px; background-color:#232323; margin:0 0 0 0;
+}
+
+
+
+
+.vPlsld
+{
+    float:left; display:block; width:410px; height:75px; margin:100px 0 0 100px; border-radius:2px; text-decoration:none; overflow:hidden; cursor:pointer;
+}
+
+.vPlsld .vPlsldImg
+{
+    float:left; width:95px; margin:3px 0 0 3px; 
+}
+
+.vPlsld .widText
+{
+    float:left; width:200px; margin:3px 0 0 10px; line-height:18px; color:#FFFFFF; text-decoration:none; text-align:center; font-family:Arial; font-size:12px; text-align:left;
+}
+
+.vPlsld .widArr
+{
+    float:left; margin:3px 0 0 10px;
+}
+
+
+
+
+
+.widSep
+{
+    float:left; width:625px; height:4px; background-color:#70787c; margin:25px 0 0 0;
+}
+
+
+
+.widTitle
+{
+    float:left; width:625px; text-align:left;
+    font-family: Arial, Tahoma, Helvetica; border-top: 4px solid #70787C;
+    margin:0px 0 2px 0;
+    padding:5px 0 0 0;
+}
+
+.widTitle .large
+{
+    color: #333333; font-size:16px; font-weight:bold; margin-left:5px;
+}
+
+.widTitle .small
+{
+    color:#093D72; font-size:11px; vertical-align:top;
+    margin-left:0px;
+}
+
+
+
+
+.widItem1
+{
+    float:left; display:block; width:307px; height:75px; margin:2px; border-radius:2px; text-decoration:none; overflow:hidden; cursor:pointer;
+}
+
+.widItem1 img
+{
+    float:left; width:95px; margin:3px 0 0 3px;
+}
+
+.widItem1 div
+{
+    float:left; width:205px; 
+}
+
+.widItem1 span
+{
+    float:left; width:195px; margin:3px 0 0 10px; line-height:18px; color:#093D72; text-decoration:none; text-align:center; font-family:Arial; font-size:12px; text-align:left;
+}

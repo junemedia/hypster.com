@@ -1,0 +1,75 @@
+﻿@{
+    Layout = null;
+}
+
+
+@if (ViewBag.isShow != null && ViewBag.isShow == true && ViewBag.ChannelID != "")
+{
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var hdiv = document.getElementById("HideBackDiv");
+            hdiv.style.width = $(document).width() + 'px';
+            hdiv.style.height = $(document).height() + 'px';
+            Hide_Content();
+
+            $("#ist_mh").css("display", "block");
+
+            setTimeout(function () { hideInst(); }, 30000);
+
+        });
+
+
+        function hideInst() {
+            $("#ist_mh").css("display", "none");
+            Show_Content();
+        }
+
+    </script>
+
+
+    
+    
+    <div id="ist_mh" style=" display:block; position:absolute; top:0px; left:0px; z-index:999999; width:100%; text-align:center;">
+    
+
+
+            <div style=" float:left; width:100%; height:65px; background-color:#bebebe;">
+                <div style=" float:right; margin:30px 30px 0 0; cursor:pointer; color:#232323; font-size:16px;" onclick="hideInst();">
+                    <b>Continue To Website >></b>
+                </div>
+            </div>
+
+
+
+            <div style=" float:left; width:100%; margin-top:80px; ">
+                <center>
+                    <div style="width:450px; height:370px; background-color:#454545; ">
+                            
+
+                            <div id="barons_video" style="width:450px;height:370px;"></div>
+                            <script type="text/javascript">
+                                spotx_channel_id = "@ViewBag.ChannelID";
+                                spotx_content_type = "Video";
+                                spotx_vid_duration = "58";
+                                spotx_vid_id = "517658258";
+                                spotx_vid_description = "Kanye%20West%20is%20busy%20preparing%20for%20fatherhood%20but%20the%20rapper%20doesnt%20want%20his%20child%20to%20follow%20his%20footsteps%20into%20music%20and%20that%20means%20banning%20Kim%20Kardashian%20from%20listening%20to%20rap%20music%20while%20pregnant.";
+                                spotx_vid_url = "http%3A%2F%2Favideos.5min.com%2F583%2F5176583%2F517658258_2.mp4";
+                                spotx_vid_title = "Kanye%20West%20Bans%20Pregnant%20Kim%20Kardashian%20From%20Listening%20To%20Rap%20Music";
+                                spotx_content_container_id = "barons_video";
+                                spotx_content_width = "450";
+                                spotx_content_height = "370";
+                                spotx_content_page_url = document.location.href;
+                            </script>
+                            <script type="text/javascript" src="http://search.spotxchange.com/js/spotx.js"></script>
+
+
+                    </div>
+                </center>
+            </div>
+
+    </div>
+    
+}

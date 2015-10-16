@@ -1,0 +1,1225 @@
+﻿
+/* pr_top_menu */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.shrTopC1
+{
+    float:left; width:100%; height:90px; margin:0 0 5px 0;
+}
+
+.shrTopC1 span
+{
+    display:block; width:728px; margin:auto;
+}
+
+
+.ContentHeaderInner
+{
+	float:left;
+	width:100%;
+	height:55px;
+	background-position: 0% 60%;
+	background-color:#d5af55;
+}
+
+
+.slCH2
+{
+    width:1024px; margin:auto;
+}
+
+.MSCGAM
+{
+    float:left; width:200px; height:25px; margin:0 0 0 57px; font-size:16px;
+    color:#000000;
+}
+
+
+#MainMenu
+{
+	width:1024px;
+	margin:0px auto 0 auto;
+	height:55px;
+	z-index:99999;
+}
+
+#MainMenu .mLogo
+{
+	float:left;
+	margin-top:0px;
+	cursor:pointer;
+}
+
+#MainMenu .LogoCh
+{
+    float:left; width:31%;
+}
+
+#MainMenu .MLogo
+{
+    float:left; width:100%; font-size:45px; color:#FFFFFF; font-family: 'Lato', sans-serif; font-weight:700; letter-spacing:-2px; margin:0px 0 0 0; cursor:pointer;
+}
+
+#MainMenu .MenuCh
+{
+    float:right; width:69%; margin:0px 0 0 0;
+}
+
+
+
+#MainMenu .mListen
+{
+    float:left; width:80px; height:50px; text-align:center; font-size:24px; color:#FFFFFF; font-family:'Lato', sans-serif; font-weight:300; letter-spacing:-1px; margin:0px 20px 0 0; cursor:pointer;
+}
+#MainMenu #mListenSM1
+{
+    display:none; position:relative; width:120px; min-height:78px; top:16px; left:0px;
+    z-index:10000000;
+    background-color:#FFFFFF;
+    border:1px solid #000000;
+    border-radius:7px;
+    padding:0 7px 0 7px;
+}
+#MainMenu #mSearchSM1
+{
+    float:right; font-size:18px; color:#d5af55; font-family:'Lato', sans-serif; font-weight:300; letter-spacing:-1px; margin:3px 0 0 0; cursor:pointer;
+    width:100%; border-bottom:1px solid #000000; background-color:#FFFFFF;
+}
+#MainMenu #mPlaylistSM1
+{
+    float:right; font-size:18px; color:#d5af55; font-family:'Lato', sans-serif; font-weight:300; letter-spacing:-1px; margin:2px 0 0 0; cursor:pointer;
+    width:100%; background-color:#FFFFFF;
+}
+#MainMenu #mChartsSM1
+{
+    float:right; font-size:18px; color:#d5af55; font-family:'Lato', sans-serif; font-weight:300; letter-spacing:-1px; margin:2px 0 0 0; cursor:pointer;
+    width:100%; background-color:#FFFFFF;
+}
+
+
+
+
+#MainMenu .mCreate
+{
+    float:left; width:90px; height:50px; text-align:center; float:left; font-size:24px; color:#FFFFFF; font-family:'Lato', sans-serif; font-weight:300; letter-spacing:-1px; margin:0px 20px 0 0; cursor:pointer;
+}
+#MainMenu #mCreateSM1
+{
+    display:none; position:relative; width:120px; height:53px; top:16px; left:0px;
+    z-index:10000000;
+    background-color:#FFFFFF;
+    border:1px solid #000000;
+    border-radius:7px;
+    padding:0 7px 0 7px;
+}
+#MainMenu #mPlayerSM1
+{
+    float:right; font-size:18px; color:#d5af55; font-family:'Lato', sans-serif; font-weight:300; letter-spacing:-1px; margin:3px 0 0 0; cursor:pointer;
+    width:100%; border-bottom:1px solid #000000; background-color:#FFFFFF;
+}
+/*
+#MainMenu #mPlaylistsSM1
+{
+    float:right; font-size:18px; color:#d5af55; font-family:'Lato', sans-serif; font-weight:300; letter-spacing:-1px; margin:0px 0 0 0; cursor:pointer;
+    width:100%; background-color:#FFFFFF;
+}*/
+#MainMenu #mPlstsSM1
+{
+    float:right; font-size:18px; color:#d5af55; font-family:'Lato', sans-serif; font-weight:300; letter-spacing:-1px; margin:2px 0 0 0; cursor:pointer;
+    width:100%; border-bottom:1px solid #000000; background-color:#FFFFFF;
+}
+
+
+
+
+#MainMenu .mBreaking
+{
+    float:left; width:130px; height:40px; text-align:center; float:left; font-size:24px; color:#FFFFFF; font-family:'Lato', sans-serif; font-weight:300; letter-spacing:-1px; margin:0px 20px 0 0; cursor:pointer;
+}
+
+#MainMenu .mGamehype
+{
+    float:left; width:130px; height:40px; text-align:center; float:left; font-size:24px; color:#FFFFFF; font-family:'Lato', sans-serif; font-weight:300; letter-spacing:-1px; margin:0px 20px 0 0; cursor:pointer;
+}
+
+
+#MainMenu .mAcct
+{
+    float:left; width:30px; height:45px; background:url('/imgs/account/acct_icon_t.png') no-repeat; margin:0 0 0 10px; cursor:pointer;
+}
+#MainMenu .mAcctNL
+{
+    float:left; width:30px; height:45px; background:url('/imgs/account/acct_icon_t.png') no-repeat; margin:0 0 0 10px; cursor:pointer;
+}
+#MainMenu #mAcctMCH1
+{
+    display:none; position:relative; width:140px; height:53px; top:45px; left:-70px;
+    z-index:10000000;
+    background-color:#FFFFFF;
+    border:1px solid #000000;
+    border-radius:7px;
+    padding:0 7px 0 7px;
+}
+#MainMenu #myAcctInfo
+{
+    float:right; font-size:18px; color:#d5af55; font-family:'Lato', sans-serif; font-weight:300; letter-spacing:-1px; margin:3px 0 0 0; cursor:pointer;
+    width:100%; border-bottom:1px solid #000000; background-color:#FFFFFF; text-align:center;
+}
+#MainMenu #mySignOut
+{
+    float:right; font-size:18px; color:#d5af55; font-family:'Lato', sans-serif; font-weight:300; letter-spacing:-1px; margin:2px 0 0 0; cursor:pointer;
+    width:100%; background-color:#FFFFFF; text-align:center;
+}
+
+
+#MainMenu .mSearch
+{
+    float:left; width:30px; height:34px; background:url('/imgs/account/search_icon_t.png') no-repeat; margin:0 0 0 10px; cursor:pointer;
+}
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+.BottomPane
+{
+	width:1050px; clear:both;
+	min-height:270px;
+	margin-left:13px;
+}
+
+.BottomPane img
+{
+	float:left; margin:13px 0px 0 15px;
+}
+
+
+.BottomPaneInnr
+{
+	float:left; width:750px; margin:10px 0 0 0px;
+}
+
+.BottomPaneInnr .MenuItmCont
+{
+	float:left; width:169px; height:115px; margin:12px 0 0 9px; padding-left:7px; /*border-left:1px solid #2f2f2f;*/
+}
+
+.BottomPaneInnr .MenuItmCont a
+{
+	float:left; display:block; width:96%; padding:0 1% 2px 3%; text-align:left; font-size:15px;
+	margin-top:6px; color:#FFFFFF;
+}
+
+.push {
+	clear: both;
+}
+
+
+
+.BottomPane .BtmLeftCH1
+{
+    float:left; width:290px; height:150px; margin-top:10px;
+}
+
+.BottomPane .BtmLeftCH1 .BLLogCH1 
+{
+    float:left; width:275px; height:80px; padding:0px 5px 15px 10px;
+}
+
+.BottomPane .BtmLeftCH1 .BLLogCH1 div
+{
+    float:left; width:100%; font-size:60px; color:#FFFFFF; font-family: 'Lato', sans-serif; font-weight:700; letter-spacing:-2px; margin:20px 0 0 0; cursor:pointer;
+}
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* page_home */
+.mainSlideshow
+{
+     float:left; width:100%; margin:0 0 7px 0;
+}
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+.sld1_middleCont
+{
+    float:left; width:100%; border-top:2px solid #d4ae52; border-bottom:2px solid #d4ae52; margin:20px 0 20px 0;	
+}
+
+.sld1_middleCont .middleC1
+{
+	float:left; width:28%; padding:4px 1.5% 0 1.5%; height:120px; margin:16px 0 16px 0; border-radius:2px; text-align:center;
+	border:1px solid #d4ae52;
+	color:#000000;
+	cursor:pointer;
+}
+
+.sld1_middleCont .middleC2
+{
+	float:left; width:29%; padding:4px 1.5% 0 1.5%; height:120px; margin:16px 0 16px 2%; border-radius:2px; text-align:center;
+	border:1px solid #d4ae52;
+	color:#000000;
+	cursor:pointer;
+}
+
+.sld1_middleCont .middleC3
+{
+	float:left; width:29%; padding:4px 1.5% 0 1.5%; height:120px; margin:16px 0 16px 2%; border-radius:2px; text-align:center;
+	border:1px solid #d4ae52;
+	color:#000000;
+	cursor:pointer;
+}
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+.head11
+{
+	font-size:22px; line-height:26px;
+	color:#3fbc91;
+	font-weight:bold;
+	text-align:left;
+}
+
+.cont21
+{
+	font-size:16px;
+	line-height:21px;
+	text-align:left;
+}
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+.homePopRStations
+{
+    float:left; width:100%; height:520px; margin:auto; padding:15px 0 0 0;
+}
+
+.homeBreakingWidget
+{
+    float:left; width:100%; height:400px; margin:auto; padding:40px 0 0 0;
+}
+
+.homeGamehype
+{
+    float:left; width:100%; height:490px; margin:auto; padding:40px 0 0 0;
+}
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* pr_PopularRadioStations */
+
+.hmRdoTitle
+{
+    float:right; width:95%; height:45px; line-height:45px; margin:30px 0 0 0; border-bottom:2px solid #18ae7b; color:#000000; font-size:36px; text-align:left;
+    cursor:pointer;
+}
+
+.FeaturedVideoInner
+{
+	float:right; width:830px; margin:10px 90px 0 0;
+}
+
+.VideoThumbBox
+{
+	display:block; float:right; width:125px; height:125px; background:none;  margin-left:25px; margin-right:40px; margin-top:19px; border-radius:2px; cursor:pointer;
+	padding:4px;
+	overflow:hidden;
+	border-radius:180px;
+	background-color:#CDCDCD;
+}
+
+.VideoThumbBox span
+{
+    display:none; float:left; width:140px; height:180px; line-height:140px; margin:-10px 0 0 -10px; background:url('/imgs/radio/radio_cover_back.png'); color:#FFFFFF; text-align:center; font-size:23px; font-weight:bold;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.breakingMCH_Home
+{
+    width:100%; height:450px; overflow:hidden;
+}
+
+
+.breakingMCH_Home .hmBrkTitle
+{
+    float:right; width:95%; height:45px; line-height:45px; margin:30px 0 0 0; border-bottom:2px solid #18ae7b; color:#000000; font-size:36px; text-align:left;
+    cursor:pointer;
+}
+
+
+
+.breakingMCH_Home .breakingMCH_MC
+{
+    float:left; width:100%;
+    margin:40px 0 0 0;
+}
+
+.breakingMCH_Home .arrLeft
+{
+    float:left; width:5%; font-size:90px; line-height:250px; text-align:center; cursor:pointer; color:#d4ae52;
+    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat 6px 100px;
+}
+
+.breakingMCH_Home .arrRight
+{
+    float:left; width:4.5%; font-size:90px; line-height:250px; text-align:center; cursor:pointer; color:#d4ae52;
+    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat -40px 100px;
+}
+
+.breakingMCH_Home #newsContHH1
+{
+    float:left; width:90.5%; height:310px; overflow:hidden;
+}
+
+.breakingMCH_Home #newsContHHInn
+{
+    position:relative; width:4690px; height:400px; top:0px; left:0;
+}
+
+.breakingMCH_Home .brkngItm
+{
+    float:left; width:300px; height:277px; border-radius:2px; margin:20px 10px 0 0; 
+    border:1px solid #d4ae52; 
+    cursor:pointer;
+    background-size: 100% auto;
+    
+}
+
+.breakingMCH_Home .brkngItmPost
+{
+    float:left; width:292px; height:204px; margin:4px 0 0 4px;
+     background-repeat:no-repeat;
+}
+
+.breakingMCH_Home .brkngItm .txtBreakingT
+{
+    float:left; width:290px; height:38px; line-height:38px; color:#000000; 
+    margin:-40px 0 0 4px; padding:1px; font-size:24px; text-align:center; overflow:hidden;
+    font-weight:bold;
+    background-color:#FFFFFF; opacity:0.6;
+    overflow:hidden;
+}
+
+.breakingMCH_Home .brkngItm .txtBreakingD
+{
+    float:left; width:290px; height:65px; line-height:16px; color:#000000; 
+    margin:0px 0 0 4px; padding:1px; font-size:14px; text-align:left; overflow:hidden;
+    background-color:#e7e8e7;
+    overflow:hidden;
+}
+
+
+.nPostImg
+{
+    margin:5px 0 0 45px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.gamehypeMCH_Home
+{
+    width:100%; height:450px; overflow:hidden;
+}
+
+.gamehypeMCH_Home .hmGmHTitle
+{
+    float:right; width:95%; height:45px; line-height:45px; margin:30px 0 0 0; border-bottom:2px solid #18ae7b; color:#000000; font-size:36px; text-align:left;
+    cursor:pointer;
+}
+
+.gamehypeMCH_Home .GmhItemsCont
+{
+    float:left; width:100%;
+}
+
+.gamehypeMCH_Home .GmhItemsCont img
+{
+    width:184px; height:191px;
+}
+
+.gamehypeMCH_Home .GmhItemsCont div
+{
+    float:left; margin:10px 0 0 67px; cursor:pointer;
+}
+
+.gamehypeMCH_Home .GmhItemsCont span
+{
+    display:block;
+    width:100%; text-align:center; font-size:16px; font-weight:bold;
+}
+
+
+.gamehypeMCH_Home .GmhBottomCont
+{
+    float:left; width:90%; margin:35px 0 0 5%; border-top:1px solid #f1f1f1;
+}
+
+.gamehypeMCH_Home .GmhBottomCont div
+{
+    margin:auto; margin-top:30px; width:450px; height:35px; line-height:35px; text-align:center; background-color:#18ae7b; color:#FFFFFF; border-radius:7px; cursor:pointer; font-size:28px;
+}
+
+.gamehypeMCH_Home .GmhBottomCont span
+{
+    display:block; margin:auto; margin-top:5px; width:450px; height:35px; line-height:35px; text-align:center; color:#444444; border-radius:7px; cursor:pointer; font-size:18px;
+}
+
+
+
+
+.GamehypeCh1 .GmhBottomCont
+{
+    float:left; width:100%; margin:20px 0 0 0;
+}
+
+.GamehypeCh1 .GmhBottomCont div
+{
+    margin:auto; margin-top:20px; width:450px; height:35px; line-height:35px; text-align:center; background-color:#18ae7b; color:#FFFFFF; border-radius:7px; cursor:pointer; font-size:28px;
+}
+
+.GamehypeCh1 .GmhBottomCont span
+{
+    display:block; margin:auto; margin-top:5px; width:450px; height:35px; line-height:35px; text-align:center; color:#FFFFFF; border-radius:7px; cursor:pointer; font-size:18px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.mListenTopH
+{
+    float:left; width:100%; height:232px; background:url(/imgs/listen_back.png) no-repeat; margin:0 0 0 0;
+}
+
+.listenMenuCont
+{
+	float:left; width:100%;
+	width:100%; height:35px; margin:190px 0 0 0; border-bottom:3px solid #cac9cb;
+}
+
+.listenMenuCont #Menu1
+{
+	float:left; width:200px; height:30px; line-height:34px; margin:5px 0 0 0; border-radius:2px;  text-align:center; font-family:'Lato', sans-serif;  font-weight:lighter; font-size:24px; color:#cac9cb; cursor:pointer;
+	border-bottom:3px solid #47bb90;
+}
+
+.listenMenuCont #Menu2
+{
+	float:left; width:190px; height:30px; line-height:34px; margin:5px 0 0 10px; border-radius:2px; text-align:center; font-family:'Lato', sans-serif;  font-weight:lighter; font-size:24px; color:#cac9cb; cursor:pointer;
+}
+
+.listenMenuCont #Menu3
+{
+	float:left; width:190px; height:30px; line-height:34px; margin:5px 0 0 10px; border-radius:2px; text-align:center; font-family:'Lato', sans-serif;  font-weight:lighter; font-size:24px; color:#cac9cb; cursor:pointer;
+}
+
+
+.listenTabCh2
+{
+    float:left; width:100%; min-height:70px; margin:20px 0 20px 0;
+}
+
+
+#listenSlideContHolder
+{
+    float:right; width:100%; min-height:0px; margin:0 0 20px 0; background-color:Black;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.GamehypeCh1
+{
+    width:100%; min-height:900px; margin:auto; background-color:none;
+}
+
+.GamehypeCh1 .GmhTitle
+{
+    float:right; width:90%; border-bottom:2px solid #3fbc91; margin:10px 0 0 0; font-size:64px; color:#FFFFFF;
+    cursor:pointer;
+}
+
+.GamehypeCh1 .GmhTblH
+{
+    float:left; width:95%; height:30px; padding:0.4%; margin:2%; border:1px solid #cac9cb;
+}
+.GamehypeCh1 .GmhTblHC1
+{
+    float:left; margin:0 0 0 60px; font-size:19px; color:#cac9cb;
+}
+.GamehypeCh1 .GmhTblHC2
+{
+    float:left; margin:0 0 0 120px; font-size:19px; color:#cac9cb;
+}
+.GamehypeCh1 .GmhTblHC3
+{
+    float:left; margin:0 0 0 120px; font-size:19px; color:#cac9cb;
+}
+.GamehypeCh1 .GmhTblHC4
+{
+    float:left; margin:0 0 0 120px; font-size:19px; color:#cac9cb;
+}
+
+
+.GamehypeCh1 .GmhTblCont
+{
+    float:left; width:100%; margin:0 0 20px 0;
+}
+
+
+
+
+
+
+.GamehypeCh1 .GmBox1
+{
+    float:left; width:230px; height:270px; border:1px solid #d4ae52; margin:0 0 0 22px;
+    background-color:#FFFFFF;
+}
+
+.GamehypeCh1 .GmBox1 img
+{
+    margin:5px 0 0 22px;
+}
+
+.GmBox1 .GmBoxHdr
+{
+    float:left; width:100%; text-align:center; margin:10px 0 0 0; font-size:19px; color:#d4ae52;
+}
+
+.GmBox1 .GmBoxF
+{
+    float:left; width:100%; text-align:center; margin:10px 0 0 0; font-size:19px; color:#d4ae52;
+}
+
+.GmBox1 .GmBoxSc
+{
+    float:left; width:100%; text-align:center; margin:10px 0 0 0; font-size:19px; color:#d4ae52;
+}
+
+.GmBox1 .GmBoxVS
+{
+    float:left; width:150px; height:22px; margin:5px 0 0 40px; text-align:center; background-color:#3fbc91; color:#FFFFFF; font-size:16px; border-radius:3px; cursor:pointer;
+}
+
+.GamehypeCh1 .GmBoxFrst
+{
+     margin-left:100px;
+}
+
+
+
+.GamehypeCh1 .GmLnBox1
+{
+    float:left; width:95%; height:30px; padding:0.4%; margin:2px 2% 2px 2%; border:1px solid #cac9cb;
+}
+
+.GmLnBox1 .GmBoxHdr
+{
+    float:left; width:30%; text-align:left; margin:0 0 0 5%; font-size:19px; color:#d4ae52;
+}
+
+.GmLnBox1 .GmBoxF
+{
+    float:left; width:25%; text-align:left; margin:0 0 0 0; font-size:19px; color:#d4ae52;
+}
+
+.GmLnBox1 .GmBoxSc
+{
+    float:left; width:20%; text-align:left; margin:0 0 0 0; font-size:19px; color:#d4ae52;
+}
+
+.GmLnBox1 .GmBoxVS
+{
+    float:left; width:150px; height:22px; margin:5px 0 0 0; text-align:center; background-color:#3fbc91; color:#FFFFFF; font-size:16px; border-radius:3px; cursor:pointer;
+}
+
+
+
+
+
+.GmhStmLeft1
+{
+    float:left; width:720px;
+}
+
+
+.GmhStmRight1
+{
+    float:right; margin:20px 0 5px 0; 
+}
+
+
+.GmhStmLeft1 .StmHdr1
+{
+    float:left; width:100%; height:40px; margin:20px 0 0 0;
+}
+
+.GmhStmLeft1 .StmHdrInn1
+{
+    float:right; width:200px; border-bottom:2px solid #cac9cb; font-size:18px; color:#cac9cb;
+}
+
+
+.GmhStmLeft1 .profileBtn1
+{
+    float:left; margin:0 0 0 20px; cursor:pointer;
+}
+
+.GmhStmLeft1 .plstBtn1
+{
+    position:relative; top:2px;
+    display:block; float:left; margin:0 0 0 0; cursor:pointer; color:#FFFFFF; font-weight:bold;
+    border-bottom:2px solid #3fbc91;
+}
+
+.GmhStmLeft1 .hpStrmBtn1
+{
+    float:left; margin:0 20px 0 20px; cursor:pointer;
+}
+
+.GmhStmLeft1 .StmCnt1
+{
+    float:left; width:700px; border:1px solid #d4ae52; padding:5px;
+}
+
+.GmhStmLeft1 .StmCnt1 div
+{
+    float:left; width:100%; height:100px; background-color:#FFFFFF; margin:0 0 0 0;
+}
+
+.GmhStmLeft1 .StmCnt1 H2
+{
+    color:#d4ae52; margin:20px 0 0 20px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.breakingMCH
+{
+    float:left; width:100%;
+    background:none; margin:20px 0 0 0;
+}
+
+.breakingMCH .brkngHDR
+{
+    display:block; float:left; width:100%; color:#000000; height:72px; line-height:70px; margin:0px; padding:3px; font-size:62px;
+    font-weight:300;    
+    border-bottom:2px solid #3fbc91;
+    background:none;
+}
+
+.brkngHDR1
+{
+    display:block; float:left; width:98%; background-color:#232323; color:#d4ae52; height:42px; line-height:40px; margin:0px; padding:1%; font-size:32px;
+}
+
+
+.breakingMCH #tagsHolder
+{
+    float:left; width:100%; padding-bottom:10px;
+    height:160px; overflow:hidden;
+    background:none; margin:20px 0 0 0;
+}
+
+
+.breakingMCH .brkngItm
+{
+    float:left; width:320px; height:270px; background-color:none; border-radius:2px; margin:2% 1% 0 0; border:2px solid #d4ae52; cursor:pointer;
+}
+
+.breakingMCH .brkngImg
+{
+    width:100%; height:180px; background-repeat:no-repeat;
+}
+
+
+.breakingMCH .brkngItm .txtDItem
+{
+    float:left; width:97.5%; height:60px; line-height:27px; padding:1% 1% 0 2%; 
+    color:#d4ae52; font-weight:bold; 
+    margin:15px 0 0 0; font-size:18px; text-align:center; overflow:hidden;
+}
+
+.breakingMCH .brkngPagingCH
+{
+    float:left; width:100%; height:30px; line-height:30px; margin-top:10px; margin-bottom:5px; overflow:hidden;
+}
+
+
+
+#searchStr
+{
+    float:left; width:100%; height:110px; line-height:130px; font-size:85px; color:#000000;
+}
+
+.brkSrchHolder1
+{
+    float:left; width:620px; height:35px; border:1px solid #d4ae52; border-radius:6px;
+}
+
+.brkPagingCH1
+{
+    float:right; width:1024px; margin:20px 0 30px 0;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+.listenTabCh2 .srchListBox
+{
+    float:left; width:650px; height:50px; border:1px solid #d4ae52; border-radius:6px;
+}
+
+
+.listenTabCh2 #searchStr
+{
+    float:left; width:100%; height:110px; line-height:130px; font-size:85px; color:#000000;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* create */
+
+
+.crtHdr1
+{
+    float:left; width:100%; height:222px; background:url(/imgs/create_back.png) no-repeat; margin:0 0 0 0;
+}
+
+
+.crtMCh1
+{
+    float:left; width:100%;
+}
+
+
+.crtMCh1 #CreateSection1_ST2
+{
+    display:none; width:98%; margin-left:1%; margin-top:10px; font-size:18px; line-height:30px;
+}
+
+
+.crtMCh1 .crtLgnBtn1
+{
+    width:100%; height:24px; line-height:24px; background-color:#47bb8f; border-radius:7px; margin:10px 0 0 0; color:#FFFFFF;
+}
+
+
+.crtMCh1 #CreateSection2_ST2
+{
+    display:none; margin-top:10px; font-size:18px; line-height:30px;
+}
+
+
+.crtMCh1 #CreateSection3_ST2
+{
+    display:none; margin-top:10px; font-size:18px; line-height:30px;
+}
+
+
+
+
+
+
+.crtPlstHdr1
+{
+    float:left; width:100%; height:252px; background:url(/imgs/create_back.png) no-repeat; margin:0 0 0 0;
+}
+
+.crtPlstHdr1 .listenMenuCont
+{
+    margin:190px 0 0 0; height:35px; border-bottom:3px solid #cac9cb;
+}
+
+
+
+#CreatePlaylistSection1
+{
+	float:left; width:200px; height:30px; line-height:34px; margin:0 0 0 10px; border-radius:2px; text-align:center; font-family:'Lato', sans-serif;  font-weight:lighter; font-size:24px; color:#cac9cb; cursor:pointer;
+}
+
+#CreatePlaylistSection2
+{
+	float:left; width:240px; height:30px; line-height:34px; margin:0 0 0 10px; border-radius:2px; text-align:center; font-family:'Lato', sans-serif;  font-weight:lighter; font-size:24px; color:#cac9cb; cursor:pointer;
+}
+
+#CreatePlaylistSection3
+{
+	float:left; width:240px; height:30px; line-height:34px; margin:0 0 0 10px; border-radius:2px; text-align:center; font-family:'Lato', sans-serif;  font-weight:lighter; font-size:24px; color:#cac9cb; cursor:pointer;
+}
+
+
+
+.crtPlstCnt1
+{
+    float:left; width:100%;
+}
+
+
+.crtPlstCnt1 .CreateContHolder
+{
+    float:left; width:100%; margin-top:-1px;
+}
+
+
+.crtPlstCnt1 .TopBtnsCH1
+{
+    float:left; width:100%;
+}
+
+.crtPlstCnt1 .TopBtnsCH1 div
+{
+    float:right; margin:0 40px 0 0; cursor:pointer;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+/* breaking widget pr */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.brkPlrWPR
+{
+    float:left; width:100%; margin:10px 0 0 0; background-color:#FFFFFF; border-radius:3px; cursor:pointer;
+}
+
+.brkPlrWPR .brkPlrWPRImg
+{
+    display:block; float:left; width:100%; height:200px;
+    background-repeat:no-repeat;
+}
+
+.brkPlrWPR .brkPlrWPRTxt
+{
+    display:block; float:left; width:100%; margin:10px 0 10px 0; font-size:16px; text-align:left; color:#d4ae52;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+/* follow us buttons */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+.flwUs_yw_fbk
+{
+    display:block;
+    float:left;
+    width:40px;
+    height:39px;
+    background:url(/imgs/follow_us_btns.png) no-repeat -6px -237px;
+    cursor:pointer;
+    margin:0 0 0 10px;
+    /*border:1px solid #CC0000;*/
+}
+
+.flwUs_yw_twr
+{
+    display:block;
+    float:left;
+    width:40px;
+    height:39px;
+    background:url(/imgs/follow_us_btns.png) no-repeat -54px -237px;
+    cursor:pointer;
+    margin:0 0 0 10px;
+    /*border:1px solid #CC0000;*/
+}
+
+.flwUs_yw_tum
+{
+    display:block;
+    float:left;
+    width:40px;
+    height:39px;
+    background:url(/imgs/follow_us_btns.png) no-repeat -101px -237px;
+    cursor:pointer;
+    margin:0 0 0 10px;
+    /*border:1px solid #CC0000;*/
+}
+
+
+
+
+
+.flwUs_bk_fbk
+{
+    display:block;
+    float:left;
+    width:40px;
+    height:39px;
+    background:url(/imgs/follow_us_btns.png) no-repeat -7px -127px;
+    cursor:pointer;
+    margin:0 0 0 10px;
+    /*border:1px solid #CC0000;*/
+}
+
+.flwUs_bk_twr
+{
+    display:block;
+    float:left;
+    width:40px;
+    height:39px;
+    background:url(/imgs/follow_us_btns.png) no-repeat -55px -127px;
+    cursor:pointer;
+    margin:0 0 0 10px;
+    /*border:1px solid #CC0000;*/
+}
+
+.flwUs_bk_tum
+{
+    display:block;
+    float:left;
+    width:40px;
+    height:39px;
+    background:url(/imgs/follow_us_btns.png) no-repeat -101px -127px;
+    cursor:pointer;
+    margin:0 0 0 10px;
+    /*border:1px solid #CC0000;*/
+}
+
+
+
+
+
+.flwUs_wt_fbk
+{
+    display:block;
+    float:left;
+    width:40px;
+    height:39px;
+    background:url(/imgs/follow_us_btns.png) no-repeat -6px -14px;
+    cursor:pointer;
+    margin:0 0 0 10px;
+    /*border:1px solid #CC0000;*/
+}
+
+.flwUs_wt_twr
+{
+    display:block;
+    float:left;
+    width:40px;
+    height:39px;
+    background:url(/imgs/follow_us_btns.png) no-repeat -54px -14px;
+    cursor:pointer;
+    margin:0 0 0 10px;
+    /*border:1px solid #CC0000;*/
+}
+
+.flwUs_wt_tum
+{
+    display:block;
+    float:left;
+    width:40px;
+    height:39px;
+    background:url(/imgs/follow_us_btns.png) no-repeat -101px -14px;
+    cursor:pointer;
+    margin:0 0 0 10px;
+    /*border:1px solid #CC0000;*/
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*   Post main cont   */
+/*------------------------------------------------------------*/
+.Post_mainCont
+{
+	line-height:21px;
+	float:left; 
+	width:98%; 
+	padding:0 0% 0% 0%; 
+	min-height:245px; 
+	margin-bottom:3px; 
+	border-radius:2px; 
+	text-align:left;
+}
+
+.Post_mainCont h1
+{
+	width:95%; margin:10px 0px 0px 0px; font-weight:300;
+	margin-top:32px; font-size:38px; line-height:40px; color:#FFFFFF;
+}
+
+.Post_mainCont .h1o
+{
+	width:95%; margin:10px 0px 0px 0px; font-weight:300;
+	margin-top:28px; font-size:38px; line-height:40px; color:#000000;
+}
+
+.CommV1
+{
+	float:left; width:98%; height:20px; margin-top:10px; padding:1%; font-size:16px; background-color:#858c90; border-radius:2px;
+}
+
+.CommV2
+{
+	float:left; width:98%; height:8px; margin-top:10px; padding:1%; font-size:16px; background-color:#909699; border-radius:2px;
+}
+
+.CommV3
+{
+	float:left; width:98%; height:5px; margin-top:10px; margin-bottom:10px; padding:1%; font-size:16px; background-color:#969b9e; border-radius:2px;
+}
+
+
+
+
+.pst_BackCh1
+{
+    float:left; width:100%; min-height:620px; background:url(/imgs/brk_back_d.png) no-repeat;
+}
+
+
+.pst_leftCH1
+{
+    float:left; width:685px;
+}
+
+.pst_rightCH1
+{
+    float:left; width:330px; min-height:400px;
+}
+
+.pst_MainCH1
+{
+    min-height:175px; font-size:18px; line-height:26px; font-weight:lighter; margin-top:10px;
+}
+
+.pst_BottomCH1
+{
+    float:left; width:100%; margin-top:12px;
+}
+
+
+#relVideosCth
+{
+    float:left; border:1px solid #d5af55; padding:3px; background-color:#FFFFFF;
+}
+
+
+.pst_BottomCH1 .plShareCntr1
+{
+    float:left; width:500px;
+}
+
+.pst_BottomCH1 .plShareIcn
+{
+    float:left; width:150px; height:38px; margin:5px 0 0 0; background:url(/imgs/follow_us_btns.png) no-repeat -3px -14px; " onmouseover="this.style.display='none'; $('#SocialHolder1').css('display','block'); 
+}
+
+.pst_BottomCH1 .pstBtmDate
+{
+    float:left; margin:17px 0 0 0px; color:#d4ae52;
+}
+
+
+/*------------------------------------------------------------*/

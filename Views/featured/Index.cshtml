@@ -1,0 +1,239 @@
+﻿@model hypster.ViewModels.playlistsViewModel
+@{
+    ViewBag.Title = "Featured Playlists";
+    ViewBag.Desc = "Search music, create playlists and embed them on blogs such as Tumblr or Blogger.";
+    ViewBag.ActivePage = "hypster";
+
+    int counter = 0;
+}
+
+@Scripts.Render("~/scripts/jquery.cycle.all.latest.js")
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div class="slideRight" style=" min-height:545px;">
+
+            
+                    
+            <h2 style=" width:100%; min-height:35px; padding:8px 0 8px 0; background-color:#151515; border-radius:3px; margin:2px 0 13px 0; ">
+                
+                <div style=" float:left; display:block; font-weight:300;">&nbsp;&nbsp;Featured Playlists on Hypster</div>
+
+                <div class="pw-widget pw-counter-horizontal" pw:image="" pw:url="http://hypster.com/featured" pw:title="Featured on Hypster" style=" float:left; margin:5px 0 0 13px;">
+	                <a class="pw-button-tumblr pw-look-native"></a>
+	                <a class="pw-button-blogger pw-look-native"></a>
+	                <a class="pw-button-facebook pw-look-native"></a>
+	                <a class="pw-button-twitter pw-look-native"></a>
+	                <a class="pw-button-post-share"></a>
+                </div>
+            </h2>
+                    
+                     
+            <div class="sld1_topCont" style=" margin:0 0 13px 0px;">
+
+                <div class="topLeft">
+                    <div class="mainSlideshow">
+                        @Html.Action("Get_Featured_Slideshow", "home")
+                    </div>
+                </div>
+
+
+                <div class="topRight">
+                    <div id="SideAd2_28329">
+                        <!-- Begin 300x250 | BaronsMedia | Hypster | hypster wayfare -->
+                        <iframe src="http://feed-rt.baronsoffers.com/offer/feed/q/aT03MTQ3LHM9MzAweDI1MCxuPWlmcmFtZQ==?subid=default" width="300" height="250" scrolling="no" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+                        <!-- End 300x250 -->
+                    </div>
+                </div>
+
+
+
+
+                <div class="topRightSoc">
+                        
+                    <div style=" float:left; margin:15px 0 0 50px;">
+                            
+                        <a href="https://twitter.com/Hypsterdotcom" target="_blank">
+                            <img alt="" src="/imgs/social_icons/twitter_btn.png" style=" float:left; width:33px; margin:15px 10px 0 13px; cursor:pointer; border:none;" />
+                        </a>
+
+                        <a href="http://hypsterblog.tumblr.com/" target="_blank">
+                            <img alt="" src="/imgs/social_icons/tumblr_btn.png" style=" float:left; width:33px; margin:15px 10px 0 0px; cursor:pointer; border:none;" />
+                        </a>
+
+                        <a href="https://www.facebook.com/Hypster" target="_blank">
+                            <img alt="" src="/imgs/social_icons/facebook_btn.png" style=" float:left; width:33px; margin:15px 10px 0 0px; cursor:pointer; border:none;" />
+                        </a>
+
+                        <a href="mailto:info@hypster.com">
+                            <img alt="" src="/imgs/social_icons/email_btn.png" style=" float:left; width:33px; margin:15px 10px 0 0px; cursor:pointer; border:none;" />
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+            <div class="sld1_bottomCont" >
+                <div class="sld1_bottomContInnr" style=" margin:0px;">
+
+                    <input type="text" id="txtSearchString" name="txtSearchString" style=" width:550px;" onKeyUp="SearchString_KeyUpTags(event)" value=" Search tagged playlists"  onfocus="if(this.value == ' Search tagged playlists') this.value = '';" onblur="if(this.value == '') this.value = ' Search tagged playlists';" />
+                    <div id="btnSearch" onclick="StartTagsSearch()"></div>
+                    
+                </div>
+            </div>
+
+
+            <div style=" float:left; width:100%; height:63px; margin:-7px 0 0 0px; background-color:#1c1c1c; overflow:hidden;">
+                @Html.Action("GetPopularFeaturedTags", "featured")
+            </div>
+                    
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div class="slideLeft" style=" min-height:35px;">
+
+            <div class="ftrdSMenuCH">
+                <div class="smenu1" onclick="window.location='/charts';">Charts</div>
+                <div class="smenu2" onclick="window.location='/festivals';">Festivals</div>
+                <div class="smenu3" onclick="window.location='/playlists';">Popular</div>
+            </div>
+                    
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="boxContRight">
+    <div class="slideRight" style=" min-height:460px;">
+                    
+
+
+            <div class="listenMenuCont" style=" margin-top:5px;">
+            
+                    <div id="Menu1" onclick="Open_Menu1()" title="Search Music">
+                        <div style=" float:left; width:100%; margin-top:50px; color:#BABABA;" >Artist Playlists</div>
+                    </div>
+
+                    <div id="Menu2" onclick="Open_Menu2()" title="Listen Radio Stations">
+                        <div style=" float:left; width:100%; margin-top:50px; color:#BABABA;" >Seasonal Playlists</div>
+                    </div>
+
+                    <div id="Menu3" onclick="Open_Menu3()" title="Listen Playlists">
+                        <div style=" float:left; width:100%; margin-top:50px; color:#BABABA;" >Other Playlists</div>
+                    </div>
+
+            </div>
+
+
+                   
+
+
+                   
+            <div id="listenTab1" style=" float:left; min-height:300px; border-bottom:3px solid #111111; background-color:#1D1D1C;">
+                    
+                    <div style=" float:left; width:1024px; min-height:300px; margin:10px 0 0 10px;">
+                        @Html.Action("GetArtistPlaylists", "featured")
+                    </div>
+
+            </div>
+
+
+
+
+
+            <div id="listenTab2" style=" float:left; min-height:310px; border-bottom:3px solid #111111; background-color:#1D1D1C; ">
+                        
+                    <div style=" float:left; width:1024px; min-height:300px; margin:10px 0 0 10px;">
+                        @Html.Action("GetSeasonalPlaylists", "featured")
+                    </div>
+
+            </div>
+
+
+
+
+            <div id="listenTab3" style=" float:left; min-height:310px; border-bottom:3px solid #111111; background-color:#1D1D1C; ">
+                        
+                    <div style=" float:left; width:1024px; min-height:300px; margin:10px 0 0 10px;">
+                        @Html.Action("OtherPlaylists", "featured")
+                    </div>
+
+            </div>
+            
+                    
+
+
+            <div id="GMVP_PlstPreview">
+                <div class="LdingPrev">Loading...</div>
+            </div>
+    
+    </div>
+</div>
+
+
+
+
+        
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlidePopPlst4" class="slideLeft" style=" min-height:450px;">
+    </div>
+</div>
+
+
+
+
+<div class="boxContRight">
+    <div class="slideRight" style=" height:260px; overflow:hidden;">
+        <script>var aid = 3798; var v = "hl6z1vJrAUZeuhuoxm8tsg%3d%3d"; var credomain = "adkengage.com"; document.write('<sc' + 'ript type="text/javascript" src="http://' + credomain + '/Scripts/CREReqScript.js"></sc' + 'ript>');  </script>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function StartTagsSearch() {
+        var ss_str = $("#txtSearchString").val();
+
+        if (ss_str != " Enter Tag Name") {
+            ss_str = ss_str.replace(" ", "+");
+            ss_str = ss_str.replace("/", "+");
+            ss_str = ss_str.replace("\\", "+");
+            ss_str = ss_str.replace("&", "+");
+            ss_str = ss_str.replace("$", "+");
+            ss_str = ss_str.replace("?", "+");
+            ss_str = ss_str.replace("!", "+");
+            window.location = "/tags/" + ss_str;
+        }
+    }
+</script>

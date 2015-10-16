@@ -1,0 +1,312 @@
+﻿@{
+    ViewBag.Title = "My Account";
+    Layout = "/Areas/senses/Views/Shared/_srLayout.cshtml";
+}
+
+
+
+
+
+
+<div class="cir_back_btn"> 
+    <div onclick="clickBack()" style=" float:left; width:100%; margin:0px 0 0 0px; cursor:pointer; ">
+        BACK
+    </div>
+</div>
+
+
+
+
+<div class="manageAccountBlkBoxBorder1">
+    
+
+    <div class="ctL1" >
+        
+        <div class="manageAccountBlkBox1">
+
+                
+                <div id="msgBox1_account" style=" float:none; width:410px; height:350px; margin:auto; ">
+        
+                    <div style=" margin:10px 0 10px 0; color:#FFFFFF;">
+                        Manage account. Choose one of the 3 menus.
+                    </div>
+
+                    <div class="mnuItm" id="menu_1" onclick="LoadContent(49);">MANAGE YOUR ACCOUNT INFO</div>
+                    <div class="mnuItm" id="menu_2" onclick="LoadContent(50);">MANAGE PLAYLISTS</div>
+                    <div class="mnuItm" id="menu_3" onclick="LoadContent(51);">LOG OUT</div>
+
+                </div>
+
+            
+        </div>
+
+    </div>
+
+
+
+    <div class="ctR1" style=" background:#FFFFFF url('/Areas/senses/imgs/senses_back/back_4.jpg') no-repeat right;">
+        
+        <img alt="" src="/Areas/senses/imgs/senses_ct_icon.png" style=" float:left; margin:240px 0 0 8px;" />
+
+    </div>
+
+    
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    
+    $(document).ready(function () {
+
+        cancelSpeech();
+        startSpeech('Manage your account. Choose one of the 3 menus.');
+
+    });
+
+
+    var msg1 = 'manage your account info';
+    var msg2 = 'manage playlists';
+    var msg3 = 'log out';
+</script>
+
+
+
+
+
+<script type="text/javascript">
+
+    var CURR_ACTIVE_MENU = 0;
+    var MENU_COUNT = 3;
+
+    function HandleKeyAction(e) {
+
+        cancelSpeech();
+
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+
+
+        //ESC
+        if (KEY_CODE == 27) {
+            clickBack();
+        }
+
+
+
+        //enter
+        if (KEY_CODE == 13) {
+            //enter
+            switch (CURR_ACTIVE_MENU) {
+                case 1:
+                    KEY_CODE = 49;
+                    break;
+                case 2:
+                    KEY_CODE = 50;
+                    break;
+                case 3:
+                    KEY_CODE = 51;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
+
+        //down
+        if (KEY_CODE == 40) {
+            //move menu down
+
+            CURR_ACTIVE_MENU += 1;
+            if (CURR_ACTIVE_MENU > MENU_COUNT) {
+                CURR_ACTIVE_MENU = MENU_COUNT;
+            }
+
+            
+            startSpeech(eval("msg" + CURR_ACTIVE_MENU));
+
+
+
+
+            $(".mnuItm").css("background-color", "#000000");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#318E8A");
+        }
+
+
+        //up
+        if (KEY_CODE == 38) {
+            //move menu up
+
+            CURR_ACTIVE_MENU -= 1;
+            if (CURR_ACTIVE_MENU <= 0) {
+                CURR_ACTIVE_MENU = 1;
+            }
+
+            startSpeech(eval("msg" + CURR_ACTIVE_MENU));
+
+
+            $(".mnuItm").css("background-color", "#000000");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#318E8A");
+        }
+
+
+
+
+
+
+        LoadContent(KEY_CODE);
+
+
+
+        //CNTRL
+        if (KEY_CODE == 17) {
+            StartVoiceCommand("myAccount");
+        }
+
+
+    }
+
+
+    function LoadContent(KEY_CODE) {
+
+
+        //1
+        if (KEY_CODE == 49) {
+            $("#msgBox1").html("loading your account info.....");
+
+            window.location = "/senses/sAccount/ManageAccountInfo";
+        }
+
+
+        //2
+        if (KEY_CODE == 50) {
+            $("#msgBox1").html("loading your playlists.....");
+
+            window.location = "/senses/sAccount/managePlaylists";
+        }
+
+
+        //3
+        if (KEY_CODE == 51) {
+            $("#msgBox1").html("logging you out.....");
+
+            startSpeech('logging you out.....');
+
+
+            setTimeout(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/senses/sAccount/logOut",
+                    async: true,
+                    success: function (data) {
+                        $("#bContHolder1").html(data);
+                    }
+                });
+            }, 2500);
+        }
+
+    }
+
+
+
+
+    function clickBack() {
+        
+        cancelSpeech();
+
+        window.location = "/senses/sStart/home";
+    }
+
+
+
+
+
+
+    function ProccessVoiceCommand(comm) {
+
+        var isHandled = false;
+        isHandled = handle_generic_commands(comm);
+
+        switch (comm) {
+            case "sign out":
+            case "log out":
+            case "sign off":
+                $("#msgBox1").html("logging you out.....");
+
+                startSpeech('logging you out.....');
+
+                setTimeout(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/senses/sAccount/logOut",
+                        async: true,
+                        success: function (data) {
+                            $("#bContHolder1").html(data);
+                        }
+                    });
+                }, 2500);
+                break;
+            case "manage playlists":
+            case "playlist":
+            case "playlists":
+            case "my playlist":
+            case "my playlists":
+                $("#msgBox1").html("loading your playlists.....");
+
+                window.location = "/senses/sAccount/managePlaylists";
+
+                break;
+            case "account":
+            case "account info":
+            case "my account":
+            case "manage account":
+                $("#msgBox1").html("loading your account info.....");
+
+                window.location = "/senses/sAccount/ManageAccountInfo";
+
+                break;
+
+
+            case "home":
+                hvc_NavigateHome();
+                break;
+
+            default:
+
+                if (isHandled == false) {
+                    startSpeech("Please say again...");
+                }
+
+                break;
+        }
+        
+    }
+
+
+
+</script>

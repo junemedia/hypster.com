@@ -1,0 +1,70 @@
+﻿@model hypster.ViewModels.createPlayer_ViewModel
+@{
+    ViewBag.Title = "Create Free Player | Hypster - free music online - player for tumblr";
+    ViewBag.Desc = "Create music player for tumblr or website.";
+    Layout = "~/Areas/apps/Views/Shared/_Layout_Apps.cshtml";
+
+    ViewBag.LinkTag = "<link rel=\"canonical\" href=\"http://hypster.com/create/player\" >";
+}
+
+
+
+<script type="text/javascript">
+    active_menu = ".mCreate";
+    $(".mCreate").css("color", "#FFFFFF");
+</script>
+
+
+
+
+
+
+
+
+
+<!--div class="crtPlstHdr1"></div-->
+<img alt="" src="/imgs/create_back.png" style=" float:left; width:100%;" />
+
+
+<div class="listenMenuCont">
+                
+    <div id="CreatePlaylistSection1_sel" onclick="window.location='/apps/appCreate/player';" title="Search Music">
+        CREATE PLAYER
+    </div>
+
+    <div id="CreatePlaylistSection2" onclick="window.location='/apps/appCreate/playlist';" title="Listen Playlists">
+        CREATE PLAYLIST
+    </div>
+
+    <div id="CreatePlaylistSection3" onclick="window.location='/apps/appCreate/station';" title="Listen Radio Stations">
+        CREATE STATION
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div style=" float:left; width:100%;">
+        <div id="CreateContHolder" style=" float:left; width:100; margin-top:-1px; ">
+            @if (ViewBag.Action == "EDT")
+            {
+                Html.RenderAction("getPlayer", "appPlayer", new { id = ViewBag.PlType });
+            }
+            else
+            {
+                Html.RenderAction("getPlayer", "appPlayer", new { id = "" });   
+            }
+        </div>
+</div>
+
+
+
+

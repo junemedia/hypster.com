@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "Promoted";
+    Layout = "~/Views/Shared/_Layout_News_Ads.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        RenderSong();
+    });
+    $(window).resize(function () {
+        RenderSong();
+    });
+
+
+
+    function RenderSong() {
+        var margin_left = 0;
+        var cont_width = 1024;
+
+        if ($(window).width() > 1024) {
+            margin_left = $(window).width() - 1024 - 44;
+            cont_width = 1024 + 30 + (margin_left / 2) - 15;
+        } else {
+            margin_left = 0;
+            cont_width = 1024;
+        }
+
+
+        $("#listenSlide1").css("float", "right");
+        $("#listenSlide1").css("width", cont_width + "px");
+
+        $("#listenSlide2").css("float", "left");
+        $("#listenSlide2").css("width", cont_width + "px");
+
+    }
+
+</script>
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:350px;">
+
+
+    <div style=" float:left; width:1024px;">
+
+        <div class="Post_mainCont">
+            <article>
+                
+                <!-- @@Title -->
+
+                <!-- @@Content -->
+
+                <div style=" float:left; width:100%; margin-top:10px;">
+                    <!-- @@Author -->
+                </div>
+
+            </article>
+        </div>
+
+
+
+
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide2" class="slideLeft" style=" min-height:100px;">
+
+
+
+    <div style=" float:right; width:1024px;">
+        
+        <div style=" float:left; width:100%; margin-top:15px; ">
+
+            <div style="float:left; width:728px; height:90px; background-color:#858c90; border:3px solid #858c90; border-radius:2px;">
+                <div id="TopAdd1">
+                    @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+                </div>
+                <!-- 06_25 -->
+                
+            </div>
+
+
+            <div onclick="window.location='http://@System.Configuration.ConfigurationManager.AppSettings["videoHostName"]/page/1';" style=" float:left; width:265px; height:90px; margin-left:15px; background-color:#858c90; border:3px solid #858c90; border-radius:2px; line-height:90px; text-align:center; font-size:27px; cursor:pointer;">
+                Hypster Videos
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+</div>

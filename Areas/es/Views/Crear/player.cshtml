@@ -1,0 +1,93 @@
+﻿@model hypster.ViewModels.createPlayer_ViewModel
+@{
+    ViewBag.Title = "Crear gratis Listas de reproducción | Hypster - música en internet gratis - Reproductor de tumblr";
+    ViewBag.Desc = "Crear listas de reproducción gratuitas y escuchar música sin anuncios. Música for tumblr";
+
+    Layout = "~/Areas/es/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<script type="text/javascript">
+    active_menu = ".mCreate";
+    $(".mCreate").css("background-color", "#191919");
+
+    $(document).ready(function () {
+        RenderCreatePlayer();
+    });
+    $(window).resize(function () {
+        RenderCreatePlayer();
+    });
+</script>
+
+
+
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:400px;">
+
+
+            <div id="CreatePlayerSection1" onclick="window.location='/es/Crear/player';">
+                <img alt="" src="/imgs/create/create_player_icon_sm.png" /><br />
+                Crear Reproductor
+            </div>
+
+
+            <div id="CreatePlayerSection2" onclick="window.location='/es/Crear/playlist';" style=" font-size:27px;">
+                <img alt="" src="/imgs/create/create_playlist_icon_sm.png" /><br />
+                Crear lista de Reproducción
+            </div>
+
+
+            <div id="CreatePlayerSection3" onclick="window.location='/es/Crear/station';">
+                <img alt="" src="/imgs/create/create_station_icon_sm.png" /><br />
+                Crear Estación
+            </div>
+
+
+
+
+            <div id="CreateContHolder" style=" float:left; width:100%; background-color:#1d1d1c; margin-top:-1px; ">
+                @if (ViewBag.Action == "EDT")
+                {
+                    Html.RenderAction("getPlayer", "Reproductor", new { id = ViewBag.PlType });
+                }
+                else
+                {
+                    Html.RenderAction("getPlayer", "Reproductor", new { id = "" });
+                }
+
+                <div style=" float:left; width:100%;">
+                    <div onclick="window.location='/es/hypsterEs/Nuevo_Reproductor_Tumblr';" class="CreatePlayer_ReadMoreAP">
+                        Aprenda más sobre los nuevos reproductores
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide2" class="slideLeft" style=" min-height:420px;">
+        
+            @Html.Action("PopularVideos", "PopularEs")
+
+    </div>
+</div>

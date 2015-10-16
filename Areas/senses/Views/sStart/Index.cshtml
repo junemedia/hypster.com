@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "/Areas/senses/Views/Shared/_srLayout.cshtml";
+}
+
+
+
+<div style=" float:left; width:100%; min-height:450px; border:1px solid #318E8A;">
+    
+
+
+    <div title="Start" class="ctL1" onclick="window.location='/senses/sStart/tutorial';" style=" background:#D8D8D8 url('/Areas/senses/imgs/senses_back/back_2.jpg') no-repeat center; cursor:pointer;">
+        
+        <img alt="" src="/Areas/senses/imgs/senses_ct_icon.png" style=" float:left; margin:290px 0 0 270px;" />
+
+    </div>
+
+
+
+
+    <div class="ctR1">
+        
+        <div style=" float:left; width:100%; height:520px; margin:15px 0 0; background-color:Black; overflow:hidden;">
+
+                
+                <div style=" float:left; width:92%; margin:50px 0 0 30px; color:#FFFFFF; ">
+                    <br /> 
+                    <span style=" font-size:48px; font-weight:bold; ">Welcome to HYPSTER</span><br />
+                    Please press any KEY to continue
+
+                    <div onclick="window.location='/senses/sStart/tutorial';" style=" cursor:pointer;" >Hypster tutorial</div>
+            
+
+                    <div onclick="startHypster();" style=" float:left; width:470px; height:50px; line-height:50px; margin:15px 0 0 0; background-color:#000000; border:1px solid #318E8A; border-radius:6px; cursor:pointer; text-align:center;">
+                        Start
+                    </div>
+
+                </div>
+
+            
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+        cancelSpeech();
+        startSpeech('Welcome to hypster. To listen to the tutorial press 1. Please press any Key to continue.');
+
+    });
+</script>
+
+
+
+<script type="text/javascript">
+    function HandleKeyAction(e) {
+
+        cancelSpeech();
+
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        if (KEY_CODE == 49) {
+
+            $("#msgBox1").html("loading tutorial...");
+
+            window.location = '/senses/sStart/tutorial';
+            
+            return;
+        }
+
+
+        //CNTRL
+        if (KEY_CODE == 17) {
+            StartVoiceCommand("home");
+            return;
+        }
+
+
+
+        window.location = '/senses/sStart/home';
+    }
+
+
+
+
+    function startHypster() {
+        window.location = '/senses/sStart/home';
+    }
+
+
+
+
+
+    function ProccessVoiceCommand(comm) {
+
+        var isHandled = false;
+        isHandled = handle_generic_commands(comm);
+
+    }
+
+
+
+
+</script>
+

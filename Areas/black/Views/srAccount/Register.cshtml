@@ -1,0 +1,244 @@
+﻿@{
+    ViewBag.Title = "Register";
+    Layout = "/Areas/black/Views/Shared/_srLayout.cshtml";
+}
+
+
+<div class="cir_1">
+ 
+    <div style=" float:left; width:100%; margin:100px 0 0 90px; ">
+        <h3 style=" font-weight:normal;">Hypster Registration</h3>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="cir_2"> 
+    
+    <div id="msgBox1">
+
+        Username<br />
+        <input type="text" id="txtUserName" name="txtUserName" value="" style=" width:320px; height:25px; line-height:25px; font-size:18px; margin:0 0 13px 0; " />
+        <br />
+        
+
+        Password<br />
+        <input type="password" id="txtPassword" name="txtPassword" value="" style=" width:320px; height:25px; line-height:25px; font-size:18px; margin:0 0 13px 0; " />
+        <br />
+        
+
+        Name<br />
+        <input type="text" id="txtName" name="txtName" value="" style=" width:320px; height:25px; line-height:25px; font-size:18px; margin:0 0 13px 0; " />
+        <br />
+        
+
+        Email<br />
+        <input type="text" id="txtEmail" name="txtEmail" value="" style=" width:320px; height:25px; line-height:25px; font-size:18px; margin:0 0 13px 0; " />
+
+
+        <br />
+        <div>
+            <div onclick="registerUser();" style=" float:left; width:200px; height:30px; line-height:30px; margin:13px 0 0 0; background-color:#CC9933; border-radius:3px; cursor:pointer; text-align:center;">
+                Register
+            </div>
+
+            <span onclick="window.location='/black/srAccount/Login';" style=" float:left; width:100px; height:30px; line-height:30px; margin:13px 0 0 13px; border-radius:3px; cursor:pointer; text-align:center;">
+                Login
+            </span>
+        </div>
+
+    </div>
+
+    <div id="msgCh1" style=" margin:10px 0 0 0; color:#CC0000;"></div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#txtUserName").focus();
+
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+            var msg = new SpeechSynthesisUtterance('Hypster Registration. For login press SHIFT. Please enter your new user name and press ENTER');
+            window.speechSynthesis.speak(msg);
+        }
+    });
+</script>
+
+
+<script type="text/javascript">
+
+    var CURR_STEP = 1;
+
+    function HandleKeyAction(e) {
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+
+
+
+        //ESC
+        if (KEY_CODE == 27) {
+            //need to start again
+            window.location.reload();
+            return;
+        }
+
+
+
+        if (KEY_CODE == 13) {
+
+            if (is_speech_sound == 1) {
+                window.speechSynthesis.cancel();
+            }
+
+            if (CURR_STEP == 1) {
+                if (is_speech_sound == 1) {
+                    var msg_username = new SpeechSynthesisUtterance('Your username is ' + $("#txtUserName").val());
+                    window.speechSynthesis.speak(msg_username);
+                }
+
+                $("#txtPassword").focus();
+
+                if (is_speech_sound == 1) {
+                    var msg = new SpeechSynthesisUtterance('Please enter your password and press ENTER');
+                    window.speechSynthesis.speak(msg);
+                }
+
+                CURR_STEP = 2;
+                return;
+            }
+
+
+            if (CURR_STEP == 2) {
+
+                if (is_speech_sound == 1) {
+                    var msg = new SpeechSynthesisUtterance('Please Enter your name.');
+                    window.speechSynthesis.speak(msg);
+                }
+
+                $("#txtName").focus();
+
+                CURR_STEP = 3;
+
+
+                return;
+            }
+
+
+            if (CURR_STEP == 3) {
+
+                if (is_speech_sound == 1) {
+                    var msg = new SpeechSynthesisUtterance('Your name is ' + $("#txtName").val() + '. Please Enter your email.');
+                    window.speechSynthesis.speak(msg);
+                }
+
+                $("#txtEmail").focus();
+
+                CURR_STEP = 4;
+
+
+                return;
+            }
+
+
+
+            if (CURR_STEP == 4) {
+
+                registerUser();
+
+                return;
+            }
+
+
+
+
+            return;
+        }
+
+
+        if (KEY_CODE == 16) {
+            window.location = '/black/srAccount/Login';
+        }
+
+
+    }
+
+
+    function registerUser() {
+
+        $("#msgCh1").html("Registering new account");
+
+        if (is_speech_sound == 1) {
+            var msg = new SpeechSynthesisUtterance('Your email is ' + $("#txtEmail").val() + '. Please wait a moment while I register your account.');
+            window.speechSynthesis.speak(msg);
+        }
+
+
+        setTimeout(function () {
+            $.ajax({
+                type: "POST",
+                url: "/black/srAccount/RegisterUser?username=" + encodeURI($("#txtUserName").val()) + "&password=" + encodeURI($("#txtPassword").val()) + "&name=" + encodeURI($("#txtName").val()) + "&email=" + encodeURI($("#txtEmail").val()),
+                async: true,
+                success: function (data) {
+
+                    $("#msgCh1").html(data);
+
+                    if (is_speech_sound == 1) {
+                        var ret_msg = new SpeechSynthesisUtterance(data);
+                        window.speechSynthesis.speak(ret_msg);
+                    }
+
+                    if (data == "This username is occupied by someone else.") {
+                        $("#txtUserName").val("");
+                        $("#txtUserName").focus();
+                        CURR_STEP = 1;
+                        if (is_speech_sound == 1) {
+                            var msg_1 = new SpeechSynthesisUtterance("Please enter your new user name and press ENTER.");
+                            window.speechSynthesis.speak(msg_1);
+                        }
+                    }
+
+                    if (data == "User with following email already registered.") {
+                        $("#txtEmail").val("");
+                        $("#txtEmail").focus();
+                        CURR_STEP = 4;
+                        if (is_speech_sound == 1) {
+                            var msg_2 = new SpeechSynthesisUtterance("Please Enter your email and press ENTER.");
+                            window.speechSynthesis.speak(msg_2);
+                        }
+                    }
+
+                    if (data == "Thanks you for registering.") {
+                        window.location = '/black/srHome';
+                    }
+
+                }
+            });
+        }, 4000);
+        
+    }
+
+
+</script>

@@ -1,0 +1,123 @@
+﻿@model hypster_news.ViewModels.celebsIndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        RenderSong();
+    });
+    $(window).resize(function () {
+        RenderSong();
+    });
+
+
+
+    function RenderSong() {
+        var margin_left = 0;
+        var cont_width = 1024;
+
+        if ($(window).width() > 1024) {
+            margin_left = $(window).width() - 1024 - 44;
+            cont_width = 1024 + 30 + (margin_left / 2) - 15;
+        } else {
+            margin_left = 0;
+            cont_width = 1024;
+        }
+
+
+        //===================================================================
+        $("#listenSlide1").css("float", "right");
+        $("#listenSlide1").css("width", cont_width + "px");
+        //===================================================================
+
+
+        //===================================================================
+        $("#listenSlide2").css("float", "left");
+        $("#listenSlide2").css("width", cont_width + "px");
+        //===================================================================
+
+    }
+
+</script>
+
+
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:350px;">
+
+
+    <div style=" float:left; width:1024px;">
+
+
+           <a href="@Model.featured_seleb.celeb_url" target="_blank" style=" display:block; float:left; width:710px; background-color:#757575; border-radius:2px; vertical-align:middle;">
+                <img alt="" src="/imgs/i_celebs/@Model.featured_seleb.celeb_image" />
+           </a>
+
+
+           <div style=" float:left; width:300px; margin:0 0 0 10px;">
+               
+               
+               <div id="SideAds923874w" style=" float:left; width:300px; height:250px; background-color:#757575;"></div>
+               <script type="text/javascript">
+                    $(document).ready(function () {
+                        document.getElementById("SideAds923874w").innerHTML = "<iframe allowTransparency=\"true\" width=\"300\" scrolling=\"no\" height=\"250\" frameborder=\"0\" style=\"border:none;\" marginwidth=\"0\" src=\"http://feed-rt.baronsoffers.com/offer/feed/q/aT0zNTQ4LHM9MzAweDI1MCxuPWlmcmFtZQ==?subid=default\"></iframe>";
+                    });
+               </script>
+
+
+               <a href="/" style=" display:block; float:left; width:300px; height:100px; line-height:90px; background:#757575; font-size:28px; margin:10px 0 0 0; cursor:pointer; text-align:center;">
+                    Hypster News
+               </a>
+
+           </div>
+        
+
+
+
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide2" class="slideLeft" style=" min-height:250px;">
+
+
+
+        <div style=" float:right; width:1024px;">
+        
+            @foreach (var item in Model.posts_list)
+            {
+                <a href="@item.celeb_url" target="_blank">
+                    <img alt="@item.celeb_name" src="/imgs/i_celebs/thumb_@item.celeb_image" style=" cursor:pointer; width:242px; float:left; border:2px solid #59666c; border-radius:2px; margin:0 10px 10px 0; " />
+                </a>
+            }
+    
+        </div>
+
+
+
+</div>
+</div>

@@ -1,0 +1,179 @@
+﻿@model List<hypster_tv_DAL.homeSlideshow>
+@{
+    Layout = null;
+}
+
+
+
+<script type="text/javascript" src="/scripts/js/jssor.core.js"></script>
+<script type="text/javascript" src="/scripts/js/jssor.utils.js"></script>
+<script type="text/javascript" src="/scripts/js/jssor.slider.min.js"></script>
+<script>
+
+    jQuery(document).ready(function ($) {
+
+        var _CaptionTransitions = [
+        //CLIP|LR
+        {$Duration: 900, $Clip: 3, $Easing: $JssorEasing$.$EaseInOutCubic },
+        //CLIP|TB
+        {$Duration: 900, $Clip: 12, $Easing: $JssorEasing$.$EaseInOutCubic },
+
+        //ZMF|10
+        {$Duration: 600, $Zoom: 11, $Easing: { $Zoom: $JssorEasing$.$EaseInExpo, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 },
+
+        //ZML|R
+        {$Duration: 600, $Zoom: 11, $FlyDirection: 2, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic }, $ScaleHorizontal: 0.6, $Opacity: 2 },
+        //ZML|B
+        {$Duration: 600, $Zoom: 11, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic }, $ScaleVertical: 0.6, $Opacity: 2 },
+
+        //ZMS|B
+        {$Duration: 700, $Zoom: 1, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic }, $ScaleVertical: 0.6, $Opacity: 2 },
+
+        //RTT|10
+        {$Duration: 700, $Zoom: 11, $Rotate: 1, $Easing: { $Zoom: $JssorEasing$.$EaseInExpo, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInExpo }, $Opacity: 2, $Round: { $Rotate: 0.8} },
+
+        //RTTL|R
+        {$Duration: 700, $Zoom: 11, $Rotate: 1, $FlyDirection: 2, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInCubic }, $ScaleHorizontal: 0.6, $Opacity: 2, $Round: { $Rotate: 0.8} },
+        //RTTL|B
+        {$Duration: 700, $Zoom: 11, $Rotate: 1, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInCubic }, $ScaleVertical: 0.6, $Opacity: 2, $Round: { $Rotate: 0.8} },
+
+        //RTTS|R
+        {$Duration: 700, $Zoom: 1, $Rotate: 1, $FlyDirection: 2, $Easing: { $Left: $JssorEasing$.$EaseInQuad, $Zoom: $JssorEasing$.$EaseInQuad, $Rotate: $JssorEasing$.$EaseInQuad, $Opacity: $JssorEasing$.$EaseOutQuad }, $ScaleHorizontal: 0.6, $Opacity: 2, $Round: { $Rotate: 1.2} },
+        //RTTS|B
+        {$Duration: 700, $Zoom: 1, $Rotate: 1, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInQuad, $Zoom: $JssorEasing$.$EaseInQuad, $Rotate: $JssorEasing$.$EaseInQuad, $Opacity: $JssorEasing$.$EaseOutQuad }, $ScaleVertical: 0.6, $Opacity: 2, $Round: { $Rotate: 1.2} },
+
+        //R|IB
+        {$Duration: 900, $FlyDirection: 2, $Easing: { $Left: $JssorEasing$.$EaseInOutBack }, $ScaleHorizontal: 0.6, $Opacity: 2 },
+        //B|IB
+        {$Duration: 900, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInOutBack }, $ScaleVertical: 0.6, $Opacity: 2 },
+
+        ];
+
+        var options = {
+            $AutoPlay: true,
+            $AutoPlaySteps: 1,
+            $AutoPlayInterval: 3000,
+            $PauseOnHover: 1,
+
+            $ArrowKeyNavigation: true,
+            $SlideDuration: 500,
+            $MinDragOffsetToSlide: 20,
+            $SlideWidth: 706,
+            $SlideHeight: 360,
+            $SlideSpacing: 0,
+            $DisplayPieces: 1,
+            $ParkingPosition: 0,
+            $UISearchMode: 1,
+            $PlayOrientation: 1,
+            $DragOrientation: 3,
+
+            $CaptionSliderOptions: {
+                $Class: $JssorCaptionSlider$,
+                $CaptionTransitions: _CaptionTransitions,
+                $PlayInMode: 1,
+                $PlayOutMode: 3
+            },
+
+            $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$,
+                $ChanceToShow: 2,
+                $AutoCenter: 0,
+                $Steps: 1,
+                $Lanes: 1,
+                $SpacingX: 10,
+                $SpacingY: 10,
+                $Orientation: 1
+            },
+
+            $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$,
+                $ChanceToShow: 1,
+                $Steps: 1
+            }
+        };
+        var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+        function ScaleSlider() {
+            var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+            if (parentWidth)
+                jssor_slider1.$SetScaleWidth(Math.min(parentWidth, 706));
+            else
+                window.setTimeout(ScaleSlider, 30);
+        }
+
+        ScaleSlider();
+
+        if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+            $(window).bind('resize', ScaleSlider);
+        }
+
+
+    });
+</script>
+
+
+
+
+
+
+<div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 706px; height: 360px; overflow: hidden; ">
+
+    <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+        <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block; background-color: #000000; top: 0px; left: 0px; width:100%; height:100%;"></div>
+        <div style="position: absolute; display: block; background: url(../img/loading.gif) no-repeat center center; top: 0px; left: 0px;width: 100%;height:100%;"></div>
+    </div>
+
+    
+    <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 706px; height: 360px; overflow: hidden;">
+            
+        @foreach (var item in Model)
+        {
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/@item.ImageSrc" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('@item.href.Replace("'","[]")')" onmousemove="sdl_show_move()" />
+            </div>
+        }
+            
+    </div>
+        
+  
+    <div u="navigator" class="jssorb01" style="position: absolute; bottom: 16px; right: 10px;">
+        <div u="prototype" style="POSITION: absolute; WIDTH: 12px; HEIGHT: 12px;"></div>
+    </div>
+  
+    
+    <span u="arrowleft" class="jssora02l" style="width: 55px; height: 55px; top: 153px; left: 8px;"></span>
+    <span u="arrowright" class="jssora02r" style="width: 55px; height: 55px; top: 153px; right: 8px"></span>
+ 
+</div>
+    
+
+
+
+
+<script type="text/javascript">
+
+    var click_allowed = true;
+    var click_down = false;
+
+    function sdl_show_down() {
+        click_down = true;
+    }
+
+    function sdl_show_up(href) {
+
+        if (click_allowed == true) {
+            eval(href.replaceAll("[]", "'"));
+        }
+
+        click_allowed = true;
+        click_down = false;
+    }
+
+    function sdl_show_move() {
+        if (click_down == true) {
+            click_allowed = false;
+        }
+    }
+
+</script>
+

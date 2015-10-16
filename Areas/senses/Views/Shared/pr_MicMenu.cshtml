@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+@if (Request.UserAgent.IndexOf("Windows") > 0)
+{
+    <div id="micContentHolder" style=" position:absolute; top:0px; left:100px; background-color:#f5f3f3;  width:50px; height:50px; border-radius:75px; padding:20px;">
+        
+        <object data="data:application/x-silverlight-2," type="application/x-silverlight-2" width="50" height="50">
+		    <param name="source" value="/Areas/senses/scripts/voice_plugin/AudioRecorder.xap"/>
+		    <param name="onError" value="onSilverlightError" />
+		    <param name="background" value="white" />
+		    <param name="minRuntimeVersion" value="4.0.50826.0" />
+		    <param name="autoUpgrade" value="true" />
+            <param name="onLoad" value="pluginLoaded" />
+            @if (User.Identity.IsAuthenticated)
+            {<text><param name="initParams" value="CurrUser=@User.Identity.Name" /></text>}
+            else
+            {<text><param name="initParams" value="CurrUser=" /></text>}
+          
+
+		    <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=4.0.50826.0" style=" text-decoration:none; font-size:14px; text-align:center; ">Get Microsoft Silverlight</a>
+	    </object><iframe id="_sl_historyFrame" style="visibility:hidden;height:0px;width:0px;border:0px"></iframe>
+
+    </div>
+        
+        
+        
+        
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#micContentHolder").css('left', ($(window).width() - 185) + 'px');
+            $("#micContentHolder").css('top', '0px');
+
+            if (navigator.userAgent.indexOf('Chrome') != -1 && parseFloat(navigator.userAgent.substring(navigator.userAgent.indexOf('Chrome') + 7).split(' ')[0]) >= 15) {//Chrome
+                $("#micContentHolder").css('display', 'none');
+                return;
+            } else {
+                var check_mic_cookie = getCookie("speech_mic");
+                if (check_mic_cookie == "") {
+
+                    $("#micContentHolder").append("<div id='micActiveMsg' style='width:300px; height:23px; line-height:23px; overflow:hidden; font-size:16px; background-color:#f5f3f3; margin:-70px 0 0 -310px; padding:0 0 0 5px;'>Click on the mic to initiate voice commands</div>");
+                }
+            }
+        });
+
+        function CheckMicPermissions() {
+            $.ajax({
+                type: "POST",
+                url: "/senses/sAccount/SetSpeechMic/" + "1" + "?rid=" + Math.random(),
+                async: true,
+                success: function (data) {
+                    $('#micActiveMsg').css('display', 'none');
+                }
+            });
+        }
+    </script>
+}

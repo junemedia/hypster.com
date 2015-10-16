@@ -1,0 +1,250 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "/Areas/senses/Views/Shared/_srLayout.cshtml";
+}
+
+
+
+
+
+
+<div class="homeBlkBoxBorder1">
+    
+
+
+    <div class="ctL1">
+        
+        <div class="homeBlkBox1">
+
+                
+                <div id="msgBox1_home" style=" float:none; width:400px; margin:auto; ">
+        
+                    <div style=" margin:15px 0 7px 0; color:#FFFFFF;">CHOOSE A MENUE OPTION FROM BELOW</div>
+        
+                    <div class="mnuItm" id="menu_1" onclick="LoadContent(49);">ACCESS YOUR PLAYLISTS</div>
+                    <div class="mnuItm" id="menu_2" onclick="LoadContent(50);">SEARCH MUSIC</div>
+                    <div class="mnuItm" id="menu_3" onclick="LoadContent(51);">LISTEN TO CHARTS</div>
+                    <div class="mnuItm" id="menu_4" onclick="LoadContent(52);">LISTEN TO RADIO</div>
+                    <div class="mnuItm" id="menu_5" onclick="LoadContent(53);">ACCESS MY ACCOUNT</div>
+
+                </div>
+
+            
+        </div>
+
+    </div>
+
+
+
+    <div class="ctR1" style=" background:#FFFFFF url('/Areas/senses/imgs/senses_back/back_3.jpg') no-repeat center;">
+        
+        <img alt="" src="/Areas/senses/imgs/senses_ct_icon.png" style=" float:left; margin:50px 0 0 8px;" />
+
+    </div>
+
+    
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    
+    var msg1 = 'Access your playlists';
+    var msg2 = 'Search music';
+    var msg3 = 'Listen to charts';
+    var msg4 = 'Listen to radio';
+    var msg5 = 'My account';
+
+
+    $(document).ready(function () {
+
+        cancelSpeech();
+        startSpeech('Home.');
+
+    });
+
+    
+
+</script>
+
+    
+
+<script type="text/javascript">
+
+    var CURR_ACTIVE_MENU = 0;
+    var MENU_COUNT = 5;
+
+    function HandleKeyAction(e) {
+
+        cancelSpeech();
+
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+
+        if (KEY_CODE == 27) {
+            window.location = "/senses/sStart/home";
+        }
+
+
+
+        //enter
+        if (KEY_CODE == 13) {
+
+            switch (CURR_ACTIVE_MENU) {
+                case 1:
+                    KEY_CODE = 49;
+                    break;
+                case 2:
+                    KEY_CODE = 50;
+                    break;
+                case 3:
+                    KEY_CODE = 51;
+                    break;
+                case 4:
+                    KEY_CODE = 52;
+                    break;
+                case 5:
+                    KEY_CODE = 53;
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+
+
+        //down
+        if (KEY_CODE == 40) {
+            //move menu down
+
+            CURR_ACTIVE_MENU += 1;
+            if (CURR_ACTIVE_MENU > MENU_COUNT) {
+                CURR_ACTIVE_MENU = MENU_COUNT;
+            }
+
+            startSpeech(eval("msg" + CURR_ACTIVE_MENU));
+
+
+            $(".mnuItm").css("background-color", "#000000");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#318E8A");
+        }
+
+        //up
+        if (KEY_CODE == 38) {
+            //move menu up
+
+            CURR_ACTIVE_MENU -= 1;
+            if (CURR_ACTIVE_MENU <= 0) {
+                CURR_ACTIVE_MENU = 1;
+            }
+
+            startSpeech(eval("msg" + CURR_ACTIVE_MENU));
+
+
+            $(".mnuItm").css("background-color", "#000000");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#318E8A");
+        }
+
+
+
+
+
+
+        LoadContent(KEY_CODE);
+
+
+
+
+
+        //CNTRL
+        if (KEY_CODE == 17) {
+            StartVoiceCommand("home");
+        }
+
+
+       
+
+    }
+
+
+
+
+    function LoadContent(KEY_CODE) {
+
+        //1
+        if (KEY_CODE == 49) {
+            $("#msgBox1").html("loading your playlists.....");
+
+            window.location = "/senses/sPlaylists/myPlaylists";
+
+        }
+
+
+        //2
+        if (KEY_CODE == 50) {
+            $("#msgBox1").html("loading search.....");
+
+            window.location = "/senses/sSearch/index";
+
+        }
+
+
+        //3
+        if (KEY_CODE == 51) {
+            $("#msgBox1").html("loading charts.....");
+
+            window.location = "/senses/sCharts/index";
+
+        }
+
+
+        //4
+        if (KEY_CODE == 52) {
+            $("#msgBox1").html("loading radio.....");
+
+            window.location = "/senses/sRadio/index";
+
+        }
+
+
+        //5
+        if (KEY_CODE == 53) {
+            $("#msgBox1").html("loading account info.....");
+
+            window.location = "/senses/sAccount/ManageAccount";
+        }
+
+    }
+
+
+
+
+
+
+    function ProccessVoiceCommand(comm) {
+        var isHandled = false;
+        isHandled = handle_generic_commands(comm);
+    }
+
+
+</script>

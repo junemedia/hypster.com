@@ -1,0 +1,157 @@
+﻿@{
+    ViewBag.Title = "Hypster";
+    ViewBag.Desc = "";
+    Layout = "~/Areas/m/Views/Shared/_Layout_Mobile.cshtml";
+}
+
+@Scripts.Render("~/scripts/jquery.cycle.all.latest.js")
+
+
+
+<script type="text/javascript">
+    active_menu = ".mHypster";
+    $(".mHypster").css("background-color", "#191919");
+    $("#HypsterSub").css("display", "block");
+
+    var sk_t;
+    $(document).ready(function () { RenderPage(); RenderHome(); setTimeout('StartSlideshow()', 2000); });
+    $(window).resize(function () { RenderPage(); ReRenderHome(); });
+
+
+    var back_pos = 0;
+    var back_pos_y = 0;
+    function StartBackground() {
+
+        $("body").css("background-position", back_pos + "px " + back_pos_y + "px");
+        back_pos = back_pos - 1;
+        back_pos_y = back_pos_y - 0.35;
+
+        if (back_pos == -800) {
+            clearInterval(sk_t);
+        }
+    }
+</script>
+
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:415px; ">
+            
+
+            <div class="sld1_topCont">
+        
+                    <div class="topLeft">
+                        <div class="mainSlideshow">
+                            @Html.Action("Get_Home_Slideshow", "mhome")
+                        </div>
+                    </div>
+
+            </div>
+
+            
+            <div id="listenSlide1_textBoxes" class="sld1_middleCont">
+                    
+                    <div class="middleC1">
+                        <div class="head11">Free music playlist</div>
+                        <div class="cont21">Listen to millions of songs available to you for free. Uncover a great range of songs from our vast library of free music online.</div>
+                    </div>
+
+
+                    <div class="middleC2">
+                        <H1 class="head11" style=" margin:0px;">Tumblr Music Player</H1>
+                        <div class="cont21">Find out more details about music player on your blog. How to embed, why songs not working etc...</div>
+                    </div>
+                    
+
+                    <!--div class="middleC3">
+                        <div class="head11">Listen with no limitations</div>
+                        <div class="cont21">Listen to music with no limitations and no commercials, skip an unlimited amount of songs and create as many playlists as you want.</div>
+                        <a class="btn222" href="/account/Register">Sign Up</a>
+                    </div-->
+            </div>
+
+
+
+
+
+
+            <div class="sld1_bottomCont">
+                <div class="sld1_bottomContInnr">
+                    
+                        <input type="text" id="txtSearchString" name="txtSearchString" onKeyUp="SearchString_KeyUp(event)" value=" Enter Artist, Song or Genre"  onfocus="if(this.value == ' Enter Artist, Song or Genre') this.value = '';" onblur="if(this.value == '') this.value = ' Enter Artist, Song or Genre';" />
+                        <div id="btnSearch" onclick="StartMusicSearch()"></div>
+                       
+                </div>
+            </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide2" class="slideLeft" style=" min-height:420px;">
+            @Html.Action("PopularRadioStations", "mpopular")
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="boxContRight">
+    <div id="listenSlide3" class="slideRight" style=" min-height:620px;">
+        
+
+            <div class="popularHomeContHolder">
+                <div class="popularHomeInner">
+                        <div class="headerCont"><a href="/m/mfeatured">Popular on Hypster</a></div>
+                        @Html.Action("Get_MostPopularSong_Random", "mhome")
+                </div>
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide4" class="slideLeft" style=" min-height:450px;">
+            
+            
+            @if (User.Identity.IsAuthenticated == false)
+            {
+                @Html.Action("pr_HomExpCont", "mhome")
+            }
+            else
+            {
+                @Html.Action("pr_HomPopularCont", "mhome")
+            }
+            
+    </div>
+</div>
+
+
+
+
+
+
+
+<div id="DynamicContentHoler" style=" float:left; width:100%;"></div>

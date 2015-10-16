@@ -1,0 +1,107 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+
+<center>
+        <div class="BottomPane">
+            
+
+            <div class="BtmLeftCH1">
+
+                <div class="BLLogCH1"><div>HYPSTER</div></div>
+
+                <div style=" float:left; width:100%; height:22px;">
+                        <div id="hyp_sosialHolder1" onmouseover="this.style.display = 'none'; $('#hyp_SNR_BtnHolder_1').css('display','block');">
+                            <div class="hyp_SI_Cont_google"></div>
+                            <div class="hyp_SI_Cont_twitter"></div>
+                            <div class="hyp_SI_Cont_facebook"></div>
+                        </div>
+
+                        <div id="hyp_SNR_BtnHolder_1" style=" float:left; width:100%; display:none;">
+                                <div class="hyp_SI_Cont_facebook1">
+                                    <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2F@(System.Configuration.ConfigurationManager.AppSettings["newsHostName"])&amp;send=false&amp;layout=button_count&amp;width=90&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
+                                </div>
+
+                                <div class="hyp_SI_Cont_twitter1">
+                                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]" data-text="Hypster">Tweet</a>
+                                    <script>                                                !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");</script>
+                                </div>
+
+                                <div class="hyp_SI_Cont_google1">
+                                    <div class="g-plusone" data-size="medium" data-href="http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]"></div>
+                                    <script type="text/javascript">                                                (function () { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = 'https://apis.google.com/js/plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();</script>
+                                </div>
+                        </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div class="BottomPaneInnr">
+
+                <div class="MenuItmCont">
+                    <a href="/hypster/New_Player_For_Tumblr">New Tumblr Player</a>
+                    <a href="/resources/manuals">How To Use</a>
+                    <a href="/listen/similar">Find Similar Playlists</a>
+                    <a href="/hypster/changes_on_hypster">Track Hypster's Changes</a>
+                </div>
+
+
+                <div class="MenuItmCont">
+                    <a href="/" >Hypster</a>
+                    <a href="/listen" >Listen</a>
+                    <a href="/create" >Create</a>
+                    <a href="/connect" >Connect</a>
+                </div>
+
+                <div class="MenuItmCont">
+                    <a href="/featured">Featured Playlists</a>
+                    <a href="/listen/radio" >Radio</a>
+                    <a href="/breaking" >#BREAKING</a>
+                    <a href="http://senses.hypster.com" >Hypster Senses</a>
+                </div>
+                        
+                <div class="MenuItmCont">
+                    <a href="/hypster/Contact_Us" >Contact Us</a>
+                    <a href="/hypster/About_Us" >About Us</a>
+                    <a href="/hypster/Privacy_Policy" >Privacy Policy</a>
+                    <a href="/hypster/Terms_of_Service" >Terms of Service</a>
+                </div>
+
+
+                    
+                <div style=" float:right; width:100%;">
+                    <div class="FeaturedAdContBottom">
+                            <div id="TopAdd_Bottom_2938eu93">
+                                @if (Request.Cookies["AD_TMRC"] == null)
+                                {
+                                    <iframe src="http://hypster.com/i_pl_btf_728x90.html" width="728" height="90" scrolling="no" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+                                }
+                                else
+                                {
+                                    <iframe src="http://hypster.com/@Request.Cookies["AD_TMRC"].Value/i_pl_btf_728x90.html" width="728" height="90" scrolling="no" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+                                }
+                            </div>
+                            <!-- 06_25 -->
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="sconf1">@System.Configuration.ConfigurationManager.AppSettings["server_ID"]</div>
+        </div>
+
+</center>
+
+
+
+@Html.Partial("~/Views/Shared/pr_TrackingPixel.cshtml")

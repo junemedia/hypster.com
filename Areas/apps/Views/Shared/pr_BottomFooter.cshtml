@@ -1,0 +1,70 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+
+<center>
+<div class="BottomPane">
+            
+
+        <div class="BtmLeftCH1">
+
+            <div class="BLLogCH1" onclick="window.location='/apps/appHome'"><div>HYPSTER</div></div>
+
+            @if(Request.Cookies["hypAPPind"] == null)
+            {
+            <div class="BSocCh1">
+                <div>
+                    <a class="flwUs_yw_fbk" href="https://www.facebook.com/Hypster" target="_blank"></a>
+                    <a class="flwUs_yw_twr" href="https://twitter.com/Hypsterdotcom" target="_blank"></a>
+                    <a class="flwUs_yw_tum" href="http://hypsterblog.tumblr.com/" target="_blank"></a>
+                </div>
+            </div>
+            }
+           
+        </div>
+
+
+
+        <div class="BottomPaneInnr">
+
+           
+            <div class="MenuItmCont">
+                <a href="/apps/appListen" >LISTEN</a>
+                <a href="/apps/appCreate" >CREATE</a>
+                <a href="/apps/appBreaking" >#BREAKING</a>
+                <a href="/apps/appArtists" >ARTISTS</a>
+            </div>
+            
+            <div class="MenuItmCont">
+                <a href="/apps/appHypster/Contact_Us" >CONTACT US</a>
+                <a href="/apps/appHypster/About_Us" >ABOUT US</a>
+                <a href="/apps/appHypster/Privacy_Policy" >PRIVACY POLICY</a>
+                <a href="/apps/appHypster/Terms_of_Service" >TERMS OF SERVICE</a>
+                <a href="/apps/appHypster/what_is_hipster_vs_hypster" >HIPSTER VS. HYPSTER</a>
+            </div>
+
+        </div>
+
+
+
+</div>
+</center>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".MenuItmCont a").bind("mouseover", function () { $(this).css("color", "#000000"); });
+        $(".MenuItmCont a").bind("mouseout", function () { $(this).css("color", "#FFFFFF"); });
+    });
+</script>
+

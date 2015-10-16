@@ -1,0 +1,213 @@
+﻿@{
+    ViewBag.Title = "Search";
+
+    Layout = "/Areas/senses/Views/Shared/_srLayout.cshtml";
+
+}
+
+
+
+
+
+<div class="cir_back_btn"> 
+    <div onclick="clickBack()" style=" float:left; width:100%; margin:0px 0 0 0px; cursor:pointer; ">
+        BACK
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="searchBlkBox1">
+    
+
+    <div id="msgBox1_search" style=" float:none; width:470px; margin:auto;">
+        
+
+        <div style=" float:left; margin:80px 0 0 0; color:#FFFFFF; font-size:15px;">
+            TYPE YOUR SEARCH TERM<br />
+            
+            <input type="text" id="searchBar1" name="searchBar1" value="" />
+
+            <div id="searchBtn1" onclick="startSearch();">Search</div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<div style=" float:left; width:100%; height:360px; border:1px solid #318E8A; background:url('/Areas/senses/imgs/senses_back/back_1.jpg') no-repeat center top;">
+    
+    <img alt="" src="/Areas/senses/imgs/senses_ct_icon.png" style=" float:left; margin:130px 0 0 175px;" />
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        cancelSpeech();
+        startSpeech('Type your search term.');
+
+    });
+</script>
+
+
+<script type="text/javascript">
+
+    var curr_interval = null;
+
+    function HandleKeyAction(e) {
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+        //alert($("#searchBar1").val());
+
+
+        //ESC
+        if (KEY_CODE == 27) {
+            clickBack();
+            return;
+        }
+
+
+
+        if (KEY_CODE == 13) {
+            startSearch();
+            return;
+        }
+
+
+        if (KEY_CODE == 17) {
+            StartVoiceCommand("search");
+            return;
+        }
+
+
+
+        // if no key pressed then say search phrase
+        //
+        //------------------------------------------------------------------------------
+
+        cancelSpeech();
+        clearTimeout(curr_interval);
+
+
+        curr_interval = setTimeout(function () {
+            
+            startSpeech($("#searchBar1").val());
+            
+        }, 500);
+
+        //------------------------------------------------------------------------------
+
+    }
+
+
+    function clickBack() {
+
+        cancelSpeech();
+
+        
+        //window.history.back();
+        window.location = "/senses/sStart/home";
+
+
+    }
+
+
+    function startSearch() {
+
+        if ($("#searchBar1").val() != "") {
+            //!!!
+            clearTimeout(curr_interval);
+
+            cancelSpeech();
+            startSpeech("Searching for " + $("#searchBar1").val());
+
+
+            setTimeout(function () {
+
+                window.location = "/senses/sListen/artist/" + encodeURI($("#searchBar1").val()) + "?ba=" + encodeURI("/senses/sSearch/index");
+
+            }, (1500 + ($("#searchBar1").val().length * 100)));
+        }
+        else {
+            startSpeech("Search term is empty");
+        }
+
+    }
+
+
+
+
+
+    function ProccessVoiceCommand(comm) {
+
+        var isHandled = false;
+        isHandled = handle_generic_commands(comm);
+
+
+        $("#searchBar1").val(comm);
+
+        if ($("#searchBar1").val() != "") {
+
+            clearTimeout(curr_interval);
+
+            cancelSpeech();
+            startSpeech("Searching for " + $("#searchBar1").val());
+
+
+            setTimeout(function () {
+
+                if ($("#searchBar1").val() != "") {
+                    window.location = "/senses/sListen/artist/" + encodeURI($("#searchBar1").val()) + "?ba=" + encodeURI("/senses/sSearch/index");
+                }
+
+            }, (2500 + ($("#searchBar1").val().length * 100)));
+
+        }
+        else {
+            startSpeech("Search term is empty");
+        }
+
+    }
+
+
+    $(document).ready(function () {
+        $("#searchBar1").focus();
+    });
+</script>

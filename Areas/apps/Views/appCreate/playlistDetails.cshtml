@@ -1,0 +1,94 @@
+﻿@model hypster.ViewModels.createPlaylist_ViewModel
+@{
+    Layout = null;
+}
+
+
+<div class="AddNewSong_Container" onclick="window.location='/apps/appListen';">&nbsp;+ Add New Song</div>
+<div class="AddNewTag_Container" onclick="add_new_tag_nav();">&nbsp;+ Add New Tag</div>
+
+
+<div id="sortablePlaylist">
+@{ int i_counter = 1;}
+@foreach (var item in Model.userActivePlaylist_Songs_list)
+{
+    <div class="srt_itm" id="song_@item.playlist_track_id">
+                    
+        <div class="SongTitle" onmouseup="isMOUSE_UP_ON = true;" onmousedown="mouse_down($('#song_@item.playlist_track_id'));" onmouseout="mouse_up($('#song_@item.playlist_track_id'), '@item.playlist_track_id', @ViewBag.ActivePlaylistID );" >
+            <img class="SongImg" alt="" src="http://i.ytimg.com/vi/@item.YoutubeId/0.jpg" />
+            @item.Title
+        </div>
+                                    
+        <div class="SongItm_Edt" title="Play Song" onclick="OpenPlayerM('/apps/appPlaylists/song/@item.YoutubeId?@HttpUtility.UrlEncode(item.FullTitle)')"></div>
+        <div class="SongItm_Del" title="Delete Song" onclick="Pl_DelSong(@item.playlist_track_id, @ViewBag.ActivePlaylistID);"></div>
+    </div>
+    
+    i_counter = i_counter + 1;
+
+    if (i_counter > 500)
+    {
+        <div id="LoMPlstBtn" class="srt_itm" onclick="load_more_songs_plst_details();">
+            <div style=" float:left; width:100%; line-height:50px; font-size:21px; text-align:center; color:#fcf088;">
+                Load more songs for this playlist
+            </div>
+        </div>
+        break;
+    }
+}
+</div>
+
+
+
+
+
+
+
+
+@if (Model.userActivePlaylist_Songs_list.Count == 0)
+{
+    <div class="EmptyPlCont">
+        <div>Playlist is empty</div>
+    </div>
+}
+<div class="AddNewSong_Container" onclick="window.location='/apps/appListen';">&nbsp;+ Add New Song</div>
+<div class="AddNewTag_Container" onclick="$('#AddNewTag_InnrContainer').css('display','block');">&nbsp;+ Add New Tag</div>
+
+
+<script type="text/javascript">
+    function add_new_tag_nav() {
+        $('#AddNewTag_InnrContainer').css('display', 'block');
+        var vrval = $('#AddNewTag_InnrContainer').position().top - $(window).height() / 2 - 50;
+        $('html').scrollTop(vrval);
+        $('body').scrollTop(vrval);
+    }
+
+
+
+    function load_more_songs_plst_details() {
+        $.ajax({
+            type: "POST",
+            url: "/apps/appCreate/playlistDetailsAD?playlist_id=@ViewBag.ActivePlaylistID",
+            async: true,
+            success: function (data) {
+                $('#LoMPlstBtn').css('display','none');
+                $('#sortablePlaylist').append(data);
+            }
+        });
+    }
+</script>
+
+
+
+
+<style>    
+    #sortablePlaylist { list-style-type:none; margin: 0; padding: 0; float:left; width:100%; margin-bottom:8px; }    
+    #sortablePlaylist .srt_itm { float:left; float:left; width:585px; height:57px; border-bottom:1px solid #232323; background-color:#232323; cursor:pointer; overflow:hidden; margin-top:4px; }
+</style>
+<script type="text/javascript">
+    $(function () { $("#sortablePlaylist").sortable(); $("#sortablePlaylist").disableSelection(); });
+
+    $(document).ready(function () {
+        $('.srt_itm').mouseover(function () { $(this).css("background-color", "#292929"); });
+        $('.srt_itm').mouseout(function () { $(this).css("background-color", "#232323"); });
+    });
+</script>

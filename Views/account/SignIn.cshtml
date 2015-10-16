@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "Hypster - free music online - player for tumblr";
+    ViewBag.Desc = "";
+
+    ViewBag.LinkTag = "<link rel=\"alternate\" media=\"only screen and (max-width: 640px)\" href=\"http://hypster.com/apps/appAccount/Signin\" >";
+}
+
+
+
+
+
+
+
+
+<div style=" float:left; width:100%">
+
+
+    <div style=" float:left; width:700px; min-height:740px; background:url('/imgs/account/sign_in_back.png') no-repeat center;">
+
+        <h2 style=" float:left; padding:4px 10px 6px 5px; margin:15px 0 13px 15px; padding:9px 0 3px 5px; color:#d4ae52; border:1px solid #d4ae52; font-size:22px; font-weight:300; ">&nbsp;&nbsp;COMMERCIAL FREE MUSIC PLAYLIST&nbsp;&nbsp;</h2>
+
+        <div style=" float:left; width:338px; min-height:250px; margin:40px 0 0 190px; ">
+                
+                @using (Html.BeginForm("SignIn", "account", FormMethod.Post))
+                {
+         
+                    <div style=" font-size:32px; color:#FFFFFF;">
+                        <b>HYPSTER.</b> More Music.
+                    </div>
+            
+
+        
+                    <div style=" float:left; width:100%; height:37px; margin:20px 0 0 0; background-color:#FFFFFF; border-radius:6px; border:1px solid #a1a2a4; overflow:hidden;">
+                        <div style=" float:left; font-size:16px; margin:7px 0 0 5px; color:#757575;">
+                            USERNAME:
+                        </div>
+                                
+                        <input type="text" name="UserName" id="UserName" value="" style=" float:left; width:220px; height:35px; line-height:35px; margin:0 0 0 5px; border:none; outline:none;" />
+                    </div>
+
+             
+                    <div style=" float:left; width:100%; height:37px; margin:7px 0 0 0; background-color:#FFFFFF; border-radius:6px; border:1px solid #a1a2a4; overflow:hidden;">
+                        <div style=" float:left; font-size:16px; margin:7px 0 0 5px; color:#757575;">
+                            PASSWORD:
+                        </div>
+                                
+                        <input type="password" name="Password" id="Password" value="" style=" float:left; width:220px; height:35px; line-height:35px; margin:0 0 0 5px; border:none; outline:none;" />
+                    </div>
+                
+                
+
+                    <div style=" float:left; margin:22px 0 0 0; color:#FFFFFF;">
+                        <input type="checkbox" name="RememberMe" id="RememberMe" class="checkbox" /> Remember Me
+                    </div>
+                            
+                            
+                    <div style=" float:right; margin:14px 0 0 0; ">
+                                
+                        @Html.ValidationSummary(true, "", new { @class = "txtValidatorLog" })
+
+                                
+                        <a href="/account/ForgotPassword" style=" color:#FFFFFF; ">Forgot your password?</a>
+                                
+                                
+                        @if (ViewBag.ActivateAccount != null && ViewBag.ActivateAccount == true)
+                        {
+                            <a href="/account/ActivateAccount">To activate click here</a>
+                        }
+                    </div>
+                            
+                            
+                    <input type="hidden" id="returnUrl" name="returnUrl" value="@ViewBag.ReturnUrl" />
+                            
+                            
+                    <input type="submit" value="LOGIN" style=" float:right; width:100%; height:33px; margin:13px 0 0 0; border-radius:8px; background-color:#d4ae52; border:1px solid #d4ae52; color:#FFFFFF; font-size:21px;" />
+        
+                            
+                }
+
+
+
+                <div style=" float:left; width:100%; margin:0px 0 0 0;  ">
+                            
+                    <div style=" float:left; width:100%;">
+                        <div style=" float:left; width:45%; height:17px; border-bottom:1px solid #FFFFFF;"></div>
+                        <div style=" float:left; width:10%; margin:10px 0 0 0; text-align:center; color:#FFFFFF; " >OR</div>
+                        <div style=" float:left; width:45%; height:17px; border-bottom:1px solid #FFFFFF;"></div>
+                    </div>
+                            
+                    <input type="button" value="REGISTER" onclick="window.location='/account/register';" style=" float:right; width:100%; height:33px; margin:13px 0 0 0; border-radius:8px; background-color:#3fbc91; border:1px solid #3fbc91; color:#FFFFFF; font-size:21px;" />
+                            
+                </div>
+
+        </div>
+                
+    </div>
+
+
+
+
+
+
+    <div style=" float:left; width:300px; min-height:250px; margin:10px 0 0 10px; ">
+                    
+            <div id="SideAd2_d93847" style=" margin:10px 0 0 0;">
+                @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
+            </div>
+            <!-- 06_25 -->
+
+            <div id="SideAd2_d93848" style=" margin:10px 0 0 0;">
+                @Html.Partial("~/Views/hypAds/ad_300x250_btf.cshtml")
+            </div>
+            <!-- 06_25 -->
+                    
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+

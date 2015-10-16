@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <meta name="description" content="@ViewBag.Desc Crear una lista de reproducción tumblr, música para tumblr." />
+    <meta name="keywords" content="hypster, música, radio, tv, tumblr, blogger, reproducción gratis, reproductor, reproductor de tumblr, géneros, música gratis en internet, hipster, lista de reproducción, (Protectores/ pieles para reproductor) , fabricar lista de reproducción por internet,creador de lista de reproducción tumblr, crear lista de reproducción tumblr, lista de reproducción musical por tumblr, lista de reproducción musical hipster" />
+
+
+
+
+    <script src="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"  type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"  type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"  type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+
+
+    <script src="/Areas/es/scripts/hypScript.js?id=87216111200" type="text/javascript"></script>
+    <script src="/Areas/es/scripts/hypSlide.js?id=87216111200" type="text/javascript"></script>
+
+    
+    <link href="/Areas/es/css/Site.css?id=87216111200" rel="stylesheet" type="text/css" />
+    
+
+    
+
+    <script type="text/javascript">
+        if (isMobile.any()) {
+            if ($(window).width() < 590) {
+                window.location = "http://mobile.@System.Configuration.ConfigurationManager.AppSettings["hypsterHostName"]";
+            }
+        }
+
+        $(document).ready(function () {
+            RenderLayout();
+
+            $("#langBar").css("display", "block");
+            $("#langBar").css("left", ($(window).width()-90) + "px");
+        });
+
+        $(window).resize(function () {
+            RenderLayout();
+
+            $("#langBar").css("display", "block");
+            $("#langBar").css("left", ($(window).width()-90) + "px");
+        });
+    </script>
+
+</head>
+
+
+
+
+
+<body>
+    <div class="MainBD13">
+        
+
+        <div class="ContentHeaderCont">
+           
+                <div class="ContentHeaderInner">
+                    
+                    
+                    <div id="MainMenu" style=" z-index:99999;" >
+                        <img class="mLogo" alt="Hypster Logo" src="/imgs/shared/main_hyp_logo.png" onclick="window.location='/';" />
+                        
+
+                        <div class="hypContHolder" onmouseover="$('#HypsterSub').css('display','block');" onmouseout="$('#HypsterSub').css('display','none');">
+                            <a class="mHypster" href="/es/Casa" >Casa</a>
+                            
+                            <div id="HypsterSub" style=" display:none;">
+                                <a class="HypSub_tv" href="http://@System.Configuration.ConfigurationManager.AppSettings["videoHostName"]">TV</a>
+                                <a class="HypSub_news" href="/content/HypNews">Noticias de Música</a>
+                            </div>
+                        </div>
+
+
+                        <div class="listenContHolder" onmouseover="$('#ListenSub').css('display','block');" onmouseout="$('#ListenSub').css('display','none');">
+                            <a class="mListen" href="/es/Escucha">Escucha</a>
+
+                            <div id="ListenSub" style=" display:none;">
+                                <a class="HypSub_listen" href="/es/Escucha">Buscar Música</a>
+                                <a class="HypSub_charts" href="/es/Gráficas_Listas">Gráficas / Listas</a>
+                                <a class="HypSub_festivals" href="/es/Festivales">Festivales</a>
+                            </div>
+                        </div>
+
+
+                        <div class="createContHolder" onmouseover="$('#CreateSub').css('display','block');" onmouseout="$('#CreateSub').css('display','none');">
+                            <a class="mCreate" href="@if (User.Identity.IsAuthenticated){<text>/es/Crear/playlist</text>}else{<text>/es/Crear</text>}">Crear</a>
+
+                            <div id="CreateSub" style=" display:none;">
+                                <a class="HypSub_player" href="/es/crear/player">Reproductor</a>
+                                <a class="HypSub_playlist" href="/es/crear/playlist">Listas de reproducción</a>
+                                <a class="HypSub_radio" href="/es/crear/station">Estación</a>
+                            </div>
+                        </div>
+
+                        <a class="mConnect" href="/es/Conectar">Conectar</a>
+
+
+
+                        <div class="TopHeaderCont">
+                            @Html.Partial("~/Areas/es/Views/cuenta/pr_LoginStatus.cshtml")
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div id="header_Bar" style=" float:left; width:2px; height:23px; margin-top:-3px; background-color:#2e2e2e; border-bottom:3px solid #191919;"></div>
+            
+        </div>
+
+
+
+        <div class="ContentRootCont" >
+             @RenderBody()
+        </div>
+        
+    
+        <div class="push"></div>
+    </div>
+
+
+
+
+
+    
+    <div class="ContentFooterCont">
+        <center>
+
+                <div class="BottomPane">
+                    <div style=" float:left; width:290px; height:250px; margin-top:10px;">
+                        <img alt="" src="/imgs/shared/footer_logo_1.png" style=" padding:13px 5px 15px 50px;" />
+
+
+                        <div style=" float:left; width:100%; height:22px;">
+                                <div id="hyp_sosialHolder1" onmouseover="this.style.display = 'none'; $('#hyp_SNR_BtnHolder_1').css('display','block');">
+                                    <div class="hyp_SI_Cont_google"></div>
+                                    <div class="hyp_SI_Cont_twitter"></div>
+                                    <div class="hyp_SI_Cont_facebook"></div>
+                                </div>
+
+                                <div id="hyp_SNR_BtnHolder_1" style=" float:left; width:100%; display:none;">
+                    
+                                    <div class="hyp_SI_Cont_facebook1">
+                                        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2F@(System.Configuration.ConfigurationManager.AppSettings["newsHostName"])&amp;send=false&amp;layout=button_count&amp;width=90&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
+                                    </div>
+
+                                    <div class="hyp_SI_Cont_twitter1">
+                                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]" data-text="Hypster">Tweet</a>
+                                        <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");</script>
+                                    </div>
+
+                                    <div class="hyp_SI_Cont_google1">
+                                        <div class="g-plusone" data-size="medium" data-href="http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]"></div>
+                                        <script type="text/javascript">                                            (function () { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = 'https://apis.google.com/js/plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();</script>
+                                    </div>
+
+                                </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="BottomPaneInnr">
+
+                        <div class="MenuItmCont">
+                            <a href="/es/hypsterEs/Nuevo_Reproductor_Tumblr">Nuevo Reproductor Tumblr</a>
+                            <a href="/resources/manuals" >Cómo Utilizar</a>
+                        </div>
+
+
+                        <div class="MenuItmCont">
+                            <a href="/es/Casa" >Hypster</a>
+                            <a href="/es/Escucha" >Escucha</a>
+                            <a href="/es/Crear" >Crear</a>
+                            <a href="/es/Conectar" >Conectar</a>
+                        </div>
+
+                        <div class="MenuItmCont">
+                            <a href="/es/Escucha/radio" >Radio</a>
+                        </div>
+                        
+                        <div class="MenuItmCont">
+                            <a href="/es/hypsterEs/Contact_Us" >Contáctanos</a>
+                            <a href="/es/hypsterEs/About_Us" >Acerca de Nosotros</a>
+                            <a href="/es/hypsterEs/Privacy_Policy" >Política de Prívacidad</a>
+                            <a href="/es/hypsterEs/Terms_of_Service" >Términos de Servicio</a>
+                        </div>
+
+
+                    
+                        <div style=" float:right; width:100%;">
+                            <div class="FeaturedAdContBottom">
+                                <div id="TopAdd_Bottom_2938eu93">
+                                    @Html.Partial("~/Views/hypAds/ad_728x90_btf.cshtml")
+
+                                </div>
+                                <!-- 06_25 -->
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div style=" float:left; width:98%; height:15px; margin-top:-10px; font-size:9px; text-align:right; ">@System.Configuration.ConfigurationManager.AppSettings["server_ID"]</div>
+                </div>
+
+        </center>
+    </div>
+    
+
+
+
+
+
+    
+    <div id="langBar">
+        <a class="langItm" onclick="if($('#OLangs').css('display')=='none'){ $('#OLangs').css('display','block'); }else{ $('#OLangs').css('display','none'); }">ES</a>
+
+        <div id="OLangs" style=" display:none; float:right;">
+            <a class="langItm" href="/">EN</a>
+            <a class="langItm" href="/ru/Главная">RU</a>
+        </div>
+    </div>
+
+
+
+    
+    <div class="Trans_BACK" id="HideBackDiv" onclick="Show_Content();"></div>
+    <div id="popupContainer"></div>
+    
+
+
+    
+
+
+
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-28695705-1']);
+        _gaq.push(['_setDomainName', 'hypster.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+</script>
+    
+   
+</body>
+</html>

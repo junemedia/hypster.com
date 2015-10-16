@@ -1,0 +1,945 @@
+﻿@model hypster.ViewModels.videoPlayerViewModel
+@{
+    Layout = null;
+    int song_limit = Int32.Parse(System.Configuration.ConfigurationManager.AppSettings["Song_LIMIT"]);
+
+    Layout = "/Areas/senses/Views/Shared/_srLayout.cshtml";
+}
+
+
+
+
+
+
+<script type="text/javascript">
+
+    var CURR_ACTIVE_MENU = 0;
+    var MENU_COUNT = @Model.songs_list.Count;
+
+    var CURR_ACTION = "";
+    var LOCK_SOUND = false;
+
+    var skip_items_arr = new Array();
+
+    var isExecuted = false;
+
+    var isConfirmation = false;
+    var isConfirmed = false;
+
+
+
+    @if (Request.Cookies["hypAPPind"] != null && Request.Cookies["hypAPPind"].Value != "")
+    {
+        <text>
+            var isSongScroll = false;
+
+
+            
+            $(document).ready(function(){
+                //$(".PlayerctR1").css("position","absolute");
+                //$(".PlayerctR1").css("top", ($(window).height()-180) + "px");
+                //$(".PlayerctR1").css("left","0px");
+
+                $(".playbackControls").css("display", "block");
+            });
+
+            /*window.onscroll = function (e) {
+                var vertical_position = 0;
+                if (pageYOffset)//usual
+                    vertical_position = pageYOffset;
+                else if (document.documentElement.clientHeight)//ie
+                    vertical_position = document.documentElement.scrollTop;
+                else if (document.body)//ie quirks
+                    vertical_position = document.body.scrollTop;
+
+                $(".PlayerctR1").css("top", ((vertical_position+$(window).height())-180) + "px");
+            }*/
+
+        </text>
+    }
+    else
+    {
+        <text>
+            var isSongScroll = true;
+        </text>
+    }
+
+
+    function HandleKeyAction(e) {
+        
+        cancelSpeech();
+
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+
+
+        //check confirmation messages
+        //
+        if(isConfirmation == true)
+        {
+            if (KEY_CODE == 32) {
+                isConfirmed = true;
+                return;
+            }
+        }
+
+
+
+        //ESC
+        if (KEY_CODE == 27) {
+            clickBack();
+        }
+
+
+
+        //enter
+        if (KEY_CODE == 13) {
+            
+            //var isExecuted = false;
+            //isExecuted = HandleCurrAction();
+
+
+            //if(isExecuted == false)
+            //{
+                //choose current song
+                plVClick(items_arr[CURR_ACTIVE_MENU], CURR_ACTIVE_MENU);
+            //}
+        }
+
+
+
+        //space
+        if (KEY_CODE == 32) {
+
+            //play/pause
+            //
+            PlayPauseVideo();
+        }
+
+
+
+        //add to my playlist
+        if (KEY_CODE == 49) {
+            
+            if(isExecuted == false)
+            {
+                AddToMyPlaylist();
+                isExecuted = true;
+            }
+            else
+            {
+                SubmitAddToMyDefaultPlaylist();
+            }
+
+        }
+
+
+        //remove to my playlist
+        if (KEY_CODE == 50) {
+            
+            if(isExecuted == false)
+            {
+                DeleteFromMyPlaylist();
+                isExecuted = true;
+            }
+            else
+            {
+                SubmitDeleteFromMyPlaylist();
+            }
+
+        }
+
+
+
+
+
+
+
+        //down
+        if (KEY_CODE == 40) {
+            //move menu down
+
+            CURR_ACTIVE_MENU += 1;
+            if (CURR_ACTIVE_MENU > MENU_COUNT) {
+                CURR_ACTIVE_MENU = MENU_COUNT;
+            }
+
+
+            //check if no removed or skiped
+            var is_removed = "";
+            for (var j = 0; j < skip_items_arr.length; j++) {
+                if (skip_items_arr[j] == CURR_ACTIVE_MENU) {
+                    is_removed = " removed";    
+                }
+            }
+
+
+            if(is_removed == "")
+            {
+                //lower player sound
+                player.setVolume(2); //will need to bring back
+
+
+                LOCK_SOUND = true;
+                setTimeout(function(){
+                    LOCK_SOUND = false;
+                },4000);
+
+                
+                startSpeech($("#songC_" + CURR_ACTIVE_MENU).html());
+                
+
+                $(".playlistItemC").css("background-color", "#292929");
+                $("#PlItem_" + CURR_ACTIVE_MENU).css("background-color", "#494949");
+            }
+            else
+            {
+                startSpeech("removed");
+            }
+            
+        }
+
+
+        //up
+        if (KEY_CODE == 38) {
+            //move menu up
+
+            CURR_ACTIVE_MENU -= 1;
+            if (CURR_ACTIVE_MENU < 0) {
+                CURR_ACTIVE_MENU = 0;
+            }
+
+
+            //check if no removed or skiped
+            var is_removed = "";
+            for (var j = 0; j < skip_items_arr.length; j++) {
+                if (skip_items_arr[j] == CURR_ACTIVE_MENU) {
+                    is_removed = " removed";    
+                }
+            }
+
+
+            if(is_removed == "")
+            {
+                //lower player sound
+                player.setVolume(2); //will need to bring back
+
+
+                LOCK_SOUND = true;
+                setTimeout(function(){
+                    LOCK_SOUND = false;
+                },4000);
+
+
+                startSpeech($("#songC_" + CURR_ACTIVE_MENU).html());
+
+
+                $(".playlistItemC").css("background-color", "#292929");
+                $("#PlItem_" + CURR_ACTIVE_MENU).css("background-color", "#494949");
+            }
+            else
+            {
+                startSpeech('removed');
+            }
+        }
+
+
+
+        //left
+        if (KEY_CODE == 37) {
+            //seek left
+            var wwidth = $("#PlaybackStatus1").width() - 7;
+            if( wwidth > 0)
+            {
+                $("#PlaybackStatus1").width(wwidth);
+                changePlaybackStatus_Duration(wwidth);
+            }
+        }
+
+        //right
+        if (KEY_CODE == 39) {
+            //seek right
+            var wwidth = $("#PlaybackStatus1").width() + 7;
+            if(wwidth < $("#PlaybackStatusInnrCont1").width())
+            {
+                $("#PlaybackStatus1").width(wwidth);
+                changePlaybackStatus_Duration(wwidth);
+            }
+        }
+
+
+
+
+        //CNTRL
+        if (KEY_CODE == 17) {
+            
+            //lower player sound
+            player.setVolume(2); //will need to bring back
+
+
+            LOCK_SOUND = true;
+            setTimeout(function(){
+                LOCK_SOUND = false;
+            },4800);
+
+
+            StartVoiceCommand("MPL");
+        }
+
+
+    }
+
+
+
+
+    
+    setInterval(function(){checkSound();}, 3000);
+
+    function checkSound()
+    {
+        if(LOCK_SOUND)
+        {
+            return;
+        }
+
+        if(isSpeechSpeaking() == false)
+        {
+            try
+            {
+                player.setVolume(85); //will need to modify to back real volume
+            }
+            catch(ex){}
+        }
+    }
+    
+
+
+
+
+
+    function HandleCurrAction()
+    {
+        var isActionExecuted = false;
+
+        switch(CURR_ACTION)
+        {
+            case "ADD_TO_PLAYLIST":
+                SubmitAddToMyDefaultPlaylist();
+                 CURR_ACTION = "";
+                 isActionExecuted = true;
+                break;
+            case "DEL_FROM_PLAYLIST":
+                SubmitDeleteFromMyPlaylist();
+                 CURR_ACTION = "";
+                 isActionExecuted = true;
+                break;
+            default:
+                break;   
+        }
+
+        return isActionExecuted;
+    }
+
+
+
+
+
+    function clickBack(){
+        
+        cancelSpeech();
+
+
+        //window.history.back();
+
+        @if(ViewBag.BA != null)
+        {
+            <text>
+                window.location = "@ViewBag.BA";
+            </text>
+        }
+        else
+        {
+            <text>
+                window.location = "/senses/sStart/home";
+            </text>
+        }
+
+    }
+
+
+
+
+    function AddToMyPlaylist()
+    {
+        player.setVolume(2); //will need to bring back
+        LOCK_SOUND = true;
+
+        //add to my palylist
+        //
+
+        //startSpeech("Add to my playlist");
+        
+
+        $.ajax({
+            type: "POST",
+            url: "/senses/sAccount/AddToMyPlaylist/" + items_arr[CURR_VIDEO],
+            async: true,
+            success: function (data) {
+                $("#MyPlaylist_Actions_CH1").html(data);
+            }
+        });
+
+        CURR_ACTION = "ADD_TO_PLAYLIST";
+    }
+
+
+
+    function AddToMyPlaylistM()
+    {
+        player.setVolume(2); //will need to bring back
+        LOCK_SOUND = true;
+
+        //add to my palylist
+        //
+
+        //startSpeech("Add to my playlist");
+        
+
+        $.ajax({
+            type: "POST",
+            url: "/senses/sAccount/AddToMyPlaylistM/" + items_arr[CURR_VIDEO],
+            async: true,
+            success: function (data) {
+                $(".MyPlaylist_Actions_CH1_M").html(data);
+            }
+        });
+
+        CURR_ACTION = "ADD_TO_PLAYLIST";
+    }
+
+
+
+    function DeleteFromMyPlaylist()
+    {
+        player.setVolume(2); //will need to bring back
+        LOCK_SOUND = true;
+
+        //add to my palylist
+        //
+        //startSpeech("Delete from my playlist");
+
+            
+        $.ajax({
+            type: "POST",
+            url: "/senses/sAccount/DeleteFromMyPlaylist/" + $("#PlItem_" + CURR_VIDEO).find(":hidden").last().val(),
+            async: true,
+            success: function (data) {
+                $("#MyPlaylist_Actions_CH1").html(data);
+            }
+        });
+
+        CURR_ACTION = "DEL_FROM_PLAYLIST";
+    }
+
+
+
+
+
+
+    function ProccessVoiceCommand(comm) {
+
+        //alert(comm);
+        var isHandled = false;
+        isHandled = handle_generic_commands_confirm(comm);
+
+        switch(comm.toLowerCase())
+        {
+            case "add to my playlist":
+            case "add to playlist":
+            case "add":
+                AddToMyPlaylist();
+                isExecuted = true;
+                break;
+            case "delete from my playlist":
+            case "delete from playlist":
+            case "delete":
+            case "remove from my playlist":
+            case "remove from playlist":
+            case "remove":
+                DeleteFromMyPlaylist();
+                isExecuted = true;
+                break;
+            case "skip":
+            case "next":
+            case "next song":
+                PlayNextVideo();
+                break;
+            case "back":
+            case "prev":
+            case "previous":
+            case "go back":
+                PlayPrevVideo();
+                break;
+            case "pause":
+            case "stop":
+                PauseVideo();
+                break;
+            case "volume":
+                break;
+            case "mute":
+            case "mute sound":
+                MuteSound();
+                break;
+            case "play":
+                PlayVideo();
+                break;
+            default:
+                if(isHandled == false)
+                {
+                    startSpeech("Please say again...");
+                }
+                break;
+        }
+
+    }
+</script>
+
+
+
+
+
+<div class="cir_back_btn"> 
+    <div onclick="clickBack()" style=" float:left; width:100%; margin:0px 0 0 0px; cursor:pointer; ">
+        BACK
+    </div>
+</div>
+
+
+
+<div class="playbackControls" style=" display:none; position:absolute; top:0px; left:95px;">
+    <div class="cPrev_btn" onclick="PlayPrevVideo();" title="Prev">PREV</div>
+    <div class="cPlPs_btn" onclick="PlayPauseVideo();" title="Play/Pause">PLAY</div>
+    <div class="cNext_btn" onclick="PlayNextVideo();" title="Next">NEXT</div>
+    <div class="cShuffle_btn" onclick="ShuffleSongs();" title="Shuffle">SHUFFLE</div>
+    <div class="cAdd_btn" onclick="AddToMyPlaylistM();" title="Prev">ADD</div>
+
+    <div class="MyPlaylist_Actions_CH1_M" style=" float:left; width:100%;"></div>
+</div>
+
+
+
+
+<div class="playerMRootCH1">
+
+
+
+
+    <div class="PlayerctL1" >
+    
+        <div class="MainNHypPlayer" style=" margin:0 0 0 0;">
+            <div class="MainRootCont">
+                <div id="MainContHolder">
+                    
+
+                            @if (Request.Cookies["hypAPPind"] != null && Request.Cookies["hypAPPind"].Value != "")
+                            {
+                                <text>
+                                    <div class="MainPlaylistHolder" style=" width:100%; height:auto; min-height:100px;">
+                                        <div id="PlayerPlaylistHolder1" style=" width:100%; height:auto; min-height:100px; padding-top:90px;">
+                                </text>
+                            }
+                            else
+                            {
+                                <text>
+                                    <div class="MainPlaylistHolder" style=" width:98%;">
+                                        <div id="PlayerPlaylistHolder1" style=" width:99%;">
+                                </text>
+                            }
+
+                    
+                            @for (int i = 0; i < Model.songs_list.Count; i++)
+                            {
+                                <div id="PlItem_@i" class="playlistItemC">
+                                    <img alt="" src="//i.ytimg.com/vi/@Model.songs_list[i].YoutubeId/0.jpg" onclick="plVClick('@Model.songs_list[i].YoutubeId', @i)" />
+                                    <div id="songC_@i" class="songTtl" onclick="plVClick('@Model.songs_list[i].YoutubeId', @i)">@Model.songs_list[i].Title</div>
+                                    <input type="hidden" id="si_@Model.songs_list[i].YoutubeId" value="@Model.songs_list[i].id" />
+                                    <input type="hidden" id="psi_@Model.songs_list[i].YoutubeId" value="@Model.songs_list[i].playlist_track_id" />
+                                    <!--div id="songA_@i" class="skpSngBtn" onclick="skipSong(@i);">skip</div-->
+                                </div>
+                            
+                                if (i == song_limit)
+                                {
+                                    <div class="LoadMoreSongs_btn" onclick="LoadMoreSongsPlaylist()">Load More Songs...</div>
+                                    break;
+                                }
+                            }
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <div class="PlayerctR1">
+
+        @if (Model.songs_list != null && Model.songs_list.Count > 30)
+        {   
+            <div class="playbackControls" style=" display:none; float:right; margin:10px 10px 10px 0;">
+                <div class="cPrev_btn" onclick="PlayPrevVideo();" title="Prev">PREV</div>
+                <div class="cPlPs_btn" onclick="PlayPauseVideo();" title="Play/Pause">PLAY</div>
+                <div class="cNext_btn" onclick="PlayNextVideo();" title="Next">NEXT</div>
+                <div class="cShuffle_btn" onclick="ShuffleSongs();" title="Shuffle">SHUFFLE</div>
+                <div class="cAdd_btn" onclick="AddToMyPlaylistM();" title="Prev">ADD</div>
+
+                <div class="MyPlaylist_Actions_CH1_M" style=" float:left; width:100%;"></div>
+            </div>
+        }
+
+
+        <div class="MainNHypPlayer" style=" margin:0 0 0 0;">
+            <div class="MainRootCont">
+            
+ 
+                <div id="MainContHolder">
+                    
+                    
+                        <div class="MainPlayerHoder">
+    
+                            <div id="player"></div>
+
+                            <div id="PlaybackStatusCont1" onmouseover="PSC_over()" onmouseout="PSC_out()" >
+                            
+                                <div id="PlaybackStatusInnrCont1"><div id="PlaybackStatus1"></div></div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class="ControlBar">
+            
+                                <div id="Prev_btn" onclick="PlayPrevVideo();" title="Prev"></div>
+                
+                                <div id="PlPs_btn" onclick="PlayPauseVideo();" title="Play/Pause"></div>
+            
+                                <div id="Next_btn" onclick="PlayNextVideo();" title="Next"></div>
+
+                                <div id="Shuffle_btn" onclick="ShuffleSongs();" title="Shuffle"></div>
+
+                                <div id="Mute_btn_cont" onmouseover="SoundMouseOver();" onmouseout="SoundMouseOut();" title="Mute/Unmute">
+                                    <div id="Mute_btn" onclick="MuteSound();" title="Mute/Unmute"></div>
+                                    <div id="VolumeControl"><div id="VolumeControlVal"></div></div>
+                                </div>
+
+
+
+                                <div class="plrAddSongBtn" onclick="AddToMyPlaylist();" style=" @if (User.Identity.IsAuthenticated == false){<text>display:none;</text>} " onmouseover="$('#addsngtxt').html('ADD SONG TO MY PLAYLIST');" onmouseout="$('#addsngtxt').html('ADD SONG');">
+                                    <div id="addsngtxt">ADD SONG</div>
+                                    <div id="AddNSongBtn" title="Add to playlist"></div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="MainAdsHoder">
+
+
+                        </div>
+
+                </div>
+
+
+            
+
+
+            </div>
+        </div>
+
+
+ 
+        <div id="MyPlaylist_Actions_CH1" style=" float:left; width:100%; color:#CC0000;">
+        </div>
+
+
+        <iframe id="iOS_ex" src="" style=" width:2px; height:2px;" ></iframe>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+<div class="Trans_BACK" id="HideBackDiv" onclick="Show_Content();"></div>
+<div id="popupContainer"></div>
+
+
+
+<div id="TraceTxt" style="display:none;"></div>
+<div class="Trans_BACK" id="HideBackDiv_PopupPlayer" onclick="Show_Content_PopupPlayer();"></div>
+<div id="popupContainer_PopupPlayer"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    
+
+    
+    $(document).ready(function(){
+        
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        //tag.src = "http://www.youtube.com/apiplayer?enablejsapi=1&version=3";
+
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        
+        /*if(is_API_Ready == true)
+        {
+            MY_onYouTubeIframeAPIReady();
+        }*/
+
+
+    });
+
+    function onYouTubeIframeAPIReady() {
+        //is_API_Ready = true;
+        MY_onYouTubeIframeAPIReady();
+    }
+    
+
+    
+    //var tag = document.createElement('script');
+    //tag.src = "https://www.youtube.com/iframe_api";
+    //var firstScriptTag = document.getElementsByTagName('script')[0];
+    //firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+
+   
+    PlbkBar_W = 599;
+    volContBar_W = 43;
+
+    var PLAYER_C_W = "590";
+    var PLAYER_C_H = "340";
+   
+
+    curr_playlist_id = '@ViewBag.PlaylistID';
+    curr_user_id = '@ViewBag.UserID';
+    iua = '@User.Identity.IsAuthenticated';
+    desc_length = '@ViewBag.DescLength';
+    isNP = 'Y';
+
+
+
+        
+    function MY_onYouTubeIframeAPIReady() {
+        
+        player = new YT.Player('player', {
+            width: PLAYER_C_W,
+            height: PLAYER_C_H,
+            @if (Model.songs_list.Count > 0)
+            {
+                <text>videoId: '@Model.songs_list[0].YoutubeId',</text>
+            }
+            playerVars: { 'autoplay': 0, 'controls': 0, 'enablejsapi' : 1, 'playsinline': 1 },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+            
+
+        PSC1 = document.getElementById("PlaybackStatusCont1");
+        PSC1.addEventListener("click", changePlaybackStatus_Click, false);
+
+        volCont1 = document.getElementById("VolumeControl");
+        volCont1.addEventListener("click", VolumeControl_Click, false);
+
+        @if (Model.songs_list.Count > 0)
+        {
+            <text>CURR_VIDEO = 0;</text>
+        }
+    }
+        
+   
+
+
+    var isReady = false;
+    function onPlayerReady(event) {
+        if(isReady == false)
+        {
+            player.addEventListener("onStateChange", "onPlayerStateChange");
+            player.addEventListener("onError", "onError");
+            player.setVolume(85);
+
+            plTimer = setInterval(function () { currentPlaybackState() }, 1000);
+
+
+            //var tag = document.getElementById('iOS_ex');
+            //tag.src = "pauseMusic://param=0";
+
+
+
+            @if (ViewBag.AUTO_PLAY != null && ViewBag.AUTO_PLAY == "0")
+            {
+            }
+            else
+            {
+                <text>
+                if (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows()) {
+                    //m
+
+                    
+                    //dcheck
+                    var iOS = (navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false);
+                    //alert('check m ' + iOS + " cookie " + readCookie("hypAPPind") );
+
+
+                    if (iOS == true && readCookie("hypAPPind") == "hypAPPind=1") {
+                        try
+                        {
+                            CURR_VIDEO = -1;
+                            PlayNextVideo();
+
+                            //$('#tapMessage').css('display','none');
+                            //$("#backBtn1").css('display','block');
+
+                            //alert('play');
+
+                            //console.log('pauseMusic://param=0'); //need to det iph
+                            //window.location.href = "pauseMusic://param=0";
+
+
+                            var tag_iOS_ex = document.getElementById('iOS_ex');
+                            tag_iOS_ex.src = "https://hypster.com/senses/sAccount/SetMusicPause?pauseMusic=1";
+                            
+                        }
+                        catch(ex){}
+                    }
+
+
+                }
+                else
+                {
+                    CURR_VIDEO = -1;
+                    PlayNextVideo();
+                }
+                </text>
+            }
+
+            isReady = true;
+            setTimeout(function(){SharesNum(); HistRec('@ViewBag.PlaylistName'); }, 3000);
+        }
+    }
+
+
+
+    var items_arr = new Array();
+    @for (int i = 0; i < Model.songs_list.Count; i++)
+    {
+        <text>items_arr[@i] = '@Model.songs_list[i].YoutubeId';</text>
+
+        if (i == song_limit)
+        {
+            break;
+        }
+    }
+    if(items_arr.length > 1)
+    {
+        $("#Prev_btn").css("display","block");
+        $("#Next_btn").css("display","block");
+        $("#Shuffle_btn").css("display","block");
+    }
+    else
+    {
+        $("#Prev_btn").css("display","none");
+        $("#Next_btn").css("display","none");
+        $("#Shuffle_btn").css("display","none");
+    }
+
+
+    function ShuffleSongs()
+    {
+        ShuffleSongsI(@ViewBag.UserID);
+    }
+
+</script>
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

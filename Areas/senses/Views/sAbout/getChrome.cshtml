@@ -1,0 +1,126 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>You Need Chrome</title>
+    <meta name="alexaVerifyID" content="D1zuW6QmyfkVJqITiYkg7ecUz5k" />
+    <meta name="description" content="@ViewBag.Desc" />
+    
+    
+    <link src="//code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="//code.jquery.com/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="//code.jquery.com/ui/1.10.1/jquery-ui.js" type="text/javascript"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+
+
+    @Scripts.Render("~/bundlesBLACK/scripts")
+    @Styles.Render("~/bundlesBLACK/css")
+
+
+
+    <script type="text/javascript">
+        
+        $(document).ready(function () {
+           
+            if ($(window).height() < 680) {
+                $("#MCH1").css("height", "680px");
+                $("#RootCH1").css("height", "730px");
+                $("#RootCH1").css("margin-top", "-50px");
+            }
+            else {
+                $("#MCH1").css("height", $(window).height() + "px");
+                $("#RootCH1").css("height", $(window).height() + "px");
+            }
+        });
+
+
+        $(window).resize(function () {
+    
+            if ($(window).height() < 680) {
+                $("#MCH1").css("height", "680px");
+                $("#RootCH1").css("height", "730px");
+                $("#RootCH1").css("margin-top", "-50px");
+            }
+            else {
+                $("#MCH1").css("height", $(window).height() + "px");
+                $("#RootCH1").css("height", $(window).height() + "px");
+            }
+        });
+
+    </script>
+
+
+    
+</head>
+
+
+
+
+
+
+
+
+<body style=" margin:0px; padding:0px;" onKeyUp="HandleKeyAction(event)">
+<div id="MCH1" style=" float:left; width:100%; height:770px; overflow:hidden; ">
+<div id="RootCH1" style=" float:left; width:100%; height:770px; overflow:hidden; ">
+    
+
+    <div style=" width:1200px; margin:auto;">
+        <div style=" float:left; width:100%;">
+            
+
+                <div class="cir_1">
+
+                    <div id="bContHolder1">
+
+
+                        <div id="msgBox1" style=" float:left; width:80%; margin:150px 0 0 40px; ">
+                            <br /> 
+                            <span style=" font-size:22px;">You need crome browser version 33+</span><br />
+                            
+                            <div onclick="window.location='https://www.google.com/chrome/?';" style=" float:left; width:250px; height:24px; line-height:24px; margin:10px 0 0 0; background-color:#d4ae52; border-radius:3px; cursor:pointer; text-align:center;">
+                                Download
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cir_2">
+    
+                    <img alt="Hypster" src="/areas/senses/imgs/chrome_icon.png" style=" float:left; margin:0px 0 0 130px; " />
+
+                </div>
+            
+                
+        </div>
+    </div>
+
+
+</div>
+</div>
+
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-28695705-1']);
+        _gaq.push(['_setDomainName', 'hypster.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</body>
+</html>

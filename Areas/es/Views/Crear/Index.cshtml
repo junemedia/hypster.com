@@ -1,0 +1,84 @@
+﻿@model hypster.ViewModels.createViewModel
+@{
+    ViewBag.Title = "Crea gratis Listas de reproducción | Hypster - música en internet gratis - Reproductor de tumblr";
+    ViewBag.Desc = "Crear listas de reproducción gratuitas y escuchar música sin anuncios. Música for tumblr";
+    ViewBag.ActivePage = "create";
+
+    Layout = "~/Areas/es/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<script type="text/javascript">
+    active_menu = ".mCreate";
+    $(".mCreate").css("background-color", "#191919");
+
+    $(document).ready(function () {
+        RenderCreateIndex();
+    });
+    $(window).resize(function () {
+        RenderCreateIndex();
+    });
+</script>
+
+
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:420px;">
+
+
+
+
+            <div id="CreateSection1" onclick="window.location='/es/crear/player';" title="Crear Reproductor">
+                <div class="secImgs">
+                    <img id="CreateSection1_img" alt="" src="/imgs/create/create_player_icon.png" />
+                </div>
+                <div class="secText">Crear Reproductor</div>
+            </div>
+
+
+
+            <div id="CreateSection2" onclick="window.location='/es/crear/playlist';" title="Crear Lista de Reproducción">
+                <div class="secImgs">
+                    <img id="CreateSection2_img" alt="" src="/imgs/create/create_playlist_icon.png" />
+                </div>
+                <div class="secText" style=" margin-top:-9px;">Crear Lista de Reproducción</div>
+            </div>
+
+
+
+            <div id="CreateSection3" onclick="window.location='/es/crear/station';" title="Crear Estación" >
+                <div class="secImgs">
+                    <img id="CreateSection3_img" alt="" src="/imgs/create/create_station_icon.png" />
+                </div>
+                <div class="secText">Crear Estación</div>
+            </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide2" class="slideLeft">
+        
+            @Html.Action("PopularVideos", "PopularEs")
+
+    </div>
+</div>

@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Unsibscribe";
+    ViewBag.Desc = "";
+}
+
+
+
+
+
+
+
+<div style=" float:left; width:100%; margin:30px 0 0 0; " >
+
+
+    <div style=" float:left; width:680px; min-height:250px; border-radius:3px; border-radius:2px; text-align:left; padding:10px;">
+            
+        <div style=" float:left; width:95%; margin:5px 0 0 20px;">            
+            @using (Html.BeginForm())
+            {
+                <div style=" float:left; width:100%; text-align:left;">
+                                
+                    <div style=" font-size:27px;">
+                        Unsibscribe
+                    </div>
+                                
+                    <div style=" margin-top:10px;">
+                        @ViewBag.result
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+
+
+
+    
+    <div style=" float:left; width:300px; height:250px; margin:0 0 0 15px;">
+
+        @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
+        <!-- 06_25 -->
+                        
+    </div>
+    
+
+</div>
+
+

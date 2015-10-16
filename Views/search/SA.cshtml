@@ -1,0 +1,36 @@
+﻿@model List<hypster_tv_DAL.ArtistCategory>
+@{
+    Layout = null;
+}
+
+
+
+
+@if (Model != null && Model.Count > 0)
+{
+
+    <div class="SA_mcont1">
+    
+        @for (var i = 0; i < Model.Count; i++)
+        {
+            <div class="mitm" id="mitm_@i" onclick="StartMusicSearchSS('@Model[i].Name')">@Model[i].Name</div>
+        }
+
+    </div>
+}
+
+
+<script type="text/javascript">
+
+        var curr_item = -1;
+
+        $(".mitm").mouseover( function mitm_over() {
+                $(this).css("background-color", "#CDCDCD");
+        });
+        
+        
+        $(".mitm").mouseout( function mitm_out() {
+                $(this).css("background-color", "#FFFFFF");
+        });
+
+</script>

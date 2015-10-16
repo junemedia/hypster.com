@@ -1,0 +1,25 @@
+﻿@model List<hypster_tv_DAL.MusicGenre>
+@{
+    Layout = null;
+}
+
+
+
+@{ int counter = 1;}
+@foreach(var item in Model)
+{   
+    <a class="VideoThumbBox" onclick="OpenPlayer('media_type=Radio&Genre=@HttpUtility.UrlEncode(item.GenreName.Replace("&", "_and_"))')">
+        
+        <div class="VideoThumbCont" id="RdGenre_@item.Genre_ID">
+            <img alt="" src="/imgs/radio/genres/@(item.GenreName.Replace("&","_and_")).jpg" />
+        </div>
+        <div class="videoBoxHeader">@item.GenreName</div>
+
+    </a>
+            
+    if (counter == 8)
+    {
+        break;
+    }
+    counter += 1;
+}

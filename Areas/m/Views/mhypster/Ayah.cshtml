@@ -1,0 +1,155 @@
+﻿@model hypster.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "Hypster - free music online - player for tumblr";
+    ViewBag.Desc = "";
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () { RenderPage(); AlignAcctInfoHeader(); });
+    $(window).resize(function () { RenderPage(); AlignAcctInfoHeader(); });
+</script>
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:660px; ">
+                    
+
+            <h2 style=" width:100%; padding:8px 0 8px 0; background-color:#151515; border-radius:3px; margin:2px 0 13px 0; color:#fcf088; ">&nbsp;&nbsp;Become a member and enjoy free unlimited music</h2>
+
+
+
+            <div style=" float:left; width:665px; min-height:250px; margin:0 0 0 0; padding:10px; text-align:left; background-color:#292929; border-radius:3px;">
+                    @using (Html.BeginForm("Ayah", "hypster", FormMethod.Post))
+                    {
+                    <div style=" float:left; width:98%; background-color:#FCF088; margin-top:1px; padding-left:1%; border-radius:3px;">
+                        @Html.ValidationSummary(true, "", new { @class = "txtValidator" })
+                    </div>
+                             
+            
+                    <!--div style=" font-size:27px;">Become a member</div-->
+            
+
+            
+                    <div style=" float:left; width:100%; font-size:18px; margin-top:3px;">
+                        Email:<br />
+                        <input type="text" id="email" name="email" value="@ViewBag.email" class="txtRegister" maxlength="50" style=" width:655px;" />
+                    </div>
+             
+                             
+                    <div style="float:left; width:50%; font-size:18px; margin-top:10px;">
+                        Username:<br />
+                        <input type="text" id="username" name="username" value="@ViewBag.username" class="txtRegister" maxlength="20" style=" width:312px;" onblur="checkUserName()" />
+
+                        <div id="checkUserName" style=" float:left;">
+                        </div>
+
+                        <script type="text/javascript">
+                            function checkUserName() {
+                                $("#checkUserName").html("");
+                            }
+                        </script>
+
+                    </div>
+
+                            
+                    <div style="float:right; width:50%; font-size:18px; margin-top:10px;">
+                        Password:<br />
+                        <input type="password" id="password" name="password" value="" class="txtRegister" maxlength="20" style=" width:314px; float:right; margin-right:5px;" />
+                    </div>
+                            
+                        <div style=" float:left; width:100%; min-height:25px; margin-top:20px;">
+                                
+                            <div style=" float:left; margin-left:0px; font-size:20px; color:#FCF088;">
+                                I am interested in:
+                            </div>
+                            <div style=" float:left; margin-left:25px; font-size:20px;">
+                                <input type="radio" name="interestP" value="1" /> Players
+                            </div>
+                            <div style=" float:left; margin-left:25px; font-size:20px;">
+                                <input type="radio" name="interestP" value="2" /> Playlists
+                            </div>
+                            <div style=" float:left; margin-left:25px; font-size:20px;">
+                                <input type="radio" name="interestP" value="3" /> Both
+                            </div>
+                        </div>
+                             
+                             
+                    <div style=" float:left; width:100%; min-height:55px; margin-top:25px; @if(ViewBag.SkipCaptcha == "on"){<text>display:none;</text>}">
+    
+                        <div style=" float:right; margin:5px 15px 0 0;">
+                            
+                            <iframe id="AYAH_iframe1397248622726" width="360" scrolling="no" height="160" frameborder="0" src="https://ws.areyouahuman.com/ws/chooseGame/1/1/ip101021347AUeiIlcIUZJN4xx4gxX96ySoMVU7NHeoox/12-0?campaign=none&campaignmessage=none" style="border: medium none; overflow: hidden;"></iframe>
+
+                        </div>
+
+                        <!--div style=" float:right;">
+                            <img alt="Don’t forget to answer our security question" src="/imgs/reg_hint.jpg" style=" margin-top:115px; float:right;" />
+                        </div-->
+                               
+                    </div>
+                            
+                             
+                    <div style=" float:left; width:100%; margin-top:30px;">
+
+                        <div style=" float:left; font-size:18px; margin-top:10px;">
+                            <input type="checkbox" id="I_agree" name="I_agree" @if(ViewBag.I_agree == "on"){ <text>checked="checked"</text> } /> I agree to the <a href="/hypster/Terms_of_Service" target="_blank" style=" text-decoration:underline;">terms and conditions</a>
+                        </div>
+
+
+                        <div style=" float:left; font-size:18px; margin-top:10px;">
+                            <input type="checkbox" id="checkNewsAboutMusic" name="checkNewsAboutMusic" /> Check if you want to receive news about music, playlists, charts, festivals etc.
+                        </div>
+                        <div style=" float:left; font-size:18px; margin-top:10px;">
+                            <input type="checkbox" id="checkNewsAboutPlayers" name="checkNewsAboutPlayers" /> Check if you want to receive news about Hypster players
+                        </div>
+                                
+
+
+                        <input type="submit" value="Register" style=" float:right; width:550px; height:35px; font-size:18px; margin-top:30px; margin:10 15px 0 0; border-radius:3px; " />
+                    </div>
+                             
+                            
+                }
+            </div>
+
+
+            <div style=" float:left; width:300px; min-height:250px;">
+
+                <div style=" float:left; width:300px; height:250px; margin:0 0 0 15px; background-color:#292929; border:10px solid #292929; border-radius:3px;">
+                    <div id="SideAd2d9w8372sxc">
+                        @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
+                    </div>
+                    <!-- 06_25 -->
+                    
+                </div>
+
+
+                <div style=" float:left; width:300px; height:250px; margin:0 0 0 15px; background-color:#292929; border:10px solid #292929; border-radius:3px;">
+                    <div id="SideAd2dd948342">
+                        @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
+                    </div>
+                    <!-- 06_25 -->
+                    
+                </div>
+
+
+                <div onclick="window.location='/account/SignIn';" style=" float:left; width:320px; height:48px; line-height:48px; margin:10px 0 0 15px; background-color:#191919; font-size:23px; text-align:center; cursor:pointer; border-radius:3px;">
+                    Sign In
+                </div>
+
+
+            </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+

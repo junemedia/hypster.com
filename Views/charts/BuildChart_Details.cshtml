@@ -1,0 +1,195 @@
+﻿@model hypster.ViewModels.chartViewModel
+@{
+    Layout = null;
+}
+
+
+
+
+<div style=" float:left; width:100%; margin:45px 0 0 0; overflow:hidden;">
+
+            
+
+            <div style=" float:left; width:1px; height:1px; ">
+                <!-- SOCIAL BUTTONS -->
+                <div style=" position:relative; top:50px; left:-30px;">
+                    
+                    <div style=" float:right; width:70px;">
+                    
+                        <div class="pw-widget pw-vertical" pw:image="" pw:url="http://hypster-local.com/charts/details/@Model.chart.Chart_GUID" pw:title="@Model.chart.Chart_Name">
+                        <a class="pw-button-tumblr pw-look-native"></a>
+	                    <a class="pw-button-facebook pw-look-native"></a>
+	                    <a class="pw-button-twitter pw-look-native"></a>
+	                    <a class="pw-button-post-share"></a>
+                        </div>
+                        <script src="http://i.po.st/static/v3/post-widget.js#publisherKey=caq8eudavn7j6erou9n3" type="text/javascript"></script>
+
+                    </div>
+
+                </div>
+                <!-- SOCIAL BUTTONS -->
+            </div>
+
+            
+
+            <h1 class="ChartHeader">
+                
+                <div id="ListenBtn_@Model.chart.Chart_ID" class="radioButton" onclick="OpenPlayerM('/playlists/chart/@Model.chart.Chart_GUID');">
+                    <a class="chartplPlay"  title="Play playlist"></a>
+                    Listen to &nbsp;
+                </div>
+
+                
+                <span style=" cursor:pointer; margin-left:20px; color:#d4ae52;" onclick="window.location='/charts/details/@Model.chart.Chart_GUID';">
+                    @Model.chart.Chart_Name
+                </span>
+
+                <div style=" float:right;">
+                    <img class="MoveRight_arrow" alt="Move Right" src="/imgs/arrows/right.png" onmousedown="MoveContLeft('@Model.chart.Chart_ID')" onmouseup="MoveContLeft_Stop('@Model.chart.Chart_ID')" onmouseout="MoveContLeft_Stop('@Model.chart.Chart_ID')" />
+                    <img class="MoveLeft_arrow" alt="Move Left" src="/imgs/arrows/left.png" onmousedown="MoveContRight('@Model.chart.Chart_ID')" onmouseup="MoveContRight_Stop('@Model.chart.Chart_ID')" onmouseout="MoveContRight_Stop('@Model.chart.Chart_ID')" />
+                </div>
+
+            </h1>
+
+
+            
+
+
+
+            <div class="chartContHldr">
+
+                    <div class="ChartScrlArea">
+                            @{ int chart_height = 150;}
+                            @{ int margin_top = 10;}
+                            @{ int chart_position = 1; }
+                            @{ int cont_width = 0; }
+
+                            <div id="MainChartCont_@Model.chart.Chart_ID" class="MainChartCont">
+                                    @foreach (var item in Model.chart_songs_list)
+                                    {
+                                        <div class="chartItem" onmouseover="$('#PLK_@item.id').css('display','block');" onmouseout="$('#PLK_@item.id').css('display','none');" > 
+                                                
+                                                <div class="chrtImage" style=" height:@(chart_height)px; margin-top:@(margin_top)px; background:#1d1d1c url(http://i.ytimg.com/vi/@(item.YoutubeId)/0.jpg) center no-repeat; background-size: 220%;">
+                                                    <div>@chart_position</div>
+                                                </div>
+                    
+                                                <div class="chrtTitle">@item.Title</div>
+
+                                                <div id="PLK_@item.id" class="Chart_PLK" onclick="OpenSong('@item.YoutubeId','@item.Title');">
+                                                    <a class="ChartSongItm_play"></a>PLAY
+                                                </div>
+                                        </div>
+        
+        
+                                        chart_height -= 0;
+                                        margin_top += 0;
+                                        chart_position += 1;
+
+                                        cont_width += 165;
+                                    }
+                            </div>
+                    </div>
+            </div>
+
+
+</div>
+
+
+
+
+
+
+
+<div style=" float:left; width:1024px; margin:15px 0 10px 0;">
+        
+        <div style=" font-size:18px; line-height:27px; color:#000000;">
+            @Model.chart.Chart_Desc
+        </div>
+        
+</div>
+
+
+
+
+
+
+@{ string guid = Guid.NewGuid().ToString(); }
+<div style=" float:left; width:1024px; margin:15px 0 10px 0;">
+        
+        <div id="TopAdd@(guid)">
+            @Html.Partial("~/Views/hypAds/ad_728x90_mid.cshtml")
+        </div>
+        <!-- 06_25 -->
+        
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#MainChartCont_@Model.chart.Chart_ID").css("width", "@(cont_width)px");
+        $("#MainChartCont_@Model.chart.Chart_ID").draggable({ axis: "x" });
+
+        $("#ChartScrlArea_@Model.chart.Chart_ID").css("width", "@(cont_width)px");
+    });
+
+
+    var curr_spead = 10;
+    var curr_left = null;
+    var myTimer;
+
+
+    function MoveContLeft(obj_id) {
+        if (curr_left == null) {
+            curr_left = $("#MainChartCont_" + obj_id).offset().left - $("#ListenBtn_" + obj_id).offset().left;
+        }
+        
+        myTimer = setTimeout(function() {
+            curr_left = curr_left - curr_spead;
+            $("#MainChartCont_" + obj_id).css("left", curr_left + "px");
+            curr_spead += 1;
+
+            MoveContLeft(obj_id);
+        }, 30);
+    }
+    function MoveContLeft_Stop(obj_id) {
+        clearTimeout(myTimer);
+        curr_spead = 10;
+        curr_left = null;
+    }
+
+
+
+
+    function MoveContRight(obj_id) {
+        if (curr_left == null) {
+            curr_left = $("#MainChartCont_" + obj_id).offset().left - $("#ListenBtn_" + obj_id).offset().left;
+        }
+
+        myTimer = setTimeout(function () {
+            curr_left = curr_left + curr_spead;
+            $("#MainChartCont_" + obj_id).css("left", curr_left + "px");
+            curr_spead += 1;
+
+            MoveContRight(obj_id);
+        }, 30);
+        
+    }
+    function MoveContRight_Stop(obj_id) {
+        clearTimeout(myTimer);
+        curr_spead = 10;
+        curr_left = null;
+    }
+
+
+</script> 

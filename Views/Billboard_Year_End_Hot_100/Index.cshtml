@@ -1,0 +1,33 @@
+﻿@model List<hypster_tv_DAL.Playlist>
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Title = "Billboard Year End Hot 100";
+    ViewBag.Desc = "Billboard Year End Hot 100";
+}
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:450px; ">
+
+        
+        <div style=" float:left; width:100%; color:#d4ae52; font-size:34px; " >Billboard Year End Hot 100</div>
+    
+        
+        <div class="PopularPlstsCont">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <div class="PlstItm" onclick="OpenPlayerM('/playlists/user/@(Model[i].username)?@(Model[i].id)');" onmouseover="DispPopPlstDetails(this, @Model[i].id, @Model[i].userid);" onmouseout="HidePopPlstDetails(event, this);" >
+                <div class="PlstTitle" style="width:290px; font-size:15px; margin:0 0 0 -1px;">@Model[i].name</div>
+                        
+                <a class="PlstLstn" title="play"></a>
+            </div>
+        }
+        </div>
+
+
+        <div id="PP_PlstPreview">
+            <div class="LdingPrev">Loading...</div>
+        </div>
+
+    </div>
+</div>

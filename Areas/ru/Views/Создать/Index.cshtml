@@ -1,0 +1,84 @@
+﻿@model hypster.ViewModels.createViewModel
+@{
+    ViewBag.Title = "Создать Бесплатный плейлист | Hypster - бесплатная онлайн музыка - плеер для Tumblr";
+    ViewBag.Desc = "Создайть плейлисты и слушать музыку без рекламы. Музыка для Tumblr";
+    ViewBag.ActivePage = "create";
+
+    Layout = "~/Areas/ru/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<script type="text/javascript">
+    active_menu = ".mCreate";
+    $(".mCreate").css("background-color", "#191919");
+
+    $(document).ready(function () {
+        RenderCreateIndex();
+    });
+    $(window).resize(function () {
+        RenderCreateIndex();
+    });
+</script>
+
+
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:420px;">
+
+
+
+
+            <div id="CreateSection1" onclick="window.location='/create/player';" title="Create player for Tumblr or Blogger">
+                <div class="secImgs">
+                    <img id="CreateSection1_img" alt="" src="/imgs/create/create_player_icon.png" />
+                </div>
+                <div class="secText">Создать Плеер</div>
+            </div>
+
+
+
+            <div id="CreateSection2" onclick="window.location='/create/playlist';" title="Create Playlist">
+                <div class="secImgs">
+                    <img id="CreateSection2_img" alt="" src="/imgs/create/create_playlist_icon.png" />
+                </div>
+                <div class="secText">Создать Плейлист</div>
+            </div>
+
+
+
+            <div id="CreateSection3" onclick="window.location='/create/station';" title="Create Radio Station" >
+                <div class="secImgs">
+                    <img id="CreateSection3_img" alt="" src="/imgs/create/create_station_icon.png" />
+                </div>
+                <div class="secText">Создать Станцию</div>
+            </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide2" class="slideLeft">
+        
+            @Html.Action("PopularVideos", "Популярное")
+
+    </div>
+</div>

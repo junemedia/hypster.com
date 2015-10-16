@@ -1,0 +1,167 @@
+﻿@model hypster_tv.ViewModels.celebsIndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_News.cshtml";
+}
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        RenderSong();
+    });
+    $(window).resize(function () {
+        RenderSong();
+    });
+
+
+
+    function RenderSong() {
+        var margin_left = 0;
+        var cont_width = 1024;
+
+        if ($(window).width() > 1024) {
+            margin_left = $(window).width() - 1024 - 44;
+            cont_width = 1024 + 30 + (margin_left / 2) - 15;
+        } else {
+            margin_left = 0;
+            cont_width = 1024;
+        }
+
+
+        
+        $("#listenSlide1").css("float", "right");
+        $("#listenSlide1").css("width", cont_width + "px");
+        
+        $("#listenSlide2").css("float", "left");
+        $("#listenSlide2").css("width", cont_width + "px");
+        
+    }
+
+</script>
+
+
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:350px;">
+
+
+    <div style=" float:left; width:1024px;">
+
+
+           <a href="@Model.featured_seleb.celeb_url" target="_blank" style=" display:block; float:left; width:710px; height:470px; overflow:hidden; background:#757575 url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_celebs/@Model.featured_seleb.celeb_image'); border-radius:2px; vertical-align:middle;">
+           </a>
+
+
+           <div style=" float:left; width:300px; margin:0 0 0 10px;">
+               
+               
+               <div id="SideAds923874w" style=" float:left; width:300px; height:250px; background-color:#757575;">
+                    @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
+               </div>
+               <!-- 06_25 --> 
+               
+
+               <a href="/content/HypNews" style=" display:block; float:left; width:300px; height:100px; line-height:90px; background:#757575; border-radius:2px; font-size:28px; margin:10px 0 0 0; cursor:pointer; text-align:center;">
+                    Hypster News
+               </a>
+
+               <a href="http://@System.Configuration.ConfigurationManager.AppSettings["videoHostName"]" style=" display:block; float:left; width:300px; height:100px; line-height:90px; background:#757575; border-radius:2px; font-size:28px; margin:10px 0 0 0; cursor:pointer; text-align:center;">
+                    Hypster TV
+               </a>
+
+           </div>
+        
+
+
+
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide2" class="slideLeft" style=" min-height:250px;">
+
+
+
+        <div style=" float:right; width:1024px;">
+            
+
+            <div style=" float:left; width:247px; margin-right:10px; ">
+                @for (int i = 0; i < Model.posts_list.Count; i += 4)
+                {
+                    if (i < Model.posts_list.Count)
+                    {
+                    <a href="@Model.posts_list[i].celeb_url" target="_blank">
+                        <img alt="@Model.posts_list[i].celeb_name" src="http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_celebs/thumb_@Model.posts_list[i].celeb_image" style=" cursor:pointer; width:98%; border:2px solid #59666c; border-radius:2px; margin:0 0 10px 0; " />
+                    </a>
+                    }
+                }
+            </div>
+            
+
+            <div style=" float:left; width:247px; margin-right:10px;">
+                @for (int i = 1; i < Model.posts_list.Count; i += 4)
+                {
+                    if (i < Model.posts_list.Count)
+                    {
+                    <a href="@Model.posts_list[i].celeb_url" target="_blank">
+                        <img alt="@Model.posts_list[i].celeb_name" src="http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_celebs/thumb_@Model.posts_list[i].celeb_image" style=" cursor:pointer; width:98%; border:2px solid #59666c; border-radius:2px; margin:0 0 10px 0; " />
+                    </a>
+                    }
+                }
+            </div>
+
+
+            <div style=" float:left; width:247px; margin-right:10px;">
+                @for (int i = 2; i < Model.posts_list.Count; i += 4)
+                {
+                    if (i < Model.posts_list.Count)
+                    {
+                    <a href="@Model.posts_list[i].celeb_url" target="_blank">
+                        <img alt="@Model.posts_list[i].celeb_name" src="http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_celebs/thumb_@Model.posts_list[i].celeb_image" style=" cursor:pointer; width:98%; border:2px solid #59666c; border-radius:2px; margin:0 0 10px 0; " />
+                    </a>
+                    }
+                }
+            </div>
+
+
+            <div style=" float:left; width:247px;">
+                @for (int i = 3; i < Model.posts_list.Count; i += 4)
+                {
+                    if (i < Model.posts_list.Count)
+                    {
+                    <a href="@Model.posts_list[i].celeb_url" target="_blank">
+                        <img alt="@Model.posts_list[i].celeb_name" src="http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_celebs/thumb_@Model.posts_list[i].celeb_image" style=" cursor:pointer; width:98%; border:2px solid #59666c; border-radius:2px; margin:0 0 10px 0; " />
+                    </a>
+                    }
+                }
+            </div>
+
+    
+        </div>
+
+
+
+</div>
+</div>

@@ -1,0 +1,292 @@
+﻿@model hypster_tv_DAL.Playlist
+@{
+    Layout = "/Areas/senses/Views/Shared/_srLayout.cshtml";
+}
+
+
+
+<div class="cir_back_btn"> 
+    <div onclick="clickBack()" style=" float:left; width:100%; margin:0px 0 0 0px; cursor:pointer; ">
+        BACK
+    </div>
+</div>
+
+
+
+
+
+<div style=" float:left; width:100%; min-height:450px; border:1px solid #318E8A;">
+    
+
+   
+
+    <div class="ctR1">
+        <div class="renamePlstBlkBox1">
+
+
+                <div id="msgBox1" style=" float:none; width:400px; height:350px; margin:auto; ">
+
+                    
+                    <div style=" margin:35px 0 10px 0; color:#FFFFFF;">
+                        Rename @Model.name playlist
+                    </div>
+                    <input id="newPlaylistID" name="newPlaylistID" type="hidden" value="@Model.id" />
+                    <input id="newPlaylistName" name="newPlaylistName" type="text" value="@Model.name" style=" width:330px; border:1px solid #318E8A; background-color:#000000; color:#FFFFFF; border-radius:6px; " />
+                    <br />
+                    <input id="setDefault_btn" name="setDefault_btn" type="text" onclick="setAsDefaultPlaylist();" value="Set as default" style=" float:left; width:200px; height:30px; line-height:30px; margin:13px 0 0 0; background-color:#000000; border:1px solid #318E8A; border-radius:3px; cursor:pointer; text-align:center; color:#FFFFFF; " />
+                    <input id="delete_btn" name="delete_btn" onclick="deletePlaylist();" value="Delete" style=" float:left; width:120px; height:30px; line-height:30px; margin:13px 0 0 10px; background-color:#000000; border:1px solid #318E8A; color:#CC0000; border-radius:3px; cursor:pointer; text-align:center; color:#FFFFFF; " />
+                    <input id="edit_btn" name="edit_btn" onclick="editPlaylist();" value="Edit" style=" float:left; width:200px; height:30px; line-height:30px; margin:13px 0 0 0; background-color:#000000; border:1px solid #318E8A; border-radius:3px; cursor:pointer; text-align:center; color:#FFFFFF; " />
+
+
+                </div>
+                 
+            
+        </div>
+    </div>
+
+
+
+
+    <div class="ctL1" style=" background:#D8D8D8 url('/Areas/senses/imgs/senses_back/back_2.jpg') no-repeat center;">
+        
+        <img alt="" src="/Areas/senses/imgs/senses_ct_icon.png" style=" float:left; margin:290px 0 0 270px;" />
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        cancelSpeech();
+        startSpeech('Rename @Model.name. Please enter new name and press ENTER.');
+        
+    });
+</script>
+
+
+<script type="text/javascript">
+
+    var CURR_ACTIVE_MENU = 1;
+    var MENU_COUNT = 0;
+
+
+
+    $(document).ready(function () {
+        $("#newPlaylistName").focus();
+        $("#newPlaylistName").select();
+    });
+
+
+
+
+    function HandleKeyAction(e) {
+
+        cancelSpeech();
+
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+
+
+        if (KEY_CODE == 13) {
+
+            switch (CURR_ACTIVE_MENU) {
+                case 1:
+                    break;
+                case 2:
+                    setAsDefaultPlaylist();
+                    break;
+                case 3:
+                    deletePlaylist();
+                    break;
+                case 4:
+                    editPlaylist();
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+
+
+        //ESC
+        if (KEY_CODE == 27) {
+            clickBack();
+        }
+
+
+
+
+        //up
+        if (KEY_CODE == 38) {
+    
+            if (CURR_ACTIVE_MENU > 0) {
+                CURR_ACTIVE_MENU -= 1;
+            }
+            else {
+                CURR_ACTIVE_MENU = 0;
+            }
+
+
+            switch (CURR_ACTIVE_MENU) {
+                case 1:
+                    startSpeech('Playlist name ' + $('#newPlaylistName').val());
+                    $("#newPlaylistName").focus();
+                    break;
+                case 2:
+                    startSpeech('Set default');
+                    $("#setDefault_btn").focus();
+                    break;
+                case 3:
+                    startSpeech('Delete');
+                    $("#delete_btn").focus();
+                    break;
+                case 4:
+                    startSpeech('Edit');
+                    $("#edit_btn").focus();
+                    break;
+                default: 
+                    break;
+            }
+
+        }
+
+        //down
+        if (KEY_CODE == 40) {
+
+
+            if (CURR_ACTIVE_MENU < 4) {
+                CURR_ACTIVE_MENU += 1;
+            }
+            else {
+                CURR_ACTIVE_MENU = 4;
+            }
+
+            switch (CURR_ACTIVE_MENU) {
+                case 1:
+                    startSpeech('Playlist name ' + $('#newPlaylistName').val());
+                    $("#newPlaylistName").focus();
+                    break;
+                case 2:
+                    startSpeech('Set default');
+                    $("#setDefault_btn").focus();
+                    break;
+                case 3:
+                    startSpeech('Delete');
+                    $("#delete_btn").focus();
+                    break;
+                case 4:
+                    startSpeech('Edit');
+                    $("#edit_btn").focus();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+    }
+
+
+
+
+
+
+    function clickBack() {
+        window.location = "/senses/sAccount/managePlaylists";
+    }
+
+
+
+
+
+
+
+    function editPlaylist() {
+        $.ajax({
+            type: "POST",
+            url: "/senses/sAccount/ConfirmRenamePlaylist/" + $("#newPlaylistID").val() + "?plst_name=" + $("#newPlaylistName").val(),
+            async: true,
+            success: function (data) {
+
+                startSpeech('done');
+                
+
+                setTimeout(function () {
+                    window.location = "/senses/sAccount/managePlaylists";
+                }, 1000);
+
+            }
+        });
+    }
+
+    function setAsDefaultPlaylist() {    
+
+        $.ajax({
+            type: "POST",
+            url: "/senses/sAccount/SetDefaultPlaylist/" + $("#newPlaylistID").val(),
+            async: true,
+            success: function (data) {
+
+                startSpeech('done');
+                
+                setTimeout(function () {
+                    window.location = "/senses/sAccount/managePlaylists";
+                }, 1000);
+            }
+        });
+
+    }
+
+
+
+    function deletePlaylist() {
+
+        startSpeech('please press enter to confirm deleting');
+
+
+        if (confirm('Are you sure you want to delete?')) {
+
+            
+            $.ajax({
+                type: "POST",
+                url: "/senses/sAccount/DeletePlaylist/" + $("#newPlaylistID").val(),
+                async: true,
+                success: function (data) {
+
+                    startSpeech('done');
+
+                    setTimeout(function () {
+                        window.location = "/senses/sAccount/managePlaylists";
+                    }, 1000);
+                }
+            });
+
+        }
+
+    }
+
+</script>

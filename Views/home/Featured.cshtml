@@ -1,0 +1,354 @@
+﻿@model hypster_tv.ViewModels.HomePageViewModel
+
+@{
+    ViewBag.Title = "Hypster.TV, Music, Radio, TV and the Net";
+}
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        RenderSong();
+    });
+    $(window).resize(function () {
+        RenderSong();
+    });
+
+
+
+    function RenderSong() {
+        var margin_left = 0;
+        var cont_width = 1024;
+
+        if ($(window).width() > 1024) {
+            margin_left = $(window).width() - 1024 - 44;
+            cont_width = 1024 + 30 + (margin_left / 2) - 15;
+        } else {
+            margin_left = 0;
+            cont_width = 1024;
+        }
+
+
+        //===================================================================
+        $("#listenSlide1").css("float", "right");
+        $("#listenSlide1").css("width", cont_width + "px");
+        //===================================================================
+
+
+        //===================================================================
+        $("#listenSlide2").css("float", "left");
+        $("#listenSlide2").css("width", cont_width + "px");
+        //===================================================================
+
+
+        //===================================================================
+        $("#listenSlide3").css("float", "right");
+        $("#listenSlide3").css("width", cont_width + "px");
+        //===================================================================
+
+        //===================================================================
+        $("#listenSlide4").css("float", "left");
+        $("#listenSlide4").css("width", cont_width + "px");
+        //===================================================================
+
+        //===================================================================
+        $("#listenSlide5").css("float", "right");
+        $("#listenSlide5").css("width", cont_width + "px");
+        //===================================================================
+
+    }
+</script>
+
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+<div id="listenSlide1" class="slideRight" style=" min-height:390px;">
+        
+
+
+
+<div style="float:left; width:1024px;">
+        
+        
+            <div class="Post_mainCont" style=" float:left; width:700px;">
+                        
+                
+
+
+                <article id="post-@Model.posts_list[0].post_guid">
+                
+
+                    <h2 style=" margin-top:0px;">
+                        <a class="PostTitle" href="/post/@Model.posts_list[0].post_guid">
+                            @Model.posts_list[0].post_title
+                        </a>
+                    </h2>
+
+                
+
+        
+
+                    <div class="PostCont">
+                        @Html.Raw(HttpUtility.HtmlDecode(Model.posts_list[0].post_content))
+                    </div>
+
+
+                    <div style=" float:left; width:100%; margin-top:10px;">
+                    
+                    
+                        <div style="float:left; margin-top:10px; ">
+                        
+                            <div style=" float:left; color:#f4f4ad;">
+                                Posted on <b>@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Model.posts_list[0].post_date.Value.Month) @Model.posts_list[0].post_date.Value.Day, @Model.posts_list[0].post_date.Value.Year</b>
+                            </div>
+
+                            <div style=" float:left; margin:2px 0 0 10px;">
+                                <!-- Lockerz Share BEGIN -->
+                                <a class="a2a_dd" href="http://www.addtoany.com/share_save"><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
+                                <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+                                <!-- Lockerz Share END -->
+                            </div>
+                        </div>
+
+
+                        <a class="PostReadMore" href="/post/@Model.posts_list[0].post_guid">
+                            Read More
+                        </a>
+
+                    </div>
+
+                </article>
+            </div>
+
+
+
+
+
+
+            
+            <div style=" float:left; width:304px; min-height:377px; margin-left:19px;">
+                                
+                                
+                    <div id="SideAd1" class="AdCont300x250_Drk" style=" float:left; margin-top:5px; "></div>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            document.getElementById("SideAd1").innerHTML = "<iframe src=\"http://feed-rt.baronsoffers.com/offer/feed/q/aT0zNTQ4LHM9MzAweDI1MCxuPWlmcmFtZQ==?subid=default\" width=\"300\" height=\"250\" scrolling=\"no\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>";
+                        });
+                    </script>
+
+                    <div onclick="window.location='http://@System.Configuration.ConfigurationManager.AppSettings["videoHostName"]/page/1';" style=" float:left; width:304px; height:105px; line-height:105px; overflow:hidden; background-color:#292929; border-radius:3px; margin-top:10px; margin-right:-8px; color:#FFFFFF; text-align:center; font-size:23px; cursor:pointer; ">
+                        Hypster TV 
+                    </div>
+
+            </div>
+            
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+<div id="listenSlide2" class="slideLeft" style=" min-height:390px;">
+        
+
+
+
+<div style=" float:right; width:1024px;">
+        
+        
+            <div class="Post_mainCont" style=" float:left; width:1000px;">
+                        
+                
+
+
+                <article id="post-@Model.posts_list[1].post_guid">
+                
+
+                    <h2 style=" margin-top:0px;">
+                        <a class="PostTitle" href="/post/@Model.posts_list[1].post_guid">
+                            @Model.posts_list[1].post_title
+                        </a>
+                    </h2>
+
+                
+
+        
+
+                    <div class="PostCont">
+                        @Html.Raw(HttpUtility.HtmlDecode(Model.posts_list[1].post_content))
+                    </div>
+
+
+                    <div style=" float:left; width:100%; margin-top:10px;">
+                    
+                    
+                        <div style="float:left; margin-top:10px; ">
+                        
+                            <div style=" float:left; color:#f4f4ad;">
+                                Posted on <b>@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Model.posts_list[1].post_date.Value.Month) @Model.posts_list[1].post_date.Value.Day, @Model.posts_list[1].post_date.Value.Year</b>
+                            </div>
+
+                            <div style=" float:left; margin:2px 0 0 10px;">
+                                <!-- Lockerz Share BEGIN -->
+                                <a class="a2a_dd" href="http://www.addtoany.com/share_save"><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
+                                <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+                                <!-- Lockerz Share END -->
+                            </div>
+                        </div>
+
+
+                        <a class="PostReadMore" href="/post/@Model.posts_list[1].post_guid">
+                            Read More
+                        </a>
+
+                    </div>
+
+                </article>
+            </div>
+
+
+
+
+
+
+            
+            <div style=" float:left; width:100%; margin-left:19px;">
+                                
+                    <div id="SideAd2" style=" float:left; margin-top:5px; "></div>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            document.getElementById("SideAd2").innerHTML = "<iframe src=\"http://feed-rt.baronsoffers.com/offer/feed/q/aT0zNTQ4LHM9NzI4eDkwLG49aWZyYW1l?subid=default\" width=\"728\" height=\"90\" scrolling=\"no\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>";
+                        });
+                    </script>
+
+            </div>
+            
+
+</div>
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxContRight">
+<div id="listenSlide3" class="slideRight" style=" min-height:600px;">
+        
+
+
+
+<div style=" float:left; width:1024px;">
+        
+        
+            <div class="Post_mainCont" style=" float:left; width:850px;">
+                        
+                
+
+
+                <article id="post-@Model.posts_list[2].post_guid">
+                
+
+                    <h2 style=" margin-top:0px;">
+                        <a class="PostTitle" href="/post/@Model.posts_list[2].post_guid">
+                            @Model.posts_list[2].post_title
+                        </a>
+                    </h2>
+
+                
+
+        
+
+                    <div class="PostCont">
+                        @Html.Raw(HttpUtility.HtmlDecode(Model.posts_list[2].post_content))
+                    </div>
+
+
+                    <div style=" float:left; width:100%; margin-top:10px;">
+                    
+                    
+                        <div style="float:left; margin-top:10px; ">
+                        
+                            <div style=" float:left; color:#f4f4ad;">
+                                Posted on <b>@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Model.posts_list[2].post_date.Value.Month) @Model.posts_list[2].post_date.Value.Day, @Model.posts_list[2].post_date.Value.Year</b>
+                            </div>
+
+                            <div style=" float:left; margin:2px 0 0 10px;">
+                                <!-- Lockerz Share BEGIN -->
+                                <a class="a2a_dd" href="http://www.addtoany.com/share_save"><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
+                                <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+                                <!-- Lockerz Share END -->
+                            </div>
+                        </div>
+
+
+                        <a class="PostReadMore" href="/post/@Model.posts_list[2].post_guid">
+                            Read More
+                        </a>
+
+                    </div>
+
+                </article>
+            </div>
+
+
+
+
+
+
+            
+            <div style=" float:left; width:104px; min-height:377px; margin-left:19px;">
+                                
+                                
+                    <div id="SideAd3" style=" float:left; margin-top:5px; "></div>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            document.getElementById("SideAd3").innerHTML = "<iframe src=\"http://feed-rt.baronsoffers.com/offer/feed/q/aT0zNTQ4LHM9MTYweDYwMCxuPWlmcmFtZQ==?subid=default\" width=\"160\" height=\"600\" scrolling=\"no\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>";
+                        });
+                    </script>
+
+
+            </div>
+           
+
+
+</div>
+
+
+
+
+</div>
+</div>

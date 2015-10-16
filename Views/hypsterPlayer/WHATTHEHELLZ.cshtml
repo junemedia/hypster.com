@@ -1,0 +1,401 @@
+﻿<!DOCTYPE html>
+
+@model hypster.ViewModels.videoPlayerViewModel
+@{
+    Layout = null;
+    int song_limit = Int32.Parse(System.Configuration.ConfigurationManager.AppSettings["Song_LIMIT"]);
+}
+
+
+
+<html>
+  <head>
+        
+        <meta charset="utf-8" />
+        <meta id="vpM" name="viewport" content="width=device-width, initial-scale=1">
+        <title>@ViewBag.PageTitle</title>
+        <meta name="description" content="@ViewBag.Desc Create a free music playlist and listen to 10 millions music playlists." />
+        
+
+
+        <link src="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"  rel="stylesheet" type="text/css" />
+
+        <script src="http://code.jquery.com/jquery-1.8.3.min.js"  type="text/javascript"></script>
+        <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"  type="text/javascript"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+
+
+        @Scripts.Render("~/bundlesWTHLZMPL/scripts")
+
+
+        <!--link id="mStyles1" href="/areas/apps/css/appSite2.css?id=62729381" rel="stylesheet" type="text/css" /-->
+        <link id="appPlayer1" href="/areas/apps/css/appPlayerWHATTHEHELLZ.css?id=62729381" rel="stylesheet" type="text/css" />
+
+  </head>
+
+
+
+
+
+
+  <body class="MainNHypPlayer"  onclick="$('#tapMessage').css('display','none');" style=" background:#FFFFFF;">
+    <div class="MainRootCont" >
+            
+
+
+        <div style=" width:487px; height:683px; border:1px solid #000000; border-radius:19px; margin:auto; padding:0 0 5px 0;" >
+            <div id="MainContHolder">
+                    
+                        
+                    <div style=" float:left; width:91%; height:40px; line-height:40px; background-image:url(/imgs/wthlz/plr_header.png); background-repeat:no-repeat; background-position:center; margin:6px 0 0 3.5%; padding:0 1% 0 1%;">
+                        <a href="http://hypster.com" target="_blank" style="display:block; width:110px; height:35px; border:none; margin:3px 0 0 260px;"></a>
+                    </div>
+                    
+
+                    <div class="MainPlayerHoder" style=" min-height:300px; ">
+                        
+                            <div id="player"></div>
+
+
+                            <div id="PlaybackStatusCont1" style=" float:left; width:453px; height:3px; background-color:#656565; cursor:pointer; " onmouseover="PSC_over()" onmouseout="PSC_out()" >
+                            
+                                <div id="PlaybackStatusInnrCont1" style=" position:relative; width:100%; height:3px; background-color:#656565; cursor:pointer; z-index:10000; ">
+                                    <div id="PlaybackStatus1" style=" float:left; width:0%; height:3px; background-color:#e80389; ">
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="ControlBar" >
+            
+                                <div id="Prev_btn" onclick="PlayPrevVideo();" title="Prev"></div>
+                
+                                <div id="PlPs_btn" onclick="PlayPauseVideo();" title="Play/Pause"></div>
+            
+                                <div id="Next_btn" onclick="PlayNextVideo();" title="Next"></div>
+
+                                <div id="Shuffle_btn" onclick="ShuffleSongs();" title="Shuffle"></div>
+
+                                <div id="Mute_btn_cont" onmouseover="SoundMouseOver();" onmouseout="SoundMouseOut();" title="Mute/Unmute">
+                                    <div id="Mute_btn" onclick="MuteSound();" title="Mute/Unmute"></div>
+                                    <div id="VolumeControl"><div id="VolumeControlVal"></div></div>
+                                </div>
+
+
+
+                            </div>
+
+
+                    </div>
+
+
+
+
+                    <div style="float:left; width:100%; height:2px; background-color:#bbb7b8; margin:0 0 5px 0;">
+                    </div>
+                        
+
+
+
+                    <div class="MainPlaylistHolder" >
+
+                        <div id="PlayerPlaylistHolder1">
+                            @for (int i = 0; i < Model.songs_list.Count; i++)
+                            {
+                                <div id="PlItem_@i" class="playlistItemC">
+                            
+                                    <img alt="" src="http://i.ytimg.com/vi/@Model.songs_list[i].YoutubeId/0.jpg" onclick="plVClick('@Model.songs_list[i].YoutubeId', @i)" />
+                                    <div id="songC_@i" class="songTtl" onclick="plVClick('@Model.songs_list[i].YoutubeId', @i)">
+                                        @Model.songs_list[i].Title
+                                    </div>
+                                    <input type="hidden" id="si_@Model.songs_list[i].YoutubeId" value="@Model.songs_list[i].id" />
+                                </div>
+                            
+                                if (i == song_limit)
+                                {
+                                    <div class="LoadMoreSongs_btn" onclick="LoadMoreSongsPlaylist()" style=" float:left; width:98.5%; height:44px; line-height:44px; overflow:hidden; margin:0 0 2px 2px; border-radius:1px; text-align:center; cursor:pointer; ">
+                                        Load More Songs...
+                                    </div>
+                                    break;
+                                }
+                            }
+                        </div>
+
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    <div id="tapMessage" style=" display:none; position:absolute; top:250px; left:20px; width:250px; height:80px; line-height:37px; background-color:#CC0000; border-radius:2px; color:#FFFFFF; text-align:center; font-size:30px;">
+        <img alt="" src="/imgs/mplUpArrow.png" style=" float:right; margin:-35px -50px 0 0;" />
+        Tap here to start video.
+    </div>
+
+
+
+    <!-- hide back -->
+    <div class="Trans_BACK" id="HideBackDiv" onclick="Show_Content();"></div>
+    <div id="popupContainer"></div>
+    <!-- hide back -->
+
+
+
+    <script type="text/javascript">
+        var tag = document.createElement('script');
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+
+        PlbkBar_W = 453;
+        volContBar_W = 43;
+
+        curr_playlist_id = '@ViewBag.PlaylistID';
+        curr_user_id = '@ViewBag.UserID';
+        iua = '@User.Identity.IsAuthenticated';
+        desc_length = '@ViewBag.DescLength';
+        isNP = 'Y';
+
+
+
+        
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                width: '320',
+                height: '250',
+                @if(Model.songs_list.Count > 0)
+                {
+                    <text>videoId: '@Model.songs_list[0].YoutubeId',</text>
+                }
+                playerVars: { 'autoplay': 0, 'controls': 0, 'enablejsapi' : 1, 'playsinline': 1 },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+            
+
+            plTimer = setInterval(function () { currentPlaybackState() }, 1000);
+
+            PSC1 = document.getElementById("PlaybackStatusCont1");
+            PSC1.addEventListener("click", changePlaybackStatus_Click, false);
+
+
+            volCont1 = document.getElementById("VolumeControl");
+            volCont1.addEventListener("click", VolumeControl_Click, false);
+
+            @if(Model.songs_list.Count > 0)
+            {
+                <text>CURR_VIDEO = 0;</text>
+            }
+        }
+        
+        
+        
+
+
+        function change_player_playlist(object) {
+            window.location = "/m/mplaylists/user/@(ViewBag.Username)?" + object[object.selectedIndex].value;
+        }
+
+        var isReady = false;
+        function onPlayerReady(event) {
+            if(isReady == false)
+            {
+                player.addEventListener("onStateChange", "onPlayerStateChange");
+                player.addEventListener("onError", "onError");
+
+                player.setVolume(85);
+
+                @if (ViewBag.AUTO_PLAY != null && ViewBag.AUTO_PLAY == "0")
+                {
+                }
+                else
+                {
+                    
+                }
+
+                isReady = true;
+
+                Higlight_Item(CURR_VIDEO);
+
+                //setTimeout(function(){SharesNum()}, 3000);
+            }
+        }
+
+
+
+        var items_arr = new Array();
+        @for (int i = 0; i < Model.songs_list.Count; i++)
+        {
+            <text>items_arr[@i] = '@Model.songs_list[i].YoutubeId';</text>
+
+
+            if (i == song_limit)
+            {
+                break;
+            }
+        }
+        if(items_arr.length > 1)
+        {
+            $("#Prev_btn").css("display","block");
+            $("#Next_btn").css("display","block");
+            $("#Shuffle_btn").css("display","block");
+        }
+        else
+        {
+            $("#Prev_btn").css("display","none");
+            $("#Next_btn").css("display","none");
+            $("#Shuffle_btn").css("display","none");
+        }
+
+
+
+
+
+        function SharesNum()
+        {
+            var shares_num = $('.button-type-post-share .ra1-pw-button-counter-value').html();
+            $.ajax({
+                type: "POST",
+                url: "/playlist/chSSres?PL_ID=" + curr_playlist_id + "&US_ID=" + curr_user_id + "&SN=" + shares_num,
+                async: true,
+                success: function (data) {
+                }
+            });
+        }
+
+
+
+
+        function ShuffleSongs()
+        {
+            var object = document.getElementById("dr_PlaylistList");
+            $("#PlayerPlaylistHolder1").html("");
+
+
+            if (object != null) {
+                $.ajax({
+                    type: "POST",
+                    url: "/playlist/getPlaylistDetailsPlayerWTHELLZ?PL_ID=" + object[object.selectedIndex].value + "&US_ID=@ViewBag.UserID" + "&Sort=Rand",
+                    async: true,
+                    success: function (data) {
+                        $('#PlayerPlaylistHolder1').html(data);
+                    }
+                });
+            }
+            else
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "/playlist/getPlaylistDetailsPlayerWTHELLZ?PL_ID=" + curr_playlist_id + "&US_ID=@ViewBag.UserID" + "&Sort=Rand",
+                    async: true,
+                    success: function (data) {
+                        $('#PlayerPlaylistHolder1').html(data);
+                    }
+                });
+            }
+        }
+
+
+
+
+
+
+        function LoadMoreSongsPlaylist()
+        {
+            curr_playlist_segment = curr_playlist_segment + 1;
+            $('.LoadMoreSongs_btn').css('display','none');
+
+            
+            $.ajax({
+                    type: "POST",
+                    url: "/playlist/getPlaylistSegmentPlayer?PL_ID=" + curr_playlist_id + "&US_ID=" + curr_user_id + "&Seg=" + curr_playlist_segment,
+                    async: true,
+                    success: function (data) {
+                        $('#PlayerPlaylistHolder1').append(data);
+                    }
+                });
+        }
+
+
+        function srchTagS(p_ss)
+        {   
+            $.ajax({
+                    type: "POST",
+                    url: "/compatibilityCheck/getCompatibleTagsPlaylists/" + p_ss.replace(/^\s\s*/, '').replace(/\s\s*$/, ''),
+                    async: true,
+                    success: function (data) {
+                        $('#PopPlstsCH1').html(data);
+                    }
+                });
+        }
+    </script>
+
+
+
+
+
+
+
+
+    <div id="TraceTxt" style="display:none;"></div>
+    <div class="Trans_BACK" id="HideBackDiv_PopupPlayer" onclick="Show_Content_PopupPlayer();"></div>
+    <div id="popupContainer_PopupPlayer"></div>
+    
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-28695705-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+
+    </div>
+
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

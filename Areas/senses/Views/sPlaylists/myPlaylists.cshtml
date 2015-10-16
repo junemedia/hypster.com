@@ -1,0 +1,255 @@
+﻿@model List<hypster_tv_DAL.Playlist>
+@{
+    ViewBag.Title = "My Playlists";
+    int i_counter = 1;
+    Layout = "/Areas/senses/Views/Shared/_srLayout.cshtml";
+}
+
+
+
+
+<div class="cir_back_btn"> 
+    <div onclick="clickBack()" style=" float:left; width:100%; margin:0px 0 0 0px; cursor:pointer; ">
+        BACK
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="myPlstsBlkBox1">
+    
+
+    <div id="msgBox1_myplaylists" style=" float:none; width:400px; margin:auto; ">
+
+        <div class="myplstMainTitle1">
+            YOU HAVE @Model.Count PLAYLISTS.
+        </div>
+
+       
+
+        @foreach (var item in Model)
+        {
+            <div class="mnuItm" id="menu_@(i_counter)" data-plstid="@item.id" data-plstname="@item.name.Replace("\'","").ToLower()" onclick="LoadPlaylist('@item.id')">
+                @item.name
+            </div>
+    
+            i_counter += 1;
+        }
+
+
+        <div style=" width:100%; height:40px;">
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+<div style=" float:left; width:100%; height:260px; border:1px solid #318E8A; background:url('/Areas/senses/imgs/senses_back/back_1.jpg') no-repeat center;">
+    
+    <img alt="" src="/Areas/senses/imgs/senses_ct_icon.png" style=" float:left; margin:130px 0 0 175px;" />
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        cancelSpeech();
+        startSpeech('You have @Model.Count playlists.');
+
+    });
+</script>
+
+
+
+<script type="text/javascript">
+
+    var CURR_ACTIVE_MENU = 0;
+    var MENU_COUNT = @Model.Count;
+
+    function HandleKeyAction(e) {
+
+        cancelSpeech();
+
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+        //--------------------------------------------
+        //ESC
+        if (KEY_CODE == 27) {
+           clickBack();
+        }
+        //--------------------------------------------
+
+
+
+
+        //enter
+        if (KEY_CODE == 13) {
+        
+            //alert($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstid"));
+            
+            
+            //load current playlist
+            //--------------------------------------------------------------------
+            LoadPlaylist($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstid"));
+            //--------------------------------------------------------------------
+        }
+
+
+
+        //down
+        if (KEY_CODE == 40) {
+            //move menu down
+
+            CURR_ACTIVE_MENU += 1;
+            if (CURR_ACTIVE_MENU > MENU_COUNT) {
+                CURR_ACTIVE_MENU = MENU_COUNT;
+            }
+
+
+            startSpeech($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname"));
+
+
+            $(".mnuItm").css("background-color", "#000000");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#318E8A");
+        }
+
+
+        //up
+        if (KEY_CODE == 38) {
+            //move menu up
+
+            CURR_ACTIVE_MENU -= 1;
+            if (CURR_ACTIVE_MENU <= 0) {
+                CURR_ACTIVE_MENU = 1;
+            }
+
+
+            startSpeech($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname"));
+            
+
+            $(".mnuItm").css("background-color", "#000000");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#318E8A");
+        }
+
+
+
+        if (KEY_CODE > 48 && KEY_CODE < 58) {
+            
+            var PLST_NUM = KEY_CODE - 48;
+
+            //load current playlist
+            //--------------------------------------------------------------------
+
+            window.location = "/senses/sListen/user/@(User.Identity.Name)?" + $("#menu_" + PLST_NUM).attr("data-plstid") + "&ba=" + encodeURI("/senses/sPlaylists/myPlaylists");
+
+            //--------------------------------------------------------------------
+
+        }
+
+
+
+
+        //CNTRL
+        if (KEY_CODE == 17) {
+            StartVoiceCommand("myPlaylists");
+        }
+
+
+    }
+
+
+    function clickBack(){
+
+        cancelSpeech();
+        
+        window.location = "/senses/sStart/home";
+    }
+
+
+
+
+    function LoadPlaylist(plst_id)
+    {
+        cancelSpeech();
+
+
+        
+
+
+        window.location = "/senses/sListen/user/@(User.Identity.Name)?" + plst_id + "&ba=" + encodeURI("/senses/sPlaylists/myPlaylists");
+    }
+
+
+
+    
+
+
+    function ProccessVoiceCommand(comm) {
+
+        var isHandled = false;
+        isHandled = handle_generic_commands(comm);
+
+
+        var found_id = $(".mnuItm[data-plstname='" + comm.toLowerCase() + "']").attr("data-plstid");
+        if(found_id != undefined)
+        {
+            cancelSpeech(); 
+            startSpeech("Loading your " + comm + " playlist...");
+            
+
+            setTimeout(function(){
+                LoadPlaylist(found_id);
+            },3300);
+        }
+        else
+        {
+            if(isHandled == false)
+            {
+                cancelSpeech(); 
+                startSpeech("Please say again...");
+            }
+
+        }
+        
+    }
+
+
+
+
+</script>
+

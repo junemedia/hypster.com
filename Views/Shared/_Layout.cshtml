@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+
+    @if (Request.Browser.IsMobileDevice)
+    {
+        if (Request.Path.Contains('/'))
+        {
+            string sq_str = "";
+            if (Request.QueryString != null)
+            {
+                sq_str = "?" + Request.QueryString.ToString();
+            }
+            Response.Redirect("/apps/appHome");
+            //Response.Redirect("/apps/app" + Request.Path.Remove(0, 1) + sq_str);
+        }
+        else
+        {
+            Response.Redirect("/apps/appHome");
+        }
+    } 
+    
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta name="alexaVerifyID" content="D1zuW6QmyfkVJqITiYkg7ecUz5k" />
+    <meta name="description" content="@ViewBag.Desc" />
+    
+    @if (ViewBag.LinkTag != null)
+    {
+        <text>@Html.Raw(ViewBag.LinkTag)</text>
+    }
+
+    
+    <link src="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"  rel="stylesheet" type="text/css" />
+    
+    @Styles.Render("~/bundles/css")
+
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"  type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"  type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+    
+
+    @Scripts.Render("~/bundles/scripts")
+
+</head>
+
+
+
+
+
+<body>
+    
+
+    <div class="MainBD13">
+        
+        <div class="ContentHeaderCont">
+            @Html.Partial("~/Views/Shared/pr_TopMenu.cshtml")
+        </div>
+
+        <div class="ContentRootCont" >
+             @RenderBody()
+<div style="text-align:center;">
+
+	<!--/* OpenX Asynchronous JavaScript tag */-->
+
+	<!-- /*
+	 * The tag in this template has been generated for use on a
+	 * non-SSL page. If this tag is to be placed on an SSL page, change the
+	 * 'http://ox-d.junemedia.com/...'
+	 * to
+	 * 'https://ox-d.junemedia.com/...'
+	 */ -->
+	 
+
+	<div id="537983176_300x250_mid" style="width:300px;height:250px;margin:0;padding:0">
+	  <noscript><iframe id="6f8c2ee950" name="6f8c2ee950" src="http://ox-d.junemedia.com/w/1.0/afr?auid=537983176&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="300" height="250"><a href="http://ox-d.junemedia.com/w/1.0/rc?cs=6f8c2ee950&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ox-d.junemedia.com/w/1.0/ai?auid=537983176&cs=6f8c2ee950&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript>
+	</div>
+	<script type="text/javascript">
+	  var OX_ads = OX_ads || [];
+	  OX_ads.push({
+		 slot_id: "537983176_300x250_mid",
+		 auid: "537983176"
+	  });
+	</script>
+
+	<script type="text/javascript" src="http://ox-d.junemedia.com/w/1.0/jstag"></script>
+
+</div>        
+        </div>
+    
+        <div class="push"></div>
+    </div>
+
+
+
+
+
+    
+    <div class="ContentFooterCont">
+        @Html.Partial("~/Views/Shared/pr_BottomFooter.cshtml")
+    </div>
+    
+
+ 
+    <div class="Trans_BACK" id="HideBackDiv" onclick="Show_Content();"></div>
+    <div id="popupContainer"></div>
+    
+
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-28695705-1']);
+        _gaq.push(['_setDomainName', 'hypster.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    
+        var __cho__ = { "pid": 2406 };
+        (function () {
+            var c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.async = true;
+            c.src = document.location.protocol + '//cc.chango.com/static/o.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(c, s);
+        })();
+    </script>
+
+
+</body>
+</html>

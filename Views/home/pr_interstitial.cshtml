@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+
+
+@if (ViewBag.isShow != null && ViewBag.isShow == true)
+{
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var hdiv = document.getElementById("HideBackDiv");
+            hdiv.style.width = $(document).width() + 'px';
+            hdiv.style.height = $(document).height() + 'px';
+            Hide_Content();
+
+            $("#ist_mh").css("display", "block");
+
+            setTimeout(function () { hideInst(); }, 10000);
+
+        });
+
+
+        function hideInst() {
+            $("#ist_mh").css("display", "none");
+            Show_Content();
+        }
+
+    </script>
+
+
+    
+    
+    <div id="ist_mh" style=" display:block; position:absolute; top:0px; left:0px; z-index:999999; width:100%; text-align:center;">
+    
+
+
+            <div style=" float:left; width:100%; height:65px; background-color:#bebebe;">
+                <div style=" float:right; margin:30px 30px 0 0; cursor:pointer; color:#232323; font-size:16px;" onclick="hideInst();">
+                    <b>Continue To Website >></b>
+                </div>
+            </div>
+
+
+
+            <div style=" float:left; width:100%; margin-top:80px; ">
+                <center>
+                    <div style="width:640px; height:480px;">
+                        <!-- Begin 640x480 | BaronsMedia | Hypster | Hypster interstitial -->
+                        <iframe src="http://feed-rt.baronsoffers.com/offer/feed/q/aT03MzExLHM9NjQweDQ4MCxuPWlmcmFtZQ==?subid=default" width="640" height="480" scrolling="no" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+                        <!-- End 640x480 -->
+                    </div>
+                </center>
+            </div>
+
+    </div>
+    
+}
+
+
+

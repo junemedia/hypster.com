@@ -1,0 +1,25 @@
+﻿@model List<hypster_tv_DAL.PlaylistData_Song>
+@{
+    Layout = null;
+}
+
+
+
+@{ int counter = 0; }
+@for (int i = 0; i < Model.Count; i++)
+{
+    <div class="plsIPPreview">
+        <img alt="" src="http://i.ytimg.com/vi/@Model[i].YoutubeId/0.jpg" />
+        <div>@Model[i].Title</div>
+    </div>
+    
+    
+    if (counter > 8)
+    {
+        break;
+    }
+    counter++;
+}
+<div class="plsIPPreview">
+    <div>...</div>
+</div>
