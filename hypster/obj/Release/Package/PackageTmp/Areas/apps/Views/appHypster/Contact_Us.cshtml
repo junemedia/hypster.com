@@ -1,0 +1,93 @@
+﻿@using Recaptcha;
+@{
+    ViewBag.Title = "Hypster - free music online - player for tumblr";
+    ViewBag.Desc = "";
+    Layout = "~/Areas/apps/Views/Shared/_Layout_Apps.cshtml";
+
+    ViewBag.LinkTag = "<link rel=\"canonical\" href=\"http://hypster.com/hypster/contact_us\" >";
+}
+
+
+
+
+
+<!--div class="mContactsTopH">
+</div-->
+
+
+<img alt="" src="/imgs/contact_us_back.png" style=" float:left; width:100%; " />
+
+
+
+
+<div class="ContactUsCont">
+
+    <div class="CntsLeftCH">
+        @using (Html.BeginForm())
+        {
+                            
+            <div style=" float:right; width:100%;">
+            
+                <div class="cntsEmailE">
+                    <div>&nbsp;EMAIL:</div>
+                    <input type="text" name="YourEmail" id="YourEmail" value="" />
+                </div>
+
+                <div class="cntsSubjectE">
+                    <div>&nbsp;SUBJECT:</div>
+                    <input type="text" name="Subject" id="Subject" value="" />
+                </div>
+
+                <div class="cntsMessageE">
+                    <div>&nbsp;MESSAGE:</div>
+                    <textarea type="text" name="Message" id="Message" value="" ></textarea>
+                </div>
+
+
+                <div style=" float:left; width:100%;">
+                    <div style=" float:left; margin:10px 0 0 0px;">
+                        @Html.Raw(Html.GenerateCaptcha())
+                        @Html.ValidationMessage("recaptcha")
+                        <br />
+                        <div style=" background-color:#CC0000; color:#FFFFFF;">@ViewBag.ServerMessage</div>
+                    </div>
+                </div>
+
+            </div>
+                            
+        
+            <div style=" float:right; width:100%; text-align:right; margin-top:5px;">
+                <input type="submit" value="SUBMIT" style=" width:250px; height:30px; background-color:#47bb90; border:2px solid #47bb90; border-radius:3px; color:#FFFFFF; font-family:'Lato', sans-serif; font-size:16px;" />
+            </div>
+        }
+    </div>
+
+
+
+
+
+    <div class="CntsRightCH">
+   
+        <div style=" float:left; width:100%; margin:10px 0 0 0; border-bottom:2px solid #42bc90; ">
+            <H2 style=" margin:5px 0 5px 0;">FAQ</H2>
+        </div>
+
+        <a href="/resources/manuals" class="ContUsSdeArt">
+            &nbsp;How To Use
+        </a>
+                    
+        <a href="/resources/manuals/details/-How-to-put-player-on-tumblr" class="ContUsSdeArt">
+            &nbsp;How Create Player on Tumblr
+        </a>
+
+        <a href="/resources/manuals/details/Why-songs-are-not-working-on-tumblr-blog-after-embed" class="ContUsSdeArt">
+            &nbsp;Songs are not working on tumblr blog
+        </a>
+
+    </div>
+                
+
+
+</div>
+
+

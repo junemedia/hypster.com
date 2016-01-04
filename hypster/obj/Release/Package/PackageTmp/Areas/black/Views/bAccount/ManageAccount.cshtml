@@ -1,0 +1,348 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+
+<div class="cir_1">    
+
+    <div onclick="clickBack()" style=" float:left; width:100%; margin:100px 0 0 90px; cursor:pointer; ">
+        << BACK
+    </div>
+
+</div>
+
+
+
+
+
+<div class="cir_2">
+    
+
+    <div id="msgBox1">
+
+        <div>
+            Manage account. Choose one of the <span style=" color:#CC0000; ">3</span> menus.
+        </div>
+
+        <br />
+        <div class="mnuItm" id="menu_1" onclick="LoadContent(49);">Press <span style=" color:#CC0000; ">1</span> to manage your account info</div>
+        <div class="mnuItm" id="menu_2" onclick="LoadContent(50);">Press <span style=" color:#CC0000; ">2</span> to manage playlists</div>
+        <div class="mnuItm" id="menu_3" onclick="LoadContent(51);">Press <span style=" color:#CC0000; ">3</span> to log out</div>
+    
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    
+    if (is_speech_sound == 1) {
+        window.speechSynthesis.cancel();
+        var msg = new SpeechSynthesisUtterance('Manage your account. Choose one of the 3 menus.');
+        window.speechSynthesis.speak(msg);
+    }
+
+
+    var msg1 = new SpeechSynthesisUtterance('manage your account info');
+    var msg2 = new SpeechSynthesisUtterance('manage playlists');
+    var msg3 = new SpeechSynthesisUtterance('log out');
+</script>
+
+
+
+
+<script type="text/javascript">
+
+    var CURR_ACTIVE_MENU = 0;
+    var MENU_COUNT = 3;
+
+    function HandleKeyAction(e) {
+
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+        }
+
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+
+
+        //ESC
+        if (KEY_CODE == 27) {
+            clickBack();
+        }
+
+
+
+        //enter
+        if (KEY_CODE == 13) {
+            //enter
+            switch (CURR_ACTIVE_MENU) {
+                case 1:
+                    KEY_CODE = 49;
+                    break;
+                case 2:
+                    KEY_CODE = 50;
+                    break;
+                case 3:
+                    KEY_CODE = 51;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
+
+        //down
+        if (KEY_CODE == 40) {
+            //move menu down
+
+            CURR_ACTIVE_MENU += 1;
+            if (CURR_ACTIVE_MENU > MENU_COUNT) {
+                CURR_ACTIVE_MENU = MENU_COUNT;
+            }
+
+            if (is_speech_sound == 1) {
+                window.speechSynthesis.speak(eval("msg" + CURR_ACTIVE_MENU));
+            }
+
+
+            $(".mnuItm").css("background", "none");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#DEDEDE");
+        }
+
+
+        //up
+        if (KEY_CODE == 38) {
+            //move menu up
+
+            CURR_ACTIVE_MENU -= 1;
+            if (CURR_ACTIVE_MENU <= 0) {
+                CURR_ACTIVE_MENU = 1;
+            }
+
+            if (is_speech_sound == 1) {
+                window.speechSynthesis.speak(eval("msg" + CURR_ACTIVE_MENU));
+            }
+
+
+            $(".mnuItm").css("background", "none");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#DEDEDE");
+        }
+
+
+
+
+
+
+        LoadContent(KEY_CODE);
+
+
+
+        //CNTRL
+        if (KEY_CODE == 17) {
+            StartVoiceCommand();
+        }
+
+
+    }
+
+
+    function LoadContent(KEY_CODE) {
+
+
+        //1
+        if (KEY_CODE == 49) {
+            $("#msgBox1").html("loading your account info.....");
+
+            $.ajax({
+                type: "POST",
+                url: "/black/bAccount/ManageAccountInfo",
+                async: true,
+                success: function (data) {
+                    $("#bContHolder1").html(data);
+                }
+            });
+
+        }
+
+
+        //2
+        if (KEY_CODE == 50) {
+            $("#msgBox1").html("loading your playlists.....");
+
+            $.ajax({
+                type: "POST",
+                url: "/black/bAccount/managePlaylists",
+                async: true,
+                success: function (data) {
+                    $("#bContHolder1").html(data);
+                }
+            });
+        }
+
+
+        //3
+        if (KEY_CODE == 51) {
+            $("#msgBox1").html("logging you out.....");
+
+            if (is_speech_sound == 1) {
+                var msg_logout = new SpeechSynthesisUtterance('logging you out.....');
+                window.speechSynthesis.speak(msg_logout);
+            }
+
+            setTimeout(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/black/bAccount/logOut",
+                    async: true,
+                    success: function (data) {
+                        $("#bContHolder1").html(data);
+                    }
+                });
+            }, 2500);
+        }
+
+    }
+
+
+
+
+    function clickBack() {
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/black/bhome/step_2",
+            async: true,
+            success: function (data) {
+                $("#bContHolder1").html(data);
+            }
+        });
+    }
+
+
+
+    function StartVoiceCommand() {
+
+
+        DisplayMicIcon();
+
+
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+            var search_msg = new SpeechSynthesisUtterance("say");
+            window.speechSynthesis.speak(search_msg);
+        }
+
+
+        setTimeout(function () {
+            var recognition = new webkitSpeechRecognition();
+            //recognition.continuous = true;
+            //recognition.interimResults = true;
+            recognition.lang = "en-US";
+            recognition.onresult = function (event) {
+
+                var curr_speech = event.results[0][0];
+                console.log(event.results[0][0].transcript)
+
+                ProccessVoiceCommand(event.results[0][0].transcript);
+
+            }
+            recognition.start();
+        }, 300);
+    }
+
+
+    function ProccessVoiceCommand(comm) {
+        switch (comm) {
+            case "sign out":
+            case "log out":
+            case "sign off":
+                $("#msgBox1").html("logging you out.....");
+
+                if (is_speech_sound == 1) {
+                    var msg_logout = new SpeechSynthesisUtterance('logging you out.....');
+                    window.speechSynthesis.speak(msg_logout);
+                }
+
+                setTimeout(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/black/bAccount/logOut",
+                        async: true,
+                        success: function (data) {
+                            $("#bContHolder1").html(data);
+                        }
+                    });
+                }, 2500);
+                break;
+            case "manage playlists":
+            case "playlist":
+            case "playlists":
+            case "my playlist":
+            case "my playlists":
+                $("#msgBox1").html("loading your playlists.....");
+
+                $.ajax({
+                    type: "POST",
+                    url: "/black/bAccount/managePlaylists",
+                    async: true,
+                    success: function (data) {
+                        $("#bContHolder1").html(data);
+                    }
+                });
+                break;
+            case "account":
+            case "account info":
+            case "my account":
+            case "manage account":
+                $("#msgBox1").html("loading your account info.....");
+
+                $.ajax({
+                    type: "POST",
+                    url: "/black/bAccount/ManageAccountInfo",
+                    async: true,
+                    success: function (data) {
+                        $("#bContHolder1").html(data);
+                    }
+                });
+                break;
+            default:
+                if (is_speech_sound == 1) {
+                    window.speechSynthesis.cancel();
+                    var search_msg = new SpeechSynthesisUtterance("Please say again...");
+                    window.speechSynthesis.speak(search_msg);
+                }
+                break;
+        }
+    }
+
+
+
+</script>

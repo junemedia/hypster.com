@@ -1,0 +1,270 @@
+﻿@model hypster_tv.ViewModels.getPostViewModel
+
+@{
+    ViewBag.Title = Model.post.post_title;
+    ViewBag.Desc =  Model.post.post_short_content;
+    Layout = "~/Views/Shared/_Layout_News.cshtml";
+}
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        RenderSong();
+    });
+    $(window).resize(function () {
+        RenderSong();
+    });
+
+
+
+    function RenderSong() {
+        var margin_left = 0;
+        var cont_width = 1024;
+
+        if ($(window).width() > 1024) {
+            margin_left = $(window).width() - 1024 - 44;
+            cont_width = 1024 + 30 + (margin_left / 2) - 15;
+        } else {
+            margin_left = 0;
+            cont_width = 1024;
+        }
+
+        
+        $("#listenSlide1").css("float", "right");
+        $("#listenSlide1").css("width", cont_width + "px");
+        
+        
+        $("#listenSlide2").css("float", "left");
+        $("#listenSlide2").css("width", cont_width + "px");
+
+
+
+        
+        //relVideosCth
+        $.ajax({
+            type: "POST",
+            url: "/thumbseed/getSeedsNews?qq=@HttpUtility.UrlEncode(Model.post.post_guid.Replace('-', ' '))",
+            async: true,
+            success: function (data) {
+                $('#relVideosCth').html(data);
+            }
+        });
+    }
+
+</script>
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:750px;">
+
+
+    <div style=" float:left; width:774px;">
+
+
+
+        <div class="Post_mainCont">
+
+            <div style=" float:left; width:100%; height:1px;">
+                
+                <div style=" position:relative; top:50px; left:-1000px;">
+                    
+                    <div id="SNR_BtnHolder_@Model.post.post_id" style=" float:right; width:70px;">
+                    
+                        <div class="pw-widget pw-vertical" pw:image="" pw:url="http://hypster.com/content/HypNews/post/@Model.post.post_guid" pw:title="@Model.post.post_title">
+                        <a class="pw-button-tumblr pw-look-native"></a>
+	                    <a class="pw-button-facebook pw-look-native"></a>
+	                    <a class="pw-button-twitter pw-look-native"></a>
+	                    <a class="pw-button-post-share"></a>
+                        </div>
+                        <script src="http://i.po.st/static/v3/post-widget.js#publisherKey=caq8eudavn7j6erou9n3" type="text/javascript"></script>
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+
+    
+            <article id="post-@Model.post.post_guid">
+    
+                <h2 style=" margin-top:0px;">
+                    @Model.post.post_title
+                </h2>
+
+                <div style=" min-height:250px; font-size:18px; line-height:25px; font-weight:lighter; margin-top:5px;">
+                    @Html.Raw(HttpUtility.HtmlDecode(Model.post.post_content))
+
+                    <br />
+
+                    @Html.Raw(HttpUtility.HtmlDecode(Model.post.MusicPlayer))
+                    
+                </div>
+
+
+                <div style=" float:left; width:100%; margin-top:10px;">
+                    
+                    <div style=" float:right; margin-top:17px; color:#d4ae52;">
+                        Posted on @System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Model.post.post_date.Value.Month) @Model.post.post_date.Value.Day, @Model.post.post_date.Value.Year
+                    </div>
+                </div>
+
+            </article>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+    <div style=" float:left; width:320px; min-height:400px;">
+
+        @if (Model.post.ad_id != "")
+        {
+            <div style=" float:left; width:300px; height:250px; margin:25px 0 0 0; padding:10px; border-radius:2px; background-color:#202020;">
+                <div id="adaptvCompanion300x250" style="display:none;"></div>
+            </div>
+        }
+
+        <div id="relVideosCth" style=" float:left; width:100%; min-height:400px;">
+        </div>
+
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide2" class="slideLeft" style=" min-height:310px;">
+
+
+
+    <div style=" float:right; width:1024px;">
+        
+
+        <div class="PostNav_cont">
+            <a class="PrevPost" href="/content/HypNews/prevPost?PID=@Model.post.post_id">PREV POST</a>
+            <a class="HomePost" href="/content/HypNews">NEWS HOME</a>
+            <a class="NextPost" href="/content/HypNews/nextPost?PID=@Model.post.post_id">NEXT POST</a>
+        </div>
+
+
+
+        <div class="PostComm_cont" >
+            <div class="CommHeader">Comments</div>
+
+            <div style=" float:left; width:100%; font:300 17px/1.8 'Helvetica Neue',Helvetica,Arial,sans-serif; text-align:right;">
+                @using (Html.BeginForm("SubmitPostComment", "HypNews", FormMethod.Post))
+                {
+                    <input type="hidden" id="newsPost_ID" name="newsPost_ID" value="@Model.post.post_id" />
+                    <input type="hidden" id="post_guid" name="post_guid" value="@Model.post.post_guid" />
+            
+            
+                    if (Request.IsAuthenticated)
+                    {
+                        <textarea type="text" id="comment" name="comment" style=" width:100%; height:70px; overflow:hidden; background-color:#1d1d1d; color:#FFFFFF; border:none; border-radius:2px;" ></textarea>
+                        <input type="submit" value="Post" style=" width:180px; background-color:#1d1d1d; border:1px solid #1d1d1d; color:#FFFFFF;" />
+                    }
+                    else
+                    {
+                        <textarea type="text" id="comment" name="comment" disabled="disabled" style=" width:100%; height:70px; overflow:hidden; background-color:#1d1d1d; color:#FFFFFF; border:1px solid #747e83; border-radius:2px;" ></textarea>
+                        <input type="button" value="Login to Comment" onclick="window.location='/account/SignIn?ReturnUrl=/post/@Model.post.post_guid';" style=" width:130px; background-color:#1d1d1d; border:1px solid #1d1d1d; color:#FFFFFF;" />
+                    }
+                }
+            </div>
+
+        </div>
+
+
+
+        @foreach (var item in Model.comments_list)
+        {
+            <div style=" float:left; width:96%; padding:4px 2% 4px 2%; margin-top:5px; border-radius:2px; background-color:#1d1d1d; text-align:left; ">
+                <div style=" float:left; font-size:13px;">@item.comment</div>
+                <div style=" float:right; text-align:right; font-size:13px; color:#f4f4ad;">@item.userName, <span style=" font-size:11px;">@item.postDate</span></div>
+            </div>
+        }   
+
+        
+
+
+        <div style=" float:left; width:100%; margin-top:15px; ">
+
+            <div style="float:left; width:728px; height:90px; background-color:#141414; border:3px solid #141414; border-radius:2px;">
+                <div id="TopAdd1">
+                    @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+                </div>
+                <!-- 06_25 -->
+                
+            </div>
+
+
+            <div onclick="window.location='http://@System.Configuration.ConfigurationManager.AppSettings["videoHostName"]/page/1';" style=" float:left; width:265px; height:90px; margin-left:15px; background-color:#1d1d1d; border:3px solid #1d1d1d; border-radius:2px; line-height:90px; text-align:center; font-size:27px; cursor:pointer;">
+                Hypster Videos
+            </div>
+
+        </div>
+
+
+
+
+    
+    </div>
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div class="boxContRight">
+    <div class="slideRight" style=" height:330px; overflow:hidden;">
+
+        <script>            var aid = 3798; var v = "hl6z1vJrAUZeuhuoxm8tsg%3d%3d"; var credomain = "adkengage.com"; document.write('<sc' + 'ript type="text/javascript" src="http://' + credomain + '/Scripts/CREReqScript.js"></sc' + 'ript>');  </script>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- Begin 1x1 | BaronsMedia | Hypster | Zedo In-Article Video Hypster -->
+<script type="text/javascript">
+<!--
+    rnd = (new String(Math.random())).substring(2, 8) + (((new Date()).getTime()) & 262143);
+    document.write('<scri' + 'pt type="text/javascript" src="http://feed-rt.baronsoffers.com/offer/feed/q/aT03MTUzLHM9MXgxLG49anMsYj0w?subid=default&js=1&rnd=' + rnd + '"></scr' + 'ipt>');
+// -->
+</script>
+<noscript>
+<div id="" style="position:relative; width:1px; height:1px;">
+Javascript is required to see this advertisement.
+</div>
+</noscript>
+
+<!-- End 1x1 -->

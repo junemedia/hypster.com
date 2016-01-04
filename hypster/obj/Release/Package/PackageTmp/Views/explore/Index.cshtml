@@ -1,0 +1,76 @@
+﻿@model List<hypster_tv_DAL.homeSlideshow>
+@{
+    ViewBag.Title = "Explore Hypster";
+}
+
+
+<script type="text/javascript">
+    
+    $(document).ready(function () { RenderPage(); });
+    $(window).resize(function () { RenderPage(); });
+</script>
+
+
+
+
+
+@{ int i_counter = 0; }
+
+@foreach (var item in Model)
+{   
+    <div class="boxContRight" @if(i_counter == 0){<text>style=" margin-top:0px;"</text>}>
+    <div class="slideRight" style=" min-height:250px; background-color:#202020;">
+    
+            <div class="chartHoldCont">
+        
+                <img alt="" src="/imgs/home/home_slideshow/@item.ImageSrc" onclick="@item.href" style=" float:left; margin:0px 0 0 0; cursor:pointer;" />
+
+                <a onclick="@item.href" class="exploreMoreBtn">
+                    READ MORE
+                </a>
+
+            </div>
+
+    </div>
+    </div>
+    
+    
+    
+    <div class="boxContLeft">
+    <div class="slideLeft" style=" min-height:95px;">
+                
+                <div class="chartMainCont">
+                    <div id="TopAdd@(i_counter)">
+                        @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+                    </div>
+                    <!-- 06_25 -->
+                    
+                </div>
+
+        </div>
+    </div>
+    
+    
+    i_counter += 1;
+}
+
+
+
+
+
+
+<div class="boxContRight">
+    <div class="slideRight" style=" min-height:45px;">
+            
+            @if (ViewBag.prevPageID > 0)
+            {
+                <input id="Charts_PrevPage" type="button" onclick="window.location='/explore/page/@ViewBag.prevPageID';" value="Prev Page" />
+            }
+
+            @if (ViewBag.nextPageID > 0)
+            {
+                <input id="Charts_NextPage" type="button" onclick="window.location='/explore/page/@ViewBag.nextPageID';" value="Next Page" />
+            }
+
+    </div>
+</div>

@@ -1,0 +1,129 @@
+﻿@model hypster_tv_DAL.Player
+@{
+    ViewBag.Title = "Hypster - Bar player";
+    ViewBag.Desc = "";
+    Layout = "~/Areas/apps/Views/Shared/_Layout_Apps.cshtml";
+}
+
+
+
+
+<div style=" float:left; width:100%; " >
+
+                
+
+
+                <div id="captchaCont1" style=" display:none; float:left; width:100%; min-height:55px; margin-top:35px;">
+
+
+                    <div style=" float:left; width:320px; height:195px; padding:5px; border:1px solid #3fbc91; margin:0 0 0 200px;">
+                        
+                        <div style=" width:100%; font-size:16px; margin:20px 0 0 0; text-align:center;">
+                            DON'T FORGET TO ANSWER OUR SECURITY QUESTION
+                        </div>
+
+                        <img alt="" src="/imgs/plr_sec_arr.png" style=" margin:25px 0 0 100px;" />
+
+                        <div style=" float:left; margin:20px 0 0 60px;">
+                            <input type="submit" value="GET CODE" onclick="processCaptcha();" style=" float:left; width:200px; height:47px; line-height:47px; text-align:center; background-color:#3fbc91; border:1px solid #3fbc91; border-radius:2px; font-size:23px; font-weight:bold; cursor:pointer;" />
+                        </div>
+
+                    </div>
+
+
+                    @using (Ajax.BeginForm("processCaptcha", "Tumblr_Music_Player", new AjaxOptions { UpdateTargetId = "resultPrecaptcha" }))
+                    {
+                    <div style=" float:left; border:1px solid #3fbc91; padding:4px; margin:0px 15px 0 15px;">
+                        <span></span>
+                        <!-- start SolveMedia puzzle widget -->
+                        <script type="text/javascript">
+                            var ACPuzzleOptions = {
+                                tabindex: '0'
+                            };
+                        </script>
+                        <script type="text/javascript" src="http://api.solvemedia.com/papi/challenge.script?k=@System.Configuration.ConfigurationManager.AppSettings["SolveMediaChallengeKey"]"></script>
+                        <noscript>
+	                        <iframe height="300" width="500" frameborder="0" src="http://api.solvemedia.com/papi/challenge.noscript?k=@System.Configuration.ConfigurationManager.AppSettings["SolveMediaChallengeKey"]"></iframe><br />
+                            <textarea name="adcopy_challenge" rows="3" cols="40"></textarea>
+                            <input type="hidden" name="adcopy_response" value="manual_challenge" />
+                        </noscript>
+                        <!-- end SolveMedia puzzle widget -->
+                    </div>
+                    <div id="resultPrecaptcha"></div>
+                    }
+
+                </div>
+
+
+
+
+
+                <div id="SampleCodeHolder" style=" display:block; float:left; width:100%; margin:15px 0 15px 0;" >
+
+                    <div style=" float:left; width:100%; min-height:300px; overflow:hidden; border-radius:2px; margin-top:0px; ">
+    
+    
+                        <div style=" float:left; width:100%; text-align:left; margin-top:10px;">
+                            
+                            <h2 style=" float:left; width:98%; margin-left:2%; margin-bottom:0px; color:#d4ae52; font:23px/1.5 Hypster-Font,Arial,sans-serif;">
+                                Copy and Paste code on your website
+                            </h2>
+
+                            <div style=" float:left; width:98%; margin-left:2%; color:#d4ae52; font-size:16px;">
+                                Please paste the following code under beginning of &lt;body&gt; tag (i.e. on top of webpage content). <br />
+                                Note: This code will only work on blogs and websites. This will not work on myspace/facebook/twitter/tagged/friendster. <br />
+                            </div>
+                        </div>
+
+
+                        <textarea id="PlayerCodeArea" style=" width:96%; margin:2%; height:300px;">
+                            <!--Hypster Music Player-->
+                            <script type="text/javascript" src="http://scm.hypster.com/script.php" ><!--//--></script>
+                            <script type="text/javascript">
+                            <!--
+                                SCMMusicPlayer.init("{'skin':'skins/@Model.BAR_playerSkin/skin.css','playback':{'autostart':'@(Model.BAR_autostart.ToString().ToLower())','shuffle':'@Model.BAR_shufflePlayback.ToString().ToLower()','volume':'100'},'playlist':'@Model.playlist_ID','placement':'@Model.BAR_placementOfThePlayer','showplaylist':'@Model.BAR_showPlaylistByDefault.ToString().ToLower()'}");
+                            //-->
+                            </script>
+                            <!--Hypster Music Player-->
+                        </textarea>
+
+
+                        <div style=" float:left; width:100%; margin-bottom:10px;">
+                            
+                            <div onclick="window.location='/apps/appAccount/music';" style="float:left; width:190px; height:48px; line-height:48px; margin:0 4px 3px 17px; padding-left:3px; background-color:#3fbc91; color:#FFFFFF; border-radius:2px; text-align:center; cursor:pointer; ">
+                                GO TO MY PLAYERS
+                            </div>
+
+
+                            <div class="mFollowUsCont1">
+                        
+                                <div class="fuText">
+                                    Follow Us:
+                                </div>
+                                <div style=" float:left; margin:0px 0 0 5px;">
+                                    <a class="flwUs_wt_fbk" href="https://www.facebook.com/Hypster" target="_blank"></a>
+                                    <a class="flwUs_wt_twr" href="https://twitter.com/Hypsterdotcom" target="_blank"></a>
+                                    <a class="flwUs_wt_tum" href="http://hypsterblog.tumblr.com/" target="_blank"></a>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+    
+</div>
+
+
+
+
+<script type="text/javascript">
+    function processCaptcha() {
+        $('#SampleCodeHolder').css('display', 'block');
+        $('#captchaCont1').css('display', 'none');
+    }
+</script>

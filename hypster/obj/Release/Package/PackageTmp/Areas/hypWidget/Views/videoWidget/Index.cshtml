@@ -1,0 +1,41 @@
+﻿@model List<hypster_tv_DAL.AolSeedVideo>
+@{
+    Layout = null;
+}
+<html>
+
+
+<head>
+    <title>Video Widget</title>
+
+
+    <script src="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"  type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"  type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"  type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+
+
+
+</head>
+
+
+
+<body style=" width:100%; height:100%; background-color:#f6f3f6; overflow:hidden;">
+    
+    
+    @foreach (var item in Model)
+    {   
+        <a style=" float:left; display:block; width:160px; height:157px; background-color:#dddddd; margin:5px; border-radius:2px; text-decoration:none; overflow:hidden;" href="http://hypster.com/relatedVideos?ss=@ViewBag.ss&al=@item.id" target="_blank" onmouseover="this.style.backgroundColor='#74296e'; $('#@item.id').css('color','#ffffff');" onmouseout="this.style.backgroundColor='#dddddd'; $('#@item.id').css('color','#74296e'); " >
+            <span style=" display:block; float:left; width:100%; height:120px;">
+                <img alt="" src="@item.image" style=" float:left; width:150px; margin:5px 0 0 5px; border-radius:2px;" />
+            </span>
+            <span id="@item.id" class="widText" style=" float:left; width:98%; margin-left:1%; height:40px; line-height:18px; color:#74296e; text-decoration:none; text-align:center; font-family:Arial; font-size:12px; " >@item.title</span>
+        </a>
+    }
+
+
+</body>
+
+
+
+</html>

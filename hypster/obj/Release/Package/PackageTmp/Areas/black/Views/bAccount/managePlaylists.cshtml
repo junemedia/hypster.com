@@ -1,0 +1,396 @@
+﻿@model List<hypster_tv_DAL.Playlist>
+@{
+    Layout = null;
+
+    int i_counter = 1;
+}
+
+
+
+
+
+
+<div class="cir_1"> 
+    
+    <div onclick="clickBack()" style=" float:left; width:100%; margin:100px 0 0 90px; cursor:pointer; ">
+        << BACK
+    </div>
+
+</div>
+
+
+
+
+
+<div class="cir_2"> 
+
+    <div id="msgBox1">
+
+        <div>
+            Manage your <span style=" color:#CC0000; ">@Model.Count</span> playlists.
+        </div>
+
+        <br />
+
+        @foreach (var item in Model)
+        {
+            <div class="mnuItm" id="menu_@(i_counter)" data-plstid="@item.id" data-plstname="@item.name.Replace("\'","")" onclick="plstItemClick(this)">
+                <span style=" color:#CC0000; ">@i_counter</span> @item.name
+            </div>
+    
+            i_counter += 1;
+        }
+
+        <div onclick="addNewPlaylist();" style=" float:left; width:250px; height:30px; line-height:30px; margin:13px 0 0 0; background-color:#CC9933; border-radius:3px; cursor:pointer; text-align:center;">
+            Add New Playlist
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    if (is_speech_sound == 1) {
+        window.speechSynthesis.cancel();
+        var msg = new SpeechSynthesisUtterance('Manage your @Model.Count playlists. To Add New Press 1.');
+        window.speechSynthesis.speak(msg);
+    }
+</script>
+
+
+<script type="text/javascript">
+
+    var CURR_ACTIVE_MENU = 0;
+    var MENU_COUNT = @Model.Count;
+
+    var CURR_ACTION = "";
+    var CURR_PLST_ID = 0;
+
+
+    function HandleKeyAction(e) {
+        
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+        }
+
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+
+
+        //ESC
+        if (KEY_CODE == 27) {
+            clickBack();
+        }
+
+
+
+        //enter
+        if (KEY_CODE == 13) {
+        
+            //alert($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstid"));
+
+
+            if(CURR_ACTION != "")
+            {
+                switch(CURR_ACTION)
+                {
+                    case "REN":
+
+                        $.ajax({
+                            type: "POST",
+                            url: "/black/bAccount/RenamePlaylist/" + CURR_PLST_ID,
+                            async: true,
+                            success: function (data) {
+                                $("#bContHolder1").html(data);
+                            }
+                        });
+                        
+                        CURR_ACTION = "";
+                        CURR_PLST_ID = 0;
+                        return;
+                        //--------------------------------------------------------------------
+                        break;
+                    case "DEL":
+
+                        $(".mnuItm[data-plstid='"+CURR_PLST_ID+"']").css("display","none");
+
+                        $.ajax({
+                            type: "POST",
+                            url: "/black/bAccount/DeletePlaylist/" + CURR_PLST_ID,
+                            async: true,
+                            success: function (data) {
+                                //alert(data);
+                                if (is_speech_sound == 1) {
+                                    var curr_def_msg = new SpeechSynthesisUtterance('done');
+                                    window.speechSynthesis.speak(curr_def_msg);
+                                }
+                            }
+                        });
+                        
+
+                        CURR_ACTION = "";
+                        CURR_PLST_ID = 0;
+                        return;
+                        //--------------------------------------------------------------------
+                        break;
+                    case "DEF":
+                        // handle confirm action
+                        //--------------------------------------------------------------------
+                        $.ajax({
+                            type: "POST",
+                            url: "/black/bAccount/SetDefaultPlaylist/" + CURR_PLST_ID,
+                            async: true,
+                            success: function (data) {
+                                //alert(data);
+                                if (is_speech_sound == 1) {
+                                    var curr_def_msg = new SpeechSynthesisUtterance('done');
+                                    window.speechSynthesis.speak(curr_def_msg);
+                                }
+                            }
+                        });
+
+                        CURR_ACTION = "";
+                        CURR_PLST_ID = 0;
+                        return;
+                        //--------------------------------------------------------------------
+                        break;
+                    case "ADD":
+                        // handle confirm action
+                        //--------------------------------------------------------------------
+                        addNewPlaylist();
+
+                        CURR_ACTION = "";
+                        CURR_PLST_ID = 0;
+                        return;
+                        //--------------------------------------------------------------------
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
+            
+            //load current playlist
+            //--------------------------------------------------------------------
+            //$("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname") + 
+            
+            
+            //if (is_speech_sound == 1) {
+                //window.speechSynthesis.cancel();
+                //var msg = new SpeechSynthesisUtterance('To rename press 1. To remove press 2. To set as default press 3.');
+                //window.speechSynthesis.speak(msg);
+            
+            $.ajax({
+                type: "POST",
+                url: "/black/bAccount/RenamePlaylist/" + $("#menu_" + CURR_ACTIVE_MENU).attr("data-plstid"),
+                async: true,
+                success: function (data) {
+                    $("#bContHolder1").html(data);
+                }
+            });
+
+            //}
+            
+            //--------------------------------------------------------------------
+        }
+
+
+
+        //down
+        if (KEY_CODE == 40) {
+            //move menu down
+
+            CURR_ACTIVE_MENU += 1;
+            if (CURR_ACTIVE_MENU > MENU_COUNT) {
+                CURR_ACTIVE_MENU = MENU_COUNT;
+            }
+
+            if (is_speech_sound == 1) {
+                var curr_msg = new SpeechSynthesisUtterance($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname"));
+                window.speechSynthesis.speak(curr_msg);
+            }
+
+
+            $(".mnuItm").css("background", "none");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#DEDEDE");
+        }
+
+
+        //up
+        if (KEY_CODE == 38) {
+            //move menu up
+
+            CURR_ACTIVE_MENU -= 1;
+            if (CURR_ACTIVE_MENU <= 0) {
+                CURR_ACTIVE_MENU = 1;
+            }
+
+
+            if (is_speech_sound == 1) {
+                var curr_msg = new SpeechSynthesisUtterance($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname"));
+                window.speechSynthesis.speak(curr_msg);
+            }
+
+
+            $(".mnuItm").css("background", "none");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#DEDEDE");
+        }
+
+
+
+
+
+
+
+
+        if (KEY_CODE > 48 && KEY_CODE < 58) {
+            
+            var ACTION_NUM = KEY_CODE - 48;
+            
+            
+
+            if(CURR_ACTIVE_MENU == 0)
+            {
+                //alert(CURR_ACTIVE_MENU);
+
+                //--------------------------------------------------------
+                if (is_speech_sound == 1) {
+                    window.speechSynthesis.cancel();
+                    var msg_1 = new SpeechSynthesisUtterance('Press Enter to confirm add new playlist');
+                    window.speechSynthesis.speak(msg_1);
+                }
+
+                CURR_ACTION = "ADD";
+                CURR_PLST_ID = 0;
+
+                setTimeout(function(){
+                        CURR_ACTION = "";
+                        CURR_PLST_ID = 0;
+                    }, 7000);
+                //--------------------------------------------------------
+
+                return;
+            }
+
+
+
+
+            switch(ACTION_NUM)
+            {
+                case 1:
+                    //--------------------------------------------------------
+                    if (is_speech_sound == 1) {
+                        window.speechSynthesis.cancel();
+                        var msg_1 = new SpeechSynthesisUtterance('Press Enter to confirm rename of ' + $("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname") );
+                        window.speechSynthesis.speak(msg_1);
+                    }
+
+                    CURR_ACTION = "REN";
+                    CURR_PLST_ID = $("#menu_" + CURR_ACTIVE_MENU).attr("data-plstid");
+
+                    setTimeout(function(){
+                            CURR_ACTION = "";
+                            CURR_PLST_ID = 0;
+                        }, 7000);
+                    //--------------------------------------------------------
+                    break;
+                case 2:
+                    //--------------------------------------------------------
+                    if (is_speech_sound == 1) {
+                        window.speechSynthesis.cancel();
+                        var msg_2 = new SpeechSynthesisUtterance('Press Enter to confirm removal of ' + $("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname") );
+                        window.speechSynthesis.speak(msg_2);
+                    }
+
+                    CURR_ACTION = "DEL";
+                    CURR_PLST_ID = $("#menu_" + CURR_ACTIVE_MENU).attr("data-plstid");
+
+                    setTimeout(function(){
+                            CURR_ACTION = "";
+                            CURR_PLST_ID = 0;
+                        }, 7000);
+                    //--------------------------------------------------------
+                    break;
+                default:
+                    //--------------------------------------------------------
+                    if (is_speech_sound == 1) {
+                        window.speechSynthesis.cancel();
+                        var msg_2 = new SpeechSynthesisUtterance('Press Enter to confirm set default of ' + $("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname") );
+                        window.speechSynthesis.speak(msg_2);
+                    }
+
+                    CURR_ACTION = "DEF";
+                    CURR_PLST_ID = $("#menu_" + CURR_ACTIVE_MENU).attr("data-plstid");
+
+                    setTimeout(function(){
+                            CURR_ACTION = "";
+                            CURR_PLST_ID = 0;
+                        }, 7000);
+                    //--------------------------------------------------------
+                    break;
+            }
+
+        }
+
+
+    }
+
+
+    function clickBack(){
+        $.ajax({
+            type: "POST",
+            url: "/black/bAccount/ManageAccount",
+            async: true,
+            success: function (data) {
+                $("#bContHolder1").html(data);
+            }
+        });
+    }
+
+
+    function plstItemClick(sender)
+    {
+        $.ajax({
+            type: "POST",
+            url: "/black/bAccount/RenamePlaylist/" + $(sender).attr("data-plstid"),
+            async: true,
+            success: function (data) {
+                $("#bContHolder1").html(data);
+            }
+        });
+    }
+
+
+    function addNewPlaylist(){
+        
+        $.ajax({
+            type: "POST",
+            url: "/black/bAccount/AddNewPlaylist",
+            async: true,
+            success: function (data) {
+                $("#bContHolder1").html(data);
+            }
+        });
+
+    }
+
+
+</script>

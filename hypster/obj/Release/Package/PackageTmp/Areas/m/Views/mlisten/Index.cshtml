@@ -1,0 +1,283 @@
+﻿@model hypster.ViewModels.listenViewModel
+@{
+    ViewBag.Title = "Free online music playlist";
+    ViewBag.Desc = "Create you own free online music playlists and embed them on blogs such as Tumblr or Blogger";
+    Layout = "~/Areas/m/Views/Shared/_Layout_Mobile.cshtml";
+    ViewBag.ActivePage = "listen";
+}
+
+
+
+<script type="text/javascript">
+    active_menu = ".mListen";
+    $(".mListen").css("background-color", "#191919");
+    $("#ListenSub").css("display", "block");
+
+    $(document).ready(function () { RenderPage(); RenderListen();  });
+    $(window).resize(function () { RenderPage(); ReRenderListen();  });
+</script>
+
+
+
+
+<div style=" float:left; width:100%; min-height:960px;">
+
+
+        <div class="boxContRight boxContRightTop">
+            <div id="listenSlide1" class="slideRight" style=" min-height:455px;">
+                    
+
+                    
+
+                    <div class="listenMenuCont">
+            
+                            <div id="Menu1" onclick="Open_Menu1()" title="Search Music">
+                                <img class="Menu1_img" alt="Search Music" src="/imgs/listen/search_music.png" /><br />
+                                Search Music
+                            </div>
+
+                            <div id="Menu3" onclick="Open_Menu3()" title="Listen Playlists">
+                                <img class="Menu3_img" alt="Playlists" src="/imgs/listen/playlists.png" /><br />
+                                @if (User.Identity.IsAuthenticated == true)
+                                {<text>My</text>} Playlists
+                            </div>
+
+                            <div id="Menu2" onclick="Open_Menu2();" title="Listen Radio Stations">
+                                <img class="Menu2_img" alt="Listen Radio" src="/imgs/listen/radio.png" /><br />
+                                Listen Radio
+                            </div>
+
+                    </div>
+
+
+
+
+
+                    
+                    <div id="listenTab1" >
+            
+                            <div id="MainSearchLn" class="contTop">
+                        
+                                <input type="text" id="txtSearchString" name="txtSearchString" onKeyUp="ListenSearchString_KeyUp(event)" value="@if (@ViewBag.searchString != null){ <text>@ViewBag.searchString</text> }else{<text> Enter Artist, Song or Genre</text>}" onfocus="if(this.value == ' Enter Artist, Song or Genre') this.value = '';" onblur="if(this.value == '') this.value = ' Enter Artist, Song or Genre';" />
+                                <div id="btnSearch" onclick="SearchMusic();"></div>
+                        
+                                <div onclick="showHide_AddSearch(this);" style=" float:left; width:40px; height:34px; line-height:34px; background-color:#353535; border:4px solid #191919; color:#CCCCCC; border-radius:3px; margin:11px 0 0 12px; text-align:center; cursor:pointer; font-size:14px;">
+                                   >>
+                                </div>
+
+
+                        
+                                <div id="AddSearch">
+                                    <div id="AddSearchIC">
+  
+
+                                        <div class="AdvSrch">
+                                            &nbsp;Order By:
+                                        </div>
+                                        <div class="AdvSrchOrdr">
+                                            <div>
+                                                <input type="radio" name="group_orderBy" value="relevance">Relevance<br>
+                                                <input type="radio" name="group_orderBy" value="published">Published<br>
+                                                <input type="radio" name="group_orderBy" value="viewCount">View Count<br>
+                                                <input type="radio" name="group_orderBy" value="rating">Rating<br>
+                                            </div>
+                                        </div>
+
+                                        <div class="AdvSrch">
+                                            &nbsp;
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+                            
+                            <div class="contMiddle" style=" background-color:#171717; border:2px solid #171717; margin-top:12px;">
+                                    <div>@Html.Action("visualSearchBar", "mlisten")</div>
+                            </div>
+
+                    </div>
+            
+
+
+
+                    <div id="listenTab2">
+                            <div class="contLimit">
+                                <div id="RSBch1" class="contTop">
+                                    
+                                </div>
+                            </div>
+                   </div>
+           
+
+
+
+
+
+
+
+                   <div id="listenTab3">
+                            
+                            
+                            <div class="contLimit" style=" min-height:250px;">
+                                <div style=" float:left; width:100%; height:39px; line-height:39px; margin:10px 0 10px 0px; font-size:20px; color:#f9a317; background:#1b1b1b url('/imgs/home/grn_HeaderBack.png') left no-repeat;">
+                                    @if (User.Identity.IsAuthenticated == true){<text>&nbsp;&nbsp;My</text>}else{<text>&nbsp;&nbsp;Popular</text>} Playlists
+                                </div>
+                        
+                                @if (User.Identity.IsAuthenticated == true)
+                                {
+                                    for (int i = 0; i < Model.most_viewed_playlists.Count; i++)
+                                    {
+                                        <div class="plItem" onclick="OpenPlayerM('/m/mplaylists/user/@User.Identity.Name?@(Model.most_viewed_playlists[i].id)');">
+                                            <div class="plName">@Model.most_viewed_playlists[i].name</div>
+                                            <a class="plPlay" title="Play playlist"></a>
+                                        </div>  
+                                    }
+                                }
+                                else
+                                {
+                                    @Html.Action("GetMostViewedPlaylists", "mlisten")
+                                }
+
+                                <div class="plItemCreate" title="Create new playlist" onclick="window.location='/m/mcreate/playlist';">
+                                    <div>+ Create Playlist</div>
+                                </div>
+
+                            </div>
+
+
+
+
+                            @if (User.Identity.IsAuthenticated == true)
+                            {
+                                <div class="contLimit" style=" min-height:182px; margin-top:10px;">
+                                
+                                    <div style=" float:left; width:100%; height:39px; line-height:39px; margin:0 0 10px 0px; font-size:20px; color:#f9a317; background:#1b1b1b url('/imgs/home/grn_HeaderBack.png') left no-repeat;">
+                                        &nbsp;&nbsp;Playlists I Like
+                                    </div>
+
+
+                                    @for (int i = 0; i <= 25; i++)
+                                    {
+                                        if (i < Model.playlists_I_like.Count)
+                                        {
+                                            <div class="plItem" onclick="OpenPlayerM('/m/mplaylists/user/@(Model.playlists_I_like[i].username)?@(Model.playlists_I_like[i].id)');">
+                                                <div class="plName">@Model.playlists_I_like[i].name</div>
+                                                <a class="plPlay" title="Play playlist"></a>
+
+                                                <a class="PlstViews" title="@Model.playlists_I_like[i].ViewsNum views">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(Model.playlists_I_like[i].ViewsNum)</a>
+                                                <a class="PlstLikes" title="@Model.playlists_I_like[i].Likes likes">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(Model.playlists_I_like[i].Likes)</a>
+                                            </div>
+                                        }
+                                    }
+
+
+                                    <div class="plItemCreate" title="More Playlists I Like" onclick="window.location='/m/maccount/music#plstil';">
+                                        <div>+ More Playlists I Like</div>
+                                    </div>
+                                
+                                </div>
+                            }
+                            
+
+                            <div style=" float:left; width:100%;">
+                                
+                                <a href="/m/mplaylists" style=" display:block; float:left; width:98%; height:35px; line-height:35px; margin:1%; background-color:#d88700; border-radius:2px; text-align:center; font-size:18px; cursor:pointer; ">
+                                    More Playlists
+                                </a>
+
+                            </div>
+                            
+
+
+                            <div id="PMYLIKE_PlstPreview">
+                                <div class="LdingPrev">Loading...</div>
+                            </div>
+
+                   </div>
+           
+
+
+
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+            @if (ViewBag.PLST != null && ViewBag.PLST == true){ <text>Open_Menu3();</text> }
+        </script>
+
+
+
+
+
+
+
+
+        <div class="boxContLeft">
+            <div id="listenSlidePopPlst4" class="slideLeft" style=" min-height:450px;">
+                    @*Html.Action("PopularPlaylists", "popular")*@
+            </div>
+        </div>
+
+
+
+
+
+        <div class="boxContRight">
+            <div id="listenSlide3" class="slideRight" style=" min-height:355px; background-color:#202020;">
+                    
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $.ajax({
+                                type: "POST",
+                                url: "/m/mpopular/PopularCharts_Chart",
+                                async: true,
+                                success: function (data) {
+                                    $('#PopularCharts_ChartCont').html(data);
+                                }
+                            });
+                        });
+                    </script>
+
+                    <div id="PopularCharts_ChartCont"></div>
+            </div>
+        </div>
+
+        
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+   $(document).ready( function(){
+        @if (ViewBag.searchString != null)
+        {
+            <text>SearchMusicStr('@ViewBag.searchString');</text>
+        }
+        else
+        {
+            <text>setTimeout(function(){ lsnLoadPopularPlsts(); }, 1000);</text>
+        }
+    });
+</script>
+
+
+
+
+
+@Html.Action("pr_interstitial", "mlisten")

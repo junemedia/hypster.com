@@ -1,0 +1,60 @@
+﻿@model List<hypster_tv_DAL.Playlist>
+@{
+    Layout = null;
+}
+
+
+<div style=" margin:20px 0 0 0;">
+
+    <div style=" color:#CC0000;">
+        Press ENTER to add to your default playlist.
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    if (is_speech_sound == 1) {
+        //window.speechSynthesis.cancel();
+        var msg = new SpeechSynthesisUtterance('Press ENTER to add to your default playlist.');
+        window.speechSynthesis.speak(msg);
+    }
+
+
+
+
+    function SubmitAddToMyDefaultPlaylist() {
+        $.ajax({
+            type: "POST",
+            url: "/black/bAccount/SubmitAddToMyPlaylist/@ViewBag.song_guid",
+            async: true,
+            success: function (data) {
+                
+                if (is_speech_sound == 1) {
+                    var msg = new SpeechSynthesisUtterance('Added');
+                    window.speechSynthesis.speak(msg);
+                }
+                $("#MyPlaylist_Actions_CH1").html("");
+            }
+        });
+    }
+
+    //need to cancel prev timer !!!!!
+    setTimeout(function () {
+        LOCK_SOUND = false;
+        CURR_ACTION = "";
+
+        $("#MyPlaylist_Actions_CH1").html("");
+    }, 7000);
+
+</script>
+
+

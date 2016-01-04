@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+<div id="ShrContH1" >
+    <div id="ShrContH1innt">
+
+        <div style=" float:right; width:70px;">
+            
+                <div id="hyp_sosialHolder1" onmouseover="openCHCont(); this.style.display = 'none'; $('#ShrPPCT1').css('display','block');">
+                    <div class="hyp_SI_Cont_googlePP"></div>
+                    <div class="hyp_SI_Cont_twitterPP"></div>
+                    <div class="hyp_SI_Cont_facebookPP"></div>
+                </div>
+
+
+                <div id="ShrPPCT1" class="pw-widget pw-vertical" pw:image="" style=" display:none; " >
+                    <a class="pw-button-tumblr pw-look-native"></a>
+	                <a class="pw-button-facebook pw-look-native"></a>
+	                <a class="pw-button-twitter pw-look-native"></a>
+                    <a class="pw-button-googleplus pw-look-native"></a>
+	                <a class="pw-button-post-share"></a>
+                </div>
+                
+        </div>
+    </div>      
+</div>
+
+
+
+<script type="text/javascript">
+
+    function openCHCont() {
+        var ss_cont = document.createElement('script');
+        ss_cont.src = "http://i.po.st/static/v3/post-widget.js#publisherKey=caq8eudavn7j6erou9n3";
+        var ss_cont_obj = document.getElementById('ShrContH1innt');
+        ss_cont_obj.parentNode.insertBefore(ss_cont, ss_cont_obj);
+    }
+
+</script>

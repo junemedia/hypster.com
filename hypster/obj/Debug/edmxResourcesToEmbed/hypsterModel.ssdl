@@ -1,0 +1,1216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HypsterNewModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="ArtistAZ">
+    <Key>
+      <PropertyRef Name="ArtistAZ_ID" />
+    </Key>
+    <Property Name="ArtistAZ_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArtistAZ_Name" Type="nvarchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="ArtistCategories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="isConfirmed" Type="bit" />
+  </EntityType>
+  <EntityType Name="ArtistData">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="Url" Type="varchar" MaxLength="128" />
+    <Property Name="MainPhotoId" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="64" />
+    <Property Name="Members" Type="varchar(max)" />
+    <Property Name="Influences" Type="varchar(max)" />
+    <Property Name="Biography" Type="varchar(max)" />
+    <Property Name="Label" Type="varchar" MaxLength="256" />
+    <Property Name="MyspaceUrl" Type="varchar" MaxLength="256" />
+    <Property Name="FacebookUrl" Type="varchar" MaxLength="256" />
+    <Property Name="iTunesUrl" Type="varchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Banners">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Size" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CountryCode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="2048" Nullable="false" />
+    <Property Name="Enabled" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BlockedTerms">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArtistTerm" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="TitleTerm" Type="nvarchar" MaxLength="64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CaptchaLog">
+    <Key>
+      <PropertyRef Name="CaptchaLog_ID" />
+    </Key>
+    <Property Name="CaptchaLog_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CaptchaIP" Type="nvarchar" MaxLength="50" />
+    <Property Name="CatpchaDate" Type="datetime" />
+    <Property Name="CaptchaFrase" Type="nvarchar" MaxLength="100" />
+    <Property Name="CaptchaResponse" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Charts">
+    <Key>
+      <PropertyRef Name="Chart_ID" />
+    </Key>
+    <Property Name="Chart_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Chart_Category_ID" Type="int" />
+    <Property Name="Chart_Name" Type="nvarchar" MaxLength="350" />
+    <Property Name="Chart_Desc" Type="nvarchar" MaxLength="2500" />
+    <Property Name="Chart_Date" Type="nvarchar" MaxLength="150" />
+    <Property Name="Chart_User_ID" Type="int" />
+    <Property Name="Chart_Playlist_ID" Type="int" />
+    <Property Name="Chart_GUID" Type="nvarchar" MaxLength="350" />
+  </EntityType>
+  <EntityType Name="ColorSchemes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="color_bg" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="color_songbg" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="color_song_clicked" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="color_btns" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="color_text" Type="varchar" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="PosterId" Type="int" Nullable="false" />
+    <Property Name="PostDate" Type="datetime" Nullable="false" />
+    <Property Name="IpAddress" Type="varchar" MaxLength="18" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CoverContest">
+    <Key>
+      <PropertyRef Name="CoverContest_ID" />
+    </Key>
+    <Property Name="CoverContest_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CoverContest_SongID" Type="nvarchar" MaxLength="20" />
+    <Property Name="CoverContest_Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="CoverContest_DateAdded" Type="datetime" />
+    <Property Name="CoverContest_NumVotes" Type="int" />
+  </EntityType>
+  <EntityType Name="CoverContestVote">
+    <Key>
+      <PropertyRef Name="CoverContestVote_ID" />
+    </Key>
+    <Property Name="CoverContestVote_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CoverContestVote_IP" Type="nvarchar" MaxLength="20" />
+    <Property Name="CoverContestVote_DateAdded" Type="datetime" />
+    <Property Name="CoverContestVote_Cover_ID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HypsterNew.dbo.DeActivated' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="DeActivated">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="IsDeActivated" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="IsDeActivated" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dead_Link">
+    <Key>
+      <PropertyRef Name="Dead_Link_ID" />
+    </Key>
+    <Property Name="Dead_Link_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DL_Member_ID" Type="int" />
+    <Property Name="DL_Song_Guid" Type="nvarchar" MaxLength="30" />
+    <Property Name="DL_Song_ID" Type="int" />
+    <Property Name="DL_ErrorNum" Type="int" />
+  </EntityType>
+  <EntityType Name="DynamicContent">
+    <Key>
+      <PropertyRef Name="DynCont_ID" />
+    </Key>
+    <Property Name="DynCont_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DynCont_PageType" Type="int" />
+    <Property Name="DynCont_Href" Type="nvarchar" MaxLength="350" />
+    <Property Name="DynCont_isNewWindow" Type="bit" />
+    <Property Name="DynCont_BoxCont" Type="nvarchar(max)" />
+    <Property Name="DynCont_ButtonText" Type="nvarchar" MaxLength="50" />
+    <Property Name="DynCont_Name" Type="nvarchar" MaxLength="350" />
+    <Property Name="DynCont_isNameVisible" Type="bit" />
+  </EntityType>
+  <EntityType Name="EmailLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CampaignId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="SendDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FacebookLogin">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="FacebookId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FeaturedContent">
+    <Key>
+      <PropertyRef Name="fc_ID" />
+    </Key>
+    <Property Name="fc_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fc_href" Type="nvarchar" MaxLength="500" />
+    <Property Name="fc_name" Type="nvarchar" MaxLength="200" />
+    <Property Name="fc_image" Type="nvarchar" MaxLength="50" />
+    <Property Name="fc_type" Type="int" />
+    <Property Name="fc_active" Type="bit" />
+    <Property Name="fc_href_mobile" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="FeaturedPlaylists">
+    <Key>
+      <PropertyRef Name="FeaturedPlaylist_ID" />
+    </Key>
+    <Property Name="FeaturedPlaylist_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FeaturedPlaylist_PlaylistID" Type="int" />
+    <Property Name="FeaturedPlaylist_UserID" Type="int" />
+    <Property Name="FeaturedPlaylist_PlaylistName" Type="nvarchar" MaxLength="120" />
+    <Property Name="FeaturedPlaylist_CreateDate" Type="datetime" />
+    <Property Name="FeaturedPlaylist_Guid" Type="nvarchar" MaxLength="120" />
+  </EntityType>
+  <EntityType Name="Festivals">
+    <Key>
+      <PropertyRef Name="Festival_ID" />
+    </Key>
+    <Property Name="Festival_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Festival_Category_ID" Type="int" />
+    <Property Name="Festival_Name" Type="nvarchar" MaxLength="350" />
+    <Property Name="Festival_Desc" Type="nvarchar" MaxLength="2500" />
+    <Property Name="Festival_Date" Type="nvarchar" MaxLength="150" />
+    <Property Name="Festival_User_ID" Type="int" />
+    <Property Name="Festival_Playlist_ID" Type="int" />
+    <Property Name="Festival_GUID" Type="nvarchar" MaxLength="350" />
+  </EntityType>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hash" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="Size" Type="int" Nullable="false" />
+    <Property Name="Length" Type="smallint" />
+  </EntityType>
+  <EntityType Name="Followers">
+    <Key>
+      <PropertyRef Name="UsFol_ID" />
+    </Key>
+    <Property Name="UsFol_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Follower_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="FriendRequests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RequesterId" Type="int" />
+    <Property Name="RecipientId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Friends">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="friend1" Type="int" Nullable="false" />
+    <Property Name="friend2" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="homeSlideshow">
+    <Key>
+      <PropertyRef Name="homeSlideshow_ID" />
+    </Key>
+    <Property Name="homeSlideshow_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="href" Type="nvarchar" MaxLength="500" />
+    <Property Name="ImageSrc" Type="nvarchar" MaxLength="50" />
+    <Property Name="SortOrder" Type="int" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="isFeatured" Type="bit" />
+  </EntityType>
+  <EntityType Name="HypException">
+    <Key>
+      <PropertyRef Name="Exception_ID" />
+    </Key>
+    <Property Name="Exception_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExcDate" Type="datetime" />
+    <Property Name="ExcIP" Type="nvarchar" MaxLength="25" />
+    <Property Name="ExcUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="ExcMethod" Type="nvarchar" MaxLength="150" />
+    <Property Name="ExcMessage" Type="varchar" MaxLength="1500" />
+  </EntityType>
+  <EntityType Name="LinkedNetworks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="NetworkType" Type="tinyint" Nullable="false" />
+    <Property Name="NetworkId" Type="varchar" MaxLength="512" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ListenHistory">
+    <Key>
+      <PropertyRef Name="ListenHistory_ID" />
+    </Key>
+    <Property Name="ListenHistory_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ListenHistory_GUID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ListenHistory_UserID" Type="int" />
+    <Property Name="ListenHistory_URL" Type="nvarchar" MaxLength="500" />
+    <Property Name="ListenHistory_Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="ListenHistory_Date" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HypsterNew.dbo.ListenLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ListenLog">
+    <Key>
+      <PropertyRef Name="songid" />
+      <PropertyRef Name="time" />
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="songid" Type="int" Nullable="false" />
+    <Property Name="time" Type="int" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Manual">
+    <Key>
+      <PropertyRef Name="Manual_ID" />
+    </Key>
+    <Property Name="Manual_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Manual_Header" Type="nvarchar" MaxLength="400" />
+    <Property Name="Manual_Guid" Type="nvarchar" MaxLength="500" />
+    <Property Name="Manual_Date" Type="datetime" />
+    <Property Name="Manual_Active" Type="int" />
+  </EntityType>
+  <EntityType Name="Manual_Slide">
+    <Key>
+      <PropertyRef Name="Manual_Slide_ID" />
+    </Key>
+    <Property Name="Manual_Slide_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Manual_Slide_Manual_ID" Type="int" />
+    <Property Name="Manual_Slide_Header" Type="varchar" MaxLength="1500" />
+    <Property Name="Manual_Slide_Image" Type="nvarchar" MaxLength="100" />
+    <Property Name="Manual_Slide_Date" Type="datetime" />
+    <Property Name="Manual_Slide_Active" Type="int" />
+    <Property Name="Manual_Slide_SortOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="MemberMusicGenre">
+    <Key>
+      <PropertyRef Name="MemberMusicGenre_ID" />
+    </Key>
+    <Property Name="MemberMusicGenre_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Member_ID" Type="int" />
+    <Property Name="MusicGenre_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="MemberPublicPage">
+    <Key>
+      <PropertyRef Name="PublicPage_ID" />
+    </Key>
+    <Property Name="PublicPage_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Member_ID" Type="int" />
+    <Property Name="showHeader" Type="bit" />
+    <Property Name="showDescription" Type="bit" />
+    <Property Name="autoplay" Type="bit" />
+    <Property Name="showLikeButtton" Type="bit" />
+    <Property Name="showInfoButton" Type="bit" />
+    <Property Name="showPhotosButton" Type="bit" />
+    <Property Name="header" Type="nvarchar" MaxLength="450" />
+    <Property Name="description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="HaFBackgroundColor" Type="nvarchar" MaxLength="10" />
+    <Property Name="BackgroundColor" Type="nvarchar" MaxLength="10" />
+    <Property Name="LeftSectionColor" Type="nvarchar" MaxLength="10" />
+    <Property Name="RightSectionColor" Type="nvarchar" MaxLength="10" />
+    <Property Name="ButtonsBackgroundColor" Type="nvarchar" MaxLength="10" />
+    <Property Name="SongBackgroundColor" Type="nvarchar" MaxLength="10" />
+    <Property Name="TextColor" Type="nvarchar" MaxLength="10" />
+    <Property Name="ButtonsColor" Type="nvarchar" MaxLength="10" />
+    <Property Name="Playlist_ID" Type="int" />
+    <Property Name="Playlist_Layout" Type="int" />
+  </EntityType>
+  <EntityType Name="Members">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="41" />
+    <Property Name="country" Type="nvarchar" MaxLength="30" />
+    <Property Name="city" Type="nvarchar" MaxLength="30" />
+    <Property Name="sex" Type="tinyint" />
+    <Property Name="zipcode" Type="varchar" MaxLength="10" />
+    <Property Name="birth" Type="date" />
+    <Property Name="introduce" Type="nvarchar(max)" />
+    <Property Name="regdate" Type="datetime" Nullable="false" />
+    <Property Name="trackcount" Type="smallint" Nullable="false" />
+    <Property Name="israndomplay" Type="tinyint" Nullable="false" />
+    <Property Name="active_playlist" Type="int" Nullable="false" />
+    <Property Name="profile_pic_id" Type="int" Nullable="false" />
+    <Property Name="is_new_artist" Type="tinyint" Nullable="false" />
+    <Property Name="autoplay" Type="tinyint" Nullable="false" />
+    <Property Name="email_confirmed" Type="tinyint" Nullable="false" />
+    <Property Name="email_optout" Type="tinyint" Nullable="false" />
+    <Property Name="widget_views" Type="int" Nullable="false" />
+    <Property Name="RegistrationIp" Type="varchar" MaxLength="18" />
+    <Property Name="LastActivityDate" Type="datetime" />
+    <Property Name="LastActivityIp" Type="varchar" MaxLength="18" />
+    <Property Name="CoregProcessed" Type="bit" Nullable="false" />
+    <Property Name="OptOutDate" Type="datetime" />
+    <Property Name="IsSuspended" Type="bit" Nullable="false" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="AutoshareEnabled" Type="bit" Nullable="false" />
+    <Property Name="ArtistLevel" Type="int" />
+    <Property Name="IsOverEighteen" Type="bit" Nullable="false" />
+    <Property Name="user_interest" Type="int" />
+    <Property Name="eCampD" Type="int" />
+  </EntityType>
+  <EntityType Name="MemberSongSkip">
+    <Key>
+      <PropertyRef Name="SongSkip_ID" />
+    </Key>
+    <Property Name="SongSkip_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SongSkip_UserID" Type="int" />
+    <Property Name="SongSkip_SongID" Type="int" />
+    <Property Name="SongSkip_SongGuid" Type="nvarchar" MaxLength="50" />
+    <Property Name="SongSkip_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SenderId" Type="int" Nullable="false" />
+    <Property Name="RecipientId" Type="int" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HasRead" Type="bit" Nullable="false" />
+    <Property Name="InTrash" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mix_Mobile">
+    <Key>
+      <PropertyRef Name="Mix_Mobile_ID" />
+    </Key>
+    <Property Name="Mix_Mobile_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mix_ID" Type="int" />
+    <Property Name="Mix_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Mix_Genre_ID" Type="int" />
+    <Property Name="Mix_Cover" Type="nvarchar" MaxLength="250" />
+    <Property Name="Mix_Category" Type="int" />
+  </EntityType>
+  <EntityType Name="MusicGenre">
+    <Key>
+      <PropertyRef Name="Genre_ID" />
+    </Key>
+    <Property Name="Genre_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenreName" Type="nvarchar" MaxLength="100" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Playlist_ID" Type="int" />
+    <Property Name="popular" Type="bit" />
+  </EntityType>
+  <EntityType Name="newsCeleb">
+    <Key>
+      <PropertyRef Name="celeb_id" />
+    </Key>
+    <Property Name="celeb_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="celeb_name" Type="nvarchar" MaxLength="150" />
+    <Property Name="celeb_url" Type="nvarchar" MaxLength="1000" />
+    <Property Name="celeb_image" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="newsCeleb_TMP">
+    <Key>
+      <PropertyRef Name="celeb_id" />
+    </Key>
+    <Property Name="celeb_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="celeb_name" Type="nvarchar" MaxLength="150" />
+    <Property Name="celeb_url" Type="nvarchar" MaxLength="1000" />
+    <Property Name="celeb_image" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="newsComment">
+    <Key>
+      <PropertyRef Name="newsComment_ID" />
+    </Key>
+    <Property Name="newsComment_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="newsPost_ID" Type="int" />
+    <Property Name="user_ID" Type="int" />
+    <Property Name="status" Type="int" />
+    <Property Name="comment" Type="nvarchar" MaxLength="2000" />
+    <Property Name="ipAddress" Type="nvarchar" MaxLength="20" />
+    <Property Name="postDate" Type="datetime" />
+    <Property Name="userName" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="newsPost">
+    <Key>
+      <PropertyRef Name="post_id" />
+    </Key>
+    <Property Name="post_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="post_author" Type="int" />
+    <Property Name="post_date" Type="datetime" />
+    <Property Name="post_content" Type="nvarchar(max)" />
+    <Property Name="post_title" Type="nvarchar" MaxLength="400" />
+    <Property Name="post_status" Type="int" />
+    <Property Name="post_guid" Type="nvarchar" MaxLength="400" />
+    <Property Name="post_type" Type="int" />
+    <Property Name="comment_count" Type="int" />
+    <Property Name="post_voteUp" Type="int" />
+    <Property Name="post_voteDown" Type="int" />
+    <Property Name="post_image" Type="nvarchar" MaxLength="400" />
+    <Property Name="post_short_content" Type="nvarchar" MaxLength="4000" />
+    <Property Name="MusicPlayer" Type="nvarchar" MaxLength="400" />
+    <Property Name="ad_id" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Photos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="caption" Type="nvarchar(max)" />
+    <Property Name="is_artist" Type="bit" Nullable="false" />
+    <Property Name="hidden" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="player_ID" />
+    </Key>
+    <Property Name="player_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="player_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Player_Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_ID" Type="int" />
+    <Property Name="playlist_ID" Type="int" />
+    <Property Name="BAR_autostart" Type="bit" />
+    <Property Name="BAR_shufflePlayback" Type="bit" />
+    <Property Name="BAR_placementOfThePlayer" Type="nvarchar" MaxLength="10" />
+    <Property Name="BAR_showPlaylistByDefault" Type="bit" />
+    <Property Name="BAR_playerSkin" Type="nvarchar" MaxLength="30" />
+    <Property Name="CLASSIC_autostart" Type="bit" />
+    <Property Name="CLASSIC_shufflePlayback" Type="bit" />
+    <Property Name="CLASSIC_playerSkin" Type="nvarchar" MaxLength="30" />
+    <Property Name="RADIO_autostart" Type="bit" />
+    <Property Name="RADIO_Genre" Type="nvarchar" MaxLength="50" />
+    <Property Name="RADIO_Genre_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="PlaylistData">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="songid" Type="int" Nullable="false" />
+    <Property Name="sortid" Type="smallint" Nullable="false" />
+    <Property Name="playlist_id" Type="int" />
+  </EntityType>
+  <EntityType Name="PlaylistLikes">
+    <Key>
+      <PropertyRef Name="PlaylistLikesId" />
+    </Key>
+    <Property Name="PlaylistLikesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlaylistId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="OwnerId" Type="int" Nullable="false" />
+    <Property Name="LikeValue" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Playlists">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="create_time" Type="int" Nullable="false" />
+    <Property Name="update_time" Type="int" Nullable="false" />
+    <Property Name="is_artist_playlist" Type="bit" Nullable="false" />
+    <Property Name="ViewsNum" Type="int" />
+    <Property Name="Likes" Type="int" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" />
+    <Property Name="description" Type="nvarchar" MaxLength="100" />
+    <Property Name="Shares" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HypsterNew.dbo.ProfileDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ProfileDetails">
+    <Key>
+      <PropertyRef Name="ProfileDetailsId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="FavoriteSong" />
+      <PropertyRef Name="FavoriteQuote" />
+      <PropertyRef Name="FavoriteBooks" />
+      <PropertyRef Name="FavoriteMovie" />
+      <PropertyRef Name="InARelationship" />
+      <PropertyRef Name="Education" />
+    </Key>
+    <Property Name="ProfileDetailsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="FavoriteSong" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FavoriteQuote" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FavoriteBooks" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FavoriteMovie" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="InARelationship" Type="int" Nullable="false" />
+    <Property Name="Education" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Radio_Usage">
+    <Key>
+      <PropertyRef Name="Radio_Usage_ID" />
+    </Key>
+    <Property Name="Radio_Usage_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Radio_Usage_Date" Type="datetime" />
+    <Property Name="PLAY_TOKEN" Type="int" />
+    <Property Name="TRACK_ID" Type="int" />
+    <Property Name="MIX_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="RadioStation">
+    <Key>
+      <PropertyRef Name="RadioStation_ID" />
+    </Key>
+    <Property Name="RadioStation_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_ID" Type="int" />
+    <Property Name="RadioStationName" Type="nvarchar" MaxLength="250" />
+    <Property Name="RadioStationQuery" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="SearchLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="term" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="search_count" Type="int" Nullable="false" />
+    <Property Name="last_search" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SentMessages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SenderId" Type="int" Nullable="false" />
+    <Property Name="RecipientId" Type="int" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LinkedMessageId" Type="int" />
+    <Property Name="HasRead" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SessionCrossover">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="SessionId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastSet" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sitemap_Content">
+    <Key>
+      <PropertyRef Name="Sitemap_ID" />
+    </Key>
+    <Property Name="Sitemap_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sitemap_URL" Type="nvarchar" MaxLength="500" />
+    <Property Name="Sitemap_Updated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="songComment">
+    <Key>
+      <PropertyRef Name="songComment_ID" />
+    </Key>
+    <Property Name="songComment_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="song_ID" Type="int" />
+    <Property Name="user_ID" Type="int" />
+    <Property Name="status" Type="int" />
+    <Property Name="comment" Type="nvarchar" MaxLength="2000" />
+    <Property Name="ipAddress" Type="nvarchar" MaxLength="20" />
+    <Property Name="postDate" Type="datetime" />
+    <Property Name="userName" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Songs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Artist" Type="nvarchar" MaxLength="164" />
+    <Property Name="Title" Type="nvarchar" MaxLength="164" Nullable="false" />
+    <Property Name="songurl" Type="varchar" MaxLength="512" />
+    <Property Name="trackcount" Type="int" Nullable="false" />
+    <Property Name="adddate" Type="datetime" Nullable="false" />
+    <Property Name="fileid" Type="int" />
+    <Property Name="artist_track_id" Type="int" />
+    <Property Name="copyright" Type="tinyint" />
+    <Property Name="FullTitle" Type="nvarchar" MaxLength="331" StoreGeneratedPattern="Computed" />
+    <Property Name="StrippedTitle" Type="nvarchar(max)" StoreGeneratedPattern="Computed" />
+    <Property Name="YoutubeId" Type="varchar" MaxLength="50" />
+    <Property Name="YoutubeProcessed" Type="bit" />
+    <Property Name="like_count" Type="int" />
+    <Property Name="UploaderId" Type="int" />
+    <Property Name="Author" Type="nvarchar" MaxLength="100" />
+    <Property Name="Rating" Type="float" />
+    <Property Name="Syndication" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="StatusUpdates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="140" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'HypsterNew.dbo.sysHypster' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="sysHypster">
+          <Property Name="hypDesktopInstall" Type="int" />
+          <Property Name="hypDesktopUninstall" Type="int" />
+          <Property Name="splashID" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Tag">
+    <Key>
+      <PropertyRef Name="Tag_ID" />
+    </Key>
+    <Property Name="Tag_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tag_Name" Type="nvarchar" MaxLength="30" />
+    <Property Name="Tag_Group_ID" Type="int" />
+    <Property Name="Tag_Genre_ID" Type="int" />
+    <Property Name="Tag_Click_Num" Type="int" />
+  </EntityType>
+  <EntityType Name="Tag_News">
+    <Key>
+      <PropertyRef Name="Tag_News_ID" />
+    </Key>
+    <Property Name="Tag_News_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tag_ID" Type="int" />
+    <Property Name="Article_ID" Type="int" />
+    <Property Name="Tag_Click_Num" Type="int" />
+  </EntityType>
+  <EntityType Name="Tag_Playlist">
+    <Key>
+      <PropertyRef Name="Tag_Playlist_ID" />
+    </Key>
+    <Property Name="Tag_Playlist_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tag_ID" Type="int" />
+    <Property Name="Playlist_ID" Type="int" />
+    <Property Name="Tag_Click_Num" Type="int" />
+  </EntityType>
+  <EntityType Name="TopSongs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SongId" Type="int" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TrackLogin">
+    <Key>
+      <PropertyRef Name="TrackLogin_ID" />
+    </Key>
+    <Property Name="TrackLogin_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login_Date" Type="datetime" />
+    <Property Name="User_id" Type="int" />
+  </EntityType>
+  <EntityType Name="TrackWebsite">
+    <Key>
+      <PropertyRef Name="TrackWebsite_ID" />
+    </Key>
+    <Property Name="TrackWebsite_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrackWebsite_Key" Type="nvarchar" MaxLength="30" />
+    <Property Name="TrackWebsite_KeyID" Type="int" />
+    <Property Name="TrackWebsite_Val" Type="nvarchar" MaxLength="50" />
+    <Property Name="TrackDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TumblrLogin">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TumblrId" Type="nchar" MaxLength="32" Nullable="false" />
+    <Property Name="RandomId" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TumblrSessionKey">
+    <Key>
+      <PropertyRef Name="TumblrSessionId" />
+    </Key>
+    <Property Name="TumblrSessionId" Type="nchar" MaxLength="32" Nullable="false" />
+    <Property Name="oauth_token" Type="nchar" MaxLength="52" Nullable="false" />
+    <Property Name="oauth_token_secret" Type="nchar" MaxLength="52" Nullable="false" />
+    <Property Name="oauth_verifier" Type="nchar" MaxLength="52" Nullable="false" />
+    <Property Name="TumblrId" Type="nchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TumblrTmp">
+    <Key>
+      <PropertyRef Name="TumblrId" />
+    </Key>
+    <Property Name="TumblrId" Type="nchar" MaxLength="32" Nullable="false" />
+    <Property Name="RandomId" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TwitterFeed">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TwitterScreenName" Type="nchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TwitterLogin">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TwitterId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TwitterStatusUpdate">
+    <Key>
+      <PropertyRef Name="TwitterStatusUpdateId" />
+    </Key>
+    <Property Name="TwitterStatusUpdateId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TwitterScreenName" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="TwitterStatusId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="UpdateTmpStamp" Type="datetime" Nullable="false" />
+    <Property Name="TwitterStatusText" Type="nchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TwitterTmp">
+    <Key>
+      <PropertyRef Name="TwitterId" />
+    </Key>
+    <Property Name="TwitterId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="RandomId" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="userContacts">
+    <Key>
+      <PropertyRef Name="contactID" />
+    </Key>
+    <Property Name="contactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="contactType" Type="int" />
+    <Property Name="contactSubject" Type="nvarchar" MaxLength="250" />
+    <Property Name="contactText" Type="nvarchar" MaxLength="2500" />
+    <Property Name="contactEmail" Type="nvarchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="UserSearchLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="search_id" Type="int" Nullable="false" />
+    <Property Name="search_time" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="videoClips">
+    <Key>
+      <PropertyRef Name="videoClip_ID" />
+    </Key>
+    <Property Name="videoClip_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="UpVotes" Type="int" />
+    <Property Name="DownVotes" Type="int" />
+    <Property Name="ViewsNum" Type="int" />
+    <Property Name="UploadedBy" Type="int" />
+    <Property Name="UploadedByName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UploadDate" Type="datetime" />
+    <Property Name="Duration" Type="int" />
+    <Property Name="Guid" Type="nvarchar" MaxLength="30" />
+    <Property Name="Status" Type="smallint" />
+  </EntityType>
+  <EntityType Name="videoComment">
+    <Key>
+      <PropertyRef Name="videoComment_ID" />
+    </Key>
+    <Property Name="videoComment_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="videoClip_ID" Type="int" />
+    <Property Name="user_ID" Type="int" />
+    <Property Name="status" Type="int" />
+    <Property Name="comment" Type="nvarchar" MaxLength="2000" />
+    <Property Name="ipAddress" Type="nvarchar" MaxLength="20" />
+    <Property Name="postDate" Type="datetime" />
+    <Property Name="userName" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="videoFeatured">
+    <Key>
+      <PropertyRef Name="videoFeatured_ID" />
+    </Key>
+    <Property Name="videoFeatured_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="videoClip_ID" Type="int" />
+    <Property Name="ImageSrc" Type="nvarchar" MaxLength="50" />
+    <Property Name="SortOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="VisualSearch">
+    <Key>
+      <PropertyRef Name="VisualSearch_ID" />
+    </Key>
+    <Property Name="VisualSearch_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Artist_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Genre_ID" Type="int" />
+    <Property Name="ImWidth" Type="int" />
+  </EntityType>
+  <EntityType Name="VoteForSong">
+    <Key>
+      <PropertyRef Name="VoteForSong_ID" />
+    </Key>
+    <Property Name="VoteForSong_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Song1_ID" Type="nvarchar" MaxLength="20" />
+    <Property Name="Song1_Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="Song2_ID" Type="nvarchar" MaxLength="20" />
+    <Property Name="Song2_Title" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="VoteOnLogo">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="YesOrNo" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ArtistCategories_ArtistCategories">
+    <End Role="ArtistCategories" Type="Self.ArtistCategories" Multiplicity="1" />
+    <End Role="ArtistCategories1" Type="Self.ArtistCategories" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ArtistCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArtistCategories1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ArtistData_ArtistCategories">
+    <End Role="ArtistCategories" Type="Self.ArtistCategories" Multiplicity="1" />
+    <End Role="ArtistData" Type="Self.ArtistData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ArtistCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArtistData">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ArtistData_Photos">
+    <End Role="Photos" Type="Self.Photos" Multiplicity="0..1" />
+    <End Role="ArtistData" Type="Self.ArtistData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Photos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ArtistData">
+        <PropertyRef Name="MainPhotoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LinkedNetworks_Members">
+    <End Role="Members" Type="Self.Members" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LinkedNetworks" Type="Self.LinkedNetworks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Members">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="LinkedNetworks">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pl_friendrequests_pl_member">
+    <End Role="Members" Type="Self.Members" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FriendRequests" Type="Self.FriendRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Members">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="FriendRequests">
+        <PropertyRef Name="RecipientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pl_newfriends_pl_member">
+    <End Role="Members" Type="Self.Members" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Friends" Type="Self.Friends" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Members">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Friends">
+        <PropertyRef Name="friend1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pl_photos_pl_member">
+    <End Role="Members" Type="Self.Members" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Photos" Type="Self.Photos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Members">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Photos">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pl_playlists_pl_member">
+    <End Role="Members" Type="Self.Members" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Playlists" Type="Self.Playlists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Members">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Playlists">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pl_profile_comments_pl_member">
+    <End Role="Members" Type="Self.Members" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Members">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SentMessages_Messages">
+    <End Role="Messages" Type="Self.Messages" Multiplicity="0..1" />
+    <End Role="SentMessages" Type="Self.SentMessages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Messages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SentMessages">
+        <PropertyRef Name="LinkedMessageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StatusUpdates_Members">
+    <End Role="Members" Type="Self.Members" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="StatusUpdates" Type="Self.StatusUpdates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Members">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="StatusUpdates">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StatusUpdates_StatusUpdates">
+    <End Role="StatusUpdates" Type="Self.StatusUpdates" Multiplicity="1" />
+    <End Role="StatusUpdates1" Type="Self.StatusUpdates" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="StatusUpdates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StatusUpdates1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TopSongs_Songs">
+    <End Role="Songs" Type="Self.Songs" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TopSongs" Type="Self.TopSongs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Songs">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TopSongs">
+        <PropertyRef Name="SongId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserSearchLog_Members">
+    <End Role="Members" Type="Self.Members" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserSearchLog" Type="Self.UserSearchLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Members">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="UserSearchLog">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HypsterNewModelStoreContainer">
+    <EntitySet Name="ArtistAZ" EntityType="Self.ArtistAZ" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ArtistCategories" EntityType="Self.ArtistCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ArtistData" EntityType="Self.ArtistData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Banners" EntityType="Self.Banners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BlockedTerms" EntityType="Self.BlockedTerms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CaptchaLog" EntityType="Self.CaptchaLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Charts" EntityType="Self.Charts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ColorSchemes" EntityType="Self.ColorSchemes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CoverContest" EntityType="Self.CoverContest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CoverContestVote" EntityType="Self.CoverContestVote" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dead_Link" EntityType="Self.Dead_Link" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DynamicContent" EntityType="Self.DynamicContent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailLog" EntityType="Self.EmailLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FacebookLogin" EntityType="Self.FacebookLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FeaturedContent" EntityType="Self.FeaturedContent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FeaturedPlaylists" EntityType="Self.FeaturedPlaylists" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Festivals" EntityType="Self.Festivals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Followers" EntityType="Self.Followers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FriendRequests" EntityType="Self.FriendRequests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Friends" EntityType="Self.Friends" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="homeSlideshow" EntityType="Self.homeSlideshow" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HypException" EntityType="Self.HypException" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LinkedNetworks" EntityType="Self.LinkedNetworks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ListenHistory" EntityType="Self.ListenHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manual" EntityType="Self.Manual" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manual_Slide" EntityType="Self.Manual_Slide" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MemberMusicGenre" EntityType="Self.MemberMusicGenre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MemberPublicPage" EntityType="Self.MemberPublicPage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Members" EntityType="Self.Members" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MemberSongSkip" EntityType="Self.MemberSongSkip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mix_Mobile" EntityType="Self.Mix_Mobile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MusicGenre" EntityType="Self.MusicGenre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="newsCeleb" EntityType="Self.newsCeleb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="newsCeleb_TMP" EntityType="Self.newsCeleb_TMP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="newsComment" EntityType="Self.newsComment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="newsPost" EntityType="Self.newsPost" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Photos" EntityType="Self.Photos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlaylistData" EntityType="Self.PlaylistData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlaylistLikes" EntityType="Self.PlaylistLikes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Playlists" EntityType="Self.Playlists" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Radio_Usage" EntityType="Self.Radio_Usage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RadioStation" EntityType="Self.RadioStation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SearchLog" EntityType="Self.SearchLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SentMessages" EntityType="Self.SentMessages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SessionCrossover" EntityType="Self.SessionCrossover" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sitemap_Content" EntityType="Self.Sitemap_Content" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="songComment" EntityType="Self.songComment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Songs" EntityType="Self.Songs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusUpdates" EntityType="Self.StatusUpdates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tag_News" EntityType="Self.Tag_News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tag_Playlist" EntityType="Self.Tag_Playlist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TopSongs" EntityType="Self.TopSongs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrackLogin" EntityType="Self.TrackLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrackWebsite" EntityType="Self.TrackWebsite" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TumblrLogin" EntityType="Self.TumblrLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TumblrSessionKey" EntityType="Self.TumblrSessionKey" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TumblrTmp" EntityType="Self.TumblrTmp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TwitterFeed" EntityType="Self.TwitterFeed" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TwitterLogin" EntityType="Self.TwitterLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TwitterStatusUpdate" EntityType="Self.TwitterStatusUpdate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TwitterTmp" EntityType="Self.TwitterTmp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userContacts" EntityType="Self.userContacts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserSearchLog" EntityType="Self.UserSearchLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="videoClips" EntityType="Self.videoClips" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="videoComment" EntityType="Self.videoComment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="videoFeatured" EntityType="Self.videoFeatured" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VisualSearch" EntityType="Self.VisualSearch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VoteForSong" EntityType="Self.VoteForSong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VoteOnLogo" EntityType="Self.VoteOnLogo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DeActivated" EntityType="Self.DeActivated" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[DeActivated].[UserId] AS [UserId], 
+[DeActivated].[IsDeActivated] AS [IsDeActivated]
+FROM [dbo].[DeActivated] AS [DeActivated]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ListenLog" EntityType="Self.ListenLog" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ListenLog].[songid] AS [songid], 
+[ListenLog].[time] AS [time], 
+[ListenLog].[userid] AS [userid]
+FROM [dbo].[ListenLog] AS [ListenLog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ProfileDetails" EntityType="Self.ProfileDetails" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ProfileDetails].[ProfileDetailsId] AS [ProfileDetailsId], 
+[ProfileDetails].[UserId] AS [UserId], 
+[ProfileDetails].[FavoriteSong] AS [FavoriteSong], 
+[ProfileDetails].[FavoriteQuote] AS [FavoriteQuote], 
+[ProfileDetails].[FavoriteBooks] AS [FavoriteBooks], 
+[ProfileDetails].[FavoriteMovie] AS [FavoriteMovie], 
+[ProfileDetails].[InARelationship] AS [InARelationship], 
+[ProfileDetails].[Education] AS [Education]
+FROM [dbo].[ProfileDetails] AS [ProfileDetails]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_ArtistCategories_ArtistCategories" Association="Self.FK_ArtistCategories_ArtistCategories">
+      <End Role="ArtistCategories" EntitySet="ArtistCategories" />
+      <End Role="ArtistCategories1" EntitySet="ArtistCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ArtistData_ArtistCategories" Association="Self.FK_ArtistData_ArtistCategories">
+      <End Role="ArtistCategories" EntitySet="ArtistCategories" />
+      <End Role="ArtistData" EntitySet="ArtistData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ArtistData_Photos" Association="Self.FK_ArtistData_Photos">
+      <End Role="Photos" EntitySet="Photos" />
+      <End Role="ArtistData" EntitySet="ArtistData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LinkedNetworks_Members" Association="Self.FK_LinkedNetworks_Members">
+      <End Role="Members" EntitySet="Members" />
+      <End Role="LinkedNetworks" EntitySet="LinkedNetworks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pl_friendrequests_pl_member" Association="Self.FK_pl_friendrequests_pl_member">
+      <End Role="Members" EntitySet="Members" />
+      <End Role="FriendRequests" EntitySet="FriendRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pl_newfriends_pl_member" Association="Self.FK_pl_newfriends_pl_member">
+      <End Role="Members" EntitySet="Members" />
+      <End Role="Friends" EntitySet="Friends" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pl_photos_pl_member" Association="Self.FK_pl_photos_pl_member">
+      <End Role="Members" EntitySet="Members" />
+      <End Role="Photos" EntitySet="Photos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pl_playlists_pl_member" Association="Self.FK_pl_playlists_pl_member">
+      <End Role="Members" EntitySet="Members" />
+      <End Role="Playlists" EntitySet="Playlists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pl_profile_comments_pl_member" Association="Self.FK_pl_profile_comments_pl_member">
+      <End Role="Members" EntitySet="Members" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SentMessages_Messages" Association="Self.FK_SentMessages_Messages">
+      <End Role="Messages" EntitySet="Messages" />
+      <End Role="SentMessages" EntitySet="SentMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StatusUpdates_Members" Association="Self.FK_StatusUpdates_Members">
+      <End Role="Members" EntitySet="Members" />
+      <End Role="StatusUpdates" EntitySet="StatusUpdates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StatusUpdates_StatusUpdates" Association="Self.FK_StatusUpdates_StatusUpdates">
+      <End Role="StatusUpdates" EntitySet="StatusUpdates" />
+      <End Role="StatusUpdates1" EntitySet="StatusUpdates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TopSongs_Songs" Association="Self.FK_TopSongs_Songs">
+      <End Role="Songs" EntitySet="Songs" />
+      <End Role="TopSongs" EntitySet="TopSongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserSearchLog_Members" Association="Self.FK_UserSearchLog_Members">
+      <End Role="Members" EntitySet="Members" />
+      <End Role="UserSearchLog" EntitySet="UserSearchLog" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

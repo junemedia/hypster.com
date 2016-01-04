@@ -1,0 +1,61 @@
+﻿@model List<hypster_tv_DAL.Playlist>
+@{
+    Layout = null;
+}
+
+
+<div style=" margin:20px 0 0 0;">
+
+    <div style=" color:#CC0000;">
+        Press 2 to add to remove from playlist.
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    startSpeechOn('Press 2 to remove from playlist.');
+
+
+    function SubmitDeleteFromMyPlaylist() {
+        $.ajax({
+            type: "POST",
+            url: "/senses/sAccount/SubmitDeleteFromMyPlaylist/@ViewBag.CURR_SONG_ID",
+            async: true,
+            success: function (data) {
+
+                startSpeechOn('Removed');
+
+
+                isExecuted = false;
+
+                $("#MyPlaylist_Actions_CH1").html("");
+
+                //need to skip in curr session
+                skipSong(CURR_VIDEO);
+            }
+        });
+    }
+
+
+    //need to cancel prev timer !!!!!
+    setTimeout(function () {
+        LOCK_SOUND = false;
+        CURR_ACTION = "";
+
+        isExecuted = false;
+
+        $("#MyPlaylist_Actions_CH1").html("");
+    }, 7000);
+
+
+</script>
+
+

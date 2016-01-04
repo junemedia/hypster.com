@@ -1,0 +1,93 @@
+﻿@using Recaptcha;
+@{
+    ViewBag.Title = "Hypster - бесплатная онлайн музыка - плеер для Tumblr";
+    ViewBag.Desc = "";
+
+    Layout = "~/Areas/ru/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        RenderContactUs();
+    });
+    $(window).resize(function () {
+        RenderContactUs();
+    });
+</script>
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight">
+
+
+
+
+            <div class="ContactUsCont">
+
+
+                <div style=" float:left; width:100%; margin:0 0 15px 0; font-size:24px;">
+                    &nbsp;Контакты
+                </div>
+
+
+                <div style=" float:left; margin-bottom:20px; width:650px; ">
+                    @using (Html.BeginForm())
+                    {
+                            
+                        <div style=" float:right; width:100%;">
+            
+                            <div style=" float:right; width:640px; height:33px; border:1px solid #DEDEDE; background-color:#DEDEDE; border-radius:2px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                                <div style=" float:left; width:75px; margin:3px 0 0 0; text-align:right; color:#2f5262;">Email:</div>
+                                <input type="text" name="YourEmail" id="YourEmail" value="" style=" float:left; outline: none; width:450px; height:22px; margin:2px 0 0 5px; background-color:#DEDEDE; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  />
+                            </div>
+
+                            <div style=" float:right; width:640px; height:33px; margin:5px 0 0 0; border:1px solid #DEDEDE; background-color:#DEDEDE; border-radius:2px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                                <div style=" float:left; width:75px; margin:3px 0 0 0; text-align:right; color:#2f5262;">Предмет:</div>
+                                <input type="text" name="Subject" id="Subject" value="" style=" float:left; outline: none; width:450px; height:22px; margin:2px 0 0 5px; background-color:#DEDEDE; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  />
+                            </div>
+
+                            <div style=" float:right; width:640px; height:230px; margin:5px 0 0 0; border:1px solid #DEDEDE; background-color:#DEDEDE; border-radius:2px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                                <div style=" float:left; width:75px; margin:3px 0 0 0; text-align:right; color:#2f5262;">Сообщение:</div>
+                                <textarea type="text" name="Message" id="Message" value="" style=" float:left; outline: none; width:540px; height:220px; margin:2px 0 0 5px; background-color:#DEDEDE; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  ></textarea>
+                            </div>
+
+
+                            <div style=" float:left; width:100%;">
+                                <div style=" float:left; margin:10px 0 0 8px;">
+                                    @Html.Raw(Html.GenerateCaptcha())
+                                    @Html.ValidationMessage("recaptcha")
+                                    <br />
+                                    <div style=" background-color:#CC0000; color:#FFFFFF;">@ViewBag.ServerMessage</div>
+                                </div>
+                            </div>
+
+                        </div>
+                            
+        
+                        <div style=" float:right; width:100%; text-align:right; margin-top:5px;">
+                            <input type="submit" value="Отправить" style=" width:120px; height:30px; background-color:#42606e; border:2px solid #42606e; border-radius:3px; color:#FFFFFF; font-family:'Lato', sans-serif; font-size:16px;" />    
+                        </div>
+                    }
+                </div>
+
+
+
+                <div style=" float:right; width:300px; height:250px; background-color:#424648; border:3px solid #424648; border-radius:2px; margin-right:20px;">
+                    <div id="SideAd2">
+                        @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
+                    </div>
+                    <!-- 06_25 -->
+                    
+                </div>
+                
+
+            </div>
+
+
+
+    </div>  
+</div>

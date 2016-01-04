@@ -1,0 +1,253 @@
+﻿@model hypster_tv.ViewModels.HomePageViewModel
+@{
+    ViewBag.Title = "Hypster";
+    ViewBag.Desc = "";
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        RenderSong();
+    });
+    $(window).resize(function () {
+        RenderSong();
+    });
+
+
+
+    function RenderSong() {
+        var margin_left = 0;
+        var cont_width = 1024;
+
+        if ($(window).width() > 1024) {
+            margin_left = $(window).width() - 1024 - 44;
+            cont_width = 1024 + 30 + (margin_left / 2) - 15;
+        } else {
+            margin_left = 0;
+            cont_width = 1024;
+        }
+
+
+    }
+</script>
+
+
+
+
+
+
+@{ int slideNum = 1;}
+@{ int celebsNum = 1;}
+
+
+@for (int i = ViewBag.CurrPage_Start; i < ViewBag.CurrPage_End; i++)
+{
+    if (slideNum == 4)
+    {
+        <div class="boxContLeft">
+            <div class="slideLeft">
+        
+
+                <div class='sharethrough-placement'
+                     data-sharethrough-key='b06bac2b'
+                     data-sharethrough-type='placement'
+                     data-sharethrough-params='{}'
+                     style="display:none;"></div>
+
+                <script>
+                    (function () {
+                        var t = document.createElement('script');
+                        t.type = 'text/javascript';
+                        t.async = true;
+                        t.src = '//apis.sharethrough.com/v0/tags.js';
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(t, s);
+                    })();
+                </script>
+
+
+            </div>
+        </div>
+    
+        slideNum = slideNum + 1;
+    }
+    
+    
+    if (i < Model.posts_list.Count)
+    {
+        
+        <div class="@if (slideNum % 2 > 0){<text>boxContRight</text>}else{<text>boxContLeft</text>} @if( slideNum == 1){<text>boxContRightTop</text>}">
+        <div id="listenSlide@(slideNum)" class="@if (slideNum % 2 > 0){<text>slideRight</text>}else{<text>slideLeft</text>}" style=" min-height:390px;">
+        
+
+
+
+        <div style=" @if (slideNum % 2 > 0){<text>float:left;</text>}else{<text>float:right;</text>} width:1024px;">
+        
+        
+                    <div class="Post_mainCont" style=" float:left; width:700px;">
+                        
+                        <div style=" float:left; width:100%; height:1px;">
+                            
+                            <div style=" position:relative; top:50px; left:-725px;">
+                    
+                                <div id="SNR_BtnHolder_@Model.posts_list[i].post_id" style=" float:right; width:70px; ">
+                    
+                                        <div class="pw-widget pw-vertical" pw:image="" pw:url="http://hypster.com/content/HypNews/post/@Model.posts_list[i].post_guid" pw:title="@Model.posts_list[i].post_title">
+                                        <a class="pw-button-tumblr pw-look-native"></a>
+	                                    <a class="pw-button-facebook pw-look-native"></a>
+	                                    <a class="pw-button-twitter pw-look-native"></a>
+	                                    <a class="pw-button-post-share"></a>
+                                        </div>
+                                        <script src="http://i.po.st/static/v3/post-widget.js#publisherKey=caq8eudavn7j6erou9n3" type="text/javascript"></script>
+
+                                </div>
+
+                            </div>
+                            
+                        </div>
+
+
+                        <article id="post-@Model.posts_list[i].post_guid">
+                
+
+                            <h2 style=" margin-top:0px;">
+                                <a class="PostTitle" href="/content/HypNews/post/@Model.posts_list[i].post_guid">
+                                    @Model.posts_list[i].post_title
+                                </a>
+                            </h2>
+
+                
+
+        
+
+                            <div class="PostCont">
+                               @Html.Raw(HttpUtility.HtmlDecode(Model.posts_list[i].post_content))
+                            </div>
+
+
+                            <div style=" float:left; width:100%; margin-top:10px;">
+                    
+                    
+                                <div style="float:left; margin-top:10px; ">
+                        
+                                    <div style=" float:left; color:#d4ae52;">
+                                        Posted on <b>@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Model.posts_list[i].post_date.Value.Month) @Model.posts_list[i].post_date.Value.Day, @Model.posts_list[i].post_date.Value.Year</b>
+                                    </div>
+
+                                </div>
+
+
+                                <a class="PostReadMore" href="/content/HypNews/post/@Model.posts_list[i].post_guid">
+                                    Read More
+                                </a>
+
+                            </div>
+
+                        </article>
+                    </div>
+
+
+
+
+
+
+                    @if (slideNum % 2 > 0)
+                    {
+                        <div style=" float:left; width:304px; min-height:377px; margin-left:19px;">
+                                
+                                
+                                <div id="SideAd@(slideNum)" class="AdCont300x250_Drk" style=" float:left; margin-top:5px; ">
+                                    @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
+                                </div>
+                                <!-- 06_25 -->
+                                
+                                
+
+                                @if (celebsNum % 2 > 0)
+                                {
+                                    <div onclick="window.location='/content/HypCelebs';" style=" float:left; width:304px; height:105px; line-height:105px; overflow:hidden; background-color:#292929; border-radius:3px; margin-top:10px; margin-right:-8px; color:#FFFFFF; text-align:center; font-size:23px; cursor:pointer; ">
+                                        Exclusive Celebrity Photos
+                                    </div>
+                                }
+                                else
+                                {   
+                                    <div onclick="window.location='http://@System.Configuration.ConfigurationManager.AppSettings["videoHostName"]/page/1';" style=" float:left; width:304px; height:105px; line-height:105px; overflow:hidden; background-color:#292929; border-radius:3px; margin-top:10px; margin-right:-8px; color:#FFFFFF; text-align:center; font-size:23px; cursor:pointer; ">
+                                        Hypster TV 
+                                    </div>
+                                }
+
+                        </div>
+                        
+                        
+                                celebsNum = celebsNum + 1;
+                    }
+                    else
+                    {
+                        <div style=" float:left; width:304px; min-height:377px; margin-left:9px; ">
+                            <div id="SideAd@(slideNum)" style=" float:right; width:300px; height:375px; overflow:hidden; background-color:#747e83; border-radius:3px; margin-top:0px; margin-right:-8px; ">
+                            </div>
+                        </div>
+                    }
+
+
+        </div>
+
+
+
+
+        </div>
+        </div>
+    
+                    slideNum = slideNum + 1;
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide6" class="slideLeft" style=" min-height:50px;">
+
+        <div style=" float:right; width:1024px;">
+
+        <!-- PAGING -->
+        <div style=" float:left; width:100%; height:30px; line-height:30px; margin-top:10px; margin-bottom:5px; overflow:hidden;">
+            @for (int i = 1; i <= Model.NumOfPages; i++)
+            {
+                <a class="paging_Page" style="@if (i == ViewBag.CurrPage)
+                                              { <text>background-color:#5a676d;</text> }
+                                              else
+                                              { <text>background-color:#747e83;</text> } " href="/content/HypNews/page/@i">@i.ToString()</a>
+            }
+        </div>
+        <!-- PAGING -->
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

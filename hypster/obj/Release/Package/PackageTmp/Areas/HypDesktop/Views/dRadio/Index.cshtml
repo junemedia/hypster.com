@@ -1,0 +1,135 @@
+﻿@model hypster.ViewModels.listenViewModel
+@{
+    ViewBag.Title = "Listen to youtube music playlist | Radio";
+    ViewBag.Desc = "Listen online radio playlists, charts, festivals, music playlists and more";
+    Layout = "~/Areas/HypDesktop/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+<div style=" float:left; width:100%; background-color:#202020; ">
+<center>
+
+    <!-- background-color:#1d1d1c;  -->
+    <div style=" clear:both; width:1020px; min-height:800px;">
+
+        
+        <div id="listenTab2" style=" display:block; background-color:#202020;">
+            
+
+
+                
+                <!-- RADIO SEARCH -->
+                <div class="contMiddle" style=" display:block; margin-bottom:5px;">
+                    <div class="radioSearch">
+                        <input type="text" id="stationName" name="stationName" value=" Enter Artist, Song or Genre" onfocus="if(this.value == ' Enter Artist, Song or Genre') this.value = '';" onblur="if(this.value == '') this.value = ' Enter Artist, Song or Genre';" />
+                        <div class="btnRadioSearch" onclick="CustomRadioStation()">Listen</div>
+                    </div>
+                </div>
+                <!-- RADIO SEARCH -->
+
+
+
+                @foreach (var item in Model.genres_list)
+                {
+                    <div class="plItem" onclick="window.location='/hypsterPlayer/MPL_D?media_type=Radio&Genre=@HttpUtility.UrlEncode(item.GenreName)';" onmouseover="DRDD(this, @item.Playlist_ID, @item.User_ID);" onmouseout="HRDD(event, this);">
+                        <div class="plName">@item.GenreName</div>
+                        <a class="plPlay" title="Play playlist"></a>
+                    </div> 
+                }
+
+
+
+
+
+
+                <div style=" display:none;"><!-- TEMP -->
+
+
+
+                <div style=" float:left; width:100%; margin:15px 0 0 0; padding-bottom:3px; font-size:20px; color:#FCF088; ">
+                    Charts
+                </div>
+
+
+
+                @foreach (var item in Model.charts_list)
+                {
+                    <div class="plItem" onclick="window.location='/hypsterPlayer/MPL_D?media_type=playlist&playlist_id=@(item.Chart_Playlist_ID)&us_id=@(item.Chart_User_ID)&guid=charts';" onmouseover="DispRadioDetails(this, @item.Chart_Playlist_ID, @item.Chart_User_ID);" onmouseout="HideRadioDetails(event, this);">
+                        <div class="plName">@item.Chart_Name</div>
+                        <a class="plPlay" title="Play playlist"></a>
+                    </div>  
+                }
+
+
+
+
+
+
+                <div style=" float:left; width:100%; margin:15px 0 10px 0; padding-bottom:3px; font-size:20px; color:#FCF088;">
+                    Festivals
+                </div>
+
+                @foreach (var item in Model.festivals_list)
+                {
+                <div class="plItem" onclick="window.location='/hypsterPlayer/MPL_D?media_type=playlist&playlist_id=@(item.Festival_Playlist_ID)&us_id=@(item.Festival_User_ID)&guid=festivals';" onmouseover="DispRadioDetails(this, @item.Festival_Playlist_ID, @item.Festival_User_ID);" onmouseout="HideRadioDetails(event, this);">
+                    <div class="plName">@item.Festival_Name</div>
+                    <a class="plPlay" title="Play playlist"></a>
+                </div>  
+                }
+
+
+
+
+
+
+                <div style=" float:left; width:1024px; margin:10px 0 13px 0;">
+    
+                    <a href="/playlists" style=" display:block; float:left; width:260px; height:98px; margin:3px 0 0 0px; background-color:#2f2f2f; border-radius:2px; text-align:center; line-height:98px; font-size:23px; cursor:pointer; ">
+                        More Playlists
+                    </a>
+
+
+                    <div style=" float:right; width:728px; padding:4px 4px 0 4px; margin:3px 10px 0 0; border-radius:3px; background-color:#2f2f2f;">
+                        <div id="Add1_s2839iq">
+                            @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+                        </div>
+                        <!-- 06_25 -->
+                        
+                    </div>
+
+                </div>
+
+
+
+                </div><!-- TEMP -->
+
+
+
+
+
+                <div id="Radio_PlstPreview">
+                    <div class="LdingPrev">Loading...</div>
+                </div>
+
+
+
+
+        
+
+
+        </div>
+        
+
+    </div>
+
+</center>
+</div>
+
+
+
+
+
+

@@ -4,12 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-//using Google.GData;
-//using Google.GData.Client;
-//using Google.GData.Extensions;
-//using Google.GData.YouTube;
-//using Google.YouTube;
-
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.Upload;
@@ -340,8 +334,8 @@ namespace hypster.Controllers
 
                 var youtubeService = new YouTubeService(new BaseClientService.Initializer()
                 {
-                    ApiKey = "AIzaSyBxm42neHYmQhKqUvcvbjLCX5uLETZj-jY",
-                    ApplicationName = "hypster.com"
+                    ApiKey = System.Configuration.ConfigurationManager.AppSettings["YouTubeAPIKEY"],
+                    ApplicationName = System.Configuration.ConfigurationManager.AppSettings["YouTubeAPIKEYName"]
                 });
 
                 var searchListRequest = youtubeService.Search.List("id,snippet");
@@ -574,8 +568,9 @@ namespace hypster.Controllers
 
                     var youtubeService = new YouTubeService(new BaseClientService.Initializer()
                     {
-                        ApiKey = "AIzaSyBxm42neHYmQhKqUvcvbjLCX5uLETZj-jY",
-                        ApplicationName = "hypster.com"
+
+                        ApiKey = System.Configuration.ConfigurationManager.AppSettings["YouTubeAPIKEY"],
+                        ApplicationName = System.Configuration.ConfigurationManager.AppSettings["YouTubeAPIKEYName"]
                     });
 
                     var searchListRequest = youtubeService.Search.List("id,snippet");
@@ -699,7 +694,8 @@ namespace hypster.Controllers
             HypDB.SaveChanges();
 
 
-            hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
+            //hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
+            hypster_email_manager.Email_Manager emailManager = new hypster_email_manager.Email_Manager();
             emailManager.SendFeedbackEmail(Subject, YourEmail, Message);
 
 

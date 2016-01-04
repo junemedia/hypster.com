@@ -1,0 +1,80 @@
+﻿@model List<hypster_tv_DAL.MusicGenre> 
+@{
+    Layout = null;
+}
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($(window).width() > 1024) {
+            var margin_left = $(window).width() - 1024 - 30;
+            var cont_width = 1024 + 30 + (margin_left / 2) - 15;
+            $("#listenSlide2_header").css("width", (cont_width - 750 - 20) + "px");
+        }
+    });
+
+    $(window).resize(function () {
+        if ($(window).width() > 1024) {
+            var margin_left = $(window).width() - 1024 - 30;
+            var cont_width = 1024 + 30 + (margin_left / 2) - 15;
+            $("#listenSlide2_header").css("width", (cont_width - 750 - 20) + "px");
+        }
+    });
+</script>
+
+
+
+
+
+
+<div class="FeaturedVideoCont">
+           
+            
+        <div id="listenSlide2_header">
+                
+            <div class="FeaturedHeaderBack">
+                <div style=" width:220px; margin-right:30px;">Слушайть радио</div>
+            </div>
+
+            <div class="FeaturedSubHeader">
+                Выберите жанр...
+            </div>
+
+        </div>
+
+
+
+        <div class="FeaturedAdCont">
+            <div id="TopAdd1">
+                @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+            </div>
+            <!-- 06_25 -->
+            
+        </div>
+
+</div>
+
+
+
+
+
+
+<div class="FeaturedVideoInner">
+      
+        @{ int counter = 1;}
+        @foreach(var item in Model)
+        {   
+            <a class="VideoThumbBox" onclick="OpenPlayer('media_type=Radio&Genre=@item.GenreName')">
+                <img alt="" src="/imgs/radio/genres/@(item.GenreName.Replace("&","_and_")).jpg" />
+                <div class="videoBoxHeader">&nbsp;&nbsp;@item.GenreName</div>
+            </a>
+            
+            if (counter == 8)
+            {
+                break;
+            }
+            counter += 1;
+        }
+    
+</div>

@@ -1,0 +1,301 @@
+﻿@model hypster_tv_DAL.Member
+@{
+    ViewBag.Title = "Account Info";
+    Layout = "/Areas/senses/Views/Shared/_srLayout.cshtml";
+}
+
+
+
+
+<div class="cir_back_btn"> 
+    <div onclick="clickBack()" style=" float:left; width:100%; margin:0px 0 0 0px; cursor:pointer; ">
+        BACK
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="acctInfoBlkBox1">
+    
+
+    <div id="msgBox1_tmp" style="  float:none; width:460px; height:350px; margin:auto; color:#FFFFFF; ">
+        
+        <div style=" float:left; width:100%; ">
+            <div style=" float:right; margin:0 50px 0 0; font-size:13px;">MANAGE YOUR INFORMATION</div>
+        </div>
+
+
+
+
+        <div style=" float:left; width:100%; ">
+            <input type="text" id="txtUserName" name="txtUserName" value="@Model.username" style=" float:right; width:174px; height:28px; line-height:28px; font-size:16px; margin:0 0 13px 0; border:1px solid #318E8A; background-color:Black; color:#FFFFFF; " />
+            <div style=" float:right; margin:0 10px 0 0; font-size:16px;">Username</div>
+        </div>
+
+
+        <div style=" float:left; width:100%; ">
+            <input type="password" id="txtNewPassword" name="txtNewPassword" value="******" style=" float:right; width:174px; height:28px; line-height:28px; font-size:16px; margin:0 0 13px 0; border:1px solid #318E8A; background-color:Black; color:#FFFFFF; " />
+
+            <input type="password" id="txtPassword" name="txtPassword" value="******"  onkeydown="change_pass_check()" style=" float:right; width:174px; height:28px; line-height:28px; font-size:16px; margin:0 5px 13px 0; border:1px solid #318E8A; background-color:Black; color:#FFFFFF; " />
+            
+            <div style=" float:right; margin:0 10px 0 0; font-size:16px;">Password</div>
+        </div>
+
+
+        <div style=" float:left; width:100%; ">
+            <input type="text" id="txtName" name="txtName" value="@Model.name" style=" float:right; width:174px; height:28px; line-height:28px; font-size:16px; margin:0 0 13px 0; border:1px solid #318E8A; background-color:Black; color:#FFFFFF; " />
+            <div style=" float:right; margin:0 10px 0 0; font-size:16px;">Name</div>
+        </div>
+
+
+        <div style=" float:left; width:100%; ">
+            <input type="text" id="txtEmail" name="txtEmail" value="@Model.email" style=" float:right; width:174px; height:28px; line-height:28px; font-size:16px; margin:0 0 13px 0; border:1px solid #318E8A; background-color:Black; color:#FFFFFF; " />
+            <div style=" float:right; margin:0 10px 0 0; font-size:16px;">Email</div>
+        </div>
+
+
+        <div style=" float:left; width:100%; ">
+            <input type="text" id="txtSaveChanges" name="txtSaveChanges" value="Save Changes" onclick="SaveCurrentChanges()" style=" float:right; width:175px; background-color:#318E8A; color:#FFFFFF; text-align:center; cursor:pointer; border:1px solid #318E8A; border-radius:6px; " />
+        </div>  
+       
+
+    </div>
+
+
+</div>
+
+
+
+
+<div style=" float:left; width:100%; height:260px; border:1px solid #318E8A; background:url('/Areas/senses/imgs/senses_back/back_1.jpg') no-repeat center;">
+    
+    <img alt="" src="/Areas/senses/imgs/senses_ct_icon.png" style=" float:left; margin:130px 0 0 175px;" />
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        cancelSpeech();
+        startSpeech('Your username is @(User.Identity.Name). You can not change your username.');
+
+        $("#txtUserName").focus();
+    });
+
+</script>
+
+
+
+<script type="text/javascript">
+
+    var CURR_ACTIVE_MENU = 1;
+    var MENU_COUNT = 5;
+
+    var pass_changed_step = 0;
+
+
+    function HandleKeyAction(e) {
+
+        cancelSpeech();
+        
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+
+
+        //ESC
+        if (KEY_CODE == 27) {
+            clickBack();
+        }
+
+
+
+        if (KEY_CODE == 13) {
+
+            //check if user saving changes
+            if (CURR_ACTIVE_MENU == 5) {
+
+                SaveCurrentChanges();
+
+                return;
+            }
+
+            ProcessCurrMenu(CURR_ACTIVE_MENU);
+
+        }
+
+
+
+        //down
+        if (KEY_CODE == 40) {
+            //move menu down
+
+            CURR_ACTIVE_MENU += 1;
+            if (CURR_ACTIVE_MENU > MENU_COUNT) {
+                CURR_ACTIVE_MENU = MENU_COUNT;
+            }
+
+            ProcessCurrMenu(CURR_ACTIVE_MENU);
+
+        }
+
+
+
+        //up
+        if (KEY_CODE == 38) {
+            //move menu up
+
+            CURR_ACTIVE_MENU -= 1;
+            if (CURR_ACTIVE_MENU <= 0) {
+                CURR_ACTIVE_MENU = 1;
+            }
+
+            ProcessCurrMenu(CURR_ACTIVE_MENU);
+
+        }
+
+
+    }
+
+
+
+    function clickBack() {
+
+        cancelSpeech();
+
+        window.location = "/senses/sAccount/ManageAccount";
+    }
+
+
+
+
+    function ProcessCurrMenu(p_CM)
+    {
+        switch (p_CM) {
+            case 1:
+                cancelSpeech();
+                startSpeech('Your username is @(User.Identity.Name). You can not change your username.');
+
+                $("#txtUserName").focus();
+                break;
+            case 2:
+
+                if (pass_changed_step == 0) {
+                    cancelSpeech();
+                    startSpeech('Your password is hidden. Please enter current password if you want to change it and press ENTER.');
+
+                    $("#txtPassword").focus();
+                    $("#txtPassword").select();
+                    return;
+                }
+
+                if (pass_changed_step == 1) {
+                    cancelSpeech();
+                    startSpeech('Please enter new password and press ENTER.');
+
+                    $("#txtNewPassword").focus();
+                    $("#txtNewPassword").select();
+
+                    pass_changed_step = 2;
+                    return;
+                }
+
+                if (pass_changed_step == 2) {
+                    cancelSpeech();
+                    startSpeech('Password change pending, please go down and save changes.');
+
+                    $("#txtName").focus();
+                    $("#txtName").select();
+
+                    pass_changed_step = 0;
+                    return;
+                }
+                break;
+            case 3:
+                cancelSpeech();
+                startSpeech('Your name is ' + $('#txtName').val() + '. Please enter new name if you want to change it and press ENTER.');
+
+                $("#txtName").focus();
+                $("#txtName").select();
+                break;
+            case 4:
+                cancelSpeech();
+                startSpeech('Your email is ' + $('#txtEmail').val() + '. You can not change you email.');
+
+                $("#txtEmail").focus();
+                break;
+            case 5:
+                cancelSpeech();
+                startSpeech('Save Changes. Press Enter to confirm.');
+
+                $("#txtSaveChanges").focus();
+
+                break;
+            default:
+                break;
+        }
+    }
+
+
+
+
+
+    function change_pass_check() {
+        
+        pass_changed_step = 1;
+
+    }
+
+
+    function SaveCurrentChanges()
+    {
+
+        cancelSpeech();
+        startSpeech('Saving your changes, please wait a moment.');
+
+
+        setTimeout(function () {
+            $.ajax({
+                type: "POST",
+                url: "/senses/sAccount/SaveAccountInfo?name=" + encodeURI($('#txtName').val()) + "&old_pass=" + encodeURI($('#txtPassword').val()) + "&new_pass=" + encodeURI($('#txtNewPassword').val()),
+                async: true,
+                success: function (data) {
+                    $("#bContHolder1").html(data);
+                }
+            });
+        }, 3000);
+
+
+    }
+
+</script>
+

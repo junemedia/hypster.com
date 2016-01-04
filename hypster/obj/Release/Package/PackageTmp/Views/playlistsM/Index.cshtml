@@ -1,0 +1,219 @@
+﻿@model hypster.ViewModels.playlistsViewModel
+@{
+    ViewBag.Title = "Listen To Youtube Music | Hypster - own playlist online - playlist for tumblr";
+    ViewBag.Desc = "Search music, create playlists and embed them on blogs such as Tumblr or Blogger.";
+    ViewBag.ActivePage = "listen";
+
+    int counter = 0;
+}
+
+
+
+<script type="text/javascript">
+    
+    $(document).ready(function () { RenderPage(); loadPopPlaylistData(); });
+    $(window).resize(function () { RenderPage(); });
+
+
+
+    function loadPopPlaylistData() {
+    }
+
+    var is_like_loaded = false;
+    function loadPopPlaylistData_like() {
+    }
+
+    var is_new_loaded = false;
+    function loadPopPlaylistData_new() {
+    }
+</script>
+
+
+
+
+
+
+
+
+<div style=" float:left; width:100%; min-height:1350px;">
+
+
+        <div class="boxContRight boxContRightTop">
+            <div id="listenSlide1" class="slideRight" style=" min-height:770px;">
+
+
+
+                    <div class="listenMenuCont">
+            
+                            <div id="Menu1" onclick="Open_Plst_Menu1()" title="Most Popular Playlists" style=" line-height:10px; color:#CCCCCC; ">
+                                <img alt="" src="/imgs/popular/most_popular.png" style=" margin-top:17px;" />
+                                <div style=" margin-top:10px; color:#BABABA;" >Most Popular Playlists</div>
+                            </div>
+
+                            <div id="Menu3" onclick="Open_Plst_Menu3(); loadPopPlaylistData_like();" title="Most Liked Playlists" style=" line-height:10px; color:#CCCCCC; ">
+                                <img alt="" src="/imgs/popular/most_liked.png" style=" margin-top:17px;" />
+                                <div style=" margin-top:10px; color:#BABABA;" >Most Liked Playlists</div>
+                            </div>
+
+                            <div id="Menu2" onclick="Open_Plst_Menu2(); loadPopPlaylistData_new();" title="New Playlists" style=" line-height:10px; color:#CCCCCC; ">
+                                <img alt="" src="/imgs/popular/new_playlists.png" style=" margin-top:17px;" />
+                                <div style=" margin-top:10px; color:#BABABA;" >New Playlists</div>
+                            </div>
+
+                    </div>
+
+
+
+                   
+
+
+                   <!-- TAB 1 -->
+                   <div id="plstsListenTab1" style=" min-height:640px;">
+                        
+                        <div style=" float:left; width:100%; margin:20px 0 0 13px; ">
+                        @{counter = 0;}
+                        @for (int i = 0; i < Model.most_popular_playlists.Count; i++)
+                        {
+                            <div class="plItemFp" onclick="OpenPlsts('@(Model.most_popular_playlists[i].username)?@(Model.most_popular_playlists[i].id)');" onmouseover="DPLDD(this, @Model.most_popular_playlists[i].id, @Model.most_popular_playlists[i].userid);" onmouseout="HPLDD(event, this);">
+                                
+                                <div class="plNameFp">@Model.most_popular_playlists[i].name</div>
+                                
+                                <a class="PlstViewsFp" title="@Model.most_popular_playlists[i].ViewsNum views">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(Model.most_popular_playlists[i].ViewsNum)</a>
+                                <a class="PlstLikesFp" title="@Model.most_popular_playlists[i].Likes likes">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(Model.most_popular_playlists[i].Likes)</a>
+
+                                <a class="plPlayFp" title="play"></a>
+
+                                <div class="innrFp" id="PopPl_@Model.most_popular_playlists[i].id"></div>
+                            </div>
+                            
+                            
+                            
+                            if (counter == 14)
+                            {   
+                                <div style=" float:left; width:100%; height:39px; line-height:39px; margin:6px 0 10px -12px; font-size:20px; color:#FCF088; background:#1d1d1c url('/imgs/home/grn_HeaderBack.png') left no-repeat;"></div>
+                                counter = -1;
+                            }
+                            counter++;
+                        }
+                        </div>
+
+                   <!-- TAB 1 -->
+                   </div>
+            
+
+
+
+
+
+                   <!-- TAB 2 -->
+                   <div id="plstsListenTab2" style=" min-height:640px;">
+
+                        
+                        <div style=" float:left; width:100%; margin:20px 0 0 13px; min-height:500px;">
+                        @{counter = 0;}
+                        @for (int i = 0; i < Model.new_playlists.Count; i++)
+                        {
+                            <div class="plItemFp" onclick="OpenPlsts('@(Model.new_playlists[i].username)?@(Model.new_playlists[i].id)');" onmouseover="DPLDD(this, @Model.new_playlists[i].id, @Model.new_playlists[i].userid);" onmouseout="HPLDD(event, this);">
+
+                                <div class="plNameFp">@Model.new_playlists[i].name</div>
+                                
+                                <a class="PlstViewsFp" title="@Model.new_playlists[i].ViewsNum views">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(Model.new_playlists[i].ViewsNum)</a>
+
+                                <a class="PlstLikesFp" title="@Model.new_playlists[i].Likes likes">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(Model.new_playlists[i].Likes)</a>
+
+                                <a class="plPlayFp" title="play"></a>
+
+                                <div class="innrFp" id="PopPl_new_@Model.new_playlists[i].id"></div>
+                            </div>
+                            
+                            
+                            
+                            if (counter == 14)
+                            {   
+                                <div style=" float:left; width:100%; height:39px; line-height:39px; margin:6px 0 10px -12px; font-size:20px; color:#FCF088; background:#1d1d1c url('/imgs/home/grn_HeaderBack.png') left no-repeat;"></div>
+                                counter = -1;
+                            }
+                            counter++;
+                        }
+                        </div>     
+       
+                   <!-- TAB 2 -->
+                   </div>
+           
+
+
+
+                   <!-- TAB 3 -->
+                   <div id="plstsListenTab3" style=" min-height:640px;">
+
+                        <div style=" float:left; width:100%; margin:20px 0 0 13px; min-height:500px">
+                        @{counter = 0;}
+                        @for (int i = 0; i < Model.most_liked_playlists.Count; i++)
+                        {
+                            <div class="plItemFp" onclick="OpenPlsts('@(Model.most_liked_playlists[i].username)?@(Model.most_liked_playlists[i].id)');" onmouseover="DPLDD(this, @Model.most_liked_playlists[i].id, @Model.most_liked_playlists[i].userid);" onmouseout="HPLDD(event, this);">
+
+                                <div class="plNameFp">@Model.most_liked_playlists[i].name</div>
+                                
+                                <a class="PlstViewsFp" title="@Model.most_liked_playlists[i].ViewsNum views">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(Model.most_liked_playlists[i].ViewsNum)</a>
+
+                                <a class="PlstLikesFp" title="@Model.most_liked_playlists[i].Likes likes">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(Model.most_liked_playlists[i].Likes)</a>
+
+                                <a class="plPlayFp" title="play"></a>
+
+                                <div class="innrFp" id="PopPl_like_@Model.most_liked_playlists[i].id"></div>
+                            </div>
+                            
+                            
+                            
+                            
+                            if (counter == 14)
+                            {   
+                                <div style=" float:left; width:100%; height:39px; line-height:39px; margin:6px 0 10px -12px; font-size:20px; color:#FCF088; background:#1d1d1c url('/imgs/home/grn_HeaderBack.png') left no-repeat;"></div>
+                                counter = -1;
+                            }
+                            counter++;
+                        }
+                        </div>
+                    
+                   <!-- TAB 3 -->
+                   </div>
+                    
+                    
+
+
+
+                    <div id="GMVP_PlstPreview">
+                        <div class="LdingPrev">Loading...</div>
+                    </div>
+    
+            </div>
+        </div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        <div class="boxContLeft">
+            <div id="listenSlide2" class="slideLeft" style=" min-height:550px;">
+                    @Html.Action("cComp_st1", "compatibilityCheck")
+            </div>
+        </div>
+
+
+
+
+        <div class="boxContRight">
+            <div id="listenSlide3" class="slideRight" style=" min-height:355px; background-color:#202020;">
+                    @Html.Action("PopularCharts_Chart", "popular")
+            </div>
+        </div>
+
+
+</div>

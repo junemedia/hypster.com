@@ -1,0 +1,24 @@
+﻿@model List<hypster_tv_DAL.videoClip>
+
+@{
+    Layout = null;
+}
+
+
+
+
+<div class="videWid_cont">
+    
+    @foreach(var item in Model)
+    {       
+        <a class="vidMcont" href="http://@System.Configuration.ConfigurationManager.AppSettings["videoHostName"]/video/@item.Guid" >
+            <img alt="@item.Name" src="http://@System.Configuration.ConfigurationManager.AppSettings["videoHostName"]/uploads/covers/@(item.Guid).jpg"  />
+            <div>
+                &nbsp;&nbsp;@item.Name
+            </div>
+        </a>
+    }
+</div>
+
+
+

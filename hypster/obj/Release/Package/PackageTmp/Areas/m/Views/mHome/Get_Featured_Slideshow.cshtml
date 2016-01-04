@@ -1,0 +1,25 @@
+﻿@model List<hypster_tv_DAL.homeSlideshow>
+@{
+    Layout = null;
+}
+
+
+
+@{int sld_num = 1;}
+@foreach (var item in Model)
+{
+    <div class="HomeSldShow" id="HomeSlide@(sld_num)">
+        <img alt="" src="/imgs/home/home_slideshow/@item.ImageSrc" onclick="@item.href" />
+        <div class="SlideshowBultesCont">
+            
+            @for (var i = 1; i <= Model.Count; i++)
+            {
+                <div class="slideBulet" onclick="opnSlide('@i');"></div>
+            }
+            
+        </div>
+    </div>
+    
+    sld_num = sld_num + 1;
+}
+

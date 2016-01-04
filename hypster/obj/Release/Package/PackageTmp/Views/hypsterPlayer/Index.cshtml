@@ -1,0 +1,302 @@
+﻿@model hypster.ViewModels.videoPlayerViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <meta name="description" content="Hypster.TV includes Movies, Music, Radio, TV and Online entertainment stories and reporting from Hollywood and around the globe." />
+    <meta name="keywords" content="Hypster.TV, Music, Radio, TV and the Net, reporting, bands, tributes, groups, rock, headliners, rap, movies, classical, 80\'s, jams, actors, a-listers, the business, hollywood, gigs, big bands, swing, jazz, foreign, irish, standards, glamour" />
+
+
+
+    <!--script src="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"  type="text/javascript"></script-->
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"  type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"  type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+
+    <script src="/scripts/swfobject.js"  type="text/javascript"></script>
+    
+
+    @Scripts.Render("~/scripts/hypScript.js?id=9231872")
+    @Scripts.Render("~/scripts/hypSlide.js?id=182763")
+    
+    <link href="/css/Site.css?id=28729381" rel="stylesheet" type="text/css" />
+    <link href="/css/Player.css?id=28729381" rel="stylesheet" type="text/css" />
+
+
+
+
+    <!-- this is setting parent variable to current player -->
+    <script type="text/javascript">
+        function loaded() {
+            try
+            {
+                setTimeout("notifyParrent()", 1000);
+            }catch(ex){}
+        }
+
+        function notifyParrent() {
+            try
+            {
+                window.opener.player_ins = this;
+                setTimeout("notifyParrent()", 1000);
+            } catch (ex) { }
+        }
+
+        function unloaded() {
+            try
+            {
+                window.opener.player_ins = null;
+            } catch (ex) { }
+        }
+
+
+
+        $(document).ready(function () {
+
+            var margin_top = 2;
+            if ($(window).height() >= 590) {
+                margin_top = ($(window).height() - 590) / 2;
+            }
+            $(".MainRootCont").css("margin-top", margin_top + "px");
+
+         
+
+        });
+
+        $(window).resize(function () {
+
+            var margin_top = 2;
+            if ($(window).height() >= 590) {
+                margin_top = ($(window).height() - 590) / 2;
+            }
+            $(".MainRootCont").css("margin-top", margin_top + "px");
+
+
+
+        });
+
+    </script>
+
+</head>
+
+
+
+
+
+
+
+<body class="MainNHypPlayer" onload="loaded();" onunload="unloaded();" style=" overflow:hidden; background:none; background-color:#202020;">
+    
+    
+    <div class="MainRootCont" style=" width:840px;">
+
+    <div id="MainContHolder" style=" width:840px;">
+
+
+
+        
+
+    
+
+
+
+        <div class="MainMidCont" style=" width:840px; background-color:#353535; border-radius:3px; border:3px solid #232323;">
+            <div class="MainMidInnr" style=" width:490px;">
+            
+          
+                <div class="PlayerRoot" style=" margin-top:7px;">
+                
+                    <div id="HypsterOriginalPlayer"></div>
+                    <script type="text/javascript">
+                        @switch((string)ViewBag.MEDIA_TYPE)
+                        {
+
+                            //--------------------------------------------
+                            case "playlist":
+                            {
+                                <text>
+                                var vars = {
+                                    mediaType: "playlist",
+                                    userID: "@(ViewBag.UserID)",
+                                    playlistID: "@(ViewBag.PlaylistID)",
+                                    shuffle: "0",
+                                    autoplay: "true"
+                                };
+                                </text>
+                            }
+                            break;
+                        
+                            //--------------------------------------------
+                            case "radio":
+                            {
+                                <text>
+                                var vars = {
+                                    mediaType: "radio",
+                                    userID: "0",
+                                    radio_station: "@ViewBag.Genre",
+                                    search: "@ViewBag.search",
+                                    autoplay: "true"
+                                };
+                                </text>
+                            }
+                            break;
+                        
+                            //--------------------------------------------
+                            case "song":
+                            {
+                                <text>
+                                var vars = {
+                                    mediaType: "song",
+                                    userID: "0",
+                                    song_id: "@ViewBag.SongGuid",
+                                    song_title: "@ViewBag.SongTitle",
+                                    autoplay: "true"
+                                };
+                                </text>
+                            }
+                            break;
+                            //--------------------------------------------
+                            default:
+                                break;
+                        }
+                        
+
+                        var params = {
+                            allowFullScreen: "true"
+                        };
+                        var attributes = {
+                            id: "HypsterOriginalPlayer",
+                            name: "HypsterOriginalPlayer"
+                        };  
+                        //swfobject.embedSWF("/scripts/DEV_HypsterOriginalPlayer.swf", "HypsterOriginalPlayer", "475", "545", "10.3.0", "/Scripts/expressInstall.swf", vars, params, attributes);
+                        swfobject.embedSWF("/scripts/HypsterOriginalPlayer.swf", "HypsterOriginalPlayer", "475", "545", "10.3.0", "/Scripts/expressInstall.swf", vars, params, attributes);
+			        </script>
+                
+                </div>
+
+
+
+                
+            
+            
+            </div>
+
+
+
+
+
+            <div class="AdsCont" style=" margin-top:5px;">
+                    <div class="Ad1">
+                        <div id="SideAd1_id2328971cvbc">
+                            @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
+                        </div>
+                        <!-- 06_25 -->
+                        
+                    </div>
+
+
+                    <div class="Ad2">
+                        <div id="SideAd2_w8392791skc">
+                            @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
+                        </div>
+                        <!-- 06_25 -->
+                        
+                    </div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- hide back -->
+    <div class="Trans_BACK" id="HideBackDiv" onclick="Show_Content();"></div>
+    <div id="popupContainer"></div>
+    <!-- hide back -->
+
+
+    <script type="text/javascript">
+        var song_title = "";
+        var song_guid = "";
+    
+        //external interface
+        function SongChanged(params) {
+            var song_details = params.split("|");
+            song_title = song_details[0];
+            song_guid = song_details[1];
+
+            if (params == "") {
+                $("#AddBtn").css("display", "none");
+            } else {
+                $("#AddBtn").css("display", "block");
+            }
+        
+        }
+
+        function AddSong_CLICK() {
+            $("#MainContHolder").css("display","none");
+            ShowAddToMyPlaylistPopup("?song_guid=" + song_guid + "&song_title=" + song_title);
+        }
+    </script>
+
+
+
+
+
+    <script type="text/javascript">
+        (function (w, d, s, p, v, e, r) {
+            w['$petametrics_var'] = v; w[v] = w[v] || function () {
+                (w[v].q = w[v].q || []).push(arguments)
+            }; w[v].l = 1 * new Date(); e = d.createElement(s), r = d.getElementsByTagName(s)[0]; e.async = 1; e.src = p;
+            r.parentNode.insertBefore(e, r)
+        })(window, document, 'script', '//cdn.petametrics.com/p.js', '$p');
+
+        $p("init", "nrrpkjjff1ol62vk");
+        $p("send", "pageview");
+    </script>
+
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-28695705-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</body>
+</html>

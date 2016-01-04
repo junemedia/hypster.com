@@ -1,0 +1,204 @@
+﻿@model hypster.ViewModels.connectViewModel
+@{
+    ViewBag.Title = "Общение с друзьями, открывать новые Плейлисты | Hypster - бесплатная онлайн музыка - плеер для Tumblr";
+    ViewBag.Desc = "Общайтесь с друзьями и открывайте новые плейлисты.";
+    ViewBag.ActivePage = "connect";
+    
+    Layout = "~/Areas/ru/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type="text/javascript">
+    active_menu = ".mConnect";
+    $(".mConnect").css("background-color", "#191919");
+
+    $(document).ready(function () {
+        RenderConnect();
+    });
+    $(window).resize(function () {
+        RenderConnect();
+    });
+</script>
+
+
+
+
+
+
+
+<div class="boxContLeft boxContRightTop">
+    <div id="listenSlide2" class="slideLeft" style=" min-height:362px; padding-left:0px; ">
+        
+            
+                <div class="connectHead" style=" min-height:150px; ">
+                    
+                        <div class="ffHeader">
+                            Найти друзей&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                    
+                        <div style=" float:right; width:728px; height:90px; background-color:#848d91; border:2px solid #848d91; border-radius:2px; overflow:hidden;">
+                            <div id="TopAdd19312yw7jdcvbb">
+                                @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+                            </div>
+                            <!-- 06_25 -->
+                            
+                        </div>
+
+
+
+
+                        <div class="connectTH">
+                            @Html.Action("Получить_Жанры", "Соединить")
+                        </div>
+
+
+                        <div style=" float:left; width:100%; height:50px; margin-top:20px; background-color:#848d91; ">
+
+                                <div style=" float:right; width:1024px; margin-top:9px; ">
+                        
+                                    @using (Html.BeginForm("search", "connect", FormMethod.Post))
+                                    {
+                                        <select id="SearchFor" name="SearchFor" style="float:left; width:355px; height:32px; margin-left:15px; padding:6px; border-radius:3px; border:none; background-color:#DEDEDE; color:#4b5960;">
+                                            <option value="serUserName" @if (ViewBag.SearchFor == "serUserName") { <text> selected="selected" </text> } >User Name</option>
+                                            <option value="serUserEmail" @if (ViewBag.SearchFor == "serUserEmail") { <text> selected="selected" </text> } >Email</option>
+                                            <option value="serUserID" @if (ViewBag.SearchFor == "serUserID") { <text> selected="selected" </text> } >User ID</option>
+                                        </select>
+            
+
+                                        <input type="text" id="serUserPar" name="serUserPar" value="@ViewBag.SearchString" style="float:left; width:495px; height:26px; padding:3px; margin-left:10px; border-radius:3px; border:none; background-color:#DEDEDE;" />
+
+
+                                        <input type="submit" value="Поиск" style=" float:left; width:120px; height:32px; background: url('/imgs/search_btn1.png') no-repeat scroll 0 0 #42606E; border:1px solid #42606e; border-radius:3px; margin-left:10px; font-size:16px;  " />
+                                    }
+
+                                </div>
+
+                        </div>
+
+
+
+                </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="boxContRight">
+    <div id="listenSlide1" class="slideRight" style=" background-color:#2d3132;">
+        
+
+
+        <div style=" float:left; width:100%; background-color:#1d1d1c; ">
+        
+
+
+
+            <div class="connectCont" style="min-height:1831px;">
+                
+                    <div class="connectInnerCont">
+                        @foreach (var item in Model.members_list)
+                        {   
+                        <div class="connectFriendCont">
+                        
+                            @if (item.profile_pic_id > Model.New_User_ID)
+                            {
+                                <div onclick="window.location='/profile/@item.username';" style=" float:left; width:94px; height:94px; background:url('http://pics.hypster.com/userpics/@(item.username)/@(item.profile_pic_id)_s.jpg') center; margin:4px; margin-left:5px; cursor:pointer; border-radius:1px; padding:2px;"></div>
+                            }
+                            else
+                            {
+                                <div onclick="window.location='/profile/@item.username';" style=" float:left; width:94px; height:94px; background:url('http://pics.hypster.com/userpics/@(item.profile_pic_id)_s.jpg') center; margin:4px; margin-left:5px; cursor:pointer; border-radius:1px; padding:2px;"></div>
+                            }
+
+                            <div class="txtHolder">
+                                <div>
+                                    <span class="style_22">Пользователь:</span> @item.username<br />
+                                    <span class="style_22">Имя:</span> @item.name<br />
+                                    <span class="style_22">Страна:</span> @item.country<br/>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="ActButtons">
+                                @if (User.Identity.Name != item.username)
+                                {
+                                    using (Html.BeginForm("FollowFriend", "Аккаунт"))
+                                    {
+                                        <div class="FollowBtn">
+                                            <input type="hidden" id="user_to_follow_id" name="user_to_follow_id" value="@item.id" />
+                                            <input type="submit" value="Следовать" style=" background:none; border:0px; color:#FFFFFF; line-height:15px;"  />
+                                        </div>
+                                    }
+                                }
+           
+                                <div class="DetailsBtn" onclick="window.location='/profile/@item.username';">Детали</div>
+                            </div>
+
+                        </div>
+                        }
+                    </div>
+
+
+
+                    <div class="connectPaging">
+                        @for (var i = 1; i <= Model.Number_Of_Pages; i++)
+                        {
+                            <div class="ConnectPage" onclick="window.location='/connect/page/@i';" style=" @if (i == Model.Current_Page){ <text> background-color:#23292b;</text> }">@i</div>
+                        }
+                    </div>
+
+            </div>
+
+
+
+
+
+
+            <div style=" float:left; width:166px; min-height:1800px; margin:9px 0 10px 12px; "> 
+            
+                <div style=" float:left; width:160px; height:600px; margin:0 0 0 0; border-radius:3px; overflow:hidden;">
+                    <div id="SideAdConnect_o2112ouw">
+                        @Html.Partial("~/Views/hypAds/ad_160x600.cshtml")
+                    </div>
+                    <!-- 06_25 -->
+                    
+                </div>
+
+
+
+                <div style=" float:left; width:160px; height:600px; margin:12px 0 0 0; border-radius:3px; overflow:hidden;">
+                    <div id="SideAdConnect_d398273">
+                        @Html.Partial("~/Views/hypAds/ad_160x600.cshtml")
+                    </div>
+                    <!-- 06_25 -->
+                    
+                </div>
+
+
+                <div style=" float:left; width:160px; height:600px; margin:12px 0 0 0; border-radius:3px; overflow:hidden;">
+                    <div id="SideAdConnect_s2398s9">
+                        @Html.Partial("~/Views/hypAds/ad_160x600.cshtml")
+                    </div>
+                    <!-- 06_25 -->
+                    
+                </div>
+        
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+</div>

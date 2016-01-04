@@ -1,0 +1,661 @@
+﻿<!DOCTYPE html>
+
+@model hypster.ViewModels.videoPlayerViewModel
+@{
+    Layout = null;
+}
+
+
+
+<html>
+  <head>
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.PageTitle</title>
+        
+        <meta name="description" content="Create a music playlist or your own stations of your favorite artists online for free. Listen to 10 millions YouTube music playlists and to popular music genres." />
+        
+
+
+
+        <link src="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"  rel="stylesheet" type="text/css" />
+        <script src="http://code.jquery.com/jquery-1.8.3.min.js"  type="text/javascript"></script>
+        <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"  type="text/javascript"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+
+        
+        @Scripts.Render("~/scripts/hypScript.js?id=35729381")
+        
+        <link href="/css/Site.css?id=35729381" rel="stylesheet" type="text/css" />
+        <link href="/css/hPlayer.css?id=35729381" rel="stylesheet" type="text/css" />
+
+
+        <script type="text/javascript">
+            function change_player_playlist(object) {
+                window.location = "/hypsterPlayer/MPL?media_type=playlist&playlist_id=@(ViewBag.PlaylistID)&us_id=@(ViewBag.UserID)";
+            }
+
+
+            if (isMobile.any()) {
+                $(window).unbind('beforeunload');
+            }
+
+
+
+            $(document).ready(function () {
+                var margin_top = 2;
+                if ($(window).height() >= 550) {
+                    margin_top = ($(window).height() - 550) / 2;
+                }
+                $(".MainRootCont").css("margin-top", margin_top + "px");
+            });
+
+
+
+            $(window).resize(function () {
+                var margin_top = 2;
+                if ($(window).height() >= 550) {
+                    margin_top = ($(window).height() - 550) / 2;
+                }
+                $(".MainRootCont").css("margin-top", margin_top + "px");
+            });
+        </script>
+
+  </head>
+
+
+
+
+
+
+  <body class="MainNHypPlayer">
+   
+
+
+    <div class="MainRootCont">
+            
+
+
+            <div style=" float:left; width:717px; height:27px; border-radius:3px; background-color:#000000; margin-left:0px;">
+                
+                <a style=" float:left;" href="http://hypster.com" target="_blank">
+                    <img style=" float:left; margin:8px 0 0 6px; cursor:pointer;" alt="Hypster Logo" src="/imgs/pmusicp/hyp_logo_pp.png" onclick="window.location='/';" /> 
+                </a>
+
+                
+                <div class="SocialHolder">
+                        <div class="pw-widget pw-counter-horizontal">
+	                        <a class="pw-button-tumblr pw-look-native"></a>
+                            <a class="pw-button-facebook pw-look-native"></a>
+	                        <a class="pw-button-twitter pw-look-native"></a>
+                            <a class="pw-button-googleplus pw-look-native"></a>
+	                        <a class="pw-button-post-share"></a>
+                        </div>
+                        <script src="http://i.po.st/static/v3/post-widget.js#publisherKey=caq8eudavn7j6erou9n3" type="text/javascript"></script>
+                </div>
+                
+            </div>
+
+
+
+            <div id="MainContHolder">
+                    
+                    
+                    <div class="MainPlayerHoder">
+                        
+                        <div id="player"></div>
+
+                        <div id="PlaybackStatusCont1" style=" float:left; width:100%; height:3px; background-color:#656565; cursor:pointer; " onmouseover="PSC_over()" onmouseout="PSC_out()" >
+                            
+                            <div id="PlaybackStatusInnrCont1" style=" position:relative; width:100%; height:3px; background-color:#656565; cursor:pointer; z-index:10000; ">
+                                <div id="PlaybackStatus1" style=" float:left; width:0%; height:3px; background-color:#f9a317; ">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="ControlBar">
+            
+                            <div id="Prev_btn" onclick="PlayPrevVideo();" title="Prev"></div>
+                
+                            <div id="PlPs_btn" onclick="PlayPauseVideo();" title="Play/Pause"></div>
+            
+                            <div id="Next_btn" onclick="PlayNextVideo();" title="Next"></div>
+
+                            <div id="Shuffle_btn" onclick="ShuffleSongs();" title="Shuffle"></div>
+
+                            <div id="Mute_btn" onclick="MuteSound();" title="Mute/Unmute"></div>
+
+
+
+                            <a href="/listen/similar?US_ID=@ViewBag.UserID&PL_ID=@ViewBag.PlaylistID" target="_blank" style=" display:block; float:right; height:28px; line-height:28px; margin:2px; background:#353535; border-radius:3px; text-align:center; font-size:16px; color:#FFFFFF; cursor:pointer; font-weight:bold; " onmouseover="$('#fndsimtxt').html('FIND SIMILAR PLAYLISTS');" onmouseout="$('#fndsimtxt').html('FIND SIMILAR');">
+                        
+                                <div id="fndsimtxt" style=" float:right; min-width:10px; margin:0px 4px 0 2px; font-size:13px; color:#f9a317; cursor:pointer;">
+                                    FIND SIMILAR
+                                </div>
+
+                            </a>
+
+
+
+
+
+                            
+                            <div id="LikePlaylist" title="Like this playlist" style=" @if(User.Identity.IsAuthenticated == false){<text>display:none;</text>} @if(ViewBag.PlaylistLikes == null){<text>display:none;</text>}">
+                        
+                                <div style=" float:left; margin:0 5px 0 5px; ">
+                                    @using (Ajax.BeginForm("AddNewPlaylistLike", "playlist", new AjaxOptions { UpdateTargetId = "LikeNumContH", HttpMethod = "POST", OnComplete = "AddNewPlaylistLikeComplete" }))
+                                    {
+                                    <input id="PlstLikeBtn" type="submit" value="" style=" float:left; width:23px; height:23px; background:#353535 url('/imgs/player/like_playlist_icn.jpg') no-repeat center; margin:3px 0 0 0;"  />
+                            
+                                    <input type="hidden" name="Playlist_ID" id="Playlist_ID" value="@ViewBag.PlaylistID" />
+                                    <input type="hidden" name="Owner_ID" id="Owner_ID" value="@ViewBag.UserID" />
+                                    }
+                                </div>
+                                
+                            </div>
+
+                            
+
+                           
+                    
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                    <div class="MainAdsHoder">
+
+                        <div class="AdUntL">
+                                <div id="SideAd1_id2328971cvbc">
+                                    @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
+                                </div>
+                                <!-- 06_25 -->
+                                
+                        </div>
+
+                    </div>
+
+            </div>
+
+
+
+
+
+            <div class="MainPlaylistHolder">
+                
+                    <div id="PlayerPlaylistHolder1">
+                        @for (int i = 0; i < Model.songs_list.Count; i++)
+                        {
+                            <div id="PlItem_@i" class="playlistItemC">
+                            
+                                <img alt="" src="http://i.ytimg.com/vi/@Model.songs_list[i].YoutubeId/0.jpg" onclick="plVClick('@Model.songs_list[i].YoutubeId', @i)" />
+                                <div id="songC_@i" class="songTtl" onclick="plVClick('@Model.songs_list[i].YoutubeId', @i)">
+                                    @Model.songs_list[i].Title
+                                </div>
+                            
+                                <div id="songA_@i" class="skpSngBtn" onclick="skipSong(@i);">
+                                    skip
+                                </div>
+
+                            </div>
+                        }
+                    </div>
+
+            </div>
+
+
+    </div>
+
+
+
+    <!-- hide back -->
+    <div class="Trans_BACK" id="HideBackDiv" onclick="Show_Content();"></div>
+    <div id="popupContainer"></div>
+    <!-- hide back -->
+
+
+
+    <script type="text/javascript">
+        
+        var skip_items_arr = new Array();
+
+        function actAclick(object, index)
+        {
+            $("#songC_" + index).css("width", "255px");
+            $(object).css("width", "40px");
+            $(object).html("skip");
+        }
+
+        function actRclick(object, index)
+        {
+            $("#songC_" + index).css("width", "285px");
+            $(object).css("width", "12px");
+            $(object).html(">");
+        }
+
+        function skipSong(index)
+        {
+            $("#PlItem_" + index).css("display", "none");
+            skip_items_arr.push(index);
+
+            if(index == CURR_VIDEO)
+            {
+                PlayNextVideo();
+            }
+
+
+            //trkskip
+            $.ajax({
+                type: "POST",
+                url: "/home/trkskip/" + items_arr[index],
+                async: true,
+                success: function (data) {
+                }
+            });
+            
+        }
+        
+
+
+
+
+
+
+        var tag = document.createElement('script');
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        
+
+
+        var PlbkBar_W = 394;
+
+        var player;
+        var plTimer;
+        var PSC1;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                width: '394',
+                height: '260',
+                playerVars: { 'autoplay': 0, 'controls': 0 },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+
+            
+            plTimer = setInterval(function(){currentPlaybackState()}, 1000);
+
+            PSC1 = document.getElementById("PlaybackStatusCont1");
+            PSC1.addEventListener("click", changePlaybackStatus_Click, false);
+        }
+        
+
+        var isReady = false;
+        function onPlayerReady(event) {
+            if(isReady == false)
+            {
+                player.addEventListener("onStateChange", "onPlayerStateChange");
+                player.addEventListener("onError", "onError");
+
+                @if(ViewBag.AUTO_PLAY != null && ViewBag.AUTO_PLAY == "0")
+                {   
+                }
+                else
+                {
+                    <text>PlayNextVideo();</text>
+                }
+
+                isReady = true;
+            }
+        }
+
+
+        function onError(event){
+			
+            if(event.data == 5)
+				return;
+
+            PlayNextVideo();
+        }
+
+
+
+        var done = false;
+        function onPlayerStateChange(event) {
+            
+            
+            if (event.data == 5) {
+                player.playVideo();
+                return;
+            }
+
+
+            if (event.data == YT.PlayerState.ENDED) {
+                PlayNextVideo();
+                return;
+            }
+
+            if (event.data == YT.PlayerState.PAUSED) {
+                PLAY_STATE = "0";
+                $("#PlPs_btn").css("background-image", "url('/imgs/player/play_icn.jpg')");
+            }
+            if (event.data == YT.PlayerState.PLAYING) {
+                PLAY_STATE = "1";
+                $("#PlPs_btn").css("background-image", "url('/imgs/player/pause_icn.jpg')");
+            }
+        }
+
+
+
+        function currentPlaybackState()
+        {
+            var pers = (player.getCurrentTime() / player.getDuration()) * 100;
+            
+            if(pers > 0)
+            {
+                $("#PlaybackStatus1").css("width", pers + "%");
+            }
+            else
+            {
+                $("#PlaybackStatus1").css("width", "0%");
+            }
+        }
+
+        function changePlaybackStatus_Click(e)
+        {
+            var x;
+            var y;
+            if (e.pageX || e.pageY) { 
+                x = e.pageX;
+                y = e.pageY;
+            }
+            else { 
+                x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft; 
+                y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop; 
+            } 
+            x -= PSC1.offsetLeft;
+            y -= PSC1.offsetTop;
+
+            
+
+            var pers = (x / PlbkBar_W) * 100;
+
+            var sec_pl =  (pers * player.getDuration()) / 100; 
+
+            player.seekTo(sec_pl);
+        }
+
+
+        function PSC_over()
+        {
+            $("#PlaybackStatusInnrCont1").css("margin-top","-2px");
+            $("#PlaybackStatusInnrCont1").css("height","6px");
+            $("#PlaybackStatus1").css("height","6px");
+        }
+
+        function PSC_out()
+        {
+            $("#PlaybackStatusInnrCont1").css("margin-top","0px");
+            $("#PlaybackStatusInnrCont1").css("height","3px");
+            $("#PlaybackStatus1").css("height","3px");
+        }
+
+        
+
+
+
+
+
+
+        function plVClick(video_id, i) {
+            
+            CURR_VIDEO = i;
+            Higlight_Item(CURR_VIDEO);
+
+            player.loadVideoById(video_id, 0, 'default');
+
+            PLAY_STATE = "1";
+            $("#PlPs_btn").css("background-image","url('/imgs/player/pause_icn.jpg')");
+        }
+
+
+
+
+
+        function PlayPrevVideo() {
+
+            if(CURR_VIDEO > 0)
+            {
+                CURR_VIDEO = CURR_VIDEO - 1;
+            }
+
+
+            for(var j=0; j<skip_items_arr.length; j++)
+            {
+                if(skip_items_arr[j] == CURR_VIDEO){
+                    PlayPrevVideo();
+                }
+            }
+
+
+            player.stopVideo();
+            player.loadVideoById(items_arr[CURR_VIDEO], 0, 'default');
+            Higlight_Item(CURR_VIDEO);
+
+
+            PLAY_STATE = "1";
+            $("#PlPs_btn").css("background-image","url('/imgs/player/pause_icn.jpg')");
+
+        }
+
+
+
+
+        function PlayNextVideo() {
+            
+            if(CURR_VIDEO < items_arr.length)
+            {
+                CURR_VIDEO = CURR_VIDEO + 1;
+            }
+            else
+            {
+                return;
+            }
+
+
+            for(var j=0; j<skip_items_arr.length; j++)
+            {
+                if(skip_items_arr[j] == CURR_VIDEO){
+                    PlayNextVideo();
+                }
+            }
+            
+
+            player.stopVideo();
+            player.loadVideoById(items_arr[CURR_VIDEO], 0, 'default');
+            Higlight_Item(CURR_VIDEO);
+
+
+            PLAY_STATE = "1";
+            $("#PlPs_btn").css("background-image","url('/imgs/player/pause_icn.jpg')");
+
+        }
+
+
+
+        var PLAY_STATE = "0";
+        var CURR_VIDEO = -1;
+        var SOUND_STATE = 1;
+
+
+        function PlayPauseVideo() {
+            
+            if(PLAY_STATE == "0"){ //IF NOT STARTED START
+    
+                player.playVideo();
+
+
+                PLAY_STATE = "1";
+                $("#PlPs_btn").css("background-image","url('/imgs/player/pause_icn.jpg')");
+            }
+            else { //IF STARTED NEED TO STOP
+                player.pauseVideo();
+
+                PLAY_STATE = "0";
+                $("#PlPs_btn").css("background-image","url('/imgs/player/play_icn.jpg')");
+            }
+        }
+
+
+
+        var items_arr = new Array();
+        @for (int i = 0; i < Model.songs_list.Count; i++)
+        {
+            <text>items_arr[@i] = '@Model.songs_list[i].YoutubeId';</text>
+        }
+        if(items_arr.length > 1)
+        {
+            $("#Prev_btn").css("display","block");
+            $("#Next_btn").css("display","block");
+            $("#Shuffle_btn").css("display","block");
+        }
+        else
+        {
+            $("#Prev_btn").css("display","none");
+            $("#Next_btn").css("display","none");
+            $("#Shuffle_btn").css("display","none");
+        }
+
+
+
+
+
+
+        
+        function Higlight_Item(activeNum)
+        {
+            $(".playlistItemC").css("background-color","#292929");
+            $("#PlItem_" + activeNum).css("background-color","#d88700");
+
+
+            var offset_hlt = 0;
+            for(var j=0; j<skip_items_arr.length; j++)
+            {
+                if(skip_items_arr[j]<=CURR_VIDEO)
+                {
+                    offset_hlt = offset_hlt + 1;
+                }
+            }
+
+            var vertical_position = 0;
+            vertical_position = ((CURR_VIDEO-offset_hlt)*46);
+
+            
+            vertical_position = vertical_position - (46*2);
+            
+
+            $("#PlayerPlaylistHolder1").scrollTop(vertical_position);
+        }
+       
+
+
+        function ShuffleSongs()
+        {
+            var object = document.getElementById("dr_PlaylistList");
+            $("#PlayerPlaylistHolder1").html("");
+
+
+            $.ajax({
+                    type: "POST",
+                    url: "/playlist/getPlaylistDetailsPlayer?PL_ID=@(ViewBag.PlaylistID)&US_ID=@(ViewBag.UserID)" + "&Sort=Rand",
+                    async: true,
+                    success: function (data) {
+                        $('#PlayerPlaylistHolder1').html(data);
+                    }
+                });
+        }
+
+
+        function MuteSound()
+        {
+            if(SOUND_STATE == 1)
+            {
+                player.mute();
+                SOUND_STATE = 0;
+
+                $("#Mute_btn").css("background-image","url('/imgs/player/unmute_icn.jpg')");
+            }
+            else
+            {
+                player.unMute();
+                SOUND_STATE = 1;
+
+                $("#Mute_btn").css("background-image","url('/imgs/player/mute_icn.jpg')");
+            }
+
+        }
+
+
+
+        var song_title = "";
+        var song_guid = "";
+
+        function AddSong_CLICK() {
+            song_guid = getQuerystring_str("v", player.getVideoUrl());
+            ShowAddToMyPlaylistPopup("?song_guid=" + song_guid + "&song_title=" + song_title);
+        }
+
+
+        function AddNewPlaylistLikeComplete()
+        {
+            $("#PlstLikeBtn").css("background","#353535 url('/imgs/player/like_playlist_icn_selected.jpg') no-repeat center");
+        }
+
+
+
+
+    </script>
+
+
+
+
+
+    <div id="TraceTxt" style="display:none;"></div>
+    <div class="Trans_BACK" id="HideBackDiv_PopupPlayer" onclick="Show_Content_PopupPlayer();"></div>
+    <div id="popupContainer_PopupPlayer"></div>
+    
+
+
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-28695705-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+
+
+
+
+
+  </body>
+</html>
+

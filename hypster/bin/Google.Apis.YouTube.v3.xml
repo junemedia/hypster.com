@@ -1061,195 +1061,222 @@
             <summary>The ETag of the item.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.Data.ContentRating">
-            <summary>Ratings schemes. The country-specific ratings are mostly for movies and shows. NEXT_ID: 65</summary>
+            <summary>Ratings schemes. The country-specific ratings are mostly for movies and shows. NEXT_ID: 66</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.AcbRating">
-            <summary>Rating system in Australia - Australian Classification Board</summary>
+            <summary>The video's Australian Classification Board (ACB) or Australian Communications and Media Authority
+            (ACMA) rating. ACMA ratings are used to classify children's television programming.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.AgcomRating">
-            <summary>Rating system for Italy - Autorit� per le Garanzie nelle Comunicazioni</summary>
+            <summary>The video's rating from Italy's Autorità per le Garanzie nelle Comunicazioni (AGCOM).</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.AnatelRating">
-            <summary>Rating system for Chile - Asociaci�n Nacional de Televisi�n</summary>
+            <summary>The video's Anatel (Asociación Nacional de Televisión) rating for Chilean television.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.BbfcRating">
-            <summary>British Board of Film Classification</summary>
+            <summary>The video's British Board of Film Classification (BBFC) rating.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.BfvcRating">
-            <summary>Rating system for Thailand - Board of Filmand Video Censors</summary>
+            <summary>The video's rating from Thailand's Board of Film and Video Censors.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.BmukkRating">
-            <summary>Rating system for Austria - Bundesministeriums f�r Unterricht, Kunst und Kultur!</summary>
+            <summary>The video's rating from the Austrian Board of Media Classification (Bundesministerium für
+            Unterricht, Kunst und Kultur).</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.CatvRating">
-            <summary>Rating system for Canadian TV - Canadian TV Classification System</summary>
+            <summary>Rating system for Canadian TV - Canadian TV Classification System The video's rating from the
+            Canadian Radio-Television and Telecommunications Commission (CRTC) for Canadian English-language broadcasts.
+            For more information, see the Canadian Broadcast Standards Council website.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.CatvfrRating">
-            <summary>Rating system for French Canadian TV - Regie du cinema</summary>
+            <summary>The video's rating from the Canadian Radio-Television and Telecommunications Commission (CRTC) for
+            Canadian French-language broadcasts. For more information, see the Canadian Broadcast Standards Council
+            website.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.CbfcRating">
-            <summary>Rating system in India - Central Board of Film Certification</summary>
+            <summary>The video's Central Board of Film Certification (CBFC - India) rating.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.CccRating">
-            <summary>Rating system for Chile - Consejo de Calificaci�n Cinematogr�fica</summary>
+            <summary>The video's Consejo de Calificación Cinematográfica (Chile) rating.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.CceRating">
-            <summary>Rating system for Portugal - Comiss�o de Classifica��o de Espect�culos</summary>
+            <summary>The video's rating from Portugal's Comissão de Classificação de Espect´culos.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.ChfilmRating">
-            <summary>Rating system for Switzerland - Switzerland Rating System</summary>
+            <summary>The video's rating in Switzerland.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.ChvrsRating">
-            <summary>Canadian Home Video Rating System</summary>
+            <summary>The video's Canadian Home Video Rating System (CHVRS) rating.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.CicfRating">
-            <summary>Rating system for Belgium - Belgium Rating System</summary>
+            <summary>The video's rating from the Commission de Contrôle des Films (Belgium).</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.CnaRating">
-            <summary>Rating system for Romania - CONSILIUL NATIONAL AL AUDIOVIZUALULUI - CNA</summary>
+            <summary>The video's rating from Romania's CONSILIUL NATIONAL AL AUDIOVIZUALULUI (CNA).</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.CncRating">
+            <summary>Rating system in France - Commission de classification cinematographique</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.CsaRating">
-            <summary>Rating system for France - Conseil sup�rieur de l?audiovisuel</summary>
+            <summary>The video's rating from France's Conseil supérieur de l?audiovisuel, which rates broadcast
+            content.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.CscfRating">
-            <summary>Rating system for Luxembourg - Commission de surveillance de la classification des films</summary>
+            <summary>The video's rating from Luxembourg's Commission de surveillance de la classification des films
+            (CSCF).</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.CzfilmRating">
-            <summary>Rating system for Czech republic - Czech republic Rating System</summary>
+            <summary>The video's rating in the Czech Republic.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.DjctqRating">
-            <summary>Rating system in Brazil - Department of Justice, Rating, Titles and Qualification</summary>
+            <summary>The video's Departamento de Justiça, Classificação, Qualificação e Títulos (DJCQT - Brazil)
+            rating.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.DjctqRatingReasons">
+            <summary>Reasons that explain why the video received its DJCQT (Brazil) rating.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.EefilmRating">
-            <summary>Rating system for Estonia - Estonia Rating System</summary>
+            <summary>The video's rating in Estonia.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.EgfilmRating">
-            <summary>Rating system for Egypt - Egypt Rating System</summary>
+            <summary>The video's rating in Egypt.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.EirinRating">
-            <summary>Rating system in Japan - Eiga Rinri Kanri Iinkai</summary>
+            <summary>The video's Eirin (映倫) rating. Eirin is the Japanese rating system.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.FcbmRating">
-            <summary>Rating system for Malaysia - Film Censorship Board of Malaysia</summary>
+            <summary>The video's rating from Malaysia's Film Censorship Board.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.FcoRating">
-            <summary>Rating system for Hong kong - Office for Film, Newspaper and Article Administration</summary>
+            <summary>The video's rating from Hong Kong's Office for Film, Newspaper and Article
+            Administration.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.FmocRating">
-            <summary>Rating system in France - French Minister of Culture</summary>
+            <summary>This property has been deprecated. Use the contentDetails.contentRating.cncRating
+            instead.</summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:Google.Apis.YouTube.v3.Data.ContentRating.FpbRating" -->
+        <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.FpbRating">
+            <summary>The video's rating from South Africa's Film and Publication Board.</summary>
+        </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.FskRating">
-            <summary>Rating system in Germany - Voluntary Self Regulation of the Movie Industry</summary>
+            <summary>The video's Freiwillige Selbstkontrolle der Filmwirtschaft (FSK - Germany) rating.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.GrfilmRating">
-            <summary>Rating system for Greece - Greece Rating System</summary>
+            <summary>The video's rating in Greece.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.IcaaRating">
-            <summary>Rating system in Spain - Instituto de Cinematografia y de las Artes Audiovisuales</summary>
+            <summary>The video's Instituto de la Cinematografía y de las Artes Audiovisuales (ICAA - Spain)
+            rating.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.IfcoRating">
-            <summary>Rating system in Ireland - Irish Film Classification Office</summary>
+            <summary>The video's Irish Film Classification Office (IFCO - Ireland) rating. See the IFCO website for more
+            information.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.IlfilmRating">
-            <summary>Rating system for Israel - Israel Rating System</summary>
+            <summary>The video's rating in Israel.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.IncaaRating">
-            <summary>Rating system for Argentina - Instituto Nacional de Cine y Artes Audiovisuales</summary>
+            <summary>The video's INCAA (Instituto Nacional de Cine y Artes Audiovisuales - Argentina) rating.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.KfcbRating">
-            <summary>Rating system for Kenya - Kenya Film Classification Board</summary>
+            <summary>The video's rating from the Kenya Film Classification Board.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.KijkwijzerRating">
-            <summary>Rating system for Netherlands - Nederlands Instituut voor de Classificatie van Audiovisuele
-            Media</summary>
+            <summary>voor de Classificatie van Audiovisuele Media (Netherlands).</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.KmrbRating">
-            <summary>Rating system in South Korea - Korea Media Rating Board</summary>
+            <summary>The video's Korea Media Rating Board (영상물등급위원회) rating. The KMRB rates videos in South
+            Korea.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.LsfRating">
-            <summary>Rating system for Indonesia - Lembaga Sensor Film</summary>
+            <summary>The video's rating from Indonesia's Lembaga Sensor Film.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.MccaaRating">
-            <summary>Rating system for Malta - Film Age-Classification Board</summary>
+            <summary>The video's rating from Malta's Film Age-Classification Board.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.MccypRating">
-            <summary>Rating system for Denmark - The Media Council for Children and Young People</summary>
+            <summary>The video's rating from the Danish Film Institute's (Det Danske Filminstitut) Media Council for
+            Children and Young People.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.MdaRating">
-            <summary>Rating system for Singapore - Media Development Authority</summary>
+            <summary>The video's rating from Singapore's Media Development Authority (MDA) and, specifically, it's Board
+            of Film Censors (BFC).</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.MedietilsynetRating">
-            <summary>Rating system for Norway - Medietilsynet</summary>
+            <summary>The video's rating from Medietilsynet, the Norwegian Media Authority.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.MekuRating">
-            <summary>Rating system for Finland - Finnish Centre for Media Education and Audiovisual Media</summary>
+            <summary>The video's rating from Finland's Kansallinen Audiovisuaalinen Instituutti (National Audiovisual
+            Institute).</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.MibacRating">
-            <summary>Rating system in Italy - Ministero dei Beni e delle Attivita Culturali e del Turismo</summary>
+            <summary>The video's rating from the Ministero dei Beni e delle Attività Culturali e del Turismo
+            (Italy).</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.MocRating">
-            <summary>Rating system for Colombia - MoC</summary>
+            <summary>The video's Ministerio de Cultura (Colombia) rating.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.MoctwRating">
-            <summary>Rating system for Taiwan - Ministry of Culture - Tawan</summary>
+            <summary>The video's rating from Taiwan's Ministry of Culture (文化部).</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.MpaaRating">
-            <summary>Motion Picture Association of America rating for the content.</summary>
+            <summary>The video's Motion Picture Association of America (MPAA) rating.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.MtrcbRating">
-            <summary>Rating system for Philippines - MOVIE AND TELEVISION REVIEW AND CLASSIFICATION BOARD</summary>
+            <summary>The video's rating from the Movie and Television Review and Classification Board
+            (Philippines).</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.NbcRating">
-            <summary>Rating system for Maldives - National Bureau of Classification</summary>
+            <summary>The video's rating from the Maldives National Bureau of Classification.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.NbcplRating">
-            <summary>Rating system for Poland - National Broadcasting Council</summary>
+            <summary>The video's rating in Poland.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.NfrcRating">
-            <summary>Rating system for Bulgaria - National Film Centre</summary>
+            <summary>The video's rating from the Bulgarian National Film Center.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.NfvcbRating">
-            <summary>Rating system for Nigeria - National Film and Video Censors Board</summary>
+            <summary>The video's rating from Nigeria's National Film and Video Censors Board.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.NkclvRating">
-            <summary>Rating system for Latvia - National Film Center of Latvia</summary>
+            <summary>The video's rating from the Nacionãlais Kino centrs (National Film Centre of Latvia).</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.OflcRating">
-            <summary>Rating system in New Zealand - Office of Film and Literature Classification</summary>
+            <summary>The video's Office of Film and Literature Classification (OFLC - New Zealand) rating.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.PefilmRating">
-            <summary>Rating system for Peru - Peru Rating System</summary>
+            <summary>The video's rating in Peru.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.RcnofRating">
-            <summary>Rating system for Hungary - Rating Committee of the National Office of Film</summary>
+            <summary>The video's rating from the Hungarian Nemzeti Filmiroda, the Rating Committee of the National
+            Office of Film.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.ResorteviolenciaRating">
-            <summary>Rating system for Venezuela - SiBCI</summary>
+            <summary>The video's rating in Venezuela.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.RtcRating">
-            <summary>Rating system in Mexico - General Directorate of Radio, Television and Cinematography</summary>
+            <summary>The video's General Directorate of Radio, Television and Cinematography (Mexico) rating.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.RteRating">
-            <summary>Rating system for Ireland - Raidi� Teilif�s �ireann</summary>
+            <summary>The video's rating from Ireland's Raidió Teilifís Éireann.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.RussiaRating">
-            <summary>Rating system in Russia</summary>
+            <summary>The video's National Film Registry of the Russian Federation (MKRF - Russia) rating.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.SkfilmRating">
-            <summary>Rating system for Slovakia - Slovakia Rating System</summary>
+            <summary>The video's rating in Slovakia.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.SmaisRating">
-            <summary>Rating system for Iceland - SMAIS</summary>
+            <summary>The video's rating in Iceland.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.SmsaRating">
-            <summary>Rating system for Sweden - Statens medier�d (National Media Council)</summary>
+            <summary>The video's rating from Statens medieråd (Sweden's National Media Council).</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.TvpgRating">
-            <summary>TV Parental Guidelines rating of the content.</summary>
+            <summary>The video's TV Parental Guidelines (TVPG) rating.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.YtRating">
-            <summary>Internal YouTube rating.</summary>
+            <summary>A rating that YouTube uses to identify age-restricted content.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ContentRating.ETag">
             <summary>The ETag of the item.</summary>
@@ -1596,6 +1623,11 @@
             <summary>The snippet object contains basic details about the event, including its title, description, start
             time, and end time.</summary>
         </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcast.Statistics">
+            <summary>The statistics object contains info about the event's current stats. These include concurrent
+            viewers and total chat count. Statistics can change (in either direction) during the lifetime of an event.
+            Statistics are only returned while the event is live.</summary>
+        </member>
         <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcast.Status">
             <summary>The status object contains information about the event's status.</summary>
         </member>
@@ -1625,6 +1657,9 @@
             <summary>This setting indicates whether the broadcast video can be played in an embedded player. If you
             choose to archive the video (using the enableArchive property), this setting will also apply to the archived
             video.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastContentDetails.EnableLowLatency">
+            <summary>Indicates whether this broadcast has low latency enabled.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastContentDetails.MonitorStream">
             <summary>The monitorStream object contains information about the monitor stream, which the broadcaster can
@@ -1694,6 +1729,9 @@
             <summary>The broadcast's description. As with the title, you can set this field by modifying the broadcast
             resource or by setting the description field of the corresponding video resource.</summary>
         </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastSnippet.LiveChatId">
+            <summary>The id of the live chat for this broadcast.</summary>
+        </member>
         <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastSnippet.PublishedAtRaw">
             <summary>The date and time that the broadcast was added to YouTube's live broadcast schedule. The value is
             specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
@@ -1728,8 +1766,25 @@
         <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastSnippet.ETag">
             <summary>The ETag of the item.</summary>
         </member>
-        <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastStatus.IsDefaultBroadcast">
-            <summary>Whether or not this broadcast is the default broadcast</summary>
+        <member name="T:Google.Apis.YouTube.v3.Data.LiveBroadcastStatistics">
+            <summary>Statistics about the live broadcast. These represent a snapshot of the values at the time of the
+            request. Statistics are only returned for live broadcasts.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastStatistics.ConcurrentViewers">
+            <summary>The number of viewers currently watching the broadcast. The property and its value will be present
+            if the broadcast has current viewers and the broadcast owner has not hidden the viewcount for the video.
+            Note that YouTube stops tracking the number of concurrent viewers for a broadcast when the broadcast ends.
+            So, this property would not identify the number of viewers watching an archived video of a live broadcast
+            that already ended.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastStatistics.TotalChatCount">
+            <summary>The total number of live chat messages currently on the broadcast. The property and its value will
+            be present if the broadcast is public, has the live chat feature enabled, and has at least one message. Note
+            that this field will not be filled after the broadcast ends. So this property would not identify the number
+            of chat messages for an archived video of a completed live broadcast.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastStatistics.ETag">
+            <summary>The ETag of the item.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastStatus.LifeCycleStatus">
             <summary>The broadcast's status. The status can be updated using the API's liveBroadcasts.transition
@@ -1748,6 +1803,31 @@
             <summary>The broadcast's recording status.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastStatus.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastTopic.Snippet">
+            <summary>Information about the topic matched.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastTopic.Type">
+            <summary>The type of the topic.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastTopic.Unmatched">
+            <summary>If this flag is set it means that we have not been able to match the topic title and type provided
+            to a known entity.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastTopic.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastTopicDetails.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastTopicSnippet.Name">
+            <summary>The name of the topic.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastTopicSnippet.ReleaseDate">
+            <summary>The date at which the topic was released. Filled for types: videoGame</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveBroadcastTopicSnippet.ETag">
             <summary>The ETag of the item.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.Data.LiveStream">
@@ -1777,6 +1857,21 @@
         <member name="P:Google.Apis.YouTube.v3.Data.LiveStream.Status">
             <summary>The status object contains information about live stream's status.</summary>
         </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveStreamConfigurationIssue.Description">
+            <summary>The long-form description of the issue and how to resolve it.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveStreamConfigurationIssue.Reason">
+            <summary>The short-form reason for this issue.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveStreamConfigurationIssue.Severity">
+            <summary>How severe this issue is to the stream.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveStreamConfigurationIssue.Type">
+            <summary>The kind of error happening.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveStreamConfigurationIssue.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
         <member name="T:Google.Apis.YouTube.v3.Data.LiveStreamContentDetails">
             <summary>Detailed settings of a stream.</summary>
         </member>
@@ -1796,6 +1891,18 @@
              non-reusable stream is to use the id parameter to identify the stream.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.LiveStreamContentDetails.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveStreamHealthStatus.ConfigurationIssues">
+            <summary>The configurations issues on this stream</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveStreamHealthStatus.LastUpdateTimeSeconds">
+            <summary>The last time this status was updated (in seconds)</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveStreamHealthStatus.Status">
+            <summary>The status code of this stream</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveStreamHealthStatus.ETag">
             <summary>The ETag of the item.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.LiveStreamListResponse.ETag">
@@ -1844,6 +1951,9 @@
         </member>
         <member name="T:Google.Apis.YouTube.v3.Data.LiveStreamStatus">
             <summary>Brief description of the live stream status.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.LiveStreamStatus.HealthStatus">
+            <summary>The health status of the stream.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.LiveStreamStatus.ETag">
             <summary>The ETag of the item.</summary>
@@ -2448,7 +2558,7 @@
         <member name="T:Google.Apis.YouTube.v3.Data.ThumbnailDetails">
             <summary>Internal representation of thumbnails for a YouTube resource.</summary>
         </member>
-        <member name="P:Google.Apis.YouTube.v3.Data.ThumbnailDetails.Default">
+        <member name="P:Google.Apis.YouTube.v3.Data.ThumbnailDetails.Default__">
             <summary>The default image for this resource.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.ThumbnailDetails.High">
@@ -2492,7 +2602,8 @@
             <summary>A video resource represents a YouTube video.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.Video.AgeGating">
-            <summary>Age restriction details related to a video.</summary>
+            <summary>Age restriction details related to a video. This data can only be retrieved by the video
+            owner.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.Video.ContentDetails">
             <summary>The contentDetails object contains information about the video content, including the length of the
@@ -3106,6 +3217,10 @@
         <member name="P:Google.Apis.YouTube.v3.Data.VideoSnippet.ChannelTitle">
             <summary>Channel title for the channel that the video belongs to.</summary>
         </member>
+        <member name="P:Google.Apis.YouTube.v3.Data.VideoSnippet.DefaultAudioLanguage">
+            <summary>The default_audio_language property specifies the language spoken in the video's default audio
+            track.</summary>
+        </member>
         <member name="P:Google.Apis.YouTube.v3.Data.VideoSnippet.DefaultLanguage">
             <summary>The language of the videos's default snippet.</summary>
         </member>
@@ -3128,8 +3243,7 @@
             <summary><seealso cref="T:System.DateTime"/> representation of <see cref="P:Google.Apis.YouTube.v3.Data.VideoSnippet.PublishedAtRaw"/>.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.VideoSnippet.Tags">
-            <summary>A list of keyword tags associated with the video. Tags may contain spaces. This field is only
-            visible to the video's uploader.</summary>
+            <summary>A list of keyword tags associated with the video. Tags may contain spaces.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.Data.VideoSnippet.Thumbnails">
             <summary>A map of thumbnail images associated with the video. For each object in the map, the key is the
@@ -3450,22 +3564,19 @@
              to mark a video as a favorite.</summary>
              <param name="body">The body of the request.</param>
              <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are snippet and contentDetails.</param>
+             write operation will set as well as the properties that the API response will include.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.ActivitiesResource.List(System.String)">
              <summary>Returns a list of channel activity events that match the request criteria. For example, you can
              retrieve events associated with a particular channel, events associated with the user's subscriptions and
              Google+ friends, or the YouTube home page feed, which is customized for each user.</summary>
              <param name="part">The part parameter specifies a comma-separated list of one or more activity resource properties
-             that the API response will include. The part names that you can include in the parameter value are id, snippet, and
-             contentDetails.
+             that the API response will include.
             
              If the parameter identifies a property that contains child properties, the child properties will be included in the
-             response. For example, in a activity resource, the snippet property contains other properties that identify the type
-             of activity, a display title for the activity, and so forth. If you set part=snippet, the API response will also
-             contain all of those nested properties.</param>
+             response. For example, in an activity resource, the snippet property contains other properties that identify the
+             type of activity, a display title for the activity, and so forth. If you set part=snippet, the API response will
+             also contain all of those nested properties.</param>
         </member>
         <member name="T:Google.Apis.YouTube.v3.ActivitiesResource.InsertRequest">
              <summary>Posts a bulletin for a specific channel. (The user submitting the request must be authorized to act
@@ -3486,10 +3597,8 @@
             <summary>Initializes Insert parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.ActivitiesResource.InsertRequest.Part">
-             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are snippet and contentDetails.</summary>
+            <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
+            write operation will set as well as the properties that the API response will include.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.ActivitiesResource.InsertRequest.Body">
             <summary>Gets or sets the body of this request.</summary>
@@ -3516,11 +3625,10 @@
         </member>
         <member name="P:Google.Apis.YouTube.v3.ActivitiesResource.ListRequest.Part">
              <summary>The part parameter specifies a comma-separated list of one or more activity resource properties
-             that the API response will include. The part names that you can include in the parameter value are id,
-             snippet, and contentDetails.
+             that the API response will include.
             
              If the parameter identifies a property that contains child properties, the child properties will be
-             included in the response. For example, in a activity resource, the snippet property contains other
+             included in the response. For example, in an activity resource, the snippet property contains other
              properties that identify the type of activity, a display title for the activity, and so forth. If you
              set part=snippet, the API response will also contain all of those nested properties.</summary>
         </member>
@@ -3652,9 +3760,15 @@
         <member name="P:Google.Apis.YouTube.v3.CaptionsResource.DeleteRequest.OnBehalfOf">
             <summary>ID of the Google+ Page for the channel that the request is be on behalf of</summary>
         </member>
-        <member name="P:Google.Apis.YouTube.v3.CaptionsResource.DeleteRequest.DebugProjectIdOverride">
-            <summary>The debugProjectIdOverride parameter should be used for mimicking a request for a certain
-            project ID</summary>
+        <member name="P:Google.Apis.YouTube.v3.CaptionsResource.DeleteRequest.OnBehalfOfContentOwner">
+             <summary>Note: This parameter is intended exclusively for YouTube content partners.
+            
+             The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a
+             YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This
+             parameter is intended for YouTube content partners that own and manage many different YouTube channels.
+             It allows content owners to authenticate once and get access to all their video and channel data,
+             without having to provide authentication credentials for each individual channel. The actual CMS account
+             that the user authenticates with must be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CaptionsResource.DeleteRequest.MethodName">
             <summary>Gets the method name.</summary>
@@ -3702,9 +3816,15 @@
             the desired caption language. The translation is generated by using machine translation, such as Google
             Translate.</summary>
         </member>
-        <member name="P:Google.Apis.YouTube.v3.CaptionsResource.DownloadRequest.DebugProjectIdOverride">
-            <summary>The debugProjectIdOverride parameter should be used for mimicking a request for a certain
-            project ID</summary>
+        <member name="P:Google.Apis.YouTube.v3.CaptionsResource.DownloadRequest.OnBehalfOfContentOwner">
+             <summary>Note: This parameter is intended exclusively for YouTube content partners.
+            
+             The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a
+             YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This
+             parameter is intended for YouTube content partners that own and manage many different YouTube channels.
+             It allows content owners to authenticate once and get access to all their video and channel data,
+             without having to provide authentication credentials for each individual channel. The actual CMS account
+             that the user authenticates with must be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CaptionsResource.DownloadRequest.MethodName">
             <summary>Gets the method name.</summary>
@@ -3756,9 +3876,15 @@
         <member name="P:Google.Apis.YouTube.v3.CaptionsResource.InsertRequest.OnBehalfOf">
             <summary>ID of the Google+ Page for the channel that the request is be on behalf of</summary>
         </member>
-        <member name="P:Google.Apis.YouTube.v3.CaptionsResource.InsertRequest.DebugProjectIdOverride">
-            <summary>The debugProjectIdOverride parameter should be used for mimicking a request for a certain
-            project ID.</summary>
+        <member name="P:Google.Apis.YouTube.v3.CaptionsResource.InsertRequest.OnBehalfOfContentOwner">
+             <summary>Note: This parameter is intended exclusively for YouTube content partners.
+            
+             The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a
+             YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This
+             parameter is intended for YouTube content partners that own and manage many different YouTube channels.
+             It allows content owners to authenticate once and get access to all their video and channel data,
+             without having to provide authentication credentials for each individual channel. The actual CMS account
+             that the user authenticates with must be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CaptionsResource.InsertRequest.Sync">
              <summary>The sync parameter indicates whether YouTube should automatically synchronize the caption file
@@ -3820,9 +3946,15 @@
         <member name="P:Google.Apis.YouTube.v3.CaptionsResource.InsertMediaUpload.OnBehalfOf">
             <summary>ID of the Google+ Page for the channel that the request is be on behalf of</summary>
         </member>
-        <member name="P:Google.Apis.YouTube.v3.CaptionsResource.InsertMediaUpload.DebugProjectIdOverride">
-            <summary>The debugProjectIdOverride parameter should be used for mimicking a request for a certain
-            project ID.</summary>
+        <member name="P:Google.Apis.YouTube.v3.CaptionsResource.InsertMediaUpload.OnBehalfOfContentOwner">
+             <summary>Note: This parameter is intended exclusively for YouTube content partners.
+            
+             The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a
+             YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This
+             parameter is intended for YouTube content partners that own and manage many different YouTube channels.
+             It allows content owners to authenticate once and get access to all their video and channel data,
+             without having to provide authentication credentials for each individual channel. The actual CMS account
+             that the user authenticates with must be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CaptionsResource.InsertMediaUpload.Sync">
              <summary>The sync parameter indicates whether YouTube should automatically synchronize the caption file
@@ -3861,14 +3993,20 @@
         <member name="P:Google.Apis.YouTube.v3.CaptionsResource.ListRequest.OnBehalfOf">
             <summary>ID of the Google+ Page for the channel that the request is on behalf of.</summary>
         </member>
-        <member name="P:Google.Apis.YouTube.v3.CaptionsResource.ListRequest.DebugProjectIdOverride">
-            <summary>The debugProjectIdOverride parameter should be used for mimicking a request for a certain
-            project ID.</summary>
-        </member>
         <member name="P:Google.Apis.YouTube.v3.CaptionsResource.ListRequest.Id">
             <summary>The id parameter specifies a comma-separated list of IDs that identify the caption resources
             that should be retrieved. Each ID must identify a caption track associated with the specified
             video.</summary>
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.CaptionsResource.ListRequest.OnBehalfOfContentOwner">
+             <summary>Note: This parameter is intended exclusively for YouTube content partners.
+            
+             The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a
+             YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This
+             parameter is intended for YouTube content partners that own and manage many different YouTube channels.
+             It allows content owners to authenticate once and get access to all their video and channel data,
+             without having to provide authentication credentials for each individual channel. The actual CMS account
+             that the user authenticates with must be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CaptionsResource.ListRequest.MethodName">
             <summary>Gets the method name.</summary>
@@ -3901,9 +4039,15 @@
         <member name="P:Google.Apis.YouTube.v3.CaptionsResource.UpdateRequest.OnBehalfOf">
             <summary>ID of the Google+ Page for the channel that the request is be on behalf of</summary>
         </member>
-        <member name="P:Google.Apis.YouTube.v3.CaptionsResource.UpdateRequest.DebugProjectIdOverride">
-            <summary>The debugProjectIdOverride parameter should be used for mimicking a request for a certain
-            project ID.</summary>
+        <member name="P:Google.Apis.YouTube.v3.CaptionsResource.UpdateRequest.OnBehalfOfContentOwner">
+             <summary>Note: This parameter is intended exclusively for YouTube content partners.
+            
+             The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a
+             YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This
+             parameter is intended for YouTube content partners that own and manage many different YouTube channels.
+             It allows content owners to authenticate once and get access to all their video and channel data,
+             without having to provide authentication credentials for each individual channel. The actual CMS account
+             that the user authenticates with must be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CaptionsResource.UpdateRequest.Sync">
              <summary>Note: The API server only processes the parameter value if the request contains an updated
@@ -3967,9 +4111,15 @@
         <member name="P:Google.Apis.YouTube.v3.CaptionsResource.UpdateMediaUpload.OnBehalfOf">
             <summary>ID of the Google+ Page for the channel that the request is be on behalf of</summary>
         </member>
-        <member name="P:Google.Apis.YouTube.v3.CaptionsResource.UpdateMediaUpload.DebugProjectIdOverride">
-            <summary>The debugProjectIdOverride parameter should be used for mimicking a request for a certain
-            project ID.</summary>
+        <member name="P:Google.Apis.YouTube.v3.CaptionsResource.UpdateMediaUpload.OnBehalfOfContentOwner">
+             <summary>Note: This parameter is intended exclusively for YouTube content partners.
+            
+             The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a
+             YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This
+             parameter is intended for YouTube content partners that own and manage many different YouTube channels.
+             It allows content owners to authenticate once and get access to all their video and channel data,
+             without having to provide authentication credentials for each individual channel. The actual CMS account
+             that the user authenticates with must be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CaptionsResource.UpdateMediaUpload.Sync">
              <summary>Note: The API server only processes the parameter value if the request contains an updated
@@ -4349,8 +4499,7 @@
         <member name="M:Google.Apis.YouTube.v3.ChannelsResource.List(System.String)">
              <summary>Returns a collection of zero or more channel resources that match the request criteria.</summary>
              <param name="part">The part parameter specifies a comma-separated list of one or more channel resource properties
-             that the API response will include. The part names that you can include in the parameter value are id, snippet,
-             contentDetails, statistics, topicDetails, and invideoPromotion.
+             that the API response will include.
             
              If the parameter identifies a property that contains child properties, the child properties will be included in the
              response. For example, in a channel resource, the contentDetails property contains other properties, such as the
@@ -4358,14 +4507,16 @@
              properties.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.ChannelsResource.Update(Google.Apis.YouTube.v3.Data.Channel,System.String)">
-             <summary>Updates a channel's metadata.</summary>
+             <summary>Updates a channel's metadata. Note that this method currently only supports updates to the channel
+             resource's brandingSettings and invideoPromotion objects and their child properties.</summary>
              <param name="body">The body of the request.</param>
              <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
              write operation will set as well as the properties that the API response will include.
             
-             The part names that you can include in the parameter value are id and invideoPromotion.
+             The API currently only allows the parameter value to be set to either brandingSettings or invideoPromotion. (You
+             cannot update both of those parts with a single request.)
             
-             Note that this method will override the existing values for all of the mutable properties that are contained in any
+             Note that this method overrides the existing values for all of the mutable properties that are contained in any
              parts that the parameter value specifies.</param>
         </member>
         <member name="T:Google.Apis.YouTube.v3.ChannelsResource.ListRequest">
@@ -4379,8 +4530,7 @@
         </member>
         <member name="P:Google.Apis.YouTube.v3.ChannelsResource.ListRequest.Part">
              <summary>The part parameter specifies a comma-separated list of one or more channel resource properties
-             that the API response will include. The part names that you can include in the parameter value are id,
-             snippet, contentDetails, statistics, topicDetails, and invideoPromotion.
+             that the API response will include.
             
              If the parameter identifies a property that contains child properties, the child properties will be
              included in the response. For example, in a channel resource, the contentDetails property contains other
@@ -4388,17 +4538,21 @@
              will also contain all of those nested properties.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.ChannelsResource.ListRequest.ManagedByMe">
-            <summary>Set this parameter's value to true to instruct the API to only return channels managed by the
-            content owner that the onBehalfOfContentOwner parameter specifies. The user must be authenticated as a
-            CMS account linked to the specified content owner and onBehalfOfContentOwner must be provided.</summary>
+             <summary>Note: This parameter is intended exclusively for YouTube content partners.
+            
+             Set this parameter's value to true to instruct the API to only return channels managed by the content
+             owner that the onBehalfOfContentOwner parameter specifies. The user must be authenticated as a CMS
+             account linked to the specified content owner and onBehalfOfContentOwner must be provided.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.ChannelsResource.ListRequest.OnBehalfOfContentOwner">
-            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf
-            of the content owner specified in the parameter value. This parameter is intended for YouTube content
-            partners that own and manage many different YouTube channels. It allows content owners to authenticate
-            once and get access to all their video and channel data, without having to provide authentication
-            credentials for each individual channel. The actual CMS account that the user authenticates with needs
-            to be linked to the specified YouTube content owner.</summary>
+             <summary>Note: This parameter is intended exclusively for YouTube content partners.
+            
+             The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a
+             YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This
+             parameter is intended for YouTube content partners that own and manage many different YouTube channels.
+             It allows content owners to authenticate once and get access to all their video and channel data,
+             without having to provide authentication credentials for each individual channel. The CMS account that
+             the user authenticates with must be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.ChannelsResource.ListRequest.ForUsername">
             <summary>The forUsername parameter specifies a YouTube username, thereby requesting the channel
@@ -4426,8 +4580,8 @@
             retrieved.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.ChannelsResource.ListRequest.MySubscribers">
-            <summary>Set this parameter's value to true to retrieve a list of channels that subscribed to the
-            authenticated user's channel.</summary>
+            <summary>Use the subscriptions.list method and its mySubscribers parameter to retrieve a list of
+            subscribers to the authenticated user's channel.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.ChannelsResource.ListRequest.Hl">
             <summary>The hl parameter should be used for filter out the properties that are not in the given
@@ -4447,7 +4601,8 @@
             <summary>Gets the REST path.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.ChannelsResource.UpdateRequest">
-            <summary>Updates a channel's metadata.</summary>
+            <summary>Updates a channel's metadata. Note that this method currently only supports updates to the channel
+            resource's brandingSettings and invideoPromotion objects and their child properties.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.ChannelsResource.UpdateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.YouTube.v3.Data.Channel,System.String)">
             <summary>Constructs a new Update request.</summary>
@@ -4462,10 +4617,11 @@
              <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
              write operation will set as well as the properties that the API response will include.
             
-             The part names that you can include in the parameter value are id and invideoPromotion.
+             The API currently only allows the parameter value to be set to either brandingSettings or
+             invideoPromotion. (You cannot update both of those parts with a single request.)
             
-             Note that this method will override the existing values for all of the mutable properties that are
-             contained in any parts that the parameter value specifies.</summary>
+             Note that this method overrides the existing values for all of the mutable properties that are contained
+             in any parts that the parameter value specifies.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.ChannelsResource.UpdateRequest.OnBehalfOfContentOwner">
             <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf
@@ -4497,30 +4653,27 @@
             <summary>Constructs a new resource.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.CommentThreadsResource.Insert(Google.Apis.YouTube.v3.Data.CommentThread,System.String)">
-             <summary>Creates a new comment thread and top level comment.</summary>
-             <param name="body">The body of the request.</param>
-             <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are id and snippet. However only snippet contains
-             properties that can be set.</param>
+            <summary>Creates a new top-level comment. To add a reply to an existing comment, use the comments.insert
+            method instead.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="part">The part parameter identifies the properties that the API response will include. Set the
+            parameter value to snippet. The snippet part has a quota cost of 2 units.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.CommentThreadsResource.List(System.String)">
             <summary>Returns a list of comment threads that match the API request parameters.</summary>
-            <param name="part">The part parameter specifies the commentThread resource parts that the API response will include.
-            Supported values are id, snippet and replies.</param>
+            <param name="part">The part parameter specifies a comma-separated list of one or more commentThread resource
+            properties that the API response will include.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.CommentThreadsResource.Update(Google.Apis.YouTube.v3.Data.CommentThread,System.String)">
-             <summary>Modifies an existing comment.</summary>
-             <param name="body">The body of the request.</param>
-             <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are id, snippet and replies. However only snippet
-             contains properties that can be updated.</param>
+            <summary>Modifies the top-level comment in a comment thread.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="part">The part parameter specifies a comma-separated list of commentThread resource properties that the
+            API response will include. You must at least include the snippet part in the parameter value since that part
+            contains all of the properties that the API request can update.</param>
         </member>
         <member name="T:Google.Apis.YouTube.v3.CommentThreadsResource.InsertRequest">
-            <summary>Creates a new comment thread and top level comment.</summary>
+            <summary>Creates a new top-level comment. To add a reply to an existing comment, use the comments.insert
+            method instead.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.CommentThreadsResource.InsertRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.YouTube.v3.Data.CommentThread,System.String)">
             <summary>Constructs a new Insert request.</summary>
@@ -4532,16 +4685,8 @@
             <summary>Initializes Insert parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.InsertRequest.Part">
-             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are id and snippet. However only snippet
-             contains properties that can be set.</summary>
-        </member>
-        <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.InsertRequest.ShareOnGooglePlus">
-            <summary>The shareOnGooglePlus determines whether this thread should also be posted on
-            Google+.</summary>
-            [default: false]
+            <summary>The part parameter identifies the properties that the API response will include. Set the
+            parameter value to snippet. The snippet part has a quota cost of 2 units.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.InsertRequest.Body">
             <summary>Gets or sets the body of this request.</summary>
@@ -4565,26 +4710,28 @@
             <summary>Initializes List parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.Part">
-            <summary>The part parameter specifies the commentThread resource parts that the API response will
-            include. Supported values are id, snippet and replies.</summary>
+            <summary>The part parameter specifies a comma-separated list of one or more commentThread resource
+            properties that the API response will include.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.SearchTerms">
-             <summary>The searchTerms parameter instructs the API to limit the returned comments to those which
-             contain the specified search terms.
+             <summary>The searchTerms parameter instructs the API to limit the API response to only contain comments
+             that contain the specified search terms.
             
              Note: This parameter is not supported for use in conjunction with the id parameter.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.AllThreadsRelatedToChannelId">
-            <summary>The allThreadsRelatedToChannelId parameter instructs the API to return the comment threads of
-            all videos of the channel and the channel comments as well.</summary>
+            <summary>The allThreadsRelatedToChannelId parameter instructs the API to return all comment threads
+            associated with the specified channel. The response can include comments about the channel or about the
+            channel's videos.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.ChannelId">
-            <summary>The channelId parameter instructs the API to return the comment threads for all the channel
-            comments (not including comments left on videos).</summary>
+            <summary>The channelId parameter instructs the API to return comment threads containing comments about
+            the specified channel. (The response will not include comments left on videos that the channel
+            uploaded.)</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.VideoId">
-            <summary>The videoId parameter instructs the API to return the comment threads for the video specified
-            by the video id.</summary>
+            <summary>The videoId parameter instructs the API to return comment threads associated with the specified
+            video ID.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.MaxResults">
              <summary>The maxResults parameter specifies the maximum number of items that should be returned in the
@@ -4594,6 +4741,10 @@
              [default: 20]
              [minimum: 1]
              [maximum: 100]
+        </member>
+        <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.Id">
+            <summary>The id parameter specifies a comma-separated list of comment thread IDs for the resources that
+            should be retrieved.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.PageToken">
              <summary>The pageToken parameter identifies a specific page in the result set that should be returned.
@@ -4606,16 +4757,19 @@
              <summary>Set this parameter to limit the returned comment threads to a particular moderation state.
             
              Note: This parameter is not supported for use in conjunction with the id parameter.</summary>
-             [default: published]
+             [default: MODERATION_STATUS_PUBLISHED]
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.TextFormat">
             <summary>Set this parameter's value to html or plainText to instruct the API to return the comments left
             by users in html formatted or in plain text.</summary>
             [default: FORMAT_HTML]
         </member>
-        <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.Id">
-            <summary>The id parameter specifies a comma-separated list of comment thread IDs for the resources that
-            should be retrieved.</summary>
+        <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.Order">
+            <summary>The order parameter specifies the order in which the API response should list comment threads.
+            Valid values are: - time - Comment threads are ordered by time. This is the default behavior. -
+            relevance - Comment threads are ordered by relevance.Note: This parameter is not supported for use in
+            conjunction with the id parameter.</summary>
+            [default: true]
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.MethodName">
             <summary>Gets the method name.</summary>
@@ -4632,26 +4786,43 @@
              Note: This parameter is not supported for use in conjunction with the id parameter.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.ModerationStatusEnum.HeldForReview">
-            <summary>Returns only comment threads awaiting review by a moderator.</summary>
+            <summary>Retrieve comment threads that are awaiting review by a moderator. A comment thread can be
+            included in the response if the top-level comment or at least one of the replies to that comment are
+            awaiting review.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.ModerationStatusEnum.LikelySpam">
-            <summary>Returns only comment threads classified as likely being spam.</summary>
+            <summary>Retrieve comment threads classified as likely to be spam. A comment thread can be included
+            in the response if the top-level comment or at least one of the replies to that comment is
+            considered likely to be spam.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.ModerationStatusEnum.Published">
-            <summary>Returns only published comment threads.</summary>
+            <summary>Retrieve threads of published comments. This is the default value. A comment thread can be
+            included in the response if its top-level comment has been published.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.TextFormatEnum">
             <summary>Set this parameter's value to html or plainText to instruct the API to return the comments left
             by users in html formatted or in plain text.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.TextFormatEnum.Html">
-            <summary>Returns the comments in HTML format.</summary>
+            <summary>Returns the comments in HTML format. This is the default value.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.TextFormatEnum.PlainText">
             <summary>Returns the comments in plain text format.</summary>
         </member>
+        <member name="T:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.OrderEnum">
+            <summary>The order parameter specifies the order in which the API response should list comment threads.
+            Valid values are: - time - Comment threads are ordered by time. This is the default behavior. -
+            relevance - Comment threads are ordered by relevance.Note: This parameter is not supported for use in
+            conjunction with the id parameter.</summary>
+        </member>
+        <member name="F:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.OrderEnum.Relevance">
+            <summary>Order by relevance.</summary>
+        </member>
+        <member name="F:Google.Apis.YouTube.v3.CommentThreadsResource.ListRequest.OrderEnum.Time">
+            <summary>Order by time.</summary>
+        </member>
         <member name="T:Google.Apis.YouTube.v3.CommentThreadsResource.UpdateRequest">
-            <summary>Modifies an existing comment.</summary>
+            <summary>Modifies the top-level comment in a comment thread.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.CommentThreadsResource.UpdateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.YouTube.v3.Data.CommentThread,System.String)">
             <summary>Constructs a new Update request.</summary>
@@ -4663,11 +4834,9 @@
             <summary>Initializes Update parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.UpdateRequest.Part">
-             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are id, snippet and replies. However only
-             snippet contains properties that can be updated.</summary>
+            <summary>The part parameter specifies a comma-separated list of commentThread resource properties that
+            the API response will include. You must at least include the snippet part in the parameter value since
+            that part contains all of the properties that the API request can update.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentThreadsResource.UpdateRequest.Body">
             <summary>Gets or sets the body of this request.</summary>
@@ -4692,45 +4861,39 @@
         </member>
         <member name="M:Google.Apis.YouTube.v3.CommentsResource.Delete(System.String)">
             <summary>Deletes a comment.</summary>
-            <param name="id">The id parameter specifies the comment ID for the resource that should be deleted.</param>
+            <param name="id">The id parameter specifies the comment ID for the resource that is being deleted.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.CommentsResource.Insert(Google.Apis.YouTube.v3.Data.Comment,System.String)">
-             <summary>Creates a new comment.
-            
-             Note: to create a top level comment it is also necessary to create a comment thread. Both are accomplished
-             through the commentThreads resource.</summary>
-             <param name="body">The body of the request.</param>
-             <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are id and snippet. However only snippet contains
-             properties that can be set.</param>
+            <summary>Creates a reply to an existing comment. Note: To create a top-level comment, use the
+            commentThreads.insert method.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="part">The part parameter identifies the properties that the API response will include. Set the
+            parameter value to snippet. The snippet part has a quota cost of 2 units.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.CommentsResource.List(System.String)">
             <summary>Returns a list of comments that match the API request parameters.</summary>
-            <param name="part">The part parameter specifies the comment resource parts that the API response will include.
-            Supported values are id and snippet.</param>
+            <param name="part">The part parameter specifies a comma-separated list of one or more comment resource properties
+            that the API response will include.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.CommentsResource.MarkAsSpam(System.String)">
-            <summary>Expresses the caller's opinion that a comment is spam.</summary>
-            <param name="id">The id parameter specifies a comma-separated list of IDs of comments which should get flagged as
-            spam.</param>
+            <summary>Expresses the caller's opinion that one or more comments should be flagged as spam.</summary>
+            <param name="id">The id parameter specifies a comma-separated list of IDs of comments that the caller believes
+            should be classified as spam.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.CommentsResource.SetModerationStatus(System.String,Google.Apis.YouTube.v3.CommentsResource.SetModerationStatusRequest.ModerationStatusEnum)">
-            <summary>Sets the moderation status of one or more comments.</summary>
-            <param name="id">The id parameter specifies a comma-separated list of IDs of comments whose moderation status should
-            be updated.</param>
-            <param name="moderationStatus">Determines the new moderation status of the specified
-            comments.</param>
+            <summary>Sets the moderation status of one or more comments. The API request must be authorized by the owner
+            of the channel or video associated with the comments.</summary>
+            <param name="id">The id parameter specifies a comma-separated list of IDs that identify the comments for which you
+            are updating the moderation status.</param>
+            <param name="moderationStatus">Identifies the new moderation
+            status of the specified comments.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.CommentsResource.Update(Google.Apis.YouTube.v3.Data.Comment,System.String)">
-             <summary>Modifies an existing comment.</summary>
-             <param name="body">The body of the request.</param>
-             <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are id and snippet. However only snippet contains
-             properties that can be updated.</param>
+            <summary>Modifies a comment.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="part">The part parameter identifies the properties that the API response will include. You must at
+            least include the snippet part in the parameter value since that part contains all of the properties that the API
+            request can update.</param>
         </member>
         <member name="T:Google.Apis.YouTube.v3.CommentsResource.DeleteRequest">
             <summary>Deletes a comment.</summary>
@@ -4742,7 +4905,7 @@
             <summary>Initializes Delete parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.DeleteRequest.Id">
-            <summary>The id parameter specifies the comment ID for the resource that should be deleted.</summary>
+            <summary>The id parameter specifies the comment ID for the resource that is being deleted.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.DeleteRequest.MethodName">
             <summary>Gets the method name.</summary>
@@ -4754,10 +4917,8 @@
             <summary>Gets the REST path.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.CommentsResource.InsertRequest">
-             <summary>Creates a new comment.
-            
-             Note: to create a top level comment it is also necessary to create a comment thread. Both are accomplished
-             through the commentThreads resource.</summary>
+            <summary>Creates a reply to an existing comment. Note: To create a top-level comment, use the
+            commentThreads.insert method.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.CommentsResource.InsertRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.YouTube.v3.Data.Comment,System.String)">
             <summary>Constructs a new Insert request.</summary>
@@ -4769,11 +4930,8 @@
             <summary>Initializes Insert parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.InsertRequest.Part">
-             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are id and snippet. However only snippet
-             contains properties that can be set.</summary>
+            <summary>The part parameter identifies the properties that the API response will include. Set the
+            parameter value to snippet. The snippet part has a quota cost of 2 units.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.InsertRequest.Body">
             <summary>Gets or sets the body of this request.</summary>
@@ -4797,8 +4955,8 @@
             <summary>Initializes List parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.ListRequest.Part">
-            <summary>The part parameter specifies the comment resource parts that the API response will include.
-            Supported values are id and snippet.</summary>
+            <summary>The part parameter specifies a comma-separated list of one or more comment resource properties
+            that the API response will include.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.ListRequest.MaxResults">
              <summary>The maxResults parameter specifies the maximum number of items that should be returned in the
@@ -4819,17 +4977,17 @@
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.ListRequest.ParentId">
              <summary>The parentId parameter specifies the ID of the comment for which replies should be retrieved.
             
-             Note: Currently YouTube features only one level of replies (ie replies to top level comments). However
-             replies to replies may be supported in the future.</summary>
+             Note: YouTube currently supports replies only for top-level comments. However, replies to replies may be
+             supported in the future.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.ListRequest.TextFormat">
-            <summary>Set this parameter's value to html or plainText to instruct the API to return the comments left
-            by users formatted as HTML or as plain text.</summary>
+            <summary>This parameter indicates whether the API should return comments formatted as HTML or as plain
+            text.</summary>
             [default: FORMAT_HTML]
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.ListRequest.Id">
-            <summary>The id parameter specifies a comma-separated list of comment IDs for the resources that should
-            be retrieved.</summary>
+            <summary>The id parameter specifies a comma-separated list of comment IDs for the resources that are
+            being retrieved. In a comment resource, the id property specifies the comment's ID.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.ListRequest.MethodName">
             <summary>Gets the method name.</summary>
@@ -4841,17 +4999,17 @@
             <summary>Gets the REST path.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.CommentsResource.ListRequest.TextFormatEnum">
-            <summary>Set this parameter's value to html or plainText to instruct the API to return the comments left
-            by users formatted as HTML or as plain text.</summary>
+            <summary>This parameter indicates whether the API should return comments formatted as HTML or as plain
+            text.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.CommentsResource.ListRequest.TextFormatEnum.Html">
-            <summary>Returns the comments in HTML format.</summary>
+            <summary>Returns the comments in HTML format. This is the default value.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.CommentsResource.ListRequest.TextFormatEnum.PlainText">
             <summary>Returns the comments in plain text format.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.CommentsResource.MarkAsSpamRequest">
-            <summary>Expresses the caller's opinion that a comment is spam.</summary>
+            <summary>Expresses the caller's opinion that one or more comments should be flagged as spam.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.CommentsResource.MarkAsSpamRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
             <summary>Constructs a new MarkAsSpam request.</summary>
@@ -4860,8 +5018,8 @@
             <summary>Initializes MarkAsSpam parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.MarkAsSpamRequest.Id">
-            <summary>The id parameter specifies a comma-separated list of IDs of comments which should get flagged
-            as spam.</summary>
+            <summary>The id parameter specifies a comma-separated list of IDs of comments that the caller believes
+            should be classified as spam.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.MarkAsSpamRequest.MethodName">
             <summary>Gets the method name.</summary>
@@ -4873,7 +5031,8 @@
             <summary>Gets the REST path.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.CommentsResource.SetModerationStatusRequest">
-            <summary>Sets the moderation status of one or more comments.</summary>
+            <summary>Sets the moderation status of one or more comments. The API request must be authorized by the owner
+            of the channel or video associated with the comments.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.CommentsResource.SetModerationStatusRequest.#ctor(Google.Apis.Services.IClientService,System.String,Google.Apis.YouTube.v3.CommentsResource.SetModerationStatusRequest.ModerationStatusEnum)">
             <summary>Constructs a new SetModerationStatus request.</summary>
@@ -4882,17 +5041,17 @@
             <summary>Initializes SetModerationStatus parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.SetModerationStatusRequest.Id">
-            <summary>The id parameter specifies a comma-separated list of IDs of comments whose moderation status
-            should be updated.</summary>
+            <summary>The id parameter specifies a comma-separated list of IDs that identify the comments for which
+            you are updating the moderation status.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.SetModerationStatusRequest.ModerationStatus">
-            <summary>Determines the new moderation status of the specified comments.</summary>
+            <summary>Identifies the new moderation status of the specified comments.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.SetModerationStatusRequest.BanAuthor">
-             <summary>The banAuthor paramter, if set to true, adds the author of the comment to the ban list. This
-             means all future comments of the author will autmomatically be rejected.
+             <summary>The banAuthor parameter lets you indicate that you want to automatically reject any additional
+             comments written by the comment's author. Set the parameter value to true to ban the author.
             
-             Note: This parameter is only valid in combination with moderationStatus 'rejected'.</summary>
+             Note: This parameter is only valid if the moderationStatus parameter is also set to rejected.</summary>
              [default: false]
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.SetModerationStatusRequest.MethodName">
@@ -4905,7 +5064,7 @@
             <summary>Gets the REST path.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.CommentsResource.SetModerationStatusRequest.ModerationStatusEnum">
-            <summary>Determines the new moderation status of the specified comments.</summary>
+            <summary>Identifies the new moderation status of the specified comments.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.CommentsResource.SetModerationStatusRequest.ModerationStatusEnum.HeldForReview">
             <summary>Marks a comment as awaiting review by a moderator.</summary>
@@ -4914,16 +5073,16 @@
             <summary>Clears a comment for public display.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.CommentsResource.SetModerationStatusRequest.ModerationStatusEnum.Rejected">
-             <summary>Rejects a comment as not fit for display.
+             <summary>Rejects a comment as being unfit for display. This action also effectively hides all
+             replies to the rejected comment.
             
-             Note: currently there is no way to list or otherwise discover a rejected comment. However it is
-             possible to change its moderation status as long as its ID is still known.
-            
-             Note: Currently, if you reject a comment you effectively also hide all its replies as there is no
-             longer any way to discover them. This may change in the future.</summary>
+             Note: The API does not currently provide a way to list or otherwise discover rejected comments.
+             However, you can change the moderation status of a rejected comment if you still know its ID. If you
+             were to change the moderation status of a rejected comment, the comment replies would subsequently
+             be discoverable again as well.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.CommentsResource.UpdateRequest">
-            <summary>Modifies an existing comment.</summary>
+            <summary>Modifies a comment.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.CommentsResource.UpdateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.YouTube.v3.Data.Comment,System.String)">
             <summary>Constructs a new Update request.</summary>
@@ -4935,11 +5094,9 @@
             <summary>Initializes Update parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.UpdateRequest.Part">
-             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are id and snippet. However only snippet
-             contains properties that can be updated.</summary>
+            <summary>The part parameter identifies the properties that the API response will include. You must at
+            least include the snippet part in the parameter value since that part contains all of the properties
+            that the API request can update.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.CommentsResource.UpdateRequest.Body">
             <summary>Gets or sets the body of this request.</summary>
@@ -4963,15 +5120,9 @@
             <summary>Constructs a new resource.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.GuideCategoriesResource.List(System.String)">
-             <summary>Returns a list of categories that can be associated with YouTube channels.</summary>
-             <param name="part">The part parameter specifies a comma-separated list of one or more guideCategory resource
-             properties that the API response will include. The part names that you can include in the parameter value are id and
-             snippet.
-            
-             If the parameter identifies a property that contains child properties, the child properties will be included in the
-             response. For example, in a guideCategory resource, the snippet property contains other properties, such as the
-             category's title. If you set part=snippet, the API response will also contain all of those nested
-             properties.</param>
+            <summary>Returns a list of categories that can be associated with YouTube channels.</summary>
+            <param name="part">The part parameter specifies the guideCategory resource properties that the API response will
+            include. Set the parameter value to snippet.</param>
         </member>
         <member name="T:Google.Apis.YouTube.v3.GuideCategoriesResource.ListRequest">
             <summary>Returns a list of categories that can be associated with YouTube channels.</summary>
@@ -4983,14 +5134,8 @@
             <summary>Initializes List parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.GuideCategoriesResource.ListRequest.Part">
-             <summary>The part parameter specifies a comma-separated list of one or more guideCategory resource
-             properties that the API response will include. The part names that you can include in the parameter
-             value are id and snippet.
-            
-             If the parameter identifies a property that contains child properties, the child properties will be
-             included in the response. For example, in a guideCategory resource, the snippet property contains other
-             properties, such as the category's title. If you set part=snippet, the API response will also contain
-             all of those nested properties.</summary>
+            <summary>The part parameter specifies the guideCategory resource properties that the API response will
+            include. Set the parameter value to snippet.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.GuideCategoriesResource.ListRequest.RegionCode">
             <summary>The regionCode parameter instructs the API to return the list of guide categories available in
@@ -5025,13 +5170,12 @@
             <summary>Constructs a new resource.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.I18nLanguagesResource.List(System.String)">
-            <summary>Returns a list of supported languages.</summary>
-            <param name="part">The part parameter specifies a comma-separated list of one or more i18nLanguage resource
-            properties that the API response will include. The part names that you can include in the parameter value are id and
-            snippet.</param>
+            <summary>Returns a list of application languages that the YouTube website supports.</summary>
+            <param name="part">The part parameter specifies the i18nLanguage resource properties that the API response will
+            include. Set the parameter value to snippet.</param>
         </member>
         <member name="T:Google.Apis.YouTube.v3.I18nLanguagesResource.ListRequest">
-            <summary>Returns a list of supported languages.</summary>
+            <summary>Returns a list of application languages that the YouTube website supports.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.I18nLanguagesResource.ListRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
             <summary>Constructs a new List request.</summary>
@@ -5040,9 +5184,8 @@
             <summary>Initializes List parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.I18nLanguagesResource.ListRequest.Part">
-            <summary>The part parameter specifies a comma-separated list of one or more i18nLanguage resource
-            properties that the API response will include. The part names that you can include in the parameter
-            value are id and snippet.</summary>
+            <summary>The part parameter specifies the i18nLanguage resource properties that the API response will
+            include. Set the parameter value to snippet.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.I18nLanguagesResource.ListRequest.Hl">
             <summary>The hl parameter specifies the language that should be used for text values in the API
@@ -5068,13 +5211,12 @@
             <summary>Constructs a new resource.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.I18nRegionsResource.List(System.String)">
-            <summary>Returns a list of supported regions.</summary>
-            <param name="part">The part parameter specifies a comma-separated list of one or more i18nRegion resource properties
-            that the API response will include. The part names that you can include in the parameter value are id and
-            snippet.</param>
+            <summary>Returns a list of content regions that the YouTube website supports.</summary>
+            <param name="part">The part parameter specifies the i18nRegion resource properties that the API response will
+            include. Set the parameter value to snippet.</param>
         </member>
         <member name="T:Google.Apis.YouTube.v3.I18nRegionsResource.ListRequest">
-            <summary>Returns a list of supported regions.</summary>
+            <summary>Returns a list of content regions that the YouTube website supports.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.I18nRegionsResource.ListRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
             <summary>Constructs a new List request.</summary>
@@ -5083,9 +5225,8 @@
             <summary>Initializes List parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.I18nRegionsResource.ListRequest.Part">
-            <summary>The part parameter specifies a comma-separated list of one or more i18nRegion resource
-            properties that the API response will include. The part names that you can include in the parameter
-            value are id and snippet.</summary>
+            <summary>The part parameter specifies the i18nRegion resource properties that the API response will
+            include. Set the parameter value to snippet.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.I18nRegionsResource.ListRequest.Hl">
             <summary>The hl parameter specifies the language that should be used for text values in the API
@@ -5112,7 +5253,8 @@
         </member>
         <member name="M:Google.Apis.YouTube.v3.LiveBroadcastsResource.Bind(System.String,System.String)">
             <summary>Binds a YouTube broadcast to a stream or removes an existing binding between a broadcast and a
-            stream. A broadcast can only be bound to one video stream.</summary>
+            stream. A broadcast can only be bound to one video stream, though a video stream may be bound to more than
+            one broadcast.</summary>
             <param name="id">The id parameter specifies the unique ID of the broadcast that is being bound to a video
             stream.</param>
             <param name="part">The part parameter specifies a comma-separated list of one or more
@@ -5180,7 +5322,8 @@
         </member>
         <member name="T:Google.Apis.YouTube.v3.LiveBroadcastsResource.BindRequest">
             <summary>Binds a YouTube broadcast to a stream or removes an existing binding between a broadcast and a
-            stream. A broadcast can only be bound to one video stream.</summary>
+            stream. A broadcast can only be bound to one video stream, though a video stream may be bound to more than
+            one broadcast.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.LiveBroadcastsResource.BindRequest.#ctor(Google.Apis.Services.IClientService,System.String,System.String)">
             <summary>Constructs a new Bind request.</summary>
@@ -5853,7 +5996,7 @@
         </member>
         <member name="P:Google.Apis.YouTube.v3.LiveStreamsResource.ListRequest.MaxResults">
             <summary>The maxResults parameter specifies the maximum number of items that should be returned in the
-            result set. Acceptable values are 0 to 50, inclusive. The default value is 5.</summary>
+            result set.</summary>
             [default: 5]
             [minimum: 0]
             [maximum: 50]
@@ -5953,20 +6096,17 @@
             deleted. In a playlistItem resource, the id property specifies the playlist item's ID.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.PlaylistItemsResource.Insert(Google.Apis.YouTube.v3.Data.PlaylistItem,System.String)">
-             <summary>Adds a resource to a playlist.</summary>
-             <param name="body">The body of the request.</param>
-             <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are snippet, contentDetails, and status.</param>
+            <summary>Adds a resource to a playlist.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
+            write operation will set as well as the properties that the API response will include.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.PlaylistItemsResource.List(System.String)">
              <summary>Returns a collection of playlist items that match the API request parameters. You can retrieve all
              of the playlist items in a specified playlist or retrieve one or more playlist items by their unique
              IDs.</summary>
              <param name="part">The part parameter specifies a comma-separated list of one or more playlistItem resource
-             properties that the API response will include. The part names that you can include in the parameter value are id,
-             snippet, contentDetails, and status.
+             properties that the API response will include.
             
              If the parameter identifies a property that contains child properties, the child properties will be included in the
              response. For example, in a playlistItem resource, the snippet property contains numerous fields, including the
@@ -5979,8 +6119,6 @@
              <param name="body">The body of the request.</param>
              <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
              write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are snippet, contentDetails, and status.
             
              Note that this method will override the existing values for all of the mutable properties that are contained in any
              parts that the parameter value specifies. For example, a playlist item can specify a start time and end time, which
@@ -6025,11 +6163,8 @@
             <summary>Initializes Insert parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.PlaylistItemsResource.InsertRequest.Part">
-             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are snippet, contentDetails, and
-             status.</summary>
+            <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
+            write operation will set as well as the properties that the API response will include.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.PlaylistItemsResource.InsertRequest.OnBehalfOfContentOwner">
              <summary>Note: This parameter is intended exclusively for YouTube content partners.
@@ -6066,8 +6201,7 @@
         </member>
         <member name="P:Google.Apis.YouTube.v3.PlaylistItemsResource.ListRequest.Part">
              <summary>The part parameter specifies a comma-separated list of one or more playlistItem resource
-             properties that the API response will include. The part names that you can include in the parameter
-             value are id, snippet, contentDetails, and status.
+             properties that the API response will include.
             
              If the parameter identifies a property that contains child properties, the child properties will be
              included in the response. For example, in a playlistItem resource, the snippet property contains
@@ -6135,8 +6269,6 @@
              <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
              write operation will set as well as the properties that the API response will include.
             
-             The part names that you can include in the parameter value are snippet, contentDetails, and status.
-            
              Note that this method will override the existing values for all of the mutable properties that are
              contained in any parts that the parameter value specifies. For example, a playlist item can specify a
              start time and end time, which identify the times portion of the video that should play when users watch
@@ -6173,20 +6305,17 @@
             playlist resource, the id property specifies the playlist's ID.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.PlaylistsResource.Insert(Google.Apis.YouTube.v3.Data.Playlist,System.String)">
-             <summary>Creates a playlist.</summary>
-             <param name="body">The body of the request.</param>
-             <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are snippet and status.</param>
+            <summary>Creates a playlist.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
+            write operation will set as well as the properties that the API response will include.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.PlaylistsResource.List(System.String)">
              <summary>Returns a collection of playlists that match the API request parameters. For example, you can
              retrieve all playlists that the authenticated user owns, or you can retrieve one or more playlists by their
              unique IDs.</summary>
              <param name="part">The part parameter specifies a comma-separated list of one or more playlist resource properties
-             that the API response will include. The part names that you can include in the parameter value are id, snippet,
-             status, and contentDetails.
+             that the API response will include.
             
              If the parameter identifies a property that contains child properties, the child properties will be included in the
              response. For example, in a playlist resource, the snippet property contains properties like author, title,
@@ -6200,14 +6329,10 @@
              <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
              write operation will set as well as the properties that the API response will include.
             
-             The part names that you can include in the parameter value are snippet and status.
-            
-             Note that this method will override the existing values for all of the mutable properties that are contained in any
-             parts that the parameter value specifies. For example, a playlist's privacy setting is contained in the status part.
-             As such, if your request is updating a private playlist, and the request's part parameter value includes the status
-             part, the playlist's privacy setting will be updated to whatever value the request body specifies. If the request
-             body does not specify a value, the existing privacy setting will be removed and the playlist will revert to the
-             default privacy setting.</param>
+             Note that this method will override the existing values for mutable properties that are contained in any parts that
+             the request body specifies. For example, a playlist's description is contained in the snippet part, which must be
+             included in the request body. If the request does not specify a value for the snippet.description property, the
+             playlist's existing description will be deleted.</param>
         </member>
         <member name="T:Google.Apis.YouTube.v3.PlaylistsResource.DeleteRequest">
             <summary>Deletes a playlist.</summary>
@@ -6254,10 +6379,8 @@
             <summary>Initializes Insert parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.PlaylistsResource.InsertRequest.Part">
-             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are snippet and status.</summary>
+            <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
+            write operation will set as well as the properties that the API response will include.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.PlaylistsResource.InsertRequest.OnBehalfOfContentOwnerChannel">
              <summary>This parameter can only be used in a properly authorized request. Note: This parameter is
@@ -6311,8 +6434,7 @@
         </member>
         <member name="P:Google.Apis.YouTube.v3.PlaylistsResource.ListRequest.Part">
              <summary>The part parameter specifies a comma-separated list of one or more playlist resource properties
-             that the API response will include. The part names that you can include in the parameter value are id,
-             snippet, status, and contentDetails.
+             that the API response will include.
             
              If the parameter identifies a property that contains child properties, the child properties will be
              included in the response. For example, in a playlist resource, the snippet property contains properties
@@ -6401,14 +6523,10 @@
              <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
              write operation will set as well as the properties that the API response will include.
             
-             The part names that you can include in the parameter value are snippet and status.
-            
-             Note that this method will override the existing values for all of the mutable properties that are
-             contained in any parts that the parameter value specifies. For example, a playlist's privacy setting is
-             contained in the status part. As such, if your request is updating a private playlist, and the request's
-             part parameter value includes the status part, the playlist's privacy setting will be updated to
-             whatever value the request body specifies. If the request body does not specify a value, the existing
-             privacy setting will be removed and the playlist will revert to the default privacy setting.</summary>
+             Note that this method will override the existing values for mutable properties that are contained in any
+             parts that the request body specifies. For example, a playlist's description is contained in the snippet
+             part, which must be included in the request body. If the request does not specify a value for the
+             snippet.description property, the playlist's existing description will be deleted.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.PlaylistsResource.UpdateRequest.OnBehalfOfContentOwner">
              <summary>Note: This parameter is intended exclusively for YouTube content partners.
@@ -6442,16 +6560,11 @@
             <summary>Constructs a new resource.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.SearchResource.List(System.String)">
-             <summary>Returns a collection of search results that match the query parameters specified in the API
-             request. By default, a search result set identifies matching video, channel, and playlist resources, but you
-             can also configure queries to only retrieve a specific type of resource.</summary>
-             <param name="part">The part parameter specifies a comma-separated list of one or more search resource properties
-             that the API response will include. The part names that you can include in the parameter value are id and snippet.
-            
-             If the parameter identifies a property that contains child properties, the child properties will be included in the
-             response. For example, in a search result, the snippet property contains other properties that identify the result's
-             title, description, and so forth. If you set part=snippet, the API response will also contain all of those nested
-             properties.</param>
+            <summary>Returns a collection of search results that match the query parameters specified in the API
+            request. By default, a search result set identifies matching video, channel, and playlist resources, but you
+            can also configure queries to only retrieve a specific type of resource.</summary>
+            <param name="part">The part parameter specifies a comma-separated list of one or more search resource properties
+            that the API response will include. Set the parameter value to snippet.</param>
         </member>
         <member name="T:Google.Apis.YouTube.v3.SearchResource.ListRequest">
             <summary>Returns a collection of search results that match the query parameters specified in the API
@@ -6465,17 +6578,12 @@
             <summary>Initializes List parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.Part">
-             <summary>The part parameter specifies a comma-separated list of one or more search resource properties
-             that the API response will include. The part names that you can include in the parameter value are id
-             and snippet.
-            
-             If the parameter identifies a property that contains child properties, the child properties will be
-             included in the response. For example, in a search result, the snippet property contains other
-             properties that identify the result's title, description, and so forth. If you set part=snippet, the API
-             response will also contain all of those nested properties.</summary>
+            <summary>The part parameter specifies a comma-separated list of one or more search resource properties
+            that the API response will include. Set the parameter value to snippet.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.EventType">
-            <summary>The eventType parameter restricts a search to broadcast events.</summary>
+            <summary>The eventType parameter restricts a search to broadcast events. If you specify a value for this
+            parameter, you must also set the type parameter's value to video.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.ChannelId">
             <summary>The channelId parameter indicates that the API response should only contain resources created
@@ -6489,14 +6597,16 @@
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoSyndicated">
             <summary>The videoSyndicated parameter lets you to restrict a search to only videos that can be played
-            outside youtube.com.</summary>
+            outside youtube.com. If you specify a value for this parameter, you must also set the type parameter's
+            value to video.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.ChannelType">
             <summary>The channelType parameter lets you restrict a search to a particular type of channel.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoCaption">
             <summary>The videoCaption parameter indicates whether the API should filter video search results based
-            on whether they have captions.</summary>
+            on whether they have captions. If you specify a value for this parameter, you must also set the type
+            parameter's value to video.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.PublishedAfter">
             <summary>The publishedAfter parameter indicates that the API response should only contain resources
@@ -6530,20 +6640,30 @@
             The parameter value is an ISO 3166-1 alpha-2 country code.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.Location">
-            <summary>The location parameter restricts a search to videos that have a geographical location specified
-            in their metadata. The value is a string that specifies geographic latitude/longitude coordinates e.g.
-            (37.42307,-122.08427)</summary>
+             <summary>The location parameter, in conjunction with the locationRadius parameter, defines a circular
+             geographic area and also restricts a search to videos that specify, in their metadata, a geographic
+             location that falls within that area. The parameter value is a string that specifies latitude/longitude
+             coordinates e.g. (37.42307,-122.08427).
+            
+             - The location parameter value identifies the point at the center of the area. - The locationRadius
+             parameter specifies the maximum distance that the location associated with a video can be from that
+             point for the video to still be included in the search results.The API returns an error if your request
+             specifies a value for the location parameter but does not also specify a value for the locationRadius
+             parameter.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.LocationRadius">
-            <summary>The locationRadius, in conjunction with the location parameter, defines a geographic area. If
-            the geographic coordinates associated with a video fall within that area, then the video may be included
-            in search results. This parameter value must be a floating point number followed by a measurement unit.
-            Valid measurement units are m, km, ft, and mi. For example, valid parameter values include 1500m, 5km,
-            10000ft, and 0.75mi. The API does not support locationRadius parameter values larger than 1000
-            kilometers.</summary>
+             <summary>The locationRadius parameter, in conjunction with the location parameter, defines a circular
+             geographic area.
+            
+             The parameter value must be a floating point number followed by a measurement unit. Valid measurement
+             units are m, km, ft, and mi. For example, valid parameter values include 1500m, 5km, 10000ft, and
+             0.75mi. The API does not support locationRadius parameter values larger than 1000 kilometers.
+            
+             Note: See the definition of the location parameter for more information.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoType">
-            <summary>The videoType parameter lets you restrict a search to a particular type of videos.</summary>
+            <summary>The videoType parameter lets you restrict a search to a particular type of videos. If you
+            specify a value for this parameter, you must also set the type parameter's value to video.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.Type">
             <summary>The type parameter restricts a search query to only retrieve a particular type of resource. The
@@ -6560,13 +6680,14 @@
             (1970-01-01T00:00:00Z).</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoDimension">
-            <summary>The videoDimension parameter lets you restrict a search to only retrieve 2D or 3D
-            videos.</summary>
+            <summary>The videoDimension parameter lets you restrict a search to only retrieve 2D or 3D videos. If
+            you specify a value for this parameter, you must also set the type parameter's value to video.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoLicense">
             <summary>The videoLicense parameter filters search results to only include videos with a particular
             license. YouTube lets video uploaders choose to attach either the Creative Commons license or the
-            standard YouTube license to each of their videos.</summary>
+            standard YouTube license to each of their videos. If you specify a value for this parameter, you must
+            also set the type parameter's value to video.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.MaxResults">
             <summary>The maxResults parameter specifies the maximum number of items that should be returned in the
@@ -6583,10 +6704,12 @@
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoDefinition">
             <summary>The videoDefinition parameter lets you restrict a search to only include either high definition
             (HD) or standard definition (SD) videos. HD videos are available for playback in at least 720p, though
-            higher resolutions, like 1080p, might also be available.</summary>
+            higher resolutions, like 1080p, might also be available. If you specify a value for this parameter, you
+            must also set the type parameter's value to video.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoDuration">
-            <summary>The videoDuration parameter filters video search results based on their duration.</summary>
+            <summary>The videoDuration parameter filters video search results based on their duration. If you
+            specify a value for this parameter, you must also set the type parameter's value to video.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.RelevanceLanguage">
             <summary>The relevanceLanguage parameter instructs the API to return search results that are most
@@ -6601,7 +6724,14 @@
             video.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.Q">
-            <summary>The q parameter specifies the query term to search for.</summary>
+             <summary>The q parameter specifies the query term to search for.
+            
+             Your request can also use the Boolean NOT (-) and OR (|) operators to exclude videos or to find videos
+             that are associated with one of several search terms. For example, to search for videos matching either
+             "boating" or "sailing", set the q parameter value to boating|sailing. Similarly, to search for videos
+             matching either "boating" or "sailing" but not "fishing", set the q parameter value to boating|sailing
+             -fishing. Note that the pipe character must be URL-escaped when it is sent in your API request. The URL-
+             escaped value for the pipe character is %7C.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.SafeSearch">
             <summary>The safeSearch parameter indicates whether the search results should include restricted content
@@ -6609,10 +6739,12 @@
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoEmbeddable">
             <summary>The videoEmbeddable parameter lets you to restrict a search to only videos that can be embedded
-            into a webpage.</summary>
+            into a webpage. If you specify a value for this parameter, you must also set the type parameter's value
+            to video.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoCategoryId">
-            <summary>The videoCategoryId parameter filters video search results based on their category.</summary>
+            <summary>The videoCategoryId parameter filters video search results based on their category. If you
+            specify a value for this parameter, you must also set the type parameter's value to video.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SearchResource.ListRequest.Order">
             <summary>The order parameter specifies the method that will be used to order resources in the API
@@ -6629,7 +6761,8 @@
             <summary>Gets the REST path.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.SearchResource.ListRequest.EventTypeEnum">
-            <summary>The eventType parameter restricts a search to broadcast events.</summary>
+            <summary>The eventType parameter restricts a search to broadcast events. If you specify a value for this
+            parameter, you must also set the type parameter's value to video.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.EventTypeEnum.Completed">
             <summary>Only include completed broadcasts.</summary>
@@ -6642,12 +6775,13 @@
         </member>
         <member name="T:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoSyndicatedEnum">
             <summary>The videoSyndicated parameter lets you to restrict a search to only videos that can be played
-            outside youtube.com.</summary>
+            outside youtube.com. If you specify a value for this parameter, you must also set the type parameter's
+            value to video.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoSyndicatedEnum.Any">
             <summary>Return all videos, syndicated or not.</summary>
         </member>
-        <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoSyndicatedEnum.True">
+        <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoSyndicatedEnum.True__">
             <summary>Only retrieve syndicated videos.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.SearchResource.ListRequest.ChannelTypeEnum">
@@ -6661,7 +6795,8 @@
         </member>
         <member name="T:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoCaptionEnum">
             <summary>The videoCaption parameter indicates whether the API should filter video search results based
-            on whether they have captions.</summary>
+            on whether they have captions. If you specify a value for this parameter, you must also set the type
+            parameter's value to video.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoCaptionEnum.Any">
             <summary>Do not filter results based on caption availability.</summary>
@@ -6673,7 +6808,8 @@
             <summary>Only include videos that do not have captions.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoTypeEnum">
-            <summary>The videoType parameter lets you restrict a search to a particular type of videos.</summary>
+            <summary>The videoType parameter lets you restrict a search to a particular type of videos. If you
+            specify a value for this parameter, you must also set the type parameter's value to video.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoTypeEnum.Any">
             <summary>Return all videos.</summary>
@@ -6685,8 +6821,8 @@
             <summary>Only retrieve movies.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoDimensionEnum">
-            <summary>The videoDimension parameter lets you restrict a search to only retrieve 2D or 3D
-            videos.</summary>
+            <summary>The videoDimension parameter lets you restrict a search to only retrieve 2D or 3D videos. If
+            you specify a value for this parameter, you must also set the type parameter's value to video.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoDimensionEnum.Value2d">
             <summary>Restrict search results to exclude 3D videos.</summary>
@@ -6700,7 +6836,8 @@
         <member name="T:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoLicenseEnum">
             <summary>The videoLicense parameter filters search results to only include videos with a particular
             license. YouTube lets video uploaders choose to attach either the Creative Commons license or the
-            standard YouTube license to each of their videos.</summary>
+            standard YouTube license to each of their videos. If you specify a value for this parameter, you must
+            also set the type parameter's value to video.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoLicenseEnum.Any">
             <summary>Return all videos, regardless of which license they have, that match the query
@@ -6716,7 +6853,8 @@
         <member name="T:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoDefinitionEnum">
             <summary>The videoDefinition parameter lets you restrict a search to only include either high definition
             (HD) or standard definition (SD) videos. HD videos are available for playback in at least 720p, though
-            higher resolutions, like 1080p, might also be available.</summary>
+            higher resolutions, like 1080p, might also be available. If you specify a value for this parameter, you
+            must also set the type parameter's value to video.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoDefinitionEnum.Any">
             <summary>Return all videos, regardless of their resolution.</summary>
@@ -6728,19 +6866,20 @@
             <summary>Only retrieve videos in standard definition.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoDurationEnum">
-            <summary>The videoDuration parameter filters video search results based on their duration.</summary>
+            <summary>The videoDuration parameter filters video search results based on their duration. If you
+            specify a value for this parameter, you must also set the type parameter's value to video.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoDurationEnum.Any">
             <summary>Do not filter video search results based on their duration. This is the default
             value.</summary>
         </member>
-        <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoDurationEnum.Long">
+        <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoDurationEnum.Long__">
             <summary>Only include videos longer than 20 minutes.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoDurationEnum.Medium">
             <summary>Only include videos that are between four and 20 minutes long (inclusive).</summary>
         </member>
-        <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoDurationEnum.Short">
+        <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoDurationEnum.Short__">
             <summary>Only include videos that are less than four minutes long.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.SearchResource.ListRequest.SafeSearchEnum">
@@ -6762,12 +6901,13 @@
         </member>
         <member name="T:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoEmbeddableEnum">
             <summary>The videoEmbeddable parameter lets you to restrict a search to only videos that can be embedded
-            into a webpage.</summary>
+            into a webpage. If you specify a value for this parameter, you must also set the type parameter's value
+            to video.</summary>
         </member>
         <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoEmbeddableEnum.Any">
             <summary>Return all videos, embeddable or not.</summary>
         </member>
-        <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoEmbeddableEnum.True">
+        <member name="F:Google.Apis.YouTube.v3.SearchResource.ListRequest.VideoEmbeddableEnum.True__">
             <summary>Only retrieve embeddable videos.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.SearchResource.ListRequest.OrderEnum">
@@ -6809,18 +6949,15 @@
             subscription resource, the id property specifies the YouTube subscription ID.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.SubscriptionsResource.Insert(Google.Apis.YouTube.v3.Data.Subscription,System.String)">
-             <summary>Adds a subscription for the authenticated user's channel.</summary>
-             <param name="body">The body of the request.</param>
-             <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are snippet and contentDetails.</param>
+            <summary>Adds a subscription for the authenticated user's channel.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
+            write operation will set as well as the properties that the API response will include.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.SubscriptionsResource.List(System.String)">
              <summary>Returns subscription resources that match the API request criteria.</summary>
              <param name="part">The part parameter specifies a comma-separated list of one or more subscription resource
-             properties that the API response will include. The part names that you can include in the parameter value are id,
-             snippet, and contentDetails.
+             properties that the API response will include.
             
              If the parameter identifies a property that contains child properties, the child properties will be included in the
              response. For example, in a subscription resource, the snippet property contains other properties, such as a display
@@ -6862,10 +6999,8 @@
             <summary>Initializes Insert parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SubscriptionsResource.InsertRequest.Part">
-             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
-             write operation will set as well as the properties that the API response will include.
-            
-             The part names that you can include in the parameter value are snippet and contentDetails.</summary>
+            <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
+            write operation will set as well as the properties that the API response will include.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.SubscriptionsResource.InsertRequest.Body">
             <summary>Gets or sets the body of this request.</summary>
@@ -6890,8 +7025,7 @@
         </member>
         <member name="P:Google.Apis.YouTube.v3.SubscriptionsResource.ListRequest.Part">
              <summary>The part parameter specifies a comma-separated list of one or more subscription resource
-             properties that the API response will include. The part names that you can include in the parameter
-             value are id, snippet, and contentDetails.
+             properties that the API response will include.
             
              If the parameter identifies a property that contains child properties, the child properties will be
              included in the response. For example, in a subscription resource, the snippet property contains other
@@ -7020,12 +7154,14 @@
             being provided.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.ThumbnailsResource.SetRequest.OnBehalfOfContentOwner">
-            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf
-            of the content owner specified in the parameter value. This parameter is intended for YouTube content
-            partners that own and manage many different YouTube channels. It allows content owners to authenticate
-            once and get access to all their video and channel data, without having to provide authentication
-            credentials for each individual channel. The actual CMS account that the user authenticates with needs
-            to be linked to the specified YouTube content owner.</summary>
+             <summary>Note: This parameter is intended exclusively for YouTube content partners.
+            
+             The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a
+             YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This
+             parameter is intended for YouTube content partners that own and manage many different YouTube channels.
+             It allows content owners to authenticate once and get access to all their video and channel data,
+             without having to provide authentication credentials for each individual channel. The actual CMS account
+             that the user authenticates with must be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.ThumbnailsResource.SetRequest.MethodName">
             <summary>Gets the method name.</summary>
@@ -7074,12 +7210,14 @@
             being provided.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.ThumbnailsResource.SetMediaUpload.OnBehalfOfContentOwner">
-            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf
-            of the content owner specified in the parameter value. This parameter is intended for YouTube content
-            partners that own and manage many different YouTube channels. It allows content owners to authenticate
-            once and get access to all their video and channel data, without having to provide authentication
-            credentials for each individual channel. The actual CMS account that the user authenticates with needs
-            to be linked to the specified YouTube content owner.</summary>
+             <summary>Note: This parameter is intended exclusively for YouTube content partners.
+            
+             The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a
+             YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This
+             parameter is intended for YouTube content partners that own and manage many different YouTube channels.
+             It allows content owners to authenticate once and get access to all their video and channel data,
+             without having to provide authentication credentials for each individual channel. The actual CMS account
+             that the user authenticates with must be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.ThumbnailsResource.SetMediaUpload.AltEnum">
             <summary>Data format for the response.</summary>
@@ -7139,8 +7277,8 @@
         </member>
         <member name="M:Google.Apis.YouTube.v3.VideoCategoriesResource.List(System.String)">
             <summary>Returns a list of categories that can be associated with YouTube videos.</summary>
-            <param name="part">The part parameter specifies the videoCategory resource parts that the API response will include.
-            Supported values are id and snippet.</param>
+            <param name="part">The part parameter specifies the videoCategory resource properties that the API response will
+            include. Set the parameter value to snippet.</param>
         </member>
         <member name="T:Google.Apis.YouTube.v3.VideoCategoriesResource.ListRequest">
             <summary>Returns a list of categories that can be associated with YouTube videos.</summary>
@@ -7152,8 +7290,8 @@
             <summary>Initializes List parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.VideoCategoriesResource.ListRequest.Part">
-            <summary>The part parameter specifies the videoCategory resource parts that the API response will
-            include. Supported values are id and snippet.</summary>
+            <summary>The part parameter specifies the videoCategory resource properties that the API response will
+            include. Set the parameter value to snippet.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.VideoCategoriesResource.ListRequest.RegionCode">
             <summary>The regionCode parameter instructs the API to return the list of video categories available in
@@ -7203,33 +7341,27 @@
              <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
              write operation will set as well as the properties that the API response will include.
             
-             The part names that you can include in the parameter value are snippet, contentDetails, fileDetails,
-             liveStreamingDetails, localizations, player, processingDetails, recordingDetails, statistics, status, suggestions,
-             and topicDetails. However, not all of those parts contain properties that can be set when setting or updating a
-             video's metadata. For example, the statistics object encapsulates statistics that YouTube calculates for a video and
-             does not contain values that you can set or modify. If the parameter value specifies a part that does not contain
-             mutable values, that part will still be included in the API response.</param>
+             Note that not all parts contain properties that can be set when inserting or updating a video. For example, the
+             statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you
+             can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will
+             still be included in the API response.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.VideosResource.Insert(Google.Apis.YouTube.v3.Data.Video,System.String,System.IO.Stream,System.String)">
              <summary>Uploads a video to YouTube and optionally sets the video's metadata.</summary>/// <param name="body">The body of the request.</param>
              <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
              write operation will set as well as the properties that the API response will include.
             
-             The part names that you can include in the parameter value are snippet, contentDetails, fileDetails,
-             liveStreamingDetails, localizations, player, processingDetails, recordingDetails, statistics, status, suggestions,
-             and topicDetails. However, not all of those parts contain properties that can be set when setting or updating a
-             video's metadata. For example, the statistics object encapsulates statistics that YouTube calculates for a video and
-             does not contain values that you can set or modify. If the parameter value specifies a part that does not contain
-             mutable values, that part will still be included in the API response.</param>
+             Note that not all parts contain properties that can be set when inserting or updating a video. For example, the
+             statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you
+             can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will
+             still be included in the API response.</param>
              <param name="stream">The stream to upload.</param>
              <param name="contentType">The content type of the stream to upload.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.VideosResource.List(System.String)">
              <summary>Returns a list of videos that match the API request parameters.</summary>
              <param name="part">The part parameter specifies a comma-separated list of one or more video resource properties that
-             the API response will include. The part names that you can include in the parameter value are id, snippet,
-             contentDetails, fileDetails, liveStreamingDetails, localizations, player, processingDetails, recordingDetails,
-             statistics, status, suggestions, and topicDetails.
+             the API response will include.
             
              If the parameter identifies a property that contains child properties, the child properties will be included in the
              response. For example, in a video resource, the snippet property contains the channelId, title, description, tags,
@@ -7252,10 +7384,6 @@
              <param name="part">The part parameter serves two purposes in this operation. It identifies the properties that the
              write operation will set as well as the properties that the API response will include.
             
-             The part names that you can include in the parameter value are snippet, contentDetails, fileDetails,
-             liveStreamingDetails, localizations, player, processingDetails, recordingDetails, statistics, status, suggestions,
-             and topicDetails.
-            
              Note that this method will override the existing values for all of the mutable properties that are contained in any
              parts that the parameter value specifies. For example, a video's privacy setting is contained in the status part. As
              such, if your request is updating a private video, and the request's part parameter value includes the status part,
@@ -7263,10 +7391,10 @@
              not specify a value, the existing privacy setting will be removed and the video will revert to the default privacy
              setting.
             
-             In addition, not all of those parts contain properties that can be set when setting or updating a video's metadata.
-             For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain
-             values that you can set or modify. If the parameter value specifies a part that does not contain mutable values,
-             that part will still be included in the API response.</param>
+             In addition, not all parts contain properties that can be set when inserting or updating a video. For example, the
+             statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you
+             can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will
+             still be included in the API response.</param>
         </member>
         <member name="T:Google.Apis.YouTube.v3.VideosResource.DeleteRequest">
             <summary>Deletes a YouTube video.</summary>
@@ -7349,13 +7477,10 @@
              <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
              write operation will set as well as the properties that the API response will include.
             
-             The part names that you can include in the parameter value are snippet, contentDetails, fileDetails,
-             liveStreamingDetails, localizations, player, processingDetails, recordingDetails, statistics, status,
-             suggestions, and topicDetails. However, not all of those parts contain properties that can be set when
-             setting or updating a video's metadata. For example, the statistics object encapsulates statistics that
-             YouTube calculates for a video and does not contain values that you can set or modify. If the parameter
-             value specifies a part that does not contain mutable values, that part will still be included in the API
-             response.</summary>
+             Note that not all parts contain properties that can be set when inserting or updating a video. For
+             example, the statistics object encapsulates statistics that YouTube calculates for a video and does not
+             contain values that you can set or modify. If the parameter value specifies a part that does not contain
+             mutable values, that part will still be included in the API response.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.VideosResource.InsertRequest.OnBehalfOfContentOwner">
              <summary>Note: This parameter is intended exclusively for YouTube content partners.
@@ -7389,8 +7514,11 @@
              channel.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.VideosResource.InsertRequest.NotifySubscribers">
-            <summary>The notifySubscribers parameter indicates whether YouTube should send notification to
-            subscribers about the inserted video.</summary>
+            <summary>The notifySubscribers parameter indicates whether YouTube should send a notification about the
+            new video to users who subscribe to the video's channel. A parameter value of True indicates that
+            subscribers will be notified of newly uploaded videos. However, a channel owner who is uploading many
+            videos might prefer to set the value to False to avoid sending a notification about each new video to
+            the channel's subscribers.</summary>
             [default: true]
         </member>
         <member name="P:Google.Apis.YouTube.v3.VideosResource.InsertRequest.AutoLevels">
@@ -7446,13 +7574,10 @@
              <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
              write operation will set as well as the properties that the API response will include.
             
-             The part names that you can include in the parameter value are snippet, contentDetails, fileDetails,
-             liveStreamingDetails, localizations, player, processingDetails, recordingDetails, statistics, status,
-             suggestions, and topicDetails. However, not all of those parts contain properties that can be set when
-             setting or updating a video's metadata. For example, the statistics object encapsulates statistics that
-             YouTube calculates for a video and does not contain values that you can set or modify. If the parameter
-             value specifies a part that does not contain mutable values, that part will still be included in the API
-             response.</summary>
+             Note that not all parts contain properties that can be set when inserting or updating a video. For
+             example, the statistics object encapsulates statistics that YouTube calculates for a video and does not
+             contain values that you can set or modify. If the parameter value specifies a part that does not contain
+             mutable values, that part will still be included in the API response.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.VideosResource.InsertMediaUpload.OnBehalfOfContentOwner">
              <summary>Note: This parameter is intended exclusively for YouTube content partners.
@@ -7486,8 +7611,11 @@
              channel.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.VideosResource.InsertMediaUpload.NotifySubscribers">
-            <summary>The notifySubscribers parameter indicates whether YouTube should send notification to
-            subscribers about the inserted video.</summary>
+            <summary>The notifySubscribers parameter indicates whether YouTube should send a notification about the
+            new video to users who subscribe to the video's channel. A parameter value of True indicates that
+            subscribers will be notified of newly uploaded videos. However, a channel owner who is uploading many
+            videos might prefer to set the value to False to avoid sending a notification about each new video to
+            the channel's subscribers.</summary>
             [default: true]
         </member>
         <member name="P:Google.Apis.YouTube.v3.VideosResource.InsertMediaUpload.AutoLevels">
@@ -7511,9 +7639,7 @@
         </member>
         <member name="P:Google.Apis.YouTube.v3.VideosResource.ListRequest.Part">
              <summary>The part parameter specifies a comma-separated list of one or more video resource properties
-             that the API response will include. The part names that you can include in the parameter value are id,
-             snippet, contentDetails, fileDetails, liveStreamingDetails, localizations, player, processingDetails,
-             recordingDetails, statistics, status, suggestions, and topicDetails.
+             that the API response will include.
             
              If the parameter identifies a property that contains child properties, the child properties will be
              included in the response. For example, in a video resource, the snippet property contains the channelId,
@@ -7566,11 +7692,13 @@
              supported for use in conjunction with the id parameter.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.VideosResource.ListRequest.Hl">
-            <summary>The hl parameter instructs the API to return a localized version of the video details. If
-            localized text is nor available for the requested language, the localizations object in the API response
-            will contain the requested information in the default language instead. The parameter value is a BCP-47
-            language code. Your application can determine whether the requested localization was returned by
-            checking the value of the snippet.localized.language property in the API response.</summary>
+             <summary>The hl parameter instructs the API to retrieve localized resource metadata for a specific
+             application language that the YouTube website supports. The parameter value must be a language code
+             included in the list returned by the i18nLanguages.list method.
+            
+             If localized resource details are available in that language, the resource's snippet.localized object
+             will contain the localized values. However, if localized details are not available, the
+             snippet.localized object will contain resource details in the resource's default language.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.VideosResource.ListRequest.MyRating">
             <summary>Set this parameter's value to like or dislike to instruct the API to only return videos liked
@@ -7622,16 +7750,6 @@
         </member>
         <member name="P:Google.Apis.YouTube.v3.VideosResource.RateRequest.Rating">
             <summary>Specifies the rating to record.</summary>
-        </member>
-        <member name="P:Google.Apis.YouTube.v3.VideosResource.RateRequest.OnBehalfOfContentOwner">
-             <summary>Note: This parameter is intended exclusively for YouTube content partners.
-            
-             The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a
-             YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This
-             parameter is intended for YouTube content partners that own and manage many different YouTube channels.
-             It allows content owners to authenticate once and get access to all their video and channel data,
-             without having to provide authentication credentials for each individual channel. The CMS account that
-             the user authenticates with must be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.VideosResource.RateRequest.MethodName">
             <summary>Gets the method name.</summary>
@@ -7704,10 +7822,6 @@
              <summary>The part parameter serves two purposes in this operation. It identifies the properties that the
              write operation will set as well as the properties that the API response will include.
             
-             The part names that you can include in the parameter value are snippet, contentDetails, fileDetails,
-             liveStreamingDetails, localizations, player, processingDetails, recordingDetails, statistics, status,
-             suggestions, and topicDetails.
-            
              Note that this method will override the existing values for all of the mutable properties that are
              contained in any parts that the parameter value specifies. For example, a video's privacy setting is
              contained in the status part. As such, if your request is updating a private video, and the request's
@@ -7715,10 +7829,10 @@
              value the request body specifies. If the request body does not specify a value, the existing privacy
              setting will be removed and the video will revert to the default privacy setting.
             
-             In addition, not all of those parts contain properties that can be set when setting or updating a
-             video's metadata. For example, the statistics object encapsulates statistics that YouTube calculates for
-             a video and does not contain values that you can set or modify. If the parameter value specifies a part
-             that does not contain mutable values, that part will still be included in the API response.</summary>
+             In addition, not all parts contain properties that can be set when inserting or updating a video. For
+             example, the statistics object encapsulates statistics that YouTube calculates for a video and does not
+             contain values that you can set or modify. If the parameter value specifies a part that does not contain
+             mutable values, that part will still be included in the API response.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.VideosResource.UpdateRequest.OnBehalfOfContentOwner">
              <summary>Note: This parameter is intended exclusively for YouTube content partners.
@@ -7754,19 +7868,19 @@
         <member name="M:Google.Apis.YouTube.v3.WatermarksResource.Set(Google.Apis.YouTube.v3.Data.InvideoBranding,System.String)">
             <summary>Uploads a watermark image to YouTube and sets it for a channel.</summary>
             <param name="body">The body of the request.</param>
-            <param name="channelId">The channelId parameter specifies a YouTube channel ID for which the watermark is being
+            <param name="channelId">The channelId parameter specifies the YouTube channel ID for which the watermark is being
             provided.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.WatermarksResource.Set(Google.Apis.YouTube.v3.Data.InvideoBranding,System.String,System.IO.Stream,System.String)">
             <summary>Uploads a watermark image to YouTube and sets it for a channel.</summary>/// <param name="body">The body of the request.</param>
-            <param name="channelId">The channelId parameter specifies a YouTube channel ID for which the watermark is being
+            <param name="channelId">The channelId parameter specifies the YouTube channel ID for which the watermark is being
             provided.</param>
             <param name="stream">The stream to upload.</param>
             <param name="contentType">The content type of the stream to upload.</param>
         </member>
         <member name="M:Google.Apis.YouTube.v3.WatermarksResource.Unset(System.String)">
-            <summary>Deletes a watermark.</summary>
-            <param name="channelId">The channelId parameter specifies a YouTube channel ID for which the watermark is being
+            <summary>Deletes a channel's watermark image.</summary>
+            <param name="channelId">The channelId parameter specifies the YouTube channel ID for which the watermark is being
             unset.</param>
         </member>
         <member name="T:Google.Apis.YouTube.v3.WatermarksResource.SetRequest">
@@ -7782,16 +7896,18 @@
             <summary>Initializes Set parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.WatermarksResource.SetRequest.ChannelId">
-            <summary>The channelId parameter specifies a YouTube channel ID for which the watermark is being
+            <summary>The channelId parameter specifies the YouTube channel ID for which the watermark is being
             provided.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.WatermarksResource.SetRequest.OnBehalfOfContentOwner">
-            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf
-            of the content owner specified in the parameter value. This parameter is intended for YouTube content
-            partners that own and manage many different YouTube channels. It allows content owners to authenticate
-            once and get access to all their video and channel data, without having to provide authentication
-            credentials for each individual channel. The actual CMS account that the user authenticates with needs
-            to be linked to the specified YouTube content owner.</summary>
+             <summary>Note: This parameter is intended exclusively for YouTube content partners.
+            
+             The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a
+             YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This
+             parameter is intended for YouTube content partners that own and manage many different YouTube channels.
+             It allows content owners to authenticate once and get access to all their video and channel data,
+             without having to provide authentication credentials for each individual channel. The CMS account that
+             the user authenticates with must be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.WatermarksResource.SetRequest.Body">
             <summary>Gets or sets the body of this request.</summary>
@@ -7839,16 +7955,18 @@
             limits.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.WatermarksResource.SetMediaUpload.ChannelId">
-            <summary>The channelId parameter specifies a YouTube channel ID for which the watermark is being
+            <summary>The channelId parameter specifies the YouTube channel ID for which the watermark is being
             provided.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.WatermarksResource.SetMediaUpload.OnBehalfOfContentOwner">
-            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf
-            of the content owner specified in the parameter value. This parameter is intended for YouTube content
-            partners that own and manage many different YouTube channels. It allows content owners to authenticate
-            once and get access to all their video and channel data, without having to provide authentication
-            credentials for each individual channel. The actual CMS account that the user authenticates with needs
-            to be linked to the specified YouTube content owner.</summary>
+             <summary>Note: This parameter is intended exclusively for YouTube content partners.
+            
+             The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a
+             YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This
+             parameter is intended for YouTube content partners that own and manage many different YouTube channels.
+             It allows content owners to authenticate once and get access to all their video and channel data,
+             without having to provide authentication credentials for each individual channel. The CMS account that
+             the user authenticates with must be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.WatermarksResource.SetMediaUpload.AltEnum">
             <summary>Data format for the response.</summary>
@@ -7857,7 +7975,7 @@
             <summary>Responses with Content-Type of application/json</summary>
         </member>
         <member name="T:Google.Apis.YouTube.v3.WatermarksResource.UnsetRequest">
-            <summary>Deletes a watermark.</summary>
+            <summary>Deletes a channel's watermark image.</summary>
         </member>
         <member name="M:Google.Apis.YouTube.v3.WatermarksResource.UnsetRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
             <summary>Constructs a new Unset request.</summary>
@@ -7866,16 +7984,18 @@
             <summary>Initializes Unset parameter list.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.WatermarksResource.UnsetRequest.ChannelId">
-            <summary>The channelId parameter specifies a YouTube channel ID for which the watermark is being
+            <summary>The channelId parameter specifies the YouTube channel ID for which the watermark is being
             unset.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.WatermarksResource.UnsetRequest.OnBehalfOfContentOwner">
-            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf
-            of the content owner specified in the parameter value. This parameter is intended for YouTube content
-            partners that own and manage many different YouTube channels. It allows content owners to authenticate
-            once and get access to all their video and channel data, without having to provide authentication
-            credentials for each individual channel. The actual CMS account that the user authenticates with needs
-            to be linked to the specified YouTube content owner.</summary>
+             <summary>Note: This parameter is intended exclusively for YouTube content partners.
+            
+             The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a
+             YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This
+             parameter is intended for YouTube content partners that own and manage many different YouTube channels.
+             It allows content owners to authenticate once and get access to all their video and channel data,
+             without having to provide authentication credentials for each individual channel. The CMS account that
+             the user authenticates with must be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.YouTube.v3.WatermarksResource.UnsetRequest.MethodName">
             <summary>Gets the method name.</summary>

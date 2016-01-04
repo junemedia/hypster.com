@@ -1,0 +1,140 @@
+﻿@model List<hypster_tv_DAL.MusicGenre> 
+@{
+    Layout = null;
+}
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($(window).width() > 1024) {
+            var margin_left = $(window).width() - 1024 - 30;
+            var cont_width = 1024 + 30 + (margin_left / 2) - 15;
+            $("#listenSlide2_header").css("width", (cont_width - 750 - 20) + "px");
+        }
+        if ($(window).width() > 1170) { $("#ChngRadioSt").show("slow"); } else { $("#ChngRadioSt").css("display", "none"); }
+    });
+
+    $(window).resize(function () {
+        if ($(window).width() > 1024) {
+            var margin_left = $(window).width() - 1024 - 30;
+            var cont_width = 1024 + 30 + (margin_left / 2) - 15;
+            $("#listenSlide2_header").css("width", (cont_width - 750 - 20) + "px");
+        }
+        if ($(window).width() > 1170) { $("#ChngRadioSt").show("slow"); } else { $("#ChngRadioSt").css("display", "none"); }
+    });
+</script>
+
+
+
+
+
+
+<div class="FeaturedVideoCont">
+            
+        <div id="listenSlide2_header">
+            <a class="FeaturedHeaderBack" href="/listen/radio">
+                <div>Listen Radio</div>
+            </a>
+            <div class="FeaturedSubHeader">
+                &nbsp;play music for free, choose genre...
+            </div>
+        </div>
+
+
+
+        <div class="FeaturedAdCont">
+            <div id="TopAdd1"></div>
+            <!-- 06_25 -->
+            
+        </div>
+
+</div>
+
+
+
+
+
+<div id="ChngRadioSt" onclick="change_radio_stations()"></div>
+
+
+
+
+
+<div class="FeaturedVideoInner">
+        @{ int counter = 1;}
+        @foreach (var item in Model)
+        {   
+            <a class="VideoThumbBox" onclick="OpenPlayer('media_type=Radio&Genre=@HttpUtility.UrlEncode(item.GenreName.Replace("&", "_and_"))')">
+                <div class="VideoThumbCont" id="RdGenre_@item.Genre_ID">
+                    <img alt="" src="/imgs/radio/genres/@(item.GenreName.Replace("&", "_and_")).jpg" />
+                </div>
+                <div class="videoBoxHeader">@item.GenreName</div>
+            </a>
+            
+            if (counter == 8)
+            {
+                break;
+            }
+            counter += 1;
+        }
+</div>
+
+
+
+<div style=" float:left; width:102%; height:39px; line-height:39px; overflow:hidden; background-color:#3d4345; border-bottom:1px solid #2c3133; border-right:1px solid #2c3133; border-radius:3px; margin:20px 0 0 -2%; font-size:18px; color:#FCF088;">
+    
+    <div style=" float:right; margin-right:5px; margin-left:5px;">
+        <input type="text" id="txtSearchString_JR" name="txtSearchString_JR" onKeyUp="SearchString_KeyUp(event)" value=" Enter Artist, Song or Genre"  onfocus="if(this.value == ' Enter Artist, Song or Genre') this.value = '';" onblur="if(this.value == '') this.value = ' Enter Artist, Song or Genre';" style="width:250px; height:29px; float:left; margin:4px 0 0 0; border-radius:3px; border:none; font-size:14px;" />
+        <div id="btnSearch_JR" onclick="OpenPlayer('media_type=Radio&Genre=' + $('#txtSearchString_JR').val().replace(' ','+') + '&rtg=r1' );" style="float:left; width:70px; height:32px; line-height:31px; margin:4px 0 0 7px; background-color:#1d2223; border-radius:3px; cursor:pointer; text-align:center;">Listen</div>
+    </div>
+    
+    
+
+    <div class="radioCustStN" onclick="OpenPlayer('media_type=Radio&Genre=Bruno+Mars&rtg=r1');">
+        Bruno Mars
+    </div>
+
+    <div class="radioCustStN" onclick="OpenPlayer('media_type=Radio&Genre=Lana+Del+Rey&rtg=r1');">
+        Lana Del Rey
+    </div>
+
+    <div class="radioCustStN" onclick="OpenPlayer('media_type=Radio&Genre=Ellie+Goulding&rtg=r1');">
+        Ellie Goulding
+    </div>
+
+    <div class="radioCustStN" onclick="OpenPlayer('media_type=Radio&Genre=Justin+Timberlake&rtg=r1');">
+        Justin Timberlake
+    </div>
+
+    <div class="radioCustStN" onclick="OpenPlayer('media_type=Radio&Genre=Lady+Gaga&rtg=r1');">
+        Lady Gaga
+    </div>
+
+    <div class="radioCustStN" onclick="OpenPlayer('media_type=Radio&Genre=Eminem&rtg=r1');">
+        Eminem
+    </div>
+
+    <div class="radioCustStN" onclick="OpenPlayer('media_type=Radio&Genre=Miley+Cyrus&rtg=r1');">
+        Miley Cyrus
+    </div>
+
+    <div class="radioCustStN" onclick="OpenPlayer('media_type=Radio&Genre=Linkin+Park&rtg=r1');">
+        Linkin Park
+    </div>
+
+    <div class="radioCustStN" onclick="OpenPlayer('media_type=Radio&Genre=Jay+Z&rtg=r1');">
+        Jay Z
+    </div>
+
+    <div class="radioCustStN" onclick="OpenPlayer('media_type=Radio&Genre=Katy+Perry&rtg=r1');">
+        Katy Perry
+    </div>
+
+
+    <div style=" float:right;">
+        &nbsp;Listen to ...
+    </div>
+
+
+</div>

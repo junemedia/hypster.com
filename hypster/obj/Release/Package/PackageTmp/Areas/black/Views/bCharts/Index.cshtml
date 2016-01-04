@@ -1,0 +1,215 @@
+﻿@model List<hypster_tv_DAL.Chart>
+@{
+    Layout = null;
+
+    int i_counter = 1;
+}
+
+
+
+<div class="cir_1"> 
+    
+    <div onclick="clickBack()" style=" float:left; width:100%; margin:100px 0 0 90px; cursor:pointer; ">
+        << BACK
+    </div>
+
+</div>
+
+
+
+<div class="cir_2">
+
+    <div id="msgBox1">
+
+        <div>
+            There are <span style=" color:#CC0000; ">@Model.Count</span> charts available.
+        </div>
+
+
+        <br />
+
+
+        @foreach (var item in Model)
+        {
+            <div class="mnuItm" id="menu_@(i_counter)" data-plstid="@item.Chart_GUID" data-plstname="@item.Chart_Name.Replace("\'","")" onclick="LoadPlaylist('@item.Chart_GUID')">
+                <span style=" color:#CC0000; ">@i_counter</span> @item.Chart_Name
+            </div>
+    
+            i_counter += 1;
+        }
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    if (is_speech_sound == 1) {
+        window.speechSynthesis.cancel();
+        var msg = new SpeechSynthesisUtterance('There are @Model.Count charts available.');
+        window.speechSynthesis.speak(msg);
+    }
+</script>
+
+
+<script type="text/javascript">
+
+    var CURR_ACTIVE_MENU = 0;
+    var MENU_COUNT = @Model.Count;
+
+
+    function HandleKeyAction(e) {
+
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+        }
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+
+
+        //ESC
+        if (KEY_CODE == 27) {
+            clickBack();
+        }
+
+
+
+        //enter
+        if (KEY_CODE == 13) {
+            
+            //alert($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstid"));
+            
+            
+            //load current playlist
+            //--------------------------------------------------------------------
+            LoadPlaylist($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstid"));
+            //--------------------------------------------------------------------
+
+        }
+
+
+
+
+        //down
+        if (KEY_CODE == 40) {
+            //move menu down
+
+            CURR_ACTIVE_MENU += 1;
+            if (CURR_ACTIVE_MENU > MENU_COUNT) {
+                CURR_ACTIVE_MENU = MENU_COUNT;
+            }
+
+
+            if (is_speech_sound == 1) {
+                var curr_msg = new SpeechSynthesisUtterance($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname"));
+                window.speechSynthesis.speak(curr_msg);
+            }
+
+
+            $(".mnuItm").css("background", "none");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#DEDEDE");
+        }
+
+
+        //up
+        if (KEY_CODE == 38) {
+            //move menu up
+
+            CURR_ACTIVE_MENU -= 1;
+            if (CURR_ACTIVE_MENU <= 0) {
+                CURR_ACTIVE_MENU = 1;
+            }
+
+
+            if (is_speech_sound == 1) {
+                var curr_msg = new SpeechSynthesisUtterance($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname"));
+                window.speechSynthesis.speak(curr_msg);
+            }
+
+
+            $(".mnuItm").css("background", "none");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#DEDEDE");
+        }
+
+
+
+
+
+        if (KEY_CODE > 48 && KEY_CODE < 58) {
+            
+            var PLST_NUM = KEY_CODE - 48;
+
+            //load current playlist
+            //--------------------------------------------------------------------
+            $.ajax({
+                type:"POST",
+                url:"/black/bListen/chart/" + $("#menu_" + PLST_NUM).attr("data-plstid") + "?ba=" + encodeURI("/black/bCharts"),
+                async:true,
+                success: function(data){
+                    $("#bContHolder1").html(data);
+                }
+            });
+            //--------------------------------------------------------------------
+
+        }
+
+
+    }
+
+
+    
+
+    function clickBack(){
+
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/black/bhome/step_2",
+            async: true,
+            success: function (data) {
+                $("#bContHolder1").html(data);
+            }
+        });
+    }
+
+
+    function LoadPlaylist(plst_id)
+    {
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+        }
+
+        $.ajax({
+            type:"POST",
+            url:"/black/bListen/chart/" + plst_id + "?ba=" + encodeURI("/black/bCharts"),
+            async:true,
+            success: function(data){
+                $("#bContHolder1").html(data);
+            }
+        });
+    }
+
+
+
+</script>

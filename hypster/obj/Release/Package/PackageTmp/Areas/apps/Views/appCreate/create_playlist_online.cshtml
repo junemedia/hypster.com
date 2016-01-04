@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "Create Free Playlist | Hypster - free music online - player for tumblr";
+    ViewBag.Desc = "Create free playlists, and listen commercial free music.";
+    Layout = "~/Areas/apps/Views/Shared/_Layout_Apps.cshtml";
+}
+
+
+
+
+
+
+
+
+<div style=" float:left; width:100%; margin:20px 0 20px 0;">
+            
+            @if (User.Identity.IsAuthenticated == false)
+            {
+                <div onclick="window.location='/account/Register';" style="float:right; width:220px; height:40px; line-height:40px; margin-top:10px;  border-radius:2px; cursor:pointer; text-align:center; font-size:21px; color:#d4ae52; font-weight:300; ">
+                    Register
+                </div>
+                
+                <div onclick="window.location='/account/SignIn?ReturnUrl=%2fcreate%2fplaylist';" style="float:right; width:790px; height:40px; line-height:40px; margin-top:10px; border-radius:2px; cursor:pointer; text-align:center; font-size:21px; color:#d4ae52; font-weight:300; margin-right:10px; ">
+                    Login to create playlist
+                </div>
+            }
+
+</div>
+
+
+
+
+
+
+
+
+<div style=" float:left; width:100%; margin:20px 0 20px 0;">
+        
+
+        <div style=" float:left; width:100%; color:#d4ae52; border-radius:2px;">
+            <h2 style=" font-weight:300;">&nbsp;START CREATING AN ONLINE PLAYLIST BY SEARCHING FOR SONGS</h2>
+        </div>
+        <div style=" float:left; width:100%; margin-top:15px; margin-bottom:15px;">
+            <img alt="" src="/imgs/pr_tour/playlists/1.jpg" style=" float:left; border-radius:3px; " />
+        </div>
+
+
+        <div style=" float:left; width:100%; color:#d4ae52;">
+            <h2 style=" font-weight:300;">OR</h2>
+        </div>
+        <div style=" float:left; width:100%; color:#d4ae52; border-radius:2px;">
+            <h2 style=" font-weight:300;">&nbsp;ADD SONGS BY LISTENING TO OTHER PLAYLISTS, CHARTS OR FESTIVALS</h2>
+        </div>
+        <div style=" float:left; width:100%; margin-top:15px; margin-bottom:15px;">
+            <img alt="" src="/imgs/pr_tour/playlists/2.jpg" style=" float:left; border-radius:3px; " />
+        </div>
+
+
+
+        
+        <div style=" float:left; width:100%; color:#d4ae52; border-radius:2px;">
+            <h2 style=" font-weight:300;">&nbsp;EASILY MANAGE YOUR PLAYLISTS (EDIT, DELETE, ORDER, SHARE)</h2>
+        </div>
+        <div style=" float:left; width:100%; margin-top:15px; margin-bottom:15px;">
+            <img alt="" src="/imgs/pr_tour/playlists/4.jpg" style=" float:left; border-radius:3px; " />
+        </div>
+
+
+
+
+        <div style=" float:left; width:100%; color:#d4ae52; border-radius:2px; margin-top:17px; padding:4px;">
+                
+            <div class=" float:left; margin-bottom:10px; ">
+                <div style=" float:left; width:1024px; height:23px; overflow:hidden; ">
+                    <div class="pw-widget pw-counter-horizontal">
+	                    <a class="pw-button-tumblr pw-look-native"></a>
+	                    <a class="pw-button-blogger pw-look-native"></a>
+	                    <a class="pw-button-facebook pw-look-native"></a>
+	                    <a class="pw-button-twitter pw-look-native"></a>
+                        <a class="pw-button-pinterest pw-look-native"></a>
+                        <a class="pw-button-stumbleupon pw-look-native"></a>
+                        <a class="pw-button-linkedin pw-look-native"></a>
+	                    <a class="pw-button-googleplus pw-look-native"></a>
+	                    <a class="pw-button-post-share"></a>
+                    </div>
+                    <script src="http://i.po.st/static/v3/post-widget.js#publisherKey=caq8eudavn7j6erou9n3" type="text/javascript"></script>
+                </div>
+            </div>
+
+        </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div style=" float:left; width:100%; margin:20px 0 20px 0;">
+            
+        <div style=" width:728px; margin:auto;">
+              @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+        </div>
+           
+</div>

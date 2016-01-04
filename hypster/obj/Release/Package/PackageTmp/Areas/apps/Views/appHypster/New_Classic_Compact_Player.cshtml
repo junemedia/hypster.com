@@ -1,0 +1,274 @@
+﻿@model hypster.ViewModels.GetPlayerViewModel
+@{
+    ViewBag.Title = "New Classic Compact Player";
+    ViewBag.Desc = "get new player for Tumblr code";
+    Layout = "~/Areas/apps/Views/Shared/_Layout_Apps.cshtml";
+}
+<script type="text/javascript" src="/scripts/jscolor/jscolor.js"></script>
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        refreshPlayer();
+    });
+</script>
+
+
+
+
+
+
+<div class="boxContLeft boxContRightTop">
+    <div class="slideLeft" style=" min-height:95px; background-color:#949a9c; ">
+        
+            <div class="NPFT_Head" >
+                       
+                <div style=" float:left; width:100%; margin-top:5px;">
+                    <div style="float:left; width:100%; margin-top:0px; color:#FCF088; font-family:'Lato', sans-serif; font-weight:bold; font-size:24px;">
+                        Classic Player Compact
+                    </div>
+                    <div style=" float:left; width:100%; color:#eeeeee; font-family:'Lato', sans-serif; font-size:18px;">
+                        This player can be used on profile pages like Fubar, Vampirefreaks, Myboomerplace or other website who allows to place basic html.<br />
+                        Also it can be used on blogs or websites.<br />
+                    </div>
+                </div>
+
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="boxContRight">
+<div id="listenSlide2" class="slideRight" style=" min-height:400px; ">
+    
+    <div class="NPFT_ContHolder" style=" min-height:400px;">
+
+
+
+                <div class="GetCodeBtn"><h2>Get Code</h2></div>
+                <div class="MoreSkinsBtn" onclick="window.location='/m/mcreate/player';"><h2>More Skins</h2></div>
+
+
+
+
+
+    
+                <div id="CPL_Tab2">
+        
+                    
+                    <div style=" float:left; width:98%; height:15px; line-height:13px; padding:1%; margin-bottom:13px; background-color:#FCF088; color:#232323; font-size:17px; border-radius:3px;">
+                        Hypster Player is in Beta mode. Please submit your comments <a href='/m/mhypster/Contact_Us' style=" color:#000000; font-weight:bold;">HERE</a>.
+                    </div>
+
+
+                
+                    <div id="SampleSettingsHolder">
+
+                    
+                            <div class="HeaderCompText">
+                                Player Settings:
+                            </div>
+
+
+
+               
+
+                            <div class="SettingItm">
+                                Playlist: 
+                                <select id="hypPlayer_Playlist_ID" name="hypPlayer_PlaylistID" onchange="refreshPlayer();"> 
+                                    @foreach (var item in Model.playlists_list)
+                                    {
+                                        <option value="@item.id">@item.name</option>
+                                    }
+                                </select>
+                            </div>
+        
+
+                            <div class="SettingItm">
+                                Autostart: <input type="checkbox" checked="checked" id="hypPlayer_Autostart" name="hypPlayer_Autostart" onclick="refreshPlayer()" />
+                            </div>
+        
+
+                            <div class="SettingItm">
+                                Shuffle Playback: <input type="checkbox" checked="checked" id="hypPlayer_ShufflePlayback" name="hypPlayer_ShufflePlayback" onclick="refreshPlayer()" />
+                            </div>
+
+
+
+                            <div class="SettingItm">
+                                Background:&nbsp;
+                                <input id="hf_color_bg" name="hf_color_bg" class="color" onchange="refreshPlayer()" style=" width:52px; height:23px; border:none; border-radius:2px;" value="313131" />
+                            </div>
+
+                            <div class="SettingItm">
+                                Song background:&nbsp;
+                                <input id="hf_color_songbg" name="hf_color_songbg" class="color" onchange="refreshPlayer()" style=" width:52px; height:23px; border:none; border-radius:2px;" value="656565" />
+                            </div>
+
+                            <div class="SettingItm">
+                                Song clicked:&nbsp;
+                                <input id="hf_color_song_clicked" name="hf_color_song_clicked" class="color" onchange="refreshPlayer()" style=" width:52px; height:23px; border:none; border-radius:2px;" value="757575" />
+                            </div>
+
+                            <div class="SettingItm">
+                                Buttons color:&nbsp;
+                                <input id="hf_color_btns" name="hf_color_btns" class="color" onchange="refreshPlayer()" style=" width:52px; height:23px; border:none; border-radius:2px;" value="CDCDCD" />
+                            </div>
+
+                            <div class="SettingItm">
+                                Text color:&nbsp;
+                                <input id="hf_color_text" name="hf_color_text" class="color" onchange="refreshPlayer()" style=" width:52px; height:23px; border:none; border-radius:2px;" value="CDCDCD" />
+                            </div>
+
+                    </div>
+        
+
+
+
+                    <div id="SampleContHolder" style=" min-height:500px; text-align:center;">
+                            
+                            <h2 style=" margin:5px 0 5px 0;">Player Preview</h2>
+
+                            <div style="width:100%;">
+                                Please Note: Skipped songs are due to content owner's lack of meeting YouTube Terms and Conditions.<br />
+                                <br />
+                                <div id="playerPreview1">
+                                </div>
+                           </div>
+
+                    </div>
+
+
+
+
+
+                    <div id="captchaCont1" style=" float:left; width:100%; min-height:55px; margin-top:15px;">
+
+                        <div style=" float:left;">
+                            <img alt="Don’t forget to answer our security question" src="/imgs/reg_hint.jpg" style=" margin-top:130px; float:right;" />
+                        </div>
+
+                        @using (Ajax.BeginForm("processCaptcha", "Tumblr_Music_Player", new AjaxOptions { UpdateTargetId = "resultPrecaptcha" }))
+                        {
+                            <div style=" float:left; margin:5px 15px 0 15px;">
+                            <span></span>
+                            <!-- start SolveMedia puzzle widget -->
+                            <script type="text/javascript">
+                                var ACPuzzleOptions = {
+                                    tabindex: '0'
+                                };
+                            </script>
+                            <script type="text/javascript" src="http://api.solvemedia.com/papi/challenge.script?k=@System.Configuration.ConfigurationManager.AppSettings["SolveMediaChallengeKey"]"></script>
+                            <noscript>
+	                            <iframe height="300" width="500" frameborder="0" src="http://api.solvemedia.com/papi/challenge.noscript?k=@System.Configuration.ConfigurationManager.AppSettings["SolveMediaChallengeKey"]"></iframe><br />
+                                <textarea name="adcopy_challenge" rows="3" cols="40"></textarea>
+                                <input type="hidden" name="adcopy_response" value="manual_challenge" />
+                            </noscript>
+                            <!-- end SolveMedia puzzle widget -->
+                        </div>
+
+                            
+                        <div style=" float:left; margin:5px 15px 0 0;">
+                            <input type="submit" value="GET CODE" onclick="processCaptcha();" style=" float:left; width:200px; height:47px; line-height:47px; text-align:center; background-color:#42606e; border-radius:2px; margin:125px 0 0 15px; font-size:23px; font-weight:bold; cursor:pointer;" />
+                        </div>
+                            
+                        <div id="resultPrecaptcha"></div>
+                        }
+       
+                    </div>
+
+        
+                    <div id="SampleCodeHolder" style=" display:none; margin-top:15px; ">
+
+                            <div class="HeaderCompText">
+                                Player Code:
+                                <br /><span style=" color:#FCF088; font-size:11px;">User may paste Hypster player anywhere within "&lt;body&gt;" and "&lt;/body&gt;" tags.</span>
+                            </div>
+
+
+
+                            <textarea id="PlayerCodeArea">
+                            </textarea>
+
+
+
+                            <div class="mFollowUsCont1" style="margin-right:20px;">
+                                <div class="fuText">
+                                    Follow Us:
+                                </div>
+                                <div style=" float:left;">
+                                    <!-- AddThis Follow BEGIN -->
+                                    <div class="addthis_toolbox addthis_32x32_style addthis_default_style">
+                                    <a class="addthis_button_facebook_follow" addthis:userid="Hypster"></a>
+                                    <a class="addthis_button_twitter_follow" addthis:userid="TheRealHypster"></a>
+                                    <a class="addthis_button_tumblr_follow" addthis:userid="hypsterblog"></a>
+                                    </div>
+                                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-519140dd4b47ab7b"></script>
+                                    <!-- AddThis Follow END -->
+                                </div>
+                            </div>
+                    </div>
+
+
+
+                </div>
+
+
+
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    function refreshPlayer() {
+        var sample_code = "";
+
+        
+        var hypAutostart_var = "true";
+        if (document.getElementById("hypPlayer_Autostart").checked == false)
+            hypAutostart_var = "false";
+
+
+        var hypPlayerSort_var = "0";
+        if (document.getElementById("hypPlayer_ShufflePlayback").checked == true)
+            hypPlayerSort_var = "1";
+
+        var Playlist_ID_var = "";
+        var object = document.getElementById("hypPlayer_Playlist_ID");
+        Playlist_ID_var = object[object.selectedIndex].value;
+        
+
+
+        $("#playerPreview1").html("<embed quality=\"high\" style=\"width:250px; height:350px; visibility:visible; \" type=\"application/x-shockwave-flash\" height=\"250\" width=\"350\"  pluginspage=\"http://www.macromedia.com/go/getflashplayer\" border=\"0\" src=\"http://@System.Configuration.ConfigurationManager.AppSettings["hypsterHostName"]/flash_n/player.swf?id=@Model.curr_user.id:" + Playlist_ID_var + ":" + hypPlayerSort_var + "&autoplay=" + hypAutostart_var + "\" FlashVars=\"color_bg=0x" + $("#hf_color_bg").val() + "&color_songbg=0x" + $("#hf_color_songbg").val() + "&color_song_clicked=0x" + $("#hf_color_song_clicked").val() + "&color_btns=0x" + $("#hf_color_btns").val() + "&color_text=0x" + $("#hf_color_text").val() + "\" />");
+
+        $("#PlayerCodeArea").val("");
+        $("#PlayerCodeArea").val("<embed quality=\"high\" style=\"width:250px; height:350px; visibility:visible; \" type=\"application/x-shockwave-flash\" height=\"250\" width=\"350\"  pluginspage=\"http://www.macromedia.com/go/getflashplayer\" border=\"0\" src=\"http://@System.Configuration.ConfigurationManager.AppSettings["hypsterHostName"]/flash_n/player.swf?id=@Model.curr_user.id:" + Playlist_ID_var + ":" + hypPlayerSort_var + "&autoplay=" + hypAutostart_var + "\" FlashVars=\"color_bg=0x" + $("#hf_color_bg").val() + "&color_songbg=0x" + $("#hf_color_songbg").val() + "&color_song_clicked=0x" + $("#hf_color_song_clicked").val() + "&color_btns=0x" + $("#hf_color_btns").val() + "&color_text=0x" + $("#hf_color_text").val() + "\" />");
+        
+    }
+
+    function processCaptcha()
+    {
+        $('#SampleCodeHolder').css('display','block'); 
+        $('#captchaCont1').css('display','none');
+    }
+</script>

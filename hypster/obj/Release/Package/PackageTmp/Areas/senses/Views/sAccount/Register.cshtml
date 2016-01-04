@@ -1,0 +1,252 @@
+﻿@{
+    ViewBag.Title = "Hypster Registration - If you're using a screen reader, like JAWS, please disable native speech";
+    Layout = "/Areas/senses/Views/Shared/_srLayout.cshtml";
+}
+
+
+
+
+
+
+
+
+<div class="registerContLeft">
+    
+
+    <div id="msgBox1_register" style=" float:none; width:480px; margin:auto; color:#FFFFFF; ">
+        
+        <div style=" float:left; width:100%; ">
+            <div style=" float:right; margin:0 30px 10px 0; font-size:21px;">HYPSTER REGISTRATION</div>
+        </div>
+
+
+
+        
+        <div style=" float:left; width:100%; ">
+            <input type="text" id="txtUserName" name="txtUserName" value="" style=" float:right; width:324px; height:42px; line-height:42px; font-size:13px; margin:0 0 13px 0; border:1px solid #318E8A; background-color:Black; color:#FFFFFF; font-size:23px; " />
+            <div style=" float:right; margin:0 10px 0 0; font-size:19px;">Username</div>
+        </div>
+        
+        
+        <div style=" float:left; width:100%; ">
+            <input type="password" id="txtPassword" name="txtPassword" value="" style=" float:right; width:324px; height:42px; line-height:42px; font-size:13px; margin:0 0 13px 0; border:1px solid #318E8A; background-color:Black; color:#FFFFFF; font-size:23px; " />
+            <div style=" float:right; margin:0 10px 0 0; font-size:19px;">Password</div>
+        </div>
+
+        
+        <div style=" float:left; width:100%; ">
+            <input type="text" id="txtName" name="txtName" value="" style=" float:right; width:324px; height:42px; line-height:42px; font-size:13px; margin:0 0 13px 0; border:1px solid #318E8A; background-color:Black; color:#FFFFFF; font-size:23px; " />
+            <div style=" float:right; margin:0 10px 0 0; font-size:19px;">Name</div>
+        </div>
+        
+        
+        <div style=" float:left; width:100%; ">
+            <input type="text" id="txtEmail" name="txtEmail" value="" style=" float:right; width:324px; height:42px; line-height:42px; font-size:13px; margin:0 0 13px 0; border:1px solid #318E8A; background-color:Black; color:#FFFFFF; font-size:23px; " />
+            <div style=" float:right; margin:0 10px 0 0; font-size:19px;">Email</div>
+        </div>
+
+
+        
+        <div>
+            <div onclick="registerUser();" style=" float:right; width:230px; height:42px; line-height:42px; margin:10px 0 0 0; background-color:#000000; border:1px solid #318E8A; border-radius:3px; cursor:pointer; text-align:center; font-size:21px;">
+                Register
+            </div>
+
+            <span onclick="window.location='/senses/sAccount/Login';" style=" float:right; width:90px; height:42px; line-height:42px; margin:10px 0 0 0; border-radius:3px; cursor:pointer; text-align:center; font-size:21px;">
+                Login
+            </span>
+        </div>
+
+        <div id="msgCh1" style=" float:left; width:100%; margin:10px 0 0 0; color:#CC0000;"></div>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<div style=" float:left; width:100%; height:260px; border:1px solid #318E8A; background:url('/Areas/senses/imgs/senses_back/back_1.jpg') no-repeat center;">
+    
+    <img alt="" src="/Areas/senses/imgs/senses_ct_icon.png" style=" float:left; margin:130px 0 0 175px;" />
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#txtUserName").focus();
+
+        cancelSpeech();
+        
+
+        setTimeout(function () {
+            startSpeech('Hypster Registration. For login press TAB. Please enter your new user name and press ENTER');
+        }, 500);
+
+    });
+</script>
+
+
+
+
+<script type="text/javascript">
+
+    var CURR_STEP = 1;
+
+    function HandleKeyAction(e) {
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+
+
+
+        //ESC
+        if (KEY_CODE == 27) {
+            //need to start again
+            window.location.reload();
+            return;
+        }
+
+
+
+        if (KEY_CODE == 13) {
+
+            cancelSpeech();
+
+
+            if (CURR_STEP == 1) {
+
+                startSpeech('Your username is ' + $("#txtUserName").val() + 'Please enter your password and press ENTER');
+                
+                $("#txtPassword").focus();
+
+                
+                CURR_STEP = 2;
+                return;
+            }
+
+
+            if (CURR_STEP == 2) {
+
+                startSpeech('Please Enter your name and press ENTER.');
+                
+
+                $("#txtName").focus();
+
+                CURR_STEP = 3;
+
+
+                return;
+            }
+
+
+            if (CURR_STEP == 3) {
+
+                startSpeech('Your name is ' + $("#txtName").val() + '. Please Enter your email and press ENTER.');
+                
+                $("#txtEmail").focus();
+
+                CURR_STEP = 4;
+
+
+                return;
+            }
+
+
+
+            if (CURR_STEP == 4) {
+
+                registerUser();
+
+                return;
+            }
+
+
+
+
+            return;
+        }
+
+
+        if (KEY_CODE == 9) {
+            window.location = '/senses/sAccount/Login';
+        }
+
+
+    }
+
+
+    function registerUser() {
+
+        $("#msgCh1").html("Registering new account");
+
+        
+        startSpeechOn('Please wait a moment while I register your account.');
+
+
+
+        setTimeout(function () {
+            $.ajax({
+                type: "POST",
+                url: "/senses/sAccount/RegisterUser?username=" + encodeURI($("#txtUserName").val()) + "&password=" + encodeURI($("#txtPassword").val()) + "&name=" + encodeURI($("#txtName").val()) + "&email=" + encodeURI($("#txtEmail").val()),
+                async: true,
+                success: function (data) {
+
+                    $("#msgCh1").html(data);
+
+                    startSpeech(data);
+
+                    
+                    if (data == "This username is occupied by someone else.") {
+                        $("#txtUserName").val("");
+                        $("#txtUserName").focus();
+                        CURR_STEP = 1;
+
+                        startSpeechOn("Please enter your new user name and press ENTER.");
+                        
+                    }
+
+                    if (data == "User with following email already registered.") {
+                        $("#txtEmail").val("");
+                        $("#txtEmail").focus();
+                        CURR_STEP = 4;
+
+                        startSpeechOn("Please Enter your email and press ENTER.");
+                        
+                    }
+
+                    if (data == "Thanks you for registering.") {
+                        window.location = '/senses/sStart';
+                    }
+
+                }
+            });
+        }, 4000);
+        
+    }
+</script>

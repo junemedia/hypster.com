@@ -1,0 +1,48 @@
+﻿@model List<hypster_tv_DAL.VisualSearch>
+@{
+    Layout = null;
+}
+
+
+<div style=" overflow:hidden;">
+
+        <div class="SbTop" onmousedown="mvMouseDown();" onmouseup="mvMouseUp();">
+        @{ int topW = 0; }
+        @for (int i = 0; i <= 17; i++)
+        {
+            if (i < Model.Count)
+            {
+                <img class="VisSearchItm" alt="@Model[i].Artist_Name.Replace("_"," ")" src="/imgs/visualSearch/@(Model[i].Artist_Name).jpg" onclick="VisualSearchClick('@Model[i].Artist_Name.Replace("_","+")');" />
+            }
+            topW += (int)Model[i].ImWidth;
+        }    
+        </div>
+        <script type="text/javascript">$(".SbTop").css("min-width", "@(topW)px");</script>
+
+                   
+        <div class="SbBottom" onmousedown="mvMouseDownB();" onmouseup="mvMouseUpB();">
+        @{ int bottomW = 0; }
+        @for (int i = 17; i <= 34; i++)
+        {
+            if (i < Model.Count)
+            {
+                <img class="VisSearchItm" alt="@Model[i].Artist_Name.Replace("_"," ")" src="/imgs/visualSearch/@(Model[i].Artist_Name).jpg" onclick="VisualSearchClick('@Model[i].Artist_Name.Replace("_","+")');" />
+            }
+            bottomW += (int)Model[i].ImWidth;
+        }
+        </div>
+        <script type="text/javascript">$(".SbBottom").css("min-width", "@(bottomW)px");</script>
+
+</div>
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $(".SbTop").draggable({ axis: "x" });
+        $(".SbBottom").draggable({ axis: "x" });
+    });
+
+    $(document).ready(function () {ScrlInit();});
+    $(window).resize(function () {ScrlInit();});
+</script>

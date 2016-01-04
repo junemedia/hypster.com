@@ -1,0 +1,22 @@
+﻿@model List<hypster_tv_DAL.sp_Tag_GetPopularNewsTags_Result>
+@{
+    Layout = null;
+}
+
+
+<div id="tagsSr1" class="ftrdTagsCH1">
+                
+    @for(var i=0; i<Model.Count; i++)
+    {   
+        <a href="/tags/@HttpUtility.UrlEncode(Model[i].TagTBL)">@if (Model[i].TagTBL.Length == 1 && Model[i].TagTBL == "R"){ <text>R&B</text> }else{ <text>@Model[i].TagTBL</text> }</a>
+            
+        if (i == 40)
+        {
+            break;
+        }
+    }
+
+</div>
+
+
+

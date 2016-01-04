@@ -1,0 +1,202 @@
+﻿@model hypster.ViewModels.createStation_ViewModel
+@{
+    ViewBag.Title = "Create Free Station | Hypster - free music online - player for tumblr";
+    ViewBag.Desc = "Create free playlists, and listen commercial free music.";
+    Layout = "~/Areas/m/Views/Shared/_Layout_Mobile.cshtml";
+}
+
+
+
+
+<script type="text/javascript">
+    active_menu = ".mCreate";
+    $(".mCreate").css("background-color", "#191919");
+    $("#CreateSub").css("display", "block");
+
+    $(document).ready(function () { RenderPage(); RenderShare(); });
+    $(window).resize(function () { RenderPage(); RenderShare(); });
+</script>
+
+
+
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:540px;">
+            
+
+            <div style=" float:left; width:100%;">
+                <div id="ShrContH1" style=" float:left; height:1px;">
+                    <div style=" position:relative; top:5px; left:-1045px;">
+                    
+                        <div style=" float:right; width:70px; ">
+                                <div class="pw-widget pw-vertical" pw:image="" pw:url="">
+                                <a class="pw-button-tumblr pw-look-native"></a>
+	                            <a class="pw-button-facebook pw-look-native"></a>
+	                            <a class="pw-button-twitter pw-look-native"></a>
+	                            <a class="pw-button-post-share"></a>
+                                </div>
+                                <script src="http://i.po.st/static/v3/post-widget.js#publisherKey=caq8eudavn7j6erou9n3" type="text/javascript"></script>
+                        </div>
+
+                    </div>      
+                </div> 
+            </div>
+
+
+
+            <div id="CreateStationSection1" onclick="window.location='/m/mcreate/player';">
+                <img alt="" src="/imgs/create/create_player_icon_sm.png" /><br />
+                Create Player
+            </div>
+
+
+            <div id="CreateStationSection2" onclick="window.location='/m/mcreate/playlist';">
+                <img alt="" src="/imgs/create/create_playlist_icon_sm.png" /><br />
+                Create Playlist
+            </div>
+
+
+            <div id="CreateStationSection3" onclick="window.location='/m/mcreate/station';">
+                <img alt="" src="/imgs/create/create_station_icon_sm.png" /><br />
+                Create Station
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="CreateRadioContHolder" style="margin-top:-1px; min-height:400px;">
+            
+            
+                            @using (Html.BeginForm("pr_CreateRadioStation_POST", "mradio", FormMethod.Post))
+                            {
+
+                                <div class="StatNameCont">
+                                    
+                                    <div style=" float:left; width:100%; height:30px; margin:6px 0 0 0; font-size:18px; color:#FCF088; text-align:left;">
+                                        <span style=" margin:0 0 0 20px;">Please enter search term for your station.</span>
+                                    </div>
+                                    
+                                    <input type="text" id="RadioStationSearchTerm" name="RadioStationSearchTerm" value=" Enter Artist, Song or Genre"onfocus="if(this.value == ' Enter Artist, Song or Genre') this.value = '';" onblur="if(this.value == '') this.value = ' Enter Artist, Song or Genre';" />
+
+                                     <input id="RadioStationSave" type="submit" value="Create Radio Station" />
+                                </div>
+                                
+
+                                
+                                <div class="StatSaveCont">
+                                </div>
+                            
+                                if (ViewBag.ErrorMessage != null)
+                                {
+                                    <div style=" float:left; width:100%; ">
+                                        <div class="errMsg1" >@ViewBag.ErrorMessage</div>
+                                    </div>
+                                }
+                            }
+
+
+
+
+
+                            
+                                   
+
+                                <div style=" float:left; width:100%; margin:0 0 17px 20px;">
+                                    @foreach (var item in @Model.stations_list)
+                                    {
+                                        if (item.RadioStationName != null && item.RadioStationQuery != null)
+                                        {
+                                            <div style=" float:left; width:100%; margin-bottom:4px;">
+                            
+                                                <div onclick="OPLRRadio('@item.RadioStationQuery.Replace(" ", "+")')" style=" float:left; width:10%; height:40px; line-height:40px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#303030; border-radius:2px;  cursor:pointer;">
+                                                    <img alt="" src="/imgs/play_icon_lte.png" style=" margin:12px 0 0 15px;" />
+                                                </div>
+
+
+                                                <div onclick="OpenPlayer('media_type=Radio&Genre=@item.RadioStationQuery.Replace(" ", "+")&rtg=r2')" style=" float:left; width:70%; height:36px; line-height:35px; margin-left:1%; background-color:#303030; padding:2px 2px 2px 10px; border-radius:2px; cursor:pointer; font-size:16px;">
+                                                    @item.RadioStationName
+                                                </div>
+
+                        
+                                                <div onclick="if(confirm('Are you sure you want to delete?') == true){window.location='/m/maccount/deleteStation?station=@item.RadioStation_ID&gb=cs';}" style=" float:left; width:10%; height:40px; line-height:40px; margin-left:1%; text-align:left; color:#FFFFFF; font-size:11px; background-color:#303030; border-radius:2px; cursor:pointer;">
+                                                    <img alt="" src="/imgs/action_icons/delete_icon_s.png" style=" margin:12px 0 0 15px;" />
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                                 
+
+                           
+
+            </div>
+
+
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $(".SbTop").draggable({ axis: "x" });
+        $(".SbBottom").draggable({ axis: "x" });
+    });
+
+
+
+    var isMouseDown = false;
+    var isMoving = false;
+    var clickAllowed = true;
+
+    function lockClick() {
+        isMouseDown = true;
+    }
+
+    function unlockClick() {
+        isMouseDown = false;
+    }
+
+    function mouseVS_move() {
+        if (isMouseDown == true) {
+            isMoving = true;
+        }
+    }
+
+
+
+    function PopulateRadioStationF(object) {
+        if (isMoving == false)
+            $('#RadioStationSearchTerm').val(object);
+
+        isMoving = false;
+    }
+</script>
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide2" class="slideLeft" style=" min-height:460px;">
+        
+           
+           @Html.Action("PopularPlaylists", "mpopular")
+           
+
+    </div>
+</div>

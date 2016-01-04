@@ -1,0 +1,32 @@
+﻿@model List<hypster_tv_DAL.FeaturedContent>
+@{
+    Layout = null;
+}
+
+
+
+<div style=" float:left; width:100%; ">
+
+    @{ int counter = 0; }
+    @foreach(var item in Model)
+    {
+        if (counter == 12)
+        {
+            <div style=" float:left; width:100%; height:20px; margin:5px 0 10px 0;"><!-- background-color:#131313; --></div>
+            counter = 0;
+        }
+        
+        <div style=" float:left; width:48%; margin:0 1% 1% 0; border-radius:3px; ">
+            <img alt="" src="/imgs/home/home_slideshow/@item.fc_image" onclick="@item.fc_href" style=" float:left; width:100%; cursor:pointer;" />
+
+            <div style=" float:left; width:99%; height:25px; line-height:25px; padding-left:1%; background-color:#121212; color:#dedede; ">
+                @item.fc_name
+            </div>
+
+        </div>
+        
+        
+        counter = counter + 1;
+    }
+
+</div>

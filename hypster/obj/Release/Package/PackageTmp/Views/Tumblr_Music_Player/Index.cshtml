@@ -1,0 +1,270 @@
+﻿@{
+    ViewBag.Title = "Tumblr Music Player";
+    ViewBag.Desc = "Find out more details about music player on your blog. How to embed, why songs not working etc...";
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () { RenderPage(); });
+    $(window).resize(function () { RenderPage(); });
+</script>
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div class="slideRight" style=" min-height:800px; font-size:16px; ">
+        
+        <div style=" float:left; width:1040px;">
+
+            <h1>Tumblr Music Players:</h1>
+
+            <h3 style=" color:#FCF088; margin:5px 0 0 0;">Hypster provides different types of players, tumblr music players, lot of skins which can be used for different purposes</h3>
+            Music that plays our players is owned and controled by YouTube, it might be blocked, removed, or moved from original source by content owners.
+            You should periodically check and update your music playlist assigned to your player in order to make if function better.<br />
+            <br />
+
+            <div style=" float:left; width:100%; margin-top:15px;">
+                <img alt="Classic Player Compact" src="/imgs/get_player/tumblr_music_player/new_classic_player_widget.jpg" style=" float:left;"  />
+                <div style=" float:left; width:500px; margin-left:10px;">
+                    <div style=" color:#FCF088; font-weight:bold;">Classic Player Compact:</div>
+                    This player can be used on tumblr, blogger, profile pages like Fubar, Vampirefreaks, Myboomerplace or other website who allows to place basic html. Also it can be used on blogs or websites.<br />
+                </div>
+            </div>
+
+        
+            <div style=" float:left; width:100%; margin-top:15px;">
+                <img alt="Bar Player" src="/imgs/get_player/tumblr_music_player/tumblr_music_player_bar_widget.jpg" style=" float:left;"  />
+                <div style=" float:left; width:500px; margin-left:10px;">
+                    <div style=" color:#FCF088; font-weight:bold;">Bar Player:</div>
+                    Can be used for tumblr or other blogs. This player creates a bar on the bottom or top of the screen and will not interrupt songs when users navigate between pages.
+                </div>
+            </div>
+        
+
+            <div style=" float:left; width:100%; margin-top:15px;">
+                <img alt="Classic player" src="/imgs/get_player/tumblr_music_player/widget_1.jpg" style=" float:left;" />
+                <div style=" float:left; width:500px; margin-left:10px;">
+                    <div style=" color:#FCF088; font-weight:bold;">Classic player:</div>
+                    The classic player can be used for blogs or profile pages like fubar, vampirefreaks, myboomerplace or other resource which have personal profiles and allow to post some html.
+                </div>
+            </div>
+        
+
+            <div style=" float:left; width:100%; margin-top:15px;">
+                <img alt="Radio player" src="/imgs/get_player/tumblr_music_player/widget_radio.jpg" style=" float:left;" />
+                <div style=" float:left; width:500px; margin-left:10px;">
+                    <div style=" color:#FCF088; font-weight:bold;">Radio player:</div>
+                    The radio player can be used on blogs and they do not require creating a playlist, it uses search terms such as Snoop Dog, Katy Perry, Wiz Califa, and plays songs related to 
+                    this search term.
+                </div>
+            </div>
+        
+
+            <div style=" float:left; width:100%; margin-top:15px;">
+                <img alt="New HypsterHi5 player" src="/imgs/get_player/tumblr_music_player/tumblr_music_player.jpg" style=" float:left;" />
+                <div style=" float:left; width:500px; margin-left:10px;">
+                    <div style=" color:#FCF088; font-weight:bold;">New HypsterHi5 player:</div>
+                    This player can be used on blogs or websites and it has the option to split the controls and embed the player itself inside your content. You can place it on the bottom of the page
+                    and have playback controls on the top of the website. The player can save your user settings and will not play songs if the user initiates the pause action.
+                    It also can transmit song state between pages - the song will continue to play from the same position it finished on prev page.
+                </div>
+            </div>
+        
+
+            <div style=" float:left; width:100%; margin-top:15px;">
+                <img alt="New Hyp.FM player" src="/imgs/get_player/tumblr_music_player/new_widget_1.jpg" style=" float:left;" />
+                <div style=" float:left; width:500px; margin-left:10px;">
+                    <div style=" color:#FCF088; font-weight:bold;">New Hyp.FM player:</div>
+                    This player can be used on blogs or websites. The player can save user settings and will not play songs if user initiates pause action.
+                    It also can transmit song state between pages - the song will continue to play from the same position it finished on prev page.
+                </div>
+            </div>
+        
+
+            <div style=" float:left; width:100%; margin-top:15px;">
+                <img alt="New Dual player" src="/imgs/get_player/tumblr_music_player/new_widget_2.jpg" style=" float:left;" />
+                <div style=" float:left; width:500px; margin-left:10px;">
+                    <div style=" color:#FCF088; font-weight:bold;">New Dual player:</div>
+                    This player can be used on blogs or websites and it has the option to split the controls and embed the player itself inside your content. You can place it on the bottom of the page
+                    and have playback controls on the top of the website. The player can save your user settings and will not play songs if the user initiates the pause action.
+                    It also can transmit song state between pages - the song will continue to play from the same position it finished on prev page.
+                </div>
+            </div>
+        
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div class="slideLeft" style=" min-height:90px; font-size:16px;">
+      
+        
+        <div style=" float:right; width:1040px;">
+            
+            <div class="ManualDtAdCont">
+                @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+                
+                <div class="HTUH_GoOnTop" onclick="$(document).scrollTop(0);">Go To Top</div>
+            </div>
+
+        </div>
+           
+    </div>
+</div>
+
+
+
+<div class="boxContRight">
+    <div class="slideRight" style=" min-height:400px; font-size:16px; ">
+        
+        <div style=" float:left; width:1040px;">
+            
+            <h3 style=" color:#FCF088;">Start by creating your playlist which will be used as a source for the player. You can also listen to your playlist, share and discover new music.</h3>
+
+            <a href="http://hypster.com/create/create_playlist_online" target="_blank" style=" text-decoration:underline;">Learn more about how to create playlist online</a><br />
+            <br />
+            
+            <div style=" float:left; width:100%;">
+                <img alt="" src="/imgs/pr_tour/playlists/4.jpg" style=" float:left; border-radius:2px; " />
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div class="slideLeft" style=" min-height:90px; font-size:16px;">
+      
+        <div class="ManualDtAdCont">
+            @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+
+            <!-- 06_25 -->
+            
+            <div class="HTUH_GoOnTop" onclick="$(document).scrollTop(0);">Go To Top</div>
+        </div>
+           
+    </div>
+</div>
+
+
+<div class="boxContRight">
+    <div class="slideRight" style=" min-height:400px; font-size:16px; ">
+        
+        <div style=" float:left; width:1040px;">
+            
+            <h3 style=" color:#FCF088;">When you have your playlist go and choose a player</h3>
+
+            
+            
+            <div style=" float:left; width:100%;">
+                <img alt="" src="/imgs/pr_tour/player/3.jpg" style=" float:left; border-radius:2px; " />
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div class="slideLeft" style=" min-height:90px; font-size:16px;">
+        
+        <div style=" float:right; width:1040px;">
+            
+            <div class="ManualDtAdCont">
+                @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+
+                <!-- 06_25 -->
+                
+                <div class="HTUH_GoOnTop" onclick="$(document).scrollTop(0);">Go To Top</div>
+            </div>
+
+        </div>
+           
+    </div>
+</div>
+
+
+<div class="boxContRight">
+    <div class="slideRight" style=" min-height:400px; font-size:16px; ">
+        
+        <div style=" float:left; width:1040px;">
+            
+            <h3 style=" color:#FCF088;">Customize music player and place on your blog</h3>
+
+            <a href="http://hypster.com/resources/manuals/details/-How-to-put-player-on-tumblr" target="_blank" style=" text-decoration:underline;">Learn more about how to place a music player on tumblr</a><br />
+            <br />
+
+            
+            <div style=" float:left; width:100%;">
+                <img alt="" src="/imgs/pr_tour/player/4.jpg" style=" float:left; " />
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide2" class="slideLeft" style=" min-height:120px;">
+        
+
+        <div class=" float:left; width:100%; margin-bottom:10px;">
+            <div style=" float:right; width:1024px; height:23px; overflow:hidden; ">
+                <div style=" float:left; margin-right:10px;">Share Tumblr Music Players</div>
+                <div class="pw-widget pw-counter-horizontal">
+	                <a class="pw-button-tumblr pw-look-native"></a>
+	                <a class="pw-button-blogger pw-look-native"></a>
+	                <a class="pw-button-facebook pw-look-native"></a>
+	                <a class="pw-button-twitter pw-look-native"></a>
+	                <a class="pw-button-post-share"></a>
+                </div>
+                <script src="http://i.po.st/static/v3/post-widget.js#publisherKey=caq8eudavn7j6erou9n3" type="text/javascript"></script>
+            </div>
+        </div>
+            
+
+        <div class="ManualDtAdCont">
+            @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+
+            <!-- 06_25 -->
+            
+            <div class="HTUH_GoOnTop" onclick="$(document).scrollTop(0);">Go To Top</div>
+        </div>
+           
+    </div>
+</div>

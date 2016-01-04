@@ -1,0 +1,166 @@
+﻿@model hypster.ViewModels.festivalViewModel
+@{
+    Layout = null;
+}
+
+
+
+
+<div class="boxContRight">
+    <div class="slideRight" style=" min-height:380px; background-color:#202020;">
+            
+            
+
+            <h1 class="ChartHeader">
+                <div id="ListenBtn_@Model.festival.Festival_ID" class="radioButton" onclick="OpenPlayer('media_type=playlist&playlist_id=@(Model.festival.Festival_Playlist_ID)&us_id=@(Model.festival.Festival_User_ID)&guid=festivals');">
+                    <a class="chartplPlay"  title="Escucha"></a>
+                    Escucha
+                </div>
+
+                
+                <span style=" cursor:pointer; margin-left:20px;" onclick="OpenPlayer('media_type=playlist&playlist_id=@(Model.festival.Festival_Playlist_ID)&us_id=@(Model.festival.Festival_User_ID)&guid=festivals');">
+                    @Model.festival.Festival_Name
+                </span>
+
+                <div class="chartIntr">Puede Arrastrar( Tabla/Gráfica /Lista) de Izquierda a Derecha</div>
+            </h1>
+
+
+
+
+
+            <div class="chartContHldr">
+
+                    <div class="ChartScrlArea">
+                            @{ int chart_height = 180;}
+                            @{ int margin_top = 10;}
+                            @{ int chart_position = 1; }
+                            @{ int cont_width = 0; }
+
+                            <div id="MainChartCont_@Model.festival.Festival_ID" class="MainChartCont">
+                                    @foreach (var item in Model.festival_songs_list)
+                                    {
+                                        <div class="chartItem" onmouseover="$('#PLK_@item.id').css('display','block');" onmouseout="$('#PLK_@item.id').css('display','none');" > 
+                                                
+                                                <div class="chrtImage" style=" height:@(chart_height)px; margin-top:@(margin_top)px; background:#1d1d1c url(http://i.ytimg.com/vi/@(item.YoutubeId)/0.jpg) center no-repeat; background-size: 220%;">
+                                                    <div>@chart_position</div>
+                                                </div>
+                    
+                                                <div class="chrtTitle">@item.Title</div>
+
+                                                <div id="PLK_@item.id" class="Chart_PLK" onclick="OpenSong('@item.YoutubeId','@item.Title');">
+                                                    <a class="ChartSongItm_play"></a>PLAY
+                                                </div>
+                                        </div>
+        
+        
+                                        chart_height -= 0;
+                                        margin_top += 0;
+                                        chart_position += 1;
+
+                                        cont_width += 165;
+                                    }
+                            </div>
+                    </div>
+            </div>
+
+
+            <div class="chartArrowsCont">
+                <img class="MoveRight_arrow" alt="Move Right" src="/imgs/arrows/right.png" onmousedown="MoveContRight('@Model.festival.Festival_ID')" onmouseup="MoveContRight_Stop('@Model.festival.Festival_ID')" onmouseout="MoveContRight_Stop('@Model.festival.Festival_ID')" />
+                <img class="MoveLeft_arrow" alt="Move Left" src="/imgs/arrows/left.png" onmousedown="MoveContLeft('@Model.festival.Festival_ID')" onmouseup="MoveContLeft_Stop('@Model.festival.Festival_ID')" onmouseout="MoveContLeft_Stop('@Model.festival.Festival_ID')" />
+            </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+@{ string guid = Guid.NewGuid().ToString(); }
+<div class="boxContLeft">
+    <div class="slideLeft" style=" min-height:95px;">
+                
+                
+            <div class="chartMainCont">
+                <div id="TopAdd@(guid)">
+                    @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+                </div>
+                <!-- 06_25 -->
+                
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#MainChartCont_@Model.festival.Festival_ID").css("width", "@(cont_width)px");
+        $("#MainChartCont_@Model.festival.Festival_ID").draggable({ axis: "x" });
+    });
+
+
+
+    var curr_spead = 10;
+    var curr_left = null;
+    var myTimer;
+
+
+    function MoveContLeft(obj_id) {
+        if (curr_left == null) {
+            curr_left = $("#MainChartCont_" + obj_id).offset().left - $("#ListenBtn_" + obj_id).offset().left;
+        }
+
+        myTimer = setTimeout(function () {
+            curr_left = curr_left - curr_spead;
+            $("#MainChartCont_" + obj_id).css("left", curr_left + "px");
+            curr_spead += 1;
+
+            MoveContLeft(obj_id);
+        }, 30);
+    }
+    function MoveContLeft_Stop(obj_id) {
+        clearTimeout(myTimer);
+        curr_spead = 10;
+        curr_left = null;
+    }
+
+
+
+
+    function MoveContRight(obj_id) {
+        if (curr_left == null) {
+            curr_left = $("#MainChartCont_" + obj_id).offset().left - $("#ListenBtn_" + obj_id).offset().left;
+        }
+
+        myTimer = setTimeout(function () {
+            curr_left = curr_left + curr_spead;
+            $("#MainChartCont_" + obj_id).css("left", curr_left + "px");
+            curr_spead += 1;
+
+            MoveContRight(obj_id);
+        }, 30);
+
+    }
+    function MoveContRight_Stop(obj_id) {
+        clearTimeout(myTimer);
+        curr_spead = 10;
+        curr_left = null;
+    }
+
+</script> 

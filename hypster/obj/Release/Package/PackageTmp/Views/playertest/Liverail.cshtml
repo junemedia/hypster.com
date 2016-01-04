@@ -1,0 +1,262 @@
+﻿@{
+    ViewBag.Title = "Liverail";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta name="alexaVerifyID" content="D1zuW6QmyfkVJqITiYkg7ecUz5k" />
+    <meta name="description" content="@ViewBag.Desc" />
+    
+    
+
+    
+    <link src="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"  rel="stylesheet" type="text/css" />
+    
+    @Styles.Render("~/bundles/css")
+
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"  type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"  type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+
+    @Scripts.Render("~/bundles/scripts")
+
+</head>
+
+
+
+
+
+<body>
+    
+
+    <div class="MainBD13">
+        
+        <div class="ContentHeaderCont">
+            
+
+            <div class="ContentHeaderInner">
+    <div id="MainMenu">
+            
+
+
+
+        <div class="LogoCh" onclick="window.location='/';">
+            <div class="MLogo">HYPSTER</div>
+        </div>
+
+
+        <div class="MenuCh">
+            <div style=" float:right; margin:10px 0 0 0; ">
+               
+                <div class="mListen" onmouseover="$('#mListenSM1').css('display','block');" onmouseout="$('#mListenSM1').css('display','none');">
+                    <div onclick="window.location='/listen';">LISTEN</div>
+
+                    <div id="mListenSM1">
+                        <div id="mSearchSM1" onclick="window.location='/listen';">SEARCH</div>
+                        <div id="mPlstsSM1" onclick="window.location='/listen?PLST=1';">PLAYLISTS</div>
+                        <div id="mChartsSM1" onclick="window.location='/charts';">CHARTS</div>
+                    </div>
+
+                </div>
+
+
+                <div class="mCreate" onmouseover="$('#mCreateSM1').css('display','block');" onmouseout="$('#mCreateSM1').css('display','none');" >
+                    <div onclick="@if (User.Identity.IsAuthenticated) {<text>window.location='/create/playlist';</text>}else {<text>window.location='/create';</text>}">CREATE</div>
+
+                    <div id="mCreateSM1">
+                        <div id="mPlayerSM1" onclick="window.location='/create/player';">PLAYER</div>
+                        <div id="mPlaylistSM1" onclick="window.location='/create/playlist';">PLAYLIST</div>
+                    </div>
+
+                </div>
+
+                <div class="mGamehype" onclick="window.location='/gamehype';">GAMEHYPE</div>
+
+                <div class="mBreaking" onclick="window.location='/breaking';">#BREAKING</div>
+
+                <div class="mAcct" onmouseover="$('#mAcctMCH1').css('display','block');" onmouseout="$('#mAcctMCH1').css('display','none');" onclick="acct_menu_click();">
+                    
+                    <div id="mAcctMCH1">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div id="myAcctInfo" onclick="window.location='/account/info';" onmouseover="page='/account/info';">MY ACCOUNT</div>
+                            <div id="mySignOut" onclick="window.location='/account/logoff';" onmouseover="page='/account/logoff';">SIGN OUT</div>
+                        }
+                        else
+                        {
+                            <div id="myAcctInfo" onclick="window.location='/account/SignIn';" onmouseover="page='/account/SignIn';">LOGIN</div>
+                            <div id="mySignOut" onclick="window.location='/account/register';" onmouseover="page='/account/register';">REGISTER</div>
+                        }
+                    </div>
+
+                </div>
+
+                <div class="mSearch" onclick="window.location='/listen';"></div>
+               
+            </div>
+        </div>
+
+
+
+
+    </div>          
+</div>
+
+
+
+<div class="slCH2">
+    <div class="MSCGAM">
+        MUSIC + GAMING
+    </div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+    var page = "/account/info";
+    function acct_menu_click() {
+        window.location = page;
+    }
+</script>
+
+            
+        </div>
+
+        <div class="ContentRootCont" >
+             
+
+            <h2>Liverail</h2>
+
+
+            <style>#close{cursor:pointer;position:fixed;margin:-1em 0 0 -1em;display:none;}#skip{font:0.8em arial,sans-serif;position:fixed;margin-top:-1.2em;}</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="http://videocdn.baronsoffers.com/jwplayer5/jwplayer.js"></script>
+<div id="ova-jwplayer-container"></div>
+<script type="text/javascript">    jwplayer('ova-jwplayer-container').setup({ "flashplayer": "http://videocdn.baronsoffers.com/jwplayer5/player.swf", "autostart": true, "mute": true, "playlist": [{ file: "http://videocdn.baronsoffers.com/apple.mp4", image: "http://videocdn.baronsoffers.com/apple.jpg"}], "width": 640, "height": 360, "controlbar": { "position": "bottom" }, "plugins": { "http://videocdn.baronsoffers.com/jwplayer5/ova-jw.swf": { "ads": { "schedule": [{ "position": "pre-roll", "tag": "http://ad4.liverail.com/?LR_PUBLISHER_ID=93109&LR_SCHEMA=vast2-vpaid&LR_URL=[LR_URL]&LR_VIDEO_ID=[LR_VIDEO_ID]&LR_TITLE=[LR_TITLE]"}]}}} });</script>
+<script type="text/javascript">    $(function () { $("#ova-jwplayer-container_wrapper").css({ position: "fixed", bottom: "1em", right: "1em", display: "none" }).show(1e3), $("#ova-jwplayer-container_wrapper").prepend('<div id="skip">You can skip in: <span id="seconds"></span></div><img id="close" src="http://videocdn.baronsoffers.com/videos/close.png"/>'), i = 15, $("#seconds").html(i), setInterval(function () { i--, $("span#seconds").text(i), 0 == i && ($("#skip").hide(), $("#close").show(), $("#close").click(function () { $("#ova-jwplayer-container_wrapper").html("") })) }, 1e3) });</script>
+
+
+        </div>
+    
+        <div class="push"></div>
+    </div>
+
+
+
+
+
+    
+    <div class="ContentFooterCont">
+        
+
+        <center>
+<div class="BottomPane">
+            
+
+        <div class="BtmLeftCH1">
+
+            <div class="BLLogCH1"><div>HYPSTER</div></div>
+
+            <div style=" float:left; width:100%; height:22px;">
+                    
+                    <div style=" float:left; margin:10px 0 0 50px;">
+                        <a class="flwUs_yw_fbk" href="https://www.facebook.com/Hypster" target="_blank"></a>
+                        <a class="flwUs_yw_twr" href="https://twitter.com/Hypsterdotcom" target="_blank"></a>
+                        <a class="flwUs_yw_tum" href="http://hypsterblog.tumblr.com/" target="_blank"></a>
+                    </div>
+                    
+            </div>
+
+        </div>
+
+
+
+        <div class="BottomPaneInnr">
+
+            <div class="MenuItmCont">
+                <a href="/hypster/New_Player_For_Tumblr">NEW TUMBLR PLAYER</a>
+                <a href="/resources/manuals">HOW TO USE</a>
+                <a href="/hypster/changes_on_hypster">TRACK CHANGES</a>
+                <a href="/hypster/apps">APPS</a>
+            </div>
+
+
+            <div class="MenuItmCont">
+                <a href="/" >HYPSTER</a>
+                <a href="/listen" >LISTEN</a>
+                <a href="/create" >CREATE</a>
+            </div>
+
+            <div class="MenuItmCont">
+                <a href="/listen/radio" >RADIO</a>
+                <a href="/breaking" >#BREAKING</a>
+                <a href="http://senses.hypster.com" >HYPSTER SENSES</a>
+            </div>
+                        
+            <div class="MenuItmCont">
+                <a href="/hypster/Contact_Us" >CONTACT US</a>
+                <a href="/hypster/About_Us" >ABOUT US</a>
+                <a href="/hypster/Privacy_Policy" >PRIVACY POLICY</a>
+                <a href="/hypster/Terms_of_Service" >TERMS OF SERVICE</a>
+            </div>
+
+        </div>
+
+            
+
+
+        <div class="sconf1">@System.Configuration.ConfigurationManager.AppSettings["server_ID"]</div>
+
+</div>
+</center>
+
+        
+    </div>
+    
+
+ 
+    <div class="Trans_BACK" id="HideBackDiv" onclick="Show_Content();"></div>
+    <div id="popupContainer"></div>
+    
+
+
+    
+
+
+
+  
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

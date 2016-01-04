@@ -1,0 +1,209 @@
+﻿@model hypster.ViewModels.createViewModel
+@{
+    ViewBag.Title = "Create Free Playlist | Hypster - free music online - player for tumblr";
+    ViewBag.Desc = "Create free playlists, and listen commercial free music. Music for tumblr ";
+    ViewBag.ActivePage = "create";
+    Layout = "~/Areas/m/Views/Shared/_Layout_Mobile.cshtml";
+}
+
+
+
+<script type="text/javascript">
+    active_menu = ".mCreate";
+    $(".mCreate").css("background-color", "#191919");
+    $("#CreateSub").css("display", "block");
+
+    $(document).ready(function () { RenderPage(); });
+    $(window).resize(function () { RenderPage(); });
+</script>
+
+
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:420px;">
+
+
+
+
+            <div id="CreateSection1" onclick="window.location='/m/mcreate/player';" title="Create player for Tumblr or Blogger" onmouseover="$('#CreateSection1_ST1').css('display','none'); $('#CreateSection1_ST2').css('display','block');" onmouseout="$('#CreateSection1_ST1').css('display','block'); $('#CreateSection1_ST2').css('display','none');">
+                
+                <div id="CreateSection1_ST1">
+                    <div class="secImgs">
+                        <img id="CreateSection1_img" alt="" src="/imgs/create/create_player_icon.png" />
+                    </div>
+                    <div class="secText">Create Player</div>
+                </div>
+
+                <div id="CreateSection1_ST2" style=" display:none; width:98%; margin-left:1%; margin-top:10px; font-size:22px; line-height:34px;">
+                    <div style="font-size:26px; font-weight:bold; margin-top:65px;">Create Player</div>
+                    Looking for a Tumblr music player or a way to feature your favorite artists on your blog? Creating a player
+                    allows you to place a customizable playlist on your site, making it
+                    easy to share the music you are currently into.
+                    <br />
+                    <div class="radioButton" style=" margin:10px 0 0 110px;">Login</div>
+                </div>
+
+            </div>
+
+
+
+            <div id="CreateSection2" onclick="window.location='/m/mcreate/playlist';" title="Create Playlist" onmouseover="$('#CreateSection2_ST1').css('display','none'); $('#CreateSection2_ST2').css('display','block');" onmouseout="$('#CreateSection2_ST1').css('display','block'); $('#CreateSection2_ST2').css('display','none');">
+                
+                <div id="CreateSection2_ST1">
+                    <div class="secImgs">
+                        <img id="CreateSection2_img" alt="" src="/imgs/create/create_playlist_icon.png" />
+                    </div>
+                    <div class="secText">Create Playlist</div>
+                </div>
+
+                <div id="CreateSection2_ST2" style=" display:none; margin-top:10px; font-size:22px; line-height:34px;">
+                    <div style="font-size:26px; font-weight:bold; margin-top:65px;">Create Playlist</div>
+                    Build a playlist using our extensive catalogue of music to share with
+                    others on your blog or website. Listen to it anywhere you have access
+                    to the Internet.
+                    <br />
+                    <div class="radioButton" style=" margin:10px 0 0 110px;">Login</div>
+                </div>
+
+            </div>
+
+
+
+            <div id="CreateSection3" onclick="window.location='/m/mcreate/station';" title="Create Radio Station" onmouseover="$('#CreateSection3_ST1').css('display','none'); $('#CreateSection3_ST2').css('display','block');" onmouseout="$('#CreateSection3_ST1').css('display','block'); $('#CreateSection3_ST2').css('display','none');">
+                
+                <div id="CreateSection3_ST1">
+                    <div class="secImgs">
+                        <img id="CreateSection3_img" alt="" src="/imgs/create/create_station_icon.png" />
+                    </div>
+                    <div class="secText">Create Station</div>
+                </div>
+
+                <div id="CreateSection3_ST2" style=" display:none; margin-top:10px; font-size:22px; line-height:34px;">
+                    <div style="font-size:26px; font-weight:bold; margin-top:65px;">Create Station</div>
+                    Want to find some new music?<br /> Tell us your favorite Artist,<br /> Song or
+                    Genre and we’ll use this information to create a music<br /> station for
+                    you.
+                    <br />
+                    <div class="radioButton" style=" margin:10px 0 0 110px;">Login</div>
+                </div>
+
+            </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+<div class="boxContRight">
+    <div class="slideRight" style=" min-height:300px; ">
+            
+            @*Html.Action("VoteIndex", "Vote")*@
+
+            <div style=" float:left; width:530px; height:300px; background-color:#454545;"></div>
+
+
+
+            <div style=" float:left; width:450px; height:280px; margin:0px 0 0 15px; padding:10px; background-color:#292929; ">
+                
+                <div style=" font-size:27px;">
+                    Don't Have An Account on Hypster?
+                </div>
+
+                <div onclick="window.location='/account/register';" style=" float:left; width:420px; height:200px; line-height:150px; margin:30px 0 0 15px; background-color:#121212; border-radius:3px; font-size:35px; text-align:center; cursor:pointer;">
+                    Register
+                </div>
+
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide2" class="slideLeft">
+        
+            
+            <div style=" float:right; width:1024px;">
+                
+                <a class="TBsimilar" href="/m/mcreate/create_playlist_online">
+                    
+                    <div class="TBHead"><h1>Create Music Playlist</h1></div>
+
+                    <div class="TBBody">
+                        <div class="TBBodyT">
+                            Build a playlist using our extensive catalogue of music to share with others on your blog or website. Listen to it anywhere you have access to the Internet.
+                        </div>
+
+                        <div class="TBReadMore">
+                            Read More
+                        </div>
+                    </div>
+                    <div class="TBBtm"></div>
+                </a>
+
+
+                <div style=" float:left; width:160px; height:320px; margin-left:20px;">
+                    <img alt="" src="/imgs/dh_arrow.png" style=" margin-top:20px;" />
+                </div>
+
+
+                <a class="TBCharts" href="/m/mcreate/create_music_player">
+                    
+                    <div class="TBHead"><h1>Create Music Player</h1></div>
+
+                    <div class="TBBody">
+                        <div class="TBBodyT">
+                            Looking for a Tumblr music player or a way to feature your favorite artists on your blog? Creating a player allows you to place a customizable playlist on your site, making it easy to share the music you are currently into.
+                        </div>
+                        <div class="TBReadMore">Read More</div>
+                    </div>
+                    <div class="TBBtm"></div>
+                </a>
+
+            </div>
+
+
+
+            <div class="NPFT_BHead" style=" margin-top:13px;">
+                    
+                <div class="NPFT_BottomAd">
+                    <div id="TopAdd1_si723827x">
+                        @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+                    </div>
+                    <!-- 06_25 -->
+                    
+                </div>
+
+                <div class="NPFT_GoOnTop" style=" width:274px;" onclick="$(document).scrollTop(0);">
+                    Go To Top
+                </div>
+
+            </div>
+    
+    </div>
+</div>
+
+
+
+
+
+
+
+

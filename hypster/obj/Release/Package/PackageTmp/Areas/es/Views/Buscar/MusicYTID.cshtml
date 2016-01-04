@@ -1,0 +1,111 @@
+﻿@using Google.GData;
+@using Google.GData.Client;
+@using Google.GData.Extensions;
+@using Google.GData.YouTube;
+@using Google.YouTube;
+
+
+@model Video
+@{
+    ViewBag.Title = "Búsqueda de música";
+    Layout = null;
+}
+
+
+
+
+<div style="float:right; width:1024px;">
+
+<div class="SearchPageRoot">
+    
+    @{ int back_id = 1; }
+    @if (Model != null)
+    {
+        
+        
+            <div @if (back_id == 1)
+                 { <text>class="SongItm"</text>}
+                 else
+                 {<text>class="SongItmB"</text>} >
+                
+
+                <div class="lfCont">
+                    
+                    <img alt="" class="imgThumb" src="@Model.Thumbnails[0].Url" onclick="OpenPlayer('song_guid=@Model.VideoId&song_title=@HttpUtility.UrlEncode(Model.Title)');" />
+                    
+                    <div class="songCont" onclick="OpenPlayer('song_guid=@Model.VideoId&song_title=@HttpUtility.UrlEncode(Model.Title)');">
+                        <span class="style_23">@Model.Title</span> <br />
+                        Autor: <span class="style_24">@Model.Author</span><br />
+
+                        @if (@Model.RatingAverage != null)
+                        {
+                            <div>Puntuación: <span style=" color:#FCF088;"> @Model.RatingAverage</span></div>
+                        }
+
+                        @if (Model.Media != null && Model.Media.Restriction != null)
+                        {
+                            @Model.Media.Restriction.Attributes["relationship"]<text> in:</text>
+                            <span onclick="$('#RST_@Model.VideoId').css('display','block');" style=" width:80px; height:20px; line-height:20px; color:#FCF088; font-size:11px;">más detalles</span>
+                            <div id="RST_@Model.VideoId" style=" display:none;">
+                                <span style=" color:#FCF088;">@Model.Media.Restriction.Value.ToString()</span><br />
+                            </div>
+                        }
+                    </div>
+                    
+                </div>
+
+
+
+                <div class="rtCont">
+                    
+                    <div class="AddPl_btn" onclick="ShowAddToMyPlaylist('?song_guid=@Model.VideoId&song_title=@System.Web.HttpUtility.UrlEncode(Model.Title)');">
+                       + Añadir a la Listas de reproducción
+                    </div>
+                    
+                    <div class="GetRing_btn">
+                        <a href="http://www.funtonia.com/mp3ringtones/search.asp?sw=@ViewBag.search_string&affid=120674" target="_blank">Obtener Tono</a>
+                    </div>
+
+                    <div class="SearchSimilar_btn" onclick="SearchMusicStr('@System.Web.HttpUtility.UrlEncode(Model.Title)');">
+                       Buscar por este título
+                    </div>
+
+                </div>
+
+
+                @if (@Model.AppControl != null)
+                {
+                    <div class="SyndicationBtn">
+                        <text>"Sindicación de este video fue restringido". Esta canción podría ser bloqueada por el editor por tocar desde reproductores externos.</text>
+                    </div>
+                }
+            </div>
+        
+                back_id = back_id * -1;
+
+
+
+
+
+    }
+    else
+    {
+        <div class="NFMessageCont">
+            <div>No hay resultados de vídeo para esta búsqueda “@ViewBag.search_string.Replace("+", " ")”</div>
+        </div>
+    }
+    
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+

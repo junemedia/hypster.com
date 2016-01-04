@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+
+<script type="text/javascript">
+    if (is_speech_sound == 1) {
+        window.speechSynthesis.cancel();
+        var msg = new SpeechSynthesisUtterance('Saved.');
+        window.speechSynthesis.speak(msg);
+    }
+
+
+    setTimeout(function () {
+
+        $.ajax({
+            type: "POST",
+            url: "/black/bAccount/ManageAccount",
+            async: true,
+            success: function (data) {
+                $("#bContHolder1").html(data);
+            }
+        });
+
+    }, 1500);
+</script>

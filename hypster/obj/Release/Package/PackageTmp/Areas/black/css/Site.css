@@ -1,0 +1,222 @@
+﻿/* SCROLLBARS SETTINGS */
+/*----------------------------------------------*/
+
+@import url(//fonts.googleapis.com/css?family=Lato:300,900);
+
+
+
+html
+{
+	scrollbar-face-color:#777777;
+	scrollbar-base-color:#777777;
+	scrollbar-arrow-color:black;
+	scrollbar-track-color:#313537;
+	scrollbar-shadow-color:#777777;
+	scrollbar-highlight-color:#777777;
+	scrollbar-3dlight-color:#666666;
+	scrollbar-darkshadow-Color:#666666;
+	
+	height: 100%;
+	
+	font-family: 'Lato', sans-serif;
+}
+
+
+
+/*----------------------------------------------*/
+ .shadow {
+	-moz-box-shadow: 3px 3px 4px #000;
+	-webkit-box-shadow: 3px 3px 4px #000;
+	box-shadow: 3px 3px 4px #000;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+ }
+/*----------------------------------------------*/
+
+
+
+
+
+
+::-webkit-scrollbar {
+    height: 12px;
+	width: 12px;
+	background: #202020;
+    }
+::-webkit-scrollbar-thumb {
+    background: #676767;
+    -webkit-border-radius: 1ex;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+::-webkit-scrollbar-corner {
+    background: #000;
+}
+
+
+
+
+
+
+
+
+/*----------------------------------------------*/
+body {
+    font-size:18px;
+    font-family:'Lato', sans-serif; 
+    font-weight:lighter;
+    color:#232323;
+    line-height:30px;
+    
+    
+    /*background:#dcdcdc url(/imgs/black/black_back.jpg) no-repeat;*/
+    background:#e7e7e7 url('/areas/black/imgs/mainBack.jpg') no-repeat top left; cursor:pointer;
+    margin:0px; 
+    padding:0px;
+    
+    
+    width:100%;
+    height: 100%;
+}
+
+
+
+header, footer, nav, section {
+    display: block;
+}
+
+img
+{
+	border:0px;
+}
+
+
+
+
+.Trans_BACK {
+     background:#000000;
+     
+     filter:progid:DXImageTransform.Microsoft.Alpha(opacity=90);
+     opacity: 0.90;
+     -moz-opacity:0.90;
+     position:absolute;
+     
+     display:none; z-index:100000; position:absolute; top:0px; left:0px; width:1px; height:1px;
+}
+
+div.Trans_75
+{
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=75);
+    opacity: 0.75;
+    -moz-opacity:0.75;
+}
+
+#popupContainer
+{
+	display:none; z-index:100001; position:absolute; top:0px; left:0px; text-align:center;
+}
+
+#popupContainer_PopupPlayer
+{
+	display:none; z-index:100001; position:absolute; top:0px; left:0px; text-align:center;
+}
+/*-----------------------------------------------------------*/
+
+
+
+
+
+/*-----------------------------------------------------------*/
+input[type="text"] {
+    width:230px; height:25px; line-height:25px; 
+    font-size:16px;
+    font-weight:lighter;
+    color:#232323;
+}
+
+input[type="password"] {
+    width:230px; height:25px; line-height:25px; 
+    font-size:16px;
+    font-weight:lighter;
+    color:#232323;
+}
+/*-----------------------------------------------------------*/
+
+
+
+
+
+
+
+
+.mnuItm
+{
+    height:25px; line-height:25px; padding:5px 5px 5px 5px; cursor:pointer;
+}
+
+
+.mnuItmSearch
+{
+    float:left; width:100%; margin:0 0 7px 0;
+}
+
+
+
+
+
+
+
+
+
+.cir_1
+{
+    position:relative; top:0px; left:0px; width:500px; height:480px; border-radius:250px; background-color:#CDCDCD;
+    
+}
+
+.cir_2
+{
+    position:relative; top:-360px; left:250px; width:800px; height:780px; border-radius:500px; background-color:#CDCDCD;
+    
+}
+
+
+
+.cir_back_btn
+{
+}
+
+
+.cir_mic
+{
+    display:none;
+    position:absolute; top:0px; left:0px; width:290px; height:290px; border-radius:145px;
+    background:#ABABAB url('/areas/black/imgs/mic_icon.png') no-repeat center; cursor:pointer;
+    cursor:pointer;
+    line-height:290px;
+    text-align:center;
+    font-size:14px;
+    overflow:hidden;
+    opacity:0.8;
+}
+
+
+.cir_sound
+{
+    display:none;
+    position:absolute; top:0px; left:0px; width:90px; height:90px; border-radius:45px;
+    background-color:#CDCDCD; 
+    cursor:pointer;
+    line-height:90px;
+    text-align:center;
+    font-size:14px;
+    overflow:hidden;
+}
+
+
+#msgBox1
+{
+    float:left; width:65%; height:430px; overflow:auto; margin:150px 0 0 170px;
+}
+

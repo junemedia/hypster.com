@@ -1,0 +1,54 @@
+﻿@model List<hypster.ViewModels.festivalViewModel>
+@{
+    ViewBag.Title = "Festivales";
+
+    Layout = "~/Areas/es/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type="text/javascript">
+    active_menu = ".mListen";
+    $(".mListen").css("background-color", "#191919");
+
+    $(document).ready(function () {
+        RenderFestivals();
+    });
+    $(window).resize(function () {
+        RenderFestivals();
+    });
+</script>
+
+
+
+
+
+
+
+@{ int i_counter = 0; }
+
+@foreach (var item in Model)
+{   
+    <div class="chartHoldCont" @if(i_counter == 0){<text>style=" margin-top:-20px;"</text>}>
+        @{ Html.RenderPartial("~/Areas/es/Views/Festivales/BuildFestival.cshtml", item); }
+    </div>
+    
+    i_counter += 1;
+}
+
+
+
+<div class="boxContRight">
+    <div class="slideRight" style=" min-height:45px;">
+            
+            @if (ViewBag.prevPageID > 0)
+            {
+                <input id="Charts_PrevPage" type="button" onclick="window.location='/es/Festivales/page/@ViewBag.prevPageID';" value="Anterior Página" />
+            }
+
+            @if (ViewBag.nextPageID > 0)
+            {
+                <input id="Charts_NextPage" type="button" onclick="window.location='/es/Festivales/page/@ViewBag.nextPageID';" value="Página siguiente" />
+            }
+
+    </div>
+</div>

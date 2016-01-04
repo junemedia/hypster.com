@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "Hypster - free music online - player for tumblr";
+    ViewBag.Desc = "";
+    Layout = "~/Areas/apps/Views/Shared/_Layout_Apps.cshtml";
+
+    ViewBag.LinkTag = "<link rel=\"canonical\" href=\"http://hypster.com/account/signin\" >";
+}
+
+
+
+
+
+
+
+
+<div class="loginPMCH">
+
+
+    <div class="loginPLeftCH">
+
+        <h2 class="logHeader1">COMMERCIAL FREE MUSIC PLAYLIST</h2>
+
+
+        <div class="logComp1">
+                
+                @using (Html.BeginForm("SignIn", "appAccount", FormMethod.Post))
+                {
+         
+                    <div style=" font-size:32px; color:#FFFFFF;">
+                        <b>HYPSTER.</b> 
+                        <br />Music + Gaming
+                    </div>
+            
+
+        
+                    <div id="lgnEdtUsrName">
+                        <div>USERNAME:</div>
+                        <input type="text" name="UserName" id="UserName" value="" />
+                    </div>
+
+             
+                    <div id="lgnEdtPass">
+                        <div>PASSWORD:</div>
+                        <input type="password" name="Password" id="Password" value="" />
+                    </div>
+                
+                
+
+                    <div style=" float:left; margin:12px 0 0 0; color:#FFFFFF; font-weight:bold;">
+                        <input type="checkbox" name="RememberMe" id="RememberMe" class="checkbox" /> Remember Me
+                    </div>
+                            
+                            
+                    <div style=" float:right; margin:14px 0 0 0; ">
+                                
+                        @Html.ValidationSummary(true, "", new { @class = "txtValidatorLog" })
+        
+                        <a href="/apps/appAccount/ForgotPassword" style=" color:#FFFFFF; font-weight:bold; ">Forgot your password?</a>
+                                
+                        @if (ViewBag.ActivateAccount != null && ViewBag.ActivateAccount == true)
+                        {
+                            <a href="/apps/appAccount/ActivateAccount" style=" color:#FFFFFF; font-weight:bold; ">To activate click here</a>
+                        }
+                    </div>
+                            
+                            
+                    <input type="hidden" id="returnUrl" name="returnUrl" value="@ViewBag.ReturnUrl" />
+                            
+                            
+                    <input type="submit" value="LOGIN" style=" float:right; width:100%; height:33px; margin:13px 0 0 0; border-radius:8px; background-color:#d4ae52; border:1px solid #d4ae52; color:#FFFFFF; font-size:21px;" />
+        
+                            
+                }
+
+
+
+                <div style=" float:left; width:100%; margin:0px 0 0 0;  ">
+                            
+                    <div style=" float:left; width:100%;">
+                        <div style=" float:left; width:45%; height:17px; border-bottom:1px solid #FFFFFF;"></div>
+                        <div style=" float:left; width:10%; margin:10px 0 0 0; text-align:center; color:#FFFFFF; " >OR</div>
+                        <div style=" float:left; width:45%; height:17px; border-bottom:1px solid #FFFFFF;"></div>
+                    </div>
+                            
+                    <input type="button" value="REGISTER" onclick="window.location='/apps/appAccount/register';" style=" float:right; width:100%; height:33px; margin:13px 0 0 0; border-radius:8px; background-color:#3fbc91; border:1px solid #3fbc91; color:#FFFFFF; font-size:21px;" />
+                            
+                </div>
+
+        </div>
+                
+    </div>
+
+
+
+
+
+
+    <div class="loginPRightCH">
+        
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript">    ggv2id = 'a827aa3b';</script>
+<script type="text/javascript" src="http://g2.gumgum.com/javascripts/ggv2.js"></script>

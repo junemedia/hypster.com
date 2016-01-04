@@ -1,0 +1,93 @@
+﻿@model hypster.ViewModels.createPlayer_ViewModel
+@{
+    ViewBag.Title = "Создать бесплатный плеер | Hypster - бесплатная онлайн музыка - плеер для Tumblr";
+    ViewBag.Desc = "Создать плейлисты и слушать музыку без рекламы.";
+
+    Layout = "~/Areas/ru/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<script type="text/javascript">
+    active_menu = ".mCreate";
+    $(".mCreate").css("background-color", "#191919");
+
+    $(document).ready(function () {
+        RenderCreatePlayer();
+    });
+    $(window).resize(function () {
+        RenderCreatePlayer();
+    });
+</script>
+
+
+
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:400px;">
+
+
+            <div id="CreatePlayerSection1" onclick="window.location='/ru/Создать/Плеер';">
+                <img alt="" src="/imgs/create/create_player_icon_sm.png" /><br />
+                Создать Плеер
+            </div>
+
+
+            <div id="CreatePlayerSection2" onclick="window.location='/ru/Создать/Плейлист';">
+                <img alt="" src="/imgs/create/create_playlist_icon_sm.png" /><br />
+                Создать Плейлист
+            </div>
+
+
+            <div id="CreatePlayerSection3" onclick="window.location='/ru/Создать/Станцию';">
+                <img alt="" src="/imgs/create/create_station_icon_sm.png" /><br />
+                Создать Станцию
+            </div>
+
+
+
+
+            <div id="CreateContHolder" style=" float:left; width:100%; background-color:#1d1d1c; margin-top:-1px; ">
+                @if (ViewBag.Action == "EDT")
+                {
+                    Html.RenderAction("getPlayer", "Плеер", new { id = ViewBag.PlType });
+                }
+                else
+                {
+                    Html.RenderAction("getPlayer", "Плеер", new { id = "" });   
+                }
+
+                <div style=" float:left; width:100%;">
+                    <div onclick="window.location='/ru/Хипстер/Плеер_для_Тумблера';" class="CreatePlayer_ReadMoreAP">
+                        Узнайте больше об новых плеерах
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide2" class="slideLeft" style=" min-height:420px;">
+        
+            @Html.Action("PopularVideos", "популярное")
+
+    </div>
+</div>

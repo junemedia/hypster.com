@@ -1,0 +1,34 @@
+﻿@model List<hypster_tv_DAL.Playlist>
+@{
+    Layout = null;
+}
+
+@if (Model.Count > 0)
+{
+
+<div class="PlstSWid1">
+
+    <h2> Found in Playlists for search "@ViewBag.search_string" </h2>
+
+
+    <div class="PopularPlstsCont">
+    @for (int i = 0; i < Model.Count; i++)
+    {   
+        <div class="PlstSWid_Itm" onclick="OpenPlayerM('/playlists/user/@(Model[i].username)?@(Model[i].id)&rtg=20778');" onmouseover="DispPlstMagDetails(this, @Model[i].id, @Model[i].userid);" onmouseout="HidePlstMagDetails(event, this);" >
+            <div>@Model[i].name</div>
+            <a class="PlstSWid_ItmViews" title="@Model[i].ViewsNum views">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(Model[i].ViewsNum)</a>
+            <a class="PlstSWid_ItmLikes" title="@Model[i].Likes likes">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(Model[i].Likes)</a>
+        </div>
+        
+
+        if (i > 10)
+        {
+            break;
+        }
+    }
+    </div>
+
+</div>
+ <!--div id="MAG_PlstPreview"><div class="LdingPrev"></div></div-->
+    
+}

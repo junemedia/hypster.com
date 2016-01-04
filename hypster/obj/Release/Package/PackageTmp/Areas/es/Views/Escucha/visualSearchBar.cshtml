@@ -1,0 +1,72 @@
+﻿@model List<hypster_tv_DAL.VisualSearch>
+@{
+    Layout = null;
+}
+
+
+<div style=" overflow:hidden;">
+
+        <div class="SbTop" style=" height:125px; overflow:hidden; " onmousedown="lockClick();" onmouseup="unlockClick();" onmousemove="mouseVS_move();">
+        @for (int i = 0; i < 20; i++)
+        {
+            if (i < Model.Count)
+            {
+                <img class="VisSearchItm" title="click to search for @Model[i].Artist_Name.Replace("_"," ")" alt="@Model[i].Artist_Name.Replace("_"," ")" src="/imgs/visualSearch/@(Model[i].Artist_Name).jpg" onclick="VisualSearchClick('@Model[i].Artist_Name.Replace("_","+")');" />
+            }
+        }    
+        </div>
+
+                   
+
+                   
+        <div class="SbBottom" style=" height:125px; overflow:hidden;" onmousedown="lockClick();" onmouseup="unlockClick();" onmousemove="mouseVS_move();">     
+        @for (int i = Model.Count; i > (Model.Count-20); i--)
+        {
+            if (i < Model.Count)
+            {
+                <img class="VisSearchItm" title="click to search for @Model[i].Artist_Name.Replace("_"," ")" alt="@Model[i].Artist_Name.Replace("_"," ")" src="/imgs/visualSearch/@(Model[i].Artist_Name).jpg" onclick="VisualSearchClick('@Model[i].Artist_Name.Replace("_","+")');" />
+            }
+        }
+        </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $(".SbTop").draggable({ axis: "x" });
+        $(".SbBottom").draggable({ axis: "x" });
+    });
+
+
+
+    var isMouseDown = false;
+    var isMoving = false;
+    var clickAllowed = true;
+
+    function lockClick() {
+        isMouseDown = true;
+    }
+
+    function unlockClick() {
+        isMouseDown = false;
+    }
+
+    function mouseVS_move() {
+        if (isMouseDown == true) {
+            isMoving = true;
+        }
+    }
+
+
+
+    function VisualSearchClick(object) {
+        if (isMoving == false)
+            window.location = '/es/Escucha?ss=' + object + '&rtg=x2982';
+
+        isMoving = false;
+    }
+
+    
+</script>

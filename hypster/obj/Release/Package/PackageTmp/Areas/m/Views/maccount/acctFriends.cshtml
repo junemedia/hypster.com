@@ -1,0 +1,254 @@
+﻿@model hypster.ViewModels.getAccountInfo_PrivateViewModel
+
+@{
+    ViewBag.Title = "Hypster - free music online - player for tumblr";
+    ViewBag.Desc = "";
+    Layout = "~/Areas/m/Views/Shared/_Layout_Mobile.cshtml";
+}
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () { RenderPage(); RenderAccountFriends(); });
+    $(window).resize(function () { RenderPage(); RenderAccountFriends(); });
+</script>
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide0" class="slideRight" style=" min-height:150px;">
+            
+
+
+            <div id="SectionMenu1" onclick="window.location='/m/maccount/info';" style=" float:left; width:32%; height:150px; overflow:hidden; margin:0px; background-color:#292929; text-align:center; font-family:'Lato', sans-serif; font-weight:lighter; font-size:29px; color:#CDCDCD; cursor:pointer;">
+            
+                <div style=" float:left; width:100%; line-height:14px; text-align:center;">
+                    <img alt="" src="/imgs/account/create_player_icon_sm.png" style=" margin:20px 0 10px 0;" /><br />
+                    Info
+                </div>
+            
+            </div>
+
+
+
+
+            <div id="SectionMenu2" onclick="window.location='/m/maccount/music';" style=" float:left; width:32%; height:150px; overflow:hidden; margin-left:1%; background-color:#292929; text-align:center; font-family:'Lato', sans-serif; font-weight:lighter; font-size:29px; color:#CDCDCD; cursor:pointer;">
+            
+                <div style=" float:left; width:100%; line-height:14px; text-align:center;">
+                    <img alt="" src="/imgs/account/create_playlist_icon_sm.png" style=" margin:20px 0 10px 0;" /><br />
+                    Music
+                </div>
+
+            </div>
+
+
+
+
+            <div id="SectionMenu3" onclick="window.location='/m/maccount/friends';" style=" float:left; width:32%; height:150px; overflow:hidden; margin-left:1%; background-color:#181818; text-align:center; font-family:'Lato', sans-serif; font-weight:lighter; font-size:29px; color:#CDCDCD; cursor:pointer;">
+                
+                <div style=" float:left; width:100%; line-height:14px; text-align:center;">
+                    <img alt="" src="/imgs/account/create_station_icon_sm.png" style=" margin:20px 0 10px 0;" /><br />
+                    Friends
+                </div>
+            
+            </div>
+
+
+     </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- **************SECTION 3*************************** -->
+<div id="Section3" style=" display:block;">
+
+
+<div class="boxContLeft">
+    <div id="listenSlide1" class="slideLeft" style=" min-height:150px;">
+        
+                
+                <div style=" float:right; width:100%; margin-bottom:20px;">
+    
+                    <div style=" float:left; width:98%; height:25px; line-height:25px; color:#454545; font-size:22px; overflow:hidden; margin:5px 0 5px 7px; ">
+                        Members I Follow (@Model.MembersIFollow_list.Count)
+                    </div>
+
+                    @{ int counter_MembersIFollow_list = 0; }
+                    @foreach (var item in Model.MembersIFollow_list)
+                    {
+                        if (counter_MembersIFollow_list > 150)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            counter_MembersIFollow_list++;
+                        }
+
+                        
+                        if (item != null)
+                        {
+                        <div style=" float:left; width:330px; margin-left:1%; margin-top:5px;">
+
+                            <a href="/profile/@item.username" style=" display:block; float:left; width:270px; height:48px; background-color:#68747a; border-radius:2px; text-align:left; cursor:pointer;">
+                
+                                <img alt="" src="@Url.Content("/userpics/" + item.username + "/" + item.profile_pic_id + "_s.jpg")" style=" float:left; width:47px; height:44px; margin:2px 0 0 2px;" onerror="this.style.backgroundColor='#56636a';" />
+                                <div style=" float:left; margin:13px 0 0 7px; font-size:15px;">
+                                    <text>&nbsp;</text>@item.username
+                                </div>
+
+                            </a> 
+            
+                            <div onclick="Delete_MemberIFollow(@item.id);" style=" float:left; width:50px; height:48px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#68747a; border-radius:2px; margin-left:7px; cursor:pointer;">
+                                <img alt="" src="/imgs/action_icons/delete_icon_s.png" style=" margin:17px 0 0 17px;" />
+                            </div>
+                        </div>
+                        }
+        
+                    }
+                </div>
+
+
+
+            
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="boxContRight">
+    <div id="listenSlide2" class="slideRight" style=" min-height:150px;">
+    
+        
+
+                <div style=" float:left; width:100%; margin-bottom:20px;">
+
+                    <div style=" float:left; width:98%; height:25px; line-height:25px; color:#ABABAB; font-size:22px; overflow:hidden; margin:5px 0 5px 7px; ">
+                        My Followers (@Model.MyFollowers_list.Count)
+                    </div>
+
+
+                    @{ int counter_MyFollowers_list = 0; }
+                    @foreach (var item in Model.MyFollowers_list)
+                    {
+                        if (counter_MyFollowers_list > 150)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            counter_MyFollowers_list++;
+                        }
+
+
+                        
+                        if (item != null)
+                        {
+                        <div style=" float:left; width:330px; margin-left:1%; margin-top:5px;">
+                
+                            <a href="/profile/@item.username" style=" display:block; float:left; width:270px; height:48px; background-color:#454545; border-radius:2px; text-align:left; cursor:pointer;">
+                    
+                                <img alt="" src="@Url.Content("/userpics/" + item.username + "/" + item.profile_pic_id + "_s.jpg")" style=" float:left; width:47px; height:44px; margin:2px 0 0 2px;" onerror="this.src='/imgs/user_img_nf.png';" />
+                                <div style=" float:left; margin:13px 0 0 7px; font-size:15px;">
+                                    <text>&nbsp;</text>@item.username
+                                </div>
+
+                            </a>
+
+                            <div onclick="Delete_MyFollower(@item.id);" style=" float:left; width:50px; height:48px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#454545; border-radius:2px; margin-left:7px; cursor:pointer;">
+                                <img alt="" src="/imgs/action_icons/delete_icon_s.png" style=" margin:17px 0 0 17px;" />
+                            </div>
+                        </div> 
+                        }
+        
+                    }
+                </div>
+
+
+    </div>
+</div>
+
+
+
+</div>
+<!-- **************SECTION 3*************************** -->
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide3" class="slideLeft">
+            <div style=" float:right; width:100%;">
+                
+                    <div class="mFollowUsCont1" style=" margin:2px 0 0 0;">
+                        <div class="fuText">
+                            Follow Us:
+                        </div>
+                        <div style=" float:left;">
+                            <!-- AddThis Follow BEGIN -->
+                            <div class="addthis_toolbox addthis_32x32_style addthis_default_style">
+                            <a class="addthis_button_facebook_follow" addthis:userid="Hypster"></a>
+                            <a class="addthis_button_twitter_follow" addthis:userid="TheRealHypster"></a>
+                            <a class="addthis_button_tumblr_follow" addthis:userid="hypsterblog"></a>
+                            </div>
+                            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-519140dd4b47ab7b"></script>
+                            <!-- AddThis Follow END -->
+                        </div>
+                    </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    function Delete_MemberIFollow(id) {
+        var randomnumber = Math.floor(Math.random() * 11000000);
+        if (confirm('Are you sure you want to delete?') == true) { window.location = '/m/maccount/Delete_MemberIFollow?follower_id=' + id + '&R_Num=' + randomnumber; }
+    }
+
+    function Delete_MyFollower(id) {
+        var randomnumber = Math.floor(Math.random() * 11000000);
+        if (confirm('Are you sure you want to delete?') == true) { window.location = '/m/maccount/Delete_MyFollower?follower_id=' + id + '&R_Num=' + randomnumber; }
+    }
+
+</script>
+
+
+
+
+

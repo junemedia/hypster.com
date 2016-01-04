@@ -1,0 +1,176 @@
+﻿@using Google.GData;
+@using Google.GData.Client;
+@using Google.GData.Extensions;
+@using Google.GData.YouTube;
+@using Google.YouTube;
+
+
+@model Feed<Video>
+@{
+    ViewBag.Title = "searchFor";
+
+    int i_counter = 1;
+}
+
+<div id="msgBox1">
+
+    Found following results.<br />
+    <br />
+    
+    
+
+
+    @foreach (var item in Model.Entries)
+    {
+        <div class="mnuItmSearch" id="menu_@(i_counter)" data-plstid="@item.VideoId" data-plstname="@item.Title.Replace("\'", "")" >
+                    
+            <img alt="" style=" float:left; width:85px;" src="@item.Thumbnails[0].Url" onclick="OpenPlayerM('/playlists/song/@item.VideoId?@HttpUtility.UrlEncode(item.Title)');" />
+                    
+            <div style=" float:left; margin:0 0 0 10px; " onclick="OpenPlayerM('/playlists/song/@item.VideoId?@HttpUtility.UrlEncode(item.Title)');">
+                <span class="style_23">@item.Title</span> <br />
+                Views: <span class="style_24">@item.ViewCount</span><br />
+                Author: <span class="style_24">@item.Author</span><br />
+                Duration: <span class="style_24">@(Int32.Parse(item.Media.Duration.Seconds) / 60)<text>:</text>@(Int32.Parse(item.Media.Duration.Seconds) % 60)</span><br />
+            </div>  
+
+        </div>
+        
+        i_counter += 1;
+    }
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    if (is_speech_sound == 1) {
+        window.speechSynthesis.cancel();
+        var msg = new SpeechSynthesisUtterance('Found following results.');
+        window.speechSynthesis.speak(msg);
+    }
+</script>
+
+
+
+<script type="text/javascript">
+
+    var CURR_ACTIVE_MENU = 0;
+    var MENU_COUNT = @i_counter;
+
+    function HandleKeyAction(e) {
+
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+        }
+
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+
+
+        //ESC
+        if (KEY_CODE == 27) {
+            $.ajax({
+                type: "POST",
+                url: "/black/bsearch",
+                //url: "/black/bhome/step_2",
+                async: true,
+                success: function (data) {
+                    $("#bContHolder1").html(data);
+                }
+            });
+        }
+
+
+
+        //enter
+        if (KEY_CODE == 13) {
+        
+            //alert($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstid"));
+            
+            
+            //load current playlist
+            //--------------------------------------------------------------------
+            
+            $.ajax({
+                type:"POST",
+                url:"/black/bListen/song/" + $("#menu_" + CURR_ACTIVE_MENU).attr("data-plstid") + "?" + encodeURI($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname")),
+                async:true,
+                success: function(data){
+                    $("#bContHolder1").html(data);
+                }
+            });
+            
+            //--------------------------------------------------------------------
+        }
+
+
+
+        //down
+        if (KEY_CODE == 40) {
+            //move menu down
+
+            CURR_ACTIVE_MENU += 1;
+            if (CURR_ACTIVE_MENU > MENU_COUNT) {
+                CURR_ACTIVE_MENU = MENU_COUNT;
+            }
+
+            if (is_speech_sound == 1) {
+                var curr_msg = new SpeechSynthesisUtterance($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname"));
+                window.speechSynthesis.speak(curr_msg);
+            }
+
+
+            $(".mnuItmSearch").css("background", "none");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#DEDEDE");
+        }
+
+
+        //up
+        if (KEY_CODE == 38) {
+            //move menu up
+
+            CURR_ACTIVE_MENU -= 1;
+            if (CURR_ACTIVE_MENU <= 0) {
+                CURR_ACTIVE_MENU = 1;
+            }
+
+            
+            if (is_speech_sound == 1) {
+                var curr_msg = new SpeechSynthesisUtterance($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname"));
+                window.speechSynthesis.speak(curr_msg);
+            }
+
+
+            $(".mnuItmSearch").css("background", "none");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#DEDEDE");
+        }
+
+
+
+        
+
+
+    }
+</script>

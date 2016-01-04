@@ -1,0 +1,193 @@
+﻿
+
+
+
+.MainNHypPlayer
+{
+	float:left; width:1050px;
+	background-color:#FFFFFF;
+	margin-top:0px;
+}
+
+.MainRootCont
+{
+	margin:auto;
+	width:100%;
+}
+
+.MainNHypPlayer #MainContHolder
+{
+	float:left; margin:0px 0 0 0px;
+	width:680px; min-height:1350px; background-color:#000000;
+}
+
+.MainNHypPlayer .MainAdsHoder
+{
+	float:left; width:100%;
+	width:320px; margin:0 0 20px 20px;
+}
+
+.MainNHypPlayer .AdUntL
+{
+	float:left; width:300px; height:250px; background-color:#EEEEEE; border:2px solid #EEEEEE; border-radius:3px; margin:0px 0 0 0;
+}
+
+.MainNHypPlayer .AdUntR
+{
+	float:left; width:300px; height:250px; background-color:#EEEEEE; border:2px solid #EEEEEE; border-radius:3px; margin:10px 0 0 0px;
+}
+
+
+#plstNameCH
+{
+    width:99%; height:25px; line-height:25px; overflow:hidden; font-size:16px; color:#d5af55; margin:0 0 5px 1%;
+}
+
+
+
+.MainNHypPlayer .MainPlaylistHolder
+{
+    float:left; background-color:#000000; border:2px solid #000000; border-radius:3px;
+    width:90%; margin:5px 0 0 30px;
+}
+
+.MainNHypPlayer #PlayerPlaylistHolder1
+{
+	float:left; width:610px; 
+	margin:15px 0 0 0;
+}
+
+
+
+
+
+
+
+.MainNHypPlayer .playlistItemC
+{
+	float:left; width:98.5%; height:44px; overflow:hidden; background-color:#000000; margin:0 0 2px 2px; border-radius:1px;
+	width:98%; padding:1%; height:45px; margin:0 0 5px 0; border:1px solid #3fbc91;
+}
+
+
+.MainNHypPlayer .playlistItemC img
+{
+	float:left; width:50px; height:37px; margin:4px 0 0 4px; border-radius:3px; cursor:pointer;
+}
+
+
+
+.MainNHypPlayer .playlistItemC .songTtlCH1
+{
+    float:left; width:400px; height:40px; margin:4px 0 0 0; color:#FFFFFF;
+}
+
+.MainNHypPlayer .playlistItemC .songTtl
+{
+	float:left; width:265px; height:28px; line-height:28px; overflow:hidden; margin-left:10px; margin-top:4px; cursor:pointer; font-size:16px; color:#DEDEDE;
+}
+
+
+.MainNHypPlayer .playlistItemC .songPLB
+{
+    float:left; width:34px; height:34px; margin:5px 0 0 5px; background:#000000 url(/imgs/plr_play_btn.png) no-repeat 9px 2px; border:2px solid #FFFFFF; border-radius:22px; cursor:pointer;
+}
+
+.MainNHypPlayer .playlistItemC .songSKB
+{
+    float:left; width:34px; height:34px; line-height:34px; text-align:center; margin:5px 0 0 5px; background-color:#000000; border:2px solid #FFFFFF; border-radius:22px; color:#FFFFFF; cursor:pointer; font-size:13px;
+}
+
+.MainNHypPlayer .playlistItemC .songADB
+{
+    float:left; width:34px; height:34px; line-height:34px; text-align:center; margin:5px 0 0 5px; background-color:#000000; border:2px solid #FFFFFF; border-radius:22px; color:#FFFFFF; cursor:pointer; font-size:13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.MainNHypPlayer .MainPlayerHoder
+{
+	float:left; width:609px; height:473px; background-color:#000000; border:3px solid #000000; border-radius:3px;
+	margin:5px 0 0 17px;
+}
+
+
+
+
+.MainNHypPlayer .plPlstName
+{
+    float:left; width:98%; margin:5px 0 0 2%; text-align:left; font-size:42px; color:#FFFFFF; border-bottom:2px solid #cac9cb;
+}
+
+
+.MainNHypPlayer .plShareCntr1
+{
+    float:left; width:60px; margin:40px 0 0 -45px;
+}
+
+
+
+
+
+
+
+
+
+
+.mplViewsNB
+{
+    float:right; height:29px; margin:7px 2px 0 0; border-radius:3px; cursor:pointer;
+}
+.mplLikesNB
+{
+    float:right; height:29px; margin:7px 2px 0 0; border-radius:3px; cursor:pointer;
+}
+
+
+#LikeNSave
+{
+    float:left; width:30px; height:27px; margin:1px 1px 0 7px; font-size:14px; color:#BCBCBC; cursor:pointer;
+    background:#000000 url('/imgs/views_likes.png') no-repeat 0 0;
+}
+#LikeNumContH
+{
+    float:left; min-width:10px; margin:5px 4px 0 2px; font-size:14px; color:#3fbc91; cursor:pointer; text-align:left; font-weight:bold;
+}
+
+
+#ViewsNSave
+{
+    float:left; width:35px; height:27px; margin:1px 1px 0 6px; font-size:14px; color:#BCBCBC; cursor:pointer;
+    background:#000000 url('/imgs/views_likes.png') no-repeat -30px 0;
+}
+#ViewsNumContH
+{
+    float:left; min-width:10px; margin:5px 4px 0 2px; font-size:14px; color:#3fbc91; cursor:pointer; text-align:left; font-weight:bold;
+}
+
+
+
+.simPlaylistsHolder1
+{
+    float:left; width:90%; min-height:126px; margin:10px 5% 0px 5%;
+}
+
+.simPlaylistsHolder1 .simPlstHdr
+{
+    float:left; width:100%; height:30px; line-height:30px; border-bottom:2px solid #454545; color:#ABABAB; text-align:left; font-size:24px;
+}
+
+.simPlaylistsHolder1 #PopPlstsCH1
+{
+    float:left; width:100%; height:82px; padding:2px 0 2px 0; background-color:#3fbc91; margin:10px 0 0 0; color:#FFFFFF;
+}

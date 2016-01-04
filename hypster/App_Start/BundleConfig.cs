@@ -8,7 +8,7 @@ namespace hypster
         public static void RegisterBundles(BundleCollection bundles)
         {
 
-            
+
             bundles.Add(new StyleBundle("~/bundles/css").Include(
                "~/css/Site.css",
                "~/css/SiteN.css"
@@ -92,7 +92,7 @@ namespace hypster
 
 
             BundleTable.EnableOptimizations = true;
-            
+
         }
     }
 }

@@ -1,0 +1,260 @@
+﻿@model hypster_tv.ViewModels.HomePageViewModel
+@{
+    ViewBag.Title = "Specific Media Test";
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        RenderSong();
+    });
+    $(window).resize(function () {
+        RenderSong();
+    });
+
+
+
+    function RenderSong() {
+        var margin_left = 0;
+        var cont_width = 1024;
+
+        if ($(window).width() > 1024) {
+            margin_left = $(window).width() - 1024 - 44;
+            cont_width = 1024 + 30 + (margin_left / 2) - 15;
+        } else {
+            margin_left = 0;
+            cont_width = 1024;
+        }
+
+
+        //===================================================================
+        $("#listenSlide1").css("float", "right");
+        $("#listenSlide1").css("width", cont_width + "px");
+        //===================================================================
+
+
+        //===================================================================
+        $("#listenSlide2").css("float", "left");
+        $("#listenSlide2").css("width", cont_width + "px");
+        //===================================================================
+
+
+        //===================================================================
+        $("#listenSlide3").css("float", "right");
+        $("#listenSlide3").css("width", cont_width + "px");
+        //===================================================================
+
+        //===================================================================
+        $("#listenSlide4").css("float", "left");
+        $("#listenSlide4").css("width", cont_width + "px");
+        //===================================================================
+
+        //===================================================================
+        $("#listenSlide5").css("float", "right");
+        $("#listenSlide5").css("width", cont_width + "px");
+        //===================================================================
+
+
+
+        //===================================================================
+        $("#listenSlide6").css("float", "left");
+        $("#listenSlide6").css("width", cont_width + "px");
+        //===================================================================
+
+    }
+</script>
+
+
+
+@{ int slideNum = 1;}
+@{ int celebsNum = 1;}
+
+@for (int i = ViewBag.CurrPage_Start; i < ViewBag.CurrPage_End; i++)
+{
+    if (i < Model.posts_list.Count)
+    {
+        
+        <div class="@if( slideNum%2 > 0){<text>boxContRight</text>}else{<text>boxContLeft</text>} @if( slideNum == 1){<text>boxContRightTop</text>}">
+        <div id="listenSlide@(slideNum)" class="@if( slideNum%2 > 0){<text>slideRight</text>}else{<text>slideLeft</text>}" style=" min-height:390px;">
+        
+
+
+
+        <div style=" @if( slideNum%2 > 0){<text>float:left;</text>}else{<text>float:right;</text>} width:1024px;">
+        
+        
+                    <div class="Post_mainCont" style=" float:left; width:700px;">
+                        
+                        <div style=" float:left; width:100%; height:1px;">
+                            <!-- SOCIAL BUTTONS -->
+                            <div style=" position:relative; top:50px; left:-725px;">
+                    
+                    
+                                <div id="sosialHolder1" onmouseover="this.style.display = 'none'; $('#SNR_BtnHolder_@Model.posts_list[i].post_id').css('display','block');">
+                                    <div class="SI_Cont_google"></div>
+                                    <div class="SI_Cont_twitter"></div>
+                                    <div class="SI_Cont_facebook"></div>
+                                </div>
+
+                                <div id="SNR_BtnHolder_@Model.posts_list[i].post_id" style=" float:right; width:90px; display:none;">
+                    
+                                    <div class="SI_Cont_facebook1">
+                                        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2F@(System.Configuration.ConfigurationManager.AppSettings["newsHostName"])%2Fpost%2F@(@Model.posts_list[i].post_guid)&amp;send=false&amp;layout=button_count&amp;width=90&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
+                                    </div>
+
+                                    <div class="SI_Cont_twitter1">
+                                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/post/@Model.posts_list[i].post_guid" data-text="Hypster TV: @Model.posts_list[i].post_title">Tweet</a>
+                                        <script>                                            !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");</script>
+                                    </div>
+
+                                    <div class="SI_Cont_google1">
+                                        <div class="g-plusone" data-size="medium" data-href="http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/post/@Model.posts_list[i].post_guid"></div>
+                                        <script type="text/javascript">                                            (function () { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = 'https://apis.google.com/js/plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();</script>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- SOCIAL BUTTONS -->
+                        </div>
+
+
+                        <article id="post-@Model.posts_list[i].post_guid">
+                
+
+                            <h2 style=" margin-top:0px;">
+                                <a class="PostTitle" href="/post/@Model.posts_list[i].post_guid">
+                                    @Model.posts_list[i].post_title
+                                </a>
+                            </h2>
+
+                
+
+        
+
+                            <div class="PostCont">
+                               @Html.Raw(HttpUtility.HtmlDecode(Model.posts_list[i].post_content))
+                            </div>
+
+
+                            <div style=" float:left; width:100%; margin-top:10px;">
+                    
+                    
+                                <div style="float:left; margin-top:10px; ">
+                        
+                                    <div style=" float:left; color:#f4f4ad;">
+                                        Posted on <b>@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Model.posts_list[i].post_date.Value.Month) @Model.posts_list[i].post_date.Value.Day, @Model.posts_list[i].post_date.Value.Year</b>
+                                    </div>
+
+                                    <div style=" float:left; margin:2px 0 0 10px;">
+                                        <!-- Lockerz Share BEGIN -->
+                                        <a class="a2a_dd" href="http://www.addtoany.com/share_save"><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
+                                        <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+                                        <!-- Lockerz Share END -->
+                                    </div>
+                                </div>
+
+
+                                <a class="PostReadMore" href="/post/@Model.posts_list[i].post_guid">
+                                    Read More
+                                </a>
+
+                            </div>
+
+                        </article>
+                    </div>
+
+
+
+
+
+
+                    @if( slideNum%2 > 0)
+                    {
+                        <div style=" float:left; width:304px; min-height:377px; margin-left:19px;">
+                                
+                                
+                                <div id="SideAd@(slideNum)" class="AdCont300x250_Drk" style=" float:left; margin-top:5px; "></div>
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        document.getElementById("SideAd@(slideNum)").innerHTML = "<iframe allowTransparency=\"true\" width=\"300\" scrolling=\"no\" height=\"250\" frameborder=\"0\" style=\"border:none;\" marginwidth=\"0\" src=\"http://feed-rt.baronsoffers.com/offer/feed/q/aT0zNTQ4LHM9MzAweDI1MCxuPWlmcmFtZQ==?subid=default\"></iframe>";
+                                    });
+                                </script>
+                                
+
+                                @if( celebsNum%2 > 0)
+                                {
+                                    <div onclick="window.location='/celebs';" style=" float:left; width:304px; height:105px; line-height:105px; overflow:hidden; background-color:#292929; border-radius:3px; margin-top:10px; margin-right:-8px; color:#FFFFFF; text-align:center; font-size:23px; cursor:pointer; ">
+                                        Exclusive Celebrity Photos
+                                    </div>
+                                }
+                                else
+                                {   
+                                    <div onclick="window.location='http://@System.Configuration.ConfigurationManager.AppSettings["videoHostName"]/page/1';" style=" float:left; width:304px; height:105px; line-height:105px; overflow:hidden; background-color:#292929; border-radius:3px; margin-top:10px; margin-right:-8px; color:#FFFFFF; text-align:center; font-size:23px; cursor:pointer; ">
+                                        Hypster TV 
+                                    </div>
+                                }
+
+                        </div>
+                        
+                        
+                        celebsNum = celebsNum + 1;
+                    }
+                    else
+                    {
+                        <div style=" float:left; width:304px; min-height:377px; margin-left:9px; ">
+                            
+                                <div id="SideAd@(slideNum)" style=" float:right; width:300px; height:375px; overflow:hidden; background-color:#747e83; border-radius:3px; margin-top:0px; margin-right:-8px; ">
+                                    @Html.Action("GetSideVideos", "videos")
+                                </div>
+                                
+                        </div>
+                    }
+
+
+        </div>
+
+
+
+
+        </div>
+        </div>
+    
+        slideNum = slideNum + 1;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide6" class="slideLeft" style=" min-height:50px;">
+
+        <div style=" float:right; width:1024px;">
+
+        <!-- PAGING -->
+        <div style=" float:left; width:100%; height:30px; line-height:30px; margin-top:10px; margin-bottom:5px; overflow:hidden;">
+            @for (int i = 1; i <= Model.NumOfPages; i++)
+            {
+                <a class="paging_Page" style="@if (i == ViewBag.CurrPage){ <text>background-color:#5a676d;</text> }else{ <text>background-color:#747e83;</text> } " href="/page/@i">@i.ToString()</a>
+            }
+        </div>
+        <!-- PAGING -->
+
+        </div>
+
+    </div>
+</div>

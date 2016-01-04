@@ -1,0 +1,289 @@
+﻿@model hypster_tv_DAL.Member
+@{
+    Layout = "/Areas/black/Views/Shared/_srLayout.cshtml";
+}
+
+
+
+<div class="cir_1"> 
+    
+    <div onclick="clickBack()" style=" float:left; width:100%; margin:100px 0 0 90px; cursor:pointer; ">
+        BACK
+    </div>
+
+</div>
+
+
+<div class="cir_2">
+
+    <div id="msgBox1">
+        
+        
+        Manage your information.<br />
+        <br />
+
+
+        Username<br />
+        <input type="text" id="txtUserName" name="txtUserName" value="@Model.username" />
+        <br />
+
+        Password<br />
+        <input type="password" id="txtPassword" name="txtPassword" value="******"  onkeydown="change_pass_check()" />
+        <input type="password" id="txtNewPassword" name="txtNewPassword" value="******" />
+        <br />
+
+        Name<br />
+        <input type="text" id="txtName" name="txtName" value="@Model.name" />
+        <br />
+
+        Email<br />
+        <input type="text" id="txtEmail" name="txtEmail" value="@Model.email" />
+        <br />
+
+
+        <br />
+        <input type="text" id="txtSaveChanges" name="txtSaveChanges" value="Save Changes" onclick="SaveCurrentChanges()" style=" width:230px; background-color:#CC9933; color:#FFFFFF; text-align:center; cursor:pointer; border:1px solid #CC9933; " />
+    
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+            var msg = new SpeechSynthesisUtterance('Your username is @(User.Identity.Name). You can not change your username.');
+            window.speechSynthesis.speak(msg);
+        }
+        $("#txtUserName").focus();
+    });
+
+</script>
+
+
+
+<script type="text/javascript">
+
+    var CURR_ACTIVE_MENU = 1;
+    var MENU_COUNT = 5;
+
+    var pass_changed_step = 0;
+
+
+    function HandleKeyAction(e) {
+
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+        }
+
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+
+
+        //ESC
+        if (KEY_CODE == 27) {
+            clickBack();
+        }
+
+
+
+        if (KEY_CODE == 13) {
+
+            //check if user saving changes
+            if (CURR_ACTIVE_MENU == 5) {
+
+                SaveCurrentChanges();
+
+                return;
+            }
+
+            ProcessCurrMenu(CURR_ACTIVE_MENU);
+
+        }
+
+
+
+        //down
+        if (KEY_CODE == 40) {
+            //move menu down
+
+            CURR_ACTIVE_MENU += 1;
+            if (CURR_ACTIVE_MENU > MENU_COUNT) {
+                CURR_ACTIVE_MENU = MENU_COUNT;
+            }
+
+            ProcessCurrMenu(CURR_ACTIVE_MENU);
+
+        }
+
+
+
+        //up
+        if (KEY_CODE == 38) {
+            //move menu up
+
+            CURR_ACTIVE_MENU -= 1;
+            if (CURR_ACTIVE_MENU <= 0) {
+                CURR_ACTIVE_MENU = 1;
+            }
+
+            ProcessCurrMenu(CURR_ACTIVE_MENU);
+
+        }
+
+
+    }
+
+
+
+    function clickBack() {
+
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+        }
+
+        window.location = "/black/srAccount/ManageAccount";
+    }
+
+
+
+
+    function ProcessCurrMenu(p_CM)
+    {
+        switch (p_CM) {
+            case 1:
+                if (is_speech_sound == 1) {
+                    window.speechSynthesis.cancel();
+                    var msg_1 = new SpeechSynthesisUtterance('Your username is @(User.Identity.Name). You can not change your username.');
+                    window.speechSynthesis.speak(msg_1);
+                }
+                $("#txtUserName").focus();
+                break;
+            case 2:
+
+                if (pass_changed_step == 0) {
+                    if (is_speech_sound == 1) {
+                        window.speechSynthesis.cancel();
+                        var msg_2 = new SpeechSynthesisUtterance('Your password is hidden. Please enter current password if you want to change it and press ENTER.');
+                        window.speechSynthesis.speak(msg_2);
+                    }
+                    $("#txtPassword").focus();
+                    $("#txtPassword").select();
+                    return;
+                }
+
+                if (pass_changed_step == 1) {
+                    if (is_speech_sound == 1) {
+                        window.speechSynthesis.cancel();
+                        var msg_2_1 = new SpeechSynthesisUtterance('Please enter new password and press ENTER.');
+                        window.speechSynthesis.speak(msg_2_1);
+                    }
+                    $("#txtNewPassword").focus();
+                    $("#txtNewPassword").select();
+
+                    pass_changed_step = 2;
+                    return;
+                }
+
+                if (pass_changed_step == 2) {
+                    if (is_speech_sound == 1) {
+                        window.speechSynthesis.cancel();
+                        var msg_2_2 = new SpeechSynthesisUtterance('Password change pending, please go down and save changes.');
+                        window.speechSynthesis.speak(msg_2_2);
+                    }
+                    $("#txtName").focus();
+                    $("#txtName").select();
+
+                    pass_changed_step = 0;
+                    return;
+                }
+                break;
+            case 3:
+                if (is_speech_sound == 1) {
+                    window.speechSynthesis.cancel();
+                    var msg_3 = new SpeechSynthesisUtterance('Your name is ' + $('#txtName').val() + '. Please enter new name if you want to change it and press ENTER.');
+                    window.speechSynthesis.speak(msg_3);
+                }
+                $("#txtName").focus();
+                $("#txtName").select();
+                break;
+            case 4:
+                if (is_speech_sound == 1) {
+                    window.speechSynthesis.cancel();
+                    var msg_4 = new SpeechSynthesisUtterance('Your email is ' + $('#txtEmail').val() + '. You can not change you email.');
+                    window.speechSynthesis.speak(msg_4);
+                }
+                $("#txtEmail").focus();
+                break;
+            case 5:
+                if (is_speech_sound == 1) {
+                    window.speechSynthesis.cancel();
+                    var msg_5 = new SpeechSynthesisUtterance('Save Changes. Press Enter to confirm.');
+                    window.speechSynthesis.speak(msg_5);
+                }
+                $("#txtSaveChanges").focus();
+
+                break;
+            default:
+                break;
+        }
+    }
+
+
+
+
+
+    function change_pass_check() {
+        
+        pass_changed_step = 1;
+
+    }
+
+
+    function SaveCurrentChanges()
+    {
+
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+            var msg_save_changes = new SpeechSynthesisUtterance('Saving your changes, please wait a moment.');
+            window.speechSynthesis.speak(msg_save_changes);
+        }
+
+        setTimeout(function () {
+            $.ajax({
+                type: "POST",
+                url: "/black/srAccount/SaveAccountInfo?name=" + encodeURI($('#txtName').val()) + "&old_pass=" + encodeURI($('#txtPassword').val()) + "&new_pass=" + encodeURI($('#txtNewPassword').val()),
+                async: true,
+                success: function (data) {
+                    $("#bContHolder1").html(data);
+                }
+            });
+        }, 3000);
+
+
+    }
+
+</script>
+

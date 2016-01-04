@@ -1,0 +1,118 @@
+﻿@{
+    ViewBag.Title = "Tumblr music player for free, lot of skins.";
+    ViewBag.Desc = "Create music player for tumblr or website, easily configure, modify playlist without code changes";
+    Layout = "~/Areas/apps/Views/Shared/_Layout_Apps.cshtml";
+}
+
+
+
+
+<div style=" float:left; width:100%; margin:20px 0 20px 0;">
+            
+        @if (User.Identity.IsAuthenticated == false)
+        {
+            <div onclick="window.location='/account/Register';" style="float:right; width:220px; height:40px; line-height:40px; margin-top:10px; border-radius:2px; cursor:pointer; text-align:center; font-size:21px; color:#d4ae52; font-weight:300; ">
+                Register
+            </div>
+                
+            <div onclick="window.location='/account/SignIn?ReturnUrl=%2fcreate%2fplayer';" style="float:right; width:790px; height:40px; line-height:40px; margin-top:10px; border-radius:2px; cursor:pointer; text-align:center; font-size:21px; color:#d4ae52; font-weight:300; margin-right:10px; ">
+                Login to create player
+            </div>
+        }
+
+</div>
+
+
+
+
+<div style=" float:left; width:100%; margin:20px 0 20px 0;">
+        
+            
+            <div style=" float:left; width:100%; color:#d4ae52; border-radius:2px;">
+                <h2 style=" font-weight:300;">&nbsp;CREATE PLAYER FOR YOUR BLOG</h2>
+            </div>
+            <div style=" float:left; width:100%; margin-top:15px; margin-bottom:15px;">
+                <img alt="" src="/imgs/pr_tour/player/1.jpg" style=" float:left; border-radius:3px; " />
+            </div>
+
+
+            
+            <div style=" float:left; width:100%; color:#d4ae52; border-radius:2px;">
+                <h2 style=" font-weight:300;">&nbsp;YOU WILL NEED TO HAVE A PLAYLIST TO GENERATE A PLAYER</h2>
+            </div>
+            <div style=" float:left; width:100%; margin-top:15px; margin-bottom:15px;">
+                <img alt="" src="/imgs/pr_tour/player/2.jpg" style=" float:left; border-radius:3px; " />
+            </div>
+
+
+            
+            <div style=" float:left; width:100%; color:#d4ae52; border-radius:2px;">
+                <h2 style=" font-weight:300;">&nbsp;CHOOSE SKIN AND CUSTOMIZE SETTINGS</h2>
+            </div>
+            <div style=" float:left; width:100%; margin-top:15px; margin-bottom:15px;">
+                <img alt="" src="/imgs/pr_tour/player/3.jpg" style=" float:left; border-radius:3px; " />
+            </div>
+
+
+
+
+            <div style=" float:left; width:100%; color:#d4ae52; border-radius:2px;">
+                <h2 style=" font-weight:300;">&nbsp;CLICK "GET CODE" WHEN DONE</h2>
+            </div>
+            <div style=" float:left; width:100%; margin-top:15px; margin-bottom:15px;">
+                <img alt="" src="/imgs/pr_tour/player/4.jpg" style=" float:left; border-radius:3px; " />
+            </div>
+
+
+
+            <div style=" float:left; width:100%; color:#d4ae52; border-radius:2px;">
+                <h2 style=" font-weight:300;">&nbsp;GENERATE PLAYER CODE AND PLACE ON YOUR BLOG</h2>
+            </div>
+            <div style=" float:left; width:100%; margin-top:15px;">
+                <img alt="" src="/imgs/pr_tour/player/5.jpg" style=" float:left; border-radius:3px; " />
+            </div>
+
+
+
+            <div style=" float:left; width:100%; color:#d4ae52; border-radius:2px; margin-top:17px; padding:4px;">
+                
+                <div class=" float:left; margin-bottom:10px; ">
+                    <div style=" float:left; width:1024px; height:23px; overflow:hidden; ">
+                        <div class="pw-widget pw-counter-horizontal">
+	                        <a class="pw-button-tumblr pw-look-native"></a>
+	                        <a class="pw-button-blogger pw-look-native"></a>
+	                        <a class="pw-button-facebook pw-look-native"></a>
+	                        <a class="pw-button-twitter pw-look-native"></a>
+                            <a class="pw-button-pinterest pw-look-native"></a>
+                            <a class="pw-button-stumbleupon pw-look-native"></a>
+                            <a class="pw-button-linkedin pw-look-native"></a>
+	                        <a class="pw-button-googleplus pw-look-native"></a>
+	                        <a class="pw-button-post-share"></a>
+                        </div>
+                        <script src="http://i.po.st/static/v3/post-widget.js#publisherKey=caq8eudavn7j6erou9n3" type="text/javascript"></script>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div style=" float:left; width:100%; margin:20px 0 20px 0;">
+        
+    
+    <div style=" width:728px; margin:auto;">
+        @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+    </div>
+                  
+           
+</div>

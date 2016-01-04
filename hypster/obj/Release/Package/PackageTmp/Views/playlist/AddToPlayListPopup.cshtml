@@ -1,0 +1,199 @@
+﻿@model hypster.ViewModels.AddToPlayListViewModel
+@{
+    Layout = null;
+}
+
+
+
+<script type="text/javascript">
+    //$(document).ready(function () {
+        
+        $("#AddToPlaylistContPopup1").css("display", "block");
+        $("#AddToPlaylistContPopup1").css("margin-left", (($(window).width() - 870) / 2) + "px");
+        $("#AddToPlaylistContPopup1").css("margin-top", (($(window).height() - 530) / 2) + "px");
+    //});
+
+    function AddNewSongOnComplete() {
+        HideAddToPlaylist();
+        $('#MainContHolder').css('display', 'block');
+
+        var rand_num = Math.floor((Math.random() * 100000) + 1);
+        $('#cb_hf').val(rand_num);
+    }
+</script>
+
+
+
+
+
+<div id="AddToPlaylistContPopup1">
+    
+
+    <div class="ExitBtnCont">
+        <img alt="" src="/imgs/exit_button.png" onclick="HideAddToPlaylist();" />
+    </div>
+
+
+    <div class="LeftCont">
+    
+            <div style=" float:left; width:98%; margin:1%; ">
+            @using (Ajax.BeginForm("SubmitAddNewSongPopup", "playlist", new AjaxOptions { UpdateTargetId = "MessageBox1", HttpMethod = "POST", OnComplete = "AddNewSongOnComplete" }))
+            {
+                <h2 class="SongTitle">
+                    @ViewBag.song_title
+                </h2>
+            
+        
+                <div class="SongDetails">
+            
+                    <img class="SongImg" alt="" src="http://i.ytimg.com/vi/@ViewBag.song_guid/default.jpg" />
+            
+
+                    <div style=" float:left; width:290px; line-height:31px; margin-left:10px; text-align:right; ">
+                        SONG ID: <input type="text" value="@ViewBag.song_guid" disabled="disabled" style=" width:210px; height:19px; border:1px solid #42bc90; margin:7px 0 0 0;" /><br />
+                        PLAYLIST: 
+                        <select id="Sel_Playlist_ID" name="Sel_Playlist_ID" style=" width:215px; height:26px; margin-top:2px; border:1px solid #42bc90; margin:10px 0 0 0;" onchange="playlist_changed_addToPlaylist(this);"> 
+                            @foreach (var item in Model.playlists_list)
+                            {
+                                <option value="@item.id" @if(Model.curr_user.active_playlist == item.id){<text>selected="selected"</text>}>@item.name</option>
+                            }
+                        </select>
+
+                        <input id="Song_Guid" name="Song_Guid" type="hidden" value="@ViewBag.song_guid" />
+                        <input id="Song_Title" name="Song_Title" type="hidden" value="@ViewBag.song_title" />
+
+                        <input id="StayHereCheck" name="StayHereCheck" type="hidden" value="" />
+
+                        <input id="cb_hf" name="cb_hf" type="hidden" value="@ViewBag.cb_hf" />
+                    </div>
+                </div>
+                
+                
+                
+                <div style=" float:left; width:100%; margin:10px 0 0 0; text-align:left;">
+                    @if (Model.songs_list.Count > 300)
+                    {
+                        <div style=" color:#000000;">
+                            <img alt="" src="/imgs/attention_icon.png" />
+                            Your playlist is getting too big. Please consider create a new playlist.
+                        </div>
+                    } 
+                </div>
+                
+
+                <div style=" float:left; width:100%; margin:10px 0 0 0; text-align:left;">
+                    @if (ViewBag.SongAlreadyExist == "Y")
+                    {
+                        <div style=" color:#000000;">
+                            <img alt="" src="/imgs/attention_icon.png" />
+                            This song already exist in your playlist.
+                        </div>
+                    }
+                </div>
+        
+        
+                
+                if (ViewBag.song_guid != null && ViewBag.song_guid != "")
+                {
+                    <div style="float:left; width:100%; margin-top:10px; text-align:right;">
+                        <input class="AddBtn1" type="submit" value="ADD TO MY PLAYLIST" onmouseup="this.value='In Progress...';" />
+                    </div>
+                }
+                else
+                {
+                    <div style="float:left; width:100%; margin-top:10px; text-align:right; color:#CC0000; font-size:16px;">
+                        Please select song before adding to playlist.
+                    </div>
+                }
+            
+                
+                
+                <div id="MessageBox1"></div>
+            }
+
+                <div style=" float:right; margin:25px 0 0 55px;">
+                    @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
+                </div>
+
+            </div>
+        
+    </div>
+
+
+    
+
+
+
+    <div class="RightCont">
+    
+            <div id="PlaylistContHoder1">
+
+                <div class="PlaylistTitle">
+                    @ViewBag.Playlist_Name
+
+                    <div style=" float:right; margin:0 5px 0 0;">
+                        @Model.songs_list.Count <text>songs</text>
+                    </div>
+                </div>
+            
+
+                @{ int i_counter = 0; }
+                @foreach (var item in Model.songs_list)
+                {
+                    <div class="PlaylistItm">
+                        <div onclick="OpenPlayer('song_guid=@item.YoutubeId&song_title=@HttpUtility.UrlEncode(item.Title)');">
+                            <text>&nbsp;</text>@item.Title
+                        </div>
+                    </div>
+                    
+                    if (i_counter > 200)
+                    {
+                        <div class="PlaylistItm">
+                            <div>
+                                &nbsp;....
+                            </div>
+                        </div>
+                    
+                        break;
+                    }
+
+                    i_counter++;
+                }
+            </div>
+
+    </div>
+
+
+
+
+    
+
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+    function Add_and_stay_here_CLICK() {
+        $('#StayHereCheck').val('1');
+    }
+
+    function playlist_changed_addToPlaylist(object) {
+        
+        $.ajax({
+            type: "POST",
+            url: "/playlist/getPlaylistDetails?PL_ID=" + object[object.selectedIndex].value,
+            async: true,
+            success: function (data) {
+                $('#PlaylistContHoder1').html(data);
+            }
+        });
+
+    }
+
+    function HideAddToPlaylist() {
+        Show_Content_PopupPlayer();
+    }
+</script>

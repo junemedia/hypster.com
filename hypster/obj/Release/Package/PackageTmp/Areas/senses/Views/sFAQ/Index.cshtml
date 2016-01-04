@@ -1,0 +1,418 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1150" />
+    <title>FAQ</title>
+    <meta name="alexaVerifyID" content="D1zuW6QmyfkVJqITiYkg7ecUz5k" />
+    <meta name="description" content="@ViewBag.Desc" />
+    
+    
+    <link src="//code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="//code.jquery.com/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="//code.jquery.com/ui/1.10.1/jquery-ui.js" type="text/javascript"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+
+
+    @Scripts.Render("~/bundlesSENSES/scripts")
+    @Styles.Render("~/bundlesSENSES/css")
+
+
+
+    <script>
+        
+        var is_API_Ready = false;
+        var is_speech_sound = 1;
+        var curr_chrome_version = 0;
+
+        var speechDomain = "@System.Configuration.ConfigurationManager.AppSettings["voice_Domain"]";
+        var currUser = @if(User.Identity.IsAuthenticated){ <text>"@User.Identity.Name";</text> }else{<text>"";</text>}
+
+
+
+        $(document).ready(function () {
+            var w_h = $(window).height();
+            $("#mainCH1").css("height", w_h + "px");
+            $("#contCH1").css("margin-top", ((w_h - 550) / 2) + "px");
+        });
+
+
+        $(window).resize( function(){
+            var w_h = $(window).height();
+            $("#mainCH1").css("height", w_h + "px");
+            $("#contCH1").css("margin-top", ((w_h - 550) / 2) + "px");
+        });
+
+
+        function HandleKeyAction(e) {
+
+            var KEY_CODE = 0;
+
+            if (window.event) {
+                KEY_CODE = window.event.keyCode;
+            }
+            else {
+                KEY_CODE = e.which;
+            }
+
+            //alert(KEY_CODE);
+
+        }
+
+    </script>
+
+
+</head>
+
+
+
+
+<body style=" padding:0; margin:0; background-color:#000000; color:#FFFFFF;"  onKeyUp="HandleKeyAction(event)">
+    <div id="mainCH1" style=" width:1024px; min-height:1650px; margin:auto; ">
+
+
+        <div id="contCH1" style=" float:left; width:100%; min-height:1550px; margin-top:40px;  margin-bottom:130px;">
+            
+
+
+
+            <div style=" float:left; width:984px; height:60px; margin:20px 0 0 20px; background-color:#318E8A; border-radius:10px;">
+                <div style=" float:left; font-size:32px; margin:15px 0 0 10px; ">FAQ</div>
+
+                <a href="/senses/sAccount/login" style=" display:block; float:right; margin:17px 30px 0 0; color:#FFFFFF; text-decoration:none; font-size:22px;">LOGIN</a>
+                <a href="/senses/sAccount/register" style=" display:block; float:right; margin:17px 30px 0 0; color:#FFFFFF; text-decoration:none; font-size:22px;">REGISTER</a>
+                <a href="/senses/sFAQ" style=" display:block; float:right; margin:17px 30px 0 0; color:#FFFFFF; text-decoration:none; font-size:22px;">FAQ</a>
+            </div>
+
+
+
+
+
+            <div style=" float:left; width:96%; padding:2%; margin:13px 0 0 0; line-height:25px; ">
+
+                
+
+
+                <div style=" float:left; width:48%;">
+                    
+                    <div style=" width:97%; height:50px; line-height:50px; border-radius:7px; margin:1%; padding-left:1%; color:#FFFFFF; font-weight:bold; border:2px solid #318E8A;">What is Senses by Hypster®?</div><br />
+                    Senses by Hypster® is a free Web-based service designed for the visually impaired, using speech, keyboard, voice commands, and shortcuts for easy navigation and convenient use of our free music-playlist service.<br />
+                    <br />
+                    
+                </div>
+
+                <div style=" float:left; width:48%; margin:0 0 0 4%;">
+                    
+                    <div style=" width:97%; height:50px; line-height:50px; border-radius:7px; margin:1%; padding-left:1%; color:#FFFFFF; font-weight:bold; border:2px solid #318E8A;">How does it work?</div><br />
+                    It uses speech technology and reads all menus and commands when a user is navigating via keyboard arrows. It also allows users to speak commands, such as “my playlists” and “search music,” for an easy navigation.<br />
+                    <br />
+
+                </div>
+
+
+                
+
+
+
+                <div style=" float:left; width:48%;">
+
+                    <div style=" width:97%; height:50px; line-height:50px; border-radius:7px; margin:1%; padding-left:1%; color:#FFFFFF; font-weight:bold; border:2px solid #318E8A;">What browsers does it support?</div><br />
+                    It supports most popular browsers. However, some browsers require additional plug-in permissions from users. Below is a list of browsers and the features they support. 
+                    <br />
+
+                </div>
+
+                <div style=" float:left; width:48%; margin:0 0 0 4%;">
+
+                    <div style=" width:97%; height:50px; line-height:50px; border-radius:7px; margin:1%; padding-left:1%; color:#FFFFFF; font-weight:bold; border:2px solid #318E8A;">How can I use voice commands?</div><br />
+                    To use voice commands, click the CTRL button and listen for the cue (you should hear a beep). Give a command and wait until it is processed.
+                    Please note that Chrome for Windows and Mac uses native voice recognition and speech technology and is, therefore, much faster than other browsers.
+                
+                </div>
+
+
+            
+
+
+                <table cellspacing="15" style=" float:left; width:100%; margin:15px 0 0 0; border:2px solid #318E8A; border-radius:7px; text-align: center;">
+                    <tr>
+                        <td>Browser</td>
+                        <td>Speech</td>
+                        <td>Voice recognition</td>
+                        <td>Keyboard input</td>
+                        <td>Mouse input</td>
+                        <td>Jaws</td>
+                        <td>Shortcuts</td>
+                    </tr>
+
+                    <tr>
+                        <td>Internet Explorer (windows)</td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p"></div></td>
+                    </tr>
+            
+                    <tr>
+                        <td>Firefox (windows)</td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p"></div></td>
+                    </tr>
+
+                    <tr>
+                        <td>Chrome (windows)</td>
+                        <td><div class="faq_p" style="margin-top:7px;"></div><div style="font-size:12px; margin-top:-5px;">native</div></td>
+                        <td><div class="faq_p" style="margin-top:7px;"></div><div style="font-size:12px; margin-top:-5px;">native</div></td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p" style="margin-top:7px;"></div><div style="font-size:12px; margin-top:-5px;">partial</div></td>
+                        <td><div class="faq_p"></div></td>
+                    </tr>
+
+                    <tr>
+                        <td>Chrome (mac)</td>
+                        <td><div class="faq_p" style="margin-top:7px;"></div><div style="font-size:12px; margin-top:-5px;">native</div></td>
+                        <td><div class="faq_p" style="margin-top:7px;"></div><div style="font-size:12px; margin-top:-5px;">native</div></td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p"></div></td>
+                        <td>N/A</td>
+                        <td><div class="faq_p"></div></td>
+                    </tr>
+
+                    <tr>
+                        <td>Safari (mac)</td>
+                        <td><div class="faq_p" style="margin-top:7px;"></div><div style="font-size:12px; margin-top:-5px;">native</div></td>
+                        <td>x</td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p"></div></td>
+                        <td>N/A</td>
+                        <td><div class="faq_p"></div></td>
+                    </tr>
+
+                    <tr>
+                        <td>Safari (windows)</td>
+                        <td>x</td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p"></div></td>
+                        <td><div class="faq_p"></div></td>
+                        <td>x</td>
+                        <td><div class="faq_p"></div></td>
+                    </tr>
+                </table>
+                <br />
+                <br />
+
+
+
+                
+                <div style=" float:left; width:48%;">
+
+                    <div style=" float:left; width:100%; margin:20px 0 0 0;">
+                        <div style=" width:97%; height:50px; line-height:50px; border-radius:7px; margin:1%; padding-left:1%; color:#FFFFFF; font-weight:bold; border:2px solid #318E8A;">What commands can I give Senses by Hypster®?</div><br />
+                        Below is list of voice commands that Senses by Hypster® currently understands. We are continually adding more, and those additions will be updated here.
+                    </div>
+                
+
+
+                    <table cellspacing="10" style=" float:left; width:100%; margin:20px 0 0 0; border:2px solid #318E8A; border-radius:7px; text-align: center;">
+                        <tr>
+                            <td>music</td>
+                            <td>log out</td>
+                            <td>playlists</td>
+                        </tr>
+
+                        <tr>
+                            <td>charts</td>
+                            <td>add to my playlist</td>
+                            <td>playlist</td>
+                        </tr>
+            
+                        <tr>
+                            <td>radio</td>
+                            <td>add to playlist</td>
+                            <td>my playlist</td>
+                        </tr>
+
+                        <tr>
+                            <td>acount</td>
+                            <td>delete from playlist</td>
+                            <td>my playlists</td>
+                        </tr>
+
+                        <tr>
+                            <td>listen to radio</td>
+                            <td>delete</td>
+                            <td>account info</td>
+                        </tr>
+
+                        <tr>
+                            <td>listen to charts</td>
+                            <td>skip</td>
+                            <td>manage account</td>
+                        </tr>
+
+                        <tr>
+                            <td>listen to music</td>
+                            <td>next</td>
+                            <td>manage my account</td>
+                        </tr>
+
+                        <tr>
+                            <td>my account</td>
+                            <td>back</td>
+                            <td>RADIO GENRES</td>
+                        </tr>
+
+                        <tr>
+                            <td>my playlist</td>
+                            <td>prev</td>
+                            <td>delete from my playlist</td>
+                        </tr>
+
+                        <tr>
+                            <td>my playlists</td>
+                            <td>previous</td>
+                            <td>sign off</td>
+                        </tr>
+
+                        <tr>
+                            <td>search</td>
+                            <td>go back</td>
+                            <td>manage playlists</td>
+                        </tr>
+
+                        <tr>
+                            <td>search music</td>
+                            <td>pause</td>
+                            <td>remove from my playlist</td>
+                        </tr>
+
+                        <tr>
+                            <td>radio</td>
+                            <td>stop</td>
+                            <td>remove from playlist</td>
+                        </tr>
+
+                        <tr>
+                            <td>listen to radio</td>
+                            <td>volume</td>
+                            <td>remove</td>
+                        </tr>
+
+                        <tr>
+                            <td>listen radio</td>
+                            <td>mute</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>my account</td>
+                            <td>mute sound</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>account</td>
+                            <td>play</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>access my account</td>
+                            <td>go home</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>home</td>
+                            <td>sign out</td>
+                            <td></td>
+                        </tr>
+
+                    </table>
+
+                
+                </div>
+
+              
+
+                <div style=" float:left; width:48%; margin:0 0 0 4%;">
+
+                    <div style=" float:left; width:100%; margin:20px 0 0 0;">
+                        <div style=" width:97%; height:50px; line-height:50px; border-radius:7px; margin:1%; padding-left:1%; color:#FFFFFF; font-weight:bold; border:2px solid #318E8A;">What is “shortcuts”?</div><br />
+                        “Shortcuts” is a sequences of keys that allows users to quickly navigate between website pages. For example, when you’re on the homepage and you want to listen to your playlists, press “1” to access your playlists and “1” to listen to your first playlist. In other words, you’ll press “1-1” and your music will play.
+                        <br /><br />
+                    </div>
+            
+                    
+                    <div style=" float:left; width:100%; margin:20px 0 0 0;">
+                        <div style=" width:97%; height:50px; line-height:50px; border-radius:7px; margin:1%; padding-left:1%; color:#FFFFFF; font-weight:bold; border:2px solid #318E8A;">How can I add songs to my playlist?</div><br />
+                        You can press and release the CTRL key and say, “Add to my playlist” or simply click “1” when the song you would like to add is currently playing. After that, you’ll need to confirm entry and the song will be added. 
+                        <br /><br />
+                    </div>
+
+
+                    <div style=" float:left; width:100%; margin:20px 0 0 0;">
+                        <div style=" width:97%; height:50px; line-height:50px; border-radius:7px; margin:1%; padding-left:1%; color:#FFFFFF; font-weight:bold; border:2px solid #318E8A;">How can I remove songs from my playlist?</div><br />
+                        You can press and release the CTRL key and say, "Remove from my playlist” or simply click “2” when the song you would like to remove is currently playing. After that, you’ll need to confirm entry and the song will be removed. 
+                        <br /><br />
+                    </div>
+
+
+                    <div style=" float:left; width:100%; margin:20px 0 0 0;">
+                        <div style=" width:97%; height:50px; line-height:50px; border-radius:7px; margin:1%; padding-left:1%; color:#FFFFFF; font-weight:bold; border:2px solid #318E8A;">What languages does Senses by Hypster® support?</div><br />
+                        Currently, it supports English, but it will be expanded to include more languages in the near future.<br />
+                        <br />
+                    </div>
+
+
+                    <div style=" float:left; width:100%; margin:20px 0 0 0;">
+                        <div style=" width:97%; height:50px; line-height:50px; border-radius:7px; margin:1%; padding-left:1%; color:#FFFFFF; font-weight:bold; border:2px solid #318E8A;">What if the voice commands are not working?</div><br />
+                        Make sure that your mic is adjusted properly. Sometimes the settings for the computer's microphone are too low, and Hypster can't recognize voice commands. Background noise can affect the voice recognition system, so try to speak directly into the microphone.<br />
+                        <br />
+                    </div>
+
+                </div>
+
+
+
+                <br />
+                <br />
+                
+
+            </div>
+
+            
+
+           
+        </div>
+
+
+    </div>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-28695705-1']);
+        _gaq.push(['_setDomainName', 'hypster.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</body>
+</html>
+

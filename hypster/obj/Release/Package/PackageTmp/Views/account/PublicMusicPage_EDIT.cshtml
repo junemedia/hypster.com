@@ -1,0 +1,451 @@
+﻿@model hypster.ViewModels.MemberPublicPageViewModel
+@{
+    ViewBag.Title = "Music Page";
+    ViewBag.Desc = "";
+    Layout = "~/Views/Shared/_Layout_PP.cshtml";
+}
+
+
+<script type="text/javascript" src="/scripts/jscolor/jscolor.js"></script>
+<link href="/css/PublicMusicPage.css?id=28729381" rel="stylesheet" type="text/css" />
+
+
+<style type="text/css">
+    body
+    {
+        background:#@(Model.member_page.BackgroundColor) url(/imgs/pmusicp/bb.png) repeat;
+    }
+    .slideLeftPP
+    {
+        background-color:#@(Model.member_page.LeftSectionColor);
+    }
+    .slideRightPP
+    {
+        background-color:#@(Model.member_page.RightSectionColor);
+    }
+    .skn1Buttons
+    {
+    	background-color:#@(Model.member_page.ButtonsBackgroundColor);
+        color:#@(Model.member_page.ButtonsColor);
+        display:block; float:left; width:244px; height:55px; line-height:55px; text-align:center; font-size:23px; cursor:pointer; margin:0 12px 0 0px;
+        border-radius:2px;
+    }
+    .ContentHeaderInner
+    {
+        background:#@(Model.member_page.HaFBackgroundColor) url(/imgs/pmusicp/tg.png) repeat-x top;
+        border-bottom:3px solid #@(Model.member_page.HaFBackgroundColor);
+    }
+    .ContentFooterCont
+    {
+        background:#@(Model.member_page.HaFBackgroundColor) url(/imgs/pmusicp/bg.png) repeat-x bottom;
+        border-top:3px solid #@(Model.member_page.HaFBackgroundColor);
+    }
+    .sknHeader
+    {
+        display:block; background:none; border:none; float:left; width:99%; height:33px; font-size:21px; font-weight:bold;
+        color:#@(Model.member_page.TextColor);
+    }
+    .sknText
+    {
+        display:block; background:none; border:none; float:left; width:99%; height:33px; font-size:16px;
+        color:#@(Model.member_page.TextColor);
+    }
+    .skn1songBack
+    {
+        float:left; width:99%; min-height:50px; 
+        background-color:#@(Model.member_page.SongBackgroundColor);
+        margin-bottom:3px;
+        cursor:pointer;
+    }
+    .skn1VideoBack
+    {
+        float:left; width:99%; min-height:500px; 
+        background-color:#@(Model.member_page.SongBackgroundColor);
+        margin-bottom:8px;
+    }
+
+    .sknRimg
+    {
+        float:left; width:335px; padding:5px; cursor:pointer; 
+	    height:250px; overflow:hidden;
+    }
+    .sknRimg div
+    {
+	    float:left;
+	    width:100%; margin-top:-45px; 
+	    height:45px; line-height:40px;
+	    background-color:Green;
+	    text-align:left;
+	    overflow:hidden;
+        color:#@(Model.member_page.TextColor);
+        background-color:#@(Model.member_page.SongBackgroundColor);
+        margin-left:5px;
+        font-size:16px;
+    }
+</style>
+
+
+
+
+
+@using (Html.BeginForm("SavePublicMusicPage", "account"))
+{
+
+<div class="boxContRightPP boxContRightTopPP">
+    <div class="slideRightPP" style=" min-height:250px;">
+            
+            <div id="SettDef">
+                <div style=" font-size:21px;">
+                    To customize and save your preferences scroll down to the bottom of the page
+                </div>
+            </div>
+
+            <div id="Sett2">
+                <b>Choose playlist you want to assign to page</b><br />
+                <select id="PPPlaylistDD" name="PPPlaylistDD" onchange="skn1_PlaylistCont_Changed(this)" style=" width:230px;">
+                    @foreach (var item in Model.userPlaylists_list)
+                    {
+                        <option value="@item.id" @if(Model.member_page.Playlist_ID == item.id){<text>selected="selected"</text>}>@item.name</option>
+                    }
+                </select>
+
+                <br />
+                <b>Layout</b><br />
+                <input type="radio" value="1" name="layout" onclick="LayoutBtn_Changed(this);" @if(Model.member_page.Playlist_Layout == 1){ <text>checked="checked"</text> } /> Grid<br />
+                <input type="radio" value="2" name="layout" onclick="LayoutBtn_Changed(this);" @if(Model.member_page.Playlist_Layout == 2){ <text>checked="checked"</text> } /> Line<br />
+            </div>
+
+
+
+
+            <div id="skn1_PlaylistCont" style=" float:left; width:1040px; margin:-5px 0 0 -5px; ">
+            
+                @if (Model.member_page.Playlist_Layout == 2)
+                {
+                    <div class="skn1VideoBack">
+                        <div id="sSongPlayer" style=" float:left; width:1010px; height:480px; margin:10px; background-color:#111111;"></div>
+                    </div>
+                    
+                    for (int i = 0; i < Model.songs_list.Count; i++)
+                    {
+                        <div class="skn1songBack">
+                            <img alt="" src="http://i.ytimg.com/vi/@Model.songs_list[i].YoutubeId/0.jpg" />
+                            <div>&nbsp;@Model.songs_list[i].Title</div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < Model.songs_list.Count; i++)
+                    {
+                        <div class="sknRimg">
+                            <img  alt="" src="http://i.ytimg.com/vi/@Model.songs_list[i].YoutubeId/0.jpg" />
+                            <div>&nbsp;@Model.songs_list[i].Title</div>
+                        </div>
+                    }
+                }
+
+            </div>
+
+    </div>
+</div>
+
+    
+    
+<div class="boxContLeftPP">
+    <div class="slideLeftPP" style=" min-height:55px;">
+        
+
+        <div id="Sett1">
+            
+            <div style=" float:left;">
+                <input id="showHeader" name="showHeader" value="5" type="checkbox" @if (Model.member_page.showHeader == true){<text>checked="checked"</text>} onchange="changeShowHeader_btn();" /> Show Header<br />
+                <input id="showDescription" name="showDescription" value="6" type="checkbox" @if (Model.member_page.showDescription == true){<text>checked="checked"</text>} onchange="changeShowDescription_btn();" /> Show Description<br />
+            </div>
+
+            <div style=" float:left; margin-left:20px;">
+                <input id="autoplay" name="autoplay" type="checkbox" value="1" @if (Model.member_page.autoplay == true){<text>checked="checked"</text>} onchange="changeShowAutoplayButton_btn();" /> Autoplay<br />
+                <input id="showLikeButtton" name="showLikeButtton" type="checkbox" value="2" @if (Model.member_page.showLikeButtton == true){<text>checked="checked"</text>} onchange="changeShowLikeButton_btn();" /> Show Like Button<br />
+                <input id="showInfoButton" name="showInfoButton" type="checkbox" value="3" @if (Model.member_page.showInfoButton == true){<text>checked="checked"</text>} onchange="changeShowInfoButton_btn();" /> Show Info Button<br />
+                <input id="showPhotosButton" name="showPhotosButton" type="checkbox" value="4" @if (Model.member_page.showPhotosButton == true){<text>checked="checked"</text>} onchange="changeShowPhotosButton_btn();" /> Show Photos Button<br />
+            </div>
+
+        </div>
+
+
+
+
+
+        <div style=" float:right; width:1024px; line-height:15px; ">
+            <input class="sknHeader" id="header" name="header" type="text" value="@if(Model.member_page.header != ""){<text>@Model.member_page.header</text>}else{<text>Header</text>}" maxlength="450" onmouseover="this.style.border='1px solid #fef9c9';" onmouseout="this.style.border='none'; " style=" @if (Model.member_page.showHeader == true){<text>display:block;</text>}else{<text>display:none;</text>} background:none; border:none; float:left; width:99%; height:33px; font-size:21px; font-weight:bold;" /> <br />
+            <input class="sknText" id="description" name="description" type="text" value="@if (Model.member_page.description != ""){<text>@Model.member_page.description</text>}else{<text>Header</text>}" maxlength="1000" onmouseover="this.style.border='1px solid #fef9c9'; " onmouseout="this.style.border='none'; " style=" @if (Model.member_page.showDescription == true){<text>display:block;</text>}else{<text>display:none;</text>} background:none; border:none; float:left; width:99%; height:33px; font-size:16px;" />
+        </div>
+
+
+        <div style=" float:right; width:1024px; margin-top:1px; ">
+            <div class="skn1Buttons" id="skn1Top_Play_Btn" style=" display:none;">
+                Play
+            </div>
+
+            <div class="skn1Buttons" id="skn1Top_Like_Btn" style=" @if (Model.member_page.showLikeButtton == true){<text>display:block;</text>}else{<text>display:none;</text>} ">
+                Like
+            </div>
+
+            <div class="skn1Buttons" id="skn1Top_Info_Btn" onclick="uInfoCont_CLICK();" style=" @if (Model.member_page.showInfoButton == true){<text>display:block;</text>}else{<text>display:none;</text>} ">
+                Info
+            </div>
+
+            <div class="skn1Buttons" id="skn1Top_Photos_Btn" onclick="uPhotosCont_CLICK();" style=" @if (Model.member_page.showPhotosButton == true){<text>display:block;</text>}else{<text>display:none;</text>} ">
+                Photos
+            </div>
+        </div>
+
+
+        <div id="uInfoCont" style=" display:none; float:right; width:1024px; margin-top:10px; ">
+            INFO
+        </div>
+
+        <div id="uPhotosCont" style=" display:none; float:right; width:1024px; margin-top:10px; ">
+            PHOTOS
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="boxContRightPP">
+    <div class="slideRightPP" style=" min-height:50px;">
+        
+            <div id="SettMain">
+                
+                Header & Footer Background Color <input id="hf_HaFBackgroundColor" name="hf_HaFBackgroundColor" class="color" onchange="changeHaFBackgroundColor();" style="border:none; width:58px; height:21px;" value="@Model.member_page.HaFBackgroundColor" />
+                <br />
+                Main Background Color <input id="hf_BackgroundColor" name="hf_BackgroundColor" class="color" onchange="changePageBackground();" style="border:none; width:58px; height:21px;" value="@Model.member_page.BackgroundColor" />
+                <br />
+                Left Section Background Color <input id="hf_LeftSectionColor" name="hf_LeftSectionColor" class="color" onchange="changeLeftSectionColor();" style="border:none; width:58px; height:21px;" value="@Model.member_page.LeftSectionColor" />
+                <br />
+                Right Section Background Color <input id="hf_RightSectionColor" name="hf_RightSectionColor" class="color" onchange="changeRightSectionColor();" style="border:none; width:58px; height:21px;" value="@Model.member_page.RightSectionColor" />
+                <br />
+                Buttons Background Color <input id="hf_ButtonsBackgroundColor" name="hf_ButtonsBackgroundColor" class="color" onchange="changeButtonsBackgroundColor();" style="border:none; width:58px; height:21px;" value="@Model.member_page.ButtonsBackgroundColor" />
+                <br />
+                Song Background Color <input id="hf_SongBackgroundColor" name="hf_SongBackgroundColor" class="color" onchange="changeSongBackgroundColor();" style="border:none; width:58px; height:21px;" value="@Model.member_page.SongBackgroundColor" />
+                <br />
+                <br />
+                Text Color <input id="hf_TextColor" name="hf_TextColor" class="color" onchange="change_TextColor();" style="border:none; width:58px; height:21px;" value="@Model.member_page.TextColor" />
+                <br />
+                Buttons Color <input id="hf_ButtonsColor" name="hf_ButtonsColor" class="color" onchange="change_ButtonsColor();" style="border:none; width:58px; height:21px;" value="@Model.member_page.ButtonsColor" />
+                <br />
+            </div>
+
+
+            <div style=" float:left; width:1024px; height:50px; ">
+                <input type="hidden" id="hf_MemberPublicPageID" name="hf_MemberPublicPageID" value="@Model.member_page.PublicPage_ID" />
+
+                <input id="GoBackBtn" type="button" value="Go Back" onclick="window.location='/account/info';" />
+                <input id="SaveChngsBtn" type="submit" value="Save Changes and Preview" />
+
+            </div>
+
+    </div>
+</div>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () { RenderPagePP(); });
+    $(window).resize(function () { RenderPagePP(); });
+
+
+
+    var CURR_PLAYLIST_LAYOUT = @(Model.member_page.Playlist_Layout);
+
+
+
+    function changePageBackground() {
+        var color = $('#hf_BackgroundColor').val();
+        $('body').css("background", "#" + color + " url(/imgs/pmusicp/bb.png) repeat");
+    }
+
+    function changeLeftSectionColor() {
+        var color = $('#hf_LeftSectionColor').val();
+        $('.slideLeftPP').css("background", "#" + color);
+    }
+
+    function changeRightSectionColor() {
+        var color = $('#hf_RightSectionColor').val();
+        $('.slideRightPP').css("background", "#" + color);
+    }
+
+    function changeHaFBackgroundColor() {
+        var color = $('#hf_HaFBackgroundColor').val();
+
+        $('.ContentHeaderInner').css("background", "#" + color + " url(/imgs/pmusicp/tg.png) repeat-x top");
+        $('.ContentFooterCont').css("background", "#" + color + " url(/imgs/pmusicp/bg.png) repeat-x bottom");
+
+        $('.ContentHeaderInner').css("border-bottom", "3px solid #" + color);
+        $('.ContentFooterCont').css("border-top", "3px solid #" + color);
+    }
+
+
+    function changeShowAutoplayButton_btn(){
+        if ($('#skn1Top_Play_Btn').css('display') == 'none') {
+            $('#skn1Top_Play_Btn').css('display', 'block');
+        }
+        else {
+            $('#skn1Top_Play_Btn').css('display', 'none');
+        }
+    }
+
+    function changeShowLikeButton_btn() {
+        if ($('#skn1Top_Like_Btn').css('display') == 'none') {
+            $('#skn1Top_Like_Btn').css('display', 'block');
+        }
+        else {
+            $('#skn1Top_Like_Btn').css('display', 'none');
+        }
+    }
+
+    function changeShowInfoButton_btn() {
+        if ($('#skn1Top_Info_Btn').css('display') == 'none') {
+            $('#skn1Top_Info_Btn').css('display', 'block');
+        }
+        else {
+            $('#skn1Top_Info_Btn').css('display', 'none');
+        }
+    }
+
+    function changeShowPhotosButton_btn() {
+        if ($('#skn1Top_Photos_Btn').css('display') == 'none') {
+            $('#skn1Top_Photos_Btn').css('display', 'block');
+        }
+        else {
+            $('#skn1Top_Photos_Btn').css('display', 'none');
+        }
+    }
+
+    function skn1Btm_Comments_changed() {
+        if ($('#skn1Btm_Comments').css('display') == 'none') {
+            $('#skn1Btm_Comments').css('display', 'block');
+        }
+        else {
+            $('#skn1Btm_Comments').css('display', 'none');
+        }
+    }
+    
+    function changeShowHeader_btn() {
+        if ($('#header').css('display') == 'none') {
+            $('#header').css('display', 'block');
+        }
+        else {
+            $('#header').css('display', 'none');
+        }
+    }
+
+    function changeShowDescription_btn() {
+        if ($('#description').css('display') == 'none') {
+            $('#description').css('display', 'block');
+        }
+        else {
+            $('#description').css('display', 'none');
+        }
+    }
+
+    function change_TextColor() {
+        var color = $('#hf_TextColor').val();
+
+        $('#header').css('color', '#' + color);
+        $('#description').css('color', '#' + color);
+        $('.sknRimg div').css('color', '#' + color);
+    }
+
+    function change_ButtonsColor() {
+        var color = $('#hf_ButtonsColor').val();
+
+        $('.skn1Buttons').css('color', '#' + color);
+    }
+
+    function changeButtonsBackgroundColor() {
+        var color = $('#hf_ButtonsBackgroundColor').val();
+
+        $('.skn1Buttons').css('background-color', '#' + color);
+    }
+
+    function changeSongBackgroundColor() {
+        var color = $('#hf_SongBackgroundColor').val();
+
+        $('.skn1songBack').css('background-color', '#' + color);
+        $('.skn1VideoBack').css('background-color', '#' + color);
+
+        $('.sknRimg div').css('background-color', '#' + color);
+    }
+
+    function LayoutBtn_Changed(object) {
+
+        if ($(object).attr("checked") == 'checked') {
+            CURR_PLAYLIST_LAYOUT = $(object).val();
+            skn1_PlaylistCont_Changed(document.getElementById('PPPlaylistDD'));
+        }
+    }
+
+    function skn1_PlaylistCont_Changed(object) {
+        $.ajax({
+            type: "POST",
+            url: "/account/GetPublicAcctPlaylist?PLST_ID=" + object[object.selectedIndex].value + "&LAYOUT=" + CURR_PLAYLIST_LAYOUT,
+            async: true,
+            success: function (data) {
+                $('#skn1_PlaylistCont').html(data);
+            }
+        });
+    }
+
+    var uInfoCont_ON = false;
+    function uInfoCont_CLICK()
+    {
+        if(uInfoCont_ON == false)
+         {
+            $("#uInfoCont").css("display","block");
+            uInfoCont_ON = true;
+         }
+         else
+         {
+            $("#uInfoCont").css("display","none");
+            uInfoCont_ON = false;
+         }
+    }
+    
+
+    var uPhotosCont_ON = false;
+    function uPhotosCont_CLICK()
+    {
+         if(uPhotosCont_ON == false)
+         {
+            $("#uPhotosCont").css("display","block");
+            uPhotosCont_ON = true;
+         }
+         else
+         {
+            $("#uPhotosCont").css("display","none");
+            uPhotosCont_ON = false;
+         }
+    }
+
+</script>

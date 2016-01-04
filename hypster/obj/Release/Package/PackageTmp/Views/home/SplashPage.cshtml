@@ -1,0 +1,28 @@
+﻿@model hypster_tv_DAL.newsPost
+@{
+    Layout = null;
+}
+
+
+<div id="splashCH1">
+    <h2>Wellcome to Hypster - Unlimited Commercial Free Music</h2>
+
+    <div class="breakingMCH" style=" height:280px; ">
+        
+        <div class="brkngItm" onclick="window.location='/breaking/details/@Model.post_guid';" style=" margin:17px 0 0 130px; background-image:url('http://news.hypster.com/imgs/i_posts/@Model.post_image');">
+            <div>@Model.post_title</div>
+        </div>
+
+    </div>
+
+    <div style=" float:left; width:100%;">
+        <div id="splshBottomBtn" onclick="Show_Content();">Continue to website >>></div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+    $("#splashCH1").css("top", (($(window).height() - 380)/2) + "px");
+    $("#splashCH1").css("left", (($(window).width() - 600) / 2) + "px");
+</script>

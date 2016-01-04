@@ -1,0 +1,564 @@
+﻿html{scrollbar-face-color:#777;scrollbar-base-color:#777;scrollbar-arrow-color:#000;scrollbar-track-color:#313537;scrollbar-shadow-color:#777;scrollbar-highlight-color:#777;scrollbar-3dlight-color:#666;scrollbar-darkshadow-color:#666;height:100%;font-family:Segoe UI Light;font-weight:lighter}
+@font-face{font-family:Hypster-Segoe;src:url(http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.eot?#iefix) format(embedded-opentype), url(http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.woff) format(woff), url(http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.ttf) format(truetype), url(http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.svg#web) format(svg);font-weight:lighter}
+.shadow{-moz-box-shadow:3px 3px 4px #000;-webkit-box-shadow:3px 3px 4px #000;box-shadow:3px 3px 4px #000;-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#000000')}
+body{font-size:.85em;font-family:Hypster-Segoe;font-weight:lighter;color:#EEE;background:#466472 url(/imgs/main_doc_back_ski.jpg) no-repeat;width:100%;height:100%;margin:0;padding:0}
+header,footer,nav,section{display:block}
+img{border:0}
+.MainBD13{float:left;width:100%;min-width:1040px;min-height:100%;height:auto!important;margin-bottom:25px}
+.Trans_BACK{background:#000;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=90);opacity:0.90;-moz-opacity:0.90;display:none;z-index:100000;position:absolute;top:0;left:0;width:1px;height:1px}
+div.Trans_75{filter:progid:DXImageTransform.Microsoft.Alpha(opacity=75);opacity:0.75;-moz-opacity:0.75}
+.boxContRight{float:right;width:100%;height:auto;background:url(/imgs/stripe-bg.png) repeat-y center;overflow:hidden;margin:25px 0 0}
+.boxContLeft{float:left;width:100%;height:auto;background:url(/imgs/stripe-bg2.png) repeat-y center;overflow:hidden;margin:25px 0 0}
+.slideRight{width:1024px;min-height:50px;background-color:#313537;border-radius:2px;border-left:1px solid #2c3133;border-bottom:1px solid #2c3133;margin:0 auto;padding:15px 0 15px 15px}
+.slideLeft{width:1024px;min-height:50px;border-radius:2px;border-right:1px solid #627076;border-bottom:1px solid #627076;background:#9da2a4 url(/imgs/grey_back.png) repeat;margin:0 auto;padding:15px}
+.boxContRightTop{margin-top:3px}
+.BoxCont300x250{float:left;width:318px;height:268px;overflow:hidden;background:url(/imgs/home_box_back.png) no-repeat;padding:2px}
+#langBar{display:none;position:absolute;top:0;left:0;width:90px;height:32px;background:url(/imgs/lang_map.png) no-repeat right top}
+#langBar .langItm{display:block;float:right;font-size:14px;font-weight:700;cursor:pointer;padding:0 6px 0 5px}
+fieldset{border:1px solid #ddd;margin:0 0 1.5em;padding:0 1.4em 1.4em}
+legend{font-size:1.2em;font-weight:700}
+textarea{min-height:75px}
+.editor-label{margin:1em 0 0}
+.editor-field{margin:.5em 0 0}
+input[type=text]{font-family:Hypster-Segoe;font-weight:lighter;font-size:18px}
+.hyp_SI_Cont_google{float:left;width:75px;height:22px;background:#454545 url(/imgs/social_icons/google_icon.png) no-repeat center;border-radius:2px;cursor:pointer;margin-left:25px}
+.hyp_SI_Cont_twitter{float:left;width:75px;height:22px;background:#454545 url(/imgs/social_icons/twitter_icon.png) no-repeat center;border-radius:2px;cursor:pointer;margin-left:10px}
+.hyp_SI_Cont_facebook{float:left;width:75px;height:22px;background:#454545 url(/imgs/social_icons/facebook_icon.png) no-repeat center;border-radius:2px;cursor:pointer;margin-left:10px}
+.hyp_SI_Cont_facebook1{float:left;width:90px;height:22px;margin-left:16px}
+.hyp_SI_Cont_twitter1{float:left;width:90px;height:22px;margin-left:5px}
+.hyp_SI_Cont_google1{float:left;width:80px;height:22px;margin-left:5px}
+a{color:#FFF;text-decoration:none}
+.ContentHeaderCont{float:left;width:100%;height:102px}
+.ContentHeaderInner{float:left;width:100%;height:60px;background:#2e2e2e url(/imgs/shared/top_header_grdnt.png) repeat-x;border-bottom:3px solid #191919}
+.ContentRootCont{float:left;min-width:1040px;width:100%}
+.ContentFooterCont{clear:both;min-width:1040px;width:100%;height:280px;background-color:#1A1A1A;border-top:4px solid #2f2f2f;margin-top:25px}
+#TopAdd1{float:left;width:728px;height:90px}
+.BottomPane{width:1050px;clear:both;min-height:270px;margin-left:13px}
+.BottomPane img{float:left;margin:13px 0 0 15px}
+.BottomPaneInnr{float:left;width:750px;margin:10px 0 0}
+.BottomPaneInnr .MenuItmCont{float:left;width:169px;height:115px;padding-left:7px;border-left:1px solid #2f2f2f;margin:10px 0 0 9px}
+.BottomPaneInnr .MenuItmCont a{float:left;display:block;width:96%;text-align:left;font-size:15px;margin-top:6px;padding:0 1% 2px 3%}
+.push{clear:both}
+.FeaturedAdContBottom{width:728px;height:90px;background-color:#2f2f2f;border:2px solid #2f2f2f;border-radius:2px;float:left;overflow:hidden;margin:16px 2px 0 9px}
+#MainMenu{width:1024px;height:59px;margin:0 auto}
+#MainMenu .mLogo{float:left;margin-top:0;cursor:pointer}
+.mAccount{float:left;width:80px;height:28px;line-height:24px;cursor:pointer;font-family:Hypster-Segoe;font-weight:lighter;font-size:14px;text-align:center;margin-top:1px}
+.hypContHolder{float:left;width:102px;margin-left:15px}
+#HypsterSub{display:block;position:relative;top:0;left:3px;float:left;width:288px;height:25px;background-color:#383838;border-top:3px solid #191919;border-radius:1px;border-bottom:1px solid #292929;border-right:1px solid #292929}
+#ListenSub{display:block;position:relative;top:0;left:3px;float:left;width:300px;height:25px;background-color:#383838;border-top:3px solid #191919;border-radius:1px;border-bottom:1px solid #292929;border-right:1px solid #292929}
+#CreateSub{display:block;position:relative;top:0;left:3px;float:left;width:221px;height:25px;background-color:#383838;border-top:3px solid #191919;border-radius:1px;border-bottom:1px solid #292929;border-right:1px solid #292929}
+#ConnectSub{display:block;position:relative;top:0;left:3px;float:left;width:325px;height:25px;background-color:#383838;border-top:3px solid #191919;border-radius:1px;border-bottom:1px solid #313131;border-right:1px solid #313131}
+#HypsterSub .HypSub_charts{display:block;float:left;width:60px;height:25px;line-height:23px;text-align:center;border-right:1px solid #191919}
+#HypsterSub .HypSub_howTo{display:block;float:left;width:90px;height:25px;line-height:23px;text-align:center;border-right:1px solid #191919}
+#HypsterSub .HypSub_news{display:block;float:left;width:63px;height:25px;line-height:23px;text-align:center}
+#ListenSub .HypSub_listen{display:block;float:left;width:100px;height:25px;line-height:23px;text-align:center;border-right:1px solid #191919}
+#ListenSub .HypSub_radio{display:block;float:left;width:70px;height:25px;line-height:23px;text-align:center;border-left:1px solid #191919}
+#ListenSub .HypSub_tv{display:block;float:left;width:55px;height:25px;line-height:23px;text-align:center;border-right:1px solid #191919}
+#ConnectSub .HypSub_connect{display:block;float:left;width:75px;height:25px;line-height:23px;text-align:center;border-right:1px solid #191919}
+#ConnectSub .HypSub_similar{display:block;float:left;width:135px;height:25px;line-height:23px;text-align:center;border-right:1px solid #191919}
+#ConnectSub .HypSub_musicP{display:block;float:left;width:112px;height:25px;line-height:23px;text-align:center}
+.TopHeaderCont{float:right;width:300px;height:30px;margin:32px 0 0}
+.LoginCont{float:right;min-width:50px;height:25px;line-height:25px;color:#EEE;text-align:right;font-family:Hypster-Segoe;font-weight:lighter;font-size:14px;padding:0 0 0 8px}
+.LoginAcctCont{float:right;width:80px;height:25px;line-height:25px;color:#EEE;text-align:right;font-family:Hypster-Segoe;font-weight:lighter;font-size:14px;margin-right:7px;cursor:pointer;padding:0 0 0 8px}
+.LoginPlrCont{float:right;min-width:50px;height:25px;line-height:25px;color:#EEE;text-align:right;font-family:Hypster-Segoe;font-weight:lighter;font-size:14px;margin-right:5px;cursor:pointer;padding:0 10px}
+.VideoThumbBox{display:block;float:right;width:228px;height:133px;background-color:#59666c;margin-left:25px;margin-top:19px;border-radius:2px;cursor:pointer;border-bottom:1px solid #4d5a60;border-right:1px solid #4d5a60;overflow:hidden;padding:4px}
+.VideoThumbBox .VideoThumbCont{float:left;width:100%;height:133px;overflow:hidden;border-radius:2px}
+.VideoThumbCont .vprcontI{float:left;width:76px;height:56px}
+.videoBoxHeader{float:left;width:228px;height:30px;margin-left:0;margin-top:-30px;background-color:#1f2b30;overflow:hidden;opacity:0.97;filter:alpha(opacity=97);color:#FFF;font-size:16px;font-family:Hypster-Segoe;line-height:30px;text-align:left}
+.txtValidator{color:#FCF088;font-family:Arial;font-size:14px;line-height:15px;font-weight:400}
+.txtValidator ul{list-style:none;margin:10px 0 0;padding:0}
+.InnerNewsCont{float:left;width:400px;height:505px;text-align:left;margin:20px 0 0 13px}
+.PostItm{font-family:Hypster-Segoe;font-weight:lighter;font-size:14px;margin-top:0;line-height:20px;color:#CDCDCD;float:left;width:205px;height:160px;overflow:hidden;margin-left:5px}
+.PostItm-title{display:block;font-size:18px;margin-top:-4px;height:22px;overflow:hidden}
+.PostItm-title span{font-family:Hypster-Segoe;font-weight:lighter;color:#EEE}
+.fuHMPText{float:right;font-size:16px;color:#FCF088;background-color:#313537;border-radius:2px;margin:6px -4px 0 0;padding:0 18px 1px}
+.sld1_topCont .topLeft{float:left;width:706px;height:250px;overflow:hidden;background-color:#1c1c1c;border:2px solid #1c1c1c;border-radius:2px}
+.sld1_topCont .topRight{float:left;width:300px;height:250px;background-color:#1c1c1c;border:2px solid #1c1c1c;border-radius:2px;overflow:hidden;margin:0 0 0 8px}
+.sld1_topCont2{display:none;float:left;width:1022px;height:230px;overflow:hidden;background-color:#1c1c1c;border:2px solid #1c1c1c;border-radius:2px}
+.sld1_middleCont .middleC1{float:left;width:30%;height:120px;background-color:#2e3335;border-radius:2px;text-align:center;border-left:1px solid #2c3133;border-bottom:1px solid #2c3133;margin:16px 0 0;padding:4px .5% 0}
+#listenSlide1_textBoxes2 .middleC1{float:left;width:30%;height:140px;background-color:#2e3335;border-radius:2px;text-align:center;border-left:1px solid #2c3133;border-bottom:1px solid #2c3133;margin:16px 0 0;padding:4px .5% 0}
+.head11{font-size:22px;font-weight:700;line-height:26px}
+.cont21{font-size:16px}
+.btn11{float:right;width:77px;height:19px;background:#42606e url(/imgs/search_btn1.png) no-repeat;border-radius:3px;text-align:center;line-height:18px;font-size:14px;cursor:pointer;margin:0}
+.btn222{float:right;width:77px;height:19px;background:#42606e url(/imgs/search_btn1.png) no-repeat;border-radius:3px;text-align:center;line-height:18px;font-size:14px;cursor:pointer;margin:26px 0 0}
+.sld1_bottomCont #txtSearchString{float:left;width:420px;height:31px;background-color:#EEE;border:3px solid #FEFEFE;border-radius:5px;margin:12px 0 0 11px;padding:0 7px}
+.sld1_bottomCont #btnSearch{float:left;width:89px;height:39px;background:url(/imgs/search_btn.png) no-repeat;cursor:pointer;margin:11px 0 0 11px}
+.sld1_bottomContInnr{float:left;width:100%;height:62px;background-color:#1c1c1c;border-radius:2px;margin:16px 0 0}
+.sld1_bottomCont #listenSlide1_search{float:right;width:45%;height:52px;overflow:hidden;margin:5px}
+.sld1_bottomCont #VisualSHolder{float:left;min-width:1200px}
+.sld1_bottomCont .VisualS_itm{float:left;height:52px;cursor:pointer}
+.popularHomeContHolder{float:left;width:435px;height:610px}
+.popularHomeInner{float:left;width:440px;margin-left:0;margin-top:0}
+.popularHomeInner .headerCont{float:left;width:330px;height:35px;background:#5a5d5f url(/imgs/home/News_HeaderBack.png) no-repeat right;margin:0 0 8px -15px;padding:2px}
+.popularHomeInner .songItm{float:left;width:415px;height:32px;line-height:32px;margin-top:7px;color:#DEDEDE;font-family:Hypster-Segoe;font-weight:lighter;font-size:16px;overflow:hidden;cursor:pointer;background-color:#585a5d;border-radius:1px;padding:2px}
+.popularHomeInner .songItm1{float:left;width:415px;height:32px;line-height:32px;margin-top:7px;color:#DEDEDE;font-family:Hypster-Segoe;font-weight:lighter;font-size:16px;overflow:hidden;cursor:pointer;background-color:#4b5052;border-radius:1px;padding:2px}
+.popularHomeInner .songItm_title{display:block;float:left;width:380px;margin-left:7px;overflow:hidden;color:#FEFEFE}
+.popularHomeInner .songItm_add{display:block;float:right;width:15px;height:17px;background:url(/imgs/search-music-icon.png) no-repeat center;margin:4px 4px 0 0;padding:4px}
+.popularHomeAdCont{float:left;width:160px;height:600px;background-color:#4f5356;border:3px solid #4f5356;border-radius:3px;overflow:hidden;margin:0}
+#listenSlide3_cont{float:right;width:420px;height:605px;background-color:#5a5d5f;border-radius:2px;margin:0}
+.listenMenuCont #Menu1{float:left;width:332px;height:140px;line-height:14px;background-color:#1d1d1c;border-radius:2px;text-align:center;font-family:Hypster-Segoe;font-weight:lighter;font-size:29px;color:#EDEDED;cursor:pointer;margin:0}
+#listenTab1{float:left;width:100%;height:325px;overflow:hidden;margin-top:-2px}
+#plstsListenTab1{float:left;width:100%;min-height:325px;overflow:hidden;margin-top:-2px;background-color:#1d1d1c}
+#listenTab1 .contTop{float:left;width:100%;height:65px;background-color:#1d1d1c}
+#listenTab1 .contMiddle{float:left;min-width:2200px;height:250px;margin-top:10px;overflow:hidden;background-color:#1d1d1c}
+#listenTab1 #txtSearchString{float:left;width:520px;height:33px;background-color:#EEE;border:3px solid #FEFEFE;border-radius:5px;margin:12px 0 0 12px;padding:0 7px}
+#listenTab1 #btnSearch{float:left;width:89px;height:39px;background:url(/imgs/search_btn.png) no-repeat;cursor:pointer;margin:12px 0 0 12px}
+#listenTab1 #txtSearchString_youtube{float:left;width:230px;height:19px;background-color:#EEE;border:3px solid #FEFEFE;border-radius:5px;font-size:14px;margin:7px 0 0 25px;padding:0 7px}
+#listenTab1 #btnSearch_youtube{float:left;width:70px;height:26px;line-height:26px;background-color:#42606e;border-radius:3px;cursor:pointer;color:#FFF;text-align:center;margin:7px 0 0 12px}
+#listenTab1 #AddSearch{display:none;float:left;width:100%;height:275px;background-color:#1d1d1c}
+#listenTab1 .AdvSrch{float:left;width:100%;background-color:#1B1B1B;color:#FCF088;font-size:16px;margin:20px 0 0 20px;padding:2px}
+#listenTab1 .AdvSrchYTS{float:left;width:100%;margin:5px 0 0}
+#listenTab1 .AdvSrchOrdr{float:left;width:100%;margin:0 0 0 5px}
+#listenTab1 .AdvSrchOrdr div{float:left;line-height:24px;margin:5px 0 0 15px}
+#listenTab2 .contTop{float:left;width:100%;color:#DEDEDE;font-family:Hypster-Segoe;font-weight:lighter}
+#listenTab2 .RadioSt{float:left;width:240px;padding-bottom:2px;padding-left:4px;font-size:17px;border-radius:2px;cursor:pointer;margin:8px 0 0 10px}
+.contMiddle .radioSearch{float:left;width:100%;height:62px;background-color:#1c1c1c;border-radius:2px;margin:10px 0 0}
+.contMiddle #stationName{float:left;width:420px;height:27px;background-color:#EEE;border:3px solid #FEFEFE;border-radius:5px;margin:11px 0 0 11px;padding:0 7px}
+.contMiddle .btnRadioSearch{float:left;width:130px;height:33px;background:#42606e url(/imgs/search_btn1.png) no-repeat;border-radius:3px;text-align:center;line-height:32px;font-size:19px;cursor:pointer;margin:11px 0 0 11px}
+#listenTab3 .plEdit{display:block;float:right;width:17px;height:17px;background:url(/imgs/edit_icon_lte.png) no-repeat center;margin:2px 2px 0 0;padding:4px}
+#listenTab3 .plItemCreate{float:left;width:310px;height:27px;line-height:27px;background-color:#555;border-radius:2px;color:#FFF;font-family:Hypster-Segoe;font-weight:lighter;font-size:17px;cursor:pointer;margin:0 15px 10px 0;padding:5px}
+#listenTab3 .plItemCreate div{float:left;width:260px;margin-left:7px}
+#CreateSection1{float:left;width:338px;height:420px;overflow:hidden;background-color:#292929;text-align:center;font-family:Hypster-Segoe;font-weight:lighter;font-size:29px;color:#DEDEDE;cursor:pointer;margin:0}
+#CreateSection2{float:left;width:338px;height:420px;overflow:hidden;margin-left:5px;text-align:center;font-family:Hypster-Segoe;font-weight:lighter;font-size:29px;color:#DEDEDE;cursor:pointer;background-color:#181818}
+#CreateSection3{float:left;width:338px;height:420px;overflow:hidden;margin-left:5px;background-color:#232323;text-align:center;font-family:Hypster-Segoe;font-weight:lighter;font-size:29px;color:#DEDEDE;cursor:pointer}
+#CreatePlayerSection1{float:left;width:338px;height:140px;line-height:14px;overflow:hidden;background-color:#1d1d1c;text-align:center;font-family:Hypster-Segoe;font-weight:lighter;font-size:29px;color:#DEDEDE;cursor:pointer;border-radius:2px;margin:0}
+.CreatePlayer_ReadMoreAP{float:left;width:280px;height:30px;line-height:27px;border-radius:1px;background-color:#42606e;text-align:center;font-size:18px;cursor:pointer;margin:5px 0 14px 14px;padding:3px}
+.connectHead{float:right;width:100%;text-align:left}
+.connectHead .ffHeader{float:left;width:200px;height:40px;line-height:40px;text-align:right;font-family:Hypster-Font;font-size:22px;color:#FFF;font-style:italic;letter-spacing:1.1px;padding-right:120px;background:url(/imgs/home/featuredVideo_HeaderBack.png) no-repeat scroll right center #44484A;margin:0 0 0 -120px}
+.connectCont{float:left;width:858px;text-align:left;background-color:#2d3132;padding:0 0 15px}
+.connectCont .connectInnerCont{float:left;width:860px;margin:-16px 0 0 -16px}
+.connectFriendCont{float:left;width:407px;min-height:142px;overflow:hidden;background-color:#282c2d;border-radius:1px;margin-top:15px;margin-left:15px;text-align:left;padding:3px}
+.connectPaging{float:left;width:100%;height:28px;color:#FFF;overflow:hidden;margin:23px 0 0}
+.connectPaging .ConnectPage{float:left;min-width:29px;line-height:28px;border-radius:2px;text-align:center;margin-right:10px;color:#FFF;font-size:16px;cursor:pointer}
+.style_22{color:#AAA;font-size:13px}
+.style_23{color:#FFF;font-size:16px}
+.style_24{color:#FCF088}
+.connectFriendCont .txtHolder{float:left;width:190px;margin-top:0;margin-left:3px;font-size:16px;color:#EEE}
+.connectFriendCont .txtHolder div{float:left;width:100%;margin-top:2px;margin-left:5px}
+.connectFriendCont .ActButtons{float:left;width:100%;margin-top:8px;margin-bottom:2px}
+.connectFriendCont .FollowBtn{float:right;width:120px;overflow:hidden;height:22px;line-height:22px;background-color:#42606e;border-radius:1px;font-size:13px;color:#FFF;text-align:center;margin:2px 4px 0 0;padding:0 2px}
+.connectFriendCont .DetailsBtn{float:left;width:264px;height:22px;line-height:22px;background-color:#454545;color:#CCC;text-align:center;border-radius:1px;cursor:pointer;margin:2px 4px 0 5px}
+.connectTH{float:right;width:1024px;margin-top:15px}
+.connectTH .sbItem{float:left;width:235px;height:25px;color:#FFF;font-size:15px;cursor:pointer;background-color:#8e9597;border-radius:2px;margin:5px;padding:2px 2px 2px 8px}
+.connectTH .sbItem img{float:left;margin-top:3px}
+.connectTH .sbItem div{float:left;margin-top:2px;margin-left:3px}
+.SearchPageRoot{float:left;width:100%;min-height:50px;margin:0 0 4px}
+.SearchPageRoot .SongItm{display:block;float:left;width:98%;min-height:70px;line-height:17px;color:#FFF;text-align:left;background-color:#747e83;border-radius:1px;margin:0 0 6px;padding:1%}
+.SearchPageRoot .SongItmB{display:block;float:left;width:98%;min-height:70px;line-height:17px;color:#FFF;text-align:left;background-color:#858c90;border-radius:1px;margin:0 0 6px;padding:1%}
+.SearchPageRoot .rtCont{float:right;width:220px;text-align:right}
+.SearchPageRoot .SyndicationBtn{float:left;width:800px;background-color:#717c81;color:#FCF088;overflow:hidden;margin:5px 2px 2px;padding:1px 2px 2px}
+.SearchPageRoot .PlayPl_btn{float:right;width:180px;height:22px;line-height:22px;background-color:#637076;color:#FFF;cursor:pointer;text-align:center;margin:3px 2px 2px}
+.SearchPageRoot .AddPl_btn{float:right;width:180px;height:23px;line-height:23px;background-color:#637076;color:#FCF088;cursor:pointer;text-align:center;margin:3px 2px 2px}
+.SearchPageRoot .GetRing_btn{display:block;float:right;width:180px;height:23px;line-height:23px;background-color:#637076;text-align:center;margin:5px 2px 2px}
+.SearchPageRoot .SearchSimilar_btn{float:right;width:180px;height:23px;line-height:23px;background-color:#637076;cursor:pointer;text-align:center;margin:3px 2px 2px}
+.NFMessageCont{float:left;width:98%;height:50px;margin-bottom:5px;background:#555 url(/imgs/box_back.png) repeat;border-radius:3px;font-size:17px;color:#FCF088;padding:1%}
+.NFMessageCont div{float:left;width:100%;text-align:left;margin-bottom:3px}
+.SongSearchPagingRoot{float:left;width:98%;padding:1%}
+.SongSearchPagingRoot .PagingInner{float:left;max-width:700px;height:27px;overflow:hidden}
+.lfCont .imgThumb{float:left;width:120px;height:90px;border:3px solid #637076}
+.lfCont .songCont{float:left;width:600px;overflow:hidden;margin-left:6px;line-height:19px}
+.searchPagingBtn{float:left;display:block;min-width:25px;height:25px;line-height:22px;margin-right:6px;color:#353535;font-size:16px;cursor:pointer;text-align:center;padding:0 4px}
+.searchPagingBtn_Sel{float:left;display:block;min-width:25px;height:25px;line-height:27px;margin-right:6px;background-color:#555;border-radius:2px;color:#FFF;font-size:15px;font-family:Arial,Verdana,sans-serif;text-align:center;cursor:pointer;padding:0 4px}
+.PopularMusicOnHypster{float:right;width:100%;margin-left:15px}
+.PopularMusicOnHypster .PopularAdCont{float:right;width:728px;height:90px;background-color:#667278;border:3px solid #667278;border-radius:2px;overflow:hidden}
+.PopularMusicOnHypster .PopularMusicCont{float:left;width:500px;margin-top:10px}
+.PopularMusicCont .SongItm{background-color:#858c90;border-radius:1px;float:left;width:490px;height:28px;line-height:28px;margin-top:7px;color:#FFF;font-family:Hypster-Segoe;font-weight:lighter;font-size:17px;overflow:hidden;cursor:pointer;padding:5px}
+.PopularMusicCont .SongItmB{background-color:#747e83;border-radius:1px;float:left;width:490px;height:28px;line-height:28px;margin-top:7px;color:#FFF;font-family:Hypster-Segoe;font-weight:lighter;font-size:17px;overflow:hidden;cursor:pointer;padding:5px}
+.PopularMusicCont .SongTitle{float:left;width:390px;overflow:hidden;margin-left:7px;color:#EFEFEF}
+.PopularMusicCont .SongAdPl{display:block;float:right;width:15px;height:17px;background:url(/imgs/search-music-icon.png) no-repeat center;margin:2px 4px 0 0;padding:4px}
+.PopularPlaylists{float:right;width:100%}
+.PopularPlaylists .PopularAdCont{float:right;width:728px;height:90px;background-color:#667278;border:3px solid #667278;border-radius:2px}
+.PopularPlaylists .PopularPlstsCont{float:left;width:324px;margin-top:0}
+.PopularPlstsCont .PlstItm{float:left;width:314px;height:28px;line-height:27px;background-color:#858c90;border-radius:2px;color:#FFF;font-family:Hypster-Segoe;font-size:18px;cursor:pointer;border-bottom:1px solid #7b8285;border-right:1px solid #7b8285;overflow:hidden;margin:11px 10px 0 0;padding:5px}
+.PopularPlstsCont .PlstItmB{float:left;width:314px;height:28px;line-height:27px;background-color:#747e83;border-radius:2px;color:#FFF;font-family:Hypster-Segoe;font-size:18px;cursor:pointer;border-bottom:1px solid #697277;border-right:1px solid #6e787d;overflow:hidden;margin:11px 10px 0 0;padding:5px}
+.PopularPlstsCont .PlstItm_sel{float:left;width:314px;height:28px;line-height:27px;background-color:#778085;border-radius:2px;color:#FFF;font-family:Hypster-Segoe;font-size:18px;cursor:pointer;overflow:hidden;margin:11px 10px 0 0;padding:5px}
+.PopularPlstsCont .PlstItmB_sel{float:left;width:314px;height:28px;line-height:27px;background-color:#677278;border-radius:2px;color:#FFF;font-family:Hypster-Segoe;font-size:18px;cursor:pointer;overflow:hidden;margin:11px 10px 0 0;padding:5px}
+.PopularPlstsCont .PlstTitle{float:left;width:274px;margin-left:7px}
+.PopularPlstsCont .PlstLstn{display:block;float:right;width:15px;height:17px;background:url(/imgs/play_icon.png) no-repeat center;margin:2px 4px 0 0;padding:4px}
+.FeaturedVideoCont{float:left;width:100%;height:100px}
+.FeaturedVideoCont .FeaturedAdCont{float:right;width:728px;height:90px;background-color:#59666c;border:3px solid #59666c;border-radius:2px;overflow:hidden}
+.FeaturedVideoCont .FeaturedHeaderBack{float:left;width:100%;height:39px;line-height:39px;background:#44484a url(/imgs/home/featuredVideo_HeaderBack.png) no-repeat right;cursor:pointer}
+.FeaturedVideoCont .FeaturedHeaderBack div{float:right;min-width:130px;overflow:hidden;font-family:Hypster-Font;font-size:23px;color:#FCF088;font-style:italic;letter-spacing:1.2px;margin:3px 115px 0 0}
+.FeaturedVideoInner{float:right;width:1060px;margin-left:-35px;margin-bottom:1px;margin-top:7px}
+.PopularMusicOnHypster .FeaturedHeaderBack div{float:right;font-family:Hypster-Font;font-size:22px;color:#FFF;font-style:italic;letter-spacing:1.2px;margin:3px 120px 0 0}
+.ContactsThanksCont{float:left;width:950px;min-height:100px;background-color:#353535;margin:15px 0 0 15px}
+.NewsInnrContHldr{float:left;width:420px}
+.LatestNewsHeader .ltstNInner{float:left;width:360px;height:35px;background:#313537 url(/imgs/home/news_header_1.png) no-repeat right;margin:10px 0 0;padding:2px}
+.newsImage{display:block;float:left;width:185px;max-height:150px;overflow:hidden}
+.NewsItm1{float:left;width:100%;height:160px}
+.NewsItm2{float:left;width:100%;height:160px;margin-top:17px}
+.NewsReadMoreCont{float:left;width:400px;height:20px;line-height:20px;margin-top:0;background-color:none;color:#FFF;font-family:Hypster-Segoe;font-weight:lighter;font-size:17px;padding:2px}
+.NewsReadMoreCont a{float:right;margin-left:7px;cursor:pointer}
+#PublicPSectionMenu1{float:left;width:335px;height:150px;overflow:hidden;background-color:#181818;text-align:center;font-family:Hypster-Segoe;font-weight:lighter;font-size:29px;color:#CDCDCD;cursor:pointer;margin:0}
+#PublicPSection_1 .PerInfHeader{float:right;width:1024px;color:#404040;font-family:Hypster-Segoe;font-weight:lighter;font-size:24px;margin:0}
+#PublicPSection_1 .NameTxtCont{float:left;width:400px;height:30px;border:1px solid #DEDEDE;background-color:#DEDEDE;border-radius:2px;font-family:Hypster-Segoe;font-weight:lighter;font-size:18px}
+.NameTxtCont .lbl1{float:left;width:60px;text-align:right;color:#2f5262;margin:3px 0 0}
+#PublicPSection_1 .UsNameTxtCont{float:left;width:400px;height:30px;margin-left:20px;border:1px solid #DEDEDE;background-color:#DEDEDE;border-radius:2px;font-family:Hypster-Segoe;font-weight:lighter;font-size:18px}
+.UsNameTxtCont .lbl1{float:left;width:90px;text-align:right;color:#2f5262;margin:3px 0 0}
+#PublicPSection_1 .MemberTxtCont{float:left;width:275px;height:30px;border:1px solid #DEDEDE;background-color:#DEDEDE;border-radius:2px;font-family:Hypster-Segoe;font-weight:lighter;font-size:18px}
+#PublicPSection_1 .CityTxtCont{float:left;width:300px;height:30px;border:1px solid #DEDEDE;background-color:#DEDEDE;border-radius:2px;font-family:Hypster-Segoe;font-weight:lighter;font-size:18px}
+#PublicPSection_1 .CountryTxtCont{float:left;width:300px;height:30px;margin-left:20px;border:1px solid #DEDEDE;background-color:#DEDEDE;border-radius:2px;font-family:Hypster-Segoe;font-weight:lighter;font-size:18px}
+#PublicPSection_1 .ZipTxtCont{float:left;width:170px;height:30px;margin-left:20px;border:1px solid #DEDEDE;background-color:#DEDEDE;border-radius:2px;font-family:Hypster-Segoe;font-weight:lighter;font-size:18px}
+#PublicPSection_1 .BirthDateHeader{float:left;width:100px;height:30px;border:1px solid #DEDEDE;background-color:#DEDEDE;border-radius:2px;font-family:Hypster-Segoe;font-weight:lighter;font-size:18px}
+#PublicPSection_1 .DOByHeader{float:left;width:90px;height:30px;border:1px solid #DEDEDE;margin-left:20px;background-color:#DEDEDE;border-radius:2px;font-family:Hypster-Segoe;font-weight:lighter;font-size:18px}
+#PublicPSection_1 .photoCont{float:left;width:120px;height:120px;overflow:hidden;background-color:#555;border-radius:2px;cursor:pointer;margin:5px}
+#PublicPSection_1 .photoCont img{float:left;width:120px;height:120px;background-color:#333;border-radius:2px;margin:0}
+#PublicPSection_2 .FavoriteGenresCont{float:left;width:100%;color:#2e3335}
+#PublicPSection_2 .playlistItm{float:left;width:700px;height:30px;margin-bottom:4px;margin-top:3px}
+#PublicPSection_2 .ItmTitle{float:left;width:610px;height:27px;line-height:27px;background-color:#555;color:#FFF;font-size:16px;text-align:left;cursor:pointer;border-radius:2px;padding:3px 3px 3px 10px}
+#PublicPSection_2 .ItmPlay{float:left;height:27px;line-height:27px;text-align:left;background-color:#555;color:#FFF;font-size:11px;cursor:pointer;border-radius:2px;margin:0 4px;padding:3px}
+#PublicPSection_2 .songItmTitle{float:left;width:800px;height:27px;line-height:27px;margin-bottom:4px;background-color:#858c90;padding:3px 3px 3px 10px}
+#PublicPSection_2 .songItmTitleB{float:left;width:800px;height:27px;line-height:27px;margin-bottom:4px;background-color:#747e83;padding:3px 3px 3px 10px}
+#PublicPSection_2 .songItmPlay{float:left;width:35px;height:27px;line-height:27px;margin-left:5px;cursor:pointer;background-color:#858c90;padding:3px}
+#PublicPSection_2 .songItmPlayB{float:left;width:35px;height:27px;line-height:27px;margin-left:5px;cursor:pointer;background-color:#747e83;padding:3px}
+#PublicPSection_2 .style_1122{float:left;font-size:16px;color:#FFF}
+#PublicPSection_2 .style_1133{float:left;margin:7px 7px 0 10px}
+#PublicPSection_2 .RadioStItm{float:left;width:100%;margin-bottom:4px}
+#PublicPSection_2 .RadioItmTitle{float:left;width:420px;height:27px;line-height:26px;background-color:#767676;margin-left:4px;cursor:pointer;font-size:16px;border-radius:2px;padding:3px 3px 3px 10px}
+#PublicPSection_2 .RadioItmPlay{float:left;height:27px;line-height:26px;text-align:left;color:#FFF;font-size:11px;background-color:#767676;cursor:pointer;margin-left:4px;border-radius:2px;padding:3px}
+#PublicPSection_3 .MembersIFollowHeader{float:left;width:98%;height:25px;line-height:25px;color:#454545;font-size:22px;overflow:hidden;margin:5px 0 5px 7px}
+#PublicPSection_3 .MIF_Itm a{display:block;float:left;width:330px;height:48px;background-color:#68747a;border-radius:2px;text-align:left;cursor:pointer}
+#PublicPSection_3 .MyFollowersHeader{float:left;width:98%;height:25px;line-height:25px;color:#ABABAB;font-size:22px;overflow:hidden;margin:5px 0 5px 7px}
+#PublicPSection_3 .MF_Itm a{display:block;float:left;width:330px;height:48px;background-color:#454545;border-radius:2px;text-align:left;cursor:pointer}
+.CreatePlaylistCont{float:left;width:1024px;margin-top:7px;margin-left:15px}
+.MainHeadCont{float:left;width:100%;height:43px;margin:11px 0 0}
+.MainHeadPlaylist{float:left;width:415px;height:40px;text-align:left;color:#FCF088;line-height:35px;margin:0 0 0 20px}
+.MainHeadPlaylist img{cursor:pointer}
+.MainHeadPlaylist span{color:#FCF088;font-weight:700;font-size:22px;margin-left:3px}
+.MainHeadSongs{float:left;width:600px;height:40px;text-align:left;color:#FCF088;line-height:35px}
+.MainHeadSongs img{float:left;cursor:pointer;margin:11px 7px 0 5px}
+.MainHeadSongs div{float:left;width:560px;height:33px;overflow:hidden;font-weight:700;font-size:22px;cursor:pointer}
+.CreatePlaylistCont .PlstItm_Act{float:left;width:100%;height:33px;line-height:33px;text-align:left;border-bottom:2px solid #e5d762;color:#FFF;margin-top:3px;margin-left:1%;cursor:pointer}
+.CreatePlaylistCont .PlstItm_ActTitle{float:left;width:330px;padding-left:4px;color:#FCF088;font-size:16px}
+.CreatePlaylistCont .PlstItm{float:left;width:100%;height:33px;line-height:33px;text-align:left;border-bottom:1px solid #313131;color:#FFF;margin-top:3px;margin-left:1%;cursor:pointer;overflow:hidden}
+.CreatePlaylistCont .PlstItm_Edt{float:left;width:30px;height:33px;line-height:33px;text-align:left;color:#FFF;font-size:11px;margin-left:4px;cursor:pointer;background:url(/imgs/action_icons/edit_icon_s.png) no-repeat center}
+.CreatePlaylistCont .PlstItm_Del{float:left;width:30px;height:33px;line-height:33px;text-align:left;color:#FFF;font-size:11px;margin-left:1%;cursor:pointer;background:url(/imgs/action_icons/delete_icon_s.png) no-repeat center}
+.CreatePlaylistCont .PlstItm_MkActive{float:left;height:33px;line-height:33px;text-align:left;color:#FFF;font-size:11px;background-color:#1d1d1c;border:none;margin-left:1%;cursor:pointer}
+.CreatePlaylistCont .PlstItm_PlName{float:left;width:225px;height:29px;border:1px solid #656565;font-size:14px}
+.CreatePlaylistCont .PlstItm_PlSave{float:left;width:50px;height:33px;margin-left:2px}
+.CreatePlaylistCont .AddNewPlstItm{float:left;width:150px;height:23px;line-height:23px;padding-left:3px;background-color:#42606e;color:#FFF;border-radius:2px;text-align:center;cursor:pointer;margin:5px 4px 3px}
+.CreatePlaylistCont #AddNewPlaylist_Container{display:none;float:left;width:98%;text-align:left;margin:3px}
+.CreatePlaylistCont #AddPlaylist_Name{float:left;width:197px;height:29px;border:1px solid #656565;font-size:14px}
+.CreatePlaylistCont #AddPlaylist_Save{float:left;width:125px;height:33px;margin-left:3px}
+.CreatePlaylistCont #AddPlaylist_Cancel{float:left;width:65px;height:33px;margin-left:3px}
+.CreatePlaylistCont .PlaylistsInnrCont{float:left;width:410px;min-height:80px;margin-top:3px;overflow:hidden}
+.CreatePlaylistCont .SongsInnrCont{float:right;width:600px;min-height:400px;overflow:hidden;padding:2px 0 0 9px}
+.CreatePlaylistCont .SongImg{float:left;width:67px;height:50px;padding-right:8px;border-radius:2px;margin:0}
+.CreatePlaylistCont .SongTitle{float:left;width:510px;height:50px;line-height:24px;margin-left:5px;margin-top:4px;cursor:pointer;font-size:16px;color:#DEDEDE}
+.CreatePlaylistCont .SongItm_Edt{float:left;width:25px;height:33px;line-height:33px;cursor:pointer;background:url(/imgs/play_icon_lte.png) no-repeat center;margin:10px 0 0 7px}
+.CreatePlaylistCont .SongItm_Del{float:left;width:25px;height:33px;line-height:33px;cursor:pointer;background:url(/imgs/action_icons/delete_icon_s.png) no-repeat center;margin:10px 0 0 3px}
+.CreatePlaylistCont .EmptyPlCont{float:left;width:600px;height:70px;border-bottom:1px solid #464647;background-color:#212121;cursor:pointer;overflow:hidden;margin-top:4px}
+.CreatePlaylistCont .EmptyPlCont div{font-size:20px;color:#EEE;margin:5px 0 0 5px}
+.CreatePlaylistCont #AddNewSong_Container{float:left;width:230px;height:25px;line-height:25px;overflow:hidden;background-color:#42606e;color:#FFF;border-radius:2px;margin-left:0;margin-top:5px;margin-bottom:23px;cursor:pointer;text-align:center}
+.CreateRadioContHolder{float:left;width:100%;overflow:hidden;background-color:#1d1d1c}
+.CreateRadioContHolder .StatNameCont{float:left;width:100%;margin-top:7px}
+.CreateRadioContHolder .StatSearchCont{float:left;width:50%;margin-top:7px}
+.CreateRadioContHolder .StatSaveCont{float:left;width:100%;height:10px;margin-top:3px}
+.CreateRadioContHolder #RadioStationSave{float:left;width:305px;height:40px;line-height:33px;background-color:#42606e;border-radius:5px;color:#FFF;font-family:Hypster-Segoe;font-weight:lighter;font-size:20px;text-align:center;cursor:pointer;margin:10px 0 0 20px}
+.CreateRadioContHolder .errMsg1{float:left;color:#FCF088;font-size:14px;margin:10px 0 0 20px}
+.CreateRadioContHolder .VisSearchCont{float:left;min-width:2200px;height:250px;margin-top:20px;margin-bottom:20px;overflow:hidden}
+.CreateRadioContHolder .AdCont{float:left;width:300px;height:250px;margin-left:20px}
+.SongLandingCont .ImgCont{float:left;width:360px}
+.SongLandingCont .ImgCont img{float:left;border:2px solid #454545;width:340px;height:255px}
+.SongLandingCont .ItmDetailsCont{float:left;width:600px}
+.SongLandingCont .SongTitle{float:left;width:100%;height:33px;margin-bottom:10px;overflow:hidden;text-align:left;font-size:24px;color:#FFF}
+.SongLandingCont .SongAddDetails{float:left;width:100%;height:170px;text-align:left;font-size:16px;line-height:24px;color:#FFF}
+.SongLandingCont .ActPlayBtn{float:left;width:34px;height:33px;background-color:#454545;cursor:pointer;text-align:center;margin:0}
+.SongLandingCont .AddPlayBtn{float:left;width:34px;height:33px;background-color:#454545;cursor:pointer;text-align:center;margin:0 0 0 8px}
+.SongLandingCont .ActAddBtn{float:left;width:140px;height:33px;line-height:33px;margin-left:8px;background-color:#454545;cursor:pointer;text-align:center}
+.SongLandingCont .ActGetRingtone{display:block;float:left;width:140px;height:33px;line-height:33px;margin-left:8px;background-color:#454545;text-align:center}
+.SongCommentsCont{float:right;width:1040px;text-align:left}
+.SongCommentsCont .CommHeader{float:left;width:100%;font-size:26px;color:#555}
+.SongCommentsCont .CommItm{float:left;width:97%;min-height:30px;margin-top:10px;font-size:16px;background-color:#858c90;border-radius:2px;padding:1%}
+.SongCommentsCont .CommItm .CommComment{float:left;color:#EEE;font-size:15px;line-height:19px}
+.SongCommentsCont .CommItm .CommDate{float:right;margin-top:10px;font-size:15px}
+.SongCommentsCont .CommV1{float:left;width:97%;height:30px;margin-top:10px;font-size:16px;background-color:#858c90;border-radius:2px;padding:1%}
+.SongCommentsCont .CommV2{float:left;width:97%;height:20px;margin-top:10px;font-size:16px;background-color:#909699;border-radius:2px;padding:1%}
+.SongCommentsCont .CommV3{float:left;width:97%;height:15px;margin-top:10px;margin-bottom:10px;font-size:16px;background-color:#969b9e;border-radius:2px;padding:1%}
+.SongCommentsCont #songComment{float:left;width:98%;height:80px;margin-top:10px;font-size:16px;background-color:#747e83;border:1px solid #747e83;color:#FFF;padding:5px}
+.SongCommentsCont .CommSubmCont{float:left;width:99%;margin-top:10px;margin-bottom:10px}
+.SongCommentsCont #PostNewComm{float:right;width:220px;height:27px;line-height:26px;background-color:#858c90;border:1px solid #858c90;border-radius:2px;color:#323232;text-align:center;font-size:16px}
+#AddToPlaylistCont1{float:left;margin-top:90px;width:850px;height:480px;background-color:#43616f;border:5px solid #43616f;border-radius:2px}
+#AddToPlaylistCont1 .VerSong{width:350px;height:23px;line-height:23px;background-color:#333;border-radius:2px;font-size:11px;text-align:left;cursor:pointer;overflow:hidden;margin:5px 2px 2px;padding:1px 2px 2px}
+#AddToPlaylistCont1 .VerSongExt{display:block;width:350px;height:23px;line-height:23px;background-color:#333;border-radius:2px;font-size:11px;text-align:left;cursor:pointer;overflow:hidden;margin:5px 2px 2px;padding:1px 2px 2px}
+#AddToPlaylistCont1 .AddBtn1{float:left;width:230px;height:30px;line-height:30px;background-color:#333;border:1px solid #656565;font-size:12px;color:#FCF088;padding:1px 2px 2px}
+#AddToPlaylistCont1 .AddBtn2{float:left;width:180px;height:30px;line-height:30px;background-color:#333;border:1px solid #656565;font-size:12px;color:#FCF088;margin-left:10px;padding:1px 2px 2px}
+#AddToPlaylistContPopup1{float:left;margin-top:30px;width:850px;height:480px;background-color:#43616f;border:5px solid #43616f;border-radius:2px}
+#AddToPlaylistContPopup1 .AddBtn1{float:left;width:420px;height:30px;line-height:30px;background-color:#333;border:1px solid #656565;font-size:12px;color:#FCF088;padding:1px 2px 2px}
+.SearchSongsAdCont{float:right;width:728px;height:90px;background-color:#667278;border:3px solid #667278;border-radius:2px;margin:3px 0 6px}
+.SlideshowBultesCont{float:left;min-width:100%;height:23px;padding-right:10px;background-color:rgba(10,10,10,0.65);margin:-23px 0 0}
+.SlideshowBultesCont .slideBulet{float:left;width:10px;height:10px;background-color:#CDCDCD;border-radius:9px;cursor:pointer;margin:7px 0 0 7px}
+.SlideshowBultesCont .slideBuletSel{float:left;width:9px;height:9px;background-color:#CDCDCD;border-radius:9px;cursor:pointer;margin:7px 0 0 7px}
+.NPFT_TopAd{float:right;width:726px;height:90px;background-color:#747e83;border:3px solid #747e83;border-radius:2px}
+.NPFT_BottomAd{float:left;width:726px;height:90px;background-color:#747e83;border:3px solid #747e83;border-radius:2px}
+.NPFT_GoOnTop{float:left;width:273px;height:90px;line-height:90px;background-color:#747e83;border-radius:3px;font-size:25px;color:#FFF;text-align:center;cursor:pointer;margin:0 0 0 10px;padding:3px}
+.NPFT_Head .ffHeader{float:left;width:230px;margin-top:0;color:#2e3335;font-family:Hypster-Segoe;font-weight:lighter;font-size:32px}
+.NPFT_PP_ContHolder .GetCodeBtn{float:left;width:300px;height:60px;background-color:#1e1e1e;margin-left:10px;cursor:pointer;text-align:center}
+.NPFT_PP_ContHolder #CPL_Tab1{float:left;width:1013px;min-height:1000px;background-color:#2e2e2e;border-radius:2px;padding:13px}
+.NPFT_PP_ContHolder .topHeader{float:left;width:100%;min-height:80px;margin-bottom:13px}
+.NPFT_PP_ContHolder .middleCont{float:left;width:828px;min-height:200px;max-height:2375px;overflow:hidden;border-radius:2px}
+.NPFT_PP_ContHolder .AdCont{float:right;width:166px;min-height:1800px}
+.AddUnit{float:left;width:160px;height:600px;background-color:#2e2e2e;border:3px solid #2e2e2e;border-radius:3px;margin:0 0 20px}
+.middleCont img{float:left;width:260px;margin:0 0 12px 10px}
+.NPFT_ContHolder .SettingItm{float:left;width:100%;text-align:right;margin-top:10px}
+.NPFT_ContHolder #cp_MainBackColor{float:right;width:24px;height:24px;background-color:#000;border-radius:2px;cursor:pointer}
+.NPFT_ContHolder #CPL_Tab2{float:left;width:985px;min-height:500px;background-color:#2e2e2e;padding:20px}
+.NPFT_ContHolder #SampleSettingsHolder{float:left;width:350px;margin-bottom:20px;background-color:#242424;border-radius:3px;padding:15px}
+.NPFT_ContHolder #SampleContHolder{float:right;width:540px;margin-bottom:20px;margin-right:0;background-color:#272727;color:#BCBCBC;border-radius:3px;padding:20px}
+.NPFT_ContHolder #SampleCodeHolder{float:left;width:960px;margin-bottom:5px;background-color:#242424;border-radius:3px;padding:13px}
+.NPFT_ContHolder #hypPlayer_Playlist_ID{width:220px;height:22px;margin-top:2px}
+.NPFT_ContHolder .HeaderCompText{float:left;width:100%;font-size:19px;line-height:13px;text-align:left;color:#fbf3aa;margin-bottom:10px}
+.NPFT_ContHolder #PlayerCodeArea{width:96%;height:200px;background-color:#DDD;border:none;margin:2%}
+.NPFT_ContHolder #PlayerControlsCodeArea{width:96%;height:80px;background-color:#DDD;border:none;margin:2%}
+.NPFT_ContHolder .BottomMsgCont{float:left;width:98%;min-height:70px;line-height:19px;background-color:#282828;border-radius:2px;font-size:16px;margin:20px 0 0;padding:10px}
+.NPFT_ContHolder .MoreSkinsBtn{float:left;width:300px;height:60px;background-color:#3e3e3e;margin-left:10px;cursor:pointer;text-align:center}
+.BenContHolder{float:left;width:100%;min-height:80px}
+.BenContHolder .BenItem{width:1010px;min-height:28px;line-height:27px;background-color:#8e9597;border-radius:1px;color:#EEE;font-size:18px;margin:10px 10px 10px 0;padding:5px}
+.NPFT_ContHolder #cp_PlayPauseButtonColor{float:right;width:24px;height:24px;background-color:#50846b;border-radius:2px;cursor:pointer}
+.NPFT_ContHolder #cp_PrevButtonColor{float:right;width:24px;height:24px;background-color:#0e1211;border-radius:2px;cursor:pointer}
+.NPFT_ContHolder #cp_NextButtonColor{float:right;width:24px;height:24px;background-color:#1d2624;border-radius:2px;cursor:pointer}
+.NPFT_ContHolder #cp_ShuffleButtonColor{float:right;width:24px;height:24px;background-color:#415158;border-radius:2px;cursor:pointer}
+.NPFT_ContHolder #cp_BorderColor{float:right;width:24px;height:24px;background-color:#454545;border-radius:2px;cursor:pointer}
+.HomeVideoRootCont{float:left;width:636px;height:280px}
+.HomeVideoHeader{float:left;width:100%;height:40px;background-color:#173860}
+.HomeVideoHeader div{float:left;color:#EEE;font:21px/1.5 Hypster-Font,Arial,sans-serif;margin:5px 0 0 10px}
+.HomeVideoHeader a{display:block;float:right;color:#EEE;font:19px/1.5 Hypster-Font,Arial,sans-serif;margin:5px 10px 0 0}
+.videoSlideshow{float:left;width:100%;height:240px}
+.videoSlideshow .VidSlide{float:left;width:100%;margin-top:3px}
+.VidSlide .VidLeft{float:left;width:316px;height:235px;background-color:#999}
+.VidSlide .VidRight{float:right;width:316px;height:195px;background-color:#999}
+.VidSlide .vidMcont{display:block;float:left;width:100%;height:235px;cursor:pointer}
+.vidMcont span{display:block;float:left;width:100%;height:45px;margin-top:186px;background-color:#232323;overflow:hidden;opacity:0.75;filter:alpha(opacity=85);color:#FFF;font-family:Hypster-Font,Tahoma,Arial,Verdana,sans-serif;font-size:18px;line-height:48px;text-align:left;border-top:4px solid #7a7a84}
+.vidMcont span img{float:left;margin:8px 0 0 15px}
+.videoSlideshow_navBtns{position:relative;float:left;display:none;width:1px;height:1px}
+.videoSlideshow_navBtns img{width:16px;height:18px;cursor:pointer}
+#HomeRow1{float:left;width:100%;height:250px;margin-top:25px}
+#HomeRow3{float:left;width:100%;height:260px;margin-top:40px}
+.HPSlideshow{float:left;width:636px;height:250px;overflow:hidden}
+.HomeRootCont .BtnsCont{float:right;width:100px;margin:220px 0 0}
+.HomeRootCont .SlideCont{width:636px;height:250px}
+#HomePageSlide1{background:url(/imgs/home/slideshow/1.png) no-repeat}
+#HomePageSlide2{background:url(/imgs/home/slideshow/2.png) no-repeat}
+#HomePageSlide3{background:url(/imgs/home/slideshow/3.png) no-repeat}
+.HomeRootCont .Bullet{float:left;width:20px;height:20px;background:#FFF;border-radius:10px;margin-left:5px;cursor:pointer}
+.HomeRootCont .Bullet .Sel{background:#122c4b}
+.HomeRootCont .HomeTopAdd{float:right;width:300px;height:250px;margin:0}
+#PlayerCont{float:right;width:300px;height:280px;background:url(/imgs/home/hypster_player.png) no-repeat;cursor:pointer;margin:0}
+.MostPopularSongsRootCont{float:left;width:100%;height:220px;overflow:hidden}
+.MostPopularSongsRootCont .MiddleCont{float:left;width:96%;height:220px;overflow:hidden}
+#MostPopularSongInner{float:left;margin:0}
+.MostPopularSongsRootCont .ItemSong{float:left;width:140px;margin:25px 35px 25px 10px}
+.MostPopularSongsRootCont .ItemSong .ItemImg{float:left;width:140px;height:140px;background-size:Auto 188px;border:1px solid #676767;cursor:pointer}
+.MostPopularSongsRootCont .ItemSong .ItemNav{float:right;width:56px;height:27px;line-height:24px;background-color:#e0e0e0;cursor:pointer;margin:-32px 4px 0 0}
+.MostPopularSongsRootCont .ItemSong .ItemTitle{float:left;width:100%;height:40px;line-height:20px;overflow:hidden;font:17px/1.2 Arial,sans-serif;color:#363636;text-align:left;cursor:pointer;margin:8px 0 0 2px;padding:1px}
+.MostPopularSongsRootCont .ItemSong .ItemNav .Play{float:left;display:block;width:27px;height:27px;background:url(/imgs/items/play_btn.png)}
+.MostPopularSongsRootCont .ItemSong .ItemNav .AddPl{float:left;display:block;width:27px;height:27px;background:url(/imgs/items/add_to_pls_btn.png)}
+.ChartHeader{margin-top:5px;color:silver;background-color:#202020;border-radius:2px;padding:0 0 7px 10px}
+.chartIntr{float:right;margin-right:20px;margin-top:10px;text-align:left;font-size:16px;font-weight:lighter;color:#999}
+.ChartScrlArea{float:left;width:100%;overflow:hidden;height:300px}
+.MainChartCont{float:left;height:300px;margin:10px 0 0 -3px}
+.chartplPlay{display:block;float:left;width:15px;height:17px;background:url(/imgs/play_icon_lte.png) no-repeat center;cursor:pointer;margin:4px 2px 0 5px;padding:4px}
+.MainChartCont .chartItem{float:left;width:150px;height:280px;margin:0 0 0 13px}
+.chartItem .chrtImage{float:left;width:100%;text-align:center;border-radius:2px}
+.chartItem .chrtImage div{float:left;width:35px;height:35px;line-height:29px;background-color:#ffa910;margin-top:-20px;margin-left:-10px;border-radius:20px;font-size:22px;color:#000}
+.chartItem .chrtTitle{float:left;width:96%;height:72px;line-height:25px;overflow:hidden;background-color:#303030;font-size:16px;margin-top:-1px;text-align:center;padding:2%}
+.radioButton{float:left;min-width:115px;height:33px;background-color:#42606e;color:#dedede;border-radius:3px;text-align:center;line-height:30px;font-size:19px;cursor:pointer;margin:4px 0 0}
+.HOM_Ad1{float:left;width:300px;height:250px;margin-top:25px;background-color:#1c1c1c;border:3px solid #1c1c1c;border-radius:4px}
+.HOM_Ad2{float:left;width:300px;height:250px;margin-top:15px;background-color:#1c1c1c;border:3px solid #1c1c1c;border-radius:4px}
+#Charts_PrevPage{float:left;width:280px;height:48px;line-height:48px;background-color:#42606e;border-radius:3px;color:#FFF;font-family:Hypster-Segoe;font-weight:lighter;font-size:30px;text-align:center;cursor:pointer;margin-right:20px}
+#Charts_NextPage{float:left;width:280px;height:48px;line-height:48px;background-color:#42606e;border-radius:3px;color:#FFF;font-family:Hypster-Segoe;font-weight:lighter;font-size:30px;text-align:center;cursor:pointer}
+.chartMainCont{float:right;width:726px;height:90px;background-color:#848d91;border:2px solid #848d91;border-radius:2px;overflow:hidden}
+.chartContHldr{float:left;width:100%;background-color:#202020;padding-top:1px}
+.ListenChartContH{float:left;width:100%;margin-top:10px}
+.PostNav_cont{float:left;width:98%;margin-bottom:13px;border-radius:2px;text-align:left;padding:0 2% 0 0}
+.PostNav_cont .PrevPost{float:left;width:120px;height:25px;line-height:25px;margin-top:10px;background-color:#747e83;border-radius:2px;color:#f4f4ad;font:300 15px/1.8 'Helvetica Neue',Helvetica,Arial,sans-serif;text-align:center}
+.PostNav_cont .HomePost{float:left;width:120px;height:25px;line-height:25px;margin-left:330px;margin-top:10px;background-color:#747e83;border-radius:2px;color:#f4f4ad;font:300 15px/1.8 'Helvetica Neue',Helvetica,Arial,sans-serif;text-align:center}
+.PostNav_cont .NextPost{float:right;width:120px;height:25px;line-height:25px;margin-top:10px;background-color:#747e83;border-radius:2px;color:#f4f4ad;font:300 15px/1.8 'Helvetica Neue',Helvetica,Arial,sans-serif;text-align:center}
+.PostComm_cont{float:left;width:100%;min-height:145px;border-radius:2px;text-align:left;padding:0}
+.PostComm_cont .CommHeader{float:left;width:100%;margin-top:6px;font:300 17px/1.8 'Helvetica Neue',Helvetica,Arial,sans-serif;text-align:left}
+.Post_mainCont{line-height:21px;float:left;width:95%;min-height:245px;margin-bottom:13px;border-radius:2px;text-align:left;padding:0}
+.Post_mainCont h2{width:95%;font-size:24px;line-height:30px;color:#f4f4ad;font-weight:700;margin:10px 0 0}
+.CommV1{float:left;width:98%;height:20px;margin-top:10px;font-size:16px;background-color:#858c90;border-radius:2px;padding:1%}
+.CommV2{float:left;width:98%;height:8px;margin-top:10px;font-size:16px;background-color:#909699;border-radius:2px;padding:1%}
+.CommV3{float:left;width:98%;height:5px;margin-top:10px;margin-bottom:10px;font-size:16px;background-color:#969b9e;border-radius:2px;padding:1%}
+.AdCont300x250{float:left;width:300px;height:250px;background-color:#444;border:2px solid #444;border-radius:2px}
+.AdCont300x250_Drk{float:left;width:300px;height:250px;background-color:#292929;border:2px solid #292929;border-radius:2px}
+.videWid_cont{float:left;width:300px;min-height:350px;margin-top:13px;text-align:center}
+.videWid_cont H2{margin-top:3px;margin-bottom:3px;color:#EEE;font:200 21px/1.5 'Helvetica Neue',Helvetica,Arial,sans-serif}
+.videWid_cont .vidMcont{display:block;float:left;width:282px;height:172px;background-color:#757575;margin-left:9px;margin-bottom:9px;border-radius:1px;cursor:pointer}
+.vidMcont img{width:278px;height:168px;float:left;border:0;margin:2px}
+.vidMcont div{float:left;width:278px;height:35px;margin-left:2px;margin-top:-37px;background-color:#232323;overflow:hidden;opacity:0.75;filter:alpha(opacity=85);color:#FFF;font-size:15px;font-family:Segoe UI Light,Segoe UI,Tahoma,Arial,Verdana,sans-serif;line-height:35px;text-align:left}
+.PostImgSt_Left{float:left;border:none;margin:5px 10px 0 0}
+.PostImgSt_Right{float:right;border:none;margin:5px 0 0 10px}
+.PostVideoCont{float:right;display:block;background-color:#565656;border-radius:2px;padding:2px}
+.boxContRight .SI_Cont_google{width:75px;height:22px;background:#313537 url(../imgs/social_icons/google_icon.png) no-repeat center;border-radius:2px;cursor:pointer;margin-top:5px}
+.boxContRight .SI_Cont_twitter{width:75px;height:22px;background:#313537 url(../imgs/social_icons/twitter_icon.png) no-repeat center;border-radius:2px;cursor:pointer;margin-top:5px}
+.boxContRight .SI_Cont_facebook{width:75px;height:22px;background:#313537 url(../imgs/social_icons/facebook_icon.png) no-repeat center;border-radius:2px;cursor:pointer;margin-top:5px}
+.boxContLeft .SI_Cont_google{width:75px;height:22px;background:#747e83 url(../imgs/social_icons/google_icon.png) no-repeat center;border-radius:2px;cursor:pointer;margin-top:5px}
+.boxContLeft .SI_Cont_twitter{width:75px;height:22px;background:#747e83 url(../imgs/social_icons/twitter_icon.png) no-repeat center;border-radius:2px;cursor:pointer;margin-top:5px}
+.boxContLeft .SI_Cont_facebook{width:75px;height:22px;background:#747e83 url(../imgs/social_icons/facebook_icon.png) no-repeat center;border-radius:2px;cursor:pointer;margin-top:5px}
+.boxContRight .PostTitle{color:#f4f4ad}
+.boxContLeft .PostTitle{color:#436170}
+.boxContRight .PostCont{font-size:16px;font-weight:lighter;margin-top:5px;height:295px;overflow:hidden}
+.boxContLeft .PostCont{color:#FFF;font-size:16px;font-weight:lighter;margin-top:5px;height:295px;overflow:hidden}
+.boxContRight .PostReadMore{display:block;float:right;width:130px;height:20px;line-height:18px;margin-top:10px;color:#f4f4ad;background-color:#444;border-radius:2px;text-align:center;cursor:pointer}
+.boxContLeft .PostReadMore{display:block;float:right;width:130px;height:20px;line-height:18px;margin-top:10px;color:#f4f4ad;background-color:#747e83;border-radius:2px;text-align:center;cursor:pointer}
+.paging_Page{float:left;width:30px;height:30px;line-height:30px;border-radius:3px;margin-right:5px;text-align:center}
+.chartArrowsCont{float:left;width:100%;height:30px}
+.MoveRight_arrow{float:right;cursor:pointer;margin:10px 25px 0 0}
+.MoveLeft_arrow{float:right;cursor:pointer;margin:10px 15px 0 0}
+.ChartSongItm_play{display:block;float:left;width:15px;height:17px;background:url(/imgs/play_icon_lte.png) no-repeat center;margin:0 1px 0 2px;padding:2px}
+.Chart_PLK{display:none;float:left;width:100%;height:23px;line-height:20px;background-color:#da8800;border-top:2px solid #202020;color:#DEDEDE;cursor:pointer;border-radius:3px}
+.HTUH_GoOnTop{float:right;width:260px;height:84px;line-height:84px;background-color:#59666c;border-radius:1px;font-size:25px;color:#FFF;text-align:center;cursor:pointer;margin:0 5px 0 0;padding:3px}
+#ContNextItm{display:none;float:right;width:48px;height:48px;border-radius:27px;background:#2c3133 url(/imgs/refresh_icon.png) center no-repeat;cursor:pointer;margin:170px 15px 0 10px}
+#ChngRadioSt{display:none;float:left;width:48px;height:48px;border-radius:27px;background:#59666c url(/imgs/refresh_icon.png) center no-repeat;cursor:pointer;margin:120px 0 0 10px}
+.radioCustStN{float:right;height:31px;line-height:31px;background-color:#42606e;border-radius:3px;color:#FFF;cursor:pointer;font-size:16px;margin:4px 0 0 4px;padding:0 8px}
+.ManualArCont .MAcont{float:left;width:705px;height:250px;overflow:hidden;cursor:pointer}
+.ManualArCont .MAheader{float:left;font-size:23px}
+.ManualArCont .MAimg{float:left;width:700px;height:209px;margin:10px 5px 0 0}
+.ManualDtHeader{float:right;width:1024px;font-size:34px;color:#233f4c;margin-top:12px}
+.ManualDtShare{float:right;width:1024px}
+.ManualDtSlideHdr{width:95%;font-size:23px;line-height:30px;margin:5px 0}
+.ManualDtAdCont{float:right;width:1024px;margin-top:3px}
+.MainCompContH{float:right;width:1024px;min-height:350px}
+.MainCompContH .ComLeftS{float:left;width:359px;height:429px;border-radius:3px;margin-top:17px;background-color:#667278;border-bottom:1px solid #59656b;border-right:1px solid #59656b;padding:5px}
+.MainCompContH .ComMidS{float:left;width:299px;height:429px;border-radius:3px;margin-top:17px;background-color:#667278;border-bottom:1px solid #59656b;border-right:1px solid #59656b;padding:5px}
+.MainCompContH .ComRightS{float:left;width:295px;height:429px;border-radius:3px;margin-top:17px;background-color:#667278;overflow:auto;border-bottom:1px solid #59656b;border-right:1px solid #59656b;padding:5px}
+.MainCompContH .CompCSep{float:left;width:17px;height:430px;margin-top:25px}
+.plst_song_itm{float:left;width:98%;height:27px;line-height:27px;background-color:#5a676d;border-radius:2px;cursor:pointer;overflow:hidden;margin:1.5% 1% 0}
+.plst_song_itm img{float:left;width:33px;height:25px;margin:1px}
+.FndPlsItm{float:left;width:100%;height:23px;line-height:23px;background-color:#5a676d;cursor:pointer;margin-bottom:2px;font-size:16px}
+.MainCompContH #ChoosePlaylist{float:left;width:97%;height:27px;line-height:27px;margin:5px 0 0 5px}
+.MainCompContH #UserCompPlstHolder1{float:left;width:97%;height:386px;overflow:auto;margin:7px 0 0 5px}
+.MainCompContH #CompCir1{float:left;width:120px;height:120px;background-color:#184e39;border:1px solid #343434;border-radius:70px;margin-left:35px;opacity:0.6;filter:alpha(opacity=60)}
+.MainCompContH #CompCir2{float:left;width:120px;height:120px;background-color:#184e39;border:1px solid #343434;border-radius:70px;margin-left:0;opacity:0.6;filter:alpha(opacity=60)}
+.MainCompContH .CompTxtD{width:96%;text-align:center;color:#FFF;font-size:16px;margin:10px 0 0 2%}
+.MainCompContH #SongsCompContHolder1{float:left;width:100%;height:213px;margin-top:17px;overflow:auto}
+.CompSocHlrd{float:right;min-width:345px;height:22px;border-radius:3px;background-color:#667278;margin:1px 3px 0 0;padding:8px}
+.mFollowUsCont1{float:right;background-color:#708995;border-radius:3px;margin:0 10px 0 0;padding:8px}
+.mFollowUsCont1 .fuText{float:left;color:#000;font-size:22px;margin:1px 10px 0 0}
+.exploreMoreBtn{display:block;float:left;width:300px;height:250px;background-color:#131313;line-height:250px;color:#FFF;text-align:center;font-size:21px;cursor:pointer;margin:0 0 0 20px}
+.ExploreHomeBtn{display:block;float:right;color:#FCF088;margin:0 10px 0 0}
+.PMmCont{float:left;width:270px;height:410px;border-radius:2px;overflow:hidden;cursor:pointer;margin:0 0 15px 15px}
+.PMmCont .PMhead{float:left;width:100%;height:25px}
+.PMmCont .PMhypster{float:left;font-size:6px;margin:15px 0 0 28px}
+.PMmCont .PMBtn{float:left;font-size:5px;margin:15px 0 0 10px}
+.PMmCont .PMbdy{float:right;width:91%;height:240px;margin-top:15px}
+.PMmCont .PMrSng{float:left;width:65px;height:53px;overflow:hidden;margin:5px 0 0 5px}
+.PMmCont .PMrSng img{width:65px;min-height:55px}
+.PMmCont .PMrSngBPlay{float:left;width:205px;height:72px;border-radius:1px;overflow:hidden;margin:5px 0 0 5px}
+.PMmCont .PMrSngBPlay img{float:left;margin:30px 0 0 95px}
+.PMmCont .PMrSngB{float:left;width:205px;height:17px;border-radius:1px;overflow:hidden;margin:3px 0 0 5px}
+.PMmCont .PMrSngB img{height:15px;float:left;margin:1px}
+.PMmCont .PMrSngB div{float:left;font-size:5px;margin:5px 0 0 10px}
+.PMmCont .PMcntrls{float:left;width:91%;height:25px;margin-top:15px}
+.PMmCont .PMcntrls_play{float:left;width:35px;height:13px;border-radius:1px;font-size:5px;line-height:13px;text-align:center;margin:6px 0 0 30px}
+.PMmCont .PMfooter{float:left;width:100%;height:75px;margin-top:15px}
+.PMmCont .PMfooterb1{float:left;width:50px;margin:10px 0 0 30px}
+.PMmCont .PMfooterb2{float:left;width:50px;margin:10px 0 0 10px}
+.TBsimilar{float:left;width:400px;min-height:357px;cursor:pointer;border-radius:2px;text-align:center;background-color:#59666c;border-bottom:1px solid #556167;border-right:1px solid #556167;padding:4px}
+.TBIndieAmy{float:left;width:318px;min-height:357px;margin-left:20px;cursor:pointer;border-radius:2px;text-align:center;background-color:#59666c;padding:4px}
+.TBCharts{float:left;width:400px;min-height:357px;margin-left:20px;cursor:pointer;border-radius:2px;text-align:center;background-color:#59666c;border-bottom:1px solid #556167;border-right:1px solid #556167;padding:4px}
+.TBsimilar .TBBtm{float:left;width:100%;height:25px;margin-top:55px;background:#59666c url(/imgs/home/home_ban/smallbanner_discovery_feature.jpg) no-repeat top;border-top:1px solid #434f55}
+.TBIndieAmy .TBBtm{float:left;width:100%;height:25px;margin-top:55px;background:#59666c url(/imgs/home/home_ban/SmallBanner_Indie_Amy.jpg) no-repeat top;border-top:1px solid #434f55}
+.TBCharts .TBBtm{float:left;width:100%;height:25px;margin-top:55px;background:#59666c url(/imgs/home/home_ban/SmallBanner_Popular_Charts.jpg) no-repeat top;border-top:1px solid #434f55}
+.plsIPreview{float:left;width:100%;height:35px;overflow:hidden;background-color:#292929;margin:0 0 2px}
+#PP_PlstPreview{display:none;position:absolute;z-index:100000;top:10px;left:10px;width:315px;min-height:15px;font-size:12px;line-height:16px;background-color:#858c90;color:#ABABAB;border-radius:3px;padding:5px}
+.plsIPPreview{float:left;width:100%;height:35px;overflow:hidden;background-color:#747e83;margin:0 0 4px}
+.ContUsSdeArt{display:block;float:left;width:300px;height:27px;line-height:27px;background-color:#151515;border:3px solid #424648;margin-top:6px;border-radius:2px}
+.vtTopH{float:left;width:100%;background-color:#232323}
+.vtTopH H2{color:#FCF088;font-size:23px;margin:7px 0 7px 15px}
+.vtTopC{float:left;width:1010px}
+.vtTopC .vtLeftC{float:left;width:370px}
+.vtTopC .vtLeftM{float:left;width:210px;height:210px;line-height:210px;background-color:#42606e;border-radius:100px;text-align:center;font-size:35px;margin:120px 15px 0 30px}
+.vtTopC .vtLeftR{float:right;width:370px}
+.vtTopC .vtSongH{float:left;width:100%;margin:10px 0}
+.vtTopC .vtSongH h2{float:left;margin:3px 0 0 5px}
+.vtTopC .vtVoteLoginBtn{float:left;width:120px;height:23px;line-height:23px;background-color:#42606e;border-radius:2px;text-align:center;cursor:pointer;font-size:16px;margin:0 0 0 5px}
+#popupContainer,#popupContainer_PopupPlayer{display:none;z-index:100001;position:absolute;top:0;left:0;text-align:center}
+input[type=button],input[type=submit]{height:22px;line-height:19px;border:1px solid #454545;background-color:#42606e;color:#FFF;cursor:pointer}
+#hyp_sosialHolder1,.sld1_middleCont,.listenMenuCont,#listenTab1 #AddSearchIC,#listenTab2 .contMiddle,#CreateContHolder,.PopularMusicOnHypster .PopularHeaderCont,.PopularPlaylists .PopularHeaderCont,.LatestNewsHeader,#PublicPSection_2 .songItm,.SongLandingCont .SongAddDetails .witm,#HomeSlide1,#HomeSlide2,#HomeSlide3,#HomeSlide4,#HomeSlide5,#HomeSlide6,#HomeSlide7,.HomeSldShow,.HomeRootCont,.chartHoldCont,.TBIndieAmy .TBBodyT{float:left;width:100%}
+a:hover,a:visited{color:#FFF}
+#MainMenu .mHypster,#MainMenu .mListen,#MainMenu .mCreate,#MainMenu .mConnect{float:left;width:100px;height:28px;line-height:24px;cursor:pointer;font-family:Hypster-Segoe;font-weight:lighter;font-size:18px;margin-top:32px;margin-left:3px;text-align:center;border-radius:2px}
+.listenContHolder,.createContHolder,.connectContHolder{float:left;width:102px;margin-left:0}
+#HypsterSub .HypSub_festivals,#ListenSub .HypSub_playlists,#CreateSub .HypSub_player,#CreateSub .HypSub_playlist{display:block;float:left;width:70px;height:25px;line-height:23px;text-align:center;border-right:1px solid #191919}
+#ListenSub .HypSub_pop,#CreateSub .HypSub_radio{display:block;float:left;width:70px;height:25px;line-height:23px;text-align:center}
+.txtRegister,.txtLogin{margin-top:7px;width:342px;height:25px;border:3px solid #FFF;border-radius:3px}
+.sld1_topCont,#listenSlide1_textBoxes,#listenSlide1_textBoxes2,.SongLandingCont,.ManualArCont{float:left;width:1024px}
+.sld1_middleCont .middleC2,.sld1_middleCont .middleC3{float:left;width:31%;height:120px;background-color:#2e3335;border-radius:2px;text-align:center;border-left:1px solid #2c3133;border-bottom:1px solid #2c3133;margin:16px 0 0 2%;padding:4px .5% 0}
+#listenSlide1_textBoxes2 .middleC2,#listenSlide1_textBoxes2 .middleC3{float:left;width:31%;height:140px;background-color:#2e3335;border-radius:2px;text-align:center;border-left:1px solid #2c3133;border-bottom:1px solid #2c3133;margin:16px 0 0 2%;padding:4px .5% 0}
+.btn22,.btn33{float:right;width:77px;height:19px;background:#42606e url(/imgs/search_btn1.png) no-repeat;border-radius:3px;text-align:center;line-height:18px;font-size:14px;cursor:pointer;margin:23px 0 0}
+.btn111,.btn333{float:right;width:77px;height:19px;background:#42606e url(/imgs/search_btn1.png) no-repeat;border-radius:3px;text-align:center;line-height:18px;font-size:14px;cursor:pointer;margin:3px 0 0}
+.popularHomeInner .headerCont div,.popularHomeInner .headerCont a{float:left;min-width:150px;overflow:hidden;font-family:Hypster-Font;font-size:22px;color:#FCF088;font-style:italic;letter-spacing:1.1px;margin:7px 0 0 13px}
+.popularHomeInner .songItm_play,.PopularMusicCont .SongLstn{display:block;float:right;width:15px;height:17px;background:url(/imgs/play_icon_lte.png) no-repeat center;margin:4px 4px 0 0;padding:4px}
+.listenMenuCont #Menu2,.listenMenuCont #Menu3{float:left;width:332px;height:140px;line-height:14px;background-color:#2b3032;border-radius:2px;text-align:center;font-family:Hypster-Segoe;font-weight:lighter;font-size:29px;color:#EDEDED;cursor:pointer;margin:0 0 0 10px}
+.listenMenuCont .Menu1_img,.listenMenuCont .Menu2_img,.listenMenuCont .Menu3_img,#CreatePlayerSection1 img,#CreatePlayerSection2 img,#CreatePlayerSection3 img,#CreatePlaylistSection1 img,#CreatePlaylistSection2 img,#CreatePlaylistSection3 img,#CreateStationSection1 img,#CreateStationSection2 img,#CreateStationSection3 img,#PublicPSectionMenu1 img,#PublicPSectionMenu2 img,#PublicPSectionMenu3 img{margin:20px 0 10px}
+#listenTab2,#listenTab3,#plstsListenTab2,#plstsListenTab3{display:none;float:left;width:100%;min-height:325px;margin-top:-2px;background-color:#1d1d1c}
+#listenTab1 .VisSearchItm,.CreateRadioContHolder .VisSerItm{float:left;height:125px;cursor:pointer}
+#listenTab2 .contLimit,#listenTab3 .contLimit{float:left;width:1024px;text-align:left;margin:20px 1% 1%}
+#listenTab3 .plItem,#listenTab1 .plItem,#listenTab2 .plItem,#plstsListenTab1 .plItem,#plstsListenTab2 .plItem,#plstsListenTab3 .plItem{float:left;width:310px;height:27px;line-height:27px;background-color:#303030;border-radius:2px;color:#FFF;font-family:Hypster-Segoe;font-weight:lighter;font-size:17px;cursor:pointer;margin:0 15px 10px 0;padding:5px}
+#listenTab3 .plName,#listenTab1 .plName,#listenTab2 .plName,#plstsListenTab1 .plName,#plstsListenTab2 .plName,#plstsListenTab3 .plName{float:left;width:240px;height:27px;margin-left:7px;overflow:hidden}
+#listenTab3 .plPlay,#listenTab1 .plPlay,#listenTab2 .plPlay,#plstsListenTab1 .plPlay,#plstsListenTab2 .plPlay,#plstsListenTab3 .plPlay{display:block;float:right;width:15px;height:17px;background:url(/imgs/play_icon_lte.png) no-repeat center;margin:2px 2px 0 0;padding:4px}
+#CreateSection1 .secImgs,#CreateSection2 .secImgs,#CreateSection3 .secImgs{float:left;width:100%;text-align:center;margin-top:45px}
+#CreateSection1 .secText,#CreateSection2 .secText,#CreateSection3 .secText{float:left;width:100%;text-align:center}
+#CreatePlayerSection2,#CreatePlayerSection3,#CreatePlaylistSection3,#CreateStationSection2{float:left;width:338px;height:140px;line-height:14px;overflow:hidden;margin-left:5px;background-color:#2b3032;text-align:center;font-family:Hypster-Segoe;font-weight:lighter;font-size:29px;color:#DEDEDE;cursor:pointer;border-radius:2px}
+#CreatePlaylistSection1,#CreateStationSection1{float:left;width:338px;height:140px;line-height:14px;overflow:hidden;background-color:#2b3032;text-align:center;font-family:Hypster-Segoe;font-weight:lighter;font-size:29px;color:#DEDEDE;cursor:pointer;border-radius:2px;margin:0}
+#CreatePlaylistSection2,#CreateStationSection3{float:left;width:338px;height:140px;line-height:14px;overflow:hidden;margin-left:5px;background-color:#1d1d1c;text-align:center;font-family:Hypster-Segoe;font-weight:lighter;font-size:29px;color:#DEDEDE;cursor:pointer;border-radius:2px}
+.SearchPageRoot .lfCont,#HomeSlide1 img,#HomeSlide2 img,#HomeSlide3 img,#HomeSlide4 img,#HomeSlide5 img,#HomeSlide6 img,#HomeSlide7 img,.HomeSldShow img{float:left;cursor:pointer}
+.PopularMusicOnHypster .PopularHeader,.PopularPlaylists .PopularHeader{float:left;width:250px;margin-top:40px;color:#2e3335;font-family:Hypster-Segoe;font-weight:lighter;font-size:27px}
+.FeaturedVideoCont #listenSlide2_header,.PopularPlaylists #PopularPlaylistsSlide2_header,.PopularHeaderCont #CompToolHeader2_header,.PopularMusicOnHypster #PopularMusicSlide2_header,.CompCheckC #PopularPlaylistsSlide2_header{float:left;width:290px;margin-left:-15px}
+.FeaturedVideoCont .FeaturedSubHeader,.PopularPlaylists .FeaturedSubHeader,.PopularMusicOnHypster .FeaturedSubHeader,.CompCheckC .FeaturedSubHeader{float:right;width:250px;color:#313537;font-size:14px;text-align:left;margin:3px 0 0 20px}
+.PopularPlaylists .FeaturedHeaderBack,.PopularMusicOnHypster .FeaturedHeaderBack,.CompCheckC .FeaturedHeaderBack{float:left;width:100%;height:39px;line-height:39px;background:#44484a url(/imgs/home/featuredVideo_HeaderBack.png) no-repeat right}
+.PopularPlaylists .FeaturedHeaderBack div,.PopularPlaylists .FeaturedHeaderBack a{float:right;font-family:Hypster-Font;font-size:22px;color:#FCF088;font-style:italic;letter-spacing:1.2px;margin:3px 90px 0 0}
+.AboutUsCont,.ContactUsCont,.PrivacyPolicyCont,.TermsOfServiceCont{float:left;width:1000px;background-color:#202121;border-radius:2px;text-align:left;padding:15px 0 15px 15px}
+.LatestNewsHeader .ltstNInner div,.LatestNewsHeader .ltstNInner a{float:left;font-family:Hypster-Font;font-size:22px;color:#FCF088;font-style:italic;letter-spacing:1.1px;margin:7px 0 0 20px}
+#PublicPSectionMenu2,#PublicPSectionMenu3{float:left;width:335px;height:150px;overflow:hidden;margin-left:5px;background-color:#292929;text-align:center;font-family:Hypster-Segoe;font-weight:lighter;font-size:29px;color:#CDCDCD;cursor:pointer}
+#PublicPSectionMenu1 .PublicPMenuInner,#PublicPSectionMenu2 .PublicPMenuInner,#PublicPSectionMenu3 .PublicPMenuInner{float:left;width:100%;line-height:14px;text-align:center}
+.NameTxtCont .txt1,.UsNameTxtCont .txt1,.MemberTxtCont .txt1,.CityTxtCont .txt1,.CountryTxtCont .txt1,.ZipTxtCont .txt1,#PublicPSection_1 .DOBmHeader div,#PublicPSection_1 .DOBdHeader div,#PublicPSection_1 .DOByHeader div{float:left;color:#000;margin:3px 0 0 7px}
+.MemberTxtCont .lbl1,.CityTxtCont .lbl1,.CountryTxtCont .lbl1,.ZipTxtCont .lbl1,#PublicPSection_1 .BirthDateHeader div{float:left;color:#2f5262;margin:3px 0 0 7px}
+#PublicPSection_1 .DOBmHeader,#PublicPSection_1 .DOBdHeader{float:left;width:60px;height:30px;border:1px solid #DEDEDE;margin-left:20px;background-color:#DEDEDE;border-radius:2px;font-family:Hypster-Segoe;font-weight:lighter;font-size:18px}
+#PublicPSection_1 .photoHeader,#PublicPSection_2 .playlistsHeader,#PublicPSection_2 .StationsHeader{float:left;width:100%;color:#FFF;font-family:Hypster-Segoe;font-weight:lighter;font-size:24px;margin:10px 0}
+#PublicPSection_2 .FavoriteGenresHeader,#PublicPSection_2 .songsHeader{float:left;width:100%;color:#2e3335;font-family:Hypster-Segoe;font-weight:lighter;font-size:24px;margin:10px 0}
+#PublicPSection_2 .FavoriteGenresItm,#PublicPSection_2 .FavoriteGenresItmN{float:left;width:220px;font-size:16px;margin:7px 0 0 10px}
+#PublicPSection_2 .ItmPlay img,#PublicPSection_2 .RadioItmPlay img{margin:7px 7px 0}
+#PublicPSection_3 .MIF_Itm,#PublicPSection_3 .MF_Itm{float:left;width:330px;margin-left:1%;margin-top:5px}
+#PublicPSection_3 .MIF_img,#PublicPSection_3 .MF_img{float:left;width:47px;height:44px;margin:2px 0 0 2px}
+#PublicPSection_3 .MIF_title,#PublicPSection_3 .MF_title{float:left;font-size:15px;margin:13px 0 0 7px}
+.CreateRadioContHolder #RadioStationName,.CreateRadioContHolder #RadioStationSearchTerm{float:left;width:310px;height:31px;background-color:#EEE;border:3px solid #FEFEFE;border-radius:5px;margin:10px 0 0 20px;padding:0 7px}
+.SongLandingCont .ActionsCont,.MainCompContH .CompCirCont{float:left;width:100%;margin-top:13px}
+#AddToPlaylistCont1 .ExitBtnCont,#AddToPlaylistContPopup1 .ExitBtnCont{float:left;width:100%;height:1px}
+#AddToPlaylistCont1 .ExitBtnCont img,#AddToPlaylistContPopup1 .ExitBtnCont img{float:right;cursor:pointer;margin:-22px -22px 0 0}
+#AddToPlaylistCont1 .LeftCont,#AddToPlaylistContPopup1 .LeftCont{float:left;width:435px;height:475px;overflow:hidden;background:#555 url(/imgs/box_back.png) repeat;margin-top:0;padding:2px}
+#AddToPlaylistCont1 .RightCont,#AddToPlaylistContPopup1 .RightCont{float:left;width:400px;height:475px;background:#555 url(/imgs/box_back.png) repeat;border-radius:2px;margin-top:0;margin-left:5px;padding:2px}
+#AddToPlaylistCont1 .LeftCont .LeftContInnr,#AddToPlaylistContPopup1 .LeftCont .LeftContInnr{float:left;width:98%;margin:1%}
+#AddToPlaylistCont1 .RightCont #PlaylistContHoder1,#AddToPlaylistContPopup1 .RightCont #PlaylistContHoder1{float:left;width:98%;height:465px;text-align:left;overflow:auto;margin:1%}
+#AddToPlaylistCont1 .PlaylistTitle,#AddToPlaylistContPopup1 .PlaylistTitle{float:left;width:100%;text-align:left;color:#FCF088;font-size:17px}
+#AddToPlaylistCont1 .PlaylistItm,#AddToPlaylistCont1 .SongVerCont,#AddToPlaylistContPopup1 .PlaylistItm{float:left;width:100%;text-align:left}
+#AddToPlaylistCont1 .PlaylistItm div,#AddToPlaylistContPopup1 .PlaylistItm div{float:left;width:99%;height:25px;line-height:25px;overflow:hidden;background-color:#454545;margin-left:1%;margin-top:3px;border-radius:2px;cursor:pointer}
+#AddToPlaylistCont1 .SongTitle,#AddToPlaylistContPopup1 .SongTitle{float:left;color:#FCF088;font-size:20px;text-align:left;margin:0 0 0 5px}
+#AddToPlaylistCont1 .SongDetails,#AddToPlaylistContPopup1 .SongDetails{float:left;width:100%;text-align:left;margin-top:10px}
+#AddToPlaylistCont1 .SongImg,#AddToPlaylistContPopup1 .SongImg{width:120px;height:90px;float:left;border:1px solid #656565}
+.NPFT_Head,.NPFT_BHead{float:right;width:1024px;text-align:left}
+.NPFT_ContHolder,.NPFT_PP_ContHolder{float:left;width:1024px;min-height:1000px;padding:0}
+.NPFT_PP_ContHolder .NewPlayerForTumblr,.NPFT_ContHolder .GetCodeBtn{float:left;width:300px;height:60px;background-color:#2e2e2e;margin-left:10px;cursor:pointer;text-align:center}
+.NPFT_ContHolder #cp_ButtonsColor,.NPFT_ContHolder #cp_HypsterButtonColor{float:right;width:24px;height:24px;background-color:#2488ba;border-radius:2px;cursor:pointer}
+#HomeRow2,#HomeRow4{float:left;width:100%;height:280px;margin-top:40px}
+.MostPopularSongsRootCont .LeftArrow,.RightArrow{float:left;width:2%;height:220px;overflow:hidden}
+.MostPopularSongsRootCont .LeftArrow img,.MostPopularSongsRootCont .RightArrow img{width:16px;height:18px;margin-top:90px;cursor:pointer}
+.boxContRight #sosialHolder1,.boxContLeft #sosialHolder1{float:right;width:80px}
+.boxContRight .SI_Cont_facebook1,.boxContLeft .SI_Cont_facebook1{width:90px;height:22px;margin-top:6px}
+.boxContRight .SI_Cont_twitter1,.boxContLeft .SI_Cont_twitter1{width:90px;height:22px;margin-top:5px}
+.boxContRight .SI_Cont_google1,.boxContLeft .SI_Cont_google1{width:80px;height:22px;margin-top:5px}
+.CompCheckC .FeaturedHeaderBack div,.CompCheckC .FeaturedHeaderBack a{float:right;font-family:Hypster-Font;font-size:22px;color:#FCF088;font-style:italic;letter-spacing:1.1px;overflow:hidden;height:31px;margin:0 88px 0 0}
+.PMmCont .PMcntrls_like,.PMmCont .PMcntrls_info{float:left;width:35px;height:13px;border-radius:1px;font-size:5px;line-height:13px;text-align:center;margin:6px 0 0 7px}
+.PMmCont .PMfooterb1 div,.PMmCont .PMfooterb2 div{float:left;width:100%;font-size:5px}
+.TBsimilar .TBHead,.TBIndieAmy .TBHead,.TBCharts .TBHead{float:left;width:100%;height:80px;background-color:#3a474d;margin-top:30px}
+.TBsimilar .TBBody,.TBIndieAmy .TBBody,.TBCharts .TBBody{float:left;width:100%;height:150px;margin-top:30px;font-size:17px}
+.TBsimilar .TBBodyT,.TBCharts .TBBodyT{float:left;width:90%;margin-left:5%}
+.TBsimilar .TBReadMore,.TBIndieAmy .TBReadMore,.TBCharts .TBReadMore{background-color:#3a474d;border-radius:3px 3px 3px 3px;cursor:pointer;float:right;font-size:14px;height:19px;line-height:18px;text-align:center;width:77px;margin:7px 26px 0 0}
+.plsIPreview img,.plsIPPreview img{float:left;width:38px;height:28px;border-radius:3px;cursor:pointer;margin:4px 0 0 4px}
+.plsIPreview div,.plsIPPreview div{float:left;width:240px;height:28px;line-height:28px;overflow:hidden;margin-left:10px;margin-top:4px;cursor:pointer;font-size:14px;color:#DEDEDE}
+#GMVP_PlstPreview,#Radio_PlstPreview,#PMYLIKE_PlstPreview{display:none;position:absolute;z-index:100000;top:10px;left:10px;width:310px;min-height:15px;font-size:12px;line-height:16px;background-color:#333;color:#ABABAB;border-radius:3px;padding:5px}
+#GMVP_PlstPreview .LdingPrev,#PP_PlstPreview .LdingPrev,#Radio_PlstPreview .LdingPrev,#PMYLIKE_PlstPreview .LdingPrev{float:left;width:100%;color:#FFF}
+.vtTopC #Song1VC,.vtTopC #Song2VC{float:left;border-radius:30px;background-color:#ffa910;color:#000;font-size:22px;padding:7px}
+.vtTopC .vtListenBtn,.vtTopC .vtVoteBtn{float:left;width:120px;height:23px;line-height:23px;background-color:#42606e;border-radius:2px;text-align:center;cursor:pointer;font-size:16px;margin:0 5px 0 0}

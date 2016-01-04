@@ -1,0 +1,238 @@
+﻿@model List<hypster_tv_DAL.MusicGenre>
+@{
+    ViewBag.Title = "Radio";
+    Layout = null;
+    int i_counter = 1;
+    Layout = "/Areas/senses/Views/Shared/_srLayout.cshtml";
+}
+
+
+
+
+
+<div class="cir_back_btn"> 
+    <div onclick="clickBack()" style=" float:left; width:100%; margin:0px 0 0 0px; cursor:pointer; ">
+        BACK
+    </div>
+</div>
+
+
+
+
+<div class="radioBlkBoxBorder1">
+    
+
+    <div class="ctL1">
+        
+        <div class="radioBlkBox1">
+
+                
+                <div id="msgBox1_radio" style=" float:none; width:400px; margin:auto; ">
+                 
+                    <div style=" margin:10px 0 10px 0; color:#FFFFFF;">
+                        THERE ARE @Model.Count RADIO STATIONS AVAILABLE.
+                    </div>
+
+                    @foreach (var item in Model)
+                    {
+                        <div class="mnuItm" id="menu_@(i_counter)" data-plstid="@item.GenreName.Replace("\'", "")" data-plstname="@item.GenreName.Replace("\'", "")"  onclick="LoadPlaylist('@item.GenreName.Replace("\'", "")')">
+                            @item.GenreName
+                        </div>
+    
+                        i_counter += 1;
+                    }
+
+                    <div style=" width:100%; height:40px;">
+                    </div>
+
+                </div>
+
+            
+        </div>
+
+    </div>
+
+
+
+    <div class="ctR1" style=" background:#FFFFFF url('/Areas/senses/imgs/senses_back/back_6.jpg') no-repeat center;">
+        
+        <img alt="" src="/Areas/senses/imgs/senses_ct_icon.png" style=" float:left; margin:50px 0 0 268px;" />
+
+    </div>
+
+    
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        cancelSpeech();
+        startSpeech('There are @Model.Count radio stations available.');
+
+    });
+</script>
+
+
+<script type="text/javascript">
+    
+    var CURR_ACTIVE_MENU = 0;
+    var MENU_COUNT = @Model.Count;
+
+
+    function HandleKeyAction(e) {
+        
+        cancelSpeech();
+
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+
+
+        //ESC
+        if (KEY_CODE == 27) {
+            clickBack();
+        }
+
+
+
+        //enter
+        if (KEY_CODE == 13) {
+            
+            //alert($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstid"));
+            
+            
+            //load current playlist
+            //--------------------------------------------------------------------
+            LoadPlaylist($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstid"));
+            //--------------------------------------------------------------------
+
+        }
+
+
+        //down
+        if (KEY_CODE == 40) {
+            //move menu down
+
+            CURR_ACTIVE_MENU += 1;
+            if (CURR_ACTIVE_MENU > MENU_COUNT) {
+                CURR_ACTIVE_MENU = MENU_COUNT;
+            }
+
+
+            startSpeech($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname"));
+
+
+            $(".mnuItm").css("background-color", "#000000");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#318E8A");
+        }
+
+
+        //up
+        if (KEY_CODE == 38) {
+            //move menu up
+
+            CURR_ACTIVE_MENU -= 1;
+            if (CURR_ACTIVE_MENU <= 0) {
+                CURR_ACTIVE_MENU = 1;
+            }
+
+
+            startSpeech($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname"));
+
+
+            $(".mnuItm").css("background-color", "#000000");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#318E8A");
+        }
+
+
+
+
+        if (KEY_CODE > 48 && KEY_CODE < 58) {
+            
+            var PLST_NUM = KEY_CODE - 48;
+
+            //load current playlist
+            //--------------------------------------------------------------------
+            window.location = "/senses/sListen/station/" + encodeURI($("#menu_" + PLST_NUM).attr("data-plstid")) + "?ba=" + encodeURI("/senses/sRadio");
+            //--------------------------------------------------------------------
+
+        }
+
+
+
+
+        if (KEY_CODE == 17) {
+            StartVoiceCommand("radio");
+            return;
+        }
+
+
+
+    }
+
+
+    
+
+
+
+    function clickBack()
+    {   
+        cancelSpeech();
+        
+        //window.history.back();
+        window.location = "/senses/sStart/home";
+
+    }
+
+
+
+    function LoadPlaylist(plst_id)
+    {
+        cancelSpeech();
+
+
+        window.location = "/senses/sListen/station/" + encodeURI(plst_id) + "?ba=" + encodeURI("/senses/sRadio");
+
+    }
+
+
+
+    function ProccessVoiceCommand(comm)
+    {
+        var isHandled = false;
+        isHandled = handle_generic_commands(comm);
+
+        cancelSpeech();
+        startSpeech("Searching for " + comm);
+
+                
+        setTimeout(function () {
+            //load current playlist
+            //--------------------------------------------------------------------
+            window.location = "/senses/sListen/station/" + encodeURI(comm) + "?ba=" + encodeURI("/senses/sRadio");
+            //--------------------------------------------------------------------
+        }, 3000);
+
+    }
+
+
+</script>

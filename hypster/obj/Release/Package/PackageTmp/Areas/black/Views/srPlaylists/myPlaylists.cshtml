@@ -1,0 +1,268 @@
+﻿@model List<hypster_tv_DAL.Playlist>
+@{
+    ViewBag.Title = "myPlaylists";
+    int i_counter = 1;
+    Layout = "/Areas/black/Views/Shared/_srLayout.cshtml";
+}
+
+
+
+<div class="cir_1"> 
+    
+    <div onclick="clickBack()" style=" float:left; width:100%; margin:100px 0 0 90px; cursor:pointer; ">
+        BACK
+    </div>
+
+</div>
+
+
+
+
+<div class="cir_2">
+
+
+    <div id="msgBox1">
+
+        <div>
+            You have <span style=" color:#CC0000; ">@Model.Count</span> playlists.
+        </div>
+
+        <br />
+
+        @foreach (var item in Model)
+        {
+            <div class="mnuItm" id="menu_@(i_counter)" data-plstid="@item.id" data-plstname="@item.name.Replace("\'","").ToLower()" onclick="LoadPlaylist('@item.id')">
+                @item.name
+            </div>
+    
+            i_counter += 1;
+        }
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+            var msg = new SpeechSynthesisUtterance('You have @Model.Count playlists.');
+            window.speechSynthesis.speak(msg);
+        }
+
+    });
+</script>
+
+
+
+<script type="text/javascript">
+
+    var CURR_ACTIVE_MENU = 0;
+    var MENU_COUNT = @Model.Count;
+
+    function HandleKeyAction(e) {
+
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+        }
+
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        //alert(KEY_CODE);
+        //--------------------------------------------
+        //ESC
+        if (KEY_CODE == 27) {
+           clickBack();
+        }
+        //--------------------------------------------
+
+
+
+
+        //enter
+        if (KEY_CODE == 13) {
+        
+            //alert($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstid"));
+            
+            
+            //load current playlist
+            //--------------------------------------------------------------------
+            LoadPlaylist($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstid"));
+            //--------------------------------------------------------------------
+        }
+
+
+
+        //down
+        if (KEY_CODE == 40) {
+            //move menu down
+
+            CURR_ACTIVE_MENU += 1;
+            if (CURR_ACTIVE_MENU > MENU_COUNT) {
+                CURR_ACTIVE_MENU = MENU_COUNT;
+            }
+
+
+            if (is_speech_sound == 1) {
+                var curr_msg = new SpeechSynthesisUtterance($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname"));
+                window.speechSynthesis.speak(curr_msg);
+            }
+
+
+            $(".mnuItm").css("background", "none");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#DEDEDE");
+        }
+
+
+        //up
+        if (KEY_CODE == 38) {
+            //move menu up
+
+            CURR_ACTIVE_MENU -= 1;
+            if (CURR_ACTIVE_MENU <= 0) {
+                CURR_ACTIVE_MENU = 1;
+            }
+
+            
+            if (is_speech_sound == 1) {
+                var curr_msg = new SpeechSynthesisUtterance($("#menu_" + CURR_ACTIVE_MENU).attr("data-plstname"));
+                window.speechSynthesis.speak(curr_msg);
+            }
+
+
+            $(".mnuItm").css("background", "none");
+            $("#menu_" + CURR_ACTIVE_MENU).css("background-color", "#DEDEDE");
+        }
+
+
+
+        if (KEY_CODE > 48 && KEY_CODE < 58) {
+            
+            var PLST_NUM = KEY_CODE - 48;
+
+            //load current playlist
+            //--------------------------------------------------------------------
+
+            window.location = "/black/srListen/user/@(User.Identity.Name)?" + $("#menu_" + PLST_NUM).attr("data-plstid") + "&ba=" + encodeURI("/black/srPlaylists/myPlaylists");
+
+            //--------------------------------------------------------------------
+
+        }
+
+
+
+
+        //CNTRL
+        if (KEY_CODE == 17) {
+            StartVoiceCommand();
+        }
+
+
+    }
+
+
+    function clickBack(){
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+        }
+        
+        //window.history.back();
+        window.location = "/black/srhome/step_2";
+    }
+
+
+
+
+    function LoadPlaylist(plst_id)
+    {
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+        }
+
+        window.location = "/black/srListen/user/@(User.Identity.Name)?" + plst_id + "&ba=" + encodeURI("/black/srPlaylists/myPlaylists");
+
+    }
+
+
+
+
+    function StartVoiceCommand() {
+        
+        DisplayMicIcon();    
+
+
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+            var search_msg = new SpeechSynthesisUtterance("say");
+            window.speechSynthesis.speak(search_msg);
+        }
+
+
+        setTimeout(function () {
+            var recognition = new webkitSpeechRecognition();
+            //recognition.continuous = true;
+            //recognition.interimResults = true;
+            recognition.lang = "en-US";
+            recognition.onresult = function (event) {
+
+                var curr_speech = event.results[0][0];
+                console.log(event.results[0][0].transcript)
+
+                ProccessVoiceCommand(event.results[0][0].transcript);
+
+            }
+            recognition.start();
+        }, 300);
+    }
+
+
+
+    function ProccessVoiceCommand(comm) {
+
+        var found_id = $(".mnuItm[data-plstname='" + comm.toLowerCase() + "']").attr("data-plstid");
+        if(found_id != undefined)
+        {
+            if (is_speech_sound == 1) {
+                window.speechSynthesis.cancel();
+                var search_msg = new SpeechSynthesisUtterance("Loading your " + comm + " playlist...");
+                window.speechSynthesis.speak(search_msg);
+            }
+
+            setTimeout(function(){
+                LoadPlaylist(found_id);
+            },2300);
+        }
+        else
+        {
+            if (is_speech_sound == 1) {
+                window.speechSynthesis.cancel();
+                var not_found_msg = new SpeechSynthesisUtterance("Please say again...");
+                window.speechSynthesis.speak(not_found_msg);
+            }
+        }
+
+    }
+
+
+</script>
+

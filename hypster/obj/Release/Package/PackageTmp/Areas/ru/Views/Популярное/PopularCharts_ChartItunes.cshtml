@@ -1,0 +1,71 @@
+﻿@model List<hypster_tv_DAL.PlaylistData_Song>
+@{
+    Layout = null;
+}
+
+
+<h1 class="ChartHeader">
+    <a class="chartplPlay" style=" margin-top:9px;" onclick="OpenPlayer('media_type=playlist&playlist_id=@(ViewBag.chart_playlist_id)&us_id=@(ViewBag.chart_user_id)&guid=charts');" title="Play playlist"></a>
+    <span style=" cursor:pointer;" onclick="OpenPlayer('media_type=playlist&playlist_id=@(ViewBag.chart_playlist_id)&us_id=@(ViewBag.chart_user_id)&guid=charts');">&nbsp;Top 100 iTunes Hits!</span>
+
+    <div class="chartIntr">Вы можете перетаскивать чарт в стороны</div>
+</h1>
+
+
+
+
+
+<div style=" float:left; width:100%; height:280px; background-color:#202020; padding-top:10px;">
+
+    <div class="ChartScrlArea">
+    
+            @{ int chart_height = 180;}
+            @{ int margin_top = 10;}
+            @{ int chart_position = 1; }
+            @{ int cont_width = 0; }
+
+            <div class="MainChartCont">
+            @foreach (var item in Model)
+            {
+                <div class="chartItem" > 
+                        <div class="chrtImage" style=" height:@(chart_height)px; margin-top:@(margin_top)px; background:#1d1d1c url(http://i.ytimg.com/vi/@(item.YoutubeId)/0.jpg) center; background-size: 220%;">
+                            <div>@chart_position</div>
+                        </div>
+                    
+                        <div class="chrtTitle" style=" height:50px;">@item.Title</div>
+                </div>
+        
+        
+                chart_height -= 0;
+                margin_top += 0;
+                chart_position += 1;
+
+                cont_width += 165;
+            }
+            </div>
+    </div>
+
+</div>
+
+
+
+
+<div style=" float:left; width:100%; margin-top:0px;">
+    <div class="radioButton" style=" margin-left:10px;" onclick="OpenPlayer('media_type=playlist&playlist_id=@(ViewBag.chart_playlist_id)&us_id=@(ViewBag.chart_user_id)&guid=charts');">Слушать Чарт</div>
+
+    <div class="radioButton" style=" margin-left:10px;" onclick="window.location='/ru/Чарты';">Больше Чартов</div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $(".MainChartCont").css("width", "@(cont_width)px");
+        $(".MainChartCont").draggable({ axis: "x" });
+    });
+</script>
+
+
+

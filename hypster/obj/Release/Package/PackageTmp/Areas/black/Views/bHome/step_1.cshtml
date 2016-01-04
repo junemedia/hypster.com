@@ -1,0 +1,115 @@
+﻿@{
+    Layout = null;
+}
+
+
+<div class="cir_1">
+
+
+    <!--div id="bContHolder1inner"-->
+
+
+        <div id="msgBox1" style=" float:left; width:80%; margin:100px 0 0 50px; ">
+            <br /> 
+            <span style=" font-size:22px;">Welcome to hypster.</span><br />
+            Please press any <span style=" color:#CC0000; ">Key</span> to continue...
+
+            <br />
+
+            <div onclick="startHypster();" style=" float:left; width:250px; height:24px; line-height:24px; margin:10px 0 0 0; background-color:#CC9933; border-radius:3px; cursor:pointer; text-align:center;">
+                Start
+            </div>
+
+        </div>
+
+    <!--/div-->
+
+</div>
+
+
+<div class="cir_2">
+    
+    <img alt="Hypster" src="/areas/black/imgs/512.jpg" style=" float:left; margin:130px 0 0 190px; border-radius:250px;" />
+
+</div>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    
+
+    if (is_speech_sound == 1) {
+
+        window.speechSynthesis.cancel();
+
+        var msg1 = new SpeechSynthesisUtterance('Welcome to hypster.');
+        window.speechSynthesis.speak(msg1);
+
+        var msg2 = new SpeechSynthesisUtterance('To listen to the tutorial press 1. Please press any Key to continue.');
+        window.speechSynthesis.speak(msg2);
+
+        //var msg3 = new SpeechSynthesisUtterance('You can use numbers and letters, arrows, enter and space and voice comands for your navigation.');
+        //window.speechSynthesis.speak(msg3);
+    }
+</script>
+
+
+<script type="text/javascript">
+    function HandleKeyAction(e) {
+
+        if (is_speech_sound == 1) {
+            window.speechSynthesis.cancel();
+        }
+
+
+        var KEY_CODE = 0;
+
+        if (window.event) {
+            KEY_CODE = window.event.keyCode;
+        }
+        else {
+            KEY_CODE = e.which;
+        }
+
+
+        if (KEY_CODE == 49) {
+
+            $("#msgBox1").html("loading tutorial...");
+
+            $.ajax({
+                type: "POST",
+                url: "/black/bhome/tutorial",
+                async: true,
+                success: function (data) {
+                    $("#bContHolder1").html(data);
+                }
+            });
+            
+            return;
+        }
+
+
+        startHypster();
+        
+    }
+
+
+
+
+    function startHypster() {
+
+        hvc_NavigateHome();
+    }
+
+</script>
+
+
+
+
+

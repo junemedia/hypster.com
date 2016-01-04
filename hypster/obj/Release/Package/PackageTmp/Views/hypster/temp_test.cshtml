@@ -1,0 +1,1310 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Music playlist online - Tumblr music player</title>
+    <meta name="alexaVerifyID" content="D1zuW6QmyfkVJqITiYkg7ecUz5k" />
+    <meta name="description" content="Make a playlist online for free, tumblr music player: create player for tumblr or blogger, listen to our 10 million playlists, create your own playlist online for free." />
+    
+    
+
+    <!--link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"-->
+    <!--link rel="icon" href="/favicon.ico" type="image/x-icon"-->
+
+    <link src="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"  rel="stylesheet" type="text/css" />
+    
+    <link href="/bundles/css?v=hgKmHzqupD6cMChrQE9_yVgJbCFXbsjeCgazaekZ4xc1" rel="stylesheet" type="text/css" />
+
+
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"  type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"  type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+
+    <script src="/bundles/scripts?v=HoHikddYdvwbKFDcklMaNEGYqtFwFFperBIvMyn4zNU1" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () { RenderLayout(); Adjust_Lang_Btns(); Adjust_Like_Btns(); });
+        $(window).resize(function () { RenderLayout(); Adjust_Lang_Btns(); Adjust_Like_Btns(); });
+    </script>
+
+        
+</head>
+
+
+
+
+
+<body>
+    
+
+    <div class="MainBD13">
+        
+        <div class="ContentHeaderCont">
+            
+
+<div class="ContentHeaderInner">
+    <div id="MainMenu" style=" z-index:99999; " >
+        
+
+        <div class="LogoCh" onclick="window.location='/';">
+            <div class="MLogo">HYPSTER</div>
+            <div class="MSogan">MORE MUSIC.</div>
+        </div>
+
+
+        <div class="MenuCh">
+            
+            <div style=" float:right; width:100%; height:30px; color:#CC0000; font-size:16px; text-align:right;">
+                
+            </div>
+
+            <div class="TopHeaderCont">
+    <div class="LogOutBtn1" onclick=" window.location='/account/LogOff';">LOG OUT</div>
+    <div class="mAcctMCH1" onmouseover="$('#myAcctCH1').css('display','block');" onmouseout="$('#myAcctCH1').css('display','none');">
+        <div onclick="window.location='/account';">MY ACCOUNT</div>
+
+        <div id="myAcctCH1">
+            <div id="myAcctPlayer1" onclick="OpenExsPlayer('osakson1');">MY PLAYER</div>
+            <div id="myAcctPlaylists1" onclick=" window.location='/create/playlist?PLST=2';">MY PLAYLISTS</div>
+            <div id="myAcctInfo" onclick=" window.location='/account/info';">ACCOUNT INFO</div>
+        </div>
+
+    </div>
+
+</div>
+            <div class="MSep1"></div>
+   
+
+            <div style=" float:right; margin:4px 0 0 0; ">
+               
+
+                <div class="mListen" onmouseover="$('#mListenSM1').css('display','block');" onmouseout="$('#mListenSM1').css('display','none');">
+                    <div onclick="window.location='/listen';">LISTEN</div>
+
+                    <div id="mListenSM1">
+                        <div id="mChartsSM1" onclick="window.location='/charts';">CHARTS</div>
+                        <div id="mPlaylistsSM1" onclick="window.location='/listen?PLST=1';">PLAYLISTS</div>
+                        <div id="mSearchSM1" onclick="window.location='/listen';">SEARCH</div>
+                    </div>
+
+                </div>
+
+
+                <div class="mCreate" onmouseover="$('#mCreateSM1').css('display','block');" onmouseout="$('#mCreateSM1').css('display','none');" >
+                    <div onclick="window.location=&#39;/create/playlist&#39;;">CREATE</div>
+
+                    <div id="mCreateSM1">
+                        <div id="mPlaylistSM1" onclick="window.location='/create/playlist';">PLAYLIST</div>
+                        <div id="mPlayerSM1" onclick="window.location='/create/player';">PLAYER</div>
+                    </div>
+
+                </div>
+
+
+                <div class="mBreaking" onclick="window.location='/breaking';">#BREAKING</div>
+
+                <div class="mHowTos" onclick="window.location='/resources/manuals';">HOW TOS</div>
+               
+            </div>
+
+            
+
+        </div>
+    </div>          
+</div>
+
+
+        </div>
+
+        <div class="ContentRootCont" >
+             
+<script src="/scripts/jquery.cycle.all.latest.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    var sk_t;
+    $(document).ready(function () { RenderPage(); RenderHome(); RenderShare(); /*setTimeout('StartSlideshow()', 1000);*/ /*checkSplashPage();*/ });
+    $(window).resize(function () { RenderPage(); ReRenderHome(); RenderShare(); });
+</script>
+
+
+
+
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:607px; ">
+            
+
+            
+            <div class="sld1_topCont">
+        
+                    <div class="topLeft">
+                        <div class="mainSlideshow">
+                            
+
+
+
+<script type="text/javascript" src="/scripts/js/jssor.core.js"></script>
+<script type="text/javascript" src="/scripts/js/jssor.utils.js"></script>
+<script type="text/javascript" src="/scripts/js/jssor.slider.min.js"></script>
+<script>
+
+    jQuery(document).ready(function ($) {
+
+        var _CaptionTransitions = [
+        //CLIP|LR
+        {$Duration: 900, $Clip: 3, $Easing: $JssorEasing$.$EaseInOutCubic },
+        //CLIP|TB
+        {$Duration: 900, $Clip: 12, $Easing: $JssorEasing$.$EaseInOutCubic },
+
+        //ZMF|10
+        {$Duration: 600, $Zoom: 11, $Easing: { $Zoom: $JssorEasing$.$EaseInExpo, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 },
+
+        //ZML|R
+        {$Duration: 600, $Zoom: 11, $FlyDirection: 2, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic }, $ScaleHorizontal: 0.6, $Opacity: 2 },
+        //ZML|B
+        {$Duration: 600, $Zoom: 11, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic }, $ScaleVertical: 0.6, $Opacity: 2 },
+
+        //ZMS|B
+        {$Duration: 700, $Zoom: 1, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic }, $ScaleVertical: 0.6, $Opacity: 2 },
+
+        //RTT|10
+        {$Duration: 700, $Zoom: 11, $Rotate: 1, $Easing: { $Zoom: $JssorEasing$.$EaseInExpo, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInExpo }, $Opacity: 2, $Round: { $Rotate: 0.8} },
+
+        //RTTL|R
+        {$Duration: 700, $Zoom: 11, $Rotate: 1, $FlyDirection: 2, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInCubic }, $ScaleHorizontal: 0.6, $Opacity: 2, $Round: { $Rotate: 0.8} },
+        //RTTL|B
+        {$Duration: 700, $Zoom: 11, $Rotate: 1, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInCubic }, $ScaleVertical: 0.6, $Opacity: 2, $Round: { $Rotate: 0.8} },
+
+        //RTTS|R
+        {$Duration: 700, $Zoom: 1, $Rotate: 1, $FlyDirection: 2, $Easing: { $Left: $JssorEasing$.$EaseInQuad, $Zoom: $JssorEasing$.$EaseInQuad, $Rotate: $JssorEasing$.$EaseInQuad, $Opacity: $JssorEasing$.$EaseOutQuad }, $ScaleHorizontal: 0.6, $Opacity: 2, $Round: { $Rotate: 1.2} },
+        //RTTS|B
+        {$Duration: 700, $Zoom: 1, $Rotate: 1, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInQuad, $Zoom: $JssorEasing$.$EaseInQuad, $Rotate: $JssorEasing$.$EaseInQuad, $Opacity: $JssorEasing$.$EaseOutQuad }, $ScaleVertical: 0.6, $Opacity: 2, $Round: { $Rotate: 1.2} },
+
+        //R|IB
+        {$Duration: 900, $FlyDirection: 2, $Easing: { $Left: $JssorEasing$.$EaseInOutBack }, $ScaleHorizontal: 0.6, $Opacity: 2 },
+        //B|IB
+        {$Duration: 900, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInOutBack }, $ScaleVertical: 0.6, $Opacity: 2 },
+
+        ];
+
+        var options = {
+            $AutoPlay: true,
+            $AutoPlaySteps: 1,
+            $AutoPlayInterval: 3000,
+            $PauseOnHover: 1,
+
+            $ArrowKeyNavigation: true,
+            $SlideDuration: 500,
+            $MinDragOffsetToSlide: 20,
+            $SlideWidth: 706,
+            $SlideHeight: 360,
+            $SlideSpacing: 0,
+            $DisplayPieces: 1,
+            $ParkingPosition: 0,
+            $UISearchMode: 1,
+            $PlayOrientation: 1,
+            $DragOrientation: 3,
+
+            $CaptionSliderOptions: {
+                $Class: $JssorCaptionSlider$,
+                $CaptionTransitions: _CaptionTransitions,
+                $PlayInMode: 1,
+                $PlayOutMode: 3
+            },
+
+            $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$,
+                $ChanceToShow: 2,
+                $AutoCenter: 0,
+                $Steps: 1,
+                $Lanes: 1,
+                $SpacingX: 10,
+                $SpacingY: 10,
+                $Orientation: 1
+            },
+
+            $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$,
+                $ChanceToShow: 1,
+                $Steps: 1
+            }
+        };
+        var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+        function ScaleSlider() {
+            var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+            if (parentWidth)
+                jssor_slider1.$SetScaleWidth(Math.min(parentWidth, 706));
+            else
+                window.setTimeout(ScaleSlider, 30);
+        }
+
+        ScaleSlider();
+
+        if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+            $(window).bind('resize', ScaleSlider);
+        }
+
+
+    });
+</script>
+
+
+
+
+
+
+<div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 706px; height: 360px; overflow: hidden; ">
+
+    <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+        <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block; background-color: #000000; top: 0px; left: 0px; width:100%; height:100%;"></div>
+        <div style="position: absolute; display: block; background: url(../img/loading.gif) no-repeat center center; top: 0px; left: 0px;width: 100%;height:100%;"></div>
+    </div>
+
+    
+    <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 706px; height: 360px; overflow: hidden;">
+            
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/8c8ec59b-488c-4ab7-b9a8-6688963b1aea.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/breaking[];')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/f852f135-b992-4b12-b0b6-75ddd7067357.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/breaking/details/Ballad-of-the-Douchebag-Vol-1[];')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/b41c65e3-189c-4145-985e-ffda4e88f309.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/breaking/details/Heavy-Metal-Monsters[];')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/6397a013-dd42-4e77-af2b-9a2a8c35648f.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('OpenPlayerM([]/playlists/user/Limahh?6992577[]);')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/10fc9a47-9587-4715-9ba9-bcc5079b2e93.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/breaking/details/Football-Fantasy-[];')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/e6026d3f-0ca7-40ea-aa97-14df4945aab3.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/breaking/details/BREAKING-BADS-BADDEST-TRACKS[];')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/2857dec1-99e7-46da-a6a6-b28ce50c5925.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/breaking/details/SONG-OF-THE-SAD-BASTARD[];')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/7965a55c-8409-4fc9-9c93-5f4d6a1d623a.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/breaking/details/PORTER-ROBINSON[];')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/32c730d4-c823-479c-9bfb-05fb518f27b3.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/breaking/details/DUDE----STONER-SONGS[];')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/0f1ece10-b978-4912-8015-98a6f65b6a64.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/breaking/details/The-Ultimate-Sex-Soundtrack[];')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/0bf937e0-9068-4dd2-a064-1753738f8f19.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/breaking/details/MMA-Fight-Songs[];')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/12d05bd4-d7b8-4784-b5d0-40f8f5279438.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/breaking/details/’80s-New-Wave-playlist[];')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/5d34cf80-eb19-404b-beb9-bfc0c56d1bf2.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/breaking/details/BEST-OF-2014-SO-FAR-THE-WAY-WE-SEE-IT[];')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/cb3f81bd-b83b-4d47-88d0-babffd896d69.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/playlists/user/steven%20chean?6992180[];')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/85a3935a-51a5-4ab4-81c1-8fbb7165041f.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/playlists/user/steven%20chean?6992096 [];')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/7cbdded2-fd7d-497a-bd62-9768d09282ff.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/breaking/details/FOO-FIGHTERS[];')" onmousemove="sdl_show_move()" />
+            </div>
+            <div>
+                <img u="image" src="/imgs/home/home_slideshow/bb1c3951-84cc-4384-ae7e-4620d66fcd5a.jpg" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('window.location=[]/breaking/details/ACTION-BRONSON[];')" onmousemove="sdl_show_move()" />
+            </div>
+            
+    </div>
+        
+  
+    <div u="navigator" class="jssorb01" style="position: absolute; bottom: 16px; right: 10px;">
+        <div u="prototype" style="POSITION: absolute; WIDTH: 12px; HEIGHT: 12px;"></div>
+    </div>
+  
+    
+    <span u="arrowleft" class="jssora02l" style="width: 55px; height: 55px; top: 153px; left: 8px;"></span>
+    <span u="arrowright" class="jssora02r" style="width: 55px; height: 55px; top: 153px; right: 8px"></span>
+ 
+</div>
+    
+
+
+
+
+<script type="text/javascript">
+
+    var click_allowed = true;
+    var click_down = false;
+
+    function sdl_show_down() {
+        click_down = true;
+    }
+
+    function sdl_show_up(href) {
+
+        if (click_allowed == true) {
+            eval(href.replaceAll("[]", "'"));
+        }
+
+        click_allowed = true;
+        click_down = false;
+    }
+
+    function sdl_show_move() {
+        if (click_down == true) {
+            click_allowed = false;
+        }
+    }
+
+</script>
+
+                        </div>
+                    </div>
+
+
+                    <div class="topRight">
+                        <div id="SideAd2_28329">
+                            
+
+
+<iframe src="http://ads.hypster.com/i_ad_300x250.html" width="300" height="250" scrolling="no" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+
+
+
+
+
+
+
+
+                        </div>
+                        <!-- 06_25 -->
+                    </div>
+
+                    <div class="topRightSoc">
+                        
+                        <div style=" float:left; margin:15px 0 0 50px;">
+                            
+                            <a href="https://twitter.com/Hypsterdotcom" target="_blank">
+                                <img alt="" src="/imgs/social_icons/twitter_btn.png" style=" float:left; width:33px; margin:15px 10px 0 13px; cursor:pointer; border:none;" />
+                            </a>
+
+                            <a href="http://hypsterblog.tumblr.com/" target="_blank">
+                                <img alt="" src="/imgs/social_icons/tumblr_btn.png" style=" float:left; width:33px; margin:15px 10px 0 0px; cursor:pointer; border:none;" />
+                            </a>
+
+                            <a href="https://www.facebook.com/Hypster" target="_blank">
+                                <img alt="" src="/imgs/social_icons/facebook_btn.png" style=" float:left; width:33px; margin:15px 10px 0 0px; cursor:pointer; border:none;" />
+                            </a>
+
+                            <a href="mailto:info@hypster.com">
+                                <img alt="" src="/imgs/social_icons/email_btn.png" style=" float:left; width:33px; margin:15px 10px 0 0px; cursor:pointer; border:none;" />
+                            </a>
+                        </div>
+
+                    </div>
+
+            </div>
+
+            
+            <div id="listenSlide1_textBoxes" class="sld1_middleCont">
+                    
+                    <div class="middleC1" onclick="window.location='/listen';">
+                        <div class="head11">Listen without limits</div>
+                        <div class="cont21">Enjoy the music you love with no limitations, no commercials, and absolutely no getting stuck on songs you hate.</div>
+                    </div>
+
+
+                    <div class="middleC2" onclick="window.location='/create/playlist';">
+                        <H1 class="head11" style=" margin:0px;">Free music playlists</H1>
+                        <div class="cont21">Listen to millions of songs for free. Create a playlist from our legendary library.</div>
+                    </div>
+                    
+
+                    <div class="middleC3" onclick="window.location='/create/player';">
+                        <div class="head11">Tumblr music player</div>
+                        <div class="cont21">Actually, our awesome free music player isn’t just for Tumblr anymore. It’s for any website or blog that could use a little music. And what website or blog couldn’t?</div>
+                    </div>
+            </div>
+
+
+
+
+
+
+            <div class="sld1_bottomCont">
+                <div class="sld1_bottomContInnr">
+                    
+                        <input type="text" id="txtSearchString" name="txtSearchString" onKeyUp="SearchString_KeyUp(event)" value=" Enter Artist, Song or Genre"  onfocus="if(this.value == ' Enter Artist, Song or Genre') this.value = '';" onblur="if(this.value == '') this.value = ' Enter Artist, Song or Genre';" />
+                        <div id="btnSearch" onclick="StartMusicSearch()"></div>
+                        <div id="srRes1"></div>
+
+                            <!--div id="lisHistCH1" onclick="LoadListenHist()" style=" margin:7px 0 0 12px;">MY HISTORY</div>
+                            <div id="lisHistRes1"></div-->
+
+
+                        <div style=" float:left; width:100%; height:34px; margin:3px 0 0 0px; background-color:#1c1c1c; overflow:hidden;">
+                            
+
+         
+<div class="ftrdTagsCH1" style=" width:1024px; overflow:hidden;">
+                
+        <a href="/tags/Tumblr">Tumblr</a>
+        <a href="/tags/BRNA">BRNA</a>
+        <a href="/tags/Dubstep">Dubstep</a>
+        <a href="/tags/Rock">Rock</a>
+        <a href="/tags/Hip+Hop">Hip Hop</a>
+        <a href="/tags/rap">rap</a>
+        <a href="/tags/pop">pop</a>
+        <a href="/tags/alternative">alternative</a>
+        <a href="/tags/indie+rock">indie rock</a>
+        <a href="/tags/indie">indie</a>
+        <a href="/tags/electronic">electronic</a>
+        <a href="/tags/Country">Country</a>
+        <a href="/tags/EDM">EDM</a>
+        <a href="/tags/sad">sad</a>
+        <a href="/tags/pop+music">pop music</a>
+        <a href="/tags/Best+Riven+NA">Best Riven NA</a>
+        <a href="/tags/Electro">Electro</a>
+        <a href="/tags/house">house</a>
+        <a href="/tags/Bass+Music">Bass Music</a>
+        <a href="/tags/music+festival">music festival</a>
+        <a href="/tags/happy">happy</a>
+
+</div>
+
+
+
+
+
+
+
+                        </div>
+
+                </div>
+            </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide2" class="slideLeft" style=" min-height:420px;">
+            
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () { AlignListenRadioST(); bindradiostationsclick(); });
+    $(window).resize(function () { AlignListenRadioST(); });
+</script>
+
+
+
+
+
+
+<div class="FeaturedVideoCont">
+            
+        <div id="listenSlide2_header">
+            <a class="FeaturedHeaderBack" href="/listen/radio">
+                <div>Hypster Radio</div>
+            </a>
+            <div class="FeaturedSubHeader">
+                &nbsp;play music for free, choose genre...
+            </div>
+        </div>
+
+
+
+        <div class="FeaturedAdCont">
+            <div id="TopAdd1">
+                
+
+
+<iframe src="http://ads.hypster.com/i_ad_728x90.html" width="728" height="90" scrolling="no" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!-- 06_25 -->
+            
+        </div>
+
+</div>
+
+
+
+
+
+
+
+<div class="FeaturedVideoInner">
+
+            <a class="VideoThumbBox" onclick="OpenPlayerM('/playlists/station/Hip-Hop?rtg=4352')">
+                <div class="VideoThumbCont" id="RdGenre_10">
+                    <img alt="" src="/imgs/radio/genres/Hip-Hop.jpg" />
+                </div>
+                <div class="videoBoxHeader">Hip-Hop</div>
+            </a>
+            <a class="VideoThumbBox" onclick="OpenPlayerM('/playlists/station/R_and_B?rtg=4352')">
+                <div class="VideoThumbCont" id="RdGenre_19">
+                    <img alt="" src="/imgs/radio/genres/R_and_B.jpg" />
+                </div>
+                <div class="videoBoxHeader">R&amp;B</div>
+            </a>
+            <a class="VideoThumbBox" onclick="OpenPlayerM('/playlists/station/Alternative?rtg=4352')">
+                <div class="VideoThumbCont" id="RdGenre_1">
+                    <img alt="" src="/imgs/radio/genres/Alternative.jpg" />
+                </div>
+                <div class="videoBoxHeader">Alternative</div>
+            </a>
+            <a class="VideoThumbBox" onclick="OpenPlayerM('/playlists/station/Electronic?rtg=4352')">
+                <div class="VideoThumbCont" id="RdGenre_9">
+                    <img alt="" src="/imgs/radio/genres/Electronic.jpg" />
+                </div>
+                <div class="videoBoxHeader">Electronic</div>
+            </a>
+            <a class="VideoThumbBox" onclick="OpenPlayerM('/playlists/station/Rap?rtg=4352')">
+                <div class="VideoThumbCont" id="RdGenre_11">
+                    <img alt="" src="/imgs/radio/genres/Rap.jpg" />
+                </div>
+                <div class="videoBoxHeader">Rap</div>
+            </a>
+            <a class="VideoThumbBox" onclick="OpenPlayerM('/playlists/station/Dance?rtg=4352')">
+                <div class="VideoThumbCont" id="RdGenre_7">
+                    <img alt="" src="/imgs/radio/genres/Dance.jpg" />
+                </div>
+                <div class="videoBoxHeader">Dance</div>
+            </a>
+            <a class="VideoThumbBox" onclick="OpenPlayerM('/playlists/station/Pop?rtg=4352')">
+                <div class="VideoThumbCont" id="RdGenre_18">
+                    <img alt="" src="/imgs/radio/genres/Pop.jpg" />
+                </div>
+                <div class="videoBoxHeader">Pop</div>
+            </a>
+            <a class="VideoThumbBox" onclick="OpenPlayerM('/playlists/station/Indie+Rock?rtg=4352')">
+                <div class="VideoThumbCont" id="RdGenre_30">
+                    <img alt="" src="/imgs/radio/genres/Indie Rock.jpg" />
+                </div>
+                <div class="videoBoxHeader">Indie Rock</div>
+            </a>
+</div>
+
+
+
+<div style=" float:left; width:102%; height:39px; line-height:39px; overflow:hidden; background-color:#3d4345; border-bottom:1px solid #2c3133; border-right:1px solid #2c3133; border-radius:3px; margin:20px 0 0 -2%; font-size:18px; color:#d4ae52;">
+    
+    <div style=" float:right; margin-right:5px; margin-left:5px;">
+        <input type="text" id="txtSearchString_JR" name="txtSearchString_JR" onKeyUp="SearchString_KeyUp(event)" value=" Enter Artist, Song or Genre"  onfocus="if(this.value == ' Enter Artist, Song or Genre') this.value = '';" onblur="if(this.value == '') this.value = ' Enter Artist, Song or Genre';" style="width:250px; height:29px; float:left; margin:4px 0 0 0; border-radius:3px; border:none; font-size:14px;" />
+        <div id="btnSearch_JR" onclick="OPLRRadio($('#txtSearchString_JR').val().replace(' ','+'));" style="float:left; width:70px; height:32px; line-height:31px; margin:4px 0 0 7px; background-color:#1d2223; border-radius:3px; cursor:pointer; text-align:center;">Listen</div>
+    </div>
+    
+    <div class="radioCustStN" title="Bruno+Mars" >Bruno Mars</div>
+    <div class="radioCustStN" title="Lana+Del+Rey">Lana Del Rey</div>
+    <div class="radioCustStN" title="Ellie+Goulding">Ellie Goulding</div>
+    <div class="radioCustStN" title="Justin+Timberlake">Justin Timberlake</div>
+    <div class="radioCustStN" title="Lady+Gaga">Lady Gaga</div>
+    <div class="radioCustStN" title="Eminem">Eminem</div>
+    
+
+</div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="boxContRight">
+    <div id="listenSlide3" class="slideRight" style=" min-height:600px;">
+        
+
+            <div class="popularHomeContHolder">
+                <div class="popularHomeInner">
+                        <div class="headerCont"><a href="/featured">Popular on Hypster</a></div>
+                        
+
+
+
+
+        <div  class="songItm" onclick="OpenPlayerM('/playlists/featured/Adele-Playlist')" onmouseover="DspPPDDG(this, 6832518, 4898120);" onmouseout="HdPPDDG(event, this);" >
+            <a class="songItm_title" href="#">Adele Playlist</a>
+            <a class="songItm_likes" title="5366 views">5K</a>
+            <a class="songItm_views" title="3 likes">3</a>
+            <a class="songItm_play" title="play" href="#"></a>
+        </div>
+        <div class="songItm1" onclick="OpenPlayerM('/playlists/featured/Moby-Playlist')" onmouseover="DspPPDDG(this, 6755422, 4898120);" onmouseout="HdPPDDG(event, this);" >
+            <a class="songItm_title" href="#">Moby Playlist</a>
+            <a class="songItm_likes" title="5305 views">5K</a>
+            <a class="songItm_views" title="1 likes">1</a>
+            <a class="songItm_play" title="play" href="#"></a>
+        </div>
+        <div  class="songItm" onclick="OpenPlayerM('/playlists/featured/Korn-Playlist')" onmouseover="DspPPDDG(this, 6755385, 4898120);" onmouseout="HdPPDDG(event, this);" >
+            <a class="songItm_title" href="#">Korn Playlist</a>
+            <a class="songItm_likes" title="5421 views">5K</a>
+            <a class="songItm_views" title="1 likes">1</a>
+            <a class="songItm_play" title="play" href="#"></a>
+        </div>
+        <div class="songItm1" onclick="OpenPlayerM('/playlists/featured/Anchorman-2-Soundtrack')" onmouseover="DspPPDDG(this, 6831514, 4943691);" onmouseout="HdPPDDG(event, this);" >
+            <a class="songItm_title" href="#">Anchorman 2 Soundtrack</a>
+            <a class="songItm_likes" title="7794 views">7K</a>
+            <a class="songItm_views" title="0 likes">0</a>
+            <a class="songItm_play" title="play" href="#"></a>
+        </div>
+        <div  class="songItm" onclick="OpenPlayerM('/playlists/featured/Alternative-Rock-Playlist ')" onmouseover="DspPPDDG(this, 6762125, 4898120);" onmouseout="HdPPDDG(event, this);" >
+            <a class="songItm_title" href="#">Alternative Rock Playlist </a>
+            <a class="songItm_likes" title="6584 views">6K</a>
+            <a class="songItm_views" title="5 likes">5</a>
+            <a class="songItm_play" title="play" href="#"></a>
+        </div>
+        <div class="songItm1" onclick="OpenPlayerM('/playlists/featured/Ray-Charles-Playlist')" onmouseover="DspPPDDG(this, 6747583, 4898120);" onmouseout="HdPPDDG(event, this);" >
+            <a class="songItm_title" href="#">Ray Charles Playlist</a>
+            <a class="songItm_likes" title="5359 views">5K</a>
+            <a class="songItm_views" title="0 likes">0</a>
+            <a class="songItm_play" title="play" href="#"></a>
+        </div>
+        <div  class="songItm" onclick="OpenPlayerM('/playlists/featured/Volcano-Choir-Playlist')" onmouseover="DspPPDDG(this, 6724717, 4898120);" onmouseout="HdPPDDG(event, this);" >
+            <a class="songItm_title" href="#">Volcano Choir Playlist</a>
+            <a class="songItm_likes" title="5374 views">5K</a>
+            <a class="songItm_views" title="0 likes">0</a>
+            <a class="songItm_play" title="play" href="#"></a>
+        </div>
+        <div class="songItm1" onclick="OpenPlayerM('/playlists/featured/Johnny-Cash-Playlist')" onmouseover="DspPPDDG(this, 6741830, 4898120);" onmouseout="HdPPDDG(event, this);" >
+            <a class="songItm_title" href="#">Johnny Cash Playlist</a>
+            <a class="songItm_likes" title="5404 views">5K</a>
+            <a class="songItm_views" title="1 likes">1</a>
+            <a class="songItm_play" title="play" href="#"></a>
+        </div>
+        <div  class="songItm" onclick="OpenPlayerM('/playlists/featured/Kings-of-Leon-Playlist')" onmouseover="DspPPDDG(this, 6747685, 4898120);" onmouseout="HdPPDDG(event, this);" >
+            <a class="songItm_title" href="#">Kings of Leon Playlist</a>
+            <a class="songItm_likes" title="5521 views">5K</a>
+            <a class="songItm_views" title="1 likes">1</a>
+            <a class="songItm_play" title="play" href="#"></a>
+        </div>
+        <div class="songItm1" onclick="OpenPlayerM('/playlists/featured/Katey-Perry-Playlist')" onmouseover="DspPPDDG(this, 6775707, 4898120);" onmouseout="HdPPDDG(event, this);" >
+            <a class="songItm_title" href="#">Katey Perry Playlist</a>
+            <a class="songItm_likes" title="5760 views">5K</a>
+            <a class="songItm_views" title="2 likes">2</a>
+            <a class="songItm_play" title="play" href="#"></a>
+        </div>
+        <div  class="songItm" onclick="OpenPlayerM('/playlists/featured/Jack-Johnson-Playlist')" onmouseover="DspPPDDG(this, 6741054, 4898120);" onmouseout="HdPPDDG(event, this);" >
+            <a class="songItm_title" href="#">Jack Johnson Playlist</a>
+            <a class="songItm_likes" title="5440 views">5K</a>
+            <a class="songItm_views" title="3 likes">3</a>
+            <a class="songItm_play" title="play" href="#"></a>
+        </div>
+        <div class="songItm1" onclick="OpenPlayerM('/playlists/featured/Afternoon-Energizer ')" onmouseover="DspPPDDG(this, 6856444, 4943691);" onmouseout="HdPPDDG(event, this);" >
+            <a class="songItm_title" href="#">Afternoon Energizer </a>
+            <a class="songItm_likes" title="5713 views">5K</a>
+            <a class="songItm_views" title="4 likes">4</a>
+            <a class="songItm_play" title="play" href="#"></a>
+        </div>
+
+
+
+<div  class="songItm" style=" background-color:#d4ae52;" onclick="window.location='/featured';">
+    <a class="songItm_title" href="/featured" style=" color:#FFFFFF;">More Featured Playlists</a>
+</div>
+
+
+<div id="PP_PlstPreviewDG">
+    <div class="LdingPrevDG">Loading...</div>
+</div>
+                </div>
+            </div>
+
+
+            <div class="popularHomeAdCont">
+                <div id="SideAdNews_o8273w">
+                    
+
+
+<iframe src="http://ads.hypster.com/i_ad_160x600.html" width="160" height="600" scrolling="no" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+
+
+
+
+
+
+
+                </div>
+                <!-- 06_25 -->
+            </div>
+
+
+            <div id="listenSlide3_cont">
+                
+                <div class="NewsInnrContHldr">
+                    <div style=" float:left; width:100%;">
+                    
+
+                            <div class="hypDesktop_back">
+                                <img alt="Hypster" src="/imgs/hypDesktop_logo.png" />
+                                <div>
+                                    Hypster Desktop App<br />
+                                    <span style=" font-size:21px;">Listen to your favorite music directly from your desktop using hot keys</span>
+                                    
+                                    <img alt="" src="/imgs/anroid_qrcode.png" style=" margin:10px 0 0 90px;"  />
+                                </div>
+                                <a href="/hypster_for_desktop?rtg=hd2">Learn More</a>
+
+                            </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide4" class="slideLeft" style=" min-height:490px;">
+            
+
+
+
+<div class="HomPopularCont">
+    
+
+    <div class="hpcCol1">
+        <div class="hpcHeader" onclick="window.location='/charts';">Charts</div>
+
+        
+
+            <div class="hpcPlstC" onclick="OpenPlayerM('/playlists/chart/-Top-100-iTunes-Hits---August-2014?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6984995, 4877790);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp; Top 50 iTunes Hits - August 2014</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC" onclick="OpenPlayerM('/playlists/chart/-Top-100-iTunes-Hits---July-2014?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6976602, 4877790);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp; Top 50 iTunes Hits - July 2014</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC" onclick="OpenPlayerM('/playlists/chart/-Top-100-iTunes-Hits---June-2014?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6949286, 4877790);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp; Top 50 iTunes Hits - June 2014</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC" onclick="OpenPlayerM('/playlists/chart/-Top-100-iTunes-Hits---May-2014?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6932326, 4877790);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp; Top 50 iTunes Hits - May 2014</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC" onclick="OpenPlayerM('/playlists/chart/-Top-100-iTunes-Hits---April-2014?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6911175, 4877790);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp; Top 50 iTunes Hits - April 2014</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC" onclick="OpenPlayerM('/playlists/chart/-Top-100-iTunes-Hits---March-2014?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6896721, 4877790);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp; Top 50 iTunes Hits - March 2014</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC" onclick="OpenPlayerM('/playlists/chart/-Top-100-iTunes-Hits---February-2014?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6876829, 4877790);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp; Top 50 iTunes Hits - February 2014</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC" onclick="OpenPlayerM('/playlists/chart/-Official-UK-Top-100---February-2014?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6876793, 4920743);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp; Official UK Top 50 - February 2014</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC" onclick="OpenPlayerM('/playlists/chart/Rolling-Stones-50-Best-Songs-of-2013?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6850722, 5129734);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;Rolling Stone&#39;s 50 Best Songs of 2013</div>
+                <a title="play"></a>
+            </div>
+
+    </div>            
+
+
+
+    <div class="hpcCol2">
+        <div class="hpcHeader" onclick="window.location='/festivals';">Festivals</div>
+
+
+
+            <div class="hpcPlstC2" onclick="OpenPlayerM('/playlists/festival/Snowglobe?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6821177, 4898120);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;Snowglobe</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC2" onclick="OpenPlayerM('/playlists/festival/True-Music-Festival?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6820449, 4898120);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;True Music Festival</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC2" onclick="OpenPlayerM('/playlists/festival/The-OFWGKTA-Carnival?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6789858, 4898120);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;The OFWGKTA Carnival</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC2" onclick="OpenPlayerM('/playlists/festival/Fun-Fun-Fun-Fest?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6789138, 4898120);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;Fun Fun Fun Fest</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC2" onclick="OpenPlayerM('/playlists/festival/Day-of-the-Dead-?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6780664, 4898120);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;Day of the Dead </div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC2" onclick="OpenPlayerM('/playlists/festival/Life-is-Beautiful-Festival?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6780472, 4898120);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;Life is Beautiful Festival</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC2" onclick="OpenPlayerM('/playlists/festival/Mountain-Oasis-Electronic-Music-Summit?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6775672, 4898120);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;Mountain Oasis Electronic Music Summit</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC2" onclick="OpenPlayerM('/playlists/festival/Treasure-Island?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6770008, 4898120);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;Treasure Island</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC2" onclick="OpenPlayerM('/playlists/festival/Austin-City-Limits?rtg=9128');" onmouseover="DispPopPlstDetails(this, 6762021, 4898120);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;Austin City Limits</div>
+                <a title="play"></a>
+            </div>
+
+    </div>
+
+
+
+    <div class="hpcCol3">
+        <div class="hpcHeader" onclick="window.location='/playlists';">Popular</div>
+
+
+            <div class="hpcPlstC3" onclick="OpenPlayerM('/playlists/user/BestRivenNA?6739915&rtg=9128');" onmouseover="DispPopPlstDetails(this, 6739915, 5042900);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;BRNA Playlist ;)</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC3" onclick="OpenPlayerM('/playlists/user/Top100iTunesHits?6518655&rtg=9128');" onmouseover="DispPopPlstDetails(this, 6518655, 4877790);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;Top 100 iTunes Hits playlist 1 - May</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC3" onclick="OpenPlayerM('/playlists/user/Smoovez?6747356&rtg=9128');" onmouseover="DispPopPlstDetails(this, 6747356, 5049121);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;Smoove&#39;s Playlist... \ o /</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC3" onclick="OpenPlayerM('/playlists/user/CoachellaPlaylist?6518586&rtg=9128');" onmouseover="DispPopPlstDetails(this, 6518586, 4877676);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;CoachellaPlaylist&#39;s playlist</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC3" onclick="OpenPlayerM('/playlists/user/HotHitsNow?6518413&rtg=9128');" onmouseover="DispPopPlstDetails(this, 6518413, 4877569);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;Hot Hits Now 1</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC3" onclick="OpenPlayerM('/playlists/user/yeahh_dollface?4282498&rtg=9128');" onmouseover="DispPopPlstDetails(this, 4282498, 3359167);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;Tumblr</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC3" onclick="OpenPlayerM('/playlists/user/hypcharts?6574123&rtg=9128');" onmouseover="DispPopPlstDetails(this, 6574123, 4920743);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;Official UK Top 100 - May 2013</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC3" onclick="OpenPlayerM('/playlists/user/edrali?2086669&rtg=9128');" onmouseover="DispPopPlstDetails(this, 2086669, 2003747);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;My Playlist</div>
+                <a title="play"></a>
+            </div>
+            <div class="hpcPlstC3" onclick="OpenPlayerM('/playlists/user/karenemmert?6878287&rtg=9128');" onmouseover="DispPopPlstDetails(this, 6878287, 4898120);" onmouseout="HidePopPlstDetails(event, this);">
+                <div>&nbsp;Hypster&#39;s Top Songs</div>
+                <a title="play"></a>
+            </div>
+    </div>
+
+
+</div>
+
+
+
+<div id="PP_PlstPreview">
+    <div class="LdingPrev">Loading...</div>
+</div>
+
+
+
+
+
+
+<div class="NPFT_BHead" style=" margin-top:13px;">
+                    
+    <div class="NPFT_BottomAd">
+        
+
+
+<iframe src="http://ads.hypster.com/i_ad_728x90.html" width="728" height="90" scrolling="no" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <div class="NPFT_GoOnTop" style=" width:274px;" onclick="$(document).scrollTop(0);">
+        Go To Top
+    </div>
+
+</div>
+            
+    </div>
+</div>
+
+
+
+<div id="DynamicContentHoler" style=" float:left; width:100%;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    
+        <div class="push"></div>
+    </div>
+
+
+
+
+
+    
+    <div class="ContentFooterCont">
+        
+
+
+
+
+<center>
+        <div class="BottomPane">
+            
+            <div style=" float:left; width:290px; height:250px; margin-top:10px;">
+
+
+                <div style=" float:left; width:275px; height:80px; padding:0px 5px 15px 10px; ">
+                    <div style=" float:left; width:100%; font-size:60px; color:#d4ae52; font-family: 'Lato', sans-serif; font-weight:700; letter-spacing:-2px; margin:20px 0 0 0; cursor:pointer;">
+                        HYPSTER
+                    </div>
+                </div>
+
+
+                <div style=" float:left; width:100%; height:22px;">
+                        <div id="hyp_sosialHolder1" onmouseover="this.style.display = 'none'; $('#hyp_SNR_BtnHolder_1').css('display','block');">
+                            <div class="hyp_SI_Cont_google"></div>
+                            <div class="hyp_SI_Cont_twitter"></div>
+                            <div class="hyp_SI_Cont_facebook"></div>
+                        </div>
+
+                        <div id="hyp_SNR_BtnHolder_1" style=" float:left; width:100%; display:none;">
+                                <div class="hyp_SI_Cont_facebook1">
+                                    <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fnews.hypster.com&amp;send=false&amp;layout=button_count&amp;width=90&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
+                                </div>
+
+                                <div class="hyp_SI_Cont_twitter1">
+                                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://news.hypster.com" data-text="Hypster">Tweet</a>
+                                    <script>                                        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");</script>
+                                </div>
+
+                                <div class="hyp_SI_Cont_google1">
+                                    <div class="g-plusone" data-size="medium" data-href="http://news.hypster.com"></div>
+                                    <script type="text/javascript">                                        (function () { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = 'https://apis.google.com/js/plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();</script>
+                                </div>
+                        </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div class="BottomPaneInnr">
+
+                <div class="MenuItmCont">
+                    <a href="/hypster/New_Player_For_Tumblr">New Tumblr Player</a>
+                    <a href="/resources/manuals">How To Use</a>
+                    <a href="/listen/similar">Find Similar Playlists</a>
+                    <a href="/hypster/changes_on_hypster">Track Hypster's Changes</a>
+                </div>
+
+
+                <div class="MenuItmCont">
+                    <a href="/" >Hypster</a>
+                    <a href="/listen" >Listen</a>
+                    <a href="/create" >Create</a>
+                    <a href="/connect" >Connect</a>
+                </div>
+
+                <div class="MenuItmCont">
+                    <a href="/featured">Featured Playlists</a>
+                    <a href="/listen/radio" >Radio</a>
+                    <a href="/breaking" >#BREAKING</a>
+                </div>
+                        
+                <div class="MenuItmCont">
+                    <a href="/hypster/Contact_Us" >Contact Us</a>
+                    <a href="/hypster/About_Us" >About Us</a>
+                    <a href="/hypster/Privacy_Policy" >Privacy Policy</a>
+                    <a href="/hypster/Terms_of_Service" >Terms of Service</a>
+                </div>
+
+
+                    
+                <div style=" float:right; width:100%;">
+                    <div class="FeaturedAdContBottom">
+                            <div id="TopAdd_Bottom_2938eu93">
+                                
+
+
+<iframe src="http://ads.hypster.com/i_ad_728x90.html" width="728" height="90" scrolling="no" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+                            </div>
+                            <!-- 06_25 -->
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="sconf1">v3</div>
+        </div>
+
+</center>
+
+
+
+
+<div style=" float:left; width:99%; height:1px; overflow:hidden;">
+
+
+    <script type="text/javascript"src="http://tags.crwdcntrl.net/c/2243/cc.js?ns=_cc2243"id="LOTCC_2243"></script>
+    <script>
+        _cc2243.add("int", "music");
+        _cc2243.add("int", "radio");
+        _cc2243.add("int", "entertainment");
+        _cc2243.bcp();
+    </script>
+
+
+
+
+    <iframe name="__bkframe" height="0" width="0" frameborder="0" src="javascript:void(0)"></iframe>
+    <script type="text/javascript" src="http://www.bkrtx.com/js/bk-static.js"></script>
+    <script type="text/javascript">
+        // INSERT DATA HERE IN THE FORM:
+        bk_addPageCtx("<<category>>", "<<music>>");
+        bk_addPageCtx("<<category>>", "<<radio>>");
+        bk_addPageCtx("<<category>>", "<<entertainment>>");
+        bk_doJSTag(13901, 4);
+    </script>
+
+
+    <!-- pr -->
+    <script type="text/javascript">
+        /* Version: 0.3 */
+        /* <![CDATA[ */
+        try {
+            var _mag = _mag || {};
+            _mag.kw = 'music,radio,entertainment';
+            _mag.shortName = 'matchflow46-artsandentertainment';
+            _mag.startTime = (new Date()).getTime();
+            (function (d, t) {
+                var mag = d.createElement('script'); mag.type = 'text/javascript'; mag.async = true; mag.src = t;
+                var head = d.getElementsByTagName('head')[0] || d.documentElement; head.insertBefore(mag, head.firstChild);
+            })(document, '//d3ezl4ajpp2zy8.cloudfront.net/matchflow46-artsandentertainment_tag.js');
+        } catch (e) { }
+        /* ]]> */
+    </script>
+
+
+
+    <iframe src="//CLIENTS.BLUECAVA.COM/data/?p=54e940be-0063-4a66-be74-f2b37a831761&sid=46&cat=music" width="0" height="0" frameBorder="0" scrolling="no"></iframe>
+
+
+
+    <script type="text/javascript" SRC="http://loadus.exelator.com/load/?p=341&g=046&c=285367"></script>
+
+
+
+
+
+    <!-- matchflow -->
+    <script async src="http://i.simpli.fi/dpx.js?cid=6287&m=1"></script>
+
+
+
+    <iframe name="_rlcdn" width=0 height=0 frameborder=0 src="http://rc.rlcdn.com/381289.html"></iframe>"
+
+
+
+    <script type="text/javascript">        try { (function () { var cb = new Date().getTime(); var s = document.createElement("script"); s.defer = true; s.src = "//tag.crsspxl.com/s1.js?d=1758&cb=" + cb; var s0 = document.getElementsByTagName('script')[0]; s0.parentNode.insertBefore(s, s0); })(); } catch (e) { } </script>
+
+
+
+
+
+
+
+
+    <iframe src="http://feed-rt.baronsoffers.com/offer/feed/q/aT03MzI4LHM9MTIwMHg4MDAsbj1pZnJhbWUsYj0w?subid=default" width="1" height="1" scrolling="no" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+    
+    
+    <script async src="http://i.simpli.fi/dpx.js?cid=8349&m=1"></script>
+
+
+    
+    <script type="text/javascript">
+        (function (w, d, s, p, v, e, r) {
+            w['$petametrics_var'] = v; w[v] = w[v] || function () {
+                (w[v].q = w[v].q || []).push(arguments)
+            }; w[v].l = 1 * new Date(); e = d.createElement(s), r = d.getElementsByTagName(s)[0]; e.async = 1; e.src = p;
+            r.parentNode.insertBefore(e, r)
+        })(window, document, 'script', '//cdn.petametrics.com/p.js', '$p');
+
+        $p("init", "nrrpkjjff1ol62vk");
+        $p("send", "pageview");
+    </script>
+
+
+
+
+
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M2T9TS"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({ 'gtm.start':
+    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+    '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M2T9TS');</script>
+    <!-- End Google Tag Manager -->
+
+
+</div>
+    </div>
+    
+
+
+
+    
+
+    <div id="langBar">
+        <a class="langItm" onclick="langBar_click();">EN</a>
+
+        <div id="OLangs">
+            <a class="langItm" href="/es/Casa">ES</a>
+            <a class="langItm" href="/ru/Главная">RU</a>
+        </div>
+    </div>
+    
+    <div class="Trans_BACK" id="HideBackDiv" onclick="Show_Content();"></div>
+    <div id="popupContainer"></div>
+    
+
+
+    
+
+    
+
+
+
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-28695705-1']);
+        _gaq.push(['_setDomainName', 'hypster.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        var __cho__ = { "pid": 2406 };
+        (function () {
+            var c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.async = true;
+            c.src = document.location.protocol + '//cc.chango.com/static/o.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(c, s);
+        })();
+    </script>
+    
+
+
+
+
+
+    
+
+    
+   
+
+</body>
+</html>
+

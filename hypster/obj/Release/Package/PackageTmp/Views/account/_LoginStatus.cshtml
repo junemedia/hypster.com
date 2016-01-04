@@ -1,0 +1,15 @@
+﻿
+@if (Request.IsAuthenticated)
+{
+    <div class="LoginCont">
+        "@User.Identity.Name"&nbsp;@Html.ActionLink("Log out", "LogOff", "account")
+    </div>
+}
+else
+{
+    <div class="LoginCont">
+       <a href="http://@System.Configuration.ConfigurationManager.AppSettings["hypsterHostName"]/account/register">Register</a> 
+       &nbsp;|&nbsp;
+       @Html.ActionLink("Login", "Login", "account")
+    </div>
+}

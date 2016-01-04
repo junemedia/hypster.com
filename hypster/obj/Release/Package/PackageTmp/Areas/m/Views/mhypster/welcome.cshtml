@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Welcome to Hypster";
+    ViewBag.Desc = "";
+}
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () { RenderPage(); });
+    $(window).resize(function () { RenderPage(); });
+</script>
+
+
+
+<div class="boxContRight boxContRightTop">
+    <div id="listenSlide1" class="slideRight" style=" min-height:125px; ">
+
+            <div style=" float:left; width:1024px;">
+
+                
+                <div style=" float:left; width:100%; font-size:21px; color:#fcf088; margin-bottom:10px;">
+                    Check out what Hypster has to offer.
+                </div>
+
+        
+                <div style=" float:left; width:247px; height:180px; line-height:25px; background-color:#292929; margin:4px 0 0 0px; text-align:center; cursor:pointer; font-size:21px; " onclick="window.location='/listen';">
+                    <img class="Menu1_img" alt="Search Music" src="/imgs/listen/search_music.png" style=" margin-top:35px;" /><br />
+                    Search Music
+                </div>
+
+                <div style=" float:left; width:247px; height:180px; line-height:25px; background-color:#292929; margin:4px 0 0 12px; text-align:center; cursor:pointer; font-size:21px; " onclick="window.location='/create/playlist';">
+                    <img class="Menu3_img" alt="Create Playlist" src="/imgs/listen/playlists.png" style=" margin-top:35px;" /><br />
+                    Create Playlist
+                </div>
+
+                <div style=" float:left; width:247px; height:180px; line-height:25px; background-color:#292929; margin:4px 0 0 12px; text-align:center; cursor:pointer; font-size:21px; " onclick="window.location='/create/player';">
+                    <img class="Menu2_img" alt="Create Player" src="/imgs/listen/player.png" style=" margin-top:35px;" /><br />
+                    Create Player
+                </div>
+
+                <div style=" float:left; width:247px; height:180px; line-height:25px; background-color:#292929; margin:4px 0 0 12px; text-align:center; cursor:pointer; font-size:21px; " onclick="window.location='/charts';">
+                    <img class="Menu2_img" alt="Charts" src="/imgs/listen/charts.png" style=" margin-top:35px;" /><br />
+                    Charts
+                </div>
+
+
+
+                <div style=" float:left; width:247px; height:180px; line-height:25px; background-color:#292929; margin:14px 0 0 0px; text-align:center; cursor:pointer; font-size:21px; " onclick="window.location='/listen/radio';">
+                    <img class="Menu2_img" alt="Listen Radio" src="/imgs/listen/radio.png" style=" margin-top:35px;" /><br />
+                    Listen Radio
+                </div>
+
+                <div style=" float:left; width:247px; height:180px; line-height:25px; background-color:#292929; margin:14px 0 0 12px; text-align:center; cursor:pointer; font-size:21px; " onclick="window.location='/playlists';">
+                    <img class="Menu2_img" alt="Popular Music" src="/imgs/listen/popular.png" style=" margin-top:35px;" /><br />
+                    Popular Music
+                </div>
+
+                <div style=" float:left; width:247px; height:180px; line-height:25px; background-color:#292929; margin:14px 0 0 12px; text-align:center; cursor:pointer; font-size:21px; " onclick="window.location='/content/HypNews';">
+                    <img class="Menu2_img" alt="News" src="/imgs/listen/news.png" style=" margin-top:35px;" /><br />
+                    News
+                </div>
+
+                <div style=" float:left; width:247px; height:180px; line-height:25px; background-color:#292929; margin:14px 0 0 12px; text-align:center; cursor:pointer; font-size:21px; " onclick="window.location='/connect';">
+                    <img class="Menu2_img" alt="Connect" src="/imgs/listen/connect.png" style=" margin-top:35px;" /><br />
+                    Connect
+                </div>
+
+                <div style=" float:left; width:100%; min-height:20px; line-height:25px; background-color:#292929; margin:14px 0 0 0; padding:5px 0 5px 0; text-align:left; cursor:pointer; font-size:21px; color:#FCF088; " onclick="window.location='/connect';">
+                    &nbsp;Hypster radio service is now available on your mobile devices
+                </div>
+
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+<div class="boxContLeft">
+    <div id="listenSlide2" class="slideLeft" style=" min-height:96px;">
+
+
+
+        <div class="connectHead">
+            
+                    
+            <div style=" float:right; width:728px; height:90px; background-color:#59666c; border:3px solid #59666c; border-radius:2px;">
+                <div id="TopAdd1_r93847">
+                    @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
+                </div>
+                <!-- 06_25 -->
+                
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
