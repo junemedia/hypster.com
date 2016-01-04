@@ -1,0 +1,639 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pinta.ImageManipulation</name>
+    </assembly>
+    <members>
+        <member name="M:Pinta.ImageManipulation.BaseEffect.Render(Pinta.ImageManipulation.ISurface)">
+            <summary>
+            Render the effect on the specified surface.
+            </summary>
+            <param name="surface">Surface to use a the source and destination.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.BaseEffect.Render(Pinta.ImageManipulation.ISurface,Pinta.ImageManipulation.ISurface)">
+            <summary>
+            Render the effect from the source surface to the destination surface.
+            </summary>
+            <param name="src">The source surface.</param>
+            <param name="dst">The destination surface.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.BaseEffect.Render(Pinta.ImageManipulation.ISurface,Pinta.ImageManipulation.Rectangle)">
+            <summary>
+            Render the effect on the specified surface within the specified rectangle of interest.
+            </summary>
+            <param name="surface">Surface to use a the source and destination.</param>
+            <param name="roi">A rectangle of interest (roi) specifying the area(s) to modify. Only these areas should be modified.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.BaseEffect.Render(Pinta.ImageManipulation.ISurface,Pinta.ImageManipulation.ISurface,Pinta.ImageManipulation.Rectangle)">
+            <summary>
+            Render the effect from the source surface to the destination surface.
+            </summary>
+            <param name="src">The source surface.</param>
+            <param name="dst">The destination surface.</param>
+            <param name="roi">A rectangle of interest (roi) specifying the area(s) to modify. Only these areas should be modified.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.BaseEffect.RenderLine(Pinta.ImageManipulation.ISurface,Pinta.ImageManipulation.ISurface,Pinta.ImageManipulation.Rectangle)">
+            <summary>
+            Performs the actual work of rendering an effect. Do not call base.Render ().
+            </summary>
+            <param name="src">The source surface. DO NOT MODIFY.</param>
+            <param name="dst">The destination surface.</param>
+            <param name="roi">A rectangle of interest (roi) specifying the area to modify. Only these areas should be modified</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.BaseEffect.Render(Pinta.ImageManipulation.ColorBgra*,Pinta.ImageManipulation.ColorBgra*,System.Int32)">
+            <summary>
+            Performs the actual work of rendering an effect. This overload represent a single line of the image. Do not call base.Render ().
+            </summary>
+            <param name="src">The source surface. DO NOT MODIFY.</param>
+            <param name="dst">The destination surface.</param>
+            <param name="length">The number of pixels to render.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.BaseEffect.Render(Pinta.ImageManipulation.ColorBgra)">
+            <summary>
+            Performs the actual work of rendering an effect. This overload represent a single pixel of the image.
+            </summary>
+            <param name="color">The color of the source surface pixel.</param>
+            <returns>The color to be used for the destination pixel.</returns>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.AddNoiseEffect.#ctor(System.Int32,System.Int32,System.Double)">
+            <summary>
+            Creates a new effect that will add noise to an image.
+            </summary>
+            <param name="intensity">The intensity of the effect. Valid range is 0 - 100.</param>
+            <param name="colorSaturation">The color saturation of the effect. Valid range is 0 - 400.</param>
+            <param name="coverage">The coverage density of the effect. Valid range is 0 - 100.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.BulgeEffect.#ctor(System.Int32,Pinta.ImageManipulation.PointD)">
+            <summary>
+            Creates a new effect that will add a bulge to an image at a specified point.
+            </summary>
+            <param name="amount">Amount to bulge. Valid range is -200 - 100.</param>
+            <param name="offset">Bulge origin point.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.CloudsEffect.#ctor(System.Int32,System.Int32,System.Int32,Pinta.ImageManipulation.ColorBgra,Pinta.ImageManipulation.ColorBgra,Pinta.ImageManipulation.BlendMode)">
+            <summary>
+            Creates a new effect that will render clouds onto an image.
+            </summary>
+            <param name="scale">The relative size of the clouds. Valid range is 2 - 1000.</param>
+            <param name="power">The power of the clouds. Valid range is 0 - 100.</param>
+            <param name="seed">Seed value for random generator.</param>
+            <param name="fromColor">Initial cloud color.</param>
+            <param name="toColor">Final cloud color.</param>
+            <param name="blendMode">Blend mode to use when applying clouds.</param>
+        </member>
+        <member name="T:Pinta.ImageManipulation.Effects.ColorDifferenceEffect">
+            <summary>
+            ColorDifferenctEffect is a base class for my difference effects
+            that have floating point (double) convolution filters.
+            its architecture is just like ConvolutionFilterEffect, adding a
+            function (RenderColorDifferenceEffect) called from Render in each
+            derived class.
+            It is also limited to 3x3 kernels.
+            (Chris Crosetto)
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.AutoLevelEffect.#ctor">
+            <summary>
+            Creates a new effect that will apply an automatic leveling to an image.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.BlackAndWhiteEffect.#ctor">
+            <summary>
+             Creates a new effect that will remove color from an image.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.BrightnessContrastEffect.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new effect that will adjust the brightness and contrast of an image.
+            </summary>
+            <param name="brightness">Desired brightness of the image. Valid range is -100 - 100.</param>
+            <param name="contrast">Desired contrast of the image. Valid range is -100 - 100.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.SepiaEffect.#ctor">
+            <summary>
+            Creates a new effect that will apply a sepia tone to an image.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.InvertColorsEffect.#ctor">
+            <summary>
+            Creates a new effect that will invert the colors of an image.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.HueSaturationEffect.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a new effect that will adjust the hue, saturation, and lightness of an image.
+            </summary>
+            <param name="hue">Amount of hue to adjust. Valid range is -180 - 180.</param>
+            <param name="saturation">Amount of saturation to adjust. Valid range is 0 - 200.</param>
+            <param name="lightness">Amount of of lightness to adjust. Valid range is -100 - 100.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.EdgeDetectEffect.#ctor(System.Double)">
+            <summary>
+            Creates a new effect that enhances detected edges.
+            </summary>
+            <param name="angle">Angle used to determine edges.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.ZoomBlurEffect.#ctor(System.Int32,Pinta.ImageManipulation.Point)">
+            <summary>
+            Creates a new effect that will apply a zoom blur.
+            </summary>
+            <param name="amount">Amount of zoom to apply. Valid values are 0 - 200.</param>
+            <param name="offset">Origin point of the zoom blur.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.PolarInversionEffect.#ctor(System.Double,System.Int32,Pinta.ImageManipulation.Point,Pinta.ImageManipulation.Effects.WarpEdgeBehavior,Pinta.ImageManipulation.ColorBgra,Pinta.ImageManipulation.ColorBgra)">
+            <summary>
+            Creates a new effect that will apply a polar inversion to an image.
+            </summary>
+            <param name="amount">Amount of inversion. Valid range is -4 - 4.</param>
+            <param name="quality">Quality of the inversion. Valid range is 1 - 5.</param>
+            <param name="centerOffset">Center of the inversion.</param>
+            <param name="edgeBehavior">Edge behavior of the inversion.</param>
+            <param name="primaryColor">Primary color of the inversion.</param>
+            <param name="secondaryColor">Secondary color of the inversion.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.UnfocusEffect.#ctor(System.Int32)">
+            <summary>
+            Creates a new effect that will unfocus an image.
+            </summary>
+            <param name="radius">Amount of points to consider when unfocusing. Valid values are 1 - 200.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.TwistEffect.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new effect that will twist an image.
+            </summary>
+            <param name="amount">Amount of twist to apply. Valid range is -100 - 100.</param>
+            <param name="antialias">Amount of antialiasing to apply. Valid range is 0 - 5.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.TileEffect.#ctor(System.Double,System.Int32,System.Int32)">
+            <summary>
+            Creates a new effect that will apply a tile effect to an image.
+            </summary>
+            <param name="rotation">Angle to rotate the tiles.</param>
+            <param name="tileSize">Size of the tiles. Valid range is 2 - 200.</param>
+            <param name="intensity">Intensity of the tiling effect. Valid range is -20 - 20.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.SoftenPortraitEffect.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a new effect that will soften an image.
+            </summary>
+            <param name="softness">How much to soften the image. Valid range is 0 - 10.</param>
+            <param name="lighting">Amount of lighting to apply. Valid range is -20 - 20.</param>
+            <param name="warmth">Amount of warmth to apply. Valid range is 0 - 20.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.SharpenEffect.#ctor(System.Int32)">
+            <summary>
+            Creates a new effect that will sharpen an image.
+            </summary>
+            <param name="amount">Amount of sharpness to apply. Valid range is 1 - 20.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.ReliefEffect.#ctor(System.Double)">
+            <summary>
+            Creates a new effect that add depth to an image.
+            </summary>
+            <param name="angle">Angle to apply depth from.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.ReduceNoiseEffect.#ctor(System.Int32,System.Double)">
+            <summary>
+            Creates a new effect that will reduce the noise of an image.
+            </summary>
+            <param name="radius">Radius to consider when reducing noise. Valid range is 1 - 200.</param>
+            <param name="strength">Strength of reduction. Valid range is 0 - 1.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.RedEyeRemoveEffect.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new effect that will remove red within a certain tolerance from an image.
+            </summary>
+            <param name="tolerance">Tolerance of red to remove. Valid range is 0 - 100.</param>
+            <param name="saturation">Saturation of effect. Valid range is 0 - 100.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.RadialBlurEffect.#ctor(System.Double,Pinta.ImageManipulation.PointD,System.Int32)">
+            <summary>
+            Creates a new effect that will apply a radial blur to an image.
+            </summary>
+            <param name="angle">Angle of the blur.</param>
+            <param name="offset">Center point of the blur.</param>
+            <param name="quality">Quality of the radial blur. Valid range is 1 - 5.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.PixelateEffect.#ctor(System.Int32)">
+            <summary>
+            Creates a new effect that will pixelate an image.
+            </summary>
+            <param name="cellSize">Size of the pixelation. Valid range is 0 - 100.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.PencilSketchEffect.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new effect that will make the image look like a pencil sketch.
+            </summary>
+            <param name="pencilSize">Size of the pencil to use. Valid range is 1 - 20.</param>
+            <param name="colorRange">Range of color to use. Valid range is -20 - 20.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.OutlineEffect.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new effect that will outline the edges of an image.
+            </summary>
+            <param name="thickness">Thickness of the outline. Valid range is 1 - 200.</param>
+            <param name="intensity">Intesity of the outline. Valid range is 0 - 100.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.OilPaintingEffect.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new effect that will make the image look like an oil painting.
+            </summary>
+            <param name="brushSize">Size of the brush to use. Valid range is 1 - 8.</param>
+            <param name="coarseness">Coarseness of the brush to use. Valid range is 3 - 255.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.MotionBlurEffect.#ctor(System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Creates a new effect that will apply a motion blur to an image.
+            </summary>
+            <param name="angle">Angle of the motion blur.</param>
+            <param name="distance">Distance to apply the blur. Valid range is 1 - 200.</param>
+            <param name="centered">Whether the blur is centered.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.MedianEffect.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new effect that will apply a median effect to the image.
+            </summary>
+            <param name="radius">Radius to consider for median. Valid range is 1 - 200.</param>
+            <param name="percentile">Percentile to use for median. Valid range is 0 - 100.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.MandelbrotFractalEffect.#ctor(System.Int32,System.Int32,System.Int32,System.Double,System.Boolean)">
+            <summary>
+            Creates a new effect that will draw a Julia fractal.
+            </summary>
+            <param name="factor">Factor to use. Valid range is 1 - 10.</param>
+            <param name="quality">Quality of the fractal. Valid range is 1 - 5.</param>
+            <param name="zoom">Size of the fractal. Valid range is 0 - 100.</param>
+            <param name="angle">Angle of the fractal to render.</param>
+            <param name="invertColors">Invert the fractal colors.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.JuliaFractalEffect.#ctor(System.Int32,System.Int32,System.Int32,System.Double)">
+            <summary>
+            Creates a new effect that will draw a Julia fractal.
+            </summary>
+            <param name="factor">Factor to use. Valid range is 1 - 10.</param>
+            <param name="quality">Quality of the fractal. Valid range is 1 - 5.</param>
+            <param name="zoom">Size of the fractal. Valid range is 0 - 50.</param>
+            <param name="angle">Angle of the fractal to render.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.GlowEffect.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a new effect that will add a glowing effect to an image.
+            </summary>
+            <param name="radius">Radius used to blur the image (higher is blurrier). Valid range is 1 - 20.</param>
+            <param name="brightness">Brightness amount to apply.</param>
+            <param name="contrast">Contrast amount to apply.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.FrostedGlassEffect.#ctor(System.Int32)">
+            <summary>
+            Creates a new effect that applies a frosted glass look to an image.
+            </summary>
+            <param name="amount">Amount of effect to apply. Valid range is 1 - 10.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.FragmentEffect.#ctor(System.Int32,System.Int32,System.Double)">
+            <summary>
+            Creates a new effect that makes an image look fragmented.
+            </summary>
+            <param name="fragments">Number of fragments to apply. Valid range is 2 - 50.</param>
+            <param name="distance">Distance between fragments. Valid range is 0 - 100.</param>
+            <param name="rotation">Angle to apply.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.EmbossEffect.#ctor(System.Double)">
+            <summary>
+            Creates a new effect that applies an embossed look.
+            </summary>
+            <param name="angle">Angle to apply emboss. Valid range is 0 - 360.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.GaussianBlurEffect.#ctor(System.Int32)">
+            <summary>
+            Creates a new effect that will apply a Gaussian blur to an image.
+            </summary>
+            <param name="radius">Radius to use for blur (higher is blurrier). Valid range is 0 - 200.</param>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Effects.InkSketchEffect.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new effect that will make an image look like an ink sketch.
+            </summary>
+            <param name="inkOutline">Size of the ink outline. Valid range is 0 - 99.</param>
+            <param name="coloring">Amount of color to keep. Valid range is 0 - 100.</param>
+        </member>
+        <member name="T:Pinta.ImageManipulation.Histogram">
+            <summary>
+            Histogram is used to calculate a histogram for a surface (in a selection,
+            if desired). This can then be used to retrieve percentile, average, peak,
+            and distribution information.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Histogram.Clear">
+            <summary>
+            Sets the histogram to be all zeros.
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.HistogramRgb">
+            <summary>
+            Histogram is used to calculate a histogram for a surface (in a selection,
+            if desired). This can then be used to retrieve percentile, average, peak,
+            and distribution information.
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.UserBlendOp">
+            <summary>
+            Abstract base class that all "user" blend ops derive from.
+            These ops are available in the UI for a user to choose from
+            in order to configure the blending properties of a Layer.
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.BinaryPixelOp">
+            <summary>
+            Defines a way to operate on a pixel, or a region of pixels, in a binary fashion.
+            That is, it is a simple function F that takes two parameters and returns a
+            result of the form: c = F(a, b)
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.UnaryPixelOp">
+            <summary>
+            Defines a way to operate on a pixel, or a region of pixels, in a unary fashion.
+            That is, it is a simple function F that takes one parameter and returns a
+            result of the form: d = F(c)
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.HsvColor">
+            <summary>
+            Adapted from: 
+            "A Primer on Building a Color Picker User Control with GDI+ in Visual Basic .NET or C#"
+            http://www.msdnaa.net/Resources/display.aspx?ResID=2460
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.RgbColor">
+            <summary>
+            Adapted from: 
+            "A Primer on Building a Color Picker User Control with GDI+ in Visual Basic .NET or C#"
+            http://www.msdnaa.net/Resources/display.aspx?ResID=2460
+            
+            This class is only used by the ColorsForm and ColorWheel. Nothing else in this program
+            should be using it!
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.ColorBgra">
+            <summary>
+            This is our pixel format that we will work with. It is always 32-bits / 4-bytes and is
+            always laid out in BGRA order.
+            Generally used with the Surface class.
+            </summary>
+        </member>
+        <member name="F:Pinta.ImageManipulation.ColorBgra.Bgra">
+            <summary>
+            Lets you change B, G, R, and A at the same time.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.GetIntensity">
+            <summary>
+            Gets the luminance intensity of the pixel based on the values of the red, green, and blue components. Alpha is ignored.
+            </summary>
+            <returns>A value in the range 0 to 1 inclusive.</returns>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.GetIntensityByte">
+            <summary>
+            Gets the luminance intensity of the pixel based on the values of the red, green, and blue components. Alpha is ignored.
+            </summary>
+            <returns>A value in the range 0 to 255 inclusive.</returns>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.GetMaxColorChannelValue">
+            <summary>
+            Returns the maximum value out of the B, G, and R values. Alpha is ignored.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.GetAverageColorChannelValue">
+            <summary>
+            Returns the average of the B, G, and R values. Alpha is ignored.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.op_Equality(Pinta.ImageManipulation.ColorBgra,Pinta.ImageManipulation.ColorBgra)">
+            <summary>
+            Compares two ColorBgra instance to determine if they are equal.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.op_Inequality(Pinta.ImageManipulation.ColorBgra,Pinta.ImageManipulation.ColorBgra)">
+            <summary>
+            Compares two ColorBgra instance to determine if they are not equal.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.Equals(System.Object)">
+            <summary>
+            Compares two ColorBgra instance to determine if they are equal.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.GetHashCode">
+            <summary>
+            Returns a hash code for this color value.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.NewAlpha(System.Byte)">
+            <summary>
+            Returns a new ColorBgra with the same color values but with a new alpha component value.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.FromRgba(System.Byte,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Creates a new ColorBgra instance with the given color and alpha values.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.FromRgb(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Creates a new ColorBgra instance with the given color values, and 255 for alpha.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.FromBgra(System.Byte,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Creates a new ColorBgra instance with the given color and alpha values.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.FromBgraClamped(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a new ColorBgra instance with the given color and alpha values.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.FromBgraClamped(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Creates a new ColorBgra instance with the given color and alpha values.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.BgraToUInt32(System.Byte,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Packs color and alpha values into a 32-bit integer.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.BgraToUInt32(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Packs color and alpha values into a 32-bit integer.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.FromBgr(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Creates a new ColorBgra instance with the given color values, and 255 for alpha.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.FromUInt32(System.UInt32)">
+            <summary>
+            Constructs a new ColorBgra instance with the given 32-bit value.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.Lerp(Pinta.ImageManipulation.ColorBgra,Pinta.ImageManipulation.ColorBgra,System.Single)">
+            <summary>
+            Linearly interpolates between two color values.
+            </summary>
+            <param name="from">The color value that represents 0 on the lerp number line.</param>
+            <param name="to">The color value that represents 1 on the lerp number line.</param>
+            <param name="frac">A value in the range [0, 1].</param>
+            <remarks>
+            This method does a simple lerp on each color value and on the alpha channel. It does
+            not properly take into account the alpha channel's effect on color blending.
+            </remarks>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.Lerp(Pinta.ImageManipulation.ColorBgra,Pinta.ImageManipulation.ColorBgra,System.Double)">
+            <summary>
+            Linearly interpolates between two color values.
+            </summary>
+            <param name="from">The color value that represents 0 on the lerp number line.</param>
+            <param name="to">The color value that represents 1 on the lerp number line.</param>
+            <param name="frac">A value in the range [0, 1].</param>
+            <remarks>
+            This method does a simple lerp on each color value and on the alpha channel. It does
+            not properly take into account the alpha channel's effect on color blending.
+            </remarks>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.BlendColors4W16IP(Pinta.ImageManipulation.ColorBgra,System.UInt32,Pinta.ImageManipulation.ColorBgra,System.UInt32,Pinta.ImageManipulation.ColorBgra,System.UInt32,Pinta.ImageManipulation.ColorBgra,System.UInt32)">
+            <summary>
+            Blends four colors together based on the given weight values.
+            </summary>
+            <returns>The blended color.</returns>
+            <remarks>
+            The weights should be 16-bit fixed point numbers that add up to 65536 ("1.0").
+            4W16IP means "4 colors, weights, 16-bit integer precision"
+            </remarks>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.BlendColorsWAIP(Pinta.ImageManipulation.ColorBgra[],System.UInt32[])">
+            <summary>
+            Blends the colors based on the given weight values.
+            </summary>
+            <param name="c">The array of color values.</param>
+            <param name="w">The array of weight values.</param>
+            <returns>
+            The weights should be fixed point numbers. 
+            The total summation of the weight values will be treated as "1.0".
+            Each color will be blended in proportionally to its weight value respective to 
+            the total summation of the weight values.
+            </returns>
+            <remarks>
+            "WAIP" stands for "weights, arbitrary integer precision"</remarks>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.BlendColorsWFP(Pinta.ImageManipulation.ColorBgra[],System.Double[])">
+            <summary>
+            Blends the colors based on the given weight values.
+            </summary>
+            <param name="c">The array of color values.</param>
+            <param name="w">The array of weight values.</param>
+            <returns>
+            Each color will be blended in proportionally to its weight value respective to 
+            the total summation of the weight values.
+            </returns>
+            <remarks>
+            "WAIP" stands for "weights, floating-point"</remarks>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.Blend(Pinta.ImageManipulation.ColorBgra*,System.Int32)">
+            <summary>
+            Smoothly blends the given colors together, assuming equal weighting for each one.
+            </summary>
+            <param name="colors"></param>
+            <param name="colorCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.op_Explicit(Pinta.ImageManipulation.ColorBgra)~System.UInt32">
+            <summary>
+            Casts a ColorBgra to a UInt32.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.ColorBgra.op_Explicit(System.UInt32)~Pinta.ImageManipulation.ColorBgra">
+            <summary>
+            Casts a UInt32 to a ColorBgra.
+            </summary>
+        </member>
+        <member name="P:Pinta.ImageManipulation.ColorBgra.Item(System.Int32)">
+            <summary>
+            Gets or sets the byte value of the specified color channel.
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.UnaryPixelOperations.ConstantOp">
+            <summary>
+            Always returns a constant color.
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.UnaryPixelOperations.BlendConstantOp">
+            <summary>
+            Blends pixels with the specified constant color.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.UnaryPixelOperations.BlendConstantOp.ComputeAlpha(System.Byte,System.Byte)">
+            <summary>
+            Computes alpha for r OVER l operation.
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.UnaryPixelOperations.AverageChannelsOp">
+            <summary>
+            Averages the input color's red, green, and blue channels. The alpha component
+            is unaffected.
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.UnaryPixelOperations.InvertWithAlphaOp">
+            <summary>
+            Inverts a pixel's color and its alpha component.
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.UnaryPixelOperations.RedEyeRemoveOp">
+            <summary>
+            If the color is within the red tolerance, remove it
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.UnaryPixelOperations.SetAlphaChannelTo255Op">
+            <summary>
+            Specialization of SetAlphaChannel that always sets alpha to 255.
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.UnaryPixelOperations.SetAlphaChannelOp">
+            <summary>
+            Specialization of SetChannel that sets the alpha channel.
+            </summary>
+            <remarks>This class depends on the system being litte-endian with the alpha channel 
+            occupying the 8 most-significant-bits of a ColorBgra instance.
+            By the way, we use addition instead of bitwise-OR because an addition can be
+            perform very fast (0.5 cycles) on a Pentium 4.</remarks>
+        </member>
+        <member name="T:Pinta.ImageManipulation.UnaryPixelOperations.SetChannelOp">
+            <summary>
+            Used to set a given channel of a pixel to a given, predefined color.
+            Useful if you want to set only the alpha value of a given region.
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.UnaryPixelOperations.IdentityOp">
+            <summary>
+            Passes through the given color value.
+            result(color) = color
+            </summary>
+        </member>
+        <member name="T:Pinta.ImageManipulation.UnaryPixelOperations.InvertOp">
+            <summary>
+            Inverts a pixel's color, and passes through the alpha component.
+            </summary>
+        </member>
+        <member name="M:Pinta.ImageManipulation.Utility.GetRegionBounds(Pinta.ImageManipulation.Rectangle[],System.Int32,System.Int32)">
+            <summary>
+            Allows you to find the bounding box for a "region" that is described as an
+            array of bounding boxes.
+            </summary>
+            <param name="rectsF">The "region" you want to find a bounding box for.</param>
+            <returns>A RectangleF structure that surrounds the Region.</returns>
+        </member>
+    </members>
+</doc>

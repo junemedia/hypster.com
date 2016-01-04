@@ -1,0 +1,1039 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+System.Data.Generic
+</name>
+</assembly>
+<members>
+<member name="M:System.Data.Generic.Schema.DbSchema.#ctor(System.Data.Generic.Schema.DbTableInfo[])">
+	<summary>
+ Returns a new instance of the DbSchema class.
+ </summary>
+	<param name="tables">Table array of <see cref="T:System.Data.Generic.Schema.DbTableInfo">DbTableInfo</see>.</param>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.Schema.DbSchema.Tables">
+	<summary>
+ Returns a list of tables in the database.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Schema.DbSchema.GetSchema(System.Data.IDataReader)">
+	<summary>
+ Returns the schema from the reader.
+ </summary>
+	<param name="reader">IDataReader to return schema from.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.Schema.DbSchema">
+	<summary>
+ Obtains information about the tables and columns of a database.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:System.Data.Generic.Schema.DbColumnInfo.TableName">
+	<summary>
+ Gets or sets the table name of the column.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:System.Data.Generic.Schema.DbColumnInfo.FieldIndex">
+	<summary>
+ Gets or sets the column index.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.Schema.DbColumnInfo.FieldPath">
+	<summary>
+ Returns the path of the column value.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="F:System.Data.Generic.Schema.DbColumnInfo.FieldName">
+	<summary>
+ Name of the datasource field.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:System.Data.Generic.Schema.DbColumnInfo.FieldValue">
+	<summary>
+ Value of the datasource field.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:System.Data.Generic.Schema.DbColumnInfo.DataTypeName">
+	<summary>
+ Name of the data source field type.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:System.Data.Generic.Schema.DbColumnInfo.RuntimeType">
+	<summary>
+ System.Type of the field, reflected by CLR.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Schema.DbColumnInfo.ToString">
+	<summary>
+ Returns a string representation of the object.
+ </summary>
+	<returns>String.</returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Schema.DbColumnInfo.ReadLong">
+	<summary>
+ Returns a long from the field value.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Schema.DbColumnInfo.ReadInt">
+	<summary>
+ Returns a integer from the field value.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Schema.DbColumnInfo.ReadBool">
+	<summary>
+ Returns a boolean from the field value.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Schema.DbColumnInfo.ReadGuid">
+	<summary>
+ Returns a guid from the field value.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Schema.DbColumnInfo.ReadString">
+	<summary>
+ Returns a string from the field value.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Schema.DbColumnInfo.ReadDateTime">
+	<summary>
+ Returns a datetime from the field value.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Schema.DbColumnInfo.ReadDecimal">
+	<summary>
+ Returns a decimal from the field value.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Schema.DbColumnInfo.ReadChar">
+	<summary>
+ Returns a char from the field value.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Schema.DbColumnInfo.ReadSingle">
+	<summary>
+ Returns a single from the field value.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Schema.DbColumnInfo.ReadDouble">
+	<summary>
+ Returns a decimal from the field value.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Schema.DbColumnInfo.ReadInt16">
+	<summary>
+ Returns a short from the field value.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.Schema.DbColumnInfo">
+	<summary>
+ Obtains information about the values of a data column from the database.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Schema.DbTableInfo.#ctor">
+	<summary>
+ Returns a new instance of the DbTableInfo class
+ </summary>
+	<remarks></remarks>
+</member><member name="F:System.Data.Generic.Schema.DbTableInfo.TableName">
+	<summary>
+ Name of the data table.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:System.Data.Generic.Schema.DbTableInfo.KeyColumnIndex">
+	<summary>
+ Index of the key column.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:System.Data.Generic.Schema.DbTableInfo.Columns">
+	<summary>
+ Returns a list of database columns, belonging to the table.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Schema.DbTableInfo.ToString">
+	<summary>
+ Returns a string representation of the DbTableInfo class.
+ </summary>
+	<returns>String representation.</returns>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.Schema.DbTableInfo">
+	<summary>
+ Obtains information about the tables of a database.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Extensions.AddValue(System.Array@,System.Object)">
+	<summary>
+	</summary>
+	<param name="arr"></param>
+	<param name="value"></param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Extensions.Contains(System.String,System.String,System.StringComparison)">
+	<summary>
+ Returns a value indicating whether specified System.String value occurs in the string, using the comparision provided.
+ </summary>
+	<param name="source">Source string to check again.</param>
+	<param name="value">Value string to check of.</param>
+	<param name="comp">Comparison method to compare using.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Extensions.PropertyPath(System.Reflection.PropertyInfo)">
+	<summary>
+ Returns the full name of the property, as class.property.
+ </summary>
+	<param name="source">PropertyInfo class.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Extensions.IsSystemType(System.Reflection.PropertyInfo)">
+	<summary>
+	</summary>
+	<param name="source">PropertyInfo class.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Extensions.IsCollection(System.Reflection.PropertyInfo,System.Type@)">
+	<summary>
+	</summary>
+	<param name="source">PropertyInfo class.</param>
+	<param name="collectionType"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Extensions.IsCollection(System.Reflection.PropertyInfo)">
+	<summary>
+	</summary>
+	<param name="source">PropertyInfo class.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Extensions.CollectionItemType(System.Reflection.PropertyInfo)">
+	<summary>
+	</summary>
+	<param name="source">PropertyInfo class.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Extensions.ValuesToArray``2(System.Collections.Generic.Dictionary{``0,``1})">
+	<summary>
+ Converts the value collection of a dictionary to an array.
+ </summary>
+	<typeparam name="T">Type of items.</typeparam>
+	<typeparam name="K">Type of key.</typeparam>
+	<param name="source"></param>
+	<returns>Array of type T.</returns>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.Extensions">
+	<summary>
+ Provides the extensions methods.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Serialization.Formatters.DataSourceFormatterServices.PopulateObjectMembers(System.Object@,System.Reflection.PropertyInfo[],System.Object[])">
+	<summary>
+ Populares members to an object.
+ </summary>
+	<param name="obj">Object to populate.</param>
+	<param name="members">Properties to populare.</param>
+	<param name="data">Data array to pass to the properties.</param>
+	<remarks>Both array must have the same index.</remarks>
+</member><member name="M:System.Data.Generic.Serialization.Formatters.DataSourceFormatterServices.IgnoreProperty(System.Reflection.PropertyInfo)">
+	<summary>
+ Validates the property and determine if the property should be ignored.
+ </summary>
+	<param name="p">Property to validate.</param>
+	<returns></returns>
+	<remarks>Non-writable properties are ignored. And users may specify either the <see cref="T:System.Xml.Serialization.XmlIgnoreAttribute">XmlIgnoreAttribute</see> or <see cref="T:System.Data.Generic.IgnorePropertyAttribute">IgnorePropertyAttribute</see> attribute to force exclusion.</remarks>
+</member><member name="M:System.Data.Generic.Serialization.Formatters.DataSourceFormatterServices.GetSerializableProperties(System.Type,System.Boolean,System.Collections.Generic.List{System.Reflection.PropertyInfo}@)">
+	<summary>
+	</summary>
+	<param name="type"></param>
+	<param name="navigateProperties">Recruisive navigation through collection properties.</param>
+	<param name="list"></param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Serialization.Formatters.DataSourceFormatterServices.GetSerializableProperties(System.Type)">
+	<summary>
+ Returns an array of properties based on the specified type.
+ </summary>
+	<param name="type">Object type to get properties from.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Serialization.Formatters.DataSourceFormatterServices.GetSerializableMembers(System.Type)">
+	<summary>
+ Get all the serializable members for a class of the specified System.Type.
+ </summary>
+	<param name="type">The type being serialized.</param>
+	<returns></returns>
+	<remarks>This is an extended version of the <see cref="M:System.Runtime.Serialization.FormatterServices.GetSerializableMembers(System.Type)">FormatterServices.GetSerializableMembers</see> method. This implementation does not required the class to be marked as Serialize, rather - supports the <see cref="T:System.Xml.Serialization.XmlIgnoreAttribute">XmlIgnoreAttribute</see> for public fields to exclude.</remarks>
+</member><member name="M:System.Data.Generic.Serialization.Formatters.DataSourceFormatterServices.GetFieldMembers(System.Data.IDataReader)">
+	<summary>
+ Returns an array of data field information.
+ </summary>
+	<param name="reader">DataReader to read from.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.Serialization.Formatters.DataSourceFormatterServices">
+	<summary>
+ Provides static methods to aid with the implementation of any <see cref="T:System.Data.Generic.Serialization.Formatters.IDataReaderFormatter`1">IDataReaderFormatter</see> for serialization. 
+ </summary>
+	<remarks></remarks>
+</member><member name="F:System.Data.Generic.SQLInjectionInspector.Injections">
+	<summary>
+ Returns an array of unsafe injections.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.SQLInjectionInspector.Validate(System.String)">
+	<summary>
+ Validate the SQL string and thrown an exception if harmfull injections are found.
+ </summary>
+	<param name="SQL">SQL statement to validate.</param>
+	<returns>Safe SQL statement.</returns>
+	<remarks>This class does not ensure unsafe SQL. Please use all means to secure your SQL access.</remarks>
+</member><member name="M:System.Data.Generic.SQLInjectionInspector.Validate(System.String,System.String[])">
+	<summary>
+ Validate the SQL string and thrown an exception if harmfull injections are found.
+ </summary>
+	<param name="SQL">SQL statement to validate.</param>
+	<param name="injectionArray">Array of unsafe statements.</param>
+	<returns>Safe SQL statement.</returns>
+	<remarks>This class does not ensure unsafe SQL. Please use all means to secure your SQL access.</remarks>
+</member><member name="T:System.Data.Generic.SQLInjectionInspector">
+	<summary>
+ Injection inspector class to enable safe SQL statements.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.IgnorePropertyAttribute">
+	<summary>
+ Instructs the <see cref="T:System.Data.Generic.Serialization.Formatters.DataSourceFormatter`1">DataSourceFormatter</see> method not to serialize/deserialize the public field.
+ </summary>
+	<remarks>For interoperability you can also use the <see cref="T:System.Xml.Serialization.XmlIgnoreAttribute">XmlIgnoreAttribute</see>.</remarks>
+</member><member name="T:System.Data.Generic.IDataSource">
+	<summary>
+ Not implemented
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.ConnectionStringBuilder.#ctor(System.String,System.String)">
+	<summary>
+ Returns a new instance of the ConnectionStringBuilder class.
+ </summary>
+	<param name="server">Server address of the connection.</param>
+	<param name="database">Database of the connection.</param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.ConnectionStringBuilder.#ctor(System.String,System.String,System.Net.NetworkCredential)">
+	<summary>
+ Returns a new instance of the ConnectionStringBuilder class, specifying credentials.
+ </summary>
+	<param name="server">Server address of the connection.</param>
+	<param name="database">Database of the connection.</param>
+	<param name="credentials">Username and password for the connection.</param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.ConnectionStringBuilder.GetSqlExpress(System.String)">
+	<summary>
+ Returns a connectionstring for a SQL Express.
+ </summary>
+	<param name="database">Name of database.</param>
+	<returns>A new ConnectionStringBuilder class for SQL Express.</returns>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.ConnectionStringBuilder.Server">
+	<summary>
+ Gets the value of the server.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.ConnectionStringBuilder.Database">
+	<summary>
+ Gets or sets the value of the database.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.ConnectionStringBuilder.TrustedConnection">
+	<summary>
+ Gets or sets if the connection use trusted connection capabilities.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.ConnectionStringBuilder.IntegratedSecurity">
+	<summary>
+ Gets or sets if the connection use integrated security capabilities.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.ConnectionStringBuilder.MultipleActiveResultSets">
+	<summary>
+ Gets or sets if the connection enables multiple active resultsets.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.ConnectionStringBuilder.Credentials">
+	<summary>
+ Gets or sets the username and password of the connection.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.ConnectionStringBuilder.ToString">
+	<summary>
+ Returns the connection string.
+ </summary>
+	<returns>String. Connection string for the SQL server.</returns>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.ConnectionStringBuilder">
+	<summary>
+ Builds a connection to a SQL server.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Settings.AzureApplicationSettings.TraceWriteLine(System.String)">
+	<summary>
+	</summary>
+	<param name="msg"></param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Settings.AzureApplicationSettings.DebugAssert(System.Boolean)">
+	<summary>
+	</summary>
+	<param name="condition"></param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Settings.AzureApplicationSettings.#ctor">
+	<summary>
+ Initializes the settings.
+ </summary>
+</member><member name="M:System.Data.Generic.Settings.AzureApplicationSettings.GetSetting(System.String)">
+	<summary>
+ Gets a setting with the given name.
+ </summary>
+	<param name="name">Setting name.</param>
+	<returns>Setting value or null if such setting does not exist.</returns>
+</member><member name="M:System.Data.Generic.Settings.AzureApplicationSettings.IsMissingSettingException(System.Exception)">
+	<summary>
+ Checks whether the given exception represents an exception throws
+ for a missing setting.
+ </summary>
+	<param name="e">Exception</param>
+	<returns>True for the missing setting exception.</returns>
+</member><member name="M:System.Data.Generic.Settings.AzureApplicationSettings.GetValue(System.String,System.String,System.Func{System.String,System.String})">
+	<summary>
+ Gets setting's value from the given provider.
+ </summary>
+	<param name="providerName">Provider name.</param>
+	<param name="settingName">Setting name</param>
+	<param name="getValue1">Method to obtain given setting.</param>
+	<returns>Setting value, or null if not found.</returns>
+</member><member name="M:System.Data.Generic.Settings.AzureApplicationSettings.GetServiceRuntimeSetting(System.String)">
+	<summary>
+ Gets a configuration setting from the service runtime.
+ </summary>
+	<param name="name">Setting name.</param>
+	<returns>Setting value or null if not found.</returns>
+</member><member name="M:System.Data.Generic.Settings.AzureApplicationSettings.GetServiceRuntimeAssembly">
+	<summary>
+ Loads and returns the latest available version of the service 
+ runtime assembly.
+ </summary>
+	<returns>Loaded assembly, if any.</returns>
+</member><member name="M:System.Data.Generic.Settings.AzureApplicationSettings.GetServiceSetting(System.String)">
+	<summary>
+ Gets the setting defined in the Windows Azure configuration file.
+ </summary>
+	<param name="name">Setting name.</param>
+	<returns>Setting value.</returns>
+</member><member name="T:System.Data.Generic.Settings.AzureApplicationSettings">
+	<summary>
+ Windows Azure settings.
+ </summary>
+</member><member name="M:System.Data.Generic.HelperTools.TryCastDefault``1(System.Object,System.Object)">
+	<summary>
+ Cast object into Type of T. If cast cannot be obtained, <paramref name="defaultValue">defaultValue</paramref> parameters is returned.
+ </summary>
+	<typeparam name="T">Type of object to cast to.</typeparam>
+	<param name="o">Object to cast.</param>
+	<param name="defaultValue">Default value to return if failure.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.HelperTools.TryCastDefault``1(System.Object)">
+	<summary>
+ Cast object into Type of T. If cast cannot be obtained, the passed object <paramref name="o">o</paramref> is returned.
+ </summary>
+	<typeparam name="T">Type of object to cast to.</typeparam>
+	<param name="o">Object to cast.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.HelperTools.EscapeSql(System.String)">
+	<summary>
+ Escapes standard SQL characters.
+ </summary>
+	<param name="sql">SQL statement to escape.</param>
+	<returns></returns>
+	<remarks>Replaces ' with ''.</remarks>
+</member><member name="M:System.Data.Generic.HelperTools.PrepareSqlExtended(System.String,System.Object[])">
+	<summary>
+ Formats a SQL string with the <paramref name="parameters">parameters</paramref>, assigned the right usage of quotas.
+ </summary>
+	<param name="sql">SQL statement to format. Use String formatting {0}, {1} etc.</param>
+	<param name="parameters">Array of parameters.</param>
+	<returns>Formatted SQL string.</returns>
+	<remarks>The PrepareSqlExtended method inspects each parameters by datatype and assigns correct T-SQL quota usage. 
+ This might impact performance or expected output. You can escape the proper formatting using the \ escape char first and last. 
+ The method will add NULL to the T-SQL if the value is nothing, empty or minvalue.
+ </remarks>
+</member><member name="T:System.Data.Generic.HelperTools">
+	<summary>
+ Helper methods for Data manipulation.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.TransactionContext.#ctor(System.Data.Common.DbTransaction)">
+	<summary>
+ Returns a new instnace of the TransactionContext class.
+ </summary>
+	<param name="transaction">Inner transaction of the context.</param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.TransactionContext.#ctor(System.Data.Common.DbTransaction,System.String)">
+	<summary>
+ Returns a new instnace of the TransactionContext class.
+ </summary>
+	<param name="transaction">Inner transaction of the context.</param>
+	<param name="name">Name of the transaction.</param>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.TransactionContext.Name">
+	<summary>
+ Gets the name of the transaction.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.TransactionContext.InnerTransaction">
+	<summary>
+ Holds the inner transaction.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.TransactionContext.Commit">
+	<summary>
+ Commits the transction.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.TransactionContext.RollBack">
+	<summary>
+ Rolls back the transaction.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.TransactionContext.Dispose(System.Boolean)">
+	<summary>
+ Releases the unmanaged resources used by the TransactionContext.
+ </summary>
+	<param name="disposing">Provides a value determing if the state is disposing.</param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.TransactionContext.Dispose">
+	<summary>
+ Releases the unmanaged resources used by the TransactionContext.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.TransactionContext">
+	<summary>
+ Provides context of any transaction.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Serialization.Formatters.NestedDataSourceFormatter`1.FindPossibleType(System.Collections.Generic.List{System.Reflection.PropertyInfo},System.String)">
+	<summary>
+	</summary>
+	<param name="members"></param>
+	<param name="name"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Serialization.Formatters.NestedDataSourceFormatter`1.InitializeCollections(System.Object)">
+	<summary>
+	</summary>
+	<param name="obj"></param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Serialization.Formatters.NestedDataSourceFormatter`1.DeserializeNested(System.Data.IDataReader)">
+	<summary>
+	</summary>
+	<param name="reader"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.Serialization.Formatters.NestedDataSourceFormatter`1">
+	<summary>
+	</summary>
+	<typeparam name="T"></typeparam>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.Serialization.Formatters.ObjectState">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.Serialization.Formatters.ObjectStates">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.Settings.Utilities.IAssemblyCache">
+	<summary>
+ Interface for Azure assembly cache.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.Settings.Utilities.AssemblyInfo">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Settings.Utilities.GetAssemblyPath(System.String)">
+	<summary>
+ Gets an assembly path from the GAC given a partial name.
+ </summary>
+	<param name="name">An assembly partial name. May not be null.</param>
+	<returns>
+ The assembly path if found; otherwise null;
+ </returns>
+</member><member name="T:System.Data.Generic.Settings.Utilities">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.SerializationSettings.#ctor">
+	<summary>
+ Returns a new instance of the SerializationSettings class.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.SerializationSettings.ThreatMinValuesAsNull">
+	<summary>
+ Gets or sets a value to threat propery values of min-value as null.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks><see cref="M:System.Data.Generic.DataSource.PrepareSql(System.String,System.Object[])">PrepareSql</see> for processing instructions.</remarks>
+</member><member name="T:System.Data.Generic.SerializationSettings">
+	<summary>
+ Provides settings for the Data Serializer.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.SqlCeDataSource">
+	<summary>
+ Not implemented
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Serialization.Formatters.DataSourceFormatter`1.Deserialize(System.Data.IDataReader)">
+	<summary>
+ Deserialize a data row from the reader.
+ </summary>
+	<param name="reader">DataReader to return row from.</param>
+	<returns>Object of type T, deserialized from the provided DataReader.</returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Serialization.Formatters.DataSourceFormatter`1.MapAndDeserializePrimities(System.Reflection.MemberInfo[],System.Data.Generic.Schema.DbColumnInfo[])">
+	<summary>
+ Maps fields and properties in the class.
+ </summary>
+	<param name="members">Properties in the class.</param>
+	<param name="fields">Data fields from the data source.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Serialization.Formatters.DataSourceFormatter`1.DeserializePrimitive(System.Data.Generic.Schema.DbColumnInfo)">
+	<summary>
+ Deserializes a data field into a class.
+ </summary>
+	<param name="field">Field to deserialize.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Serialization.Formatters.DataSourceFormatter`1.Serialize(System.Data.IDataReader,`0)">
+	<summary>
+ Serialize a datareader. This method is not implemented.
+ </summary>
+	<param name="reader">DataReader to serialize from.</param>
+	<param name="graph">Graph object to serialize.</param>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.Serialization.Formatters.DataSourceFormatter`1">
+	<summary>
+ Provides a serialization formatter for the data source.
+ </summary>
+	<typeparam name="T">Type of object to serialize or deserialize.</typeparam>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.#ctor(System.Data.Generic.ConnectionStringBuilder,System.Boolean)">
+	<summary>
+ Returns a new instance of the DataSource class, using a connectionstring builder.
+ </summary>
+	<param name="connection">ConnectionStringBuilder class for the connection.</param>
+	<param name="delayOpening">Boolean. Indicates if the data connection should be opened upon intialization of the DataSource class.</param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.#ctor(System.String,System.Boolean)">
+	<summary>
+ Returns a new instance of the DataSource class.
+ </summary>
+	<param name="connectionString">Connection string to open.</param>
+	<param name="delayOpening">Boolean. Indicates if the data connection should be opened upon intialization of the DataSource class.</param>
+	<remarks>Use <see cref="M:System.Data.Generic.DataSource.Open">Open</see> method to open later.</remarks>
+</member><member name="M:System.Data.Generic.DataSource.#ctor(System.String)">
+	<summary>
+ Returns a new instance of the DataSource class, and opens the connection immediately.
+ </summary>
+	<param name="connectionString">Connection string to open.</param>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.DataSource.Current">
+	<summary>
+ Returns a new instance of the DataSource class using the connection string, specific in the app.config.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>Add GlobalDataSource to the app.config connectionstring elements.
+ <example>
+			<code>
+				<ConnectionStrings>
+					<add name="GlobalDataSource" connectionString="Server=.\SQLExpress;Database=somedatabase;"/>
+				</ConnectionStrings>
+			</code>
+		</example>
+	</remarks>
+</member><member name="M:System.Data.Generic.DataSource.PrepareSql(System.String,System.Object[])">
+	<summary>
+ Formats a SQL statement based on the data type of the <paramref name="parameters">parameters</paramref> parameters.
+ </summary>
+	<param name="sql">SQL statement.</param>
+	<param name="parameters">Parameters.</param>
+	<returns>Formattet SQL statement.</returns>
+	<remarks>Behaviour of the SQL statement formatting is based on the <see cref="P:System.Data.Generic.SerializationSettings.ThreatMinValuesAsNull">ThreatMinValuesAsNull</see> property on <see cref="P:System.Data.Generic.DataSource.SerializationSettings">SerializationSettings</see> property.</remarks>
+</member><member name="M:System.Data.Generic.DataSource.EscapeSql(System.String)">
+	<summary>
+ Escapes standard SQL characters.
+ </summary>
+	<param name="sql">SQL statement to escape.</param>
+	<returns>Escaped SQL string.</returns>
+	<remarks>Replaces ' with ''.</remarks>
+</member><member name="M:System.Data.Generic.DataSource.EscapeSql(System.String,System.Object[])">
+	<summary>
+ Escapes standard SQL characters. Can be used as String.Format.
+ </summary>
+	<param name="sql">SQL statement to escape.</param>
+	<param name="args">Arguments to format.</param>
+	<returns>Escaped SQL string.</returns>
+	<remarks>Replaces ' with ''.</remarks>
+</member><member name="P:System.Data.Generic.DataSource.ConnectionState">
+	<summary>
+ Returns the connection state of the data connection.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.DataSource.ConnectionString">
+	<summary>
+ Returns the connection string of the current data connection.
+ </summary>
+	<value></value>
+	<returns>String.</returns>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.DataSource.SerializationSettings">
+	<summary>
+ Returns the settings for serialization.
+ </summary>
+	<value></value>
+	<returns>Settings class for the supporting serializer.</returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.Open">
+	<summary>
+ Open the data connection.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.Close">
+	<summary>
+ Close the data connection.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.ClearPool">
+	<summary>
+ Empties the connection pool associated with the current connection.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.ClearPools">
+	<summary>
+ Empties all connection pool(s).
+ </summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteScalar``1(System.String,System.Data.Generic.TransactionContext,``0)">
+	<summary>
+ Executes the query, and returns the first column of the first row in the result set returned by the query. Supports transactions.
+ </summary>
+	<typeparam name="T">Type to return.</typeparam>
+	<param name="SQL">Transact-SQL statement to execute against the connection.</param>
+	<param name="transaction">Context of the transaction.</param>
+	<param name="defaultValue">Default value to return in case of no return.</param>
+	<returns>The first column of the first row in the result set, or a null reference (Nothing in Visual Basic) if the result set is empty. Returns a maximum of 2033 characters.</returns>
+	<remarks></remarks>
+	<exception cref="T:System.ArgumentNullException">In case the SQL is null.</exception>
+	<exception cref="T:System.Data.SqlClient.SqlException">In case the underlying connection cause an exception.</exception>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteScalar``1(System.String,``0)">
+	<summary>
+ Executes the query, and returns the first column of the first row in the result set returned by the query.
+ </summary>
+	<typeparam name="T">Type to return.</typeparam>
+	<param name="SQL">Transact-SQL statement to execute against the connection.</param>
+	<param name="defaultValue">Default value to return in case of no return.</param>
+	<returns>The first column of the first row in the result set, or a null reference (Nothing in Visual Basic) if the result set is empty. Returns a maximum of 2033 characters.</returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteScalar``1(System.String)">
+	<summary>
+ Executes the query, and returns the first column of the first row in the result set returned by the query.
+ </summary>
+	<typeparam name="T">Type to return.</typeparam>
+	<param name="SQL">Transact-SQL statement to execute against the connection.</param>
+	<returns>The first column of the first row in the result set, or a null reference (Nothing in Visual Basic) if the result set is empty. Returns a maximum of 2033 characters.</returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteScalar(System.String)">
+	<summary>
+ Executes the query, and returns the first column of the first row in the result set returned by the query.
+ </summary>
+	<param name="SQL">Transact-SQL statement to execute against the connection.</param>
+	<returns>The first column of the first row in the result set, or a null reference (Nothing in Visual Basic) if the result set is empty. Returns a maximum of 2033 characters.</returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteNoReturn(System.String)">
+	<summary>
+ Executes the Query against the datasource without returning any value.
+ </summary>
+	<param name="SQL">SQL statement to execute.</param>
+	<remarks></remarks>
+	<exception cref="T:System.ArgumentNullException">In case the SQL is null.</exception>
+	<exception cref="T:System.Data.SqlClient.SqlException">In case the underlying connection cause an exception.</exception>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteNoReturn(System.String,System.Data.Generic.TransactionContext)">
+	<summary>
+ Executes the Query against the datasource without returning any value. Supports transactions.
+ </summary>
+	<param name="SQL">SQL statement to execute.</param>
+	<param name="transaction">Context of the transaction.</param>
+	<remarks>The connection will remain open, until the TransactionContext is disposed or RollBack/Commit is called.</remarks>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteDataSet(System.String)">
+	<summary>
+ Executes the SQL query and returns a DataSet.
+ </summary>
+	<param name="SQL">SQL query to execute.</param>
+	<returns>DataSet of the data.</returns>
+	<remarks></remarks>
+	<exception cref="T:System.ArgumentNullException">In case the SQL is null.</exception>
+	<exception cref="T:System.Data.SqlClient.SqlException">In case the underlying connection cause an exception.</exception>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteXmlReader(System.String)">
+	<summary>
+ Executes the Query against the datasource and returns a XML reader.
+ </summary>
+	<param name="SQL">SQL query to execute.</param>
+	<returns>XmlReader.</returns>
+	<remarks></remarks>
+	<exception cref="T:System.ArgumentNullException">In case the SQL is null.</exception>
+	<exception cref="T:System.Data.SqlClient.SqlException">In case the underlying connection cause an exception.</exception>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteReader(System.String)">
+	<summary>
+ Sends the SQL Query to the Connection and builds a SqlDataReader.
+ </summary>
+	<param name="SQL">SQL Query to execute.</param>
+	<returns>SqlDataReader.</returns>
+	<remarks>The ExecuteReader method keeps the connection open. Dispose of the <see cref="T:System.Data.Common.DbDataReader">DbDataReader</see> will close the connection.</remarks>
+	<exception cref="T:System.ArgumentNullException">In case the SQL is null.</exception>
+	<exception cref="T:System.Data.SqlClient.SqlException">In case the underlying connection cause an exception.</exception>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteDictionary(System.String)">
+	<summary>
+ Executes the SQL statement and returns a dictionary of the first row. Keys in the dictionary are field names and values associated.
+ </summary>
+	<param name="SQL">SQL statement to execute.</param>
+	<returns>Dictionary class.</returns>
+	<remarks></remarks>
+	<exception cref="T:System.ArgumentNullException">In case the SQL is null.</exception>
+	<exception cref="T:System.Data.SqlClient.SqlException">In case the underlying connection cause an exception.</exception>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteDataTable(System.String)">
+	<summary>
+ Sends the SQL Query to the Connection and returns a DataTable.
+ </summary>
+	<param name="SQL">SQL statement to execute.</param>
+	<returns>DataTable.</returns>
+	<remarks></remarks>
+	<exception cref="T:System.ArgumentNullException">In case the SQL is null.</exception>
+	<exception cref="T:System.Data.SqlClient.SqlException">In case the underlying connection cause an exception.</exception>
+</member><member name="T:System.Data.Generic.DataSource.ItemCallBackDelegate">
+	<summary>
+ Delegated method for call back event methods. See also <see cref="M:System.Data.Generic.DataSource.ExecuteCallBack(System.String,System.Data.Generic.DataSource.ItemCallBackDelegate)">ExecuteCallBack</see>.
+ </summary>
+	<param name="item">Current data item as a Dictionary(Of String, Object).</param>
+	<param name="rownum">Row number of the item.</param>
+	<param name="cancel">Gets or sets a value indicating if the read should continue.</param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteCallBack(System.String,System.Data.Generic.DataSource.ItemCallBackDelegate)">
+	<summary>
+ Executes the query, and raises a callback of <see cref="T:System.Data.Generic.DataSource.ItemCallBackDelegate">ItemCallBackDelegate</see> for each item it iterates.
+ </summary>
+	<param name="SQL">SQL statement to execute.</param>
+	<param name="callback"><see cref="T:System.Data.Generic.DataSource.ItemCallBackDelegate">ItemCallBackDelegate</see> method.</param>
+	<remarks></remarks>
+	<exception cref="T:System.ArgumentNullException">In case the SQL is null.</exception>
+	<exception cref="T:System.Data.SqlClient.SqlException">In case the underlying connection cause an exception.</exception>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteList``1(System.String)">
+	<summary>
+ Executes the query, and returns a collection of the first column.
+ </summary>
+	<typeparam name="T">Type of the first column.</typeparam>
+	<param name="SQL">SQL statement to execute.</param>
+	<returns>List of first column</returns>
+	<remarks>Specifying a SQL statement with multiple columns will not change the output. Only the first column will be returned.</remarks>
+	<exception cref="T:System.ArgumentNullException">In case the SQL is null.</exception>
+	<exception cref="T:System.Data.SqlClient.SqlException">In case the underlying connection cause an exception.</exception>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteNObjects``1(System.String,System.String[])">
+	<summary>
+ Executes the query, and returns a collection of object by the type T; hieratically compounded by the provided SQL JOIN and realted classes.
+ </summary>
+	<typeparam name="T">Type to return in list. This must be a managed object.</typeparam>
+	<param name="SQL">SQL statement to execute. SQL statement must have an 'ORDER BY' statement. Should be a JOIN statement, otherwise please use ExecuteObjects for performance.</param>
+	<param name="navigationProperties">List of property names, which should be populated from the SQL statement.</param>
+	<returns>Collections of object, type T - populated based on class references and provided tables.</returns>
+	<remarks>THIS FEATURE IS A PRE-RELEASE. MAY NOT BE STABLE.</remarks>
+	<exception cref="T:System.ArgumentNullException">In case the SQL is null.</exception>
+	<exception cref="T:System.Data.SqlClient.SqlException">In case the underlying connection cause an exception.</exception>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteNObjects``1(System.String)">
+	<summary>
+ Executes the query, and returns a collection of object by the type T; hieratically compounded by the provided SQL JOIN and realted classes.
+ </summary>
+	<typeparam name="T">Type to return in list. This must be a managed object.</typeparam>
+	<param name="SQL">SQL statement to execute. SQL statement must have an 'ORDER BY' statement. Should be a JOIN statement, otherwise please use ExecuteObjects for performance.</param>
+	<returns>Collections of object, type T - populated based on class references and provided tables.</returns>
+	<remarks>THIS FEATURE IS A PRE-RELEASE. MAY NOT BE STABLE.</remarks>
+	<exception cref="T:System.ArgumentNullException">In case the SQL is null.</exception>
+	<exception cref="T:System.Data.SqlClient.SqlException">In case the underlying connection cause an exception.</exception>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteObjects``1(System.String)">
+	<summary>
+ Executes the query, and returns a collection of object by the type T.
+ </summary>
+	<typeparam name="T">Type to return in list. This must be a managed object.</typeparam>
+	<param name="SQL">SQL statement to execute.</param>
+	<returns>Collections of object, type T.</returns>
+	<remarks>ExecuteObjects does not support standardized types, as reflection is reversed. This methods tries to match properties of the T type to the data source. Use <see cref="M:System.Data.Generic.DataSource.ExecuteList``1(System.String)">ExecuteList</see> or <see cref="M:System.Data.Generic.DataSource.ExecuteDictionary(System.String)">ExecuteDictionary</see>.</remarks>
+	<exception cref="T:System.ArgumentNullException">In case the SQL is null.</exception>
+	<exception cref="T:System.Data.SqlClient.SqlException">In case the underlying connection cause an exception.</exception>
+</member><member name="M:System.Data.Generic.DataSource.ExecuteObject``1(System.String)">
+	<summary>
+ Executes the query, and returns a object by the type T.
+ </summary>
+	<typeparam name="T">Type of object to return.</typeparam>
+	<param name="SQL">SQL statement to execute.</param>
+	<returns>Object of type T.</returns>
+	<exception cref="T:System.ArgumentNullException">In case the SQL is null.</exception>
+	<exception cref="T:System.Data.SqlClient.SqlException">In case the underlying connection cause an exception.</exception>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.CommitTransaction(System.Data.Generic.TransactionContext)">
+	<summary>
+ Commits a transaction from the specified context.
+ </summary>
+	<param name="context">Context of the transaction.</param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.RollbackTransaction(System.Data.Generic.TransactionContext)">
+	<summary>
+ Rolls back a transaction from the specified context.
+ </summary>
+	<param name="context">Context of the transaction.</param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.CreateTransaction">
+	<summary>
+ Create a new transaction context.
+ </summary>
+	<returns>Context of the transaction to passe to subsequent requests.</returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.CreateTransaction(System.String)">
+	<summary>
+ Create a new transaction context and leaves the connection open.
+ </summary>
+	<param name="name">Name of the transaction</param>
+	<returns>Context of the transaction to passe to subsequent requests.</returns>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.PopulateDictionary(System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.SqlClient.SqlDataReader)">
+	<summary>
+ Populates a dicrionary from a datareader.
+ </summary>
+	<param name="dataDictionary">Dictionary to populate.</param>
+	<param name="dataReader">Datareader to ready from.</param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.Dispose(System.Boolean)">
+	<summary>
+ Releases all resources used by the Component.
+ </summary>
+	<param name="disposing"></param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.DataSource.Dispose">
+	<summary>
+ Releases all resources used by the Component.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.DataSource">
+	<summary>
+ Enables easy data access to SQL server.
+ </summary>
+	<remarks>
+ Enables global data access by editing web.config, app.config or the Azure configuration file, and adding GlobalDataSource to the appSettings configuration elements.
+ </remarks>
+	<example>
+		<code>
+			<appSettings><add key="GlobalDataSource" value="Server=.\SQLExpress;Database=somedatabase;"/></appSettings>
+		</code>
+ Usage example 1 (get instance into variable):
+ <code>
+ DataSource source = DataSource.Current();
+ </code>
+ Usage example 2 (use static method):
+ <code>
+ DataSource.Current.ExecuteNoReturn("select * from table");
+ </code>
+ Usage example 3 (create an instance):
+ <code>
+ DataSource source = new DataSource("Server=.\SQLExpress;Database=somedatabase;");
+ source.ExecuteNoReturn("select * from table");
+ </code>
+	</example>
+</member><member name="M:System.Data.Generic.ConfigurationHelper.GetSetting(System.String)">
+	<summary>
+	</summary>
+	<param name="key"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.ConfigurationHelper.AppSettings">
+	<summary>
+	</summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.ConfigurationHelper">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Serialization.Formatters.IDataReaderFormatter`1.Serialize(System.Data.IDataReader,`0)">
+	<summary>
+ Serializes an object, or graph as objects with the given root to the provided reader.
+ </summary>
+	<param name="reader">The DataReader where the formatter puts the serialized data.</param>
+	<param name="graph">The object, or root of the object graph, to serialize.</param>
+	<remarks></remarks>
+</member><member name="M:System.Data.Generic.Serialization.Formatters.IDataReaderFormatter`1.Deserialize(System.Data.IDataReader)">
+	<summary>
+ Deserializes the data on the provided DataReader and reconstitutes the graph of objects.
+ </summary>
+	<param name="reader">The DataReader that contains the data to deserialize.</param>
+	<returns>Deserialized object of type T from the reader.</returns>
+	<remarks></remarks>
+</member><member name="T:System.Data.Generic.Serialization.Formatters.IDataReaderFormatter`1">
+	<summary>
+ Provides functionality for formattering DataReader and objects.
+ </summary>
+	<typeparam name="T">Type of object.</typeparam>
+	<remarks></remarks>
+</member><member name="P:System.Data.Generic.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:System.Data.Generic.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:System.Data.Generic.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>
