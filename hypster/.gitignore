@@ -5,5 +5,5 @@ userpics
 
 # by way of Github's Visual Studio .gitignore
 # https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
-[Bb]in/
+#[Bb]in/
 [Oo]bj/
