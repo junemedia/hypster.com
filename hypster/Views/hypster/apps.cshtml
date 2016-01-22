@@ -1,6 +1,4 @@
-﻿@using System.Configuration;
-
-@{
+﻿@{
     ViewBag.Title = "Hypster Applications";
 }
 
@@ -24,9 +22,7 @@
 
 
     <div style=" float:right; width:160px; margin:23px 15px 0 0; ">
-    @if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"])) {
-            @Html.Partial("~/Views/hypAds/ad_160x600.cshtml")
-    }
+        @Html.Partial("~/Views/hypAds/ad_160x600.cshtml")
     </div>
 
 </div>

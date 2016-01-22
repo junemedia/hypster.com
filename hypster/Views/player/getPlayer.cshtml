@@ -1,6 +1,4 @@
-﻿@using System.Configuration;
-
-@{
+﻿@{
     ViewBag.Title = "Hypster - free music online - player for tumblr";
     ViewBag.Desc = "";
     Layout = null;
@@ -29,11 +27,11 @@
                 <img alt="" src="/imgs/get_player/widget_1.png" />
                 <div style=" width:100%; text-align:center; font-size:17px; color:#d4ae52;">Classic player</div>
             </div>
-      @if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"])) {
+
             <div style=" float:left; margin:0px 0 0 25px; padding:2px; border:1px solid #d4ae52; border-radius:2px;">
                 @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
             </div>
-       }          
+            
         </div>
 
 

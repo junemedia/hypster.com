@@ -1,6 +1,4 @@
-﻿@using System.Configuration;
-
-@model hypster.ViewModels.getAccountInfo_PrivateViewModel
+﻿@model hypster.ViewModels.getAccountInfo_PrivateViewModel
 
 @{
     ViewBag.Title = "Hypster - free music online - player for tumblr";
@@ -157,7 +155,7 @@
 
 
 
-            @if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"])) {
+
                 <div style=" float:left; width:300px; height:250px; margin-top:5px; ">
                     <div id="SideAd98403712dejk">
                         @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
@@ -165,7 +163,7 @@
                     <!-- 06_25 -->
                     
                 </div>
-            }
+
                 
             </div>
 
@@ -282,7 +280,7 @@
                         </div>
                 </div>
 
-            @if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"])) {
+
                 <div style=" float:left; width:300px; height:250px; margin-top:3px; ">
                     <div id="SideAdiw8o302e3791">
                         @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
@@ -290,8 +288,8 @@
                     <!-- 06_25 -->
                     
                 </div>
-            }
 
+                
             </div> 
 
 
@@ -344,14 +342,14 @@
                 }
                 </div>
 
-        @if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"])) {
+
                 <div style=" float:left; width:300px; height:250px; margin-top:0px; ">
                     <div id="SideAdiw8o302e3791">
                         @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
                     </div>
                     <!-- 06_25 -->
                 </div>
-        }
+
 
         </div>  
 

@@ -1,6 +1,4 @@
-﻿@using System.Configuration;
-
-@{
+﻿@{
     Layout = null;
 }
 
@@ -64,12 +62,11 @@
 
             
 
-@if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"])) { 
-    <div class="shrTopC1">
-        @Html.Partial("~/Views/hypAds/ad_728x90_btf.cshtml")
-        <!-- 06_25 -->
-    </div>
-}
+
+         <div class="shrTopC1">
+              @Html.Partial("~/Views/hypAds/ad_728x90_btf.cshtml")
+              <!-- 06_25 -->
+          </div>
 
 
         <div class="sconf1">@System.Configuration.ConfigurationManager.AppSettings["server_ID"]</div>

@@ -1,6 +1,4 @@
-﻿@using System.Configuration;
-
-@model hypster_tv_DAL.newsPost
+﻿@model hypster_tv_DAL.newsPost
 @{
     ViewBag.Title = Model.post_title;
     ViewBag.Desc = Model.post_short_content;
@@ -82,9 +80,7 @@
         
 
         <div style=" float:left; margin:10px 0 0 15px;">
-        @if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"])) {
             @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
-        }
         </div> 
 
 

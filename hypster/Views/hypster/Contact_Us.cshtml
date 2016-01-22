@@ -1,6 +1,4 @@
 ﻿@using Recaptcha;
-@using System.Configuration;
-
 @{
     ViewBag.Title = "Hypster - free music online - player for tumblr";
     ViewBag.Desc = "";
@@ -72,9 +70,7 @@
     <div style=" float:right; width:300px; margin-right:20px;">
 
         <div style=" float:left; width:300px; height:250px; ">
-        @if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"])) {
             @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
-        }
             <!-- 06_25 -->
         </div>
 

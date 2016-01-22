@@ -1,6 +1,4 @@
-﻿@using System.Configuration;
-
-@model hypster.ViewModels.GetPlayerViewModel
+﻿@model hypster.ViewModels.GetPlayerViewModel
 @{
     ViewBag.Title = "New player for Tumblr";
     ViewBag.Desc = "get new player for Tumblr code";
@@ -132,12 +130,10 @@
                                 </select>
                             </div>
 
-                           @if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"]))
-                           {
-                                <div style=" float:right; margin:10px 0 0 0;">
-                                    @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
-                                </div>
-                           }
+
+                            <div style=" float:right; margin:10px 0 0 0;">
+                                @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
+                            </div>
 
                     </div>
         
@@ -266,12 +262,12 @@
 
 <div style=" float:left; width:100%; margin:20px 0 20px 0;">
         
-      @if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"]))
-      {
+            
         <div id="TopAdd1_d8d2362fgki" style=" width:728px; margin:auto;">
             @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
         </div>
-      }
+        <!-- 06_25 -->
+
     
 </div>
 

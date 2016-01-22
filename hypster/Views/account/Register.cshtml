@@ -1,5 +1,4 @@
-﻿@using System.Configuration;
-@model hypster.ViewModels.LoginViewModel
+﻿@model hypster.ViewModels.LoginViewModel
 @{
     ViewBag.Title = "Hypster - free music online - player for tumblr";
     ViewBag.Desc = "";
@@ -179,7 +178,7 @@
 
 
 
-@if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"])) {
+
     <div style=" float:left; width:300px; min-height:250px; margin:10px 0 0 10px; ">
         <div id="SideAd2_d93847" style=" margin:10px 0 0 0;">
             @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
@@ -191,7 +190,7 @@
         </div>
         <!-- 06_25 -->
     </div>
-}
+
 </div>
 
 

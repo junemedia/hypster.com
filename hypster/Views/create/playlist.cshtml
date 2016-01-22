@@ -1,6 +1,4 @@
-﻿@using System.Configuration;
-
-@model hypster.ViewModels.createPlaylist_ViewModel
+﻿@model hypster.ViewModels.createPlaylist_ViewModel
 @{
     ViewBag.Title = "Create Free Playlist | Hypster - free music online - player for tumblr";
     ViewBag.Desc = "Create free playlists, and listen commercial free music.";
@@ -201,11 +199,11 @@
                                 }
 
                             }
-                        @if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"])) {
+
                             <div style=" float:left; margin:15px 0 0 60px;">
                                 @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
                             </div>
-                        }
+
                         </div>
 
 

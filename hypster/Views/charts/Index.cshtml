@@ -1,6 +1,4 @@
-﻿@using System.Configuration;
-
-@model List<hypster.ViewModels.chartViewModel>
+﻿@model List<hypster.ViewModels.chartViewModel>
 @{
     ViewBag.Title = "Playlists of music charts online";
     ViewBag.Desc = "Listen to playlists of popular music charts online, create and extend your own music playlist";
@@ -25,10 +23,7 @@
     if (i_counter == 3)
     {
         <div style=" float:left; width:100%; margin:25px 0 15px 0;">
-        @if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"]))
-        {
             @Html.Partial("~/Views/hypAds/ad_728x90_mid.cshtml")
-        }
         </div>
     }
 }

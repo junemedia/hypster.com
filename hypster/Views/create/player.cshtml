@@ -1,6 +1,4 @@
-﻿@using System.Configuration;
-
-@model hypster.ViewModels.createPlayer_ViewModel
+﻿@model hypster.ViewModels.createPlayer_ViewModel
 @{
     ViewBag.Title = "Create Free Player | Hypster - free music online - player for tumblr";
     ViewBag.Desc = "Create music player for tumblr or website.";
@@ -66,8 +64,7 @@
 
 
 
-@if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"])) {
-    <div class="shrTopC1" style=" margin:40px 0 40px 0; ">
-        <span>@Html.Partial("~/Views/hypAds/ad_728x90.cshtml")</span>
-    </div>
- }
+
+<div class="shrTopC1" style=" margin:40px 0 40px 0; ">
+    <span>@Html.Partial("~/Views/hypAds/ad_728x90.cshtml")</span>
+</div>

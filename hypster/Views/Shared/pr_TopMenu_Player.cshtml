@@ -1,16 +1,19 @@
-﻿@using System.Configuration;
-@{
+﻿@{
     Layout = null;
     hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
 }
 
-@if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"])){
-    <div style=" float:left; width:100%; height:95px; background-color:#FFFFFF;">
-        <span style=" display:block; width:728px; height:95px; margin:auto;">
-            @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
-          </span>
-    </div>
-}
+
+<div style=" float:left; width:100%; height:95px; background-color:#FFFFFF;">
+    <span style=" display:block; width:728px; height:95px; margin:auto;">
+        
+        @Html.Partial("~/Views/hypAds/ad_728x90.cshtml") <!-- 06_25 -->
+        
+    </span>
+</div>
+
+
+
 
 <div class="ContentHeaderInner">
     <div id="MainMenu">

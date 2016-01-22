@@ -2,7 +2,6 @@
 <html>
 <head>
 
-    @using System.Configuration;
 
     @if (Request.Browser.IsMobileDevice)
     {
@@ -63,19 +62,43 @@
 
         <div class="ContentRootCont" >
              @RenderBody()
+<div style="text-align:center;">
 
-            @if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"])) { 
-           
-            <div style="text-align:center;">
+	<!--/* OpenX Asynchronous JavaScript tag */-->
 
-	            @Html.Partial("~/Views/hypAds/i_pl_mid_300x250.cshtml")
+	<!-- /*
+	 * The tag in this template has been generated for use on a
+	 * non-SSL page. If this tag is to be placed on an SSL page, change the
+	 * 'http://ox-d.junemedia.com/...'
+	 * to
+	 * 'https://ox-d.junemedia.com/...'
+	 */ -->
+	 
 
-            </div>   }     
+	<div id="537983176_300x250_mid" style="width:300px;height:250px;margin:0;padding:0">
+	  <noscript><iframe id="6f8c2ee950" name="6f8c2ee950" src="http://ox-d.junemedia.com/w/1.0/afr?auid=537983176&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="300" height="250"><a href="http://ox-d.junemedia.com/w/1.0/rc?cs=6f8c2ee950&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ox-d.junemedia.com/w/1.0/ai?auid=537983176&cs=6f8c2ee950&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript>
+	</div>
+	<script type="text/javascript">
+	  var OX_ads = OX_ads || [];
+	  OX_ads.push({
+		 slot_id: "537983176_300x250_mid",
+		 auid: "537983176"
+	  });
+	</script>
+
+	<script type="text/javascript" src="http://ox-d.junemedia.com/w/1.0/jstag"></script>
+
+</div>        
         </div>
-            
+    
         <div class="push"></div>
     </div>
 
+
+
+
+
+    
     <div class="ContentFooterCont">
         @Html.Partial("~/Views/Shared/pr_BottomFooter.cshtml")
     </div>

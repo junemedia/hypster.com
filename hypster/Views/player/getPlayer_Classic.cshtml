@@ -1,6 +1,4 @@
-﻿@using System.Configuration;
-
-@model hypster.ViewModels.GetPlayerViewModel
+﻿@model hypster.ViewModels.GetPlayerViewModel
 @{
     ViewBag.Title = "Hypster - Classic player";
     ViewBag.Desc = "";
@@ -173,9 +171,7 @@
             
             
             <div style=" float:left; width:300px; height:250px; margin:0 0 0 15px;">
-            @if (Convert.ToBoolean(ConfigurationManager.AppSettings["AdsEnabled"])) {
                 @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
-            }
             </div>
 
         }
