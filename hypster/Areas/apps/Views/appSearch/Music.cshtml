@@ -50,7 +50,7 @@
 
                     <div class="lfCont" style="width:100%;">
                     
-                        <img alt="" class="imgThumb" src="@item.Snippet.Thumbnails.Default__.Url" onclick="OpenPlayerM('/apps/appPlaylists/song/@item.Id.VideoId?@HttpUtility.UrlEncode(item.Snippet.Title)');" />
+                        <img alt="" class="imgThumb" src="@item.Snippet.Thumbnails.Default.Url" onclick="OpenPlayerM('/apps/appPlaylists/song/@item.Id.VideoId?@HttpUtility.UrlEncode(item.Snippet.Title)');" />
                     
                         <div class="songCont" style="width:60%;" onclick="OpenPlayerM('/apps/appPlaylists/song/@item.Id.VideoId?@HttpUtility.UrlEncode(item.Snippet.Title)');">
                             @item.Snippet.Title
