@@ -693,9 +693,8 @@ namespace hypster.Areas.apps.Controllers
             HypDB.SaveChanges();
 
 
-           // hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
-            hypster_email_manager.Email_Manager emailManager = new hypster_email_manager.Email_Manager();
-            emailManager.SendFeedbackEmail(Subject, YourEmail, Message);
+            hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
+             emailManager.SendFeedbackEmail(Subject, YourEmail, Message);
     
             
 
