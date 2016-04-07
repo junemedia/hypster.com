@@ -7709,7 +7709,7 @@ a.captionOrange:hover
 
 .mListenTopH
 {
-    float:left; width:100%; height:160px; background:url(/imgs/listen_back.png) no-repeat; margin:0 0 0 0;
+    float:left; width:100%; height:45px; margin:0 0 0 0;
     background-size:150%;
 }
 
@@ -8069,7 +8069,7 @@ a.captionOrange:hover
 
 .crtHdr1
 {
-    float:left; width:100%; height:165px; background:url(/imgs/create_back.png) no-repeat; margin:0 0 0 0;
+    float:left; width:100%; height:45px; margin:0 0 0 0;
     background-size:160%;
 }
 
@@ -8110,17 +8110,9 @@ a.captionOrange:hover
 
 .crtPlstHdr1
 {
-    float:left; width:100%; height:155px; background:url(/imgs/create_back.png) no-repeat; margin:0 0 0 0;
+    float:left; width:100%; height:45px; margin:0 0 0 0;
     background-size:150%;
 }
-
-/*
-.crtPlstHdr1 .listenMenuCont
-{
-    margin:100px 0 0 0; height:35px; border-bottom:3px solid #cac9cb;
-}
-*/
-
 
 #CreatePlaylistSection1
 {
@@ -8262,7 +8254,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -6px -237px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 .flwUs_yw_twr
@@ -8274,7 +8265,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -54px -237px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 .flwUs_yw_tum
@@ -8286,7 +8276,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -101px -237px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 
@@ -8302,7 +8291,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -7px -127px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 .flwUs_bk_twr
@@ -8314,7 +8302,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -55px -127px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 .flwUs_bk_tum
@@ -8326,7 +8313,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -101px -127px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 
@@ -8342,7 +8328,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -6px -14px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 .flwUs_wt_twr
@@ -8354,7 +8339,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -54px -14px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 .flwUs_wt_tum
@@ -8366,7 +8350,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -101px -14px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 
@@ -8544,7 +8527,7 @@ a.captionOrange:hover
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 .mAccountTopH
 {
-    float:left; width:100%; height:175px; background:url(/imgs/info_back.png) no-repeat; margin:0 0 0 0;
+    float:left; width:100%; height:45px; margin:0 0 0 0;
     background-size:150%;
 }
 
@@ -8565,7 +8548,7 @@ a.captionOrange:hover
 
 .mContactsTopH
 {
-    float:left; width:100%; height:119px; background:url(/imgs/contact_us_back.png) no-repeat; margin:0 0 0 0;
+    float:left; width:100%; height:45px; margin:0 0 0 0;
     background-size:180%;
 }
 

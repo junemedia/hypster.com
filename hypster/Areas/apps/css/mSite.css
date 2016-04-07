@@ -203,7 +203,7 @@ div.Trans_75
 	height:268px; 
 	overflow:hidden; 
 	padding:2px; 
-	background:url('/imgs/home_box_back.png') no-repeat;
+	/*background:url('/imgs/home_box_back.png') no-repeat;*/
 }
 
 #ShrContH1

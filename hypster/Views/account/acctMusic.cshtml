@@ -9,16 +9,16 @@
 
 
 
-<div style=" float:left; width:100%; height:292px; background:url(/imgs/info_back.png) no-repeat; margin:0 0 0 0;">
+<div style="float:left; width:100%; margin:0 0 0 0;">@*height:292px; background:url(/imgs/info_back.png) no-repeat;*@
         
 
-    <div class="listenMenuCont" style=" margin:260px 0 0 0; height:35px; border-bottom:3px solid #cac9cb;">
+    <div class="listenMenuCont" style="margin:50px 0 0 0; height:35px; border-bottom:3px solid #cac9cb;">@*margin:260px 0 0 0;*@
                 
         <div id="CreatePlaylistSection1" onclick="window.location='/account/info';" title="Search Music" >
             INFO
         </div>
 
-        <div id="CreatePlaylistSection2" onclick="window.location='/account/music';" title="Listen Playlists" style=" height:33px; color:#47bb90; border-bottom:3px solid #47bb90; margin-top:2px;">
+        <div id="CreatePlaylistSection2" onclick="window.location='/account/music';" title="Listen Playlists" style="height:33px; color:#47bb90; border-bottom:3px solid #47bb90; margin-top:2px;">
             MUSIC
         </div>
 
@@ -47,26 +47,26 @@
 { 
 
 <!-- **************SECTION 2*************************** -->
-<div id="Section2" style=" display:block;">
+<div id="Section2" style="display:block;">
 
 
 
 
 <div class="boxContLeft">
-    <div id="listenSlide1" class="slideLeft" style=" min-height:310px;">
+    <div id="listenSlide1" class="slideLeft" style="min-height:310px;">
         
             
-                <div style=" float:right; width:1024px; margin:0% 1% 1% 1%; text-align:left; ">
+                <div style="float:right; width:1024px; margin:0% 1% 1% 1%; text-align:left;">
                     
-                    <div style=" float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
+                    <div style="float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
                         MY FAVORITE GENRES
                     </div>
 
 
-                    <div style=" float:left; width:100%; color:#000000;">
+                    <div style="float:left; width:100%; color:#000000;">
                             @for (int i = 0; i < Model.musicGenres_list.Count; i++)
                             {
-                                <div style=" float:left; width:220px; margin:7px 0 0 10px; font-size:16px;">
+                                <div style="float:left; width:220px; margin:7px 0 0 10px; font-size:16px;">
                                     <input type="checkbox" name="musicGenres_list" value="@Model.musicGenres_list[i].Genre_ID" @if (@Model.musicGenres_list[i].selected == true) { <text> checked="checked" </text>} /> @Model.musicGenres_list[i].GenreName
                                 </div>
                             }
@@ -83,20 +83,20 @@
 
 
 <div class="boxContRight">
-    <div id="listenSlide2" class="slideRight" style=" min-height:260px;">
+    <div id="listenSlide2" class="slideRight" style="min-height:260px;">
         
 
-            <div style=" float:left; width:1024px;">
+            <div style="float:left; width:1024px;">
                 
 
-                <div style=" float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
+                <div style="float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
                     MY PLAYLISTS
                 </div>
 
 
-                <div style=" float:left; width:715px;">
+                <div style="float:left; width:715px;">
                         
-                        <div style=" float:left; width:100%; margin-top:3px;">
+                        <div style="float:left; width:100%; margin-top:3px;">
                             @{ int counter_userPlaylists_list = 0; }
                             @foreach (var item in @Model.userPlaylists_list)
                             {
@@ -112,41 +112,41 @@
 
                                 if (item.id == Model.curr_user.active_playlist)
                                 {
-                                    <div style=" float:left; width:720px; height:30px; margin-bottom:1px; margin-top:3px; ">
+                                    <div style="float:left; width:720px; height:30px; margin-bottom:1px; margin-top:3px;">
                                 
-                                        <div onclick="OpenPlayerM('/playlists/user/@User.Identity.Name?@item.id');" style=" float:left; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
-                                            <img alt="" src="/imgs/play_icon_lte.png" style=" margin:7px 7px 0 7px;" />
+                                        <div onclick="OpenPlayerM('/playlists/user/@User.Identity.Name?@item.id');" style="float:left; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
+                                            <img alt="" src="/imgs/play_icon_lte.png" style="margin:7px 7px 0 7px;" />
                                         </div>
 
-                                        <div onclick="OpenPlayerM('/playlists/user/@User.Identity.Name?@item.id');" style="float:left; width:630px; height:30px; line-height:30px; margin:0px 4px 0 4px; padding-left:3px; background-color:#EDEDED;  text-align:left; color:#d4ae52; cursor:pointer; ">
+                                        <div onclick="OpenPlayerM('/playlists/user/@User.Identity.Name?@item.id');" style="float:left; width:630px; height:30px; line-height:30px; margin:0px 4px 0 4px; padding-left:3px; background-color:#EDEDED;  text-align:left; color:#d4ae52; cursor:pointer;">
                                             @item.name
                                         </div>
-                                        <div onclick="window.location='/create/playlist?playlist_id=@item.id&us_id=@Model.curr_user.id';" style=" float:left; width:35px; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
-                                            <img alt="" src="/imgs/action_icons/edit_icon_s.png" style=" margin:5px 7px 0 10px;" />
+                                        <div onclick="window.location='/create/playlist?playlist_id=@item.id&us_id=@Model.curr_user.id';" style="float:left; width:35px; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
+                                            <img alt="" src="/imgs/action_icons/edit_icon_s.png" style="margin:5px 7px 0 10px;" />
                                         </div>
                                     </div>
                                 }
                                 else
                                 {
-                                    <div style=" float:left; width:720px; height:30px; margin-bottom:1px; margin-top:3px; ">
+                                    <div style="float:left; width:720px; height:30px; margin-bottom:1px; margin-top:3px;">
                                 
-                                        <div onclick="OpenPlayerM('/playlists/user/@User.Identity.Name?@item.id');" style=" float:left; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
-                                            <img alt="" src="/imgs/play_icon_lte.png" style=" margin:7px 7px 0 7px;" />
+                                        <div onclick="OpenPlayerM('/playlists/user/@User.Identity.Name?@item.id');" style="float:left; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
+                                            <img alt="" src="/imgs/play_icon_lte.png" style="margin:7px 7px 0 7px;" />
                                         </div>
 
-                                        <div onclick="OpenPlayerM('/playlists/user/@User.Identity.Name?@item.id');" style="float:left; width:630px; height:30px; line-height:30px; margin:0px 4px 0 4px; padding-left:3px; background-color:#EDEDED;  text-align:left; cursor:pointer; ">
+                                        <div onclick="OpenPlayerM('/playlists/user/@User.Identity.Name?@item.id');" style="float:left; width:630px; height:30px; line-height:30px; margin:0px 4px 0 4px; padding-left:3px; background-color:#EDEDED;  text-align:left; cursor:pointer;">
                                             @item.name
                                         </div>
-                                        <div onclick="window.location='/create/playlist?playlist_id=@item.id&us_id=@Model.curr_user.id';" style=" float:left; width:35px; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
-                                            <img alt="" src="/imgs/action_icons/edit_icon_s.png" style=" margin:5px 7px 0 10px;" />
+                                        <div onclick="window.location='/create/playlist?playlist_id=@item.id&us_id=@Model.curr_user.id';" style="float:left; width:35px; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
+                                            <img alt="" src="/imgs/action_icons/edit_icon_s.png" style="margin:5px 7px 0 10px;" />
                                         </div>
                                     </div>
                                 }
                             }
-                            <a href="/create/playlist" style=" display:block; float:left; width:230px; height:27px; line-height:27px; text-align:left; background-color:#3fbc91; color:#FFFFFF; border-radius:3px; margin-top:7px; padding-left:7px; cursor:pointer;">
+                            <a href="/create/playlist" style="display:block; float:left; width:230px; height:27px; line-height:27px; text-align:left; background-color:#3fbc91; color:#FFFFFF; border-radius:3px; margin-top:7px; padding-left:7px; cursor:pointer;">
                                 + Create Playlist
                             </a>
-                            <a href="/create/playlist" style=" display:block; float:left; width:230px; height:27px; line-height:27px; text-align:left; background-color:#3fbc91; color:#FFFFFF; border-radius:3px; margin-top:7px; margin-left:10px; padding-left:7px; cursor:pointer;">
+                            <a href="/create/playlist" style="display:block; float:left; width:230px; height:27px; line-height:27px; text-align:left; background-color:#3fbc91; color:#FFFFFF; border-radius:3px; margin-top:7px; margin-left:10px; padding-left:7px; cursor:pointer;">
                                 Manage Playlists
                             </a>
 
@@ -156,7 +156,7 @@
 
 
 
-                <div style=" float:left; width:300px; height:250px; margin-top:5px; ">
+                <div style="float:left; width:300px; height:250px; margin-top:5px;">
                     <div id="SideAd98403712dejk">
                         @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
                     </div>
@@ -177,41 +177,41 @@
 
 
 <div class="boxContLeft" >
-    <div id="listenSlide3" class="slideLeft" style=" min-height:100px;">
+    <div id="listenSlide3" class="slideLeft" style="min-height:100px;">
             
 
-             <div style=" float:right; width:1010px; margin:1%; text-align:left; ">
+             <div style="float:right; width:1010px; margin:1%; text-align:left;">
                     
-                    <div style=" float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
+                    <div style="float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
                         MY PLAYERS
                     </div>
 
 
-                    <div style=" float:left; width:100%; ">
+                    <div style="float:left; width:100%;">
     
                         @{
                         int back_id = 1;
                         }                       
                         @foreach (var item in Model.userPlayers_list)
                         {
-                            <div style=" float:left; width:100%; text-align:left;">
+                            <div style="float:left; width:100%; text-align:left;">
                                 
 
-                                <div style=" @if (back_id == 1){ <text>background-color:#EDEDED;</text>}else{<text>background-color:#EDEDED;</text>} float:left; width:91%; height:35px; line-height:30px; overflow:hidden; margin-top:3px; cursor:pointer; ">
-                                    <div style=" float:left; margin:3px 0 0 5px; font-size:16px;">
+                                <div style="@if (back_id == 1){ <text>background-color:#EDEDED;</text>}else{<text>background-color:#EDEDED;</text>} float:left; width:91%; height:35px; line-height:30px; overflow:hidden; margin-top:3px; cursor:pointer;">
+                                    <div style="float:left; margin:3px 0 0 5px; font-size:16px;">
                                         @item.player_Name
                                     </div>
                                 </div>
 
-                                <div onclick="window.location='/create/player/@item.Player_Type?Pl_ID=@item.player_ID';" style=" @if (back_id == 1){ <text>background-color:#EDEDED;</text>}else{<text>background-color:#EDEDED;</text>} float:left; height:35px; line-height:35px; text-align:left; color:#FFFFFF; font-size:11px; margin-top:3px; margin-left:4px; cursor:pointer;">
-                                    <img alt="" src="/imgs/action_icons/edit_icon_s.png" style=" margin:10px 10px 0 10px;" />
+                                <div onclick="window.location='/create/player/@item.Player_Type?Pl_ID=@item.player_ID';" style="@if (back_id == 1){ <text>background-color:#EDEDED;</text>}else{<text>background-color:#EDEDED;</text>} float:left; height:35px; line-height:35px; text-align:left; color:#FFFFFF; font-size:11px; margin-top:3px; margin-left:4px; cursor:pointer;">
+                                    <img alt="" src="/imgs/action_icons/edit_icon_s.png" style="margin:10px 10px 0 10px;" />
                                 </div>
 
-                                <div onclick="if(confirm('Are you sure you want to delete?') == true ){window.location='/player/getPlayer?ACT=DeletePlayer&Pl_ID=@item.player_ID';}" style=" @if (back_id == 1)
+                                <div onclick="if(confirm('Are you sure you want to delete?') == true ){window.location='/player/getPlayer?ACT=DeletePlayer&Pl_ID=@item.player_ID';}" style="@if (back_id == 1)
                                                                                                                                                                                              { <text>background-color:#EDEDED;</text>}
                                                                                                                                                                                              else
                                                                                                                                                                                              {<text>background-color:#EDEDED;</text>} float:left; height:35px; line-height:35px; text-align:left; color:#FFFFFF; font-size:11px; margin-top:3px; margin-left:4px; cursor:pointer;">
-                                    <img alt="" src="/imgs/action_icons/delete_icon_s.png" style=" margin:10px 10px 0 10px;" />
+                                    <img alt="" src="/imgs/action_icons/delete_icon_s.png" style="margin:10px 10px 0 10px;" />
                                 </div>
                             </div>
                             
@@ -237,51 +237,51 @@
 
 
 <div class="boxContRight" >
-    <div id="listenSlide4" class="slideRight" style=" min-height:260px;">
+    <div id="listenSlide4" class="slideRight" style="min-height:260px;">
         
 
-           <div style=" float:left; width:1024px; margin-bottom:10px;">
+           <div style="float:left; width:1024px; margin-bottom:10px;">
             
                 
-                <div style=" float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
+                <div style="float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
                     MY STATIONS
                 </div>
                 
 
 
-                <div id="stationsA" style=" float:left; width:715px;">
+                <div id="stationsA" style="float:left; width:715px;">
                     
-                        <div style=" float:left; width:100%; margin-top:3px;">
+                        <div style="float:left; width:100%; margin-top:3px;">
                             @foreach (var item in @Model.radioStation_list)
                             {
                                 if (item.RadioStationName != null && item.RadioStationQuery != null)
                                 {
-                                    <div style=" float:left; width:100%; margin-bottom:4px;">
+                                    <div style="float:left; width:100%; margin-bottom:4px;">
                             
-                                        <div onclick="OPLRRadio('@item.RadioStationQuery.Replace(" ", "+")')" style=" float:left; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
-                                            <img alt="" src="/imgs/play_icon_lte.png" style=" margin:7px 7px 0 7px;" />
+                                        <div onclick="OPLRRadio('@item.RadioStationQuery.Replace(" ", "+")')" style="float:left; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
+                                            <img alt="" src="/imgs/play_icon_lte.png" style="margin:7px 7px 0 7px;" />
                                         </div>
 
 
-                                        <div onclick="OPLRRadio('@item.RadioStationQuery.Replace(" ", "+")')" style=" float:left; width:620px; height:26px; line-height:25px; background-color:#EDEDED; padding:2px 2px 2px 10px;  margin-left:4px; cursor:pointer;">
+                                        <div onclick="OPLRRadio('@item.RadioStationQuery.Replace(" ", "+")')" style="float:left; width:620px; height:26px; line-height:25px; background-color:#EDEDED; padding:2px 2px 2px 10px;  margin-left:4px; cursor:pointer;">
                                             @item.RadioStationName
                                         </div>
 
                         
-                                        <div onclick="if(confirm('Are you sure you want to delete?') == true){window.location='/account/deleteStation?station=@item.RadioStation_ID';}" style=" float:left; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED; margin-left:4px; cursor:pointer;">
-                                            <img alt="" src="/imgs/action_icons/delete_icon_s.png" style=" margin:7px 7px 0 7px;" />
+                                        <div onclick="if(confirm('Are you sure you want to delete?') == true){window.location='/account/deleteStation?station=@item.RadioStation_ID';}" style="float:left; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED; margin-left:4px; cursor:pointer;">
+                                            <img alt="" src="/imgs/action_icons/delete_icon_s.png" style="margin:7px 7px 0 7px;" />
                                         </div>
                                     </div>
                                 }
                             }
-                            <a href="/create/station" style=" display:block; float:left; width:180px; height:27px; line-height:27px; text-align:left; background-color:#3fbc91; color:#FFFFFF; border-radius:3px; margin-top:5px; padding-left:7px; cursor:pointer;">
+                            <a href="/create/station" style="display:block; float:left; width:180px; height:27px; line-height:27px; text-align:left; background-color:#3fbc91; color:#FFFFFF; border-radius:3px; margin-top:5px; padding-left:7px; cursor:pointer;">
                                 + Create Station
                             </a>
                         </div>
                 </div>
 
 
-                <div style=" float:left; width:300px; height:250px; margin-top:3px; ">
+                <div style="float:left; width:300px; height:250px; margin-top:3px;">
                     <div id="SideAdiw8o302e3791">
                         @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
                     </div>
@@ -306,36 +306,36 @@
 
 
     
-<div style=" float:left; width:100%; margin:30px 0 0 0;">
+<div style="float:left; width:100%; margin:30px 0 0 0;">
             
         <a name="plstil"></a>
             
-        <div style=" float:left; width:1024px; margin-bottom:10px;">
+        <div style="float:left; width:1024px; margin-bottom:10px;">
                 
-                <div style=" float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
+                <div style="float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
                     PLAYLISTS I LIKE
                 </div>
                 
 
-                <div style=" float:left; width:710px; ">
+                <div style="float:left; width:710px;">
                 @foreach (var item in Model.playlists_I_like)
                 {
-                    <div style=" float:left; width:100%; min-height:30px; margin-bottom:1px; margin-top:3px; ">
+                    <div style="float:left; width:100%; min-height:30px; margin-bottom:1px; margin-top:3px;">
                             
 
-                            <div onclick="OpenPlayerM('/playlists/user/@(item.username)?@(item.id)')" style=" float:left; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
-                                <img alt="" src="/imgs/play_icon_lte.png" style=" margin:7px 7px 0 7px;" />
+                            <div onclick="OpenPlayerM('/playlists/user/@(item.username)?@(item.id)')" style="float:left; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
+                                <img alt="" src="/imgs/play_icon_lte.png" style="margin:7px 7px 0 7px;" />
                             </div>
 
-                            <div onclick="OpenPlayerM('/playlists/user/@(item.username)?@(item.id)')" style="float:left; width:620px; height:30px; line-height:30px; margin:0px 4px 0 4px; padding-left:3px; background-color:#EDEDED;  text-align:left; color:#000000; cursor:pointer; ">
+                            <div onclick="OpenPlayerM('/playlists/user/@(item.username)?@(item.id)')" style="float:left; width:620px; height:30px; line-height:30px; margin:0px 4px 0 4px; padding-left:3px; background-color:#EDEDED;  text-align:left; color:#000000; cursor:pointer;">
                                 @item.name
 
                                 <a class="PlstViewsFp" title="@item.ViewsNum views">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(item.ViewsNum)</a>
                                 <a class="PlstLikesFp" title="@item.Likes likes">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(item.Likes)</a>
                             </div>
 
-                            <div onclick="if(confirm('Are you sure you want to delete?') == true){ window.location='/account/DeleteLikedPlaylist?playlist_id=@item.id&us_id=@Model.curr_user.id'; }" style=" float:left; width:35px; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
-                                <img alt="" src="/imgs/action_icons/delete_icon_s.png" style=" margin:5px 7px 0 10px;" />
+                            <div onclick="if(confirm('Are you sure you want to delete?') == true){ window.location='/account/DeleteLikedPlaylist?playlist_id=@item.id&us_id=@Model.curr_user.id'; }" style="float:left; width:35px; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
+                                <img alt="" src="/imgs/action_icons/delete_icon_s.png" style="margin:5px 7px 0 10px;" />
                             </div>
 
                     </div>
@@ -343,7 +343,7 @@
                 </div>
 
 
-                <div style=" float:left; width:300px; height:250px; margin-top:0px; ">
+                <div style="float:left; width:300px; height:250px; margin-top:0px;">
                     <div id="SideAdiw8o302e3791">
                         @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
                     </div>
@@ -363,20 +363,20 @@
 
 
 
-<div style=" float:left; width:100%; margin:30px 0 30px 0;">
+<div style="float:left; width:100%; margin:30px 0 30px 0;">
             
 
 
-            <div style=" float:right; width:1024px;">
+            <div style="float:right; width:1024px;">
                  
-                 <input type="submit" value="SAVE CHANGES" style=" float:right; width:280px; height:40px; line-height:40px; margin:3px 0 0 0; background-color:#3fbc91; border:1px solid #3fbc91; border-radius:3px; color:#FFFFFF; font-family:'Lato', sans-serif; font-weight:lighter; font-size:26px; text-align:center; cursor:pointer; " />
+                 <input type="submit" value="SAVE CHANGES" style="float:right; width:280px; height:40px; line-height:40px; margin:3px 0 0 0; background-color:#3fbc91; border:1px solid #3fbc91; border-radius:3px; color:#FFFFFF; font-family:'Lato', sans-serif; font-weight:lighter; font-size:26px; text-align:center; cursor:pointer;" />
 
                  <div class="mFollowUsCont1">
                         
                     <div class="fuText">
                         Follow Us:
                     </div>
-                    <div style=" float:left; margin:0px 0 0 5px;">
+                    <div style="float:left; margin:0px 0 0 5px;">
                         <a class="flwUs_wt_fbk" href="https://www.facebook.com/Hypster" target="_blank"></a>
                         <a class="flwUs_wt_twr" href="https://twitter.com/Hypsterdotcom" target="_blank"></a>
                         <a class="flwUs_wt_tum" href="http://hypsterblog.tumblr.com/" target="_blank"></a>

@@ -7703,7 +7703,7 @@ a.captionOrange:hover
 
 .mListenTopH
 {
-    float:left; width:100%; height:220px; background:url(/imgs/listen_back.png) no-repeat; margin:0 0 0 0;
+    float:left; width:100%; height:45px; margin:0 0 0 0;
     background-size:180%;
 }
 
@@ -8072,7 +8072,7 @@ a.captionOrange:hover
 
 .crtHdr1
 {
-    float:left; width:100%; height:115px; background:url(/imgs/create_back.png) no-repeat; margin:0 0 0 0;
+    float:left; width:100%; height:45px; margin:0 0 0 0;
     background-size:180%;
 }
 
@@ -8113,7 +8113,7 @@ a.captionOrange:hover
 
 .crtPlstHdr1
 {
-    float:left; width:100%; height:220px; background:url(/imgs/create_back.png) no-repeat; margin:0 0 0 0;
+    float:left; width:100%; height:45px; margin:0 0 0 0;
     background-size:150%;
 }
 
@@ -8264,7 +8264,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -6px -237px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 .flwUs_yw_twr
@@ -8276,7 +8275,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -54px -237px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 .flwUs_yw_tum
@@ -8288,7 +8286,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -101px -237px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 
@@ -8304,7 +8301,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -7px -127px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 .flwUs_bk_twr
@@ -8316,7 +8312,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -55px -127px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 .flwUs_bk_tum
@@ -8328,7 +8323,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -101px -127px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 
@@ -8344,7 +8338,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -6px -14px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 .flwUs_wt_twr
@@ -8356,7 +8349,6 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -54px -14px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 .flwUs_wt_tum
@@ -8368,21 +8360,10 @@ a.captionOrange:hover
     background:url(/imgs/follow_us_btns.png) no-repeat -101px -14px;
     cursor:pointer;
     margin:0 0 0 10px;
-    /*border:1px solid #CC0000;*/
 }
 
 
-
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 .loginPMCH
 {
@@ -8439,14 +8420,6 @@ a.captionOrange:hover
     float:left; width:75%; height:35px; line-height:35px; margin:0 0 0 5px; border:none; outline:none;
 }
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 .registerPMCH
@@ -8533,20 +8506,10 @@ a.captionOrange:hover
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 .mAccountTopH
 {
-    float:left; width:100%; height:165px; background:url(/imgs/info_back.png) no-repeat; margin:0 0 0 0;
+    float:left; width:100%; height:45px; margin:0 0 0 0;
     background-size:180%;
 }
 
@@ -8556,18 +8519,10 @@ a.captionOrange:hover
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
 .mContactsTopH
 {
-    float:left; width:100%; height:119px; background:url(/imgs/contact_us_back.png) no-repeat; margin:0 0 0 0;
+    float:left; width:100%; height:45px; margin:0 0 0 0;
     background-size:180%;
 }
 
@@ -8628,18 +8583,7 @@ a.captionOrange:hover
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
 .aboutMCH
 {
     float:left; width:100%; margin:10px 0 0 0;
@@ -8664,25 +8608,11 @@ a.captionOrange:hover
 
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
 .acctInfoCH
 {
     float:left; width:100%; margin:35px 0 0 0;
 }
-
-
 
 .acctInfoCH .acctInfoERow
 {
@@ -8693,9 +8623,6 @@ a.captionOrange:hover
 {
     float:right; width:100%; margin:15px 0 0 5px;
 }
-
-
-
 
 .acctInfoCH .acctIName
 {
@@ -8811,19 +8738,11 @@ a.captionOrange:hover
     float:left; width:86px; height:37px; border:1px solid #d4ae52; margin-left:4px; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
 }
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 .acctInfoSaveCH
 {
     float:left; width:100%; margin:40px 0 30px 0;
 }
-
 
 .acctInfoSaveCH .acctSaveChgsBtn
 {
@@ -8842,22 +8761,11 @@ a.captionOrange:hover
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
 .acctMyPlstsCH
 {
     float:left; width:100%;
 }
-
 
 .acctMyPlstsCH .MyPlstsInnr
 {
@@ -8884,9 +8792,6 @@ a.captionOrange:hover
     float:left; width:35px; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;
 }
 
-
-
-
 .acctMyPlstsCH .myPlstsCreatePL
 {
     display:block; float:left; width:145px; height:27px; line-height:27px; text-align:left; background-color:#3fbc91; color:#FFFFFF; border-radius:3px; margin-top:7px; padding-left:7px; cursor:pointer;
@@ -8896,10 +8801,6 @@ a.captionOrange:hover
 {
     display:block; float:left; width:145px; height:27px; line-height:27px; text-align:left; background-color:#3fbc91; color:#FFFFFF; border-radius:3px; margin-top:7px; margin-left:10px; padding-left:7px; cursor:pointer;
 }
-
-
-
-
 
 .acctMyPlayersCH
 {
@@ -9012,14 +8913,7 @@ a.captionOrange:hover
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
 .brkLeftCH
 {
     float:left; width:100%;
@@ -9059,25 +8953,11 @@ a.captionOrange:hover
 
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
 .GMRwdsPrCH
 {
     float:left; margin-bottom:20px; width:98%;
 }
-
-
 
 .GMRwdsPrCH .GMR_name
 {
@@ -9091,8 +8971,6 @@ a.captionOrange:hover
 {
     float:left; outline: none; width:60%; height:22px; margin:2px 0 0 5px; background-color:#FFFFFF;  border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
 }
-
-
 
 .GMRwdsPrCH .GMR_twitch
 {

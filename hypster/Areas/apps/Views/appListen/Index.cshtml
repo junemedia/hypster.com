@@ -8,10 +8,6 @@
     ViewBag.LinkTag = "<link rel=\"canonical\" href=\"http://hypster.com/listen\" >";
 }
 
-
-
-
-
 <script type="text/javascript">
     active_menu = ".mListen";
     @if (ViewBag.ActiveMenu == "RADIO")
@@ -24,56 +20,31 @@
     }
 </script>
 
+<div class="listenMenuCont">     
+    <div id="Menu1" onclick="Open_Menu1()" title="Search Music">
+        SEARCH MUSIC
+    </div>
 
-
-
-
-
-
-
-
-<!--div class="mListenTopH"></div-->
-<img alt="" src="/imgs/listen_back.png" style=" float:left; width:100%;" />
-
-
-<div class="listenMenuCont">
-                
-        <div id="Menu1" onclick="Open_Menu1()" title="Search Music">
-            SEARCH MUSIC
-        </div>
-
-        @if (User.Identity.IsAuthenticated == true)
-        {
-        <div id="Menu3" class="Menu3_LG" onclick="Open_Menu3()" title="Listen Playlists">
-            MY PLAYLISTS
-        </div>
-        }
-        else
-        {
-        <div id="Menu3" class="Menu3" onclick="Open_Menu3()" title="Listen Playlists">
-            PLAYLISTS
-        </div>
-        }
+    @if (User.Identity.IsAuthenticated == true)
+    {
+    <div id="Menu3" class="Menu3_LG" onclick="Open_Menu3()" title="Listen Playlists">
+        MY PLAYLISTS
+    </div>
+    }
+    else
+    {
+    <div id="Menu3" class="Menu3" onclick="Open_Menu3()" title="Listen Playlists">
+        PLAYLISTS
+    </div>
+    }
         
 
-        <div id="Menu2" onclick="Open_Menu2();" title="Listen Radio Stations">
-            HYPSTER RADIO
-        </div>
-
+    <div id="Menu2" onclick="Open_Menu2();" title="Listen Radio Stations">
+        HYPSTER RADIO
+    </div>
 </div>
-
-
-
-
-
-
-
-
-
               
-<div class="listenTabCh2">
-
-                    
+<div class="listenTabCh2">       
             <div id="listenTab1" style=" margin-top:20px;">
                 <div id="MainSearchLn" class="contTop">
                         
@@ -87,13 +58,6 @@
                                 <div id="btnSearch" onclick="SearchMusic();"></div>
                             </div>
 
-                            
-                            <!--div class="advSrchBtn" style=" float:right; margin:8px 20px 0 0;" onclick="showHide_AddSearch(this);">ADVANCED SEARCH</div-->
-
-
-
-
-                        
                             <div id="AddSearch">
                                 <div id="AddSearchIC">
 

@@ -23,14 +23,6 @@
     }
 </script>
 
-
-
-
-
-
-
-
-
 <div class="mListenTopH">
     <div class="listenMenuCont">
                 
@@ -49,22 +41,14 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
-              
 <div class="listenTabCh2">
 
                     
-            <div id="listenTab1" style=" margin-top:20px;">
+            <div id="listenTab1" style="margin-top:20px;">
                 <div id="MainSearchLn" class="contTop">
                         
 
-                        <div style=" float:left; width:675px; ">
+                        <div style="float:left; width:675px;">
                             <div class="srchListBox">
                                 <input type="text" id="txtSearchString" name="txtSearchString" onKeyUp="ListenSearchString_KeyUp(event)" value="@if (@ViewBag.searchString != null){<text>@ViewBag.searchString</text>}else{<text> Enter Artist, Song or Genre</text>}" onfocus="if(this.value == ' Enter Artist, Song or Genre') this.value = '';" onblur="if(this.value == '') this.value = ' Enter Artist, Song or Genre';" />
                                 <div id="btnSearch" onclick="SearchMusic();"></div>
