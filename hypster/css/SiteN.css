@@ -500,8 +500,7 @@
 
 .listenMenuCont
 {
-	float:left; width:100%;
-	width:100%; height:35px; margin:40px 0 0 0; border-bottom:3px solid #cac9cb;
+	float:left; width:100%; height:35px; border-bottom:3px solid #cac9cb;
 }
 
 .listenMenuCont #Menu1
@@ -523,13 +522,13 @@
 
 .listenTabCh2
 {
-    float:left; width:100%; min-height:70px; margin:20px 0 20px 0;
+    float:left; width:100%; min-height:70px; margin:10px 0 20px 0;
 }
 
 
 #listenSlideContHolder
 {
-    float:right; width:100%; min-height:0px; margin:0 0 20px 0; background-color:Black;
+    float:right; width:100%; min-height:0px; margin:0 0 10px 0; background-color:Black;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
@@ -538,13 +537,18 @@
 
 .GamehypeCh1
 {
-    width:100%; min-height:900px; margin:auto; background-color:none;
+    width:100%; min-height:900px;
 }
-
+.GamehypeCh2
+{
+    width:26%;
+    min-height: 900px;
+    float: right;
+    margin-top: 35px;
+}
 .GamehypeCh1 .GmhTitle
 {
-    float:right; width:90%; border-bottom:2px solid #3fbc91; margin:10px 0 0 0; font-size:64px; color:#FFFFFF;
-    cursor:pointer;
+    float:left; width:100%; border-bottom:2px solid #3fbc91; font-size:32px; cursor:pointer; font-weight:bold;
 }
 
 .GamehypeCh1 .GmhTblH
@@ -571,18 +575,18 @@
 
 .GamehypeCh1 .GmhTblCont
 {
-    float:left; width:100%; margin:0 0 20px 0;
+    float:left; width:100%;
 }
 
 .GamehypeCh1 .GmBox1
 {
-    float:left; width:230px; height:270px; border:1px solid #d4ae52; margin:0 0 0 22px;
+    float:left; width:230px; height:270px; border:1px solid #d4ae52; margin:0 0 0 10px;
     background-color:#FFFFFF;
 }
 
 .GamehypeCh1 .GmBox1 img
 {
-    margin:5px 0 0 22px;
+    margin:5px 0 0 10px;
 }
 
 .GmBox1 .GmBoxHdr
@@ -602,7 +606,7 @@
 
 .GmBox1 .GmBoxVS
 {
-    float:left; width:150px; height:22px; margin:5px 0 0 40px; text-align:center; background-color:#3fbc91; color:#FFFFFF; font-size:16px; border-radius:3px; cursor:pointer;
+    float:left; width:150px; height:22px; margin:5px 0 0 20px; text-align:center; background-color:#3fbc91; font-size:16px; border-radius:3px; cursor:pointer;
 }
 
 .GamehypeCh1 .GmBoxFrst
@@ -637,10 +641,6 @@
     float:left; width:150px; height:22px; margin:5px 0 0 0; text-align:center; background-color:#3fbc91; color:#FFFFFF; font-size:16px; border-radius:3px; cursor:pointer;
 }
 
-
-
-
-
 .GmhStmLeft1
 {
     float:left; width:720px;
@@ -672,7 +672,7 @@
 .GmhStmLeft1 .plstBtn1
 {
     position:relative; top:2px;
-    display:block; float:left; margin:0 0 0 0; cursor:pointer; color:#FFFFFF; font-weight:bold;
+    display:block; float:left; margin:0 0 0 0; cursor:pointer; font-weight:bold;
     border-bottom:2px solid #3fbc91;
 }
 
@@ -702,16 +702,12 @@
 
 .breakingMCH
 {
-    float:left; width:100%;
-    background:none; margin:20px 0 0 0;
+    float:left; width:100%; background:none;
 }
 
 .breakingMCH .brkngHDR
 {
-    display:block; float:left; width:100%; color:#000000; height:72px; line-height:70px; margin:0px; padding:3px; font-size:62px;
-    font-weight:300;    
-    border-bottom:2px solid #3fbc91;
-    background:none;
+    display:block; float:left; width:100%; margin:0px; font-size:32px;font-weight: bold; border-bottom:2px solid #3fbc91; background:none;
 }
 
 .brkngHDR1
@@ -723,10 +719,9 @@
 .breakingMCH #tagsHolder
 {
     float:left; width:100%; padding-bottom:10px;
-    height:160px; overflow:hidden;
-    background:none; margin:20px 0 0 0;
+    height:60px; overflow:hidden;
+    background:none; margin:10px 0 0 0;
 }
-
 
 .breakingMCH .brkngItm
 {
@@ -755,17 +750,17 @@
 
 #searchStr
 {
-    float:left; width:100%; height:110px; line-height:130px; font-size:85px; color:#000000;
+    float:left; width:100%;
 }
 
 .brkSrchHolder1
 {
-    float:left; width:620px; height:35px; border:1px solid #d4ae52; border-radius:6px;
+    float:left; width:655px; height:35px; border:1px solid #d4ae52; border-radius:6px;
 }
 
 .brkPagingCH1
 {
-    float:right; width:1024px; margin:20px 0 30px 0;
+    float:right; width:724px; margin:20px 0 30px 0;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
@@ -779,7 +774,7 @@
 
 .listenTabCh2 #searchStr
 {
-    float:left; width:100%; height:110px; line-height:130px; font-size:85px; color:#000000;
+    float:left; width:100%; font-size:24px; color:#000000;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
@@ -807,7 +802,6 @@
 {
     float:left; width:100%;
 }
-
 
 .crtMCh1 #CreateSection1_ST2
 {
@@ -847,19 +841,27 @@
     margin:50px 0 0 0; height:35px; border-bottom:3px solid #cac9cb;
 }
 
-#CreatePlaylistSection1
+.createMenuCont
 {
-	float:left; width:200px; height:30px; line-height:34px; margin:0 0 0 10px; border-radius:2px; text-align:center; font-family:'Lato', sans-serif;  font-weight:lighter; font-size:24px; color:#cac9cb; cursor:pointer;
+	float:left; width:100%; height:35px; border-bottom:3px solid #cac9cb;
 }
 
-#CreatePlaylistSection2
+.createMenuCont #CreatePlaylistSection1,
+.listenMenuCont #CreatePlaylistSection1
 {
-	float:left; width:240px; height:30px; line-height:34px; margin:0 0 0 10px; border-radius:2px; text-align:center; font-family:'Lato', sans-serif;  font-weight:lighter; font-size:24px; color:#cac9cb; cursor:pointer;
+	float:left; width:200px; height:30px; line-height:34px; margin:5px 0 0 10px; border-radius:2px; text-align:center; font-family:'Lato', sans-serif;  font-weight:lighter; font-size:24px; color:#cac9cb; cursor:pointer;
 }
 
-#CreatePlaylistSection3
+.createMenuCont #CreatePlaylistSection2,
+.listenMenuCont #CreatePlaylistSection2
 {
-	float:left; width:240px; height:30px; line-height:34px; margin:0 0 0 10px; border-radius:2px; text-align:center; font-family:'Lato', sans-serif;  font-weight:lighter; font-size:24px; color:#cac9cb; cursor:pointer;
+	float:left; width:200px; height:30px; line-height:34px; margin:5px 0 0 10px; border-radius:2px; text-align:center; font-family:'Lato', sans-serif;  font-weight:lighter; font-size:24px; color:#cac9cb; cursor:pointer;
+}
+
+.createMenuCont #CreatePlaylistSection3,
+.listenMenuCont #CreatePlaylistSection3
+{
+	float:left; width:200px; height:30px; line-height:34px; margin:5px 0 0 10px; border-radius:2px; text-align:center; font-family:'Lato', sans-serif;  font-weight:lighter; font-size:24px; color:#cac9cb; cursor:pointer;
 }
 
 
@@ -872,7 +874,7 @@
 
 .crtPlstCnt1 .CreateContHolder
 {
-    float:left; width:100%; margin-top:-1px;
+    float:left; width:100%;
 }
 
 
@@ -1069,7 +1071,7 @@
 .Post_mainCont h1
 {
 	width:95%; margin:10px 0px 0px 0px; font-weight:300;
-	margin-top:32px; font-size:38px; line-height:40px; color:#FFFFFF;
+	margin-top:32px; font-size:38px; line-height:40px; color:#000000;
 }
 
 .Post_mainCont .h1o
@@ -1098,7 +1100,7 @@
 
 .pst_BackCh1
 {
-    float:left; width:100%; min-height:620px; background:url(/imgs/brk_back_d.png) no-repeat;
+    float:left; width:100%; min-height:620px;
 }
 
 
@@ -1146,3 +1148,9 @@
 
 
 /*------------------------------------------------------------*/
+.activeTab {
+    height: 33px;
+    color: #47bb90;
+    border-bottom: 3px solid #47bb90;
+    margin-top: 2px;
+}

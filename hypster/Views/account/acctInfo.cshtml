@@ -6,9 +6,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div style="float:left; width:100%; margin:0 0 0 0;">
-    <div class="listenMenuCont" style="margin:50px 0 0 0; height:35px; border-bottom:3px solid #cac9cb;">
-        <div id="CreatePlaylistSection1" onclick="window.location='/account/info';" title="Search Music" style="height:33px; color:#47bb90; border-bottom:3px solid #47bb90; margin-top:2px;">
+<div style="float:left; width:70%;">
+    <div class="listenMenuCont" style="height:35px; border-bottom:3px solid #cac9cb;">
+        <div id="CreatePlaylistSection1" onclick="window.location='/account/info';" title="Search Music" style="height:32px; color:#47bb90; border-bottom:3px solid #47bb90; margin-top:2px; font-size:24px; font-weight:bold">
             INFO
         </div>
         <div id="CreatePlaylistSection2" onclick="window.location='/account/music';" title="Listen Playlists">
@@ -16,21 +16,21 @@
         </div>
     </div>
 </div>
-
+<div style="width:1050px">
 @using (Html.BeginForm("InfoPost", "account", FormMethod.Post))
-{   
+{
     <!-- **************SECTION*************************** -->
-    <div style="float:left; width:1024px; margin:35px 0 0 0;">
+    <div style="float:left; width:700px; margin:10px 10px 0 10px;">
         <div style="float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
             PERSONAL INFO
         </div>
-    
+
         <div style="float:left; width:100%;">
             <div style="float:left; width:714px; margin-bottom:0px;">
                 <div style="float:right; width:100%; margin:16px 0 0 20px;">
                     <div style="float:left; width:350px; height:30px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                         <div style="float:left; width:60px; margin:3px 0 0 0; text-align:right; color:#2f5262;">Name:</div>
-                        <input type="text" name="Name" id="Name" value="@Model.curr_user.name" maxlength="40" style="float:left; outline: none; width:250px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  />
+                        <input type="text" name="Name" id="Name" value="@Model.curr_user.name" maxlength="40" style="float:left; outline: none; width:250px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
                     </div>
 
                     <div style="float:left; width:325px; height:30px; margin-left:20px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
@@ -54,60 +54,51 @@
                 <div style="float:right; width:100%; margin:15px 0 0 20px;">
                     <div style="float:left; width:250px; height:30px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                         <div style="float:left; margin:3px 0 0 7px; color:#2f5262;">City:</div>
-                        <input type="text" name="City" id="City" value="@Model.curr_user.city" maxlength="30" style="float:left; outline: none; width:180px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  />
+                        <input type="text" name="City" id="City" value="@Model.curr_user.city" maxlength="30" style="float:left; outline: none; width:180px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
                     </div>
 
                     <div style="float:left; width:250px; height:30px; margin-left:20px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                         <div style="float:left; margin:3px 0 0 7px; color:#2f5262;">Country:</div>
-                        <input type="text" name="Country" id="Country" value="@Model.curr_user.country" maxlength="30" style="float:left; outline: none; width:160px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  />
+                        <input type="text" name="Country" id="Country" value="@Model.curr_user.country" maxlength="30" style="float:left; outline: none; width:160px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
                     </div>
 
                     <div style="float:left; width:152px; height:30px; margin-left:20px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                         <div style="float:left; margin:3px 0 0 7px; color:#2f5262;">Zip:</div>
-                        <input type="text" name="Zip" id="Zip" value="@Model.curr_user.zipcode" maxlength="10" style="float:left; outline: none; width:60px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  />
+                        <input type="text" name="Zip" id="Zip" value="@Model.curr_user.zipcode" maxlength="10" style="float:left; outline: none; width:60px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
                     </div>
                 </div>
-            
+
                 <div style="float:right; width:100%; margin:15px 0 0 5px;">
                     <div style="float:left; width:100px; height:30px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                         <div style="float:left; margin:3px 0 0 7px; color:#2f5262;">Birth Date:</div>
                     </div>
-
                     <div style="float:left; width:60px; height:30px; border:1px solid #d4ae52; margin-left:20px; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                         <select id="DOB_MM" name="DOB_MM" style="float:left; outline: none; width:50px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                             @for (int i = 1; i <= 12; i++)
                             {
-                                <option value="@i" @if (Model.curr_user.birth != null && Model.curr_user.birth.Value.Month == i)
-                                { <text>selected="selected"</text>}>@i</option>
+                                <option value="@i" @if (Model.curr_user.birth != null && Model.curr_user.birth.Value.Month == i) { <text> selected="selected" </text> }>@i</option>
                             }
                         </select>
                     </div>
 
-
-
                     <div style="float:left; width:60px; height:30px; border:1px solid #d4ae52; margin-left:20px; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
-                    
                         <select id="DOB_DD" name="DOB_DD" style="float:left; outline: none; width:50px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                             @for (int i = 1; i <= 31; i++)
                             {
-                                <option value="@i" @if (Model.curr_user.birth != null && Model.curr_user.birth.Value.Day == i)
-                                                    { <text>selected="selected"</text>} >@i</option>
+                                <option value="@i" @if (Model.curr_user.birth != null && Model.curr_user.birth.Value.Day == i) { <text> selected="selected" </text> }>@i</option>
                             }
                         </select>
-
                     </div>
 
                     <div style="float:left; width:90px; height:30px; border:1px solid #d4ae52; margin-left:20px; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
-                    
+
                         <select id="DOB_YYYY" name="DOB_YYYY" style="float:left; outline: none; width:80px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                             @for (int i = 1900; i <= 2012; i++)
                             {
-                                <option value="@i" @if (Model.curr_user.birth != null && Model.curr_user.birth.Value.Year == i)
-                                                    { <text>selected="selected"</text>}>@i</option>
+                                <option value="@i" @if (Model.curr_user.birth != null && Model.curr_user.birth.Value.Year == i) { <text> selected="selected" </text> }>@i</option>
                             }
                         </select>
                     </div>
-
                 </div>
 
                 <div style="float:left; width:100%; min-height:25px; margin-top:15px;">
@@ -117,7 +108,7 @@
                     </div>
 
                     <div id="changePassContHolder1" style="display:none; line-height:25px; width:380px; text-align:right;">
-                            
+
                         Old Password: <input type="password" name="OldUserPass" id="OldUserPass" maxlength="20" style="width:230px; height:18px; background-color:#DEDEDE; border:none; border-radius:2px;" />
                         <br />
                         New Password: <input type="password" name="NewUserPass" id="NewUserPass" maxlength="20" style="width:230px; height:18px; background-color:#DEDEDE; border:none; border-radius:2px;" />
@@ -127,18 +118,18 @@
 
                 </div>
 
-                <div style="float:left; width:100%; min-height:25px; margin-top:10px;">  
+                <div style="float:left; width:100%; min-height:25px; margin-top:10px;">
                     <div style="float:left; margin-left:0px; font-size:20px; color:#000000;">
                         I am interested in:
                     </div>
                     <div style="float:left; margin-left:25px; font-size:20px; color:#000000;">
-                        <input type="radio" name="interestP" value="1" @if (Model.curr_user.user_interest == 1){<text>checked="checked"</text>} /> Players
+                        <input type="radio" name="interestP" value="1" @if (Model.curr_user.user_interest == 1) { <text> checked="checked" </text> } /> Players
                     </div>
                     <div style="float:left; margin-left:25px; font-size:20px; color:#000000;">
-                        <input type="radio" name="interestP" value="2" @if (Model.curr_user.user_interest == 2){<text>checked="checked"</text>} /> Playlists
+                        <input type="radio" name="interestP" value="2" @if (Model.curr_user.user_interest == 2) { <text> checked="checked" </text> } /> Playlists
                     </div>
                     <div style="float:left; margin-left:25px; font-size:20px; color:#000000;">
-                        <input type="radio" name="interestP" value="3" @if (Model.curr_user.user_interest == 3){<text>checked="checked"</text>} /> Both
+                        <input type="radio" name="interestP" value="3" @if (Model.curr_user.user_interest == 3) { <text> checked="checked" </text> } /> Both
                     </div>
                 </div>
 
@@ -146,17 +137,10 @@
                     @ViewBag.ErrorStr
                 </div>
             </div>
-
-            <div style="float:left; width:300px; height:250px; margin-top:16px;">
-                <div id="SideAd9r3849eiw">
-                    @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
-                </div>
-                <!-- 06_25 -->
-            </div>
-        </div>    
+        </div>
     </div>
-         
-    <div style="float:left; width:1024px; margin:35px 0 0 0;">
+    <div style="margin:10px;">@Html.Partial("~/Views/Shared/pr_RightRail.cshtml")</div>
+    <div style="float:left; width:700px; margin:-130px 10px 0 10px;">
         <div style="float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
             MY PHOTOS
         </div>
@@ -167,14 +151,15 @@
                 <div style="float:left; width:120px; height:120px; border-radius:60px; overflow:hidden; margin:5px; background-color:#3fbc91; cursor:pointer;">
                     <img onclick="ShowImage('@Url.Content("/userpics/" + User.Identity.Name + "/" + @item.id + ".jpg")');" src="@Url.Content("/userpics/" + User.Identity.Name + "/" + @item.id + "_s.jpg")" alt="" style="float:left; width:120px; height:120px; margin:0px; background-color:#333333; border-radius:2px;" onerror="this.src='/imgs/user_img_nf.png';" />
                 </div>
-                        
+
                 if (icount > 12)
                 {
                     break;
                 }
                 icount = icount + 1;
             }
-            <div onclick="window.location='/account/pics';" style="float:left; width:120px; height:90px; line-height:20px; border-radius:60px; padding:30px 0 0 0;  margin:5px; background-color:#3fbc91; color:#FFFFFF; font-size:80px; cursor:pointer; text-align:center;">+<br />
+            <div onclick="window.location='/account/pics';" style="float:left; width:120px; height:90px; line-height:20px; border-radius:60px; padding:30px 0 0 0;  margin:5px; background-color:#3fbc91; color:#FFFFFF; font-size:80px; cursor:pointer; text-align:center;">
+                +<br />
                 <span style="font-size:22px;">PHOTO</span>
             </div>
 
@@ -182,13 +167,12 @@
                 MANAGE
             </div>
         </div>
-    </div> 
-
+    </div>
     <!-- **************SECTION*************************** -->
-    <div style="float:left; width:1024px; margin:40px 0 30px 0;">
+    <div style="float:left; width:700px; margin:40px 0 30px 0;">
         <div style="float:left; width:100%;">
             <div style="float:left; cursor:pointer; width:100%; font-size:16px;">
-                <input type="checkbox" id="checkNewsAboutMusic" name="checkNewsAboutMusic" @if (ViewBag.checkNewsAboutMusic == true){<text>checked="checked"</text>} /> Check if you want to receive  a regular dose of ​all things new music.
+                <input type="checkbox" id="checkNewsAboutMusic" name="checkNewsAboutMusic" @if (ViewBag.checkNewsAboutMusic == true) { <text> checked="checked" </text> } /> Check if you want to receive  a regular dose of ​all things new music.
             </div>
         </div>
 
@@ -210,16 +194,4 @@
         </div>
     </div>
 } <!-- FORM END -->
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>

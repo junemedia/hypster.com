@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "New player for Tumblr";
     ViewBag.Desc = "get new player for Tumblr code";
+    Layout = "/Views/Shared/_Layout3.cshtml";
 }
 <script type="text/javascript" src="/scripts/jscolor/jscolor.js"></script>
 
@@ -19,7 +20,7 @@
 <div class="crtPlstHdr1">
     <div class="listenMenuCont">
                 
-        <div id="CreatePlaylistSection1" onclick="window.location='/create/player';" title="Search Music" style=" height:33px; color:#47bb90; border-bottom:3px solid #47bb90; margin-top:2px;">
+        <div id="CreatePlaylistSection1" onclick="window.location='/create/player';" title="Search Music" style="height:33px; color:#47bb90; border-bottom:3px solid #47bb90; margin-top:2px;">
             CREATE PLAYER
         </div>
 
@@ -40,16 +41,16 @@
 
 
 <div class="boxContRight">
-<div id="listenSlide2" class="slideRight" style=" min-height:900px;">
+<div id="listenSlide2" class="slideRight" style="min-height:900px;">
     
-    <div class="NPFT_ContHolder" style=" min-height:400px;">
+    <div class="NPFT_ContHolder" style="min-height:400px;">
 
 
 
-                <div style=" float:left; width:100%; margin-top:5px;">
+                <div style="float:left; width:100%; margin-top:5px;">
                     
                     <div style="float:left; width:45%; ">
-                        <div style=" float:left; margin:0px; color:#d4ae52; border-bottom:1px solid #3fbc91; font-family:'Lato', sans-serif; font-size:28px;">
+                        <div style="float:left; margin:0px; color:#d4ae52; border-bottom:1px solid #3fbc91; font-family:'Lato', sans-serif; font-size:28px;">
                             Dual player
                         </div>
                     </div>
@@ -96,13 +97,13 @@
 
                             <div class="SettingItm">
                                 MAIN BACK COLOR:&nbsp;
-                                <input id="hf_MainBackColor" name="hf_MainBackColor" class="color" onchange="refreshPlayer()" style=" width:52px; height:23px; border:none; border-radius:2px;" value="000000" />
+                                <input id="hf_MainBackColor" name="hf_MainBackColor" class="color" onchange="refreshPlayer()" style="width:52px; height:23px; border:none; border-radius:2px;" value="000000" />
                             </div>
 
 
                             <div class="SettingItm">
                                 BORDER COLOR:&nbsp;
-                                <input id="hf_BorderColor" name="hf_BorderColor" class="color" onchange="refreshPlayer()" style=" width:52px; height:23px; border:none; border-radius:2px;" value="454545" />
+                                <input id="hf_BorderColor" name="hf_BorderColor" class="color" onchange="refreshPlayer()" style="width:52px; height:23px; border:none; border-radius:2px;" value="454545" />
                             </div>
 
 
@@ -112,7 +113,7 @@
 
                             <div class="SettingItm">
                                 HIDE PLAYER WINDOW: <input type="checkbox" id="hypPlayer_HidePlayerWindow" name="hypPlayer_HidePlayerWindow" onclick="refreshPlayer()" />
-                                <br /><span style=" color:#d4ae52; font-size:11px;">YouTube requires to have video window visible, otherwise certain songs may be disabled.</span>
+                                <br /><span style="color:#d4ae52; font-size:11px;">YouTube requires to have video window visible, otherwise certain songs may be disabled.</span>
                             </div>
 
                             <div class="SettingItm">
@@ -130,17 +131,12 @@
                                 </select>
                             </div>
 
-
-                            <div style=" float:right; margin:10px 0 0 0;">
-                                @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
-                            </div>
-
                     </div>
         
 
 
 
-                    <div id="SampleContHolder" style=" min-height:500px; text-align:center; border-left:1px solid #d4ae52;">
+                    <div id="SampleContHolder" style="min-height:500px; text-align:center; border-left:1px solid #d4ae52;">
                             
                             <div class="HeaderCompText">PLAYER PREVIEW</div>
 
@@ -152,7 +148,7 @@
                                     <br/>Please Note: Skipped songs are due to content owner's lack of meeting YouTube Terms and Conditions. <br /><br />
 
 
-                                    <div style=" float:left; margin-left:150px;">
+                                    <div style="float:left; margin-left:150px;">
                                     <script id="HypPlayerScript" 
                                     type="text/javascript" 
                                     src="http://@System.Configuration.ConfigurationManager.AppSettings["hypsterHostName"]/a/player7.js"  
@@ -178,16 +174,16 @@
 
 
 
-                    <div id="captchaCont1" style=" float:left; width:100%; min-height:55px; margin-top:0;">
+                    <div id="captchaCont1" style="float:left; width:100%; min-height:55px; margin-top:0;">
 
                         
                         @if (Model.playlists_list != null && Model.playlists_list.Count > 0)
                         {
-                            <input type="submit" value="GET CODE" onclick="processCaptcha();" style=" float:left; width:400px; height:47px; line-height:47px; text-align:center; background-color:#3fbc91; border:1px solid #3fbc91; border-radius:2px; margin:0 0 0 50px; font-size:23px; font-weight:bold; cursor:pointer;" />
+                            <input type="submit" value="GET CODE" onclick="processCaptcha();" style="float:left; width:400px; height:47px; line-height:47px; text-align:center; background-color:#3fbc91; border:1px solid #3fbc91; border-radius:2px; margin:0 0 0 50px; font-size:23px; font-weight:bold; cursor:pointer;" />
                         }
                         else
                         {
-                            <div style=" float:left; width:100%; color:#CC0000; margin:15px 0 0 0; font-size:16px; ">
+                            <div style="float:left; width:100%; color:#CC0000; margin:15px 0 0 0; font-size:16px; ">
                                 You need to have ​a ​playlist before ​you can ​creat​e a ​player.
                             </div>
                         }
@@ -197,13 +193,13 @@
         
 
 
-                    <div id="SampleCodeHolder" style=" display:none; margin-top:15px; ">
+                    <div id="SampleCodeHolder" style="display:none; margin-top:15px; ">
                 
 
 
                             <div class="HeaderCompText">
                                 PLAYER CODE
-                                <br /><span style=" color:#000000; font-size:12px;">User may paste Hypster player anywhere within "&lt;body&gt;" and "&lt;/body&gt;" tags.</span>
+                                <br /><span style="color:#000000; font-size:12px;">User may paste Hypster player anywhere within "&lt;body&gt;" and "&lt;/body&gt;" tags.</span>
                             </div>
 
 
@@ -217,7 +213,7 @@
 
                             <div class="HeaderCompText">
                                 SEPARATE PLAYER CONTROLS CODE
-                                <br /><span style=" color:#000000; font-size:12px;">User may paste Hypster player controls anywhere within "&lt;body&gt;" and "&lt;/body&gt;" tags.</span>
+                                <br /><span style="color:#000000; font-size:12px;">User may paste Hypster player controls anywhere within "&lt;body&gt;" and "&lt;/body&gt;" tags.</span>
                             </div>
                 
 
@@ -232,7 +228,7 @@
                                 <div class="fuText">
                                     Follow Us:
                                 </div>
-                                <div style=" float:left; margin:0px 0 0 5px;">
+                                <div style="float:left; margin:0px 0 0 5px;">
                                     <a class="flwUs_wt_fbk" href="https://www.facebook.com/Hypster" target="_blank"></a>
                                     <a class="flwUs_wt_twr" href="https://twitter.com/Hypsterdotcom" target="_blank"></a>
                                     <a class="flwUs_wt_tum" href="http://hypsterblog.tumblr.com/" target="_blank"></a>
@@ -249,43 +245,6 @@
     </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-<div style=" float:left; width:100%; margin:20px 0 20px 0;">
-        
-            
-        <div id="TopAdd1_d8d2362fgki" style=" width:728px; margin:auto;">
-            @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
-        </div>
-        <!-- 06_25 -->
-
-    
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <script type="text/javascript">

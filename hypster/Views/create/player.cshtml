@@ -4,67 +4,37 @@
     ViewBag.Desc = "Create music player for tumblr or website.";
 
     ViewBag.LinkTag = "<link rel=\"alternate\" media=\"only screen and (max-width: 640px)\" href=\"http://hypster.com/apps/appCreate/player\" >";
+    Layout = "/Views/Shared/_Layout2.cshtml";
 }
 
+<div class="createMenuCont">
+    <div id="CreatePlaylistSection1" onclick="window.location='/create/player';" title="Search Music">
+        CREATE PLAYER
+    </div>
+    <div id="CreatePlaylistSection2" onclick="window.location='/create/playlist';" title="Listen Playlists">
+        CREATE PLAYLIST
+    </div>
+    <div id="CreatePlaylistSection3" onclick="window.location='/create/station';" title="Listen Radio Stations">
+        CREATE STATION
+    </div>
+</div>
 
-
-<script type="text/javascript">
-    active_menu = ".mCreate";
-    $(".mCreate").css("color", "#FFFFFF");
-</script>
-
-
-
-
-
-
-
-
-
-<div class="crtPlstHdr1">
-    <div class="listenMenuCont">
-                
-        <div id="CreatePlaylistSection1" onclick="window.location='/create/player';" title="Search Music" style=" height:33px; color:#47bb90; border-bottom:3px solid #47bb90; margin-top:2px;">
-            CREATE PLAYER
+<div class="crtPlstCnt1">
+    <div style="float:left; width:100%;">
+        <div id="CreateContHolder" style="float:left; width:100px; margin-top:-1px; ">
+        @if (ViewBag.Action == "EDT")
+        {
+            Html.RenderAction("getPlayer", "player", new { id = ViewBag.PlType });
+        }
+        else
+        {
+            Html.RenderAction("getPlayer", "player", new { id = "" });
+        }
         </div>
-
-        <div id="CreatePlaylistSection2" onclick="window.location='/create/playlist';" title="Listen Playlists">
-            CREATE PLAYLIST
-        </div>
-
-        <div id="CreatePlaylistSection3" onclick="window.location='/create/station';" title="Listen Radio Stations">
-            CREATE STATION
-        </div>
-
     </div>
 </div>
 
 
-
-
-
-
-
-
-
-
-
-<div style=" float:left; width:100%;">
-        <div id="CreateContHolder" style=" float:left; width:100; margin-top:-1px; ">
-            @if (ViewBag.Action == "EDT")
-            {
-                Html.RenderAction("getPlayer", "player", new { id = ViewBag.PlType });
-            }
-            else
-            {
-                Html.RenderAction("getPlayer", "player", new { id = "" });   
-            }
-        </div>
-</div>
-
-
-
-
-<div class="shrTopC1" style=" margin:40px 0 40px 0; ">
-    <span>@Html.Partial("~/Views/hypAds/ad_728x90.cshtml")</span>
-</div>
+<script>
+    CPLS(1);
+</script>

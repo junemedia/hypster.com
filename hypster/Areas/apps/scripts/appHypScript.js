@@ -1,15 +1,8 @@
-﻿
-var myWidth = 0;
+﻿var myWidth = 0;
 var myHeight = 0;
-
 var active_menu = "";
-
-
-
-
-
-
-
+var refresh_delay = 20; // Refresh the ads every 'refresh_delay' seconds.
+var refresh_max = 50; // Refresh the current ads spot for 'refresh_max' times.
 
 function createCookie(name, value, days) {
     if (days) {
@@ -1273,7 +1266,7 @@ function SearchMusic() {
 
 function SearchMusicStr(search_string) {
 
-    $('#listenSlideContHolder').html("<div style='float:right; width:1024px;'><span style='font-size:24px; color:#959595;'>Searching...</span></div>");
+    $('#listenSlideContHolder').html("<div style='float:right; width:680px;'><span style='font-size:24px; color:#959595;'>Searching...</span></div>");
 
     var ss = search_string;
     ss = ss.replaceAll(" ", "+");
@@ -1312,7 +1305,7 @@ function SearchMusicStr(search_string) {
 
 function SearchMusicStrPage(search_string, page) {
 
-    $('#listenSlideContHolder').html("<div style='float:right; width:1024px;'><span style='font-size:24px; color:#959595;'>Searching...</span></div>");
+    $('#listenSlideContHolder').html("<div style='float:right; width:680px;'><span style='font-size:24px; color:#959595;'>Searching...</span></div>");
 
     var ss = search_string;
     ss = ss.replaceAll(" ", "+");
@@ -1352,7 +1345,7 @@ function SearchMusicYTID() {
     ss = ss.replaceAll(" ", "+");
 
 
-    $('#listenSlideContHolder').html("<div style='float:right; width:1024px;'><span style='font-size:24px; color:#454545;'>Searching...</span></div>");
+    $('#listenSlideContHolder').html("<div style='float:right; width:680px;'><span style='font-size:24px; color:#454545;'>Searching...</span></div>");
 
 
     $.ajax({

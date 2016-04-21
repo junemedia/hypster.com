@@ -1,11 +1,8 @@
 ﻿@model hypster.ViewModels.videoPlayerViewModel
 @{  
     int song_limit = Int32.Parse(System.Configuration.ConfigurationManager.AppSettings["Song_LIMIT"]);
-    Layout = "~/Views/Shared/_Layout_ListenTMP.cshtml";
 }
 
-
-        
 
 <!--link src="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"  rel="stylesheet" type="text/css" />
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"  type="text/javascript"></script>
@@ -19,11 +16,6 @@
 <link href="/css/Player.css" rel="stylesheet" type="text/css" />
 <script src="/scripts/hypMPLScriptST.js" type="text/javascript"></script>
 
-
-
-
-
-
 <script type="text/javascript">
 
     $(document).ready(function () {
@@ -32,26 +24,12 @@
 
 </script>
 
-
-
-
-  <div class="MainNHypPlayer" style=" width:1024px; margin-top:-5px;">
-   <div class="srclArea1">
-
-
-    <div class="MainRootCont">
-            
-
+<div class="MainNHypPlayer" style="margin-top:-5px;">
+    <div class="srclArea1">
+        <div class="MainRootCont">
             <div id="plrSec1">
-
-
-                <div id="plrHeader1">
-                    
-                    <a class="plrLogo" href="http://hypster.com" target="_blank">
-                    </a>
-
-
-                    
+                <div id="plrHeader1">                    
+                    <a class="plrLogo" href="http://hypster.com" target="_blank"></a>
                     <div id="ShrContH1innt">
                         <script type="text/javascript" src="http://i.po.st/static/v3/post-widget.js#publisherKey=caq8eudavn7j6erou9n3"></script>
                     </div>
@@ -64,24 +42,14 @@
 	                        <a class="pw-button-post-share"></a>
                         </div>
                     </div>
-                
                 </div>
 
-
-
-
                 <div id="MainContHolder">
-                    
-                    
-                        <div class="MainPlayerHoder">
-    
-                            <div id="player"></div>
-
-                            <div id="PlaybackStatusCont1" onmouseover="PSC_over()" onmouseout="PSC_out()" >
-                            
-                                <div id="PlaybackStatusInnrCont1"><div id="PlaybackStatus1"></div></div>
-
-                            </div>
+                    <div class="MainPlayerHoder">
+                        <div id="player"></div>
+                        <div id="PlaybackStatusCont1" onmouseover="PSC_over()" onmouseout="PSC_out()" >
+                            <div id="PlaybackStatusInnrCont1"><div id="PlaybackStatus1"></div></div>
+                        </div>
 
 
 
@@ -111,14 +79,14 @@
                                 }
 
 
-                                <div class="plrAddSongBtn" onclick="AddSong_CLICK()" style=" @if (User.Identity.IsAuthenticated == false){<text>display:none;</text>} " onmouseover="$('#addsngtxt').html('ADD SONG TO MY PLAYLIST');" onmouseout="$('#addsngtxt').html('ADD SONG');">
+                                <div class="plrAddSongBtn" onclick="AddSong_CLICK()" style="@if (User.Identity.IsAuthenticated == false){<text>display:none;</text>} " onmouseover="$('#addsngtxt').html('ADD SONG TO MY PLAYLIST');" onmouseout="$('#addsngtxt').html('ADD SONG');">
                                     <div id="addsngtxt">ADD SONG</div>
                                     <div id="AddNSongBtn" title="Add to playlist"></div>
                                 </div>
 
 
                             
-                                <div id="LikePlaylist" title="Like this playlist" style=" @if (User.Identity.IsAuthenticated == false){<text>display:none;</text>} @if (ViewBag.PlaylistLikes == null){<text>display:none;</text>}">
+                                <div id="LikePlaylist" title="Like this playlist" style="@if (User.Identity.IsAuthenticated == false){<text>display:none;</text>} @if (ViewBag.PlaylistLikes == null){<text>display:none;</text>}">
                         
                                     <div>
                                         @using (Ajax.BeginForm("AddNewPlaylistLike", "playlist", new AjaxOptions { UpdateTargetId = "LikeNumContH", HttpMethod = "POST", OnComplete = "AddNewPlaylistLikeComplete" }))

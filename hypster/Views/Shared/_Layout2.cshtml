@@ -17,23 +17,18 @@
         {
             Response.Redirect("/apps/appHome");
         }
-    } 
-    
-
-
+    }
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <meta name="alexaVerifyID" content="D1zuW6QmyfkVJqITiYkg7ecUz5k" />
-    <meta name="description" content="@ViewBag.Desc" />
-    
+    <meta name="description" content="@ViewBag.Desc" />    
     
     @if (ViewBag.LinkTag != null)
     {
         <text>@Html.Raw(ViewBag.LinkTag)</text>
     }
-
     
     <link src="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"  rel="stylesheet" type="text/css" />
     
@@ -47,46 +42,27 @@
 
     <script type="text/javascript">
         $(document).ready(function () {RenderLayout(); Adjust_Lang_Btns(); Adjust_Like_Btns();});
-        $(window).resize(function () { RenderLayout(); Adjust_Lang_Btns(); Adjust_Like_Btns(); });
+        $(window).resize(function () { RenderLayout(); Adjust_Lang_Btns(); Adjust_Like_Btns(); });        
     </script>
 
         
 </head>
-
-
-
-
-
-<body style=" background-color:#000000;">
-    
-
+<body>
     <div class="MainBD13">
-        
         <div class="ContentHeaderCont">
             @Html.Partial("~/Views/Shared/pr_TopMenu.cshtml")
         </div>
-
-        <div class="ContentRootCont" >
-             @RenderBody()
+        <div class="ContentRootCont">
+            <div style="float:left;width:72%; margin-top: 10px; margin-right:5px;">@RenderBody()</div>
+            <div style="float:right;width:25%; margin-top: 10px; margin-left:5px;">
+                @Html.Partial("~/Views/Shared/pr_RightRail.cshtml")
+            </div>
         </div>
-    
         <div class="push"></div>
     </div>
-
-
-
-
-
-    
     <div class="ContentFooterCont">
         @Html.Partial("~/Views/Shared/pr_BottomFooter.cshtml")
     </div>
-    
-
-
-
-    
-
     <div id="langBar">
         <a class="langItm" onclick="langBar_click();">EN</a>
 
@@ -95,19 +71,8 @@
             <a class="langItm" href="/ru/Главная">RU</a>
         </div>
     </div>
-    
     <div class="Trans_BACK" id="HideBackDiv" onclick="Show_Content();"></div>
     <div id="popupContainer"></div>
-    
-
-
-    
-
-    
-
-
-
-
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-28695705-1']);
@@ -130,7 +95,5 @@
             s.parentNode.insertBefore(c, s);
         })();
     </script>
-   
-
 </body>
 </html>

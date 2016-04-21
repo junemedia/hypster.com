@@ -225,11 +225,11 @@ a{color:#FFF;text-decoration:none}
 .MainHeadPlaylist{float:left;width:415px;height:40px;text-align:left;color:#FCF088;line-height:35px;margin:0 0 0 20px}
 .MainHeadPlaylist img{cursor:pointer}
 .MainHeadPlaylist span{color:#FCF088;font-weight:700;font-size:22px;margin-left:3px}
-.MainHeadSongs{float:left;width:600px;height:40px;text-align:left;color:#FCF088;line-height:35px}
+.MainHeadSongs{float:left;width:96%; height:40px;text-align:left;color:#FCF088;line-height:35px}
 .MainHeadSongs img{float:left;cursor:pointer;margin:11px 7px 0 5px}
-.MainHeadSongs div{float:left;width:560px;height:33px;overflow:hidden;font-weight:700;font-size:22px;cursor:pointer}
+.MainHeadSongs div{float:left;width:100%;height:33px;overflow:hidden;font-weight:700;font-size:22px;cursor:pointer}
 .CreatePlaylistCont .PlstItm_Act{float:left;width:100%;height:33px;line-height:33px;text-align:left;border-bottom:2px solid #e5d762;color:#FFF;margin-top:3px;margin-left:1%;cursor:pointer}
-.CreatePlaylistCont .PlstItm_ActTitle{float:left;width:330px;padding-left:4px;color:#FCF088;font-size:16px}
+.CreatePlaylistCont .PlstItm_ActTitle{float:left;width:90%;padding-left:4px;color:#FCF088;font-size:16px}
 .CreatePlaylistCont .PlstItm{float:left;width:100%;height:33px;line-height:33px;text-align:left;border-bottom:1px solid #313131;color:#FFF;margin-top:3px;margin-left:1%;cursor:pointer;overflow:hidden}
 .CreatePlaylistCont .PlstItm_Edt{float:left;width:30px;height:33px;line-height:33px;text-align:left;color:#FFF;font-size:11px;margin-left:4px;cursor:pointer;background:url(/imgs/action_icons/edit_icon_s.png) no-repeat center}
 .CreatePlaylistCont .PlstItm_Del{float:left;width:30px;height:33px;line-height:33px;text-align:left;color:#FFF;font-size:11px;margin-left:1%;cursor:pointer;background:url(/imgs/action_icons/delete_icon_s.png) no-repeat center}
@@ -241,10 +241,10 @@ a{color:#FFF;text-decoration:none}
 .CreatePlaylistCont #AddPlaylist_Name{float:left;width:197px;height:29px;border:1px solid #656565;font-size:14px}
 .CreatePlaylistCont #AddPlaylist_Save{float:left;width:125px;height:33px;margin-left:3px}
 .CreatePlaylistCont #AddPlaylist_Cancel{float:left;width:65px;height:33px;margin-left:3px}
-.CreatePlaylistCont .PlaylistsInnrCont{float:left;width:410px;min-height:80px;margin-top:3px;overflow:hidden}
-.CreatePlaylistCont .SongsInnrCont{float:right;width:600px;min-height:400px;overflow:hidden;padding:2px 0 0 9px}
+.CreatePlaylistCont .PlaylistsInnrCont{float:left;width:100%;min-height:80px;margin-top:3px;overflow:hidden}
+.CreatePlaylistCont .SongsInnrCont{float:right;width:100%;min-height:400px;overflow:hidden;padding:2px 0 0 9px}
 .CreatePlaylistCont .SongImg{float:left;width:67px;height:50px;padding-right:8px;border-radius:2px;margin:0}
-.CreatePlaylistCont .SongTitle{float:left;width:510px;height:50px;line-height:24px;margin-left:5px;margin-top:4px;cursor:pointer;font-size:16px;color:#DEDEDE}
+.CreatePlaylistCont .SongTitle{float:left;width:97%;height:50px;line-height:24px;margin-left:5px;margin-top:4px;cursor:pointer;font-size:16px;color:#DEDEDE}
 .CreatePlaylistCont .SongItm_Edt{float:left;width:25px;height:33px;line-height:33px;cursor:pointer;background:url(/imgs/play_icon_lte.png) no-repeat center;margin:10px 0 0 7px}
 .CreatePlaylistCont .SongItm_Del{float:left;width:25px;height:33px;line-height:33px;cursor:pointer;background:url(/imgs/action_icons/delete_icon_s.png) no-repeat center;margin:10px 0 0 3px}
 .CreatePlaylistCont .EmptyPlCont{float:left;width:600px;height:70px;border-bottom:1px solid #464647;background-color:#212121;cursor:pointer;overflow:hidden;margin-top:4px}
@@ -302,18 +302,18 @@ a{color:#FFF;text-decoration:none}
 .middleCont img{float:left;width:260px;margin:0 0 12px 10px}
 .NPFT_ContHolder .SettingItm{float:left;width:100%;text-align:right;margin-top:10px}
 .NPFT_ContHolder #cp_MainBackColor{float:right;width:24px;height:24px;background-color:#000;border-radius:2px;cursor:pointer}
-.NPFT_ContHolder #CPL_Tab2{float:left;width:985px;min-height:500px;background-color:#2e2e2e;padding:20px}
-.NPFT_ContHolder #SampleSettingsHolder{float:left;width:350px;margin-bottom:20px;background-color:#242424;border-radius:3px;padding:15px}
-.NPFT_ContHolder #SampleContHolder{float:right;width:540px;margin-bottom:20px;margin-right:0;background-color:#272727;color:#BCBCBC;border-radius:3px;padding:20px}
+.NPFT_ContHolder #CPL_Tab2{float:left;width:695px;background-color:#2e2e2e;padding:20px}
+.NPFT_ContHolder #SampleSettingsHolder{float:left;width:275px; margin-bottom:10px;background-color:#242424;border-radius:3px;padding:15px}
+.NPFT_ContHolder #SampleContHolder{float:right;width:360px;margin-bottom:10px;background-color:#272727;color:#BCBCBC;border-radius:3px;padding:10px}
 .NPFT_ContHolder #SampleCodeHolder{float:left;width:960px;margin-bottom:5px;background-color:#242424;border-radius:3px;padding:13px}
 .NPFT_ContHolder #hypPlayer_Playlist_ID{width:220px;height:22px;margin-top:2px}
-.NPFT_ContHolder .HeaderCompText{float:left;width:100%;font-size:19px;line-height:13px;text-align:left;color:#fbf3aa;margin-bottom:10px}
+.NPFT_ContHolder .HeaderCompText{float:left;width:100%;font-size:14px;line-height:13px;text-align:left;color:#fbf3aa;margin-bottom:5px;font-weight:bold;}
 .NPFT_ContHolder #PlayerCodeArea{width:96%;height:200px;background-color:#DDD;border:none;margin:2%}
 .NPFT_ContHolder #PlayerControlsCodeArea{width:96%;height:80px;background-color:#DDD;border:none;margin:2%}
 .NPFT_ContHolder .BottomMsgCont{float:left;width:98%;min-height:70px;line-height:19px;background-color:#282828;border-radius:2px;font-size:16px;margin:20px 0 0;padding:10px}
 .NPFT_ContHolder .MoreSkinsBtn{float:left;width:300px;height:60px;background-color:#3e3e3e;margin-left:10px;cursor:pointer;text-align:center}
 .BenContHolder{float:left;width:100%;min-height:80px}
-.BenContHolder .BenItem{width:1010px;min-height:28px;line-height:27px;background-color:#8e9597;border-radius:1px;color:#EEE;font-size:18px;margin:10px 10px 10px 0;padding:5px}
+.BenContHolder .BenItem{width:740px;min-height:28px;line-height:27px;background-color:#8e9597;border-radius:1px;color:#EEE;font-size:18px;margin:10px 10px 10px 0;padding:5px}
 .NPFT_ContHolder #cp_PlayPauseButtonColor{float:right;width:24px;height:24px;background-color:#50846b;border-radius:2px;cursor:pointer}
 .NPFT_ContHolder #cp_PrevButtonColor{float:right;width:24px;height:24px;background-color:#0e1211;border-radius:2px;cursor:pointer}
 .NPFT_ContHolder #cp_NextButtonColor{float:right;width:24px;height:24px;background-color:#1d2624;border-radius:2px;cursor:pointer}
@@ -510,7 +510,7 @@ a:hover,a:visited{color:#FFF}
 .FeaturedVideoCont .FeaturedSubHeader,.PopularPlaylists .FeaturedSubHeader,.PopularMusicOnHypster .FeaturedSubHeader,.CompCheckC .FeaturedSubHeader{float:right;width:250px;color:#313537;font-size:14px;text-align:left;margin:3px 0 0 20px}
 .PopularPlaylists .FeaturedHeaderBack,.PopularMusicOnHypster .FeaturedHeaderBack,.CompCheckC .FeaturedHeaderBack{float:left;width:100%;height:39px;line-height:39px;background:#44484a url(/imgs/home/featuredVideo_HeaderBack.png) no-repeat right}
 .PopularPlaylists .FeaturedHeaderBack div,.PopularPlaylists .FeaturedHeaderBack a{float:right;font-family:Hypster-Font;font-size:22px;color:#FCF088;font-style:italic;letter-spacing:1.2px;margin:3px 90px 0 0}
-.AboutUsCont,.ContactUsCont,.PrivacyPolicyCont,.TermsOfServiceCont{float:left;width:1000px;background-color:#202121;border-radius:2px;text-align:left;padding:15px 0 15px 15px}
+.AboutUsCont,.ContactUsCont,.PrivacyPolicyCont,.TermsOfServiceCont{float:left;width:700px;background-color:#202121;border-radius:2px;text-align:left;padding:0 0 5px 5px}
 .LatestNewsHeader .ltstNInner div,.LatestNewsHeader .ltstNInner a{float:left;font-family:Hypster-Font;font-size:22px;color:#FCF088;font-style:italic;letter-spacing:1.1px;margin:7px 0 0 20px}
 #PublicPSectionMenu2,#PublicPSectionMenu3{float:left;width:335px;height:150px;overflow:hidden;margin-left:5px;background-color:#292929;text-align:center;font-family:Hypster-Segoe;font-weight:lighter;font-size:29px;color:#CDCDCD;cursor:pointer}
 #PublicPSectionMenu1 .PublicPMenuInner,#PublicPSectionMenu2 .PublicPMenuInner,#PublicPSectionMenu3 .PublicPMenuInner{float:left;width:100%;line-height:14px;text-align:center}

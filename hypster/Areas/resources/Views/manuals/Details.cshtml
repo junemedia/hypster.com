@@ -1,74 +1,46 @@
 ﻿@model hypster.Areas.resources.ViewModels.ManualViewModel
 @{
     ViewBag.Title = @Model.manual.Manual_Header;
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
-
 
 <script type="text/javascript">
     active_menu = ".mHowTos";
 </script>
 
-
-
-
 <div class="boxContLeft boxContRightTop">
-    <div class="slideLeft" style=" min-height:80px;">
-            
-            
-            <H1 class="ManualDtHeader">
-                @Model.manual.Manual_Header
-            </H1>
+    <div class="slideLeft" style="min-height:80px;">
+        <H1 class="ManualDtHeader">
+            @Model.manual.Manual_Header
+        </H1>
 
-            <div class="ManualDtShare">
-                
-                <div style=" float:left; width:500px; height:23px; overflow:hidden; ">
-                    <div class="pw-widget pw-counter-horizontal">
-	                    <a class="pw-button-tumblr pw-look-native"></a>
-	                    <a class="pw-button-blogger pw-look-native"></a>
-	                    <a class="pw-button-facebook pw-look-native"></a>
-	                    <a class="pw-button-twitter pw-look-native"></a>
-	                    <a class="pw-button-post-share"></a>
-                    </div>
-                    <script src="http://i.po.st/static/v3/post-widget.js#publisherKey=caq8eudavn7j6erou9n3" type="text/javascript"></script>
+        <div class="ManualDtShare">
+            <div style="float:left; width:500px; height:23px; overflow:hidden; ">
+                <div class="pw-widget pw-counter-horizontal">
+                    <a class="pw-button-tumblr pw-look-native"></a>
+                    <a class="pw-button-blogger pw-look-native"></a>
+                    <a class="pw-button-facebook pw-look-native"></a>
+                    <a class="pw-button-twitter pw-look-native"></a>
+                    <a class="pw-button-post-share"></a>
                 </div>
-
-
-                <div style=" float:right; width:140px; height:23px; line-height:23px; text-align:center; border-radius:2px; cursor:pointer;" onclick="window.location='/resources/manuals';">MANUALS HOME</div>
+                <script src="http://i.po.st/static/v3/post-widget.js#publisherKey=caq8eudavn7j6erou9n3" type="text/javascript"></script>
             </div>
+            <div style="width:140px; height:23px; line-height:23px; text-align:center; border-radius:2px; cursor:pointer;" onclick="window.location='/resources/manuals';">MANUALS HOME</div>
+        </div>
     </div>
 </div>
 
 
-
-
-@foreach(var item in Model.manual_slides)
+@foreach (var item in Model.manual_slides)
 {
 
     <div class="boxContRight">
-        <div class="slideRight" style=" min-height:250px;">
-            
+        <div class="slideRight" style="min-height:250px;">
+
             <h2 class="ManualDtSlideHdr">@Html.Raw(item.Manual_Slide_Header)</h2><br />
-        
-            <img alt="@item.Manual_Slide_Header" title="@item.Manual_Slide_Header" src="http://@System.Configuration.ConfigurationManager.AppSettings["hypsterHostName"]/imgs/manuals/@Model.manual.Manual_Guid/@item.Manual_Slide_Image" style=" max-width:1024px;" />
+
+            <img alt="@item.Manual_Slide_Header" title="@item.Manual_Slide_Header" src="http://@System.Configuration.ConfigurationManager.AppSettings["hypsterHostName"]/imgs/manuals/@Model.manual.Manual_Guid/@item.Manual_Slide_Image" style="max-width:700px;" />
 
         </div>
-    </div>
-
-
-    
-    
-    
-    <div style=" float:left; width:100%; margin:20px 0 20px 0;">
-            
-        <div style=" width:728px; height:90px; margin:auto;">
-            @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
-        </div>
-
     </div>
 }
-
-
-
-
-

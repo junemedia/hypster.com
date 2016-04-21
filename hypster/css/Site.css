@@ -490,7 +490,7 @@ a:visited
 
 .ContentRootCont
 {
-    width:1024px;
+    width:1040px;
     height:auto;
     margin:auto;
 }
@@ -1554,7 +1554,7 @@ a:visited
 
 #listenTab2 .contLimit
 {
-	float:left; width:1024px; margin:20px 1% 1% 1%; text-align:left;
+	float:left; width:100%; margin:20px 1% 1% 1%; text-align:left;
 }
 
 #listenTab2 .contTop
@@ -1599,7 +1599,7 @@ a:visited
 
 #listenTab3 .contLimit
 {
-	float:left; width:1024px; margin:20px 1% 1% 1%; text-align:left;
+	float:left; width:100%; margin:20px 1% 1% 1%; text-align:left;
 }
 
 #listenTab3 .plItem
@@ -2559,13 +2559,13 @@ a:visited
 
 .PrivacyPolicyCont
 {
-	float:left; width:1000px; padding:15px 0 15px 15px; border-radius:2px; text-align:left;
+	float:left; width:700px; padding:0 0 5px 5px; border-radius:2px; text-align:left;
 }
 
 
 .TermsOfServiceCont
 {
-	float:left; width:1000px; padding:15px 0 15px 15px; border-radius:2px; text-align:left;
+	float:left; width:700px; padding:0 0 5px 5px; border-radius:2px; text-align:left;
 }
 
 /* --------------------------------------------------------------------------------- */
@@ -3067,7 +3067,7 @@ a:visited
 
 .CreatePlaylistCont
 {
-	float:left; width:1024px; margin-top:7px; margin-left:15px;
+	float:left; width:98%; margin-top:7px; margin-left:15px;
 }
 
 
@@ -3083,7 +3083,13 @@ a:visited
 
 .MainHeadPlaylist
 {
-	float:left; width:409px; height:34px; line-height:34px; text-align:left; color:#000000; line-height:35px;
+	float:left; 
+    width:730px; 
+    height:34px; 
+    line-height:34px; 
+    text-align:left; 
+    color:#000000; 
+    line-height:35px;
 	margin:0 0 0 10px;
 	padding:3px;
 	font-size:23px;
@@ -3104,8 +3110,13 @@ a:visited
 
 .MainHeadSongs
 {
-	float:left; min-width:394px; height:34px; line-height:34px; text-align:left; color:#000000; line-height:35px;
-	margin:0 0 0 10px;
+	float:left; 
+    width:96%; 
+    min-width:350px; 
+    height:34px; 
+    line-height:34px; 
+    text-align:left; 
+    color:#000000;
 	padding:3px;
 	font-size:23px;
 	border:1px solid #47bb90;
@@ -3118,7 +3129,7 @@ a:visited
 }
 .MainHeadSongs div
 {
-	float:left; width:560px; height:33px; overflow:hidden; font-size:22px; cursor:pointer;
+	float:left; width:100%; height:33px; overflow:hidden; font-size:22px; cursor:pointer;
 }
 
 
@@ -3132,7 +3143,7 @@ a:visited
 
 .CreatePlaylistCont .PlstItm_ActTitle
 {
-	float:left; width:334px; padding-left:4px; color:#d4ae52; font-size:16px;
+	float:left; width:85%; padding-left:4px; color:#d4ae52; font-size:16px;
 	height:27px; overflow:hidden;
 }
 
@@ -3196,7 +3207,7 @@ a:visited
 
 .CreatePlaylistCont .PlstItm .plstII
 {
-	float:left; width:300px; height:27px; line-height:25px; overflow:hidden; padding-left:4px;
+	float:left; width:80%; height:27px; line-height:25px; overflow:hidden; padding-left:4px;
 }
 .CreatePlaylistCont .PlstItm .plstII img
 {
@@ -3260,12 +3271,12 @@ a:visited
 
 .CreatePlaylistCont  .PlaylistsInnrCont
 {
-	float:left; width:410px; min-height:80px; margin-top:3px; overflow:hidden;
+	float:left; width:100%; min-height:80px; margin-top:3px; overflow:hidden;
 }
 
 .CreatePlaylistCont  .SongsInnrCont
 {
-	float:right; width:600px; min-height:400px; overflow:hidden; padding:2px 0 0 9px;
+	float:left; width:100%; min-height:400px; overflow:hidden; padding:2px 0 0 9px;
 }
 
 
@@ -3279,7 +3290,7 @@ a:visited
 
 .CreatePlaylistCont .SongTitle
 {
-	float:left; width:510px; height:50px; line-height:24px; margin-left:5px; margin-top:4px; cursor:pointer; font-size:16px; color:#000000;
+	float:left; width:90%; height:50px; line-height:24px; margin-left:5px; margin-top:4px; cursor:pointer; font-size:16px; color:#000000;
 }
 
 .CreatePlaylistCont .SongTitle span
@@ -3404,14 +3415,13 @@ a:visited
 
 .CreateRadioContHolder
 {
-	float:left; width:100%;
-	margin:30px 0 0 0;
+	float:left; width:70%;
 }
 
 
 .CreateRadioContHolder .rdoStationsCH1
 {
-    float:left; width:1024px; margin:0 0 17px 20px;
+    float:left; width:700px; margin:0 0 17px 20px;
 }
 
 .CreateRadioContHolder .rdoStationsCH1 .rdoItem1
@@ -3432,7 +3442,7 @@ a:visited
 
 .CreateRadioContHolder .rdoStationsCH1 .itmBtn2
 {
-    float:left; width:890px; height:36px; line-height:35px; color:#FFFFFF; background-color:#000000; padding:2px 2px 2px 10px; border-radius:2px; margin-left:4px; cursor:pointer; font-size:16px; border:1px solid #42bc91;
+    float:left; width:563px; height:36px; line-height:35px; color:#FFFFFF; background-color:#000000; padding:2px 2px 2px 10px; border-radius:2px; margin-left:4px; cursor:pointer; font-size:16px; border:1px solid #42bc91;
 }
 
 .CreateRadioContHolder .rdoStationsCH1 .actBtn2
@@ -4047,7 +4057,7 @@ a:visited
 
 .NPFT_Head
 {
-	float:right; width:1024px;  text-align:left;
+	float:right; width:760px;  text-align:left;
 }
 
 .NPFT_BHead
@@ -4063,7 +4073,7 @@ a:visited
 
 .NPFT_ContHolder
 {
-	float:left; width:1024px; padding:0px; min-height:1000px;
+	float:left; width:730px; padding:0px;
 }
 /* --------------------------------------------------------------------------------- */
 
@@ -4148,17 +4158,17 @@ a:visited
 
 .NPFT_ContHolder #CPL_Tab2
 {
-	float:left; width:985px; padding:20px; min-height:500px;
+	float:left; width:695px; padding:20px;
 }
 
 .NPFT_ContHolder #SampleSettingsHolder
 {
-	float:left; width:350px; margin-bottom:20px; padding:15px; border-radius:3px;
+	float:left; width:275px; margin-bottom:10px; padding:15px; border-radius:3px;
 }
 
 .NPFT_ContHolder #SampleContHolder
 {
-	float:right; width:540px; margin-bottom:20px; margin-right:0px; color:#BCBCBC; padding:20px; border-radius:3px; 
+	float:right; width:360px; margin-bottom:10px; color:#BCBCBC; padding:10px; border-radius:3px; 
 }
 
 .NPFT_ContHolder #SampleCodeHolder
@@ -4173,9 +4183,7 @@ a:visited
 
 .NPFT_ContHolder .HeaderCompText
 {
-	float:left; font-size:23px; line-height:13px; text-align:left; color:#000000; border:1px solid #d4ae52;
-	padding:5px;
-	margin-bottom:10px;
+	float:left; font-size:14px; line-height:13px; text-align:left; color:#000000; border:1px solid #d4ae52; margin-bottom:5px; font-weight:bold;
 }
 
 .NPFT_ContHolder #PlayerCodeArea
@@ -4236,7 +4244,7 @@ a:visited
 
 .BenContHolder .BenItem
 {
-	width:1010px; margin:10px 10px 10px 0; padding:5px; min-height:28px; line-height:27px; background-color:#FFFFFF; border-radius:1px; color:#353535; font-size:18px;
+	width:740px; margin:10px 10px 10px 0; padding:5px; min-height:28px; line-height:27px; background-color:#FFFFFF; border-radius:1px; color:#353535; font-size:18px;
 	border:1px solid #3fbc91;
 }
 
@@ -5217,7 +5225,7 @@ a:visited
 
 .ManualArCont .MAheader
 {
-	float:left; float:left; font-size:23px;
+	float:left;  font-size:23px;
 }
 
 .ManualArCont .MAimg

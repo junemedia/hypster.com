@@ -2,22 +2,22 @@
 @{
     ViewBag.Title = "Hypster - Radio player";
     ViewBag.Desc = "";
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
 
 
-<div style=" float:left; width:100%; " >
+<div style="float:left; width:100%; " >
 
 
   
 
-    <div style=" float:left; width:100%; border-radius:2px; margin-top:30px; ">
+    <div style="float:left; width:100%; border-radius:2px; margin-top:30px; ">
         @using (Html.BeginForm("getPlayer_radioPlayer", "appPlayer"))
         {
-            <div style=" float:left; width:100%;">
+            <div style="float:left; width:100%;">
         
-                    <div style=" float:left; width:220px; height:220px; margin:0 0 0 5%; border-radius:2px; cursor:pointer;">
+                    <div style="float:left; width:220px; height:220px; margin:0 0 0 5%; border-radius:2px; cursor:pointer;">
                 
                         <img id="skinImgHolder1" alt="" src="/imgs/get_player/widget_radio.png"  />
                 
@@ -25,13 +25,13 @@
 
 
 
-                    <div style=" float:left; width:320px; height:220px; line-height:25px; margin:15px 0 0 0; color:#d4ae52; border-radius:2px; text-align:right;">
+                    <div style="float:left; width:320px; height:220px; line-height:25px; margin:15px 0 0 0; color:#d4ae52; border-radius:2px; text-align:right;">
             
-                        NAME: <input id="PlayerName" name="PlayerName" type="text" maxlength="50" style=" width:215px;" value="@Model.player.player_Name" />
+                        NAME: <input id="PlayerName" name="PlayerName" type="text" maxlength="50" style="width:215px;" value="@Model.player.player_Name" />
                         <br />
             
                         GENRE: 
-                        <select id="Sel_Genre_ID" name="Sel_Genre_ID" style=" width:220px; height:22px; margin-top:2px;"> 
+                        <select id="Sel_Genre_ID" name="Sel_Genre_ID" style="width:220px; height:22px; margin-top:2px;"> 
                         @foreach (var item in Model.music_genres_list)
                         {
                             <option value="@item.Genre_ID" @if (Model.player.RADIO_Genre_ID == item.Genre_ID)
@@ -48,15 +48,15 @@
                     </div>
 
 
-                    <div style=" float:left; width:90%; margin:10px 0 0 5%; ">
+                    <div style="float:left; width:90%; margin:10px 0 0 5%; ">
                         Please Note: Skipped songs are due to content owner's lack of meeting YouTube Terms and Conditions. 
                     </div>
 
 
                     
 
-                    <input type="submit" value="GET CODE" style=" float:left; width:90%; height:30px; line-height:25px; border-radius:2px; background-color:#3fbc91; border:1px solid #3fbc91; color:#FFFFFF; margin:15px 0 15px 5%; cursor:pointer; font-weight:bold;" />
-                    <input type="button" value="CANCEL" onclick="window.location='/apps/appCreate/player';" style=" float:left; width:90%; height:30px; line-height:25px; border-radius:2px; background-color:#3fbc91; border:1px solid #3fbc91; color:#FFFFFF; margin:15px 0 15px 5%; cursor:pointer;" />
+                    <input type="submit" value="GET CODE" style="float:left; width:90%; height:30px; line-height:25px; border-radius:2px; background-color:#3fbc91; border:1px solid #3fbc91; color:#FFFFFF; margin:15px 0 15px 5%; cursor:pointer; font-weight:bold;" />
+                    <input type="button" value="CANCEL" onclick="window.location='/apps/appCreate/player';" style="float:left; width:90%; height:30px; line-height:25px; border-radius:2px; background-color:#3fbc91; border:1px solid #3fbc91; color:#FFFFFF; margin:15px 0 15px 5%; cursor:pointer;" />
                     
                     
 

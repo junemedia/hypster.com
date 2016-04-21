@@ -28,7 +28,7 @@
     if (i_counter > 500)
     {
         <div id="LoMPlstBtn" class="srt_itm" onclick="load_more_songs_plst_details();">
-            <div style=" float:left; width:100%; line-height:50px; font-size:21px; text-align:center; color:#fcf088;">
+            <div style="float:left; width:100%; line-height:50px; font-size:21px; text-align:center; color:#fcf088;">
                 Load more songs for this playlist
             </div>
         </div>
@@ -70,7 +70,7 @@
 
 
 <div id="AddNewTag_InnrContainer">
-    <input type="text" maxlength="30" name="newTagName" id="newTagName" style=" width:195px; float:left; height:22px; border:none; font-size:13px;" />
+    <input type="text" maxlength="30" name="newTagName" id="newTagName" style="width:195px; float:left; height:22px; border:none; font-size:13px;" />
     <input type="hidden" name="newTagPlst" id="newTagPlst" value="@ViewBag.ActivePlaylistID" />
     <input type="button" value="Add New Tag" onclick="add_new_tag();"  style="float:left; height:25px; margin-left:5px;" />
     <input type="button" value="Cancel" onclick="$('#AddNewTag_InnrContainer').css('display','none');" style="float:left; height:25px; margin-left:5px;" />
@@ -107,7 +107,7 @@
 
 <style>    
     #sortablePlaylist { list-style-type:none; margin: 0; padding: 0; float:left; width:100%; margin-bottom:8px; }    
-    #sortablePlaylist .srt_itm { float:left; float:left; width:585px; height:57px; border-bottom:1px solid #232323; background-color:#232323; cursor:pointer; overflow:hidden; margin-top:4px; }
+    #sortablePlaylist .srt_itm { float:left;  width:710px; height:57px; border-bottom:1px solid #232323; background-color:#232323; cursor:pointer; overflow:hidden; margin-top:4px; }
 </style>
 <script type="text/javascript">
     $(function () { $("#sortablePlaylist").sortable(); $("#sortablePlaylist").disableSelection(); });

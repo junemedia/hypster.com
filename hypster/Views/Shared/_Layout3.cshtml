@@ -48,7 +48,10 @@
             @Html.Partial("~/Views/Shared/pr_TopMenu.cshtml")
         </div>
         <div class="ContentRootCont">
-            @RenderBody()
+            <div style="float:left;width:71%; margin-top: 10px; margin-right:5px;">@RenderBody()</div>
+            <div style="float:right;width:28%; margin-top: 10px; margin-left:5px;">
+                @Html.Partial("~/Views/Shared/pr_RightRail.cshtml")
+            </div>
         </div>
         <div class="push"></div>
     </div>

@@ -3180,7 +3180,7 @@ a:visited
 
 .MainHeadSongs
 {
-	float:left; width:96%; height:34px; line-height:34px; text-align:left; color:#000000; line-height:35px;
+	float:left; height:34px; line-height:34px; text-align:left; color:#000000; line-height:35px;
 	margin:0 0 0 0;
 	padding:3px;
 	font-size:23px;
@@ -3194,7 +3194,7 @@ a:visited
 }
 .MainHeadSongs div
 {
-	float:left; width:560px; height:33px; overflow:hidden; font-size:22px; cursor:pointer;
+	float:left; width:100%; height:33px; overflow:hidden; font-size:22px; cursor:pointer;
 }
 
 
@@ -3349,7 +3349,7 @@ a:visited
 
 
 #sortablePlaylist { list-style-type:none; margin: 0; padding: 0; float:left; width:100%; margin-bottom:8px; }    
-#sortablePlaylist .srt_itm { float:left; float:left; width:100%; height:57px; background-color:#FFFFFF; color:#000000; cursor:pointer; overflow:hidden; margin-top:4px; }
+#sortablePlaylist .srt_itm { float:left;  width:100%; height:57px; background-color:#FFFFFF; color:#000000; cursor:pointer; overflow:hidden; margin-top:4px; }
 
 
 
@@ -3488,7 +3488,7 @@ a:visited
 
 .CreateRadioContHolder
 {
-	float:left; width:100%;
+	float:left; width:70%;
 	margin:30px 0 0 0;
 }
 
@@ -4142,7 +4142,7 @@ a:visited
 
 .NPFT_Head
 {
-	float:right; width:1024px;  text-align:left;
+	float:right; width:760px;  text-align:left;
 }
 
 .NPFT_BHead
@@ -4158,7 +4158,7 @@ a:visited
 
 .NPFT_ContHolder
 {
-	float:left; width:1024px; padding:0px; min-height:1000px;
+	float:left; width:730px; padding:0px;
 }
 /* --------------------------------------------------------------------------------- */
 
@@ -4248,12 +4248,12 @@ a:visited
 
 .NPFT_ContHolder #SampleSettingsHolder
 {
-	float:left; width:350px; margin-bottom:20px; padding:15px; border-radius:3px;
+	float:left; width:275px; margin-bottom:10px; padding:15px; border-radius:3px;
 }
 
 .NPFT_ContHolder #SampleContHolder
 {
-	float:right; width:540px; margin-bottom:20px; margin-right:0px; color:#BCBCBC; padding:20px; border-radius:3px; 
+	float:right; width:360px; margin-bottom:10px; color:#BCBCBC; padding:10px; border-radius:3px; 
 }
 
 .NPFT_ContHolder #SampleCodeHolder
@@ -4268,9 +4268,7 @@ a:visited
 
 .NPFT_ContHolder .HeaderCompText
 {
-	float:left; font-size:23px; line-height:13px; text-align:left; color:#000000; border:1px solid #d4ae52;
-	padding:5px;
-	margin-bottom:10px;
+	float:left; font-size:14px; line-height:13px; text-align:left; color:#000000; border:1px solid #d4ae52; margin-bottom:5px; font-weight:bold; padding:5px;
 }
 
 .NPFT_ContHolder #PlayerCodeArea
@@ -4331,7 +4329,7 @@ a:visited
 
 .BenContHolder .BenItem
 {
-	width:1010px; margin:10px 10px 10px 0; padding:5px; min-height:28px; line-height:27px; background-color:#FFFFFF; border-radius:1px; color:#353535; font-size:18px;
+	width:740px; margin:10px 10px 10px 0; padding:5px; min-height:28px; line-height:27px; background-color:#FFFFFF; border-radius:1px; color:#353535; font-size:18px;
 	border:1px solid #3fbc91;
 }
 
@@ -5344,7 +5342,7 @@ a:visited
 
 .ManualArCont .MAheader
 {
-	float:left; float:left; font-size:23px;
+	float:left;  font-size:23px;
 }
 
 .ManualArCont .MAimg
@@ -7688,8 +7686,7 @@ a.captionOrange:hover
 
 .mListenTopH
 {
-    float:left; width:100%; height:45px; margin:0 0 0 0;
-    background-size:180%;
+    float:left; width:100%; height:45px; background-size:180%;
 }
 
 .listenMenuCont
@@ -7723,7 +7720,7 @@ a.captionOrange:hover
 
 .listenTabCh2
 {
-    float:left; width:100%; min-height:70px; margin:20px 0 20px 0;
+    float:left; width:100%; min-height:100px; margin:20px 0 20px 0;
 }
 
 
@@ -8176,7 +8173,7 @@ a.captionOrange:hover
 
 .crtPlstCnt1 .CreateContHolder
 {
-    float:left; width:100%; margin-top:-1px;
+    float:left; width:100%;
 }
 
 

@@ -32,12 +32,12 @@
 
 
     <div class="TopCont">
-        &nbsp;@ViewBag.PlaylistName <span style=" color:#FFFFFF;"> - please double check to see if these are dead links.</span>
+        &nbsp;@ViewBag.PlaylistName <span style="color:#FFFFFF;"> - please double check to see if these are dead links.</span>
     </div>
 
 
-    <div class="LeftCont" style=" overflow:auto;">
-        <div style=" float:left; width:98%; margin:1%; overflow:auto; ">
+    <div class="LeftCont" style="overflow:auto;">
+        <div style="float:left; width:98%; margin:1%; overflow:auto; ">
 
 
                 
@@ -48,7 +48,7 @@
                     {
                         if (item.Dead_Link_ID != null)
                         {
-                            <div class="srt_itm" id="dl_song_@item.playlist_track_id" style=" width:520px;">
+                            <div class="srt_itm" id="dl_song_@item.playlist_track_id" style="width:520px;">
                     
                                 <div class="SongTitle">
                                     <img class="SongImg" alt="" src="http://i.ytimg.com/vi/@item.YoutubeId/0.jpg" />
@@ -66,7 +66,7 @@
 
                     @if (i_counter == 0)
                     {
-                        <div class="srt_itm" id="dl_song_000" style=" width:520px;">
+                        <div class="srt_itm" id="dl_song_000" style="width:520px;">
                     
                             <div class="SongTitle">
                                 No dead links found yet. You need to listen to your playlist in order to detect dead links.
@@ -117,7 +117,7 @@
 
 <style>    
     #sortablePlaylist { list-style-type:none; margin: 0; padding: 0; float:left; width:100%; margin-bottom:8px; }    
-    #sortablePlaylist .srt_itm { float:left; float:left; width:585px; height:57px; border-bottom:1px solid #232323; background-color:#232323; cursor:pointer; overflow:hidden; margin-top:4px; }
+    #sortablePlaylist .srt_itm { float:left;  width:710px; height:57px; border-bottom:1px solid #232323; background-color:#232323; cursor:pointer; overflow:hidden; margin-top:4px; }
 </style>
 <script type="text/javascript">
     $(function () { $("#sortablePlaylist").sortable(); $("#sortablePlaylist").disableSelection(); });

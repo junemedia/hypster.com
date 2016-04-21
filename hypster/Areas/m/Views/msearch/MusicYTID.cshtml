@@ -14,7 +14,7 @@
 
 
 
-<div style="float:right; width:1024px;">
+<div style="float:right; width:924px;">
 
 <div class="SearchPageRoot">
     
@@ -39,15 +39,15 @@
 
                         @if (@Model.RatingAverage != null)
                         {
-                            <div>Rating: <span style=" color:#FCF088;"> @Model.RatingAverage</span></div>
+                            <div>Rating: <span style="color:#FCF088;"> @Model.RatingAverage</span></div>
                         }
 
                         @if (Model.Media != null && Model.Media.Restriction != null)
                         {
                             @Model.Media.Restriction.Attributes["relationship"]<text> in:</text>
-                            <span onclick="$('#RST_@Model.VideoId').css('display','block');" style=" width:80px; height:20px; line-height:20px; color:#FCF088; font-size:11px;">More Details</span>
-                            <div id="RST_@Model.VideoId" style=" display:none;">
-                                <span style=" color:#FCF088;">@Model.Media.Restriction.Value.ToString()</span><br />
+                            <span onclick="$('#RST_@Model.VideoId').css('display','block');" style="width:80px; height:20px; line-height:20px; color:#FCF088; font-size:11px;">More Details</span>
+                            <div id="RST_@Model.VideoId" style="display:none;">
+                                <span style="color:#FCF088;">@Model.Media.Restriction.Value.ToString()</span><br />
                             </div>
                         }
                     </div>

@@ -1,15 +1,10 @@
-﻿
-var myWidth = 0;
+﻿var myWidth = 0;
 var myHeight = 0;
 var active_menu = "";
-
-
-
 var home_vis = false;
-
-
 var att_speech_timer = null;
-
+var refresh_delay = 20; // Refresh the ads every 'refresh_delay' seconds.
+var refresh_max = 50; // Refresh the current ads spot for 'refresh_max' times.
 
 
 String.prototype.replaceAll = function (target, replacement) {

@@ -47,7 +47,7 @@
 
 
 <div class="boxContRight boxContRightTop">
-    <div id="listenSlide1" class="slideRight" style=" min-height:600px; ">
+    <div id="listenSlide1" class="slideRight" style="min-height:600px; ">
 
 
 
@@ -58,7 +58,7 @@
             </div>
 
 
-            <div id="CreatePlaylistSection2" onclick="window.location='/es/Crear/playlist';" style=" font-size:27px;">
+            <div id="CreatePlaylistSection2" onclick="window.location='/es/Crear/playlist';" style="font-size:27px;">
                 <img alt="" src="/imgs/create/create_playlist_icon_sm.png" /><br />
                 Crear lista de Reproducción
             </div>
@@ -74,7 +74,7 @@
 
 
 
-            <div id="CreateContHolder" style=" float:left; width:100%; background-color:#1d1d1c; margin-top:-1px; ">
+            <div id="CreateContHolder" style="float:left; width:100%; background-color:#1d1d1c; margin-top:-1px; ">
                 <!-- *************************************CONTENT************************************* -->
                 <div class="CreatePlaylistCont">
                     
@@ -99,7 +99,7 @@
 
 
 
-                        <div id="PlaylistsInnrCont1" class="PlaylistsInnrCont" style=" position:relative; top:0px; margin-bottom:15px;">
+                        <div id="PlaylistsInnrCont1" class="PlaylistsInnrCont" style="position:relative; top:0px; margin-bottom:15px;">
 
                             @foreach (var item in Model.userPlaylists_list)
                             {
@@ -108,11 +108,11 @@
                                 {
                                     <div class="PlstItm_Act">
                                 
-                                            <div class="PlstItm_ActTitle" id="textName_cont_@item.id" onclick="window.location='/es/crear/playlist?playlist_id=@item.id';" style=" float:left; width:330px; height:27px; overflow:hidden; ">
+                                            <div class="PlstItm_ActTitle" id="textName_cont_@item.id" onclick="window.location='/es/crear/playlist?playlist_id=@item.id';" style="float:left; width:330px; height:27px; overflow:hidden; ">
                                                 @item.name
                                             </div>
                                     
-                                            <div id="editName_cont_@item.id" style=" display:none; width:334px; float:left; ">
+                                            <div id="editName_cont_@item.id" style="display:none; width:334px; float:left; ">
                                                 @using (Html.BeginForm("AccountPlaylists_EditPlaylist", "Cuenta", FormMethod.Post))
                                                 {
                                                     <input class="PlstItm_PlName" name="PlaylistName" id="PlaylistName" type="text" value="@item.name" />
@@ -134,12 +134,12 @@
                                 {
                                     <div class="PlstItm">
 
-                                            <div id="textName_cont_@item.id" onclick="window.location='/es/Crear/playlist/playlist?playlist_id=@item.id';" style=" float:left; width:330px; height:27px; overflow:hidden; padding-left:4px; ">
+                                            <div id="textName_cont_@item.id" onclick="window.location='/es/Crear/playlist/playlist?playlist_id=@item.id';" style="float:left; width:330px; height:27px; overflow:hidden; padding-left:4px; ">
                                                 @item.name
                                             </div>
                                         
 
-                                            <div id="editName_cont_@item.id" style=" display:none; width:334px; float:left; ">
+                                            <div id="editName_cont_@item.id" style="display:none; width:334px; float:left; ">
                                                 @using (Html.BeginForm("AccountPlaylists_EditPlaylist", "Cuenta", FormMethod.Post))
                                                 {
                                                     <input class="PlstItm_PlName" name="PlaylistName" id="PlaylistName" type="text" value="@item.name" />
@@ -237,7 +237,7 @@
 
                         <style>    
                             #sortablePlaylist { list-style-type:none; margin: 0; padding: 0; float:left; width:100%; }    
-                            #sortablePlaylist .srt_itm { float:left; float:left; width:585px; height:57px; border-bottom:1px solid #232323; background-color:#232323; cursor:pointer; overflow:hidden; margin-top:4px; }
+                            #sortablePlaylist .srt_itm { float:left;  width:710px; height:57px; border-bottom:1px solid #232323; background-color:#232323; cursor:pointer; overflow:hidden; margin-top:4px; }
                         </style>
 
                         <script type="text/javascript">
@@ -302,7 +302,7 @@
 
 
 <div class="boxContLeft">
-    <div id="listenSlide2" class="slideLeft" style=" min-height:460px;">
+    <div id="listenSlide2" class="slideLeft" style="min-height:460px;">
             
             @Html.Action("PopularPlaylists", "PopularEs")
 

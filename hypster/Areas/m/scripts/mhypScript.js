@@ -1,11 +1,8 @@
-﻿
-var myWidth = 0;
+﻿var myWidth = 0;
 var myHeight = 0;
-
 var active_menu = "";
-
-
-
+var refresh_delay = 20; // Refresh the ads every 'refresh_delay' seconds.
+var refresh_max = 50; // Refresh the current ads spot for 'refresh_max' times.
 
 
 
@@ -932,7 +929,7 @@ function SearchMusic() {
 
 function SearchMusicStr(search_string) {
 
-    $('#listenSlideContHolder').html("<div style='float:right; width:1024px;'><span style='font-size:24px; color:#959595;'>Searching...</span></div>");
+    $('#listenSlideContHolder').html("<div style='float:right; width:680px;'><span style='font-size:24px; color:#959595;'>Searching...</span></div>");
 
     var ss = search_string;
     ss = ss.replace(" ", "+");
@@ -956,7 +953,6 @@ function SearchMusicStr(search_string) {
         async: true,
         success: function (data) {
             $('#listenSlidePopPlst4').html(data);
-            //$('#listenSlideContHolder').html(data);
         }
     });
 
@@ -967,7 +963,7 @@ function SearchMusicStr(search_string) {
 
 function SearchMusicStrPage(search_string, page) {
 
-    $('#listenSlideContHolder').html("<div style='float:right; width:1024px;'><span style='font-size:24px; color:#959595;'>Searching...</span></div>");
+    $('#listenSlideContHolder').html("<div style='float:right; width:680px;'><span style='font-size:24px; color:#959595;'>Searching...</span></div>");
 
     var ss = search_string;
     ss = ss.replace(" ", "+");
@@ -990,7 +986,6 @@ function SearchMusicStrPage(search_string, page) {
         success: function (data) {
             
             $('#listenSlidePopPlst4').html(data);
-            //$('#listenSlideContHolder').html(data);
         }
     });
 
@@ -1008,7 +1003,7 @@ function SearchMusicYTID() {
     ss = ss.replace(" ", "+");
 
 
-    $('#listenSlideContHolder').html("<div style='float:right; width:1024px;'><span style='font-size:24px; color:#454545;'>Searching...</span></div>");
+    $('#listenSlideContHolder').html("<div style='float:right; width:680px;'><span style='font-size:24px; color:#454545;'>Searching...</span></div>");
 
 
     $.ajax({

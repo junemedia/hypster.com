@@ -2,139 +2,92 @@
     ViewBag.Title = "Follow Gamers on Hypster";
     ViewBag.Desc = "Watch free gaming streams from popular gamers in our Gamers Rewards program, see them on Twitch TV.";
     ViewBag.ActivePage = "hypster";
-    Layout = "/Views/Shared/_LayoutBlack.cshtml";
 
     ViewBag.LinkTag = "<link rel=\"alternate\" media=\"only screen and (max-width: 640px)\" href=\"http://hypster.com/apps/appGamehype\" >";
+    Layout = "/Views/Shared/_Layout3.cshtml";
 }
-
 
 <script>
     $(document).ready(function () {
         $(".MSCGAM").css("color", "#FFFFFF");
     });
 </script>
-
-
-<div class="GamehypeCh1">
-    
-
-    <div class="GmhTitle" onclick=" window.location='/gamehype';">
-        GAMEHYPE
+<div style="float:left;width:100%">
+    <div class="GamehypeCh1">
+        <div class="GmhTitle" onclick="window.location='/gamehype';">
+            GAMEHYPE
+        </div>
+        <div class="GmhTblCont" style="margin-top:5px;">
+            <div class="GmBox1">
+                <div class="GmBoxHdr">BestRivenNA</div>
+                <img alt="" src="/imgs/gamehype/gimgs/BestRivenNA.jpg" />
+                <div class="GmBoxVS" onclick="window.location='/gamehype/stream/BestRivenNA';">VIEW STREAM</div>
+            </div>
+            <div class="GmBox1">
+                <div class="GmBoxHdr">BoxBox</div>
+                <img alt="" src="/imgs/gamehype/gimgs/Flosd.jpg" />
+                <div class="GmBoxVS" onclick="window.location='/gamehype/stream/BoxBox';">VIEW STREAM</div>
+            </div>
+            <div class="GmBox1">
+                <div class="GmBoxHdr">Ellohime</div>
+                <img alt="" src="/imgs/gamehype/gimgs/Ellohime.jpg" />
+                <div class="GmBoxVS" onclick="window.location='/gamehype/stream/Ellohime';">VIEW STREAM</div>
+            </div>        
+        </div>
+        <div class="GmhTblCont" style="margin-top:5px;">
+            <div class="GmBox1">
+                <div class="GmBoxHdr">OxiChampion</div>
+                <img alt="" src="/imgs/gamehype/gimgs/OxiChampion.jpg" />
+                <div class="GmBoxVS" onclick="window.location='/gamehype/stream/OxiChampion';">VIEW STREAM</div>
+            </div>
+            <div class="GmBox1">
+                <div class="GmBoxHdr">Smoovez</div>
+                <img alt="" src="/imgs/gamehype/gimgs/Smoovez.jpg" />
+                <div class="GmBoxVS" onclick="window.location='/gamehype/stream/Smoovez';">VIEW STREAM</div>
+            </div>
+            <div class="GmBox1">
+                <div class="GmBoxHdr">Dakotaz</div>
+                <img alt="" src="/imgs/gamehype/gimgs/Dakotaz.jpg" />
+                <div class="GmBoxVS" onclick="window.location='/gamehype/stream/Dakotaz';">VIEW STREAM</div>
+            </div>
+        </div>
+        <div class="GmhTblCont" style="margin-top:5px;">
+            <div class="GmBox1">
+                <div class="GmBoxHdr">Noobcake86</div>
+                <img alt="" src="/imgs/gamehype/gimgs/greenman.jpg" />
+                <div class="GmBoxVS" onclick="window.location='/gamehype/stream/Noobcake86';">VIEW STREAM</div>
+            </div>
+            <div class="GmBox1">
+                <div class="GmBoxHdr">DNKu123</div>
+                <img alt="" src="/imgs/gamehype/gimgs/dnku.jpg" />
+                <div class="GmBoxVS" onclick="window.location='/gamehype/stream/DNKu123';">VIEW STREAM</div>
+            </div>
+            <div class="GmBox1">
+                <div class="GmBoxHdr">CJ_Zeed</div>
+                <img alt="" src="/imgs/gamehype/gimgs/zeed.jpg" />
+                <div class="GmBoxVS" onclick="window.location='/gamehype/stream/CJ_Zeed';">VIEW STREAM</div>
+            </div>
+        </div>
+        <div class="GmhTblCont" style="margin-top:5px;">
+            <div class="GmBox1">
+                <div class="GmBoxHdr">ZeeooN</div>
+                <img alt="" src="/imgs/gamehype/gimgs/ZeeooN.jpg" />
+                <div class="GmBoxVS" onclick="window.location='/gamehype/stream/ZeeooN';">VIEW STREAM</div>
+            </div>
+            <div class="GmBox1">
+                <div class="GmBoxHdr">Bowsersaurus</div>
+                <img alt="" src="/imgs/gamehype/gimgs/Bowsersaurus.jpg" />
+                <div class="GmBoxVS" onclick="window.location='/gamehype/stream/Bowsersaurus';">VIEW STREAM</div>
+            </div>
+            <div class="GmBox1">
+                <div class="GmBoxHdr">totemtoe</div>
+                <img alt="" src="/imgs/gamehype/gimgs/totemtoe.jpg" />
+                <div class="GmBoxVS" onclick="window.location='/gamehype/stream/totemtoe';">VIEW STREAM</div>
+            </div>
+        </div>    
+        <div class="GmhBottomCont" style="margin-bottom:15px;">
+            <div onclick="window.location='/hypster/Gamers_Rewards_Program';">GAMERS REWARDS PROGRAM</div>
+            <span>CLICK TO JOIN</span>
+        </div>
     </div>
-
-
-
-
-    <div class="GmhTblCont" style=" margin-top:20px;">
-
-        <div class="GmBox1">
-            <div class="GmBoxHdr">BestRivenNA</div>
-            <img alt="" src="/imgs/gamehype/gimgs/BestRivenNA.jpg" />
-            <div class="GmBoxVS" onclick="window.location='/gamehype/stream/BestRivenNA';">VIEW STREAM</div>
-        </div>
-
-
-        <div class="GmBox1">
-            <div class="GmBoxHdr">BoxBox</div>
-            <img alt="" src="/imgs/gamehype/gimgs/Flosd.jpg" />
-            <div class="GmBoxVS" onclick="window.location='/gamehype/stream/BoxBox';">VIEW STREAM</div>
-        </div>
-
-
-        <div class="GmBox1">
-            <div class="GmBoxHdr">Ellohime</div>
-            <img alt="" src="/imgs/gamehype/gimgs/Ellohime.jpg"  />
-            <div class="GmBoxVS" onclick="window.location='/gamehype/stream/Ellohime';">VIEW STREAM</div>
-        </div>
-
-
-        <div class="GmBox1">
-            <div class="GmBoxHdr">OxiChampion</div>
-            <img alt="" src="/imgs/gamehype/gimgs/OxiChampion.jpg"  />
-            <div class="GmBoxVS" onclick="window.location='/gamehype/stream/OxiChampion';">VIEW STREAM</div>
-        </div>
-
-    </div>
-
-
-
-
-
-    <div class="GmhTblCont" style=" margin-top:20px;">
-
-        <div class="GmBox1">
-            <div class="GmBoxHdr">Smoovez</div>
-            <img alt="" src="/imgs/gamehype/gimgs/Smoovez.jpg" />
-            <div class="GmBoxVS" onclick="window.location='/gamehype/stream/Smoovez';">VIEW STREAM</div>
-        </div>
-
-
-        <div class="GmBox1">
-            <div class="GmBoxHdr">Dakotaz</div>
-            <img alt="" src="/imgs/gamehype/gimgs/Dakotaz.jpg" />
-            <div class="GmBoxVS" onclick="window.location='/gamehype/stream/Dakotaz';">VIEW STREAM</div>
-        </div>
-
-
-        <div class="GmBox1">
-            <div class="GmBoxHdr">Noobcake86</div>
-            <img alt="" src="/imgs/gamehype/gimgs/greenman.jpg" />
-            <div class="GmBoxVS" onclick="window.location='/gamehype/stream/Noobcake86';">VIEW STREAM</div>
-        </div>
-
-
-        <div class="GmBox1">
-            <div class="GmBoxHdr">DNKu123</div>
-            <img alt="" src="/imgs/gamehype/gimgs/dnku.jpg" />
-            <div class="GmBoxVS" onclick="window.location='/gamehype/stream/DNKu123';">VIEW STREAM</div>
-        </div>
-
-
-    </div>
-
-
-
-
-
-    <div class="GmhTblCont" style=" margin-top:20px;">
-
-        <div class="GmBox1">
-            <div class="GmBoxHdr">CJ_Zeed</div>
-            <img alt="" src="/imgs/gamehype/gimgs/zeed.jpg" />
-            <div class="GmBoxVS" onclick="window.location='/gamehype/stream/CJ_Zeed';">VIEW STREAM</div>
-        </div>
-
-
-        <div class="GmBox1">
-            <div class="GmBoxHdr">ZeeooN</div>
-            <img alt="" src="/imgs/gamehype/gimgs/ZeeooN.jpg" />
-            <div class="GmBoxVS" onclick="window.location='/gamehype/stream/ZeeooN';">VIEW STREAM</div>
-        </div>
-
-
-        <div class="GmBox1">
-            <div class="GmBoxHdr">Bowsersaurus</div>
-            <img alt="" src="/imgs/gamehype/gimgs/Bowsersaurus.jpg" />
-            <div class="GmBoxVS" onclick="window.location='/gamehype/stream/Bowsersaurus';">VIEW STREAM</div>
-        </div>
-
-
-        <div class="GmBox1">
-            <div class="GmBoxHdr">totemtoe</div>
-            <img alt="" src="/imgs/gamehype/gimgs/totemtoe.jpg" />
-            <div class="GmBoxVS" onclick="window.location='/gamehype/stream/totemtoe';">VIEW STREAM</div>
-        </div>
-
-    </div>
-
-
-
-
-    
-    <div class="GmhBottomCont" style=" margin-bottom:30px;">
-        <div onclick="window.location='/hypster/Gamers_Rewards_Program';">GAMERS REWARDS PROGRAM</div>
-        <span>CLICK TO JOIN</span>
-    </div>
-  
-   
 </div>

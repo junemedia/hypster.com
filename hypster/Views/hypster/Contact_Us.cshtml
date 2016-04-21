@@ -2,88 +2,62 @@
 @{
     ViewBag.Title = "Hypster - free music online - player for tumblr";
     ViewBag.Desc = "";
-    
+
     ViewBag.LinkTag = "<link rel=\"alternate\" media=\"only screen and (max-width: 640px)\" href=\"http://hypster.com/apps/appHypster/contact_us\" >";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
-@*<div style=" float:left; width:100%; height:219px; background:url(/imgs/contact_us_back.png) no-repeat; margin:0 0 0 0;">
-        
-</div>*@
-
 <div class="ContactUsCont">
-
-
-  
-    <div style=" float:left; margin-bottom:20px; width:650px; ">
+    <div style="float:left; margin-bottom:20px; width:650px; ">
         @using (Html.BeginForm())
         {
-                            
-            <div style=" float:right; width:100%;">
-            
-                <div style=" float:right; width:640px; height:33px; border:1px solid #DEDEDE; background-color:#FFFFFF; border:1px solid #000000; border-radius:2px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
-                    <div style=" float:left;  margin:3px 0 0 0; text-align:left; color:#2f5262;">&nbsp;EMAIL:</div>
-                    <input type="text" name="YourEmail" id="YourEmail" value="" style=" float:left; outline: none; width:450px; height:22px; margin:2px 0 0 5px; background-color:#FFFFFF;  border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  />
+            <div style="float:right; width:100%;">
+                <div style="float:right; width:640px; height:33px; border:1px solid #DEDEDE; background-color:#FFFFFF; border:1px solid #000000; border-radius:2px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                    <div style="float:left;  margin:3px 0 0 0; text-align:left; color:#2f5262;">&nbsp;EMAIL:</div>
+                    <input type="text" name="YourEmail" id="YourEmail" value="" style="float:left; outline: none; width:450px; height:22px; margin:2px 0 0 5px; background-color:#FFFFFF;  border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  />
                 </div>
 
-                <div style=" float:right; width:640px; height:33px; margin:5px 0 0 0; border:1px solid #DEDEDE; background-color:#FFFFFF; border:1px solid #000000; border-radius:2px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
-                    <div style=" float:left; margin:3px 0 0 0; text-align:left; color:#2f5262;">&nbsp;SUBJECT:</div>
-                    <input type="text" name="Subject" id="Subject" value="" style=" float:left; outline: none; width:450px; height:22px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  />
+                <div style="float:right; width:640px; height:33px; margin:5px 0 0 0; border:1px solid #DEDEDE; background-color:#FFFFFF; border:1px solid #000000; border-radius:2px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                    <div style="float:left; margin:3px 0 0 0; text-align:left; color:#2f5262;">&nbsp;SUBJECT:</div>
+                    <input type="text" name="Subject" id="Subject" value="" style="float:left; outline: none; width:450px; height:22px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  />
                 </div>
 
-                <div style=" float:right; width:640px; height:230px; margin:5px 0 0 0; border:1px solid #DEDEDE; background-color:#FFFFFF; border:1px solid #000000; border-radius:2px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
-                    <div style=" float:left; margin:3px 0 0 0; text-align:left; color:#2f5262;">&nbsp;MESSAGE:</div>
-                    <textarea type="text" name="Message" id="Message" value="" style=" float:left; outline: none; width:540px; height:220px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  ></textarea>
+                <div style="float:right; width:640px; height:230px; margin:5px 0 0 0; border:1px solid #DEDEDE; background-color:#FFFFFF; border:1px solid #000000; border-radius:2px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                    <div style="float:left; margin:3px 0 0 0; text-align:left; color:#2f5262;">&nbsp;MESSAGE:</div>
+                    <textarea type="text" name="Message" id="Message" value="" style="float:left; outline: none; width:540px; height:220px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  ></textarea>
                 </div>
 
-
-                <div style=" float:left; width:100%;">
-                    <div style=" float:left; margin:10px 0 0 8px;">
+                <div style="float:left; width:50%;">
+                    <div style="float:left; margin:40px 0 0 8px;">
                         @Html.Raw(Html.GenerateCaptcha())
                         @Html.ValidationMessage("recaptcha")
                         <br />
-                        <div style=" background-color:#CC0000; color:#FFFFFF;">@ViewBag.ServerMessage</div>
-                    </div>
+                        <div style="background-color:#CC0000; color:#FFFFFF;">@ViewBag.ServerMessage</div>
+                    </div>                    
                 </div>
+                <div style="float:right; width:48%; margin:10px 0 0 8px;">
+                    <div style="float:left; width:100%; margin:10px 0 0 0; border-bottom:2px solid #42bc90; ">
+                        <H2 style="margin:5px 0 5px 0;">FAQ</H2>
+                    </div>
 
+                    <a href="/resources/manuals" class="ContUsSdeArt">
+                        &nbsp;How To Use
+                    </a>
+
+                    <a href="/resources/manuals/details/-How-to-put-player-on-tumblr" class="ContUsSdeArt">
+                        &nbsp;How Create Player on Tumblr
+                    </a>
+
+                    <a href="/resources/manuals/details/Why-songs-are-not-working-on-tumblr-blog-after-embed" class="ContUsSdeArt">
+                        &nbsp;Songs are not working on tumblr blog
+                    </a>
+                </div>
             </div>
-                            
-        
-            <div style=" float:right; width:100%; text-align:right; margin-top:5px;">
-                <input type="submit" value="SUBMIT" style=" width:250px; height:30px; background-color:#47bb90; border:2px solid #47bb90; border-radius:3px; color:#FFFFFF; font-family:'Lato', sans-serif; font-size:16px;" />
+            <div style="width:100%; text-align:center; margin-top:5px;">
+                <input type="submit" value="SUBMIT" style="width:250px; height:30px; background-color:#47bb90; border:2px solid #47bb90; border-radius:3px; color:#FFFFFF; font-family:'Lato', sans-serif; font-size:16px;" />
             </div>
         }
     </div>
-
-
-    <div style=" float:right; width:300px; margin-right:20px;">
-
-        <div style=" float:left; width:300px; height:250px; ">
-            @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
-            <!-- 06_25 -->
-        </div>
-
-
-        <div style=" float:left; width:100%; margin:10px 0 0 0; border-bottom:2px solid #42bc90; ">
-            <H2 style=" margin:5px 0 5px 0;">FAQ</H2>
-        </div>
-
-        <a href="/resources/manuals" class="ContUsSdeArt">
-            &nbsp;How To Use
-        </a>
-                    
-        <a href="/resources/manuals/details/-How-to-put-player-on-tumblr" class="ContUsSdeArt">
-            &nbsp;How Create Player on Tumblr
-        </a>
-
-        <a href="/resources/manuals/details/Why-songs-are-not-working-on-tumblr-blog-after-embed" class="ContUsSdeArt">
-            &nbsp;Songs are not working on tumblr blog
-        </a>
-
-
-    </div>
-                
-
-
 </div>
 
 

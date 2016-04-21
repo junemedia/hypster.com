@@ -2740,13 +2740,13 @@ a:visited
 
 .PrivacyPolicyCont
 {
-	float:left; width:1000px; padding:15px 0 15px 15px; background-color:#202121; border-radius:2px; text-align:left;
+	float:left; width:700px; padding:0 0 5px 5px; background-color:#202121; border-radius:2px; text-align:left;
 }
 
 
 .TermsOfServiceCont
 {
-	float:left; width:1000px; padding:15px 0 15px 15px; background-color:#202121; border-radius:2px; text-align:left;
+	float:left; width:700px; padding:0 0 5px 5px; background-color:#202121; border-radius:2px; text-align:left;
 }
 
 /* --------------------------------------------------------------------------------- */
@@ -3280,7 +3280,7 @@ a:visited
 
 .MainHeadSongs
 {
-	float:left; min-width:400px; height:40px; line-height:30px; text-align:left; color:#CC9933; line-height:35px;
+	float:left; width:96%; min-width:400px; height:40px; line-height:30px; text-align:left; color:#CC9933; line-height:35px;
 }
 .MainHeadSongs img
 {
@@ -3288,7 +3288,7 @@ a:visited
 }
 .MainHeadSongs div
 {
-	float:left; width:560px; height:33px; overflow:hidden; font-size:22px; cursor:pointer;
+	float:left; width:100%; height:33px; overflow:hidden; font-size:22px; cursor:pointer;
 }
 
 
@@ -3300,8 +3300,7 @@ a:visited
 
 .CreatePlaylistCont .PlstItm_ActTitle
 {
-	float:left; width:330px; padding-left:4px; color:#CC9933; font-size:16px;
-	float:left; width:330px; height:27px; overflow:hidden;
+	float:left; width:85%; padding-left:4px; color:#CC9933; font-size:16px; height:27px; overflow:hidden;
 }
 
 .CreatePlaylistCont .PlstItm_ActTitle img
@@ -3356,7 +3355,7 @@ a:visited
 
 .CreatePlaylistCont .PlstItm .plstII
 {
-	float:left; width:300px; height:27px; line-height:25px; overflow:hidden; padding-left:4px;
+	float:left; width:80%; height:27px; line-height:25px; overflow:hidden; padding-left:4px;
 }
 .CreatePlaylistCont .PlstItm .plstII img
 {
@@ -3406,12 +3405,12 @@ a:visited
 
 .CreatePlaylistCont  .PlaylistsInnrCont
 {
-	float:left; width:410px; min-height:80px; margin-top:3px; overflow:hidden;
+	float:left; width:100%; min-height:80px; margin-top:3px; overflow:hidden;
 }
 
 .CreatePlaylistCont  .SongsInnrCont
 {
-	float:right; width:600px; min-height:400px; overflow:hidden; padding:2px 0 0 9px;
+	float:right; width:100%; min-height:400px; overflow:hidden; padding:2px 0 0 9px;
 }
 
 
@@ -3425,7 +3424,7 @@ a:visited
 
 .CreatePlaylistCont .SongTitle
 {
-	float:left; width:510px; height:50px; line-height:24px; margin-left:5px; margin-top:4px; cursor:pointer; font-size:16px; color:#DEDEDE;
+	float:left; width:90%; height:50px; line-height:24px; margin-left:5px; margin-top:4px; cursor:pointer; font-size:16px; color:#DEDEDE;
 }
 
 .CreatePlaylistCont .SongTitle span
@@ -4143,7 +4142,7 @@ a:visited
 
 .NPFT_Head
 {
-	float:right; width:1024px;  text-align:left;
+	float:right; width:760px;  text-align:left;
 }
 
 .NPFT_BHead
@@ -4159,7 +4158,7 @@ a:visited
 
 .NPFT_ContHolder
 {
-	float:left; width:1024px; padding:0px; min-height:1000px;
+	float:left; width:730px; padding:0px;
 }
 /* --------------------------------------------------------------------------------- */
 
@@ -4170,7 +4169,7 @@ a:visited
 
 .NPFT_PP_ContHolder
 {
-	float:left; width:1024px; padding:0px; min-height:1000px;
+	float:left; width:730px; padding:0px;
 }
 
 
@@ -4243,17 +4242,17 @@ a:visited
 
 .NPFT_ContHolder #CPL_Tab2
 {
-	float:left; width:985px; padding:20px; min-height:500px; background-color:#2e2e2e;
+	float:left; width:695px; padding:20px; background-color:#2e2e2e;
 }
 
 .NPFT_ContHolder #SampleSettingsHolder
 {
-	float:left; width:350px; margin-bottom:20px; background-color:#242424; padding:15px; border-radius:3px;
+	float:left; width:275px; margin-bottom:10px; background-color:#242424; padding:15px; border-radius:3px;
 }
 
 .NPFT_ContHolder #SampleContHolder
 {
-	float:right; width:540px; margin-bottom:20px; margin-right:0px; background-color:#272727; color:#BCBCBC; padding:20px; border-radius:3px; 
+	float:right; width:360px; margin-bottom:10px; background-color:#272727; color:#BCBCBC; padding:10px; border-radius:3px; 
 }
 
 .NPFT_ContHolder #SampleCodeHolder
@@ -4268,8 +4267,7 @@ a:visited
 
 .NPFT_ContHolder .HeaderCompText
 {
-	float:left; width:100%; font-size:19px; line-height:13px; text-align:left; color:#fbf3aa;
-	margin-bottom:10px;
+	float:left; width:100%; font-size:14px; line-height:13px; text-align:left; color:#fbf3aa; margin-bottom:5px; font-weight:bold;
 }
 
 .NPFT_ContHolder #PlayerCodeArea
@@ -4330,7 +4328,7 @@ a:visited
 
 .BenContHolder .BenItem
 {
-	width:1010px; margin:10px 10px 10px 0; padding:5px; min-height:28px; line-height:27px; background-color:#1c1c1c; border-radius:1px; color:#EEEEEE; font-size:18px;
+	width:740px; margin:10px 10px 10px 0; padding:5px; min-height:28px; line-height:27px; background-color:#1c1c1c; border-radius:1px; color:#EEEEEE; font-size:18px;
 }
 
 /* --------------------------------------------------------------------------------- */
@@ -5339,7 +5337,7 @@ a:visited
 
 .ManualArCont .MAheader
 {
-	float:left; float:left; font-size:23px;
+	float:left;  font-size:23px;
 }
 
 .ManualArCont .MAimg
