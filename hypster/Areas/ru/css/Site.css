@@ -143,26 +143,26 @@ div.Trans_75
 
 .boxContRight
 {
-	float:right; width:100%; height:auto; background:url('/imgs/stripe-bg.png') repeat-y center;  margin:25px 0 0 0;
+	float:right; width:100%; height:auto; background:url('/imgs/stripe-bg.png') repeat-y center;  margin:15px 0 0 0;
 	overflow:hidden;
 }
 
 
 .boxContLeft
 {
-	float:left; width:100%; height:auto; background:url('/imgs/stripe-bg2.png') repeat-y center;  margin:25px 0 0 0;
+	float:left; width:100%; height:auto; background:url('/imgs/stripe-bg2.png') repeat-y center;  margin:15px 0 0 0;
 	overflow:hidden;
 }
 
 
 .slideRight
 {
-	width:1024px; min-height:50px; padding:15px 0 15px 15px; background-color:#313537; margin:0 auto 0 auto; border-radius:2px;
+	width:724px; min-height:50px; padding:10px 0 10px 10px; background-color:#313537; margin:0 auto 0 auto; border-radius:2px;
 }
 
 .slideLeft
 {
-	width:1024px; min-height:50px; padding:15px 15px 15px 15px; background-color:#9da2a4; margin:0 auto 0 auto; border-radius:2px;
+	width:724px; min-height:50px; padding:10px 0 10px 10px; background-color:#9da2a4; margin:0 auto 0 auto; border-radius:2px;
 }
 
 

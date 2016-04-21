@@ -3,11 +3,11 @@
 @{
     ViewBag.Title = "Hypster - free music online - player for tumblr";
     ViewBag.Desc = "";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
-<div style="float:left; width:70%;">
-    <div class="listenMenuCont" style="height:35px; border-bottom:3px solid #cac9cb;">
+<div style="float:left; width:100%;">
+    <div class="listenMenuCont" style="height:34px; border-bottom:3px solid #cac9cb;">
         <div id="CreatePlaylistSection1" onclick="window.location='/account/info';" title="Search Music" style="height:32px; color:#47bb90; border-bottom:3px solid #47bb90; margin-top:2px; font-size:24px; font-weight:bold">
             INFO
         </div>
@@ -16,11 +16,11 @@
         </div>
     </div>
 </div>
-<div style="width:1050px">
+<div style="width:730px">
 @using (Html.BeginForm("InfoPost", "account", FormMethod.Post))
 {
     <!-- **************SECTION*************************** -->
-    <div style="float:left; width:700px; margin:10px 10px 0 10px;">
+    <div style="float:left; width:100%; margin:10px 10px 0 10px;">
         <div style="float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
             PERSONAL INFO
         </div>
@@ -139,8 +139,7 @@
             </div>
         </div>
     </div>
-    <div style="margin:10px;">@Html.Partial("~/Views/Shared/pr_RightRail.cshtml")</div>
-    <div style="float:left; width:700px; margin:-130px 10px 0 10px;">
+    <div style="float:left; width:100%; margin:0px 10px 0 10px;">
         <div style="float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
             MY PHOTOS
         </div>
@@ -169,7 +168,7 @@
         </div>
     </div>
     <!-- **************SECTION*************************** -->
-    <div style="float:left; width:700px; margin:40px 0 30px 0;">
+    <div style="float:left; width:100%; margin:10px 0 30px 0;">
         <div style="float:left; width:100%;">
             <div style="float:left; cursor:pointer; width:100%; font-size:16px;">
                 <input type="checkbox" id="checkNewsAboutMusic" name="checkNewsAboutMusic" @if (ViewBag.checkNewsAboutMusic == true) { <text> checked="checked" </text> } /> Check if you want to receive  a regular dose of ​all things new music.

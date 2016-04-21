@@ -5195,7 +5195,7 @@ a:visited
 
 .ManualArCont .MAheader
 {
-	float:left;  font-size:23px;
+	float:left; float:left; font-size:23px;
 }
 
 .ManualArCont .MAimg
