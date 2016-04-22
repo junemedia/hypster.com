@@ -48,7 +48,7 @@
                     MY PLAYLISTS
                 </div>
             
-                <div style="float:left; width:715px;">
+                <div style="float:left; width:100%;">
                     <div style="float:left; width:100%; margin-top:3px;">
                     @{ int counter_userPlaylists_list = 0; }
                     @foreach (var item in @Model.userPlaylists_list)
@@ -102,14 +102,13 @@
                         <a href="/create/playlist" style="display:block; float:left; width:230px; height:27px; line-height:27px; text-align:left; background-color:#3fbc91; color:#FFFFFF; border-radius:3px; margin-top:7px; margin-left:10px; padding-left:7px; cursor:pointer;">
                             Manage Playlists
                         </a>
-
                     </div>
                 </div>                
             </div>
         </div>
     </div>
 
-    <div class="boxContLeft" >
+    <div class="boxContLeft">
         <div id="listenSlide3" class="slideLeft" style="min-height:100px;">
             <div style="float:right; width:100%; margin:1%; text-align:left;">
                 <div style="float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
@@ -121,9 +120,7 @@
                 @foreach (var item in Model.userPlayers_list)
                 {
                     <div style="float:left; width:100%; text-align:left;">
-                                
-
-                        <div style="@if (back_id == 1){ <text>background-color:#EDEDED;</text>}else{<text>background-color:#EDEDED;</text>} float:left; width:91%; height:35px; line-height:30px; overflow:hidden; margin-top:3px; cursor:pointer;">
+                        <div style="@if (back_id == 1){ <text>background-color:#EDEDED;</text>}else{<text>background-color:#EDEDED;</text>} float:left; width:88%; height:35px; line-height:30px; overflow:hidden; margin-top:3px; cursor:pointer;">
                             <div style="float:left; margin:3px 0 0 5px; font-size:16px;">
                                 @item.player_Name
                             </div>
@@ -150,14 +147,14 @@
         </div>
     </div>
 
-    <div class="boxContRight" >
+    <div class="boxContRight">
         <div id="listenSlide4" class="slideRight" style="min-height:260px;">
-            <div style="float:left; width:1024px; margin-bottom:10px;">              
+            <div style="float:left; width:100%; margin-bottom:10px;">              
                 <div style="float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
                     MY STATIONS
                 </div>
 
-                <div id="stationsA" style="float:left; width:715px;">
+                <div id="stationsA" style="float:left; width:100%;">
                     <div style="float:left; width:100%; margin-top:3px;">
                         @foreach (var item in @Model.radioStation_list)
                         {
@@ -189,72 +186,51 @@
 </div>
 
 <!-- **************SECTION 2*************************** -->
-<div style="float:left; width:100%; margin:30px 0 0 0;">
-        <a name="plstil"></a>
-            
-        <div style="float:left; width:1024px; margin-bottom:10px;">
-                
-                <div style="float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
-                    PLAYLISTS I LIKE
+<div style="float:left; width:100%; margin:10px 0 0 0;">
+    <a name="plstil"></a>
+    <div style="float:left; width:100%; margin-bottom:10px;">
+        <div style="float:left; width:99%; border:1px solid #3fbc91; color:#000000; font-family:'Lato', sans-serif; font-size:24px; margin:10px 0 10px 0; padding:5px 0 5px 0; text-align:center;">
+            PLAYLISTS I LIKE
+        </div>
+
+        <div style="float:left; width:100%;">
+        @foreach (var item in Model.playlists_I_like)
+        {
+            <div style="float:left; width:100%; min-height:30px; margin-bottom:1px; margin-top:3px;">
+                <div onclick="OpenPlayerM('/playlists/user/@(item.username)?@(item.id)')" style="float:left; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
+                    <img alt="" src="/imgs/play_icon_lte.png" style="margin:7px 7px 0 7px;" />
                 </div>
-                
 
-                <div style="float:left; width:710px;">
-                @foreach (var item in Model.playlists_I_like)
-                {
-                    <div style="float:left; width:100%; min-height:30px; margin-bottom:1px; margin-top:3px;">
-                            
-
-                            <div onclick="OpenPlayerM('/playlists/user/@(item.username)?@(item.id)')" style="float:left; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
-                                <img alt="" src="/imgs/play_icon_lte.png" style="margin:7px 7px 0 7px;" />
-                            </div>
-
-                            <div onclick="OpenPlayerM('/playlists/user/@(item.username)?@(item.id)')" style="float:left; width:620px; height:30px; line-height:30px; margin:0px 4px 0 4px; padding-left:3px; background-color:#EDEDED;  text-align:left; color:#000000; cursor:pointer;">
-                                @item.name
-
-                                <a class="PlstViewsFp" title="@item.ViewsNum views">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(item.ViewsNum)</a>
-                                <a class="PlstLikesFp" title="@item.Likes likes">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(item.Likes)</a>
-                            </div>
-
-                            <div onclick="if(confirm('Are you sure you want to delete?') == true){ window.location='/account/DeleteLikedPlaylist?playlist_id=@item.id&us_id=@Model.curr_user.id'; }" style="float:left; width:35px; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
-                                <img alt="" src="/imgs/action_icons/delete_icon_s.png" style="margin:5px 7px 0 10px;" />
-                            </div>
-
-                    </div>
-                }
+                <div onclick="OpenPlayerM('/playlists/user/@(item.username)?@(item.id)')" style="float:left; width:620px; height:30px; line-height:30px; margin:0px 4px 0 4px; padding-left:3px; background-color:#EDEDED;  text-align:left; color:#000000; cursor:pointer;">
+                    @item.name
+                    <a class="PlstViewsFp" title="@item.ViewsNum views">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(item.ViewsNum)</a>
+                    <a class="PlstLikesFp" title="@item.Likes likes">@hypster.Controllers.helpers.PlaylistHelper.DisplayViews(item.Likes)</a>
                 </div>
-        </div> 
+
+                <div onclick="if(confirm('Are you sure you want to delete?') == true){ window.location='/account/DeleteLikedPlaylist?playlist_id=@item.id&us_id=@Model.curr_user.id'; }" style="float:left; width:35px; height:30px; line-height:30px; text-align:left; color:#FFFFFF; font-size:11px; background-color:#EDEDED;  cursor:pointer;">
+                    <img alt="" src="/imgs/action_icons/delete_icon_s.png" style="margin:5px 7px 0 10px;" />
+                </div>
+            </div>
+        }
+        </div>
+    </div>
 </div>
 
+<div style="float:left; width:100%; margin:10px 0 10px 0;">
+    <div style="float:right; width:100%;">
+        <input type="submit" value="SAVE CHANGES" style="float:right; width:280px; height:40px; line-height:40px; margin:3px 0 0 0; background-color:#3fbc91; border:1px solid #3fbc91; border-radius:3px; color:#FFFFFF; font-family:'Lato', sans-serif; font-weight:lighter; font-size:26px; text-align:center; cursor:pointer;" />
 
-
-
-
-
-
-
-<div style="float:left; width:100%; margin:30px 0 30px 0;">
-            
-
-
-            <div style="float:right; width:1024px;">
-                 
-                 <input type="submit" value="SAVE CHANGES" style="float:right; width:280px; height:40px; line-height:40px; margin:3px 0 0 0; background-color:#3fbc91; border:1px solid #3fbc91; border-radius:3px; color:#FFFFFF; font-family:'Lato', sans-serif; font-weight:lighter; font-size:26px; text-align:center; cursor:pointer;" />
-
-                 <div class="mFollowUsCont1">
+            <div class="mFollowUsCont1">
                         
-                    <div class="fuText">
-                        Follow Us:
-                    </div>
-                    <div style="float:left; margin:0px 0 0 5px;">
-                        <a class="flwUs_wt_fbk" href="https://www.facebook.com/Hypster" target="_blank"></a>
-                        <a class="flwUs_wt_twr" href="https://twitter.com/Hypsterdotcom" target="_blank"></a>
-                        <a class="flwUs_wt_tum" href="http://hypsterblog.tumblr.com/" target="_blank"></a>
-                    </div>
-                </div>
-
+            <div class="fuText">
+                Follow Us:
             </div>
-
-
+            <div style="float:left; margin:0px 0 0 5px;">
+                <a class="flwUs_wt_fbk" href="https://www.facebook.com/Hypster" target="_blank"></a>
+                <a class="flwUs_wt_twr" href="https://twitter.com/Hypsterdotcom" target="_blank"></a>
+                <a class="flwUs_wt_tum" href="http://hypsterblog.tumblr.com/" target="_blank"></a>
+            </div>
+        </div>
+    </div>
 </div>
 }

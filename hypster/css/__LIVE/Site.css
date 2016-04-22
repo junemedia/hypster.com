@@ -7,8 +7,8 @@ img{border:0}
 .MainBD13{float:left;width:100%;min-width:1040px;min-height:100%;height:auto!important;margin-bottom:25px}
 .Trans_BACK{background:#000;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=90);opacity:0.90;-moz-opacity:0.90;display:none;z-index:100000;position:absolute;top:0;left:0;width:1px;height:1px}
 div.Trans_75{filter:progid:DXImageTransform.Microsoft.Alpha(opacity=75);opacity:0.75;-moz-opacity:0.75}
-.boxContRight{float:right;width:100%;height:auto;background:url(/imgs/stripe-bg.png) repeat-y center;overflow:hidden;margin:25px 0 0}
-.boxContLeft{float:left;width:100%;height:auto;background:url(/imgs/stripe-bg2.png) repeat-y center;overflow:hidden;margin:25px 0 0}
+.boxContRight{float:right;width:100%;height:auto;background:url(/imgs/stripe-bg.png) repeat-y center;overflow:hidden;margin:10px 0 0}
+.boxContLeft{float:left;width:100%;height:auto;background:url(/imgs/stripe-bg2.png) repeat-y center;overflow:hidden;margin:10px 0 0}
 .slideRight{width:1024px;min-height:50px;background-color:#313537;border-radius:2px;border-left:1px solid #2c3133;border-bottom:1px solid #2c3133;margin:0 auto;padding:15px 0 15px 15px}
 .slideLeft{width:1024px;min-height:50px;border-radius:2px;border-right:1px solid #627076;border-bottom:1px solid #627076;background:#9da2a4 url(/imgs/grey_back.png) repeat;margin:0 auto;padding:15px}
 .boxContRightTop{margin-top:3px}

@@ -113,10 +113,9 @@ img
 
 .Trans_BACK {
      background:#000000;
-     
      filter:progid:DXImageTransform.Microsoft.Alpha(opacity=90);
      opacity: 0.90;
-     -moz-opacity:0.90;
+     -moz-opacity: 0.90;
      position:absolute;
      
      display:none; z-index:100000; position:absolute; top:0px; left:0px; width:1px; height:1px;
@@ -151,13 +150,13 @@ div.Trans_75
 
 .boxContRight
 {
-	float:right; width:100%; height:auto;  margin:25px 0 0 0;
+	float:right; width:100%; height:auto;  margin:10px 0 0 0;
 	overflow:hidden;
 }
 
 .boxContLeft
 {
-	float:left; width:100%; height:auto; margin:25px 0 0 0;
+	float:left; width:100%; height:auto; margin:10px 0 0 0;
 	overflow:hidden;
 }
 
@@ -165,7 +164,7 @@ div.Trans_75
 
 .boxContRightB
 {
-	float:right; width:100%; height:auto; margin:25px 0 0 0;
+	float:right; width:100%; height:auto; margin:10px 0 0 0;
 	overflow:hidden;
 }
 
@@ -174,13 +173,12 @@ div.Trans_75
 
 .slideRight
 {
-	width:748px; min-height:50px; padding:5px 0 5px 5px; 
-	margin:0 auto 0 auto; border-radius:2px;
+	width:750px; min-height:50px; padding:5px 5px 5px 5px; margin:0 auto 0 auto; border-radius:2px;
 }
 
 .slideLeft
 {
-	width:750px; min-height:50px; padding:10px 10px 10px 10px; margin:0 auto 0 auto; border-radius:2px;
+	width:750px; min-height:50px; padding:5px 5px 5px 5px; margin:0 auto 0 auto; border-radius:2px;
 }
 
 .boxContRightTop
