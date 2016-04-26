@@ -3343,7 +3343,7 @@ a:visited
 
 
 #sortablePlaylist { list-style-type:none; margin: 0; padding: 0; float:left; width:100%; margin-bottom:8px; }    
-#sortablePlaylist .srt_itm { float:left; float:left; width:585px; height:57px; background-color:#FFFFFF; color:#000000; cursor:pointer; overflow:hidden; margin-top:4px; }
+#sortablePlaylist .srt_itm { float:left; width:95%; height:57px; background-color:#FFFFFF; color:#000000; cursor:pointer; overflow:hidden; margin-top:4px; }
 
 
 
