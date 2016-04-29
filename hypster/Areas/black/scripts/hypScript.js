@@ -2,7 +2,7 @@
 var myHeight = 0;
 var active_menu = "";
 var home_vis = false;
-var refresh_delay = 20; // Refresh the ads every 'refresh_delay' seconds.
+var refresh_delay = 30; // Refresh the ads every 'refresh_delay' seconds.
 var refresh_max = 50; // Refresh the current ads spot for 'refresh_max' times.
 
 

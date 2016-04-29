@@ -5200,12 +5200,12 @@ a:visited
 
 .ManualDtHeader
 {
-	float:right; width:1024px; font-size:34px; color:#233f4c; margin-top:12px;
+	float:right; width:100%; font-size:34px; color:#233f4c; margin-top:12px;
 }
 
 .ManualDtShare
 {
-	float:right; width:1024px;
+	float:right;width:100%;
 }
 
 .ManualDtSlideHdr

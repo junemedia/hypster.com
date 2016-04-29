@@ -17,8 +17,7 @@
 
 .MainNHypPlayer #MainContHolder
 {
-	float:left; margin:0px 0 0 0px;
-	width:680px; min-height:1350px; background-color:#000000;
+	float:left; width:688px; min-height:1350px; background-color:#000000;
 }
 
 .MainNHypPlayer .MainAdsHoder

@@ -3,7 +3,7 @@
     ViewBag.Desc = "Follow gamer " + ViewBag.StreamName + " on Twitch TV and listen to " + ViewBag.StreamName + "'s free custom music playlist.";
     
     ViewBag.ActivePage = "hypster";
-    Layout = "/Views/Shared/_Layout3.cshtml";
+    //Layout = "/Views/Shared/_LayoutBlack.cshtml";
 
     ViewBag.LinkTag = "<link rel=\"alternate\" media=\"only screen and (max-width: 640px)\" href=\"http://hypster.com/apps/appGamehype/stream/BoxBox\" >";
 }
@@ -26,4 +26,13 @@
         <iframe src="http://www.twitch.tv/@ViewBag.StreamName/embed" frameborder="0" scrolling="no" height="400" width="680" style="margin:-30px 0 0 10px;"></iframe>
         <a href="http://www.twitch.tv/@ViewBag.StreamName?tt_medium=live_embed&tt_content=text_link" target="_blank" style="color:#FFFFFF; padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline;">Watch live video from @ViewBag.StreamName on www.twitch.tv</a>
     </div>
+</div>
+<div class="GmhStmRight1">
+    <div style="margin:0 0 10px 0;">
+        @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
+    </div>
+    <div style="margin:0 0 10px 0;">
+        @Html.Partial("~/Views/hypAds/ad_300x250_btf.cshtml")
+    </div>
+    <iframe src="http://www.twitch.tv/@ViewBag.StreamName/chat?popout=" frameborder="0" scrolling="no" height="500" width="300"></iframe>
 </div>

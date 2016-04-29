@@ -548,7 +548,7 @@
 }
 .GamehypeCh1 .GmhTitle
 {
-    float:left; width:100%; border-bottom:2px solid #3fbc91; font-size:32px; cursor:pointer; font-weight:bold;
+    float:left; width:100%; border-bottom:2px solid #3fbc91; font-size:64px; cursor:pointer; font-weight:300;
 }
 
 .GamehypeCh1 .GmhTblH
@@ -586,7 +586,7 @@
 
 .GamehypeCh1 .GmBox1 img
 {
-    margin:5px 0 0 10px;
+    margin:5px 0 0 23px;
 }
 
 .GmBox1 .GmBoxHdr
@@ -606,7 +606,7 @@
 
 .GmBox1 .GmBoxVS
 {
-    float:left; width:150px; height:22px; margin:5px 0 0 20px; text-align:center; background-color:#3fbc91; font-size:16px; border-radius:3px; cursor:pointer;
+    float:left; width:150px; height:22px; margin:5px 0 0 40px; text-align:center; background-color:#3fbc91; color:#FFF; font-size:16px; border-radius:3px; cursor:pointer;
 }
 
 .GamehypeCh1 .GmBoxFrst
@@ -707,7 +707,7 @@
 
 .breakingMCH .brkngHDR
 {
-    display:block; float:left; width:100%; margin:0px; font-size:32px;font-weight: bold; border-bottom:2px solid #3fbc91; background:none;
+    display:block; float:left; width:100%; margin:0px; font-size:62px;font-weight: 300; border-bottom:2px solid #3fbc91; background:none;
 }
 
 .brkngHDR1

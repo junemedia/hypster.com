@@ -2,13 +2,9 @@
 @{
     ViewBag.Title = Model.festival.Festival_Name + " | Festival Details";
     ViewBag.Desc = Model.festival.Festival_Desc;
+    Layout = "/Views/Shared/_Layout2.cshtml";
 }
 
-
-
-
-
-<div class="chartHoldCont" style=" margin-top:-20px;">
+<div class="chartHoldCont" style="margin-top:-20px;">
     @{ Html.RenderPartial("~/Views/festivals/BuildFestival_Details.cshtml", Model); }
 </div>
-
