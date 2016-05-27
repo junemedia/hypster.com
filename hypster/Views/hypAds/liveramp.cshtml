@@ -1,0 +1,23 @@
+﻿@{
+    hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
+    string userEmail = memberManager.getMemberByUserName(User.Identity.Name).email;
+}
+@if (User.Identity.IsAuthenticated)
+{
+    <script src="~/scripts/sha1.js" type="text/javascript"></script>
+    <script>
+        var body = document.getElementsByTagName("body");
+        var iframe = document.createElement("iframe");
+        var usrEm = '@userEmail'.toLowerCase();
+        iframe.setAttribute("name", "_rlcdn");
+        iframe.setAttribute("width", "0");
+        iframe.setAttribute("height", "0");
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("src", "//ei.rlcdn.com/425166.html?s=" + Sha1.hash(usrEm));
+        body[0].appendChild(iframe);
+    </script>
+}
+else
+{
+    <iframe name="_rlcdn" width="0" height="0" frameborder="0" src="//ei.rlcdn.com/425126.html"></iframe>
+}
