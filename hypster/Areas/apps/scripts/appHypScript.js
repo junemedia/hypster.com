@@ -1,4 +1,7 @@
+<<<<<<< f9d1b3b45a80bed15346e1653833ead4e43cafb5
 <<<<<<< 47f4f9128720a6e3b5976d5a82374902b23c0bea
+=======
+>>>>>>> Home page modification. Fixed the mis-aligned contents in the home page. Adjustment og the content widths, margins, and so on.
 ﻿var myWidth = 0;
 var myHeight = 0;
 var active_menu = "";
@@ -198,8 +201,13 @@ function initSlideshow() {
         $ArrowKeyNavigation: true,
         $SlideDuration: 500,
         $MinDragOffsetToSlide: 20,
+<<<<<<< f9d1b3b45a80bed15346e1653833ead4e43cafb5
         $SlideWidth: 1024,
         $SlideHeight: 522,
+=======
+        $SlideWidth: 726,
+        $SlideHeight: 370,
+>>>>>>> Home page modification. Fixed the mis-aligned contents in the home page. Adjustment og the content widths, margins, and so on.
         $SlideSpacing: 0,
         $DisplayPieces: 1,
         $ParkingPosition: 0,
@@ -2531,6 +2539,7 @@ function msieversion() {
         return false;
 
     return false;
+<<<<<<< f9d1b3b45a80bed15346e1653833ead4e43cafb5
 }
 
 
@@ -5072,3 +5081,6 @@ function msieversion() {
     return false;
 }
 >>>>>>> Synchronization of Dev. environment
+=======
+}
+>>>>>>> Home page modification. Fixed the mis-aligned contents in the home page. Adjustment og the content widths, margins, and so on.

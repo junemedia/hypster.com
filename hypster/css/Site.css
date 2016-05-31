@@ -870,7 +870,7 @@ a:visited
 
 .VideoThumbBox
 {
-	display:block; float:right; width:125px; height:125px; background:none;  margin-left:25px; margin-right:40px; margin-top:19px; border-radius:2px; cursor:pointer;
+	display:block; float:right; width:125px; height:125px; background:none;  margin-left:25px; margin-right:25px; margin-top:19px; border-radius:2px; cursor:pointer;
 	padding:4px;
 	overflow:hidden;
 	border-radius:180px;

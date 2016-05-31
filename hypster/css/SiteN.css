@@ -233,12 +233,12 @@
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 .sld1_middleCont
 {
-    float:left; width:100%; border-top:2px solid #d4ae52; border-bottom:2px solid #d4ae52; margin:20px 0 20px 0;	
+    float:left; width:100%; border-top:2px solid #d4ae52; border-bottom:2px solid #d4ae52; margin:10px 0 10px 0;	
 }
 
 .sld1_middleCont .middleC1
 {
-	float:left; width:28%; padding:4px 1.5% 0 1.5%; height:120px; margin:16px 0 16px 0; border-radius:2px; text-align:center;
+	float:left; width:28%; padding:4px 1.5% 0 1.5%; height:120px; margin:10px 0 10px 0; border-radius:2px; text-align:center;
 	border:1px solid #d4ae52;
 	color:#000000;
 	cursor:pointer;
@@ -246,7 +246,7 @@
 
 .sld1_middleCont .middleC2
 {
-	float:left; width:29%; padding:4px 1.5% 0 1.5%; height:120px; margin:16px 0 16px 2%; border-radius:2px; text-align:center;
+	float:left; width:29%; padding:4px 1.5% 0 1.5%; height:120px; margin:10px 0 10px 2%; border-radius:2px; text-align:center;
 	border:1px solid #d4ae52;
 	color:#000000;
 	cursor:pointer;
@@ -254,7 +254,7 @@
 
 .sld1_middleCont .middleC3
 {
-	float:left; width:29%; padding:4px 1.5% 0 1.5%; height:120px; margin:16px 0 16px 2%; border-radius:2px; text-align:center;
+	float:left; width:29%; padding:4px 1.5% 0 1.5%; height:120px; margin:10px 0 10px 2%; border-radius:2px; text-align:center;
 	border:1px solid #d4ae52;
 	color:#000000;
 	cursor:pointer;
@@ -307,12 +307,12 @@
 
 .FeaturedVideoInner
 {
-	float:initial; width:830px; margin:10px 90px 0 0;
+	float:initial; width:745px; margin:10px 90px 0 0;
 }
 
 .VideoThumbBox
 {
-	display:block; float:right; width:125px; height:125px; background:none;  margin-left:25px; margin-right:40px; margin-top:19px; border-radius:2px; cursor:pointer;
+	display:block; float:right; width:125px; height:125px; background:none;  margin-left:25px; margin-right:25px; margin-top:19px; border-radius:2px; cursor:pointer;
 	padding:4px;
 	overflow:hidden;
 	border-radius:180px;
