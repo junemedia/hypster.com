@@ -31,7 +31,7 @@
         @foreach (var item in Model)
         {
             <div class="sldItm2">
-                <img u="image" src="/imgs/home/home_slideshow/@item.ImageSrc" onmousedown="sdl_show_down()" onmouseup="sdl_show_up('@item.href.Replace("'", "[]")')" onmousemove="sdl_show_move()" style="width:726px;height:371px;" />
+                <a href="@item.href"><img u="image" src="/imgs/home/home_slideshow/@item.ImageSrc" style="width:726px;height:371px;" /></a>
             </div>
         } 
     </div>
@@ -40,7 +40,7 @@
         <div u="prototype" style="position:absolute;width:12px;height:12px;border-radius:6px;border:1px solid #d4ae52;background:#FFFFFF;"></div>
     </div>
   
-    <span u="arrowleft" class="jssora02l" style="width:55px;height:55px;top:223px;left:8px;"></span>
-    <span u="arrowright" class="jssora02r" style="width:55px;height:55px;top:223px;right:8px;"></span>
+    <span u="arrowleft" class="jssora02l" style="width:55px;height:55px;top:162px;left:8px;"></span>
+    <span u="arrowright" class="jssora02r" style="width:55px;height:55px;top:162px;right:8px;"></span>
 </div>
 
