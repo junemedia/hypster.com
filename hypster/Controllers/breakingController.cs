@@ -13,9 +13,6 @@ namespace hypster.Controllers
 
         protected int POSTS_NUM_PAGING = 5;
 
-
-
-
         [System.Web.Mvc.OutputCache(Duration = 16)]
         public ActionResult Index()
         {
@@ -154,13 +151,11 @@ namespace hypster.Controllers
 
 
             hypster_tv_DAL.newsManagement newsManager = new hypster_tv_DAL.newsManagement();
-
-
             hypster_tv_DAL.newsPost post = new hypster_tv_DAL.newsPost();
+
             post = newsManager.GetPostByGUID(post_guid);
 
-
-            if (post.post_id < Int32.Parse(System.Configuration.ConfigurationManager.AppSettings["breaking_new_id"]) )
+            if (post.post_id < Int32.Parse(System.Configuration.ConfigurationManager.AppSettings["breaking_new_id"]))
             {
                 return View("DetailsO", post);
             }
@@ -196,25 +191,26 @@ namespace hypster.Controllers
         {
             int post_id = (int)id;
 
-
             hypster_tv_DAL.newsManagement newsManager = new hypster_tv_DAL.newsManagement();
 
             List<hypster_tv_DAL.newsPost> posts_list = new List<hypster_tv_DAL.newsPost>();
             posts_list = newsManager.GetRelatedNews_cache(post_id);
-
-
 
             return View(posts_list);
         }
         //------------------------------------------------------------------------------------------
 
 
-
-
-
-
-
-
+        //------------------------------------------------------------------------------------------
+        [OutputCache(Duration = 120)]
+        public ActionResult pr_GetLatestNews()
+        {
+            hypster_tv_DAL.newsManagement newsManager = new hypster_tv_DAL.newsManagement();
+            List<hypster_tv_DAL.newsPost> posts_list = new List<hypster_tv_DAL.newsPost>();
+            posts_list = newsManager.GetLatestNews(3);
+            return View(posts_list);
+        }
+        //------------------------------------------------------------------------------------------
 
 
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -247,15 +243,10 @@ namespace hypster.Controllers
                 }
 
             }
-
-
             //return to news home if no next post
             //return RedirectToAction("Index", "home");
             return RedirectPermanent("/breaking");
         }
-
-
-
 
 
 

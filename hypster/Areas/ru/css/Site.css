@@ -978,10 +978,10 @@ a:visited
 
 
 
-.sld1_middleCont
+/*.sld1_middleCont
 {
 	
-}
+}*/
 #listenSlide1_textBoxes
 {
 	float:left; width:1024px;
@@ -2628,7 +2628,7 @@ a:visited
 
 .CreatePlaylistCont
 {
-	float:left; width:1024px; margin-top:20px; margin-left:15px;
+	float:left; width:726px; margin-top:7px; margin-left:5px;
 }
 
 
@@ -2678,7 +2678,7 @@ a:visited
 
 .CreatePlaylistCont .PlstItm_ActTitle
 {
-	float:left; width:85%; padding-left:4px; color:#FCF088; font-size:16px;
+	float:left; width:87%; padding-left:4px; color:#FCF088; font-size:16px;
 }
 
 

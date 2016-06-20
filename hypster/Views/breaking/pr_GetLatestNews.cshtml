@@ -1,0 +1,25 @@
+﻿@model List<hypster_tv_DAL.newsPost>
+@{
+    Layout = null;
+}
+
+
+@if (Model.Count > 0)
+{
+    <h2 onclick="window.location='/breaking';" style="width:250px; line-height:30px; border-bottom:2px solid #3fbc91; cursor:pointer;">
+        MORE BREAKING NEWS
+    </h2>
+}
+
+
+
+@for (int i = 0; i < Model.Count; i++)
+{
+    if (i < 3)
+    {
+        <div onclick="window.location='/breaking/details/@Model[i].post_guid';" style="float:left; width:320px; height:220px; margin:10px; cursor:pointer;">
+            <div style="float:left; width:320px; height:180px; background:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image') no-repeat;"></div>
+            <div style="float:left; width:100%; margin:0 0 0 0; padding:7px 0 7px 0; color:#000000; font-size:21px; ">@Model[i].post_title</div>
+        </div>
+    }
+}

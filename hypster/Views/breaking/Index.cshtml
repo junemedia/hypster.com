@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Breaking News about Music and Popular Artists";
     ViewBag.Desc = "Find breaking news about music and popular artists, enjoy a free custom playlist with each article.";
-    ViewBag.ActivePage = "#Breaking";
+    ViewBag.ActivePage = "News";
     int counter = 0;
     int i_start = 1;
     if ((ViewBag.CurrPage - 4) >= 1)
@@ -14,7 +14,7 @@
     Layout = "/Views/Shared/_Layout2.cshtml";
 }
 <div class="breakingMCH">
-    <h2 class="brkngHDR">#BREAKING</h2>
+    <h2 class="brkngHDR">NEWS</h2>
     <div id="tagsHolder">
         <div class="sld1_bottomCont">
             <div class="sld1_bottomContInnr" style="margin:0px;">
@@ -32,7 +32,8 @@
     if (i < Model.Count)
     {
         <div class="brkngItm" onclick="window.location='/breaking/details/@Model[i].post_guid';">
-            <div class="brkngImg" style="background-image:url('http://news.hypster.com/imgs/i_posts/@Model[i].post_image'); "></div>
+            @*<div class="brkngImg" style="background-image:url('http://news.hypster.com/imgs/i_posts/@Model[i].post_image'); "></div>*@
+            <div class="brkngImg" style="background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
             <div class="txtDItem">@Model[i].post_title</div>
         </div>
         }

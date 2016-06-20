@@ -1,8 +1,7 @@
 ﻿@model List<hypster_tv_DAL.newsPost>
 @{
     Layout = null;
-
-    int OFFSET = 1872;
+    int OFFSET = 2;
 }
 
 <div class="breakingMCH_Home" >
@@ -19,7 +18,7 @@
                 if (i < Model.Count)
                 {
                     <div title="@Model[i].post_title" class="brkngItm" onclick="window.location='/breaking/details/@Model[i].post_guid';">
-                        <div class="brkngItmPost" style="background-image:url('http://news.hypster.com/imgs/i_posts/@Model[i].post_image');"></div>
+                        <div class="brkngItmPost" style="background-size:195px; background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
                         <div class="txtBreakingT">@Model[i].post_title</div>
                         <div class="txtBreakingD">@Model[i].post_short_content</div>
                     </div>
@@ -35,16 +34,16 @@
     var SRL_POS = @(OFFSET);
     $("#newsContHH1").scrollLeft(SRL_POS);
     function MoveLeft() {
-        SRL_POS += 936;
-        if(SRL_POS > 3744)
+        SRL_POS += 636;
+        if(SRL_POS > 3181)
         {
-            SRL_POS = 3744;
+            SRL_POS = 3181;
         }
         $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
     }
 
     function MoveRight() {
-        SRL_POS -= 936;
+        SRL_POS -= 636;
         if(SRL_POS < 0)
         {
             SRL_POS = 0;

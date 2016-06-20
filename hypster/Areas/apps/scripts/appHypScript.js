@@ -1,7 +1,11 @@
+<<<<<<< 1dba3f6a5774362e1b0372d631c66b8c27fb7eb5
 <<<<<<< f9d1b3b45a80bed15346e1653833ead4e43cafb5
 <<<<<<< 47f4f9128720a6e3b5976d5a82374902b23c0bea
 =======
 >>>>>>> Home page modification. Fixed the mis-aligned contents in the home page. Adjustment og the content widths, margins, and so on.
+=======
+<<<<<<< 70580285a40fe3e22ef6856b3bec063f8471a430
+>>>>>>> Updates to the homepage
 ﻿var myWidth = 0;
 var myHeight = 0;
 var active_menu = "";
@@ -2539,12 +2543,16 @@ function msieversion() {
         return false;
 
     return false;
+<<<<<<< 1dba3f6a5774362e1b0372d631c66b8c27fb7eb5
 <<<<<<< f9d1b3b45a80bed15346e1653833ead4e43cafb5
 }
 
 
 
 
+=======
+}
+>>>>>>> Updates to the homepage
 =======
 ﻿var myWidth = 0;
 var myHeight = 0;
@@ -2747,7 +2755,11 @@ function initSlideshow() {
         $SlideDuration: 500,
         $MinDragOffsetToSlide: 20,
         $SlideWidth: 726,
+<<<<<<< 1dba3f6a5774362e1b0372d631c66b8c27fb7eb5
         $SlideHeight: 408,
+=======
+        $SlideHeight: 370,
+>>>>>>> Updates to the homepage
         $SlideSpacing: 0,
         $DisplayPieces: 1,
         $ParkingPosition: 0,
@@ -5080,7 +5092,11 @@ function msieversion() {
 
     return false;
 }
+<<<<<<< 1dba3f6a5774362e1b0372d631c66b8c27fb7eb5
 >>>>>>> Synchronization of Dev. environment
 =======
 }
 >>>>>>> Home page modification. Fixed the mis-aligned contents in the home page. Adjustment og the content widths, margins, and so on.
+=======
+>>>>>>> Updates to the homepage
+>>>>>>> Updates to the homepage

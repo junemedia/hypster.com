@@ -1,4 +1,4 @@
-﻿﻿html{scrollbar-face-color:#777;scrollbar-base-color:#777;scrollbar-arrow-color:#000;scrollbar-track-color:#313537;scrollbar-shadow-color:#777;scrollbar-highlight-color:#777;scrollbar-3dlight-color:#666;scrollbar-darkshadow-color:#666;height:100%;font-family:Segoe UI Light;font-weight:lighter}
+﻿html{scrollbar-face-color:#777;scrollbar-base-color:#777;scrollbar-arrow-color:#000;scrollbar-track-color:#313537;scrollbar-shadow-color:#777;scrollbar-highlight-color:#777;scrollbar-3dlight-color:#666;scrollbar-darkshadow-color:#666;height:100%;font-family:Segoe UI Light;font-weight:lighter}
 @font-face{font-family:Hypster-Segoe;src:url(http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.eot?#iefix) format(embedded-opentype), url(http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.woff) format(woff), url(http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.ttf) format(truetype), url(http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.svg#web) format(svg);font-weight:lighter}
 .shadow{-moz-box-shadow:3px 3px 4px #000;-webkit-box-shadow:3px 3px 4px #000;box-shadow:3px 3px 4px #000;-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#000000')}
 body{font-size:.85em;font-family:Hypster-Segoe;font-weight:lighter;color:#EEE;background:#466472 url(/imgs/main_doc_back_ski.jpg) no-repeat;width:100%;height:100%;margin:0;padding:0}
@@ -178,7 +178,7 @@ a{color:#FFF;text-decoration:none}
 .FeaturedVideoCont .FeaturedAdCont{float:right;width:728px;height:90px;background-color:#59666c;border:3px solid #59666c;border-radius:2px;overflow:hidden}
 .FeaturedVideoCont .FeaturedHeaderBack{float:left;width:100%;height:39px;line-height:39px;background:#44484a url(/imgs/home/featuredVideo_HeaderBack.png) no-repeat right;cursor:pointer}
 .FeaturedVideoCont .FeaturedHeaderBack div{float:right;min-width:130px;overflow:hidden;font-family:Hypster-Font;font-size:23px;color:#FCF088;font-style:italic;letter-spacing:1.2px;margin:3px 115px 0 0}
-.FeaturedVideoInner{float:right;width:1060px;margin-left:-35px;margin-bottom:1px;margin-top:7px}
+.FeaturedVideoInner{float:initial;width:100%;margin-left:-35px;margin-bottom:1px;margin-top:7px}
 .PopularMusicOnHypster .FeaturedHeaderBack div{float:right;font-family:Hypster-Font;font-size:22px;color:#FFF;font-style:italic;letter-spacing:1.2px;margin:3px 120px 0 0}
 .ContactsThanksCont{float:left;width:950px;min-height:100px;background-color:#353535;margin:15px 0 0 15px}
 .NewsInnrContHldr{float:left;width:420px}
@@ -220,7 +220,7 @@ a{color:#FFF;text-decoration:none}
 #PublicPSection_3 .MyFollowersHeader{float:left;width:98%;height:25px;line-height:25px;color:#ABABAB;font-size:22px;overflow:hidden;margin:5px 0 5px 7px}
 #PublicPSection_3 .MF_Itm a{display:block;float:left;width:330px;height:48px;background-color:#454545;border-radius:2px;text-align:left;cursor:pointer}
 .CreatePlaylistCont{float:left;width:1024px;margin-top:7px;margin-left:15px}
-.MainHeadCont{float:left;width:100%;height:43px;margin:11px 0 0}
+.MainHeadCont{float:left;width:100%;height:43px;margin:5px 0 0 0;}
 .MainHeadPlaylist{float:left;width:415px;height:40px;text-align:left;color:#FCF088;line-height:35px;margin:0 0 0 20px}
 .MainHeadPlaylist img{cursor:pointer}
 .MainHeadPlaylist span{color:#FCF088;font-weight:700;font-size:22px;margin-left:3px}
@@ -415,7 +415,7 @@ a{color:#FFF;text-decoration:none}
 .ManualArCont .MAcont{float:left;width:705px;height:250px;overflow:hidden;cursor:pointer}
 .ManualArCont .MAheader{float:left;font-size:23px}
 .ManualArCont .MAimg{float:left;width:700px;height:209px;margin:10px 5px 0 0}
-.ManualDtHeader{float:right;width:100%;font-size:34px;color:#233f4c;margin-top:12px}
+.ManualDtHeader{float:right;width:1024px;font-size:34px;color:#233f4c;margin-top:12px}
 .ManualDtShare{float:right; width:100%;}
 .ManualDtSlideHdr{width:95%;font-size:23px;line-height:30px;margin:5px 0}
 .ManualDtAdCont{float:right;width:1024px;margin-top:3px}
@@ -484,7 +484,6 @@ a:hover,a:visited{color:#FFF}
 #ListenSub .HypSub_pop,#CreateSub .HypSub_radio{display:block;float:left;width:70px;height:25px;line-height:23px;text-align:center}
 .txtRegister,.txtLogin{margin-top:7px;width:342px;height:25px;border:3px solid #FFF;border-radius:3px}
 .sld1_topCont,#listenSlide1_textBoxes,#listenSlide1_textBoxes2,.SongLandingCont,.ManualArCont{float:left;width:1024px}
-.sld1_middleCont .middleC2,.sld1_middleCont .middleC3{float:left;width:31%;height:120px;background-color:#2e3335;border-radius:2px;text-align:center;border-left:1px solid #2c3133;border-bottom:1px solid #2c3133;margin:16px 0 0 2%;padding:4px .5% 0}
 #listenSlide1_textBoxes2 .middleC2,#listenSlide1_textBoxes2 .middleC3{float:left;width:31%;height:140px;background-color:#2e3335;border-radius:2px;text-align:center;border-left:1px solid #2c3133;border-bottom:1px solid #2c3133;margin:16px 0 0 2%;padding:4px .5% 0}
 .btn22,.btn33{float:right;width:77px;height:19px;background:#42606e url(/imgs/search_btn1.png) no-repeat;border-radius:3px;text-align:center;line-height:18px;font-size:14px;cursor:pointer;margin:23px 0 0}
 .btn111,.btn333{float:right;width:77px;height:19px;background:#42606e url(/imgs/search_btn1.png) no-repeat;border-radius:3px;text-align:center;line-height:18px;font-size:14px;cursor:pointer;margin:3px 0 0}

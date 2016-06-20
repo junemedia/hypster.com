@@ -647,12 +647,15 @@ a:visited
 	overflow:hidden;
 	
 	background-image:none;
+<<<<<<< 70580285a40fe3e22ef6856b3bec063f8471a430
+=======
 	/*
 	background-color:#466472;
 	border-top:3px solid #191919;
 	opacity:0.4;
     filter:alpha(opacity=40); 
     *//* For IE8 and earlier */
+>>>>>>> Updates to the homepage
 }
 
 #MenuHSub .MenuHSubItm
@@ -1168,6 +1171,8 @@ a:visited
 }
 
 
+<<<<<<< 70580285a40fe3e22ef6856b3bec063f8471a430
+=======
 
 
 
@@ -1175,6 +1180,7 @@ a:visited
 {
 	
 }*/
+>>>>>>> Updates to the homepage
 #listenSlide1_textBoxes
 {
 	float:left; width:100%;

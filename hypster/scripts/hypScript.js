@@ -203,7 +203,7 @@ function initSlideshow() {
     function ScaleSlider() {
         var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
         if (parentWidth)
-            jssor_slider1.$SetScaleWidth(Math.min(parentWidth, 1024));
+            jssor_slider1.$SetScaleWidth(Math.min(parentWidth, 726));
         else
             window.setTimeout(ScaleSlider, 30);
     }
@@ -1718,12 +1718,12 @@ var vis_width = 0;
 
 function ScrlInit() {
     top_original = $(".SbTop").offset().left;
-    if ($(window).width() > 1024) {
-        margin_left = $(window).width() - 1024 - 44;
-        vis_width = (1024 + 30 + (margin_left / 2) - 15 - 300) * -1;
+    if ($(window).width() > 726) {
+        margin_left = $(window).width() - 726 - 31;
+        vis_width = (726 + 21 + (margin_left / 2) - 10 - 212) * -1;
     } else {
         margin_left = 0;
-        vis_width = (1024 - 300) * -1;
+        vis_width = (726 - 212) * -1;
     }
 }
 
@@ -2278,12 +2278,12 @@ function LoadLiveRadioThumbs(obj, pl_id, us_id, g_id) {
 /* ------------------------------------------------------------------ */
 
 function AlignListenRadioST() {
-    if ($(window).width() > 1024) {
-        var margin_left = $(window).width() - 1024 - 30;
-        var cont_width = 1024 + 30 + (margin_left / 2) - 15;
-        $("#listenSlide2_header").css("width", (cont_width - 750 - 20) + "px");
+    if ($(window).width() > 726) {
+        var margin_left = $(window).width() - 726 - 21;
+        var cont_width = 726 + 21 + (margin_left / 2) - 15;
+        $("#listenSlide2_header").css("width", (cont_width - 750 - 14) + "px");
     }
-    if ($(window).width() > 1170) { $("#ChngRadioSt").show("slow"); } else { $("#ChngRadioSt").css("display", "none"); }
+    if ($(window).width() > 830) { $("#ChngRadioSt").show("slow"); } else { $("#ChngRadioSt").css("display", "none"); }
 }
 
 
