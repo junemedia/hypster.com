@@ -166,7 +166,7 @@ function initSlideshow() {
         $SlideDuration: 500,
         $MinDragOffsetToSlide: 20,
         $SlideWidth: 726,
-        $SlideHeight: 370,
+        $SlideHeight: 408,
         $SlideSpacing: 0,
         $DisplayPieces: 1,
         $ParkingPosition: 0,

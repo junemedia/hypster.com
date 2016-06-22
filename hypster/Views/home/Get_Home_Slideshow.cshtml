@@ -22,16 +22,16 @@
     });
 </script>
 
-<div id="slider1_container" style="position:relative;top:-20px;left:0px;width:726px;height:405px;overflow:hidden;">
+<div id="slider1_container" style="position:relative;top:-20px;left:0px;width:726px;height:443px;overflow:hidden;">
     <div u="loading" style="position:absolute;top:0px;left:0px;">
-        <div style="filter:alpha(opacity=70);opacity:0.7;position:absolute;display:block;background-color:#000000;top:0px;left:0px;width:726px;height:371px;"></div>
-        <div style="position:absolute;display:block;top:0px;left:0px;width:726px;height:371px;"></div>
+        <div style="filter:alpha(opacity=70);opacity:0.7;position:absolute;display:block;background-color:#000000;top:0px;left:0px;width:726px;height:408px;"></div>
+        <div style="position:absolute;display:block;top:0px;left:0px;width:726px;height:408px;"></div>
     </div>
-    <div u="slides" style="cursor:move;position:absolute;left:0px;top:0px;width:726px;height:371px;overflow:hidden;">
+    <div u="slides" style="cursor:move;position:absolute;left:0px;top:0px;width:726px;height:408px;overflow:hidden;">
         @foreach (var item in Model)
         {
             <div class="sldItm2">
-                <a href="@item.href"><img u="image" src="/imgs/home/home_slideshow/@item.ImageSrc" style="width:726px;height:371px;" /></a>
+                <a href="@item.href"><img u="image" src="/imgs/home/home_slideshow/@item.ImageSrc" style="width:726px;height:408px;" /></a>
             </div>
         } 
     </div>
