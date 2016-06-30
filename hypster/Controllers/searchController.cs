@@ -1,81 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-
-
 //using Google.GData;
 //using Google.GData.Client;
 //using Google.GData.Extensions;
 //using Google.GData.YouTube;
 //using Google.YouTube;
 
-
-using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
-using Google.Apis.Upload;
-using Google.Apis.Util.Store;
 using Google.Apis.YouTube.v3;
 using Google.Apis.YouTube.v3.Data;
 
-
 namespace hypster.Controllers
 {
-    //
     // controller for music search //ControllerBase
     public class searchController : ControllerBase
     {
-
         private int MAX_RECENT_SEARCHES_NUM = 255;
-
-
-
-
-
-
-
-        //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         // perform youtube search
         public ActionResult Music()
         {
             if (Request.QueryString["ss"] != null)
             {
-                //---------------------------------------------------------------------
                 string search_string = Request.QueryString["ss"].ToString();
                 ViewBag.search_string = search_string.Replace(" ", "+");
-                //---------------------------------------------------------------------
 
-
-
-                //---------------------------------------------------------------------
                 string Curr_Page = "";
                 if (Request.QueryString["page"] != null)
-                {
-                    //if (Int32.TryParse(Request.QueryString["page"], out Curr_Page) == false)
-                    //    Curr_Page = 1;
                     Curr_Page = Request.QueryString["page"];
-                }
-                //ViewBag.CurrPage = Curr_Page;
-                //---------------------------------------------------------------------
-
-
-
-                // "orderBy"
-                //---------------------------------------------------------------------
                 string orderBy = "";
                 if (Request.QueryString["orderBy"] != null)
-                {
                     orderBy = Request.QueryString["orderBy"].ToString();
-                }
                 ViewBag.orderBy = orderBy;
-                //---------------------------------------------------------------------
 
-
-
-
-
-                //---------------------------------------------------------------------
                 #region save_recent_searches_to_application-varibles
                 //save recent searches to application varibles
                 if (HttpContext.Application["RECENT_SEARCHES"] != null)
