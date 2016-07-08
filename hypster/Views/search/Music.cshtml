@@ -15,7 +15,7 @@
 
 
 
-<div style="float:right; width:1024px;">
+<div style="float:right; width:924px;">
 
     <div class="SearchPageRoot">
     
@@ -24,27 +24,27 @@
     @if (Model != null)
     {
         
-        <div id="SSP_Menu" style=" float:left; position:relative; top:0px; left:0px; width:100%; height:55px; margin-bottom:10px; border-radius:2px;">
+        <div id="SSP_Menu" style="float:left; position:relative; top:0px; left:0px; width:100%; height:55px; margin-bottom:10px; border-radius:2px;">
             
             
-            <input type="button" style=" float:right; width:180px; height:35px; line-height:32px; background-color:#000000; border:1px solid #d4ae52; color:#d4ae52; border-radius:12px; text-align:center;  font-size:19px; font-family:'Lato', sans-serif; cursor:pointer; text-align:center; margin:13px 20px 0 7px;" value="PLAY ALL SONGS" onclick="OpenPlayerM('/playlists/artist/@(ViewBag.search_string)?@ViewBag.CurrPage');" />
+            <input type="button" style="float:right; width:180px; height:35px; line-height:32px; background-color:#000000; border:1px solid #d4ae52; color:#d4ae52; border-radius:12px; text-align:center;  font-size:19px; font-family:'Lato', sans-serif; cursor:pointer; text-align:center; margin:13px 20px 0 7px;" value="PLAY ALL SONGS" onclick="OpenPlayerM('/playlists/artist/@(ViewBag.search_string)?@ViewBag.CurrPage');" />
 
             @using (Html.BeginForm("pr_CreateRadioStation_POST", "radio", FormMethod.Post))
             {
                 <input type="hidden" id="RadioStationSearchTerm" name="RadioStationSearchTerm" value="@(ViewBag.search_string)" />
-                <input type="submit" style=" float:right; width:270px; height:35px; line-height:32px; background-color:#000000; border:1px solid #d4ae52; color:#d4ae52; border-radius:12px; text-align:center;  font-size:19px; font-family:'Lato', sans-serif; cursor:pointer; text-align:center; margin:13px 0 0 7px;" value="CONVERT TO MY STATION" />
+                <input type="submit" style="float:right; width:270px; height:35px; line-height:32px; background-color:#000000; border:1px solid #d4ae52; color:#d4ae52; border-radius:12px; text-align:center;  font-size:19px; font-family:'Lato', sans-serif; cursor:pointer; text-align:center; margin:13px 0 0 7px;" value="CONVERT TO MY STATION" />
             }
 
         </div>
         
         
         
-        <div style=" float:left; width:29%; min-height:100px;">
+        <div style="float:left; width:29%; min-height:100px;">
             &nbsp;
         </div>
         
         
-        <div style=" float:left; width:69%;">
+        <div style="float:left; width:69%;">
             @foreach (var item in Model)
             {
                 <div class="SongItm">
@@ -64,10 +64,10 @@
 
                     <div class="rtCont">
                     
-                        <div onclick="OpenPlayerM('/playlists/song/@item.Id.VideoId?@HttpUtility.UrlEncode(item.Snippet.Title)');" style=" float:left; width:34px; height:34px; margin:5px 0 0 5px; background:#000000 url(/imgs/plr_play_btn.png) no-repeat 9px 2px; border:2px solid #FFFFFF; border-radius:22px; cursor:pointer;">
+                        <div onclick="OpenPlayerM('/playlists/song/@item.Id.VideoId?@HttpUtility.UrlEncode(item.Snippet.Title)');" style="float:left; width:34px; height:34px; margin:5px 0 0 5px; background:#000000 url(/imgs/plr_play_btn.png) no-repeat 9px 2px; border:2px solid #FFFFFF; border-radius:22px; cursor:pointer;">
                         </div>
 
-                        <div onclick="ShowAddToMyPlaylist('?song_guid=@item.Id.VideoId&song_title=@System.Web.HttpUtility.UrlEncode(item.Snippet.Title)');" style=" float:left; width:34px; height:34px; line-height:34px; text-align:center; margin:5px 0 0 5px; background-color:#000000; border:2px solid #FFFFFF; border-radius:22px; color:#FFFFFF; cursor:pointer; font-size:13px;">
+                        <div onclick="ShowAddToMyPlaylist('?song_guid=@item.Id.VideoId&song_title=@System.Web.HttpUtility.UrlEncode(item.Snippet.Title)');" style="float:left; width:34px; height:34px; line-height:34px; text-align:center; margin:5px 0 0 5px; background-color:#000000; border:2px solid #FFFFFF; border-radius:22px; color:#FFFFFF; cursor:pointer; font-size:13px;">
                             ADD
                         </div>
 
@@ -110,14 +110,14 @@
 
         @if (ViewBag.PrevPageToken != null)
         {
-            <div style=" float:left; padding:2px 10px 2px 10px; margin:5px 0 0 10px; background-color:#454545; border-radius:3px; color:#d4ae52; border:1px solid #d4ae52; cursor:pointer;" onclick="SearchMusicStrPage('@ViewBag.search_string', '@ViewBag.PrevPageToken')">
+            <div style="float:left; padding:2px 10px 2px 10px; margin:5px 0 0 10px; background-color:#454545; border-radius:3px; color:#d4ae52; border:1px solid #d4ae52; cursor:pointer;" onclick="SearchMusicStrPage('@ViewBag.search_string', '@ViewBag.PrevPageToken')">
                 PREV
             </div>
         }
 
         @if (ViewBag.NextPageToken != null)
         {
-            <div style=" float:left; padding:2px 10px 2px 10px; margin:5px 0 0 10px; background-color:#454545; border-radius:3px; color:#d4ae52; border:1px solid #d4ae52; cursor:pointer;" onclick="SearchMusicStrPage('@ViewBag.search_string', '@ViewBag.NextPageToken')">
+            <div style="float:left; padding:2px 10px 2px 10px; margin:5px 0 0 10px; background-color:#454545; border-radius:3px; color:#d4ae52; border:1px solid #d4ae52; cursor:pointer;" onclick="SearchMusicStrPage('@ViewBag.search_string', '@ViewBag.NextPageToken')">
                 NEXT
             </div>
         }
@@ -157,22 +157,10 @@
 }
 
 
-
-
-
-    <div class="SearchSongsAdCont" style=" margin:10px 10px 10px 0;">
+    <div class="SearchSongsAdCont" style="margin:10px 10px 10px 0;">
         <div id="TopAdd1_u9e32847">
             @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
         </div>
         <!-- 06_25 -->
     </div>
-
-
-
-
 </div>
-
-
-
-
-
