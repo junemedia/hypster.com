@@ -4,6 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+//using Google.GData;
+//using Google.GData.Client;
+//using Google.GData.Extensions;
+//using Google.GData.YouTube;
+//using Google.YouTube;
+
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.Upload;
@@ -334,8 +340,8 @@ namespace hypster.Controllers
 
                 var youtubeService = new YouTubeService(new BaseClientService.Initializer()
                 {
-                    ApiKey = System.Configuration.ConfigurationManager.AppSettings["YouTubeAPIKEY"],
-                    ApplicationName = System.Configuration.ConfigurationManager.AppSettings["YouTubeAPIKEYName"]
+                    ApiKey = "AIzaSyBxm42neHYmQhKqUvcvbjLCX5uLETZj-jY",
+                    ApplicationName = "hypster.com"
                 });
 
                 var searchListRequest = youtubeService.Search.List("id,snippet");
@@ -568,9 +574,8 @@ namespace hypster.Controllers
 
                     var youtubeService = new YouTubeService(new BaseClientService.Initializer()
                     {
-
-                        ApiKey = System.Configuration.ConfigurationManager.AppSettings["YouTubeAPIKEY"],
-                        ApplicationName = System.Configuration.ConfigurationManager.AppSettings["YouTubeAPIKEYName"]
+                        ApiKey = "AIzaSyBxm42neHYmQhKqUvcvbjLCX5uLETZj-jY",
+                        ApplicationName = "hypster.com"
                     });
 
                     var searchListRequest = youtubeService.Search.List("id,snippet");

@@ -13,6 +13,9 @@ namespace hypster.Controllers
 
         protected int POSTS_NUM_PAGING = 5;
 
+
+
+
         [System.Web.Mvc.OutputCache(Duration = 16)]
         public ActionResult Index()
         {

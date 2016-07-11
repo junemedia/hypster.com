@@ -112,7 +112,7 @@ namespace hypster
 
 
             routes.IgnoreRoute("{resource}.ashx/{*pathInfo}");
-
+            
 
         }
     }

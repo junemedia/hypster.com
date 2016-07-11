@@ -5,6 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 
 
+//using Google.GData;
+//using Google.GData.Client;
+//using Google.GData.Extensions;
+//using Google.GData.YouTube;
+//using Google.YouTube;
+
 
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
@@ -33,7 +39,6 @@ namespace hypster.Controllers
         // perform youtube search
         public ActionResult Music()
         {
-
             if (Request.QueryString["ss"] != null)
             {
                 //---------------------------------------------------------------------
@@ -94,16 +99,18 @@ namespace hypster.Controllers
                     ViewBag.recent_searches = (List<string>)HttpContext.Application["RECENT_SEARCHES"];
                 #endregion
                 //---------------------------------------------------------------------
-                ;
+
+
+
+
 
 
                 var youtubeService = new YouTubeService(new BaseClientService.Initializer()
                 {
+                    ApiKey = "AIzaSyBxm42neHYmQhKqUvcvbjLCX5uLETZj-jY",
+                    ApplicationName = "hypster.com"
+                });
 
-                    ApiKey = System.Configuration.ConfigurationManager.AppSettings["YouTubeAPIKEY"],
-                    ApplicationName = System.Configuration.ConfigurationManager.AppSettings["YouTubeAPIKEYName"]
-
-                   });
 
                 var searchListRequest = youtubeService.Search.List("snippet");
                 searchListRequest.Q = search_string; // Replace with your search term.
@@ -137,6 +144,47 @@ namespace hypster.Controllers
 
                 return View(videos);
 
+
+
+
+
+                /*
+                YouTubeRequestSettings settings = new YouTubeRequestSettings("hypster", "AI39si5TNjKgF6yiHwUhKbKwIui2JRphXG4hPXUBdlrNh4XMZLXu--lf66gVSPvks9PlWonEk2Qv9fwiadpNbiuh-9TifCNsqA");
+                YouTubeRequest request = new YouTubeRequest(settings);
+
+                //order by relevance
+                //string feedUrl = String.Format("http://gdata.youtube.com/feeds/api/videos?q={0}&category=Music&format=5&restriction={1}&safeSearch=none&start-index={2}&orderby=relevance", HttpUtility.UrlEncode(search_string.Replace("+"," ")), Request.ServerVariables["REMOTE_ADDR"], (Curr_Page * 25) + 1);  //(page.HasValue ? page * 25 : 0) + 1);
+                //order by viewCount
+                //string feedUrl = String.Format("http://gdata.youtube.com/feeds/api/videos?q={0}&category=Music&format=5&restriction={1}&safeSearch=none&start-index={2}&orderby=viewCount", HttpUtility.UrlEncode(search_string.Replace("+"," ")), Request.ServerVariables["REMOTE_ADDR"], (Curr_Page * 25) + 1);  //(page.HasValue ? page * 25 : 0) + 1);
+                //Feed<Video> videoFeed = null;
+
+                //add orderBy if selected
+                if (orderBy != "")
+                    orderBy = "&orderby=" + orderBy;
+
+                string IP_Address;
+                IP_Address = Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+                if (IP_Address == null)
+                    IP_Address = Request.ServerVariables["REMOTE_ADDR"];
+                else
+                    IP_Address = "";
+
+                //original sorting order
+                //
+                //temporary commented since not working anymore
+                //
+                //string feedUrl = String.Format("http://gdata.youtube.com/feeds/api/videos?q={0}&category=Music&format=5&restriction={1}&safeSearch=none&start-index={2}" + orderBy, HttpUtility.UrlEncode(search_string.Replace("+", " ")), Request.ServerVariables["REMOTE_ADDR"], (Curr_Page * 25) - 25 + 1);
+                string feedUrl = String.Format("http://gdata.youtube.com/feeds/api/videos?q={0}&category=Music&format=5&start-index={1}" + orderBy, HttpUtility.UrlEncode(search_string.Replace("+", " ")), (Curr_Page * 25) - 25 + 1);
+                Feed<Video> videoFeed = null;
+                try
+                {
+                    videoFeed = request.Get<Video>(new Uri(feedUrl));
+                }
+                catch (Exception ex)
+                {
+                }
+                return View(videoFeed);         
+                */
 
 
 
@@ -179,8 +227,8 @@ namespace hypster.Controllers
 
                 var youtubeService = new YouTubeService(new BaseClientService.Initializer()
                 {
-                    ApiKey = System.Configuration.ConfigurationManager.AppSettings["YouTubeAPIKEY"],
-                    ApplicationName = System.Configuration.ConfigurationManager.AppSettings["YouTubeAPIKEYName"]
+                    ApiKey = "AIzaSyBxm42neHYmQhKqUvcvbjLCX5uLETZj-jY",
+                    ApplicationName = "hypster.com"
                 });
 
                 var searchListRequest = youtubeService.Search.List("id,snippet");
@@ -199,8 +247,13 @@ namespace hypster.Controllers
                     }
                 }
 
-            
                 return View(videos);
+
+
+                //YouTubeRequestSettings settings = new YouTubeRequestSettings("hypster", "AI39si5TNjKgF6yiHwUhKbKwIui2JRphXG4hPXUBdlrNh4XMZLXu--lf66gVSPvks9PlWonEk2Qv9fwiadpNbiuh-9TifCNsqA");
+                //YouTubeRequest request = new YouTubeRequest(settings);
+                //string feedUrl = "http://gdata.youtube.com/feeds/api/videos/" + HttpUtility.UrlEncode(search_string.Replace("+"," "));
+                //video = request.Retrieve<Video>(new Uri(feedUrl));
 
             }
             catch (Exception ex) { }

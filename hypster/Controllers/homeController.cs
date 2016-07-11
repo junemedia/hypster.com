@@ -12,7 +12,11 @@ namespace hypster.Controllers
 
         private const int PAGE_LIMIT = 5;
 
-     
+        //
+        // GET: /home/
+
+
+
         public ActionResult Index()
         {   
             return View();
@@ -24,6 +28,10 @@ namespace hypster.Controllers
         {
             return RedirectPermanent("/");
         }
+
+
+
+
 
 
 

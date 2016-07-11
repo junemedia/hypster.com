@@ -62,8 +62,8 @@ namespace hypster.Controllers
 
 
                 hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
-
                 emailManager.SendContactUsEmail("noah@baronsmedia.com", "viktor@baronsmedia.com", "jim@baronsmedia.com", Subject, YourEmail, Message);
+
 
                 return View("Contacts_Thanks");
             }
@@ -137,8 +137,7 @@ namespace hypster.Controllers
             {
                 if (YourEmail == ConfEmail)
                 {
-                   // hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
-                    hypster_email_manager.Email_Manager emailManager = new hypster_email_manager.Email_Manager();
+                    hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
                     emailManager.SendGamersRewardsEmail(YourName, TwitchName, HypsterName, YourEmail, ConfEmail, Message);
 
                     ViewBag.Msg = "<div style='color:#3fbc91; font-size:22px;'>THANKS!</div>WELL CONTACT YOU WITH MORE INFORMATION.<br/> MAKE SURE TO CHECK YOUR SPAM FOLDER IF YOU DON'T HEAR FROM US IN 24 HOURS. <div style='color:#d4ae52;'>HAPPY STREAMING</div>";

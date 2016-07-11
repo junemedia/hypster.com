@@ -250,7 +250,7 @@ namespace hypster.Controllers
             // 1.general declarations
             //-----------------------------------------------------------------------------------------------------
             hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
-             hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
+            hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
             //-----------------------------------------------------------------------------------------------------
 
 
