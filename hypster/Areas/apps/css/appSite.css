@@ -649,12 +649,8 @@ a:visited
 	background-color:#466472;
 	border-top:3px solid #191919;
 	opacity:0.4;
-<<<<<<< 70580285a40fe3e22ef6856b3bec063f8471a430
-    filter:alpha(opacity=40); /* For IE8 and earlier */
-=======
-    filter:alpha(opacity=40); 
-    *//* For IE8 and earlier */
->>>>>>> Updates to the homepage
+    filter:alpha(opacity=40); / For IE8 and earlier / 
+    */
 }
 
 #MenuHSub .MenuHSubItm
