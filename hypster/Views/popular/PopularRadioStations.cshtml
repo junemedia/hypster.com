@@ -1,14 +1,21 @@
+<<<<<<< 5ad9f851234c6846d4930a6412748c0a68bdf14e
 <<<<<<< 47f4f9128720a6e3b5976d5a82374902b23c0bea
+=======
+>>>>>>> Merged the branch homep to stage
 ﻿@model List<hypster_tv_DAL.MusicGenre> 
 @{
     Layout = null;
 }
 
+<<<<<<< 5ad9f851234c6846d4930a6412748c0a68bdf14e
 
+=======
+>>>>>>> Merged the branch homep to stage
 <div class="hmRdoTitle" onclick="window.location='/listen/radio';">
     HYPSTER RADIO
 </div>
 
+<<<<<<< 5ad9f851234c6846d4930a6412748c0a68bdf14e
 
 <div class="FeaturedVideoInner">
         @{ int counter = 1;}
@@ -58,5 +65,23 @@
         }
         counter += 1;
     }
+=======
+<div class="FeaturedVideoInner">
+    @{ int counter = 1;}
+    @foreach (var item in Model)
+    {   
+        <a class="VideoThumbBox" onmouseover="$('#rdoSt_@item.Genre_ID').css('display','block');" onmouseout="$('#rdoSt_@item.Genre_ID').css('display','none');" style="background: url('/imgs/radio/genres/@(item.GenreName.Replace("&", "_and_")).jpg?id=2873628'); background-position:center; " onclick="OpenPlayerM('/music/@HttpUtility.UrlEncode(item.GenreName.Replace("&", "_and_").ToLower())')">
+            <span id="rdoSt_@item.Genre_ID">
+                @item.GenreName
+            </span>
+        </a>
+            
+        if (counter == 8)
+        {
+            break;
+        }
+        counter += 1;
+    }
+>>>>>>> Merged the branch homep to stage
 </div>
 >>>>>>> Synchronization of Dev. environment

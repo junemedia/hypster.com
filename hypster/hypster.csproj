@@ -6442,6 +6442,9 @@
     <Content Include="Views\hypAds\ad_left_300x250.cshtml" />
     <Content Include="Views\hypAds\ad_right_300x250.cshtml" />
     <Content Include="Views\hypAds\i_pl_mid_300x250.cshtml" />
+    <Content Include="Views\Shared\pr_RightRail.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Shared\_Layout3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

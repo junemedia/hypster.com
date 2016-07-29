@@ -1185,26 +1185,6 @@ a:visited
 }
 
 
-.sld1_middleCont .middleC1
-{
-	float:left; width:45%; padding:4px 0.5% 0 0.5%; height:120px; margin:16px 0 0 0; background-color:#2e3335; border-radius:2px; text-align:center;
-	border-left:1px solid #2c3133; border-bottom:1px solid #2c3133;
-}
-
-.sld1_middleCont .middleC2
-{
-	float:left; width:45%; padding:4px 0.5% 0 0.5%; height:120px; margin:16px 0 0 2%; background-color:#2e3335; border-radius:2px; text-align:center;
-	border-left:1px solid #2c3133; border-bottom:1px solid #2c3133;
-}
-
-.sld1_middleCont .middleC3
-{
-	float:left; width:31.5%; padding:4px 0.5% 0 0.5%; height:120px; margin:16px 0 0 2%; background-color:#2e3335; border-radius:2px; text-align:center;
-	border-left:1px solid #2c3133; border-bottom:1px solid #2c3133;
-}
-
-
-
 /* PAGE 2 */
 
 #listenSlide1_textBoxes2 .middleC1
@@ -1231,7 +1211,9 @@ a:visited
 
 .head11
 {
-	font-size:22px; font-weight:bold; line-height:26px;
+	font-size:14px; 
+    font-weight:bold; 
+    line-height:26px;
 }
 
 .cont21
@@ -2486,7 +2468,7 @@ a:visited
 
 .FeaturedVideoInner
 {
-	float:right; width:100%; margin-left:-35px; margin-bottom:1px; margin-top:7px;
+	float:initial; width:100%; margin-left:-35px; margin-bottom:1px; margin-top:7px;
 }
 /* --------------------------------------------------------------------------------- */
 

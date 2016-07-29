@@ -5,21 +5,13 @@
     int OFFSET = 1872;
 }
 
- 
 <div class="breakingMCH_Home" >
-    
-  
     <div class="hmBrkTitle" onclick="window.location='/breaking';">
-        #BREAKING
+        NEWS
     </div>
-    
-
-    
 
     <div class="breakingMCH_MC">
         <div class="arrLeft" onclick="MoveRight()">&nbsp;</div>
-
-
         <div id="newsContHH1">
             <div id="newsContHHInn">
             @for (int i = 0; i < 15; i++)
@@ -27,7 +19,7 @@
                 if (i < Model.Count)
                 {
                     <div title="@Model[i].post_title" class="brkngItm" onclick="window.location='/breaking/details/@Model[i].post_guid';">
-                        <div class="brkngItmPost" style=" background-image:url('http://news.hypster.com/imgs/i_posts/@Model[i].post_image');"></div>
+                        <div class="brkngItmPost" style="background-image:url('http://news.hypster.com/imgs/i_posts/@Model[i].post_image');"></div>
                         <div class="txtBreakingT">@Model[i].post_title</div>
                         <div class="txtBreakingD">@Model[i].post_short_content</div>
                     </div>
@@ -35,23 +27,13 @@
             }
             </div>
         </div>
-
         <div class="arrRight" onclick="MoveLeft()">&nbsp;</div>
     </div>
-
-
 </div>
-
-
-
-
-
-
 
 <script type="text/javascript">
     var SRL_POS = @(OFFSET);
     $("#newsContHH1").scrollLeft(SRL_POS);
-
     function MoveLeft() {
         SRL_POS += 936;
         if(SRL_POS > 3744)
