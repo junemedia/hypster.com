@@ -13,13 +13,8 @@ hypster/imgs/i_posts/
 Web.config
 
 package.config
+*.bak
 
-<<<<<<< 1dba3f6a5774362e1b0372d631c66b8c27fb7eb5
-
-Web.config
-.bak
-=======
 *.pdb
 *.orig
 hypster/bin/*.xml
->>>>>>> Updates to the homepage
