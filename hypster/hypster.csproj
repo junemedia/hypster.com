@@ -6484,7 +6484,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50718</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://hypster.com/</IISUrl>
+          <IISUrl>http://localhost:50718/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
