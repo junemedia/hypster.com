@@ -7,13 +7,15 @@
     Layout = "/Views/Shared/_Layout2.cshtml";
 }
 @Scripts.Render("~/scripts/jquery.cycle.all.latest.js")
+
 <style type="text/css">
     .sld1_middleCont button {
         border-radius:4px;
-        margin:15px 28px 15px 28px;
+        margin:15px 25px 15px 25px;
         background-color:#d5af55;
     }
 </style>
+
 <div class="mainSlideshow">
     @Html.Action("Get_Home_Slideshow", "home")
 </div>
