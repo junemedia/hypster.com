@@ -1,7 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-
     @if (Request.Browser.IsMobileDevice)
     {
         if (Request.Path.Contains('/'))
@@ -18,7 +17,6 @@
             Response.Redirect("/apps/appHome");
         }
     }
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
