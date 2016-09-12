@@ -6,13 +6,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA9GtSvx9JKEqSA+Dm1vS9+AAAAAACAAAAAAAQZgAAAAEAACAAAACIgiWy64RAccqlDQf7Jnh8FZvqNWX9R7pqBM1pALNzggAAAAAOgAAAAAIAACAAAABo0Y5UWvKV3FQqLrJ2KK460BMOjUv1zpuwsf2y+Ot9MzAAAAB0dIDracNZu/HV3qu24L3uN5+3etoouOvjt8PLT0zIJ4Iv2RCck7AvtrUwTbY3jzZAAAAAkrjmDKvQKnLtHVBfSCdPmS5cdaXcK3J2sLVFa+Eq4yTjdBA5Q/VsJr++3RPJlbDZqDsCrRHOQQJEpnHrDuSGEw==</EncryptedPassword>
     <_PublishTargetUrl>C:\inetpub\wwwroot\hypster</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
-    <File Include=".gitignore">
-      <publishTime>03/10/2016 13:15:02</publishTime>
-    </File>
     <File Include="a/imgs5/hypster_icn.png">
       <publishTime>03/10/2016 13:15:20</publishTime>
     </File>
@@ -109,69 +105,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="a/player7.js">
       <publishTime>03/10/2016 13:15:20</publishTime>
     </File>
-    <File Include="App_Start/BundleConfig.cs">
-      <publishTime>07/29/2016 10:48:27</publishTime>
-    </File>
-    <File Include="App_Start/FilterConfig.cs">
-      <publishTime>07/29/2016 10:48:27</publishTime>
-    </File>
-    <File Include="App_Start/RouteConfig.cs">
-      <publishTime>07/29/2016 10:48:27</publishTime>
-    </File>
-    <File Include="App_Start/WebApiConfig.cs">
-      <publishTime>03/10/2016 13:15:02</publishTime>
-    </File>
-    <File Include="Areas/apps/appsAreaRegistration.cs">
-      <publishTime>07/29/2016 10:48:28</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appAccountController.cs">
-      <publishTime>07/29/2016 10:48:27</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appArtistsController.cs">
-      <publishTime>07/29/2016 10:48:27</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appBreakingController.cs">
-      <publishTime>07/29/2016 10:48:27</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appCreateController.cs">
-      <publishTime>07/29/2016 10:48:28</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appFeaturedController.cs">
-      <publishTime>07/29/2016 10:48:28</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appGamehypeController.cs">
-      <publishTime>07/29/2016 10:48:28</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appHomeController.cs">
-      <publishTime>07/29/2016 10:48:28</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appHypsterController.cs">
-      <publishTime>07/29/2016 10:48:28</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appListenController.cs">
-      <publishTime>07/29/2016 10:48:28</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appPlayerController.cs">
-      <publishTime>07/29/2016 10:48:28</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appPlaylistController.cs">
-      <publishTime>07/29/2016 10:48:28</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appPlaylistsController.cs">
-      <publishTime>07/29/2016 10:48:28</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appPopularController.cs">
-      <publishTime>07/29/2016 10:48:28</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appRadioController.cs">
-      <publishTime>07/29/2016 10:48:28</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appSearchController.cs">
-      <publishTime>07/29/2016 10:48:28</publishTime>
-    </File>
-    <File Include="Areas/apps/Controllers/appTestController.cs">
-      <publishTime>07/29/2016 10:48:28</publishTime>
-    </File>
     <File Include="Areas/apps/css/appPlayer.css">
       <publishTime>07/29/2016 10:48:28</publishTime>
     </File>
@@ -216,9 +149,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Areas/apps/scripts/appHypScript.js">
       <publishTime>08/05/2016 11:12:15</publishTime>
-    </File>
-    <File Include="Areas/apps/scripts/appHypScript.js.orig">
-      <publishTime>07/12/2016 16:00:05</publishTime>
     </File>
     <File Include="Areas/apps/scripts/appHypSlide.js">
       <publishTime>07/29/2016 10:48:29</publishTime>
@@ -583,60 +513,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/apps/Views/Web.config">
       <publishTime>07/29/2016 10:48:28</publishTime>
     </File>
-    <File Include="Areas/black/blackAreaRegistration.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Code/AuthorizeBlack.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/bAboutController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/bAccountController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/bChartsController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/bHomeController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/bListenController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/bPlaylistsController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/bRadioController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/bSearchController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/srAboutController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/srAccountController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/srChartsController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/srHomeController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/srListenController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/srPlaylistsController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/srRadioController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/black/Controllers/srSearchController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
     <File Include="Areas/black/css/Player.css">
       <publishTime>07/29/2016 10:48:29</publishTime>
     </File>
@@ -814,30 +690,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/black/Views/Web.config">
       <publishTime>07/29/2016 10:48:29</publishTime>
     </File>
-    <File Include="Areas/content/contentAreaRegistration.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/content/Controllers/HypCelebsController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/content/Controllers/HypNewsController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/content/Controllers/HypNewsVideoController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/content/Controllers/HypPromotedController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/content/ViewModels/celebsIndexViewModel.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/content/ViewModels/getPostViewModel.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/content/ViewModels/HomePageViewModel.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
     <File Include="Areas/content/Views/HypCelebs/Index.cshtml">
       <publishTime>07/29/2016 10:48:29</publishTime>
     </File>
@@ -859,53 +711,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/content/Views/Web.config">
       <publishTime>07/29/2016 10:48:29</publishTime>
     </File>
-    <File Include="Areas/es/Controllers/account/CuentaController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/es/Controllers/BuscarController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/es/Controllers/CasaController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/es/Controllers/ConectarController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/es/Controllers/CrearController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/es/Controllers/EscuchaController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/es/Controllers/FestivalesController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/es/Controllers/Gráficas_ListasController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/es/Controllers/hypsterEsController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/es/Controllers/ListasDeReproducciónController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/es/Controllers/PopularEsController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/es/Controllers/RadioEsController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
-    <File Include="Areas/es/Controllers/ReproductorController.cs">
-      <publishTime>07/29/2016 10:48:29</publishTime>
-    </File>
     <File Include="Areas/es/css/Player.css">
       <publishTime>07/29/2016 10:48:30</publishTime>
     </File>
     <File Include="Areas/es/css/Site.css">
       <publishTime>08/05/2016 11:12:15</publishTime>
-    </File>
-    <File Include="Areas/es/esAreaRegistration.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
     </File>
     <File Include="Areas/es/imgs/home/main_slide_1.jpg">
       <publishTime>05/28/2013 14:56:54</publishTime>
@@ -1144,44 +954,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/es/Views/Web.config">
       <publishTime>07/29/2016 10:48:30</publishTime>
     </File>
-    <File Include="Areas/hypAPI/Controllers/hypCommandController.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
-    <File Include="Areas/hypAPI/hypAPIAreaRegistration.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
     <File Include="Areas/hypAPI/Views/hypCommand/process.cshtml">
       <publishTime>07/29/2016 10:48:30</publishTime>
     </File>
     <File Include="Areas/hypAPI/Views/Web.config">
       <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
-    <File Include="Areas/HypDesktop/Controllers/dAccountController.cs">
-      <publishTime>07/29/2016 10:48:27</publishTime>
-    </File>
-    <File Include="Areas/HypDesktop/Controllers/dChartsController.cs">
-      <publishTime>07/29/2016 10:48:27</publishTime>
-    </File>
-    <File Include="Areas/HypDesktop/Controllers/dFeedbackController.cs">
-      <publishTime>07/29/2016 10:48:27</publishTime>
-    </File>
-    <File Include="Areas/HypDesktop/Controllers/dHomeController.cs">
-      <publishTime>07/29/2016 10:48:27</publishTime>
-    </File>
-    <File Include="Areas/HypDesktop/Controllers/dPlaylistsController.cs">
-      <publishTime>07/29/2016 10:48:27</publishTime>
-    </File>
-    <File Include="Areas/HypDesktop/Controllers/dPopularController.cs">
-      <publishTime>07/29/2016 10:48:27</publishTime>
-    </File>
-    <File Include="Areas/HypDesktop/Controllers/dRadioController.cs">
-      <publishTime>07/29/2016 10:48:27</publishTime>
-    </File>
-    <File Include="Areas/HypDesktop/Controllers/dVersionCheckController.cs">
-      <publishTime>07/29/2016 10:48:27</publishTime>
-    </File>
-    <File Include="Areas/HypDesktop/HypDesktopAreaRegistration.cs">
-      <publishTime>07/29/2016 10:48:27</publishTime>
     </File>
     <File Include="Areas/HypDesktop/Views/dCharts/dBuildChart.cshtml">
       <publishTime>07/29/2016 10:48:27</publishTime>
@@ -1210,19 +987,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/HypDesktop/Views/Web.config">
       <publishTime>07/29/2016 10:48:27</publishTime>
     </File>
-    <File Include="Areas/hypWidget/Controllers/gowilkesController.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
-    <File Include="Areas/hypWidget/Controllers/videoWidgetController.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
     <File Include="Areas/hypWidget/css/goWilkes.css">
       <publishTime>07/29/2016 10:48:30</publishTime>
     </File>
     <File Include="Areas/hypWidget/css/goWilkesSPL.css">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
-    <File Include="Areas/hypWidget/hypWidgetAreaRegistration.cs">
       <publishTime>07/29/2016 10:48:30</publishTime>
     </File>
     <File Include="Areas/hypWidget/Views/gowilkes/Index.cshtml">
@@ -1243,50 +1011,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/hypWidget/Views/Web.config">
       <publishTime>07/29/2016 10:48:30</publishTime>
     </File>
-    <File Include="Areas/m/Controllers/maccountController.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
-    <File Include="Areas/m/Controllers/mcreateController.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
-    <File Include="Areas/m/Controllers/mfeaturedController.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
-    <File Include="Areas/m/Controllers/mHomeController.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
-    <File Include="Areas/m/Controllers/mhypsterController.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
-    <File Include="Areas/m/Controllers/mlistenController.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
-    <File Include="Areas/m/Controllers/mplayerController.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
-    <File Include="Areas/m/Controllers/mplaylistController.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
-    <File Include="Areas/m/Controllers/mplaylistsController.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
-    <File Include="Areas/m/Controllers/mpopularController.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
-    <File Include="Areas/m/Controllers/mradioController.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
-    <File Include="Areas/m/Controllers/msearchController.cs">
-      <publishTime>07/29/2016 10:48:30</publishTime>
-    </File>
     <File Include="Areas/m/css/mPlayer.css">
       <publishTime>07/29/2016 10:48:31</publishTime>
     </File>
     <File Include="Areas/m/css/mSite.css">
       <publishTime>08/05/2016 11:12:16</publishTime>
-    </File>
-    <File Include="Areas/m/mAreaRegistration.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
     </File>
     <File Include="Areas/m/scripts/mhypMPLScript.js">
       <publishTime>07/29/2016 10:48:31</publishTime>
@@ -1591,18 +1320,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/m/Views/Web.config">
       <publishTime>07/29/2016 10:48:30</publishTime>
     </File>
-    <File Include="Areas/resources/Controllers/manualsController.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/resources/Controllers/updatesController.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/resources/resourcesAreaRegistration.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/resources/ViewModels/ManualViewModel.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
     <File Include="Areas/resources/Views/manuals/Details.cshtml">
       <publishTime>07/29/2016 10:48:31</publishTime>
     </File>
@@ -1616,45 +1333,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:31</publishTime>
     </File>
     <File Include="Areas/resources/Views/Web.config">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/ru/Controllers/account/АккаунтController.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/ru/Controllers/ГлавнаяController.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/ru/Controllers/ПлеерController.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/ru/Controllers/ПлейлистыController.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/ru/Controllers/ПоискController.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/ru/Controllers/популярноеController.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/ru/Controllers/РадиоController.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/ru/Controllers/СлушатьController.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/ru/Controllers/СоединитьController.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/ru/Controllers/СоздатьController.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/ru/Controllers/ФестивалиController.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/ru/Controllers/ХипстерController.cs">
-      <publishTime>07/29/2016 10:48:31</publishTime>
-    </File>
-    <File Include="Areas/ru/Controllers/ЧартыController.cs">
       <publishTime>07/29/2016 10:48:31</publishTime>
     </File>
     <File Include="Areas/ru/css/Player.css">
@@ -1680,9 +1358,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Areas/ru/imgs/home/main_slide_6.jpg">
       <publishTime>04/26/2013 18:51:53</publishTime>
-    </File>
-    <File Include="Areas/ru/ruAreaRegistration.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
     </File>
     <File Include="Areas/ru/scripts/hypScript.js">
       <publishTime>07/29/2016 10:48:32</publishTime>
@@ -1897,42 +1572,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/ru/Views/Чарты/Index.cshtml">
       <publishTime>07/29/2016 10:48:32</publishTime>
     </File>
-    <File Include="Areas/senses/Code/AuthorizeBlack.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Areas/senses/Controllers/bHomeController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Areas/senses/Controllers/sAboutController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Areas/senses/Controllers/sAccountController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Areas/senses/Controllers/sChartsController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Areas/senses/Controllers/sFAQController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Areas/senses/Controllers/sHomeController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Areas/senses/Controllers/sListenController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Areas/senses/Controllers/sPlaylistsController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Areas/senses/Controllers/sRadioController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Areas/senses/Controllers/sSearchController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Areas/senses/Controllers/sStartController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
     <File Include="Areas/senses/css/Player.css">
       <publishTime>07/29/2016 10:48:32</publishTime>
     </File>
@@ -2032,9 +1671,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/senses/scripts/voice_plugin/hyp_senses_plugin_WORK.xap">
       <publishTime>11/14/2014 17:43:46</publishTime>
     </File>
-    <File Include="Areas/senses/sensesAreaRegistration.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
     <File Include="Areas/senses/sound/beep_01.mp3">
       <publishTime>11/10/2014 17:27:37</publishTime>
     </File>
@@ -2131,17 +1767,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/senses/Views/Web.config">
       <publishTime>07/29/2016 10:48:32</publishTime>
     </File>
-    <File Include="bin/Antlr3.Runtime.dll">
-      <publishTime>03/10/2016 13:15:21</publishTime>
-    </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>08/17/2016 11:57:01</publishTime>
+      <publishTime>08/17/2016 12:37:51</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>08/17/2016 11:57:01</publishTime>
-    </File>
-    <File Include="bin/App_global.asax.pdb">
-      <publishTime>08/17/2016 10:04:04</publishTime>
+      <publishTime>08/17/2016 12:37:51</publishTime>
     </File>
     <File Include="bin/AreYouAHuman.dll">
       <publishTime>01/30/2012 18:17:48</publishTime>
@@ -2149,56 +1779,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/BotInfo.netmodule">
       <publishTime>08/12/2016 17:18:24</publishTime>
     </File>
-    <File Include="bin/CacheManager.Core.dll">
-      <publishTime>03/10/2016 13:15:21</publishTime>
-    </File>
-    <File Include="bin/CacheManager.SystemRuntimeCaching.dll">
-      <publishTime>03/10/2016 13:15:21</publishTime>
-    </File>
     <File Include="bin/CreoleParser.dll">
       <publishTime>08/12/2016 17:18:26</publishTime>
-    </File>
-    <File Include="bin/de/Microsoft.Data.Edm.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/de/Microsoft.Data.OData.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/de/System.Spatial.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
     </File>
     <File Include="bin/DotNetWikiBot.dll">
       <publishTime>08/12/2016 17:18:26</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>08/01/2012 19:42:08</publishTime>
-    </File>
-    <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>03/10/2016 13:15:21</publishTime>
-    </File>
-    <File Include="bin/es/Microsoft.Data.Edm.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/es/Microsoft.Data.OData.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/es/System.Spatial.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/Evaluation.Interfaces.dll">
-      <publishTime>03/10/2016 13:15:21</publishTime>
-    </File>
-    <File Include="bin/Evaluation.ServiceModel.dll">
-      <publishTime>03/10/2016 13:15:21</publishTime>
-    </File>
-    <File Include="bin/fr/Microsoft.Data.Edm.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/fr/Microsoft.Data.OData.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/fr/System.Spatial.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
     </File>
     <File Include="bin/Google.Apis.Auth.dll">
       <publishTime>07/29/2016 10:48:35</publishTime>
@@ -2221,83 +1809,29 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Google.GData.Client.dll">
       <publishTime>06/22/2010 14:00:50</publishTime>
     </File>
-    <File Include="bin/Google.GData.Extensions.dll">
-      <publishTime>03/10/2016 13:15:21</publishTime>
-    </File>
     <File Include="bin/Google.GData.YouTube.dll">
       <publishTime>06/22/2010 14:00:50</publishTime>
     </File>
     <File Include="bin/hypster.dll">
-      <publishTime>08/17/2016 11:56:06</publishTime>
+      <publishTime>08/19/2016 09:48:58</publishTime>
     </File>
     <File Include="bin/hypster.dll.config">
-      <publishTime>08/17/2016 11:56:04</publishTime>
-    </File>
-    <File Include="bin/hypster.dll.orig">
-      <publishTime>07/12/2016 16:03:32</publishTime>
+      <publishTime>08/19/2016 09:48:54</publishTime>
     </File>
     <File Include="bin/hypster.pdb">
-      <publishTime>08/17/2016 11:56:06</publishTime>
-    </File>
-    <File Include="bin/hypster_email_manager.dll">
-      <publishTime>03/10/2016 13:15:22</publishTime>
+      <publishTime>08/19/2016 09:48:58</publishTime>
     </File>
     <File Include="bin/hypster_tv_DAL.dll">
       <publishTime>03/11/2015 17:14:34</publishTime>
     </File>
-    <File Include="bin/it/Microsoft.Data.Edm.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/it/Microsoft.Data.OData.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/it/System.Spatial.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/ja/Microsoft.Data.Edm.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/ja/Microsoft.Data.OData.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/ja/System.Spatial.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/ko/Microsoft.Data.Edm.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/ko/Microsoft.Data.OData.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/ko/System.Spatial.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/log4net.dll">
-      <publishTime>03/10/2016 13:15:22</publishTime>
-    </File>
-    <File Include="bin/Microsoft.Data.Edm.dll">
-      <publishTime>03/10/2016 13:15:21</publishTime>
-    </File>
-    <File Include="bin/Microsoft.Data.OData.dll">
-      <publishTime>03/10/2016 13:15:21</publishTime>
-    </File>
     <File Include="bin/Microsoft.Threading.Tasks.dll">
       <publishTime>08/03/2016 11:59:56</publishTime>
-    </File>
-    <File Include="bin/Microsoft.Threading.Tasks.Extensions.Desktop.dll">
-      <publishTime>03/10/2016 13:15:21</publishTime>
     </File>
     <File Include="bin/Microsoft.Threading.Tasks.Extensions.dll">
       <publishTime>05/10/2015 03:12:32</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>07/08/2013 15:15:08</publishTime>
-    </File>
-    <File Include="bin/Microsoft.Web.Infrastructure.xml">
-      <publishTime>11/02/2015 01:03:06</publishTime>
-    </File>
-    <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
-      <publishTime>03/10/2016 13:15:21</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>08/05/2016 11:12:16</publishTime>
@@ -2307,24 +1841,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/Recaptcha.MvcModel.dll">
       <publishTime>03/11/2013 13:19:06</publishTime>
-    </File>
-    <File Include="bin/ru/Microsoft.Data.Edm.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/ru/Microsoft.Data.OData.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/ru/System.Spatial.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/ServiceStack.Common.dll">
-      <publishTime>03/10/2016 13:15:21</publishTime>
-    </File>
-    <File Include="bin/ServiceStack.Interfaces.dll">
-      <publishTime>03/10/2016 13:15:21</publishTime>
-    </File>
-    <File Include="bin/ServiceStack.Text.dll">
-      <publishTime>03/10/2016 13:15:21</publishTime>
     </File>
     <File Include="bin/SolveMedia.dll">
       <publishTime>05/24/2013 14:37:56</publishTime>
@@ -2344,9 +1860,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>05/07/2013 13:09:16</publishTime>
     </File>
-    <File Include="bin/System.Net.Http.Formatting.xml">
-      <publishTime>11/02/2015 01:02:12</publishTime>
-    </File>
     <File Include="bin/System.Net.Http.Primitives.dll">
       <publishTime>08/05/2016 11:12:16</publishTime>
     </File>
@@ -2356,9 +1869,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/System.Runtime.dll">
       <publishTime>08/05/2016 11:07:36</publishTime>
     </File>
-    <File Include="bin/System.Spatial.dll">
-      <publishTime>03/10/2016 13:15:21</publishTime>
-    </File>
     <File Include="bin/System.Threading.Tasks.dll">
       <publishTime>03/10/2016 13:15:53</publishTime>
     </File>
@@ -2367,9 +1877,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/System.Web.Http.dll">
       <publishTime>03/10/2016 13:15:53</publishTime>
-    </File>
-    <File Include="bin/System.Web.Http.OData.dll">
-      <publishTime>03/10/2016 13:15:22</publishTime>
     </File>
     <File Include="bin/System.Web.Http.WebHost.dll">
       <publishTime>03/10/2016 13:15:53</publishTime>
@@ -2398,194 +1905,8 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/WebGrease.dll">
       <publishTime>07/29/2016 10:48:36</publishTime>
     </File>
-    <File Include="bin/zh-Hans/Microsoft.Data.Edm.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/zh-Hans/Microsoft.Data.OData.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/zh-Hans/System.Spatial.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/zh-Hant/Microsoft.Data.Edm.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/zh-Hant/Microsoft.Data.OData.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/zh-Hant/System.Spatial.resources.dll">
-      <publishTime>04/21/2016 10:28:40</publishTime>
-    </File>
-    <File Include="bin/Zlib.Portable.dll">
-      <publishTime>03/10/2016 13:15:22</publishTime>
-    </File>
     <File Include="BingSiteAuth.xml">
       <publishTime>02/25/2015 20:02:02</publishTime>
-    </File>
-    <File Include="Code/GlobalVariables.cs">
-      <publishTime>03/10/2016 13:15:13</publishTime>
-    </File>
-    <File Include="Code/JsonpResult.cs">
-      <publishTime>03/10/2016 13:15:13</publishTime>
-    </File>
-    <File Include="Code/TrackUserAttribute.cs">
-      <publishTime>03/10/2016 13:15:13</publishTime>
-    </File>
-    <File Include="Controllers/account/accountController.cs">
-      <publishTime>07/29/2016 10:58:00</publishTime>
-    </File>
-    <File Include="Controllers/account/AcctController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/artistsController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/badDiverBillController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/Billboard_Year_End_Hot_100Controller.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/breakingController.cs">
-      <publishTime>08/05/2016 11:12:16</publishTime>
-    </File>
-    <File Include="Controllers/chartsController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/common/ControllerBaseController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/common/errorController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/compatibilityCheckController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/connectController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/contestController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/createController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/embedController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/exploreController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/featuredController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/festivalsController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/flashController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/GamehypeController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/helpers/PlaylistHelper.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/homeController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/hypAdsController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/hypsterController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/hypsterHomeController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/hypsterPlayerController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/Hypster_For_DesktopController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/listenController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/magWidgetController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/mobiletestController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/mobileTWController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/playerController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/playertestController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/playlistController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/playlistsController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/playlistsMController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/popular/popularController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/radioController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/relatedVideosController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/searchController.cs">
-      <publishTime>08/05/2016 11:12:16</publishTime>
-    </File>
-    <File Include="Controllers/searchController.cs.orig">
-      <publishTime>07/12/2016 16:03:32</publishTime>
-    </File>
-    <File Include="Controllers/sitemapsController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/song/songController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/song/songDetailsController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/tagsController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/testControl.ascx.cs">
-      <publishTime>06/20/2016 16:32:04</publishTime>
-    </File>
-    <File Include="Controllers/thumbseedController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/Tumblr_Music_PlayerController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/videoController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/voteController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/widget_controls/newsController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/widget_controls/popularSongsController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Controllers/widget_controls/videosController.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
     </File>
     <File Include="crossdomain.xml">
       <publishTime>11/14/2012 17:40:22</publishTime>
@@ -2815,9 +2136,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Global.asax">
       <publishTime>03/10/2016 13:15:17</publishTime>
     </File>
-    <File Include="Global.asax.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
     <File Include="google1d75f225a6f2baa7.html">
       <publishTime>03/10/2016 13:15:23</publishTime>
     </File>
@@ -2827,50 +2145,23 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Handlers/LegacyPlaylist.ashx">
       <publishTime>03/10/2016 13:15:17</publishTime>
     </File>
-    <File Include="Handlers/LegacyPlaylist.ashx.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
     <File Include="Handlers/Playlist.ashx">
       <publishTime>03/10/2016 13:15:17</publishTime>
-    </File>
-    <File Include="Handlers/Playlist.ashx.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
     </File>
     <File Include="Handlers/Playlist_Npl_1.ashx">
       <publishTime>03/10/2016 13:15:17</publishTime>
     </File>
-    <File Include="Handlers/Playlist_Npl_1.ashx.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
     <File Include="Handlers/RadioPlaylist.ashx">
       <publishTime>03/10/2016 13:15:17</publishTime>
     </File>
-    <File Include="Handlers/RadioPlaylist.ashx.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
     <File Include="Handlers/SinglePlaylist.ashx">
-      <publishTime>03/10/2016 13:15:18</publishTime>
-    </File>
-    <File Include="Handlers/SinglePlaylist.ashx.cs">
       <publishTime>03/10/2016 13:15:18</publishTime>
     </File>
     <File Include="Handlers/Stream.ashx">
       <publishTime>03/10/2016 13:15:18</publishTime>
     </File>
-    <File Include="Handlers/Stream.ashx.cs">
-      <publishTime>03/10/2016 13:15:18</publishTime>
-    </File>
     <File Include="HtmlPage1.html">
       <publishTime>03/10/2016 13:15:18</publishTime>
-    </File>
-    <File Include="hypster.csproj">
-      <publishTime>08/17/2016 09:54:05</publishTime>
-    </File>
-    <File Include="hypster.csproj.user">
-      <publishTime>08/17/2016 09:54:05</publishTime>
-    </File>
-    <File Include="hypster.zip">
-      <publishTime>08/16/2016 12:09:52</publishTime>
     </File>
     <File Include="imgs/about/about_bottom.png">
       <publishTime>03/10/2016 13:15:23</publishTime>
@@ -3388,9 +2679,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/home/home_slideshow/12b94726-b7c3-4a13-9a56-45292c3924b3.jpg">
       <publishTime>03/10/2016 13:15:24</publishTime>
     </File>
-    <File Include="imgs/home/home_slideshow/139e8c1b-2f59-4fc4-8f4b-0b3caa4fc1ce.jpg">
-      <publishTime>06/13/2016 14:26:11</publishTime>
-    </File>
     <File Include="imgs/home/home_slideshow/140a3f07-bc04-4bc9-94e0-6697df7ce935.jpg">
       <publishTime>03/10/2016 13:15:24</publishTime>
     </File>
@@ -3405,9 +2693,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/home/home_slideshow/158b9c78-08d7-4e65-a5e2-9299c7f22998.jpg">
       <publishTime>03/10/2016 13:15:24</publishTime>
-    </File>
-    <File Include="imgs/home/home_slideshow/15b0e730-9797-4463-8982-b4643d8a6aa5.jpg">
-      <publishTime>06/13/2016 14:26:50</publishTime>
     </File>
     <File Include="imgs/home/home_slideshow/16072b7e-90ae-4bb3-92fc-a6fe73eca4f9.jpg">
       <publishTime>03/10/2016 13:15:24</publishTime>
@@ -3438,9 +2723,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/home/home_slideshow/1cad6500-199e-4f7d-bee3-6ac314fe03cd.jpg">
       <publishTime>03/10/2016 13:15:24</publishTime>
-    </File>
-    <File Include="imgs/home/home_slideshow/1dbbcd3f-ad85-4475-aed3-9babd3b275a3.jpg">
-      <publishTime>06/06/2016 10:15:52</publishTime>
     </File>
     <File Include="imgs/home/home_slideshow/1e64627c-0984-49a1-a859-6bdb7221d48e.jpg">
       <publishTime>03/10/2016 13:15:24</publishTime>
@@ -3498,9 +2780,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/home/home_slideshow/280a78ca-b22f-4888-903a-7e8f3858814f.jpg">
       <publishTime>03/10/2016 13:15:24</publishTime>
-    </File>
-    <File Include="imgs/home/home_slideshow/281829cf-49cb-4072-ac53-7039d7f6c394.jpg">
-      <publishTime>06/13/2016 14:26:36</publishTime>
     </File>
     <File Include="imgs/home/home_slideshow/2857dec1-99e7-46da-a6a6-b28ce50c5925.jpg">
       <publishTime>03/10/2016 13:15:24</publishTime>
@@ -3598,9 +2877,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/home/home_slideshow/44e3d279-3ffa-4540-8236-c47d502d0321.jpg">
       <publishTime>03/10/2016 13:15:24</publishTime>
     </File>
-    <File Include="imgs/home/home_slideshow/45a89e79-95fa-4b6d-b2d5-8f7ea0f58ba1.jpg">
-      <publishTime>06/06/2016 12:23:49</publishTime>
-    </File>
     <File Include="imgs/home/home_slideshow/45dcf852-c671-4750-b106-4b9db4d9faf0.jpg">
       <publishTime>03/10/2016 13:15:24</publishTime>
     </File>
@@ -3627,9 +2903,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/home/home_slideshow/4b818e7f-aaab-46ee-a10e-f9eceaf2611a.jpg">
       <publishTime>03/10/2016 13:15:24</publishTime>
-    </File>
-    <File Include="imgs/home/home_slideshow/4ca465b8-9338-4c03-9fd0-32d4656a9a98.jpg">
-      <publishTime>06/08/2016 16:46:41</publishTime>
     </File>
     <File Include="imgs/home/home_slideshow/4cd1030b-3b30-4174-b7a1-037840bbbc80.jpg">
       <publishTime>03/10/2016 13:15:24</publishTime>
@@ -3739,9 +3012,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/home/home_slideshow/650cb077-2911-4656-8c4b-a503a2ae9e4c.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
     </File>
-    <File Include="imgs/home/home_slideshow/652a7c67-a610-4e29-a237-3e48cf333db9.jpg">
-      <publishTime>07/05/2016 12:31:47</publishTime>
-    </File>
     <File Include="imgs/home/home_slideshow/67a03bae-f147-4c19-8bbd-d549fb61964f.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
     </File>
@@ -3832,14 +3102,8 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/home/home_slideshow/79c42a89-1e3a-4416-a2a9-dff1fd05f111.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
     </File>
-    <File Include="imgs/home/home_slideshow/7a367006-df2c-46c2-ba3d-741547d46fed.jpg">
-      <publishTime>06/09/2016 15:05:27</publishTime>
-    </File>
     <File Include="imgs/home/home_slideshow/7ad63571-1e97-4bfe-820d-9c554f452b3a.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
-    </File>
-    <File Include="imgs/home/home_slideshow/7b0d020f-0866-4070-8613-c6e5279e590c.jpg">
-      <publishTime>06/08/2016 12:09:50</publishTime>
     </File>
     <File Include="imgs/home/home_slideshow/7ba64fb3-f793-4d8b-9d35-75d4df54c293.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
@@ -3859,20 +3123,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/home/home_slideshow/7f883d7f-a750-41b6-9dc3-57cd62e1aef7.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
     </File>
-    <File Include="imgs/home/home_slideshow/7fbc968d-42c3-48bb-8de8-b0919586b60b.jpg">
-      <publishTime>06/08/2016 16:50:07</publishTime>
-    </File>
     <File Include="imgs/home/home_slideshow/800cac93-f69a-4c00-af01-1849ec61391f.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
     </File>
-    <File Include="imgs/home/home_slideshow/81aa1921-6158-4ff2-bfc8-2b546eab01fe.jpg">
-      <publishTime>06/09/2016 15:06:26</publishTime>
-    </File>
     <File Include="imgs/home/home_slideshow/827e32d7-d4eb-4c98-8b35-6816c310103a.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
-    </File>
-    <File Include="imgs/home/home_slideshow/85876a5c-2274-449f-be27-75f551a39a6f.jpg">
-      <publishTime>06/08/2016 12:29:18</publishTime>
     </File>
     <File Include="imgs/home/home_slideshow/8713e11f-a3b2-4dfe-8e34-99df561e5168.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
@@ -3898,9 +3153,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/home/home_slideshow/8ba20cbc-3442-4ea1-abaa-6a42d6465e4e.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
     </File>
-    <File Include="imgs/home/home_slideshow/8c150175-79a3-428c-be62-1e3fa7ad6238.jpg">
-      <publishTime>06/10/2016 11:06:42</publishTime>
-    </File>
     <File Include="imgs/home/home_slideshow/8c20a79d-207a-4e1b-89bf-d093d49a7e56.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
     </File>
@@ -3918,9 +3170,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/home/home_slideshow/8e9dae11-3763-434e-93b9-a9be540937cd.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
-    </File>
-    <File Include="imgs/home/home_slideshow/9002f327-4611-4e1c-b029-9c1b437fafd9.jpg">
-      <publishTime>06/03/2016 16:49:04</publishTime>
     </File>
     <File Include="imgs/home/home_slideshow/9184f910-dba7-4b6b-bfd3-69e599b9c12f.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
@@ -4048,9 +3297,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/home/home_slideshow/b576d6fb-a751-45a7-9bde-265224543d09.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
     </File>
-    <File Include="imgs/home/home_slideshow/b646939b-a013-46be-9116-a9e37fedc895.jpg">
-      <publishTime>06/09/2016 15:22:19</publishTime>
-    </File>
     <File Include="imgs/home/home_slideshow/b6a8d056-1c94-434b-a57d-4f5ea2730304.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
     </File>
@@ -4062,9 +3308,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/home/home_slideshow/b886ba57-7a87-4d2a-a281-a8dd6f3af10f.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
-    </File>
-    <File Include="imgs/home/home_slideshow/b992bc99-14e2-440c-823d-f78012603fcb.png">
-      <publishTime>06/10/2016 11:08:26</publishTime>
     </File>
     <File Include="imgs/home/home_slideshow/ba2b3d5f-56fd-4170-b4d2-a8504315396c.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
@@ -4119,12 +3362,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/home/home_slideshow/c30c6140-7901-4417-abde-a8475b03b1e0.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
-    </File>
-    <File Include="imgs/home/home_slideshow/c365a102-e68f-405f-9662-fe6bea5baef0.jpg">
-      <publishTime>07/05/2016 12:48:21</publishTime>
-    </File>
-    <File Include="imgs/home/home_slideshow/c3c94fe1-a08b-4406-bfc7-b1857f64f338.jpg">
-      <publishTime>06/09/2016 17:14:32</publishTime>
     </File>
     <File Include="imgs/home/home_slideshow/c67ec904-1741-42f8-bdf1-852ac432bbb0.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
@@ -4347,9 +3584,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/home/home_slideshow/f66ba287-e294-472c-87e3-c707e95dac8d.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
-    </File>
-    <File Include="imgs/home/home_slideshow/f831648e-e1f4-4e02-8b67-0bc17dbb73a0.jpg">
-      <publishTime>06/09/2016 14:15:09</publishTime>
     </File>
     <File Include="imgs/home/home_slideshow/f963de9e-d4ef-4aac-bb5c-04cee3f51668.jpg">
       <publishTime>03/10/2016 13:15:25</publishTime>
@@ -5680,9 +4914,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/-‘All-The-Times’-Puts-Ivan--Alyosha-On-Track-For-The-Big-Time.jpg">
       <publishTime>03/10/2016 13:15:27</publishTime>
     </File>
-    <File Include="imgs/i_posts/.jpg">
-      <publishTime>07/27/2016 15:08:51</publishTime>
-    </File>
     <File Include="imgs/i_posts/2014-Billboard-Music-Awards.jpg">
       <publishTime>03/10/2016 13:15:27</publishTime>
     </File>
@@ -5878,9 +5109,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/Annie-Eve-bluesy-folk-singer-from-London.jpg">
       <publishTime>03/10/2016 13:15:28</publishTime>
     </File>
-    <File Include="imgs/i_posts/Another-Test-Post.jpg">
-      <publishTime>07/28/2016 16:15:42</publishTime>
-    </File>
     <File Include="imgs/i_posts/Another-“Best-of-2014”-Playlist.jpg">
       <publishTime>03/10/2016 13:15:28</publishTime>
     </File>
@@ -5987,9 +5215,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2016 13:15:28</publishTime>
     </File>
     <File Include="imgs/i_posts/Avec-Sans-send-us-a-‘Shiver’.jpg">
-      <publishTime>03/10/2016 13:15:28</publishTime>
-    </File>
-    <File Include="imgs/i_posts/Avicii-goes-Rock--Roll-on-new-album-.jpg">
       <publishTime>03/10/2016 13:15:28</publishTime>
     </File>
     <File Include="imgs/i_posts/Avicii-goes-RockRoll-on-new-album-.jpg">
@@ -6741,9 +5966,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/i_posts/Dawn-Landes-with-the-voice-of-a-bluebird.jpg">
       <publishTime>03/10/2016 13:15:29</publishTime>
-    </File>
-    <File Include="imgs/i_posts/dd.png">
-      <publishTime>07/28/2016 09:08:42</publishTime>
     </File>
     <File Include="imgs/i_posts/Dead-Gaze-take-a-Brain-Holiday.jpg">
       <publishTime>03/10/2016 13:15:29</publishTime>
@@ -7534,19 +6756,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/img_-the-birth-of-hip-hop.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
-    <File Include="imgs/i_posts/img_.jpg">
-      <publishTime>07/27/2016 15:08:52</publishTime>
-    </File>
     <File Include="imgs/i_posts/img_A-PLACE-TO-BURY-STRANGERS.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
-    <File Include="imgs/i_posts/img_Another-Test-Post.jpg">
-      <publishTime>07/28/2016 16:15:42</publishTime>
-    </File>
     <File Include="imgs/i_posts/img_Anthony-Naples.jpeg">
-      <publishTime>03/10/2016 13:15:35</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_Avicii-goes-Rock--Roll-on-new-album-.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
     <File Include="imgs/i_posts/img_BATMAN-ARKHAM-KNIGHT.jpg">
@@ -7573,9 +6786,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/img_BLUR.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
-    <File Include="imgs/i_posts/img_British-indie-rock-group-Scars-on-45-.jpg">
-      <publishTime>03/10/2016 13:15:35</publishTime>
-    </File>
     <File Include="imgs/i_posts/img_CARIBOU.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
@@ -7584,9 +6794,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/i_posts/img_DARK-SKY.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_dd.png">
-      <publishTime>07/28/2016 09:08:43</publishTime>
     </File>
     <File Include="imgs/i_posts/img_EVOLVE.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
@@ -7615,38 +6822,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/img_Janet-Jackson-set-to-release-new-album-.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
-    <File Include="imgs/i_posts/img_Jeremiah-and-Shlohmo-release-No-More-EP.jpg">
-      <publishTime>03/10/2016 13:15:35</publishTime>
-    </File>
     <File Include="imgs/i_posts/img_JOEY-BADA.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
-    <File Include="imgs/i_posts/img_June-Media.jpg">
-      <publishTime>07/28/2016 16:10:36</publishTime>
-    </File>
     <File Include="imgs/i_posts/img_KING-TUFF.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_London-based-misfits-The-Mispers.jpg">
-      <publishTime>03/10/2016 13:15:35</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_Lorem-Ipsum-2.jpg">
-      <publishTime>07/28/2016 15:46:16</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_Lorem-Ipsum-3.jpg">
-      <publishTime>07/28/2016 16:05:45</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_Lorem-Ipsum-4.jpg">
-      <publishTime>07/28/2016 15:59:13</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_Lorem-Ipsum-5.jpg">
-      <publishTime>07/28/2016 17:01:13</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_Lorem-Ipsum-6.jpg">
-      <publishTime>07/28/2016 17:14:14</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_Lorem-Ipsum.jpg">
-      <publishTime>07/27/2016 15:15:51</publishTime>
     </File>
     <File Include="imgs/i_posts/img_MARILYN-MANSON.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
@@ -7656,18 +6836,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/i_posts/img_MORTAL-KOMBAT-X.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_New-Test-Post-2.jpg">
-      <publishTime>07/28/2016 16:38:08</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_New-Test-Post-2.png">
-      <publishTime>07/28/2016 11:59:25</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_New-Test-Post-3.jpg">
-      <publishTime>07/28/2016 16:47:33</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_New-Test-Post.jpg">
-      <publishTime>07/28/2016 16:15:19</publishTime>
     </File>
     <File Include="imgs/i_posts/img_ODESZA.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
@@ -7687,12 +6855,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/img_RAURY.png">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
-    <File Include="imgs/i_posts/img_Richards-Playerlist.jpg">
-      <publishTime>06/16/2016 11:00:19</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_Richards-Playerlist.png">
-      <publishTime>06/15/2016 10:32:10</publishTime>
-    </File>
     <File Include="imgs/i_posts/img_rock-band-4.jpeg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
@@ -7708,9 +6870,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/img_RUSTIE.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
-    <File Include="imgs/i_posts/img_Sensual-Music-2016.jpg">
-      <publishTime>06/16/2016 10:38:14</publishTime>
-    </File>
     <File Include="imgs/i_posts/img_Songs-for-Superfreaks.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
@@ -7719,9 +6878,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/i_posts/img_Super-Bowl-XLIX-Party-Playlist.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_Test-Header.jpg">
-      <publishTime>06/29/2016 17:34:49</publishTime>
     </File>
     <File Include="imgs/i_posts/img_THE-DODOS.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
@@ -7753,13 +6909,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/img_VIET-CONG.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
-    <File Include="imgs/i_posts/img_Weezer-drop-new-single-Back-To-The-Shack.jpg">
-      <publishTime>03/10/2016 13:15:35</publishTime>
-    </File>
     <File Include="imgs/i_posts/img_WHITE-NIGHT.jpg">
-      <publishTime>03/10/2016 13:15:35</publishTime>
-    </File>
-    <File Include="imgs/i_posts/img_Wild-Cub-will-tour-with-Bleachers.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
     <File Include="imgs/i_posts/img_Witt-Lowry-.jpg">
@@ -8107,9 +7257,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/Julie-Andrews-jewel-of-a-voice-isn%27t-coming-back.jpg">
       <publishTime>03/10/2016 13:15:30</publishTime>
     </File>
-    <File Include="imgs/i_posts/June-Media.jpg">
-      <publishTime>07/28/2016 16:10:36</publishTime>
-    </File>
     <File Include="imgs/i_posts/Jungle-release-debut-album.png">
       <publishTime>03/10/2016 13:15:30</publishTime>
     </File>
@@ -8445,24 +7592,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/i_posts/Lorde-wants-a-break-from-radio-airplay.jpg">
       <publishTime>03/10/2016 13:15:30</publishTime>
-    </File>
-    <File Include="imgs/i_posts/Lorem-Ipsum-2.jpg">
-      <publishTime>07/28/2016 15:46:16</publishTime>
-    </File>
-    <File Include="imgs/i_posts/Lorem-Ipsum-3.jpg">
-      <publishTime>07/28/2016 16:05:45</publishTime>
-    </File>
-    <File Include="imgs/i_posts/Lorem-Ipsum-4.jpg">
-      <publishTime>07/28/2016 15:59:13</publishTime>
-    </File>
-    <File Include="imgs/i_posts/Lorem-Ipsum-5.jpg">
-      <publishTime>07/28/2016 17:01:13</publishTime>
-    </File>
-    <File Include="imgs/i_posts/Lorem-Ipsum-6.jpg">
-      <publishTime>07/28/2016 17:14:14</publishTime>
-    </File>
-    <File Include="imgs/i_posts/Lorem-Ipsum.jpg">
-      <publishTime>07/27/2016 15:15:51</publishTime>
     </File>
     <File Include="imgs/i_posts/Los-Chalados-representing-Indonesia">
       <publishTime>03/10/2016 13:15:30</publishTime>
@@ -8956,18 +8085,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/New-Stephen-King-Tv-Series-Is-Huge-Hit.jpg">
       <publishTime>03/10/2016 13:15:31</publishTime>
     </File>
-    <File Include="imgs/i_posts/New-Test-Post-2.jpg">
-      <publishTime>07/28/2016 16:38:08</publishTime>
-    </File>
-    <File Include="imgs/i_posts/New-Test-Post-2.png">
-      <publishTime>07/28/2016 11:59:25</publishTime>
-    </File>
-    <File Include="imgs/i_posts/New-Test-Post-3.jpg">
-      <publishTime>07/28/2016 16:47:33</publishTime>
-    </File>
-    <File Include="imgs/i_posts/New-Test-Post.jpg">
-      <publishTime>07/28/2016 16:15:19</publishTime>
-    </File>
     <File Include="imgs/i_posts/New-Tour-Dates-for-The-Kills.jpg">
       <publishTime>03/10/2016 13:15:31</publishTime>
     </File>
@@ -9023,9 +8140,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2016 13:15:31</publishTime>
     </File>
     <File Include="imgs/i_posts/Nightmare-and-The-Cat-and-their-EP-‘Simple’.jpg">
-      <publishTime>03/10/2016 13:15:31</publishTime>
-    </File>
-    <File Include="imgs/i_posts/Nina-Persson-of-The-Cardigans-Goes-Solo.jpg">
       <publishTime>03/10/2016 13:15:31</publishTime>
     </File>
     <File Include="imgs/i_posts/Nirvana-Inducted-into-Rock-and-Roll-Hall-of-Fame.jpg">
@@ -9433,12 +8547,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/Report-says-that-British-prisoners-prefer-Rihanna%27s-music.jpg">
       <publishTime>03/10/2016 13:15:33</publishTime>
     </File>
-    <File Include="imgs/i_posts/Richards-Playerlist.jpg">
-      <publishTime>06/16/2016 11:00:19</publishTime>
-    </File>
-    <File Include="imgs/i_posts/Richards-Playerlist.png">
-      <publishTime>06/15/2016 10:32:10</publishTime>
-    </File>
     <File Include="imgs/i_posts/Richie-Sambora-tells-Jon-Bon-Jovi-to-back-off.jpg">
       <publishTime>03/10/2016 13:15:33</publishTime>
     </File>
@@ -9639,9 +8747,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/i_posts/Selene-Gomez-Back-to-Work.jpg">
       <publishTime>03/10/2016 13:15:33</publishTime>
-    </File>
-    <File Include="imgs/i_posts/Sensual-Music-2016.jpg">
-      <publishTime>06/16/2016 10:38:14</publishTime>
     </File>
     <File Include="imgs/i_posts/Seriously-Super-Secret-Spy-Songs.jpg">
       <publishTime>03/10/2016 13:15:33</publishTime>
@@ -9999,9 +9104,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/i_posts/test-111.png">
       <publishTime>03/10/2016 13:15:35</publishTime>
-    </File>
-    <File Include="imgs/i_posts/Test-Header.jpg">
-      <publishTime>06/29/2016 17:34:49</publishTime>
     </File>
     <File Include="imgs/i_posts/test-post-from-VvS.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
@@ -10393,9 +9495,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/thumb_-‘All-The-Times’-Puts-Ivan--Alyosha-On-Track-For-The-Big-Time.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
-    <File Include="imgs/i_posts/thumb_.jpg">
-      <publishTime>07/27/2016 15:08:51</publishTime>
-    </File>
     <File Include="imgs/i_posts/thumb_2014-Billboard-Music-Awards.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
@@ -10591,9 +9690,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/thumb_Annie-Eve-bluesy-folk-singer-from-London.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
-    <File Include="imgs/i_posts/thumb_Another-Test-Post.jpg">
-      <publishTime>07/28/2016 16:15:42</publishTime>
-    </File>
     <File Include="imgs/i_posts/thumb_Another-“Best-of-2014”-Playlist.jpg">
       <publishTime>03/10/2016 13:15:35</publishTime>
     </File>
@@ -10700,9 +9796,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2016 13:15:36</publishTime>
     </File>
     <File Include="imgs/i_posts/thumb_Avec-Sans-send-us-a-‘Shiver’.jpg">
-      <publishTime>03/10/2016 13:15:36</publishTime>
-    </File>
-    <File Include="imgs/i_posts/thumb_Avicii-goes-Rock--Roll-on-new-album-.jpg">
       <publishTime>03/10/2016 13:15:36</publishTime>
     </File>
     <File Include="imgs/i_posts/thumb_Avicii-goes-RockRoll-on-new-album-.jpg">
@@ -11454,9 +10547,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/i_posts/thumb_Dawn-Landes-with-the-voice-of-a-bluebird.jpg">
       <publishTime>03/10/2016 13:15:37</publishTime>
-    </File>
-    <File Include="imgs/i_posts/thumb_dd.png">
-      <publishTime>07/28/2016 09:08:43</publishTime>
     </File>
     <File Include="imgs/i_posts/thumb_Dead-Gaze-take-a-Brain-Holiday.jpg">
       <publishTime>03/10/2016 13:15:37</publishTime>
@@ -12571,9 +11661,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/thumb_Julie-Andrews-jewel-of-a-voice-isn%27t-coming-back.jpg">
       <publishTime>03/10/2016 13:15:40</publishTime>
     </File>
-    <File Include="imgs/i_posts/thumb_June-Media.jpg">
-      <publishTime>07/28/2016 16:10:36</publishTime>
-    </File>
     <File Include="imgs/i_posts/thumb_Jungle-release-debut-album.png">
       <publishTime>03/10/2016 13:15:40</publishTime>
     </File>
@@ -12909,24 +11996,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/i_posts/thumb_Lorde-wants-a-break-from-radio-airplay.jpg">
       <publishTime>03/10/2016 13:15:40</publishTime>
-    </File>
-    <File Include="imgs/i_posts/thumb_Lorem-Ipsum-2.jpg">
-      <publishTime>07/28/2016 15:46:16</publishTime>
-    </File>
-    <File Include="imgs/i_posts/thumb_Lorem-Ipsum-3.jpg">
-      <publishTime>07/28/2016 16:05:45</publishTime>
-    </File>
-    <File Include="imgs/i_posts/thumb_Lorem-Ipsum-4.jpg">
-      <publishTime>07/28/2016 15:59:13</publishTime>
-    </File>
-    <File Include="imgs/i_posts/thumb_Lorem-Ipsum-5.jpg">
-      <publishTime>07/28/2016 17:01:13</publishTime>
-    </File>
-    <File Include="imgs/i_posts/thumb_Lorem-Ipsum-6.jpg">
-      <publishTime>07/28/2016 17:14:14</publishTime>
-    </File>
-    <File Include="imgs/i_posts/thumb_Lorem-Ipsum.jpg">
-      <publishTime>07/27/2016 15:15:51</publishTime>
     </File>
     <File Include="imgs/i_posts/thumb_Los-Chalados-representing-Indonesia">
       <publishTime>03/10/2016 13:15:40</publishTime>
@@ -13420,18 +12489,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/thumb_New-Stephen-King-Tv-Series-Is-Huge-Hit.jpg">
       <publishTime>03/10/2016 13:15:41</publishTime>
     </File>
-    <File Include="imgs/i_posts/thumb_New-Test-Post-2.jpg">
-      <publishTime>07/28/2016 16:38:08</publishTime>
-    </File>
-    <File Include="imgs/i_posts/thumb_New-Test-Post-2.png">
-      <publishTime>07/28/2016 11:59:25</publishTime>
-    </File>
-    <File Include="imgs/i_posts/thumb_New-Test-Post-3.jpg">
-      <publishTime>07/28/2016 16:47:33</publishTime>
-    </File>
-    <File Include="imgs/i_posts/thumb_New-Test-Post.jpg">
-      <publishTime>07/28/2016 16:15:19</publishTime>
-    </File>
     <File Include="imgs/i_posts/thumb_New-Tour-Dates-for-The-Kills.jpg">
       <publishTime>03/10/2016 13:15:41</publishTime>
     </File>
@@ -13487,9 +12544,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2016 13:15:41</publishTime>
     </File>
     <File Include="imgs/i_posts/thumb_Nightmare-and-The-Cat-and-their-EP-‘Simple’.jpg">
-      <publishTime>03/10/2016 13:15:41</publishTime>
-    </File>
-    <File Include="imgs/i_posts/thumb_Nina-Persson-of-The-Cardigans-Goes-Solo.jpg">
       <publishTime>03/10/2016 13:15:41</publishTime>
     </File>
     <File Include="imgs/i_posts/thumb_Nirvana-Inducted-into-Rock-and-Roll-Hall-of-Fame.jpg">
@@ -13897,12 +12951,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/i_posts/thumb_Report-says-that-British-prisoners-prefer-Rihanna%27s-music.jpg">
       <publishTime>03/10/2016 13:15:41</publishTime>
     </File>
-    <File Include="imgs/i_posts/thumb_Richards-Playerlist.jpg">
-      <publishTime>06/16/2016 11:00:19</publishTime>
-    </File>
-    <File Include="imgs/i_posts/thumb_Richards-Playerlist.png">
-      <publishTime>06/15/2016 10:32:10</publishTime>
-    </File>
     <File Include="imgs/i_posts/thumb_Richie-Sambora-tells-Jon-Bon-Jovi-to-back-off.jpg">
       <publishTime>03/10/2016 13:15:41</publishTime>
     </File>
@@ -14103,9 +13151,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/i_posts/thumb_Selene-Gomez-Back-to-Work.jpg">
       <publishTime>03/10/2016 13:15:42</publishTime>
-    </File>
-    <File Include="imgs/i_posts/thumb_Sensual-Music-2016.jpg">
-      <publishTime>06/16/2016 10:38:15</publishTime>
     </File>
     <File Include="imgs/i_posts/thumb_Seriously-Super-Secret-Spy-Songs.jpg">
       <publishTime>03/10/2016 13:15:42</publishTime>
@@ -14463,9 +13508,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="imgs/i_posts/thumb_test-111.png">
       <publishTime>03/10/2016 13:15:43</publishTime>
-    </File>
-    <File Include="imgs/i_posts/thumb_Test-Header.jpg">
-      <publishTime>06/29/2016 17:34:49</publishTime>
     </File>
     <File Include="imgs/i_posts/thumb_test-post-from-VvS.jpg">
       <publishTime>03/10/2016 13:15:43</publishTime>
@@ -16207,9 +15249,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="imgs/radio/genres/Techno.jpg">
       <publishTime>03/10/2016 13:15:44</publishTime>
     </File>
-    <File Include="imgs/radio/genres/test.jpg">
-      <publishTime>03/10/2016 13:15:44</publishTime>
-    </File>
     <File Include="imgs/radio/genres/Thumbs.db">
       <publishTime>03/10/2016 13:15:44</publishTime>
     </File>
@@ -17534,40 +16573,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2016 13:15:18</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>08/17/2016 11:56:56</publishTime>
-    </File>
-    <File Include="Properties/AssemblyInfo.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="Properties/PublishProfiles/dev.hypster.com.pubxml">
-      <publishTime>04/26/2016 09:49:46</publishTime>
-    </File>
-    <File Include="Properties/PublishProfiles/dev.hypster.com.pubxml.user">
-      <publishTime>04/26/2016 09:49:46</publishTime>
-    </File>
-    <File Include="Properties/PublishProfiles/hypster.com.pubxml">
-      <publishTime>08/16/2016 16:50:20</publishTime>
-    </File>
-    <File Include="Properties/PublishProfiles/hypster.com.pubxml.user">
-      <publishTime>08/16/2016 16:51:01</publishTime>
-    </File>
-    <File Include="Properties/Resources.Designer.cs">
-      <publishTime>08/15/2016 17:08:08</publishTime>
-    </File>
-    <File Include="Properties/Resources.resx">
-      <publishTime>08/15/2016 17:08:08</publishTime>
-    </File>
-    <File Include="Properties/Settings.Designer.cs">
-      <publishTime>08/15/2016 17:08:00</publishTime>
-    </File>
-    <File Include="Properties/Settings.settings">
-      <publishTime>08/15/2016 17:07:59</publishTime>
+      <publishTime>08/17/2016 12:37:44</publishTime>
     </File>
     <File Include="README.md">
       <publishTime>03/10/2016 13:15:18</publishTime>
-    </File>
-    <File Include="readme.txt">
-      <publishTime>03/10/2016 13:15:48</publishTime>
     </File>
     <File Include="robots.txt">
       <publishTime>03/10/2016 13:15:48</publishTime>
@@ -17710,9 +16719,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="scripts/hypScript.js">
       <publishTime>08/05/2016 11:12:16</publishTime>
     </File>
-    <File Include="scripts/hypScript.js.orig">
-      <publishTime>07/12/2016 16:00:05</publishTime>
-    </File>
     <File Include="scripts/hypScriptD.js">
       <publishTime>07/29/2016 10:48:36</publishTime>
     </File>
@@ -17721,9 +16727,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="scripts/HypsterOriginalPlayer.swf">
       <publishTime>01/14/2013 20:44:21</publishTime>
-    </File>
-    <File Include="scripts/jquery-1.6.2-vsdoc.js">
-      <publishTime>07/29/2016 10:48:36</publishTime>
     </File>
     <File Include="scripts/jquery-1.6.2.js">
       <publishTime>08/09/2012 19:57:05</publishTime>
@@ -17754,9 +16757,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="scripts/jquery.unobtrusive-ajax.min.js">
       <publishTime>08/09/2012 19:57:06</publishTime>
-    </File>
-    <File Include="scripts/jquery.validate-vsdoc.js">
-      <publishTime>08/09/2012 19:57:05</publishTime>
     </File>
     <File Include="scripts/jquery.validate.js">
       <publishTime>08/09/2012 19:57:05</publishTime>
@@ -17814,9 +16814,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="scripts/playlist.xml">
       <publishTime>10/16/2012 13:17:55</publishTime>
-    </File>
-    <File Include="scripts/sha1.js">
-      <publishTime>07/29/2016 10:48:36</publishTime>
     </File>
     <File Include="scripts/swfobject.js">
       <publishTime>06/12/2012 06:24:48</publishTime>
@@ -18217,75 +17214,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="scripts/ui/minified/jquery.ui.widget.min.js">
       <publishTime>06/05/2012 17:06:12</publishTime>
     </File>
-    <File Include="scripts/_references.js">
-      <publishTime>07/29/2016 10:48:36</publishTime>
-    </File>
-    <File Include="ViewModels/AddToPlayListViewModel.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="ViewModels/celebsIndexViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/chartViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/Compatibility_UserPlaylists_ViewModel.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="ViewModels/connectViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/createPlayer_ViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/createPlaylist_ViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/createStation_ViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/createViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/festivalViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/getAccountInfo_PrivateViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/getAccountInfo_PublicViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/GetPlayerViewModel.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="ViewModels/homeViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/HomPopularCont_ViewModel.cs">
-      <publishTime>07/29/2016 10:48:32</publishTime>
-    </File>
-    <File Include="ViewModels/listenViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/LoginViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/MemberPublicPageViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/playlistsViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/SongLandingPageViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/TagsLangingViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="ViewModels/videoPlayerViewModel.cs">
-      <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
     <File Include="Views/account/acctFriends.cshtml">
       <publishTime>07/29/2016 10:48:33</publishTime>
     </File>
@@ -18321,9 +17249,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Views/account/history.cshtml">
       <publishTime>07/29/2016 10:48:33</publishTime>
-    </File>
-    <File Include="Views/account/Login.cshtml">
-      <publishTime>08/21/2012 14:37:54</publishTime>
     </File>
     <File Include="Views/account/pr_LoginStatus.cshtml">
       <publishTime>07/29/2016 10:48:33</publishTime>
@@ -18640,9 +17565,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/hypAds/ad_300x250_btf.cshtml">
       <publishTime>07/29/2016 10:48:34</publishTime>
     </File>
-    <File Include="Views/hypAds/ad_300x600.cshtml">
-      <publishTime>07/29/2016 10:48:34</publishTime>
-    </File>
     <File Include="Views/hypAds/ad_728x90.cshtml">
       <publishTime>07/29/2016 10:48:34</publishTime>
     </File>
@@ -18677,15 +17599,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:34</publishTime>
     </File>
     <File Include="Views/hypAds/i_pl_right_300x250.cshtml">
-      <publishTime>07/29/2016 10:48:34</publishTime>
-    </File>
-    <File Include="Views/hypAds/liveramp.cshtml">
-      <publishTime>07/29/2016 10:48:34</publishTime>
-    </File>
-    <File Include="Views/hypAds/swoop.cshtml">
-      <publishTime>05/16/2016 12:09:58</publishTime>
-    </File>
-    <File Include="Views/hypAds/underdog.cshtml">
       <publishTime>07/29/2016 10:48:34</publishTime>
     </File>
     <File Include="Views/hypster/AboutUs.cshtml">
@@ -19111,9 +18024,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/tags/Index.cshtml">
       <publishTime>07/29/2016 10:48:35</publishTime>
     </File>
-    <File Include="Views/test/Index.cshtml">
-      <publishTime>03/31/2016 17:04:29</publishTime>
-    </File>
     <File Include="Views/test/SpecificMedia.cshtml">
       <publishTime>07/29/2016 10:48:35</publishTime>
     </File>
@@ -19142,22 +18052,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:33</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/17/2016 11:56:31</publishTime>
-    </File>
-    <File Include="Web.config.master.bak">
-      <publishTime>08/05/2016 11:12:16</publishTime>
-    </File>
-    <File Include="Web.config.stage.bak">
-      <publishTime>08/05/2016 11:12:16</publishTime>
-    </File>
-    <File Include="Web.config.template">
-      <publishTime>07/29/2016 12:09:38</publishTime>
-    </File>
-    <File Include="Web.Debug.config">
-      <publishTime>03/10/2016 13:15:20</publishTime>
-    </File>
-    <File Include="Web.Release.config">
-      <publishTime>03/10/2016 13:15:20</publishTime>
+      <publishTime>08/19/2016 09:50:09</publishTime>
     </File>
     <File Include="webfonts/245B38_0_0.eot">
       <publishTime>03/10/2016 13:15:50</publishTime>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAnJFDca66ZEGMBvANzU6abQAAAAACAAAAAAAQZgAAAAEAACAAAAA1XISH70pEXbX/W3zbfQyJ5vTIB2uPbkR1lhZA2SRQxAAAAAAOgAAAAAIAACAAAACeAK0Y1eBdrOFKTn6oXcszeiRy3ykua04AFZNvmpQ4TyAAAADslTmoRpxmCj/HlfdrQNYDHy2M8+mgUH70J1T1nUZEPkAAAACoZ4SHgYU6Wr6OT/4XvjD6l9QaZxpzhjPiqpOUW/iyo3Hj3iqhlGvZBX51Qif1owsAY7gHYvIb3KtmxaEeujc/</EncryptedPassword>
+    <_PublishTargetUrl>\\162.242.226.18\webs\base.hypster.com</_PublishTargetUrl>
+  </PropertyGroup>
+</Project>

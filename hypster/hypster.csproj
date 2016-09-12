@@ -37,6 +37,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <ExcludeFilesFromDeployment>.gitignore;hypster.csproj;hypster.csproj.user;readme.txt;robots.txt;Web.config.master.bak;Web.config.stage.bak;Web.config.template;Web.Debug.config;Web.Release.config</ExcludeFilesFromDeployment>
+    <ExcludeFoldersFromDeployment>Controllers;obj;Properties</ExcludeFoldersFromDeployment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -45,6 +48,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <IncludeIisSettings>false</IncludeIisSettings>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <ExcludeFilesFromDeployment>.gitignore;hypster.csproj;hypster.csproj.user;readme.txt;robots.txt;Web.config;Web.config.master.bak;Web.config.stage.bak;Web.config.template;Web.Debug.config;Web.Release.config</ExcludeFilesFromDeployment>
+    <ExcludeFoldersFromDeployment>Controllers;obj;Properties</ExcludeFoldersFromDeployment>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AreYouAHuman, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -370,6 +380,16 @@
       <DependentUpon>Stream.ashx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\AddToPlayListViewModel.cs" />
     <Compile Include="ViewModels\celebsIndexViewModel.cs" />
     <Compile Include="ViewModels\chartViewModel.cs" />
@@ -525,6 +545,8 @@
     <Content Include="a\player7.js" />
     <Content Include="BingSiteAuth.xml" />
     <Content Include="bin\AreYouAHuman.dll" />
+    <Content Include="bin\CreoleParser.dll" />
+    <Content Include="bin\DotNetWikiBot.dll" />
     <Content Include="bin\EntityFramework.dll" />
     <Content Include="bin\Google.Apis.Auth.dll" />
     <Content Include="bin\Google.Apis.Auth.PlatformServices.dll" />
@@ -533,42 +555,37 @@
     <Content Include="bin\Google.Apis.PlatformServices.dll" />
     <Content Include="bin\Google.Apis.YouTube.v3.dll" />
     <Content Include="bin\Google.GData.Client.dll" />
-    <Content Include="bin\Google.GData.Extensions.dll" />
     <Content Include="bin\Google.GData.YouTube.dll" />
     <Content Include="bin\hypster.dll" />
     <Content Include="bin\hypster.pdb" />
     <Content Include="bin\hypster_tv_DAL.dll" />
-    <Content Include="bin\log4net.dll" />
     <Content Include="bin\Microsoft.Threading.Tasks.dll" />
-    <Content Include="bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll" />
     <Content Include="bin\Microsoft.Threading.Tasks.Extensions.dll" />
     <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
     <Content Include="bin\Newtonsoft.Json.dll" />
     <Content Include="bin\Recaptcha.dll" />
     <Content Include="bin\Recaptcha.MvcModel.dll" />
-    <Content Include="bin\ServiceStack.Common.dll" />
-    <Content Include="bin\ServiceStack.Interfaces.dll" />
-    <Content Include="bin\ServiceStack.Text.dll" />
     <Content Include="bin\SolveMedia.dll" />
     <Content Include="bin\SolvemediaDAPI.dll" />
     <Content Include="bin\System.IO.dll" />
     <Content Include="bin\System.Net.Http.dll" />
     <Content Include="bin\System.Net.Http.Extensions.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
     <Content Include="bin\System.Net.Http.Primitives.dll" />
     <Content Include="bin\System.Net.Http.WebRequest.dll" />
     <Content Include="bin\System.Runtime.dll" />
-    <Content Include="bin\System.Spatial.dll" />
     <Content Include="bin\System.Threading.Tasks.dll" />
     <Content Include="bin\System.Web.Helpers.dll" />
-    <Content Include="bin\System.Web.Http.OData.dll" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
     <Content Include="bin\System.Web.Mvc.dll" />
     <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Providers.dll" />
     <Content Include="bin\System.Web.Razor.dll" />
     <Content Include="bin\System.Web.WebPages.Deployment.dll" />
     <Content Include="bin\System.Web.WebPages.dll" />
     <Content Include="bin\System.Web.WebPages.Razor.dll" />
     <Content Include="bin\WebGrease.dll" />
-    <Content Include="bin\Zlib.Portable.dll" />
     <Content Include="crossdomain.xml" />
     <Content Include="css\home\GetSideVideos.css" />
     <Content Include="css\home\Home.css" />
@@ -2629,7 +2646,6 @@
     <Content Include="imgs\i_posts\Nicole-Scherzinger-and-Lewis-Hamilton-split.jpg" />
     <Content Include="imgs\i_posts\Night-Works-Channels-Hall--Oats.jpg" />
     <Content Include="imgs\i_posts\Nightmare-and-The-Cat-and-their-EP-‘Simple’.jpg" />
-    <Content Include="imgs\i_posts\Nina-Persson-of-The-Cardigans-Goes-Solo.jpg" />
     <Content Include="imgs\i_posts\Nirvana-Inducted-into-Rock-and-Roll-Hall-of-Fame.jpg" />
     <Content Include="imgs\i_posts\No-Doubt-Auctioning-Bass-For-Charity.jpg" />
     <Content Include="imgs\i_posts\Noise-Pop-Festival-San-Francisco-2014.jpg" />
@@ -4085,7 +4101,6 @@
     <Content Include="imgs\i_posts\thumb_Nicole-Scherzinger-and-Lewis-Hamilton-split.jpg" />
     <Content Include="imgs\i_posts\thumb_Night-Works-Channels-Hall--Oats.jpg" />
     <Content Include="imgs\i_posts\thumb_Nightmare-and-The-Cat-and-their-EP-‘Simple’.jpg" />
-    <Content Include="imgs\i_posts\thumb_Nina-Persson-of-The-Cardigans-Goes-Solo.jpg" />
     <Content Include="imgs\i_posts\thumb_Nirvana-Inducted-into-Rock-and-Roll-Hall-of-Fame.jpg" />
     <Content Include="imgs\i_posts\thumb_No-Doubt-Auctioning-Bass-For-Charity.jpg" />
     <Content Include="imgs\i_posts\thumb_Noise-Pop-Festival-San-Francisco-2014.jpg" />
@@ -5419,7 +5434,6 @@
     <Content Include="imgs\i_posts\Lorde-wants-a-break-from-radio-airplay" />
     <Content Include="imgs\i_posts\Los-Chalados-representing-Indonesia" />
     <Content Include="imgs\i_posts\Maximo-Park-release-‘Leave-this-island’-" />
-    <Content Include="imgs\i_posts\Nina-Persson-of-The-Cardigans-Goes-Solo" />
     <Content Include="imgs\i_posts\Olivia-Newton-John-announces-Las-Vegas-Residency" />
     <Content Include="imgs\i_posts\RL-GRIME" />
     <Content Include="imgs\i_posts\Super-Bowl-adds-The-black-Keys-Band-of-Horses-and-John-Legend-to-Line-Up" />
@@ -5433,7 +5447,6 @@
     <Content Include="imgs\i_posts\thumb_Lorde-wants-a-break-from-radio-airplay" />
     <Content Include="imgs\i_posts\thumb_Los-Chalados-representing-Indonesia" />
     <Content Include="imgs\i_posts\thumb_Maximo-Park-release-‘Leave-this-island’-" />
-    <Content Include="imgs\i_posts\thumb_Nina-Persson-of-The-Cardigans-Goes-Solo" />
     <Content Include="imgs\i_posts\thumb_Olivia-Newton-John-announces-Las-Vegas-Residency" />
     <Content Include="imgs\i_posts\thumb_RL-GRIME" />
     <Content Include="imgs\i_posts\thumb_Super-Bowl-adds-The-black-Keys-Band-of-Horses-and-John-Legend-to-Line-Up" />
@@ -5972,8 +5985,15 @@
     <Content Include="bin\hypster.dll.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="bin\BotInfo.netmodule" />
+    <None Include="Properties\PublishProfiles\base.hypster.com.pubxml" />
     <None Include="Properties\PublishProfiles\dev.hypster.com.pubxml" />
     <None Include="Properties\PublishProfiles\hypster.com.pubxml" />
+    <None Include="Properties\PublishProfiles\hypster.local.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="scripts\jquery-1.6.2.js" />
     <Content Include="scripts\jquery-1.6.2.min.js" />
@@ -6419,7 +6439,6 @@
     <Content Include="Views\home\pr_ShareBox.cshtml" />
     <Content Include="Views\home\SplashPage.cshtml" />
     <Content Include="Views\home\visualSearchBar.cshtml" />
-    <Content Include="Views\Shared\_LayoutBlack.cshtml" />
     <Content Include="Views\Shared\_Layout_ListenTMP.cshtml" />
     <Content Include="Views\Shared\_Layout_MPL.cshtml" />
     <Content Include="Views\Shared\_Layout_MPL_2.cshtml" />
@@ -6445,6 +6464,7 @@
     <Content Include="Views\Shared\pr_RightRail.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Shared\_Layout3.cshtml" />
+    <Content Include="Views\breaking\pr_GetLatestNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -6466,9 +6486,21 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -6482,14 +6514,17 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50718</DevelopmentServerPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50718/</IISUrl>
+          <IISUrl>http://localhost:51849/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
           </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <servers defaultServer="SelfHostServer">
+            <server name="SelfHostServer" exePath="" cmdArgs="" url="http://localhost:51849/" workingDir="" />
+          </servers>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
