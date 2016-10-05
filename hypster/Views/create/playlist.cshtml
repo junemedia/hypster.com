@@ -52,7 +52,7 @@
         </div>
 
         <div class="CreatePlaylistCont">
-            <div id="PlaylistsInnrCont1" class="PlaylistsInnrCont" style="position:relative; top:0px; margin-bottom:15px;">
+            <div id="PlaylistsInnrCont1" class="PlaylistsInnrCont" style="top:0px; margin-bottom:15px;">
                 <div id="AddNewPlstItm1" class="AddNewPlstItm" onclick="$('#AddNewPlaylist_Container').css('display','block'); $('.AddNewPlstItm').css('display','none');">
                     <div>+</div> 
                     <span>ADD NEW PLAYLIST</span>
@@ -73,7 +73,6 @@
                     if (item.id == ViewBag.ActivePlaylistID)
                     {
                         <div class="PlstItm_Act" onmouseover="this.style.backgroundColor='#ABABAB';" onmouseout="this.style.backgroundColor='#FFFFFF';">
-                                
                             <div class="PlstItm_ActTitle" id="textName_cont_@item.id">
                                 <span onclick="OpenPlayerM('/playlists/user/@User.Identity.Name?@item.id');" style="display:block; float:left; width:24px; height:24px; line-height:24px; margin:3px 0 0 0; background:#47bb90 url(/imgs/play_icon.png) no-repeat 6px 4px; border-radius:15px; ">
                                 </span>
