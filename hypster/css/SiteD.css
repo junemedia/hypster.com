@@ -7218,11 +7218,28 @@ a.captionOrange:hover
     display:block; float:right; width:17px; height:17px; line-height:15px; margin:5px 4px 0 0; padding:1px; background: url('/imgs/plst_heart.png') no-repeat center; font-size:10px; color:#454545; text-align:center;
 }
 
-
-
-
 .brVideoCont
 {
-    float:left;  width:686px; height:386px;  margin-right:9px; margin-top:7px; margin-bottom:20px; border:2px solid #656565;
+    float:left; width:686px; height:386px; margin-right:9px; margin-top:7px; margin-bottom:20px; border:2px solid #656565;
     overflow:hidden;
+}
+
+figure
+{
+    margin: 0px;
+}
+
+figure.image img 
+{
+    margin-bottom: 0px;
+    display: block;
+}
+
+figure.image figcaption
+{
+    line-height: 1.4em;
+    text-align: left;
+    font-style: italic;
+    font-family: -webkit-body;
+    font-size: 0.8em;
 }
