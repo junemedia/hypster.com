@@ -7,6 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>C:\inetpub\wwwroot\dev.hypster.com</_PublishTargetUrl>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAnJFDca66ZEGMBvANzU6abQAAAAACAAAAAAAQZgAAAAEAACAAAADXEKT7UdpA8oF6vBfZr26Hi88RH9CsfVjhvnN8kmY4JwAAAAAOgAAAAAIAACAAAAAsgW6lF0FxHkUwjRgEgh39aZvSfRCd9J8nDM+2cssg5TAAAABaXNK2HanIZAj0IK6PfYZT+VdJYy8zQxkbCUqNHlSX5PoOs3dRRCDNfwQKCdXiDqhAAAAAs6xsdXXhhzglScWNcTLJKXCDoCjO14odrztJB/T6Tyx9trN4kK4+m4H/cVXHNgaL4EfzOIlBCcXuXvtMI1LNng==</EncryptedPassword>
   </PropertyGroup>
   <ItemGroup>
     <File Include="a/imgs5/hypster_icn.png">
