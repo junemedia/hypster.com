@@ -51,7 +51,21 @@ namespace hypster.Areas.apps.Controllers
 
 
 
-
+        public ActionResult user(string id)
+        {
+            hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
+            hypster_tv_DAL.Member member = new hypster_tv_DAL.Member();
+            member = memberManager.getMemberByUserName(id);
+            if (Request.QueryString.Count > 0)
+            {
+                string queryUrl = member.id + "?" + Request.QueryString;
+                return RedirectPermanent("/apps/appPlaylists/userid/" + queryUrl);
+            }
+            else
+            {
+                return RedirectPermanent("/apps/appPlaylists/userid/" + member.id);
+            }
+        }
 
 
 
@@ -61,7 +75,7 @@ namespace hypster.Areas.apps.Controllers
         //----------------------------------------------------------------------------------------------------
         //+++
         [OutputCache(Duration = 10)]
-        public ActionResult user(string id)
+        public ActionResult userid(string id)
         {
 
             //1.
@@ -97,7 +111,15 @@ namespace hypster.Areas.apps.Controllers
             //detect curr member
             //
             hypster_tv_DAL.Member member = new hypster_tv_DAL.Member();
-            member = memberManager.getMemberByUserName(id);
+            try
+            {
+                member = memberManager.getMemberByID(Convert.ToInt32(id));
+            }
+            catch (Exception e)
+            {
+                ViewBag.Error = e.Message + "\n" + e.StackTrace;
+                member = memberManager.getMemberByID(0);
+            }
             ViewBag.UserID = member.id;
             ViewBag.Username = member.username;
             //--------------------------------------------------------------------------------------------

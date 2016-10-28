@@ -19,14 +19,12 @@ using Google.Apis.YouTube.v3;
 using Google.Apis.YouTube.v3.Data;
 
 
-
 namespace hypster.Controllers
 {
     public class playlistsController : Controller
     {
         //
         // GET: /playlists/
-
 
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         //[OutputCache(Duration = 3, VaryByParam = "none")]
@@ -47,17 +45,27 @@ namespace hypster.Controllers
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-
-
-
-
+        public ActionResult user(string id)
+        {
+            hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
+            hypster_tv_DAL.Member member = new hypster_tv_DAL.Member();
+            member = memberManager.getMemberByUserName(id);
+            if (Request.QueryString.Count > 0)
+            {
+                string queryUrl = member.id + "?" + Request.QueryString;
+                return RedirectPermanent("/playlists/userid/" + queryUrl);
+            }
+            else
+            {
+                return RedirectPermanent("/playlists/userid/" + member.id);
+            }
+        }
 
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         //
         //[OutputCache(Duration = 3)]
-        public ActionResult user(string id)
+        public ActionResult userid(string id)
         {
-
             //1.
             //--------------------------------------------------------------------------------------------
             if (Request.Url.AbsoluteUri.Contains("www."))
@@ -66,11 +74,7 @@ namespace hypster.Controllers
                 return RedirectPermanent(new_url);
             }
             //--------------------------------------------------------------------------------------------
-
-
-
-
-
+            
             //2.
             //--------------------------------------------------------------------------------------------
             hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
@@ -80,26 +84,27 @@ namespace hypster.Controllers
 
             if (Request.QueryString.Count > 0)
             {
-                plst_id_str = Request.QueryString[0].ToString();
+                plst_id_str = Request.QueryString[0];
             }
             //--------------------------------------------------------------------------------------------
-
-
-
-
+            
             //--------------------------------------------------------------------------------------------
             //detect curr member
             //
             hypster_tv_DAL.Member member = new hypster_tv_DAL.Member();
-            member = memberManager.getMemberByUserName(id);
+            try
+            {
+                member = memberManager.getMemberByID(Convert.ToInt32(id));
+            }
+            catch (Exception e)
+            {
+                ViewBag.Error = e.Message + "\n" + e.StackTrace;
+                member = memberManager.getMemberByID(0);
+            }
             ViewBag.UserID = member.id;
             ViewBag.Username = member.username;
             //--------------------------------------------------------------------------------------------
-
-
-
-
-
+            
             //3.
             //--------------------------------------------------------------------------------------------
             hypster.ViewModels.videoPlayerViewModel model = new ViewModels.videoPlayerViewModel();
@@ -119,9 +124,6 @@ namespace hypster.Controllers
                 PLAYLIST_ID = member.active_playlist;
             }
 
-
-
-
             if (ViewBag.UserID != 0 && PLAYLIST_ID != 0)
             {
                 playlistManager.AddPlaylistView(PLAYLIST_ID);
@@ -129,11 +131,6 @@ namespace hypster.Controllers
                 model.songs_list = playlistManager.GetSongsForPlayList(Int32.Parse(ViewBag.UserID.ToString()), (int)PLAYLIST_ID);
             }
             //-----------------------------------------------------------------------------------------------------
-
-
-
-
-
 
             //-----------------------------------------------------------------------------------------------------
             //set Page Title
@@ -156,10 +153,6 @@ namespace hypster.Controllers
             ViewBag.PlaylistLikes = curr_playlist.Likes;
             ViewBag.PlaylistViews = curr_playlist.ViewsNum;
             //-----------------------------------------------------------------------------------------------------
-
-
-
-
 
             //7.get tags for selected playlist
             //-----------------------------------------------------------------------------------------------------
@@ -185,11 +178,6 @@ namespace hypster.Controllers
             }
             //-----------------------------------------------------------------------------------------------------
 
-
-
-
-
-
             //-----------------------------------------------------------------------------------------------------
             // temp tracking code for BRNA playlist
             try
@@ -204,9 +192,6 @@ namespace hypster.Controllers
             }
             finally { }
             //--------------------------------------------------------------------------------------------
-
-
-
 
             //-----------------------------------------------------------------------------------------------------
             // rev tracking
@@ -226,21 +211,12 @@ namespace hypster.Controllers
             finally { }
             //--------------------------------------------------------------------------------------------
 
-
-
-
-
-
             //--------------------------------------------------------------------------------------------
             if (member.id != 0)
             {
                 model.userPlaylists_list = playlistManager.GetUserPlaylists(member.id);
             }
             //--------------------------------------------------------------------------------------------
-
-
-
-
 
             return View("MPL", model);
         }

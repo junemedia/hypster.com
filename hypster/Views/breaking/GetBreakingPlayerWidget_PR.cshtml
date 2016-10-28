@@ -3,16 +3,12 @@
     Layout = null;
 }
 
-
-
- 
- 
 @for (int i = 0; i < 3; i++)
 {
     if (i < Model.Count)
     {
         <a class="brkPlrWPR" href="/breaking/details/@Model[i].post_guid" target="_blank">
-            <span class="brkPlrWPRImg" style=" background-image:url('http://news.hypster.com/imgs/i_posts/@Model[i].post_image'); "></span>
+            <span class="brkPlrWPRImg" style="background-image:url('http://news.hypster.com/imgs/i_posts/@Model[i].post_image'); "></span>
             <span class="brkPlrWPRTxt">@Model[i].post_title</span>
         </a>
     }
