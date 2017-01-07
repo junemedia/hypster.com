@@ -4,7 +4,7 @@
     
     @if (Request.Browser.IsMobileDevice)
     {
-        if (Request.Path.Contains('/'))
+        if (Request.Path.Contains('/') && Request.Path != "/")
         {
             string sq_str = "";
             if (Request.QueryString != null)
