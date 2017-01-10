@@ -5986,6 +5986,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="bin\BotInfo.netmodule" />
+    <None Include="Properties\PublishProfiles\hypster.com.pubxml" />
     <None Include="Properties\PublishProfiles\stage.hypster.com.pubxml" />
     <None Include="Properties\PublishProfiles\dev.hypster.com.pubxml" />
     <None Include="Properties\PublishProfiles\hypster.local.pubxml" />
@@ -6464,6 +6465,9 @@
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Shared\_Layout3.cshtml" />
     <Content Include="Views\breaking\pr_GetLatestNews.cshtml" />
+    <None Include="Web.hypster.com.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
