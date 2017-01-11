@@ -1,10 +1,6 @@
 ﻿var myWidth = 0;
 var myHeight = 0;
 var active_menu = "";
-var refresh_delay = 40; // Refresh the ads every 'refresh_delay' seconds.
-var refresh_max = 50; // Refresh the current ads spot for 'refresh_max' times.
-
-
 
 $(document).ready(function () {
 
