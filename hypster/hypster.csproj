@@ -6025,6 +6025,7 @@
     <Content Include="scripts\modernizr-2.0.6-development-only.js" />
     <Content Include="scripts\news_HypsterOriginalPlayer.swf" />
     <Content Include="scripts\playlist.xml" />
+    <Content Include="scripts\sha1.js" />
     <Content Include="scripts\swfobject.js" />
     <Content Include="scripts\ui\i18n\jquery-ui-i18n.js" />
     <Content Include="scripts\ui\i18n\jquery.ui.datepicker-af.js" />
