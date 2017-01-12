@@ -2,6 +2,7 @@
 var myHeight = 0;
 var active_menu = "";
 
+
 function createCookie(name, value, days) {
     var expires;
     if (days) {
@@ -197,15 +198,7 @@ function initSlideshow() {
         $SlideDuration: 500,
         $MinDragOffsetToSlide: 20,
         $SlideWidth: 726,
-<<<<<<< f7966e128c3aad8c6b734d43b282039e2a4359d5
-<<<<<<< 1dba3f6a5774362e1b0372d631c66b8c27fb7eb5
-        $SlideHeight: 408,
-=======
         $SlideHeight: 370,
->>>>>>> Updates to the homepage
-=======
-        $SlideHeight: 408,
->>>>>>> Resize slideshow
         $SlideSpacing: 0,
         $DisplayPieces: 1,
         $ParkingPosition: 0,
