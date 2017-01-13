@@ -1,4 +1,6 @@
-console.log('yieldbotActivate.js');
+/**
+ * Yieldbot.com Intent Tag ACTIVATION
+ */
 ybotq.push(function () {
   yieldbot.pub('320d');
   yieldbot.defineSlot('LB');

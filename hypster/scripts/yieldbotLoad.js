@@ -1,4 +1,6 @@
-console.log('yieldbotLoad.js');
+/**
+ * Yieldbot.com Intent Tag LOADING
+ */
 var ybotq = ybotq || [];
 (function() {
   var js = document.createElement('script');
