@@ -2,17 +2,10 @@
     Layout = null;
 }
 
-
-
-
 <center>
-<div class="BottomPane">
-            
-
+    <div class="BottomPane">
         <div class="BtmLeftCH1">
-
             <div class="BLLogCH1" onclick="window.location='/apps/appHome'"><div>HYPSTER</div></div>
-
             @if(Request.Cookies["hypAPPind"] == null)
             {
             <div class="BSocCh1">
@@ -22,44 +15,25 @@
                     <a class="flwUs_yw_tum" href="http://hypsterblog.tumblr.com/" target="_blank"></a>
                 </div>
             </div>
-            }
-           
+            }           
         </div>
-
-
-
         <div class="BottomPaneInnr">
-
-           
             <div class="MenuItmCont">
-                <a href="/apps/appListen" >LISTEN</a>
-                <a href="/apps/appCreate" >CREATE</a>
-                <a href="/apps/appBreaking" >#BREAKING</a>
-                <a href="/apps/appArtists" >ARTISTS</a>
-            </div>
-            
+                <a href="/apps/appListen">LISTEN</a>
+                <a href="/apps/appCreate">CREATE</a>
+                <a href="/apps/appBreaking">NEWS</a>
+                <a href="/apps/appArtists">ARTISTS</a>
+            </div>            
             <div class="MenuItmCont">
-                <a href="/apps/appHypster/Contact_Us" >CONTACT US</a>
-                <a href="/apps/appHypster/About_Us" >ABOUT US</a>
-                <a href="/apps/appHypster/Privacy_Policy" >PRIVACY POLICY</a>
-                <a href="/apps/appHypster/Terms_of_Service" >TERMS OF SERVICE</a>
-                <a href="/apps/appHypster/what_is_hipster_vs_hypster" >HIPSTER VS. HYPSTER</a>
+                <a href="/apps/appHypster/Contact_Us">CONTACT US</a>
+                <a href="/apps/appHypster/About_Us">ABOUT US</a>
+                <a href="/apps/appHypster/Privacy_Policy">PRIVACY POLICY</a>
+                <a href="/apps/appHypster/Terms_of_Service">TERMS OF SERVICE</a>
+                <a href="/apps/appHypster/what_is_hipster_vs_hypster">HIPSTER VS. HYPSTER</a>
             </div>
-
         </div>
-
-
-
-</div>
+    </div>
 </center>
-
-
-
-
-
-
-
-
 
 <script type="text/javascript">
     $(document).ready(function () {

@@ -500,18 +500,12 @@ a:visited
 .ContentFooterCont
 {
 	clear:both;
-	
-	
-	width:100%; 
-	
-	min-height:500px;
+	width:100%;
+	min-height:330px;
 	background-color:#d5af55; 
 	border-top:4px solid #d5af55; 
-	margin-top:0px; 
-	
+	margin-top:0px;	
 }
-
-
 
 
 #TopAdd1
@@ -1423,7 +1417,7 @@ a:visited
 
 #listenTab1
 {
-	float:left; width:100%; min-height:200px; overflow:hidden; margin-top:-2px;
+	float:left; width:100%; min-height:100px; overflow:hidden; margin-top:-2px;
 }
 
 
@@ -3179,13 +3173,8 @@ a:visited
 
 .MainHeadSongs
 {
-	float:left; height:34px; line-height:34px; text-align:left; color:#000000; line-height:35px;
-	margin:0 0 0 0;
-	padding:3px;
-	font-size:23px;
-	border:1px solid #47bb90;
-	border-radius:7px;
-	font-weight:bold;
+	float:left; height:34px; line-height:34px; text-align:left; color:#000000; line-height:35px; padding:3px;
+	font-size:23px; border:1px solid #47bb90; border-radius:7px; font-weight:bold; width:96%;
 }
 .MainHeadSongs img
 {
@@ -3487,7 +3476,7 @@ a:visited
 
 .CreateRadioContHolder
 {
-	float:left; width:70%;
+	float:left; width:100%;
 	margin:30px 0 0 0;
 }
 
@@ -6749,13 +6738,9 @@ a:visited
 /* ++++++++++++++++++++++++++++++++++++ */
 
 
-
-
-
-
 .newsSResCH .brkngItm
 {
-    float:left; width:320px; height:270px; background-color:none; border-radius:2px; margin:2% 1% 0 0; border:2px solid #d4ae52; cursor:pointer;
+    float:left; width:200px; height:230px; background-color:none; border-radius:2px; margin:2% 1% 0 0; border:2px solid #d4ae52; cursor:pointer;
 }
 
 .newsSResCH .brkngItm .txtDItem
@@ -6764,9 +6749,6 @@ a:visited
     color:#d4ae52; font-weight:bold; 
     margin:15px 0 0 0; font-size:18px; text-align:center; overflow:hidden;
 }
-
-
-
 
 .relnewsSResCH .brkngItm
 {
@@ -7302,7 +7284,7 @@ a.captionOrange:hover
 
 .BottomPaneInnr .MenuItmCont
 {
-	float:left; width:90%; height:125px; margin:12px 0 0 5%; /*border-left:1px solid #2f2f2f;*/
+	float:left; width:45%; height:125px; margin:12px 0 0 5%; /*border-left:1px solid #2f2f2f;*/
 	text-align:center;
 }
 
@@ -7413,12 +7395,12 @@ a.captionOrange:hover
 
 .homeBreakingWidget
 {
-    float:left; width:735px; height:280px; margin:auto;
+    float:left; width:100%; height:100%; margin:auto;
 }
 
 .homeGamehype
 {
-    float:left; width:100%; height:360px; margin:auto;
+    float:left; width:100%; height:80%; margin:auto;
 }
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -7497,36 +7479,34 @@ a.captionOrange:hover
 {
     float: initial;
     width: 100%;
-    margin: 10px 0px 0px 10px;
+    margin: 10px 0 0 1px;
 }
 
 .breakingMCH_Home .arrLeft
 {
-    float:left; width:7%; font-size:90px; line-height:250px; text-align:center; cursor:pointer; color:#d4ae52;
-    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat 6px 100px;
-    display:none;
+    float:left; width:12%; font-size:90px; line-height:75px; text-align:center; cursor:pointer; color:#d4ae52;
+    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat 6px 0px; margin-right: 37%; height: 40px;
 }
 
 .breakingMCH_Home .arrRight
 {
-    float:left; width:7%; font-size:90px; line-height:250px; text-align:center; cursor:pointer; color:#d4ae52;
-    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat -40px 100px;
-    display:none;
+    float:left; width:12%; font-size:90px; line-height:75px; text-align:center; cursor:pointer; color:#d4ae52;
+    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat -44px 0px; margin-left: 37%; height: 40px;
 }
 
 .breakingMCH_Home #newsContHH1
 {
-    margin:auto; width:305px; height:300px; overflow:hidden;
+    margin:auto; width:100%; height:260px; overflow:hidden;
 }
 
 .breakingMCH_Home #newsContHHInn
 {
-    position:relative; width:4690px; height:430px; top:0px; left:0;
+    position:relative; width:3300px; min-height:270px; height:90%; top:0px; left:0;
 }
 
 .breakingMCH_Home .brkngItm
 {
-    float:left; width:300px; height:277px; border-radius:2px; margin:20px 10px 0 0; 
+    float:left; width:195px; height:235px; border-radius:2px; margin:10px 4.5px 0 4.5px; 
     border:1px solid #d4ae52; 
     cursor:pointer;
     background-size: 100% auto;
@@ -7535,21 +7515,20 @@ a.captionOrange:hover
 
 .breakingMCH_Home .brkngItmPost
 {
-    float:left; width:195px; height:110px; margin:1px 0 0 1px; background-repeat:no-repeat;
+    float:left; width:193px; height:110px; margin:1px 0 0 1px; background-repeat:no-repeat;
 }
 
 .breakingMCH_Home .brkngItm .txtBreakingT
 {
-    float:left; width:194px; height:25px; line-height:25px; color:#000000; margin:-40px 0 0 4px; 
-    padding:1px; font-size:24px; text-align:center; overflow:hidden; font-weight:bold; 
-    margin:-37px 0 0 0; background-color:#FFFFFF; opacity:0.6; overflow:hidden;
+    float:left; width:193px; height:30px; line-height:25px; color:#000000; padding:1px; font-size:22px; text-align:center; overflow:hidden; font-weight:bold; 
+    margin: -28px 0px 0px 0px; background-color:#FFFFFF; opacity:0.6; overflow:hidden;
 }
 
 
 .breakingMCH_Home .brkngItm .txtBreakingD
 {
     float:left; width:185px; height:108px; line-height:16px; color:#000000; 
-    margin:0px 0 0 4px; padding:1px; font-size:14px; text-align:left; overflow:hidden;
+    margin:0px 0 0 0px; padding:1px; font-size:12px; text-align:left; overflow:hidden;
     background-color:#e7e8e7; overflow:hidden; padding:5px;
 }
 
@@ -7570,7 +7549,7 @@ a.captionOrange:hover
 
 .gamehypeMCH_Home
 {
-    width:100%; height:590px; overflow:hidden;
+    width:100%; height:100%; overflow:hidden;
 }
 
 .gamehypeMCH_Home .hmGmHTitle
@@ -7586,7 +7565,7 @@ a.captionOrange:hover
 
 .gamehypeMCH_Home .GmhItemsCont div
 {
-    float:left; margin:3px 0 0 0; cursor:pointer; width:182px;
+    float:left; margin:2px 0 0 0; cursor:pointer; width:160px;
 }
 
 .gamehypeMCH_Home .GmhItemsCont span
@@ -7682,7 +7661,7 @@ a.captionOrange:hover
 
 .listenTabCh2
 {
-    float:left; width:100%; min-height:100px; margin:20px 0 20px 0;
+    float:left; width:100%; min-height:220px; margin:10px 0 10px 0;
 }
 
 
@@ -7707,7 +7686,7 @@ a.captionOrange:hover
 
 .GamehypeCh1 .GmhTitle
 {
-    float:right; width:90%; border-bottom:2px solid #3fbc91; margin:10px 0 0 0; font-size:44px; color:#FFFFFF;
+    width:100%; border-bottom:2px solid #3fbc91; margin:10px 0 0 0; font-size:44px; color:#FFFFFF;
     cursor:pointer;
 }
 
@@ -7908,7 +7887,7 @@ a.captionOrange:hover
 
 .breakingMCH .brkngHDR
 {
-    display:block; float:left; width:98%; color:#000000; height:72px; line-height:70px; margin:0px 0 10px 0; padding:1%; font-size:42px;
+    display:block; float:left; width:100%; color:#000000; height:72px; line-height:70px; margin:0px 0 10px 0; padding:1%; font-size:42px;
     font-weight:300;    
     border-bottom:2px solid #3fbc91;
     background:none;

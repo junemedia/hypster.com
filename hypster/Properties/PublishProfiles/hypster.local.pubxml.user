@@ -118,19 +118,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:28</publishTime>
     </File>
     <File Include="Areas/apps/css/appSite.css">
-      <publishTime>10/14/2016 12:35:32</publishTime>
+      <publishTime>01/12/2017 16:02:37</publishTime>
     </File>
     <File Include="Areas/apps/css/appSite0.css">
-      <publishTime>10/14/2016 12:35:32</publishTime>
+      <publishTime>01/12/2017 16:58:55</publishTime>
     </File>
     <File Include="Areas/apps/css/appSite05.css">
-      <publishTime>10/14/2016 12:35:32</publishTime>
+      <publishTime>01/12/2017 16:58:55</publishTime>
     </File>
     <File Include="Areas/apps/css/appSite1.css">
-      <publishTime>10/14/2016 12:35:32</publishTime>
+      <publishTime>01/12/2017 16:58:55</publishTime>
     </File>
     <File Include="Areas/apps/css/appSite2.css">
-      <publishTime>10/14/2016 12:35:32</publishTime>
+      <publishTime>01/12/2017 16:58:55</publishTime>
     </File>
     <File Include="Areas/apps/css/mPlayer.css">
       <publishTime>07/29/2016 10:48:28</publishTime>
@@ -148,7 +148,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:28</publishTime>
     </File>
     <File Include="Areas/apps/scripts/appHypScript.js">
-      <publishTime>01/11/2017 15:42:46</publishTime>
+      <publishTime>01/12/2017 11:04:13</publishTime>
     </File>
     <File Include="Areas/apps/scripts/appHypSlide.js">
       <publishTime>07/29/2016 10:48:29</publishTime>
@@ -250,22 +250,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:28</publishTime>
     </File>
     <File Include="Areas/apps/Views/appBreaking/Details.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>01/12/2017 16:12:07</publishTime>
     </File>
     <File Include="Areas/apps/Views/appBreaking/DetailsO.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>01/12/2017 16:12:07</publishTime>
     </File>
     <File Include="Areas/apps/Views/appBreaking/GetBreakingHomeWidget_PR.cshtml">
-      <publishTime>01/10/2017 15:22:49</publishTime>
+      <publishTime>01/12/2017 15:24:27</publishTime>
     </File>
     <File Include="Areas/apps/Views/appBreaking/GetPopularNewsTags_PR.cshtml">
       <publishTime>01/10/2017 15:22:49</publishTime>
     </File>
     <File Include="Areas/apps/Views/appBreaking/Index.cshtml">
-      <publishTime>01/10/2017 15:22:49</publishTime>
+      <publishTime>01/12/2017 16:12:07</publishTime>
     </File>
     <File Include="Areas/apps/Views/appBreaking/Tags.cshtml">
-      <publishTime>01/10/2017 15:22:49</publishTime>
+      <publishTime>01/12/2017 16:10:35</publishTime>
     </File>
     <File Include="Areas/apps/Views/appCreate/create_music_player.cshtml">
       <publishTime>04/21/2016 17:32:21</publishTime>
@@ -313,31 +313,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:28</publishTime>
     </File>
     <File Include="Areas/apps/Views/appGamehype/GetGamehypeHomeWidget_PR.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>01/12/2017 11:56:23</publishTime>
     </File>
     <File Include="Areas/apps/Views/appGamehype/Index.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>01/12/2017 16:30:32</publishTime>
     </File>
     <File Include="Areas/apps/Views/appGamehype/Stream.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>01/12/2017 16:30:10</publishTime>
     </File>
     <File Include="Areas/apps/Views/appHome/Get_Featured_Slideshow.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>01/12/2017 11:13:01</publishTime>
     </File>
     <File Include="Areas/apps/Views/appHome/Get_Home_Slideshow.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>01/12/2017 11:13:15</publishTime>
     </File>
     <File Include="Areas/apps/Views/appHome/Get_MostPopularSong_Random.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>01/12/2017 11:13:37</publishTime>
     </File>
     <File Include="Areas/apps/Views/appHome/Index.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>01/12/2017 11:54:52</publishTime>
     </File>
     <File Include="Areas/apps/Views/appHome/pr_HomExpCont.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>01/12/2017 11:14:35</publishTime>
     </File>
     <File Include="Areas/apps/Views/appHome/pr_HomPopularCont.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>01/12/2017 11:15:01</publishTime>
     </File>
     <File Include="Areas/apps/Views/appHypster/About_Us.cshtml">
       <publishTime>07/29/2016 10:48:28</publishTime>
@@ -403,7 +403,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:28</publishTime>
     </File>
     <File Include="Areas/apps/Views/appListen/Index.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>01/12/2017 11:30:17</publishTime>
     </File>
     <File Include="Areas/apps/Views/appListen/RadioStationsBar.cshtml">
       <publishTime>07/29/2016 10:48:28</publishTime>
@@ -487,7 +487,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:28</publishTime>
     </File>
     <File Include="Areas/apps/Views/appPopular/PopularRadioStations.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>01/12/2017 12:00:01</publishTime>
     </File>
     <File Include="Areas/apps/Views/appSearch/Music.cshtml">
       <publishTime>07/29/2016 10:48:28</publishTime>
@@ -502,13 +502,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:28</publishTime>
     </File>
     <File Include="Areas/apps/Views/Shared/pr_BottomFooter.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>01/12/2017 11:11:39</publishTime>
     </File>
     <File Include="Areas/apps/Views/Shared/pr_TopMenu.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>01/12/2017 11:18:11</publishTime>
     </File>
     <File Include="Areas/apps/Views/Shared/_Layout_Apps.cshtml">
-      <publishTime>01/10/2017 11:19:09</publishTime>
+      <publishTime>01/12/2017 11:45:13</publishTime>
     </File>
     <File Include="Areas/apps/Views/Web.config">
       <publishTime>07/29/2016 10:48:28</publishTime>
@@ -1768,10 +1768,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:32</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>01/11/2017 16:03:39</publishTime>
+      <publishTime>01/12/2017 17:20:53</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>01/11/2017 16:03:39</publishTime>
+      <publishTime>01/12/2017 17:20:53</publishTime>
     </File>
     <File Include="bin/AreYouAHuman.dll">
       <publishTime>01/30/2012 18:17:48</publishTime>
@@ -1813,10 +1813,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/22/2010 14:00:50</publishTime>
     </File>
     <File Include="bin/hypster.dll">
-      <publishTime>01/11/2017 16:03:25</publishTime>
+      <publishTime>01/12/2017 17:20:39</publishTime>
     </File>
     <File Include="bin/hypster.dll.config">
-      <publishTime>01/11/2017 16:03:24</publishTime>
+      <publishTime>01/12/2017 17:20:37</publishTime>
     </File>
     <File Include="bin/hypster.pdb">
       <publishTime>08/19/2016 09:48:58</publishTime>
@@ -16573,7 +16573,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2016 13:15:18</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>01/11/2017 16:03:36</publishTime>
+      <publishTime>01/12/2017 17:20:51</publishTime>
     </File>
     <File Include="README.md">
       <publishTime>03/10/2016 13:15:18</publishTime>
@@ -16814,6 +16814,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="scripts/playlist.xml">
       <publishTime>10/16/2012 13:17:55</publishTime>
+    </File>
+    <File Include="scripts/sha1.js">
+      <publishTime>07/29/2016 10:48:36</publishTime>
     </File>
     <File Include="scripts/swfobject.js">
       <publishTime>06/12/2012 06:24:48</publishTime>
@@ -17560,16 +17563,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/11/2017 15:42:46</publishTime>
     </File>
     <File Include="Views/hypAds/ad_300x250.cshtml">
-      <publishTime>01/11/2017 15:42:46</publishTime>
+      <publishTime>01/12/2017 10:54:23</publishTime>
     </File>
     <File Include="Views/hypAds/ad_300x250_btf.cshtml">
-      <publishTime>01/11/2017 15:42:46</publishTime>
+      <publishTime>01/12/2017 10:54:23</publishTime>
     </File>
     <File Include="Views/hypAds/ad_728x90.cshtml">
-      <publishTime>01/11/2017 15:42:46</publishTime>
+      <publishTime>01/12/2017 10:54:23</publishTime>
     </File>
     <File Include="Views/hypAds/ad_728x90_btf.cshtml">
-      <publishTime>01/11/2017 15:42:46</publishTime>
+      <publishTime>01/12/2017 10:54:23</publishTime>
     </File>
     <File Include="Views/hypAds/ad_728x90_mid.cshtml">
       <publishTime>07/29/2016 10:48:34</publishTime>
@@ -17941,7 +17944,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2017 16:41:55</publishTime>
     </File>
     <File Include="Views/Shared/_Layout2.cshtml">
-      <publishTime>01/11/2017 15:40:40</publishTime>
+      <publishTime>01/12/2017 10:54:23</publishTime>
     </File>
     <File Include="Views/Shared/_Layout3.cshtml">
       <publishTime>01/07/2017 16:41:55</publishTime>

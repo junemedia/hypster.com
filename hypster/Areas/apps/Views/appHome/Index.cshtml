@@ -10,41 +10,25 @@
 @Scripts.Render("~/scripts/jquery.cycle.all.latest.js")
 
 
-
-
-
-
 <div class="mainSlideshow">
     @Html.Action("Get_Home_Slideshow", "appHome")
 </div>
 
 
-
-
 <div class="sld1_middleCont">
-
     <div class="middleC1" onclick="window.location='/apps/appListen';">
         <div class="head11">LISTEN WITHOUT LIMITS</div>
         <div class="cont21">Enjoy the music you love with no limitations, no commercials, and absolutely no getting stuck on songs you hate.</div>
     </div>
-
     <div class="middleC2" onclick="window.location='/apps/appCreate/playlist';">
-        <h1 class="head11" style=" margin:0px;">FREE MUSIC PLAYLIST</h1>
+        <h1 class="head11" style="margin:0px;">FREE MUSIC PLAYLIST</h1>
         <div class="cont21">Listen to millions of songs for free. Create a playlist from our legendary library.</div>
     </div>
-                    
-
     <div class="middleC3" onclick="window.location='/apps/appCreate/player';">
         <div class="head11">TUMBLR MUSIC PLAYER</div>
         <div class="cont21">Actually, our awesome free music player isn’t just for Tumblr anymore. It’s for any website or blog that could use a little music.</div>
     </div>
-
 </div>
-
-
-
-
-
 
 
 
@@ -61,11 +45,4 @@
 <div class="homeGamehype">
    @Html.Action("GetGamehypeHomeWidget_PR", "appGamehype")
 </div>
-
-
-
-
-
-
-
 

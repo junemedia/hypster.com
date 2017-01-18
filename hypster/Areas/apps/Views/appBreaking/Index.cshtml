@@ -2,30 +2,21 @@
 @{
     ViewBag.Title = "Breaking News about Music and Popular Artists";
     ViewBag.Desc = "Find breaking news about music and popular artists, enjoy a free custom playlist with each article.";
-    
-    ViewBag.ActivePage = "#Breaking";
+    ViewBag.ActivePage = "News";
     Layout = "~/Areas/apps/Views/Shared/_Layout_Apps.cshtml";
 
     int counter = 0;
-
     int i_start = 1;
-
     if ((ViewBag.CurrPage - 4) >= 1)
     {
         i_start = ViewBag.CurrPage - 4;
     }
-
     ViewBag.LinkTag = "<link rel=\"canonical\" href=\"http://hypster.com/breaking\" >";
 }
 
 
-
-        
-
-
 <div class="breakingMCH">
-            
-    <h2 class="brkngHDR">#BREAKING</h2>
+    <h2 class="brkngHDR">NEWS</h2>
 
 
 

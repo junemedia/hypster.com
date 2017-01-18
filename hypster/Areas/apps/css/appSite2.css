@@ -499,16 +499,13 @@ a:visited
 
 .ContentFooterCont
 {
-	clear:both;
-	
+	clear:both;	
 	min-width:1040px;
-	width:100%; 
-	
-	height:280px;
+    width:100%;	
+	height:330px;
 	background-color:#d5af55; 
 	border-top:4px solid #d5af55; 
-	margin-top:0px; 
-	
+	margin-top:0px;	
 }
 
 
@@ -1423,7 +1420,7 @@ a:visited
 
 #listenTab1
 {
-	float:left; width:100%; min-height:380px; overflow:hidden; margin-top:-2px;
+	float:left; width:100%; min-height:100px; overflow:hidden; margin-top:-2px;
 }
 
 
@@ -3174,13 +3171,8 @@ a:visited
 
 .MainHeadSongs
 {
-	float:left; min-width:98%; height:34px; line-height:34px; text-align:left; color:#000000; line-height:35px;
-	margin:0 0 0 0;
-	padding:3px;
-	font-size:23px;
-	border:1px solid #47bb90;
-	border-radius:7px;
-	font-weight:bold;
+	float:left; min-width:98%; height:34px; line-height:34px; text-align:left; color:#000000; line-height:35px; padding:3px; font-size:23px;
+	border:1px solid #47bb90; border-radius:7px; font-weight:bold; width:96%;
 }
 .MainHeadSongs img
 {
@@ -3329,7 +3321,7 @@ a:visited
 
 .CreatePlaylistCont  .PlaylistsInnrCont
 {
-	float:left; width:410px; min-height:80px; margin-top:3px; overflow:hidden;
+	float:left; width:100%; min-height:80px; margin-top:3px; overflow:hidden;
 }
 
 .CreatePlaylistCont  .SongsInnrCont
@@ -6750,7 +6742,7 @@ a:visited
 
 .newsSResCH .brkngItm
 {
-    float:left; width:320px; height:270px; background-color:none; border-radius:2px; margin:2% 1% 0 0; border:2px solid #d4ae52; cursor:pointer;
+    float:left; width:200px; height:230px; background-color:none; border-radius:2px; margin:2% 1% 0 0; border:2px solid #d4ae52; cursor:pointer;
 }
 
 .newsSResCH .brkngItm .txtDItem
@@ -7287,12 +7279,12 @@ a.captionOrange:hover
 
 .BottomPaneInnr
 {
-	float:left; width:750px; margin:10px 0 0 0px;
+	float:left; width:100%; margin:10px 0 0 0px;
 }
 
 .BottomPaneInnr .MenuItmCont
 {
-	float:left; width:169px; height:125px; margin:26px 0 0 25px; padding-left:7px; /*border-left:1px solid #2f2f2f;*/
+	float:left; width:45%; height:125px; margin:26px 0 0 25px; padding-left:7px; /*border-left:1px solid #2f2f2f;*/
 }
 
 .BottomPaneInnr .MenuItmCont a
@@ -7394,17 +7386,17 @@ a.captionOrange:hover
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 .homePopRStations
 {
-    float:left; width:100%; height:370px; margin:auto; 
+    float:left; width:100%; height:240px; margin:auto; 
 }
 
 .homeBreakingWidget
 {
-    float:left; width:735px; height:280px; margin:auto;
+    float:left; width:100%; height:100%; margin:auto;
 }
 
 .homeGamehype
 {
-    float:left; width:100%; height:360px; margin:auto;
+    float:left; width:100%; height:80%; margin:auto;
 }
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -7423,7 +7415,7 @@ a.captionOrange:hover
 
 .FeaturedVideoInner
 {
-	float:initial; width:745px; margin:10px 90px 0 0;
+	float:initial; width:100%; margin:10px 0 0 0;
 }
 
 .VideoThumbBox
@@ -7468,7 +7460,7 @@ a.captionOrange:hover
 
 .breakingMCH_Home
 {
-    width:100%; height:300px; overflow:hidden;
+    width:100%; height:345px; overflow:hidden;
 }
 
 
@@ -7483,34 +7475,34 @@ a.captionOrange:hover
 {
     float: initial;
     width: 100%;
-    margin: 10px 0px 0px 10px;
+    margin: 10px 0px 0px 3px;
 }
 
 .breakingMCH_Home .arrLeft
 {
-    float:left; width:7%; font-size:90px; line-height:160px; text-align:center; cursor:pointer; color:#d4ae52;
-    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat 10px 100px;
+    float:left; width:5%; font-size:90px; line-height:75px; text-align:center; cursor:pointer; color:#d4ae52;
+    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat 6px 0px; margin-right: 45%; height: 40px;
 }
 
 .breakingMCH_Home .arrRight
 {
-    float:left; width:7%; font-size:90px; line-height:160px; text-align:center; cursor:pointer; color:#d4ae52;
-    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat -44px 100px;
+    float:left; width:5%; font-size:90px; line-height:75px; text-align:center; cursor:pointer; color:#d4ae52;
+    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat -44px 0px; margin-left: 45%; height: 40px;
 }
 
 .breakingMCH_Home #newsContHH1
 {
-    float:left; width:86%; height:260px; overflow:hidden;
+    float:left; width:100%; height:260px; overflow:hidden;
 }
 
 .breakingMCH_Home #newsContHHInn
 {
-    position:relative; width:3183px; height:250px; top:0px; left:0;
+    position:relative; width:3300px; min-height:270px; height:90%; top:0px; left:0;
 }
 
 .breakingMCH_Home .brkngItm
 {
-    float:left; width:197px; height:230px; border-radius:2px; margin:20px 10px 0 3px; 
+    float:left; width:200px; height:235px; border-radius:2px; margin:10px 5px 0 0px; 
     border:1px solid #d4ae52; 
     cursor:pointer;
     background-size: 100% auto;
@@ -7519,23 +7511,19 @@ a.captionOrange:hover
 
 .breakingMCH_Home .brkngItmPost
 {
-    float:left; width:195px; height:110px; margin:1px 0 0 1px; background-repeat:no-repeat;
+    float:left; width:198px; height:110px; margin:1px 0 0 1px; background-repeat:no-repeat;
 }
 
 .breakingMCH_Home .brkngItm .txtBreakingT
 {
-    float:left; width:194px; height:25px; line-height:25px; color:#000000; 
-    padding:1px; font-size:14px; text-align:center; overflow:hidden;
-    font-weight:bold; margin:-27px 0 0 0;
-    background-color:#FFFFFF; opacity:0.6;
-    overflow:hidden;
+    float:left; width:196px; height:30px; line-height:25px; color:#000000; padding:1px; font-size:22px; text-align:center; overflow:hidden; font-weight:bold; 
+    margin: -28px 0px 0px 2px; background-color:#FFFFFF; opacity:0.6; overflow:hidden;
 }
 
 
 .breakingMCH_Home .brkngItm .txtBreakingD
 {
-    float:left; width:185px; height:108px; line-height:16px; color:#000000; 
-    margin:0 0 0 1px; font-size:14px; text-align:left; overflow:hidden;
+    float:left; width:185px; height:108px; line-height:16px; color:#000000; margin:0 0 0 1px; font-size:14px; text-align:left; overflow:hidden; 
     background-color:#e7e8e7; overflow:hidden; padding:5px;
 }
 
@@ -7556,7 +7544,7 @@ a.captionOrange:hover
 
 .gamehypeMCH_Home
 {
-    width:100%; height:450px; overflow:hidden;
+    width:100%; height:100%; overflow:hidden;
 }
 
 .gamehypeMCH_Home .hmGmHTitle
@@ -7653,7 +7641,7 @@ a.captionOrange:hover
 
 .listenTabCh2
 {
-    float:left; width:70%; min-height:170px; margin:20px 0 20px 0;
+    float:left; width:70%; min-height:220px; margin:10px 0 10px 0;
 }
 
 
@@ -7672,8 +7660,7 @@ a.captionOrange:hover
 
 .GamehypeCh1 .GmhTitle
 {
-    float:right; width:90%; border-bottom:2px solid #3fbc91; margin:10px 0 0 0; font-size:64px; color:#FFFFFF;
-    cursor:pointer;
+    width:100%; border-bottom:2px solid #3fbc91; margin:10px 0 0 0; font-size:64px; color:#FFFFFF; cursor:pointer;
 }
 
 .GamehypeCh1 .GmhTblH
@@ -8862,7 +8849,7 @@ a.captionOrange:hover
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 .Artists_MCH1
 {
-    float:left; width:100%; margin:10px 0 20px 0;
+    float:left; width:98%; margin:10px 10px 10px 10px;
 }
 
 .Artists_MCH1 H2

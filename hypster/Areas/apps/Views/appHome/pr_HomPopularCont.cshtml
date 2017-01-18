@@ -6,12 +6,8 @@
 
 
 <div class="HomPopularCont">
-    
-
     <div class="hpcCol1">
         <div class="hpcHeader">Charts</div>
-
-        
         @{ count = 0; }
         @foreach (var item in Model.charts_list)
         {
@@ -26,12 +22,7 @@
             }
             count++;
         }
-
-    </div>            
-
-
-
-   
+    </div>
     <div class="hpcCol3">
         <div class="hpcHeader">Popular</div>
 
@@ -50,6 +41,4 @@
             count++;
         }
     </div>
-
-
 </div>

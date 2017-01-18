@@ -3,40 +3,25 @@
     Layout = null;
 }
 
-
-
-
 <div class="hmRdoTitle">
     HYPSTER RADIO
 </div>
 
-
-
-
 <div class="FeaturedVideoInner">
-        @{ int counter = 1;}
-        @foreach (var item in Model)
-        {   
-            <div class="VItmCont">
-                <a @if(counter%2>0){ <text>class="VideoThumbBox"</text> }else{ <text>class="VideoThumbBoxR"</text> } onmouseover="$('#rdoSt_@item.Genre_ID').css('display','block');" onmouseout="$('#rdoSt_@item.Genre_ID').css('display','none');" style=" background: url('/imgs/radio/genres/@(item.GenreName.Replace("&", "_and_")).jpg?id=2873628'); background-position:center; " onclick="OpenPlayerM('/apps/appPlaylists/station/@HttpUtility.UrlEncode(item.GenreName.Replace("&", "_and_").ToLower())')">
-                    <span id="rdoSt_@item.Genre_ID">
-                        @item.GenreName
-                    </span>
-                </a>
-            </div>
-            
-            if (counter == 8)
-            {
-                break;
-            }
-            counter += 1;
+    @{ int counter = 1;}
+    @foreach (var item in Model)
+    {   
+        <div class="VItmCont">
+            <a @if(counter%2 > 0){ <text>class="VideoThumbBox"</text> } else { <text>class="VideoThumbBoxR"</text> } onmouseover="$('#rdoSt_@item.Genre_ID').css('display','block');" onmouseout="$('#rdoSt_@item.Genre_ID').css('display','none');" style="background: url('/imgs/radio/genres/@(item.GenreName.Replace("&", "_and_")).jpg?id=2873628'); background-position:center; " onclick="OpenPlayerM('/apps/appPlaylists/station/@HttpUtility.UrlEncode(item.GenreName.Replace("&", "_and_").ToLower())')">
+                <span id="rdoSt_@item.Genre_ID">
+                    @item.GenreName
+                </span>
+            </a>
+        </div>            
+        if (counter == 5)
+        {
+            break;
         }
+        counter += 1;
+    }
 </div>
-
-
-
-
-
-
-
-

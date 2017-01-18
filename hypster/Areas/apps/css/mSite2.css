@@ -1470,7 +1470,7 @@ a:visited
 
 #listenTab1
 {
-	float:left; width:100%; min-height:325px; overflow:hidden; margin-top:-2px;
+	float:left; width:100%; min-height:100px; overflow:hidden; margin-top:-2px;
 }
 
 
