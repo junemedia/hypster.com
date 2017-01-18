@@ -4,11 +4,20 @@
 </div>
 
 <script type="text/javascript">
+  var MR_Params = { ybot_slot: 'LB', ybot_size: '', ybot_cpm: '' };
+  try { MR_Params = yieldbot.getSlotCriteria('LB'); }
+  catch(e) { /*ignore*/ }
+
   ybotq.push(function() {
     var OX_ads = OX_ads || [];
     OX_ads.push({
       slot_id: "537983177_728x90_ATF",
-      auid: "537983177"
+      auid: "537983177",
+      vars: {
+        "ybot_slot": MR_Params.ybot_slot,
+        "ybot_size": MR_Params.ybot_size,
+        "ybot_cpm": MR_Params.ybot_cpm
+      }
     });
   });
 </script>
