@@ -5990,6 +5990,7 @@
     <None Include="Properties\PublishProfiles\stage.hypster.com.pubxml" />
     <None Include="Properties\PublishProfiles\dev.hypster.com.pubxml" />
     <None Include="Properties\PublishProfiles\hypster.local.pubxml" />
+    <None Include="Properties\PublishProfiles\Temp.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -6160,8 +6161,6 @@
     <Content Include="scripts\ui\minified\jquery.ui.tabs.min.js" />
     <Content Include="scripts\ui\minified\jquery.ui.widget.min.js" />
     <None Include="scripts\_references.js" />
-    <Content Include="scripts\yieldbotActivate.js" />
-    <Content Include="scripts\yieldbotLoad.js" />
     <Content Include="yandex_5d27707fd0418936.html" />
     <Content Include="obj\Debug\hypster.csproj.FileListAbsolute.txt" />
     <Content Include="PAD.xml" />
