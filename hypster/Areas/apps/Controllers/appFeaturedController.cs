@@ -18,7 +18,7 @@ namespace hypster.Areas.apps.Controllers
 
 
 
-            hypster.ViewModels.playlistsViewModel model = new ViewModels.playlistsViewModel();
+            ViewModels.playlistsViewModel model = new ViewModels.playlistsViewModel();
 
             hypster_tv_DAL.FeaturedPlaylistManagement fplst_manager = new hypster_tv_DAL.FeaturedPlaylistManagement();
             model.featured_playlists = fplst_manager.ReturnFeaturedPlaylists();

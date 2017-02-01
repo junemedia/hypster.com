@@ -1000,7 +1000,7 @@ function SearchString_KeyUpTags(e) {
 
 
 
-    if ($("#txtSearchString").val() != "" && $("#txtSearchString").val() != " Search playlists and #BREAKING news stories") {
+    if ($("#txtSearchString").val() != "" && $("#txtSearchString").val() != "Search playlists and #BREAKING news stories") {
         var bss = $("#txtSearchString").val().replace(/[^a-z0-9]/gi, ' ');
         $("#searchStr").html($("#txtSearchString").val().toUpperCase());
     }
@@ -2324,7 +2324,7 @@ function StartTagsSearch() {
     var ss_str = $("#txtSearchString").val();
 
     
-    if (ss_str != " Search playlists and #BREAKING news stories") {
+    if (ss_str != "Search playlists and #BREAKING news stories") {
         ss_str = ss_str.replaceAll(" ", "+");
         ss_str = ss_str.replaceAll("/", "+");
         ss_str = ss_str.replaceAll("\\", "+");

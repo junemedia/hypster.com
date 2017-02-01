@@ -12,15 +12,11 @@ using System.Text.RegularExpressions;
 using SolveMedia;
 using AreYouAHuman;
 
-
 namespace hypster.Controllers
 {
-
     [Authorize]
     public class accountController : ControllerBase
     {
-
-
         //*********************************************************************************************************
         #region Account_Register_Login
 
@@ -551,7 +547,7 @@ namespace hypster.Controllers
                 //2.step - validate database
                 //current data verification
 
-                bool username_validate = true;
+                //bool username_validate = true;
                 if (member_manager.getMemberByUserName(username).id == 0)
                 {
 
@@ -1199,7 +1195,7 @@ namespace hypster.Controllers
 
 
         //*********************************************************************************************************
-        public ActionResult InfoPost(string Name, string City, string Country, string Zip, int DOB_MM, int DOB_DD, int DOB_YYYY, int? interestP, string OldUserPass, string NewUserPass, string RepNewUserPass, string checkNewsAboutMusic)
+        public ActionResult InfoPost(string FName, string LName, string Name, string Address, string City, string State, string Country, string Zip, int DOB_MM, int DOB_DD, int DOB_YYYY, int Sex, string Introduce, int? interestP, string OldUserPass, string NewUserPass, string RepNewUserPass, string checkNewsAboutMusic)
         {
             hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
             hypster_tv_DAL.memberPhotoManagement photoManager = new hypster_tv_DAL.memberPhotoManagement();
@@ -1207,22 +1203,32 @@ namespace hypster.Controllers
             hypster_tv_DAL.Member curr_user = new hypster_tv_DAL.Member();
             curr_user = memberManager.getMemberByUserName(User.Identity.Name);
 
-
             hypster.ViewModels.getAccountInfo_PrivateViewModel model = new ViewModels.getAccountInfo_PrivateViewModel();
 
 
+            if (FName != null)
+                curr_user.first_name = FName;
+
+            if (LName != null)
+                curr_user.last_name = LName;
 
             if (Name != null)
                 curr_user.name = Name;
 
+            if (Address != null)
+                curr_user.address = Address;
+
             if (City != null)
                 curr_user.city = City;
 
-            if (Country != null)
-                curr_user.country = Country;
+            if (State != null)
+                curr_user.state = State;            
 
             if (Zip != null)
                 curr_user.zipcode = Zip;
+
+            if (Country != null)
+                curr_user.country = Country;
 
             if (DOB_MM != null && DOB_DD != null && DOB_YYYY != null && DOB_MM != 0 && DOB_DD != 0 && DOB_YYYY != 0)
             {
@@ -1239,6 +1245,8 @@ namespace hypster.Controllers
                 curr_user.sex = (byte)0;
             }
 
+            if (Introduce != null)
+                curr_user.introduce = Introduce;
 
             int USER_INTEREST = 0;
             if (interestP != null)
@@ -1261,16 +1269,8 @@ namespace hypster.Controllers
                 curr_user.email_optout = (int)hypster_tv_DAL.NewsletterOptions.Playlists;
             }
             
-
-
-
-
-
-
             memberManager.UpdateMemberProfileDetails(curr_user.username, curr_user.id, curr_user.name, curr_user.AutoshareEnabled, (DateTime)curr_user.birth, curr_user.city, curr_user.country, curr_user.zipcode, (byte)curr_user.sex, USER_INTEREST, curr_user.email_optout);
-
-
-
+            memberManager.UpdateMemberProfileDetails(curr_user.username, curr_user.id, curr_user.first_name, curr_user.last_name, curr_user.address, curr_user.state, curr_user.introduce);
 
             bool isError = false;
             if (OldUserPass != "" && NewUserPass != "" && RepNewUserPass != "")

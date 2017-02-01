@@ -2,43 +2,29 @@
 @{
     ViewBag.Title = "Breaking News about Music and Popular Artists";
     ViewBag.Desc = "Find breaking news about music and popular artists, enjoy a free custom playlist with each article.";
-    ViewBag.ActivePage = "#Breaking";
+    ViewBag.ActivePage = "Newsg";
 }
 
 
-
-
-
 <div class="breakingMCH">
-            
-    <h2 class="brkngHDR">#BREAKING</h2>
-
-
-
+    <h2 class="brkngHDR">NEWS</h2>
     <div id="tagsHolder">
-                
         <div class="sld1_bottomCont" >
-            <div class="sld1_bottomContInnr" style=" margin:0px;">
-
+            <div class="sld1_bottomContInnr" style="margin:0px;">
                 <div class="brkSrchHolder1">
-                    <input type="text" id="txtSearchString" name="txtSearchString" style=" width:550px; " value=" Search playlists and #BREAKING news stories" onKeyUp="SearchString_KeyUpTags(event)" onfocus="if(this.value == ' Search playlists and #BREAKING news stories') this.value = '';" onblur="if(this.value == '') this.value = ' Search playlists and #BREAKING news stories';" />
+                    <input type="text" id="txtSearchString" name="txtSearchString" style="width:550px;" value="Search playlists and #BREAKING news stories" onKeyUp="SearchString_KeyUpTags(event)" onfocus="if(this.value == 'Search playlists and #BREAKING news stories') this.value = '';" onblur="if(this.value == '') this.value = 'Search playlists and #BREAKING news stories';" />
                     <div id="btnSearch" onclick="StartTagsSearch()"></div>
                 </div>
-                    
             </div>
         </div>
         <div id="searchStr"></div>
-
     </div>
-
-
-
     @if (Model != null && Model.Count > 0)
     {
         for (int i = 0; i < Model.Count; i++)
         {
             <div class="brkngItm" onclick="window.location='/breaking/details/@Model[i].post_guid';">
-                <div class="brkngImg" style=" background-image:url('http://news.hypster.com/imgs/i_posts/@Model[i].post_image'); "></div>
+                <div class="brkngImg" style="background-image:url('http://news.hypster.com/imgs/i_posts/@Model[i].post_image'); "></div>
                 <div class="txtDItem">@Model[i].post_title</div>
             </div>
                 
@@ -46,8 +32,6 @@
             {
                 break;
             }
-        }
-                
+        }                
     }
-
 </div> 

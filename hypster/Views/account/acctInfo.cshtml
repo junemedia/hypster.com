@@ -39,6 +39,18 @@
                     </div>
                 </div>
 
+                <div style="float:right; width:100%; margin:16px 0 0 20px;">
+                    <div style="float:left; width:340px; height:30px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                        <div style="float:left; width:100px; margin:3px 0 0 0; text-align:right; color:#2f5262;">First Name:</div>
+                        <input type="text" name="FName" id="FName" value="@Model.curr_user.first_name" maxlength="40" style="float:left; outline: none; width:230px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
+                    </div>
+
+                    <div style="float:left; width:340px; height:30px; margin-left:20px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                        <div style="float:left; width:100px; margin:3px 0 0 0; text-align:right; color:#2f5262;">Last Name:</div>
+                        <input type="text" name="LName" id="LName" value="@Model.curr_user.last_name" maxlength="40" style="float:left; outline: none; width:230px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
+                    </div>
+                </div>
+
                 <div style="float:right; width:100%; margin:15px 0 0 20px;">
                     <div style="float:left; width:400px; height:30px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                         <div style="float:left; margin:3px 0 0 7px; color:#2f5262;">Email:</div>
@@ -52,19 +64,115 @@
                 </div>
 
                 <div style="float:right; width:100%; margin:15px 0 0 20px;">
-                    <div style="float:left; width:250px; height:30px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
-                        <div style="float:left; margin:3px 0 0 7px; color:#2f5262;">City:</div>
-                        <input type="text" name="City" id="City" value="@Model.curr_user.city" maxlength="30" style="float:left; outline: none; width:180px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
+                    <div style="float:left; width:400px; height:30px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                        <div style="float:left; margin:3px 0 0 7px; color:#2f5262;">Address:</div>
+                        <input type="text" name="Address" id="Address" value="@Model.curr_user.address" maxlength="30" style="float:left; outline: none; width:250px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
                     </div>
 
                     <div style="float:left; width:250px; height:30px; margin-left:20px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
-                        <div style="float:left; margin:3px 0 0 7px; color:#2f5262;">Country:</div>
-                        <input type="text" name="Country" id="Country" value="@Model.curr_user.country" maxlength="30" style="float:left; outline: none; width:160px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
+                        <div style="float:left; margin:3px 0 0 7px; color:#2f5262;">City:</div>
+                        <input type="text" name="City" id="City" value="@Model.curr_user.city" maxlength="30" style="float:left; outline: none; width:180px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
+                    </div>
+                </div>
+
+                <div style="float:right; width:100%; margin:15px 0 0 20px;">
+                    <div style="float:left; width:250px; height:30px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                        <div style="float:left; margin:3px 0 0 7px; color:#2f5262;">State:</div>
+                        <select id="State" name="State" style="float:left; outline: none; width:190px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                            <option value="">None</option>
+                            <optgroup label="US States/District">
+                                <option value="AL" @if (Model.curr_user.state != null && Model.curr_user.state == "AL") { <text> selected="selected" </text> }>Alabama</option>
+                                <option value="AK" @if (Model.curr_user.state != null && Model.curr_user.state == "AK") { <text> selected="selected" </text> }>Alaska</option>
+                                <option value="AZ" @if (Model.curr_user.state != null && Model.curr_user.state == "AZ") { <text> selected="selected" </text> }>Arizona</option>
+                                <option value="AR" @if (Model.curr_user.state != null && Model.curr_user.state == "AR") { <text> selected="selected" </text> }>Arkansas</option>
+                                <option value="CA" @if (Model.curr_user.state != null && Model.curr_user.state == "CA") { <text> selected="selected" </text> }>California</option>
+                                <option value="CO" @if (Model.curr_user.state != null && Model.curr_user.state == "CO") { <text> selected="selected" </text> }>Colorado</option>
+                                <option value="CT" @if (Model.curr_user.state != null && Model.curr_user.state == "CT") { <text> selected="selected" </text> }>Connecticut</option>                                
+                                <option value="DC" @if (Model.curr_user.state != null && Model.curr_user.state == "DC") { <text> selected="selected" </text> }>District Of Columbia</option>
+                                <option value="DE" @if (Model.curr_user.state != null && Model.curr_user.state == "DE") { <text> selected="selected" </text> }>Delaware</option>
+                                <option value="FL" @if (Model.curr_user.state != null && Model.curr_user.state == "FL") { <text> selected="selected" </text> }>Florida</option>
+                                <option value="GA" @if (Model.curr_user.state != null && Model.curr_user.state == "GA") { <text> selected="selected" </text> }>Georgia</option>
+                                <option value="HI" @if (Model.curr_user.state != null && Model.curr_user.state == "HI") { <text> selected="selected" </text> }>Hawaii</option>
+                                <option value="IA" @if (Model.curr_user.state != null && Model.curr_user.state == "IA") { <text> selected="selected" </text> }>Iowa</option>
+                                <option value="ID" @if (Model.curr_user.state != null && Model.curr_user.state == "ID") { <text> selected="selected" </text> }>Idaho</option>
+                                <option value="IL" @if (Model.curr_user.state != null && Model.curr_user.state == "IL") { <text> selected="selected" </text> }>Illinois</option>
+                                <option value="IN" @if (Model.curr_user.state != null && Model.curr_user.state == "IN") { <text> selected="selected" </text> }>Indiana</option>
+                                <option value="KS" @if (Model.curr_user.state != null && Model.curr_user.state == "KS") { <text> selected="selected" </text> }>Kansas</option>
+                                <option value="KY" @if (Model.curr_user.state != null && Model.curr_user.state == "KY") { <text> selected="selected" </text> }>Kentucky</option>
+                                <option value="LA" @if (Model.curr_user.state != null && Model.curr_user.state == "LA") { <text> selected="selected" </text> }>Louisiana</option>                                
+                                <option value="MA" @if (Model.curr_user.state != null && Model.curr_user.state == "MA") { <text> selected="selected" </text> }>Massachusetts</option>
+                                <option value="MD" @if (Model.curr_user.state != null && Model.curr_user.state == "MD") { <text> selected="selected" </text> }>Maryland</option>
+                                <option value="ME" @if (Model.curr_user.state != null && Model.curr_user.state == "ME") { <text> selected="selected" </text> }>Maine</option>
+                                <option value="MI" @if (Model.curr_user.state != null && Model.curr_user.state == "MI") { <text> selected="selected" </text> }>Michigan</option>
+                                <option value="MN" @if (Model.curr_user.state != null && Model.curr_user.state == "MN") { <text> selected="selected" </text> }>Minnesota</option>
+                                <option value="MO" @if (Model.curr_user.state != null && Model.curr_user.state == "MO") { <text> selected="selected" </text> }>Missouri</option>
+                                <option value="MS" @if (Model.curr_user.state != null && Model.curr_user.state == "MS") { <text> selected="selected" </text> }>Mississippi</option>
+                                <option value="MT" @if (Model.curr_user.state != null && Model.curr_user.state == "MT") { <text> selected="selected" </text> }>Montana</option>
+                                <option value="NC" @if (Model.curr_user.state != null && Model.curr_user.state == "NC") { <text> selected="selected" </text> }>North Carolina</option>
+                                <option value="ND" @if (Model.curr_user.state != null && Model.curr_user.state == "ND") { <text> selected="selected" </text> }>North Dakota</option>
+                                <option value="NE" @if (Model.curr_user.state != null && Model.curr_user.state == "NE") { <text> selected="selected" </text> }>Nebraska</option>
+                                <option value="NH" @if (Model.curr_user.state != null && Model.curr_user.state == "NH") { <text> selected="selected" </text> }>New Hampshire</option>
+                                <option value="NJ" @if (Model.curr_user.state != null && Model.curr_user.state == "NJ") { <text> selected="selected" </text> }>New Jersey</option>
+                                <option value="NM" @if (Model.curr_user.state != null && Model.curr_user.state == "NM") { <text> selected="selected" </text> }>New Mexico</option>
+                                <option value="NV" @if (Model.curr_user.state != null && Model.curr_user.state == "NV") { <text> selected="selected" </text> }>Nevada</option>
+                                <option value="NY" @if (Model.curr_user.state != null && Model.curr_user.state == "NY") { <text> selected="selected" </text> }>New York</option>
+                                <option value="OH" @if (Model.curr_user.state != null && Model.curr_user.state == "OH") { <text> selected="selected" </text> }>Ohio</option>
+                                <option value="OK" @if (Model.curr_user.state != null && Model.curr_user.state == "OK") { <text> selected="selected" </text> }>Oklahoma</option>
+                                <option value="OR" @if (Model.curr_user.state != null && Model.curr_user.state == "OR") { <text> selected="selected" </text> }>Oregon</option>
+                                <option value="PA" @if (Model.curr_user.state != null && Model.curr_user.state == "PA") { <text> selected="selected" </text> }>Pennsylvania</option>
+                                <option value="RI" @if (Model.curr_user.state != null && Model.curr_user.state == "RI") { <text> selected="selected" </text> }>Rhode Island</option>
+                                <option value="SC" @if (Model.curr_user.state != null && Model.curr_user.state == "SC") { <text> selected="selected" </text> }>South Carolina</option>
+                                <option value="SD" @if (Model.curr_user.state != null && Model.curr_user.state == "SD") { <text> selected="selected" </text> }>South Dakota</option>
+                                <option value="TN" @if (Model.curr_user.state != null && Model.curr_user.state == "TN") { <text> selected="selected" </text> }>Tennessee</option>
+                                <option value="TX" @if (Model.curr_user.state != null && Model.curr_user.state == "TX") { <text> selected="selected" </text> }>Texas</option>
+                                <option value="UT" @if (Model.curr_user.state != null && Model.curr_user.state == "UT") { <text> selected="selected" </text> }>Utah</option>
+                                <option value="VA" @if (Model.curr_user.state != null && Model.curr_user.state == "VA") { <text> selected="selected" </text> }>Virginia</option>
+                                <option value="VT" @if (Model.curr_user.state != null && Model.curr_user.state == "VT") { <text> selected="selected" </text> }>Vermont</option>
+                                <option value="WA" @if (Model.curr_user.state != null && Model.curr_user.state == "WA") { <text> selected="selected" </text> }>Washington</option>
+                                <option value="WI" @if (Model.curr_user.state != null && Model.curr_user.state == "WI") { <text> selected="selected" </text> }>Wisconsin</option>
+                                <option value="WV" @if (Model.curr_user.state != null && Model.curr_user.state == "WV") { <text> selected="selected" </text> }>West Virginia</option>
+                                <option value="WY" @if (Model.curr_user.state != null && Model.curr_user.state == "WY") { <text> selected="selected" </text> }>Wyoming</option>
+                            </optgroup>
+                            <optgroup label="US Outlying Territories">
+                                <option value="AS" @if (Model.curr_user.state != null && Model.curr_user.state == "AS") { <text> selected="selected" </text> }>American Samoa</option>
+                                <option value="GU" @if (Model.curr_user.state != null && Model.curr_user.state == "GU") { <text> selected="selected" </text> }>Guam</option>
+                                <option value="MP" @if (Model.curr_user.state != null && Model.curr_user.state == "MP") { <text> selected="selected" </text> }>Northern Mariana Islands</option>
+                                <option value="PR" @if (Model.curr_user.state != null && Model.curr_user.state == "PR") { <text> selected="selected" </text> }>Puerto Rico</option>
+                                <option value="UM" @if (Model.curr_user.state != null && Model.curr_user.state == "UM") { <text> selected="selected" </text> }>United States Minor Outlying Islands</option>
+                                <option value="VI" @if (Model.curr_user.state != null && Model.curr_user.state == "VI") { <text> selected="selected" </text> }>Virgin Islands</option>
+                            </optgroup>
+                            <optgroup label="Armed Forces">
+                                <option value="AA" @if (Model.curr_user.state != null && Model.curr_user.state == "AA") { <text> selected="selected" </text> }>Armed Forces Americas</option>
+                                <option value="AP" @if (Model.curr_user.state != null && Model.curr_user.state == "AP") { <text> selected="selected" </text> }>Armed Forces Pacific</option>
+                                <option value="AE" @if (Model.curr_user.state != null && Model.curr_user.state == "AE") { <text> selected="selected" </text> }>Armed Forces Others</option>
+                            </optgroup>
+                            <optgroup label="Canada Provinces">
+                                <option value="AB" @if (Model.curr_user.state != null && Model.curr_user.state == "AB") { <text> selected="selected" </text> }>Alberta</option>
+                                <option value="BC" @if (Model.curr_user.state != null && Model.curr_user.state == "BC") { <text> selected="selected" </text> }>British Columbia</option>
+                                <option value="MB" @if (Model.curr_user.state != null && Model.curr_user.state == "MB") { <text> selected="selected" </text> }>Manitoba</option>
+                                <option value="NB" @if (Model.curr_user.state != null && Model.curr_user.state == "NB") { <text> selected="selected" </text> }>New Brunswick</option>
+                                <option value="NL" @if (Model.curr_user.state != null && Model.curr_user.state == "NL") { <text> selected="selected" </text> }>Newfoundland and Labrador</option>
+                                <option value="NS" @if (Model.curr_user.state != null && Model.curr_user.state == "NS") { <text> selected="selected" </text> }>Nova Scotia</option>
+                                <option value="ON" @if (Model.curr_user.state != null && Model.curr_user.state == "ON") { <text> selected="selected" </text> }>Ontario</option>
+                                <option value="PE" @if (Model.curr_user.state != null && Model.curr_user.state == "PE") { <text> selected="selected" </text> }>Prince Edward Island</option>
+                                <option value="QC" @if (Model.curr_user.state != null && Model.curr_user.state == "QC") { <text> selected="selected" </text> }>Quebec</option>
+                                <option value="SK" @if (Model.curr_user.state != null && Model.curr_user.state == "SK") { <text> selected="selected" </text> }>Saskatchewan</option>
+                                <option value="NT" @if (Model.curr_user.state != null && Model.curr_user.state == "NT") { <text> selected="selected" </text> }>Northwest Territories</option>
+                                <option value="NU" @if (Model.curr_user.state != null && Model.curr_user.state == "NU") { <text> selected="selected" </text> }>Nunavut</option>
+                                <option value="YT" @if (Model.curr_user.state != null && Model.curr_user.state == "YT") { <text> selected="selected" </text> }>Yukon</option>
+                            </optgroup>
+                            <option value="Others" @if (Model.curr_user.state != null && Model.curr_user.state == "Others") { <text> selected="selected" </text> }>Others</option>
+                        </select>
                     </div>
 
                     <div style="float:left; width:152px; height:30px; margin-left:20px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                         <div style="float:left; margin:3px 0 0 7px; color:#2f5262;">Zip:</div>
                         <input type="text" name="Zip" id="Zip" value="@Model.curr_user.zipcode" maxlength="10" style="float:left; outline: none; width:60px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
+                    </div>
+
+                    <div style="float:left; width:250px; height:30px; margin-left:20px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                        <div style="float:left; margin:3px 0 0 7px; color:#2f5262;">Country:</div>
+                        <input type="text" name="Country" id="Country" value="@Model.curr_user.country" maxlength="30" style="float:left; outline: none; width:160px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
                     </div>
                 </div>
 
@@ -99,23 +207,37 @@
                             }
                         </select>
                     </div>
+
+                    <div style="float:left; width:130px; height:30px; border:1px solid #d4ae52; margin-left:50px; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                        <div style="float:left; margin:3px 0 0 7px; color:#2f5262;">Sex (Gender):</div>
+                    </div>
+                    <div style="float:left; width:100px; height:30px; border:1px solid #d4ae52; margin-left:20px; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                        <select id="Sex" name="Sex" style="float:left; outline: none; width:90px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                            <option value="0" @if (Model.curr_user.sex == 0) { <text> selected="selected" </text>  }>Female</option>
+                            <option value="1" @if (Model.curr_user.sex == 1) { <text> selected="selected" </text>   }>Male</option>
+                        </select>
+                    </div>
+
+                    <div style="float:left; width:100px; height:30px; margin-top:10px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                        <div style="float:left; margin:3px 0 0 7px; color:#2f5262;">Introduce:</div>
+                    </div>
+                    <div style="float:left; width:98%; margin-top:3px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                        <textarea rows="10" cols="84" name="Introduce" id="Introduce" style="margin:3px; float:left; outline: none; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">@Model.curr_user.introduce</textarea>
+                    </div>
                 </div>
 
                 <div style="float:left; width:100%; min-height:25px; margin-top:15px;">
-
                     <div id="chngPassBtn" onclick="$('#chngPassBtn').css('display','none'); $('#changePassContHolder1').css('display','block');" style="float:left; margin-left:0px; font-size:16px; color:#FFFFFF; background-color:#3fbc91; padding:3px 10px 3px 10px; border-radius:3px; cursor:pointer;">
                         CHANGE PASSWORD
                     </div>
 
                     <div id="changePassContHolder1" style="display:none; line-height:25px; width:380px; text-align:right;">
-
                         Old Password: <input type="password" name="OldUserPass" id="OldUserPass" maxlength="20" style="width:230px; height:18px; background-color:#DEDEDE; border:none; border-radius:2px;" />
                         <br />
                         New Password: <input type="password" name="NewUserPass" id="NewUserPass" maxlength="20" style="width:230px; height:18px; background-color:#DEDEDE; border:none; border-radius:2px;" />
                         <br />
                         Rep New Password: <input type="password" name="RepNewUserPass" id="RepNewUserPass" maxlength="20" style="width:230px; height:18px; background-color:#DEDEDE; border:none; border-radius:2px;" />
                     </div>
-
                 </div>
 
                 <div style="float:left; width:100%; min-height:25px; margin-top:10px;">
@@ -123,13 +245,13 @@
                         I am interested in:
                     </div>
                     <div style="float:left; margin-left:25px; font-size:20px; color:#000000;">
-                        <input type="radio" name="interestP" value="1" @if (Model.curr_user.user_interest == 1) { <text> checked="checked" </text> } /> Players
+                        <input type="radio" name="interestP" value="1" @if (Model.curr_user.user_interest == 1) { <text> checked="checked" </text>  } /> Players
                     </div>
                     <div style="float:left; margin-left:25px; font-size:20px; color:#000000;">
-                        <input type="radio" name="interestP" value="2" @if (Model.curr_user.user_interest == 2) { <text> checked="checked" </text> } /> Playlists
+                        <input type="radio" name="interestP" value="2" @if (Model.curr_user.user_interest == 2) { <text> checked="checked" </text>  } /> Playlists
                     </div>
                     <div style="float:left; margin-left:25px; font-size:20px; color:#000000;">
-                        <input type="radio" name="interestP" value="3" @if (Model.curr_user.user_interest == 3) { <text> checked="checked" </text> } /> Both
+                        <input type="radio" name="interestP" value="3" @if (Model.curr_user.user_interest == 3) { <text> checked="checked" </text>  } /> Both
                     </div>
                 </div>
 

@@ -2098,7 +2098,7 @@ a:visited
 
 .sResLeftCh2
 {
-    float:left; width:0%; min-height:100px;
+    float:left; width:0%; min-height:10px;
 }
 
 .sResRightCh2
@@ -3149,7 +3149,7 @@ a:visited
 
 .MainHeadPlaylist
 {
-	float:left; width:96%; height:34px; line-height:34px; text-align:left; color:#000000; line-height:35px;
+	float:left; width:96%; height:30px; line-height:34px; text-align:left; color:#000000; line-height:35px;
 	margin:0 0 0 1%;
 	padding:1%;
 	font-size:23px;
@@ -3193,8 +3193,8 @@ a:visited
 
 .CreatePlaylistCont .PlstItm_ActTitle
 {
-	float:left; width:70.5%; padding-left:0.5%; color:#d4ae52; font-size:16px;
-	height:27px; overflow:hidden;
+	float:left; width:82%; padding-left:0.5%; color:#d4ae52; font-size:16px;
+	height:27px; overflow:hidden; margin-right:5px;
 }
 
 .CreatePlaylistCont .PlstItm_ActTitle img
@@ -3257,7 +3257,7 @@ a:visited
 
 .CreatePlaylistCont .PlstItm .plstII
 {
-	float:left; width:65%; height:27px; line-height:25px; overflow:hidden; padding-left:4px;
+	float:left; width:78%; height:27px; line-height:25px; overflow:hidden; padding-left:4px;
 }
 .CreatePlaylistCont .PlstItm .plstII img
 {
@@ -3348,7 +3348,7 @@ a:visited
 
 .CreatePlaylistCont .SongTitle
 {
-	float:left; width:77%; height:50px; line-height:24px; margin-top:4px; cursor:pointer; font-size:14px; color:#000000;
+	float:left; width:85%; height:50px; line-height:24px; margin-top:4px; cursor:pointer; font-size:14px; color:#000000;
 }
 
 .CreatePlaylistCont .SongTitle span
@@ -3408,14 +3408,7 @@ a:visited
 .CreatePlaylistCont #AddNewTag_InnrContainer
 {
     float:left; width:100%; height:35px; line-height:35px; overflow:hidden;
-    margin-bottom:8px;
-}
-
-
-
-.CreatePlaylistCont #AddNewTag_InnrContainer
-{
-    display:none;
+    margin-bottom:8px; display:none;
 }
 
 
@@ -7488,7 +7481,7 @@ a.captionOrange:hover
 
 .breakingMCH_Home
 {
-    width:100%; height:300px; overflow:hidden;
+    width:100%; height:365px; overflow:hidden;
 }
 
 
@@ -7508,14 +7501,14 @@ a.captionOrange:hover
 
 .breakingMCH_Home .arrLeft
 {
-    float:left; width:12%; font-size:90px; line-height:75px; text-align:center; cursor:pointer; color:#d4ae52;
-    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat 6px 0px; margin-right: 155px;
+    float:left; width:6%; font-size:90px; line-height:75px; text-align:center; cursor:pointer; color:#d4ae52;
+    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat 6px 0px; margin-right: 43%;
 }
 
 .breakingMCH_Home .arrRight
 {
-    float:left; width:12%; font-size:90px; line-height:75px; text-align:center; cursor:pointer; color:#d4ae52;
-    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat -44px 0px; margin-left: 155px;
+    float:left; width:6%; font-size:90px; line-height:75px; text-align:center; cursor:pointer; color:#d4ae52;
+    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat -44px 0px; margin-left: 43%;
 }
 
 .breakingMCH_Home #newsContHH1
@@ -7544,14 +7537,14 @@ a.captionOrange:hover
 
 .breakingMCH_Home .brkngItm .txtBreakingT
 {
-    float:left; width:196px; height:30px; line-height:25px; color:#000000; padding:1px; font-size:24px; text-align:center; overflow:hidden; font-weight:bold; 
-    margin: -28px 0px 0px 2px; background-color:#FFFFFF; opacity:0.6; overflow:hidden;
+    float:left; width:196px; height:30px; line-height:25px; color:#000000; padding:1px; font-size:22px; text-align:center; overflow:hidden; font-weight:bold; 
+    margin: -28px 0px 0px 1px; background-color:#FFFFFF; opacity:0.6; overflow:hidden;
 }
 
 
 .breakingMCH_Home .brkngItm .txtBreakingD
 {
-    float:left; width:185px; height:108px; line-height:16px; color:#000000; 
+    float:left; width:189px; height:108px; line-height:16px; color:#000000; 
     margin:0 0 0 1px; font-size:14px; text-align:left; overflow:hidden;
     background-color:#e7e8e7; overflow:hidden; padding:5px;
 }
@@ -7684,7 +7677,7 @@ a.captionOrange:hover
 
 .listenTabCh2
 {
-    float:left; width:70%; min-height:220px; margin:10px 0 10px 0;
+    float:left; width:70%; min-height:100px; margin:5px 0 5px 0;
 }
 
 
@@ -7999,7 +7992,7 @@ a.captionOrange:hover
 
 .listenTabCh2 #searchStr
 {
-    float:left; width:100%; height:80px; line-height:80px; font-size:45px; color:#000000;
+    float:left; width:100%; height:40px; line-height:40px; font-size:26px; color:#000000;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
@@ -8513,7 +8506,7 @@ a.captionOrange:hover
 }
 .ContactUsCont .cntsMessageE textarea
 {
-    float:left; outline: none; width:200px; height:220px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
+    float:left; outline: none; width:87%; height:220px; margin:2px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
 }
 
 
@@ -8597,6 +8590,35 @@ a.captionOrange:hover
 }
 
 
+.acctInfoCH .acctIFName
+{
+    float:left; width:98%; height:37px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
+    margin:4px 0 0 0;
+}
+.acctInfoCH .acctIFName div
+{
+    float:left; width:100px; margin:3px 0 0 0; text-align:right; color:#2f5262;
+}
+.acctInfoCH .acctIFName input
+{
+    float:left; outline: none; width:150px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
+}
+
+
+.acctInfoCH .acctILName
+{
+    float:left; width:98%; height:37px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
+    margin:4px 0 0 0;
+}
+.acctInfoCH .acctILName div
+{
+    float:left; width:100px; margin:3px 0 0 0; text-align:right; color:#2f5262;
+}
+.acctInfoCH .acctILName input
+{
+    float:left; outline: none; width:150px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
+}
+
 .acctInfoCH .acctIEmail
 {
     float:left; width:98%; height:37px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
@@ -8616,6 +8638,21 @@ a.captionOrange:hover
 .acctInfoCH .acctIDate div
 {
     float:left; margin:3px 0 0 7px; color:#2f5262;
+}
+
+
+.acctInfoCH .acctIAddress
+{
+    float:left; width:98%; height:37px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
+    margin:4px 0 0 0;
+}
+.acctInfoCH .acctIAddress div
+{
+    float:left; margin:3px 0 0 7px; color:#2f5262;
+}
+.acctInfoCH .acctIAddress input
+{
+    float:left; outline: none; width:150px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
 }
 
 
@@ -8683,6 +8720,48 @@ a.captionOrange:hover
 .acctInfoCH .acctIBDateYY
 {
     float:left; width:86px; height:37px; border:1px solid #d4ae52; margin-left:4px; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
+}
+
+
+.acctInfoCH .acctIState
+{
+    float:left; width:100px; height:37px; margin-top:5px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
+}
+
+.acctInfoCH .acctIStateSel
+{
+    float:left; width:320px; height:37px; margin-top:5px; border:1px solid #d4ae52; margin-left:4px; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
+}
+
+.acctInfoCH .acctIStateSel select 
+{
+    float:left; outline:none; width:310px; height:26px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
+}
+
+.acctInfoCH .acctISex
+{
+    float:left; width:130px; height:37px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px; margin-left:20px;
+}
+
+.acctInfoCH .acctISexSel
+{
+    float:left; width:100px; height:37px; border:1px solid #d4ae52; margin-left:4px; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
+}
+
+
+.acctInfoCH .acctIIntro
+{    
+    float:left; width:98%; border:1px solid #d4ae52; margin-top:5px; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
+}
+
+.acctInfoCH .acctIIntro div
+{
+    float:left; margin:3px 0 0 7px; color:#2f5262;
+}
+
+.acctInfoCH .acctIIntro textarea
+{
+    width:98%; float:left; margin:5px; background-color:#FFFFFF; border:1px dotted #d4ae52; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;
 }
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------------------------------------------*/

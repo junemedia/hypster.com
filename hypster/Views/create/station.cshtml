@@ -32,19 +32,16 @@
                 <span style="margin:0 0 0 20px;">PLEASE ENTER SEARCH TERM FOR YOUR STATION.</span>
             </div>
                                     
-            <input type="text" id="RadioStationSearchTerm" name="RadioStationSearchTerm" value=" Enter Artist, Song or Genre"onfocus="if(this.value == ' Enter Artist, Song or Genre') this.value = '';" onblur="if(this.value == '') this.value = ' Enter Artist, Song or Genre';" />
+            <input type="text" id="RadioStationSearchTerm" name="RadioStationSearchTerm" value=" Enter Artist, Song or Genre" onfocus="if(this.value == ' Enter Artist, Song or Genre') this.value = '';" onblur="if(this.value == '') this.value = ' Enter Artist, Song or Genre';" />
             <input id="RadioStationSave" type="submit" value="Create Radio Station" />
         </div>
                                 
-
-                                
-        <div class="StatSaveCont">
-        </div>
+        <div class="StatSaveCont"></div>
                             
         if (ViewBag.ErrorMessage != null)
         {
-            <div style="float:left; width:100%; ">
-                <div class="errMsg1" >@ViewBag.ErrorMessage</div>
+            <div style="float:left; width:100%;">
+                <div class="errMsg1">@ViewBag.ErrorMessage</div>
             </div>
         }
     }
@@ -53,8 +50,7 @@
         {
             if (item.RadioStationName != null && item.RadioStationQuery != null)
             {
-                <div class="rdoItem1">
-                            
+                <div class="rdoItem1">                            
                     <div class="plBtn2" onclick="OPLRRadio('@item.RadioStationQuery.Replace(" ", "+")')">
                         <div></div>
                     </div>
@@ -66,7 +62,6 @@
                     <div class="actBtn2" onclick="if(confirm('Are you sure you want to delete?') == true){window.location='/account/deleteStation?station=@item.RadioStation_ID&gb=cs';}">
                         <div></div>
                     </div>
-
                 </div>
             }
         }
