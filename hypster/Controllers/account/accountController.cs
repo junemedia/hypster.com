@@ -1238,7 +1238,7 @@ namespace hypster.Controllers
 
             if (curr_user.sex != null)
             {
-                curr_user.sex = (byte)curr_user.sex;
+                curr_user.sex = (byte)Sex;
             }
             else
             {
