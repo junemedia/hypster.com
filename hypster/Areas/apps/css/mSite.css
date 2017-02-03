@@ -3219,18 +3219,18 @@ a:visited
 
 .CreatePlaylistCont  #AddPlaylist_Name
 {
-	float:left; width:197px; height:29px; border:1px solid #656565; font-size:14px;
+	float:left; width:197px; height:24px; border-radius:5px; border:1px solid #656565; font-size:12px;
 }
 
 
 .CreatePlaylistCont  #AddPlaylist_Save
 {
-	float:left; width:125px; height:33px; margin-left:3px;
+	float:left; width:125px; height:24px; border-radius:5px; margin-left:3px;
 }
 
 .CreatePlaylistCont  #AddPlaylist_Cancel
 {
-	float:left; width:65px; height:33px; margin-left:3px;
+	float:left; width:65px; height:24px; border-radius:5px; margin-left:3px;
 }
 
 
