@@ -3,17 +3,14 @@
     Layout = null;
 }
 
-
 <div class="AddNewSong_Container" onclick="window.location='/apps/appListen';">&nbsp;+ Add New Song</div>
 <div class="AddNewTag_Container" onclick="add_new_tag_nav();">&nbsp;+ Add New Tag</div>
-
 
 <div id="sortablePlaylist">
 @{ int i_counter = 1;}
 @foreach (var item in Model.userActivePlaylist_Songs_list)
 {
     <div class="srt_itm" id="song_@item.playlist_track_id">
-                    
         <div class="SongTitle" onmouseup="isMOUSE_UP_ON = true;" onmousedown="mouse_down($('#song_@item.playlist_track_id'));" onmouseout="mouse_up($('#song_@item.playlist_track_id'), '@item.playlist_track_id', @ViewBag.ActivePlaylistID );" >
             <img class="SongImg" alt="" src="http://i.ytimg.com/vi/@item.YoutubeId/0.jpg" />
             @item.Title
@@ -21,10 +18,8 @@
                                     
         <div class="SongItm_Edt" title="Play Song" onclick="OpenPlayerM('/apps/appPlaylists/song/@item.YoutubeId?@HttpUtility.UrlEncode(item.FullTitle)')"></div>
         <div class="SongItm_Del" title="Delete Song" onclick="Pl_DelSong(@item.playlist_track_id, @ViewBag.ActivePlaylistID);"></div>
-    </div>
-    
+    </div>    
     i_counter = i_counter + 1;
-
     if (i_counter > 500)
     {
         <div id="LoMPlstBtn" class="srt_itm" onclick="load_more_songs_plst_details();">
@@ -36,12 +31,6 @@
     }
 }
 </div>
-
-
-
-
-
-
 
 
 @if (Model.userActivePlaylist_Songs_list.Count == 0)
@@ -62,8 +51,6 @@
         $('body').scrollTop(vrval);
     }
 
-
-
     function load_more_songs_plst_details() {
         $.ajax({
             type: "POST",
@@ -76,8 +63,6 @@
         });
     }
 </script>
-
-
 
 
 <style>    

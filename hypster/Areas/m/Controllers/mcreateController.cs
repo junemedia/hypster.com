@@ -682,13 +682,13 @@ namespace hypster.Areas.m.Controllers
 
                 List<hypster_tv_DAL.sp_Tag_GetPlaylistTags_Result> tags_list = new List<hypster_tv_DAL.sp_Tag_GetPlaylistTags_Result>();
                 tags_list = tagManager.GetPlaylistTags(playlist_id);
-
                 foreach (var item in tags_list)
                 {
-                    ret_res += "<a id='tg" + item.Tag_Playlist_ID + "' class='TagI' onclick='delete_plst_tag(" + item.Tag_Playlist_ID + ")'>" + item.Tag_Name + "&nbsp;<span class='delTagSpn'>Delete</span> </a>";
+                    if (Request.QueryString["toggle"] != null && (Request.QueryString["toggle"] == "on" || Request.QueryString["toggle"] == ""))
+                        ret_res += "<a id='tg" + item.Tag_Playlist_ID + "' class='TagI' onclick='delete_plst_tag(" + item.Tag_Playlist_ID + ")'>" + item.Tag_Name + "&nbsp;<span class='delTagSpn'>X</span> </a>";
+                    else
+                        ret_res += "<a class='TagI' href='/tags/" + item.Tag_Name + "'>" + item.Tag_Name + "</a>";
                 }
-
-                ret_res += "<div id='tagsEditBtn' onclick='loadtagsForEdit()'>Manage</div>";
             }
             else
             {
