@@ -172,26 +172,26 @@
                 }
                 <div class="AddNewSong_Container" onclick="window.location='/listen';">&nbsp;+ Add New Song</div>
                 <div class="AddNewTag_Container" onclick="$('#AddNewTag_InnrContainer').css('display','block');">&nbsp;+ Add New Tag</div>
-                            
+                <div id="AddNewTag_InnrContainer">
+                    <input type="text" maxlength="30" name="newTagName" id="newTagName" style="width:200px; float:left; height:20px; border-radius:4px; border:none; font-size:12px; border:1px solid #d4ae52;" />
+                    <input type="hidden" name="newTagPlst" id="newTagPlst" value="@ViewBag.ActivePlaylistID" />
+                    <input type="button" value="Add New Tag" onclick="add_new_tag();" style="float:left; height:24px; border-radius:4px; margin-left:8px;" />
+                    <input type="button" value="Cancel" onclick="$('#AddNewTag_InnrContainer').css('display', 'none');" style="float:left; height:24px; border-radius:4px; margin-left:8px;" />
+                </div>
 
                 <div id="tagsConHldr1">
                     <div class="tagsCHHeader1">Tags</div>
+                    <div id="tagsEditBtn" onclick="if ($('span.delTagSpn').length > 0) { loadtagsForEdit('off'); } else { loadtagsForEdit('on'); }">Manage</div>
 
                     <div id="tagsMCH1">
                         @foreach (var item in Model.tags_list)
                         {
                             <a class="TagI" href="/tags/@HttpUtility.UrlEncode(item.Tag_Name)">@item.Tag_Name</a>
-                        }
-                        <div id="tagsEditBtn" onclick="loadtagsForEdit(); $('#AddNewTag_InnrContainer').css('display','block');">Manage</div>
+                        }                        
                     </div>
                 </div>
 
-                <div id="AddNewTag_InnrContainer">
-                    <input type="text" maxlength="30" name="newTagName" id="newTagName" style="width:195px; float:left; height:22px; border:none; font-size:13px; border:1px solid #d4ae52;" />
-                    <input type="hidden" name="newTagPlst" id="newTagPlst" value="@ViewBag.ActivePlaylistID" />
-                    <input type="button" value="Add New Tag" onclick="add_new_tag();"  style="float:left; height:25px; margin-left:5px;" />
-                    <input type="button" value="Cancel" onclick="$('#AddNewTag_InnrContainer').css('display','none');" style="float:left; height:25px; margin-left:5px;" />
-                </div>
+                
 
                 <script type="text/javascript">
                     function add_new_tag_nav() {
