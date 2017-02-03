@@ -2268,18 +2268,27 @@ function add_new_tag() {
         url: "/apps/appCreate/addnewtag?tag_name=" + res_str + "&playlist_id=" + $('#newTagPlst').val(),
         async: true,
         success: function (data) {
-            $("#tagsMCH1").prepend("<a class='TagI' href='/tags/" + res_str + "'>" + res_str + "</a>");
+            if ($('span.delTagSpn').length > 0) {
+                $("#tagsMCH1").prepend("<a id='tg" + $('#newTagPlst').val() + "' class='TagI' onclick='delete_plst_tag(" + $('#newTagPlst').val() + ")'>" + res_str + "&nbsp;<span class='delTagSpn'>X</span> </a>");
+            }
+            else {
+                $("#tagsMCH1").prepend("<a class='TagI' href='/tags/" + res_str + "'>" + res_str + "</a>");
+            }
             $("#newTagName").val("");
         }
     });
 }
-function loadtagsForEdit() {
+function loadtagsForEdit(toggle) {
     $.ajax({
         type: "POST",
-        url: "/apps/appCreate/tagsForEdit?playlist_id=" + $('#newTagPlst').val(),
+        url: "/apps/appCreate/tagsForEdit?playlist_id=" + $('#newTagPlst').val() + "&toggle=" + toggle,
         async: true,
         success: function (data) {
             $("#tagsMCH1").html(data);
+            if (toggle == "on")
+                $("#tagsEditBtn").css("background-color", "#FF5C5C");
+            else
+                $("#tagsEditBtn").css("background-color", "#4A4A4A");
         }
     });
 }

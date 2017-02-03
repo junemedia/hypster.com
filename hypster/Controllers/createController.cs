@@ -668,10 +668,11 @@ namespace hypster.Controllers
 
                 foreach (var item in tags_list)
                 {
-                    ret_res += "<a id='tg" + item.Tag_Playlist_ID + "' class='TagI' onclick='delete_plst_tag(" + item.Tag_Playlist_ID + ")'>" + item.Tag_Name + "&nbsp;<span class='delTagSpn'>Delete</span> </a>";
-                }
-
-                ret_res += "<div id='tagsEditBtn' onclick='loadtagsForEdit()'>Manage</div>";
+                    if (Request.QueryString["toggle"] != null && (Request.QueryString["toggle"] == "on" || Request.QueryString["toggle"] == ""))
+                        ret_res += "<a id='tg" + item.Tag_Playlist_ID + "' class='TagI' onclick='delete_plst_tag(" + item.Tag_Playlist_ID + ")'>" + item.Tag_Name + "&nbsp;<span class='delTagSpn'>X</span> </a>";
+                    else
+                        ret_res += "<a class='TagI' href='/tags/" + item.Tag_Name + "'>" + item.Tag_Name + "</a>";
+                }                
             }
             else
             {
