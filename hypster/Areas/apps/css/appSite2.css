@@ -7510,7 +7510,7 @@ a.captionOrange:hover
 .breakingMCH_Home .brkngItm .txtBreakingT
 {
     float:left; width:196px; height:30px; line-height:25px; color:#000000; padding:1px; font-size:22px; text-align:center; overflow:hidden; font-weight:bold; 
-    margin: -28px 0px 0px 1px; background-color:#FFFFFF; opacity:0.6; overflow:hidden;
+    margin: -28px 0px 0px 1px; background-color:#FFFFFF; opacity:0.6; overflow:hidden; text-transform:uppercase;
 }
 
 
@@ -7869,9 +7869,8 @@ a.captionOrange:hover
 
 .breakingMCH .brkngItm .txtDItem
 {
-    float:left; width:97.5%; height:60px; line-height:27px; padding:1% 1% 0 2%; 
-    color:#d4ae52; font-weight:bold; 
-    margin:15px 0 0 0; font-size:18px; text-align:center; overflow:hidden;
+    float:left; width:97.5%; height:60px; line-height:27px; padding:1% 1% 0 2%; color:#d4ae52; font-weight:bold; 
+    margin:15px 0 0 0; font-size:18px; text-align:center; overflow:hidden; text-transform:uppercase;
 }
 
 .breakingMCH .brkngPagingCH
