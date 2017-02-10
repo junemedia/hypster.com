@@ -9,7 +9,16 @@
     @{int sld_num = 1;}
     @foreach (var item in Model)
     {
-        <img id="HomeSlide@(sld_num)" class="sldShI" style="width:100%; height:100%; @if(sld_num > 1){ <text>display:none;</text> } " alt="" src="/imgs/home/home_slideshow/@item.ImageSrc" onclick="window.location='@item.href';" />
+        string ItemHref = "";
+        if (!item.href.Contains("http://"))
+        {
+            ItemHref = "/apps/app" + item.href.Remove(0, 1);
+        }
+        else
+        {
+            ItemHref = item.href;
+        }
+        <img id="HomeSlide@(sld_num)" class="sldShI" style="width:100%; height:100%; @if(sld_num > 1){ <text>display:none;</text> } " alt="" src="/imgs/home/home_slideshow/@item.ImageSrc" onclick="window.location='@ItemHref'" />
     }
 </div>
 
