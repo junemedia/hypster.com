@@ -11,7 +11,7 @@ namespace hypster.Areas.apps.Controllers
         //
         // GET: /breaking/
 
-        protected int POSTS_NUM_PAGING = 5;
+        protected int POSTS_NUM_PAGING = 8;
 
 
 
