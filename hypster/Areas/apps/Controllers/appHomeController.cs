@@ -70,36 +70,16 @@ namespace hypster.Areas.apps.Controllers
 
 
 
-
-
-        [OutputCache(Duration = 12, VaryByParam = "none")]
-        public ActionResult Get_Home_Slideshow()
-        {
-            hypster_tv_DAL.featuredContentManagement fc_manager = new hypster_tv_DAL.featuredContentManagement();
-
-
-            List<hypster_tv_DAL.FeaturedContent> model = new List<hypster_tv_DAL.FeaturedContent>();
-            model = fc_manager.ReturnFeaturedContent((int)hypster_tv_DAL.fc_Type.Other);
-
-
-            return View(model);
-        }
-
-
-
-
         [OutputCache(Duration = 120, VaryByParam = "none")]
-        public ActionResult Get_Featured_Slideshow()
+        public ActionResult Get_Home_Slideshow()
         {
             hypster_tv_DAL.homeSlideshowManager homeSlideshowManager = new hypster_tv_DAL.homeSlideshowManager();
 
             List<hypster_tv_DAL.homeSlideshow> model = new List<hypster_tv_DAL.homeSlideshow>();
-            model = homeSlideshowManager.getFeaturedSlideshowActive();
+            model = homeSlideshowManager.getHomeSlideshowActive();
 
             return View(model);
         }
-
-
 
 
         [OutputCache(Duration = 120, VaryByParam = "none")]
