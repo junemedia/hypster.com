@@ -304,6 +304,7 @@
     <Compile Include="Areas\senses\sensesAreaRegistration.cs" />
     <Compile Include="Code\GlobalVariables.cs" />
     <Compile Include="Code\JsonpResult.cs" />
+    <Compile Include="Code\SendMails.cs" />
     <Compile Include="Code\TrackUserAttribute.cs" />
     <Compile Include="Controllers\account\accountController.cs" />
     <Compile Include="Controllers\account\AcctController.cs" />
@@ -379,6 +380,10 @@
     <Compile Include="Handlers\Stream.ashx.cs">
       <DependentUpon>Stream.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Response.cs" />
+    <Compile Include="Models\SendEMail.cs" />
+    <Compile Include="Models\Tags.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -5986,6 +5991,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="bin\BotInfo.netmodule" />
+    <Content Include="Areas\apps\Views\appAccount\ForgotPasswordFail.cshtml" />
     <None Include="Properties\PublishProfiles\hypster.com.pubxml" />
     <None Include="Properties\PublishProfiles\stage.hypster.com.pubxml" />
     <None Include="Properties\PublishProfiles\dev.hypster.com.pubxml" />
@@ -6468,6 +6474,7 @@
     <Content Include="Views\Shared\_Layout3.cshtml" />
     <Content Include="Views\breaking\pr_GetLatestNews.cshtml" />
     <Content Include="Views\hypAds\yieldbot.cshtml" />
+    <Content Include="Views\account\ForgotPasswordFail.cshtml" />
     <None Include="Web.hypster.com.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

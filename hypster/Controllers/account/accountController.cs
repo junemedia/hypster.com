@@ -4,13 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using System.Net;
-using System.Net.Mail;
 using System.IO;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using SolveMedia;
 using AreYouAHuman;
+using hypster.Models;
 
 namespace hypster.Controllers
 {
@@ -241,7 +240,7 @@ namespace hypster.Controllers
         [System.Web.Mvc.OutputCache(NoStore = true, Duration = 0)]
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult ForgotPassword(string user_name, string email)
+        public ActionResult ForgotPassword(string user_name, string emailAdr)
         {
             // 1.general declarations
             //-----------------------------------------------------------------------------------------------------
@@ -253,35 +252,41 @@ namespace hypster.Controllers
 
 
             //-----------------------------------------------------------------------------------------------------
-            if (email != null && email != "")
-            {
-                hypster_tv_DAL.Member curr_user = new hypster_tv_DAL.Member();
-                curr_user = memberManager.getMemberByEmail(email);
-
-                if (curr_user.id != 0)
-                {
-                    string emailString = string.Format("\r\nYour Hypster login details are as follows:\r\n\r\nUsername: {0}\r\nPassword: {1}\r\n\r\nThank you,\r\nhelp@hypster.com", curr_user.username, curr_user.password);
-                    emailManager.SendPasswordRecoveryEMail(curr_user.email, emailString);
-                }
-            }
-
-
+            hypster_tv_DAL.Member curr_user = new hypster_tv_DAL.Member();
+            Code.SendMails sendEmail = new Code.SendMails();
+            Response resp = new Response();
+            SendEMail email = new SendEMail();
+            Contact contact;
+            Tags tags;            
             if (user_name != null && user_name != "")
-            {
-                hypster_tv_DAL.Member curr_user = new hypster_tv_DAL.Member();
                 curr_user = memberManager.getMemberByUserName(user_name);
-
-                if (curr_user.id != 0)
+            else
+                if (email != null && emailAdr != "")
+                    curr_user = memberManager.getMemberByEmail(emailAdr);
+            try
+            {
+                if (curr_user.username != "" && curr_user.password != "")
                 {
-                    string emailString = string.Format("\r\nYour Hypster login details are as follows:\r\n\r\nUsername: {0}\r\nPassword: {1}\r\n\r\nThank you,\r\nhelp@hypster.com", curr_user.username, curr_user.password);
-                    emailManager.SendPasswordRecoveryEMail(curr_user.email, emailString);
+                    contact = new Models.Contact { email = curr_user.email };
+                    //contact = new Models.Contact { email = "richardw@junemedia.com" };
+                    tags = new Models.Tags { username = curr_user.username, password = curr_user.password };
+                    email = new SendEMail { campaign_id = "2792210", content_id = "2086466", contact = contact, tags = tags };
+                
+                    sendEmail.SendPasswordRecoveryEMail(email);
+                    
+                    return RedirectToAction("ForgotPasswordDone", "account", new { s_code = email.response.status_code, s_desc = email.response.status_description });
                 }
+                else
+                    return RedirectToAction("ForgotPasswordFail", "account");
+            }
+            catch (Exception ex)
+            {
+                string tmp_str = ex.Message.ToString();
+                resp.status_description += "\r\n\r\n" + tmp_str;
+                email.response.status_description = resp.status_description;
+                return RedirectToAction("ForgotPasswordFail", "account", new { s_code = email.response.status_code, s_desc = email.response.status_description });
             }
             //-----------------------------------------------------------------------------------------------------
-
-
-
-            return RedirectToAction("ForgotPasswordDone", "account");
         }
         //----------------------------------------------------------------------------------------------------------
 
@@ -290,8 +295,10 @@ namespace hypster.Controllers
         //----------------------------------------------------------------------------------------------------------
         [System.Web.Mvc.OutputCache(NoStore = true, Duration = 0)]
         [AllowAnonymous]
-        public ActionResult ForgotPasswordDone()
+        public ActionResult ForgotPasswordDone(string s_code, string s_desc)
         {
+            ViewBag.s_code = s_code;
+            ViewBag.s_desc = s_desc;
             return View();
         }
         //----------------------------------------------------------------------------------------------------------
@@ -299,7 +306,16 @@ namespace hypster.Controllers
 
 
 
-
+        //----------------------------------------------------------------------------------------------------------
+        [System.Web.Mvc.OutputCache(NoStore = true, Duration = 0)]
+        [AllowAnonymous]
+        public ActionResult ForgotPasswordFail(string s_code, string s_desc)
+        {
+            ViewBag.s_code = s_code;
+            ViewBag.s_desc = s_desc;
+            return View();
+        }
+        //----------------------------------------------------------------------------------------------------------
 
 
 
@@ -371,7 +387,7 @@ namespace hypster.Controllers
         //----------------------------------------------------------------------------------------------------------
 
 
-        
+
 
 
 
@@ -401,7 +417,7 @@ namespace hypster.Controllers
         public ActionResult Register()
         {
             hypster.ViewModels.LoginViewModel model = new ViewModels.LoginViewModel();
-            
+
             //LIVE
             ViewBag.ChallengeKey = System.Configuration.ConfigurationManager.AppSettings["SolveMediaChallengeKey"];
 
@@ -432,13 +448,13 @@ namespace hypster.Controllers
                 CURR_CAPTCHA = 1;
 
                 ViewBag.CurrCaptcha = CURR_CAPTCHA;
-                
+
                 i_chache.Add("CurrCaptcha_1", CURR_CAPTCHA, DateTime.Now.AddSeconds(1800));
             }
             //________________________________________________________________________________________
 
 
-            
+
             return View();
         }
         //----------------------------------------------------------------------------------------------------------
@@ -456,9 +472,9 @@ namespace hypster.Controllers
 
 
 
-            
+
             //CHECK IF RECAPTCHA CODE VALID
-            
+
             //-----------------------------------------------------------------------------------------------------
             AyahServiceIntegration AyahDirect = new AyahServiceIntegration();
             string sessionSecret = this.Request.Form.Get("session_secret");
@@ -473,7 +489,7 @@ namespace hypster.Controllers
             {
                 ViewBag.SkipCaptcha = "on";
             }
-            
+
             //-----------------------------------------------------------------------------------------------------
 
 
@@ -520,7 +536,7 @@ namespace hypster.Controllers
 
 
             //-----------------------------------------------------------------------------------------------------
-            if(email != "" && username != "" && password != "" && I_agree == "on")
+            if (email != "" && username != "" && password != "" && I_agree == "on")
             {
                 //1.STEP - validate user input
                 if (Regex.IsMatch(username, @"^[a-zA-Z0-9-_@]+$") == false)
@@ -537,7 +553,7 @@ namespace hypster.Controllers
                 {
                     ModelState.AddModelError("", "Please enter email address. ");
                     return View();
-                } 
+                }
                 /*if(Regex.IsMatch(email, "^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$") == false){ModelState.AddModelError("", " Please enter valid email address");return View();}*/
 
 
@@ -580,14 +596,14 @@ namespace hypster.Controllers
                         MEMBER_TO_ADD.LastActivityDate = DateTime.Now;
                         MEMBER_TO_ADD.AutoshareEnabled = true;
 
-                        if(interestP != null)
+                        if (interestP != null)
                         {
                             MEMBER_TO_ADD.user_interest = interestP;
                         }
 
 
-                        
-                        
+
+
                         bool updatesAPlaylists = false;
                         if (checkNewsAboutMusic == "on")
                         {
@@ -599,12 +615,12 @@ namespace hypster.Controllers
                         }
 
                         MEMBER_TO_ADD.email_optout = (int)hypster_tv_DAL.NewsletterOptions.None;
-                        
+
                         if (updatesAPlaylists == true)
                         {
                             MEMBER_TO_ADD.email_optout = (int)hypster_tv_DAL.NewsletterOptions.Playlists;
                         }
-                        
+
 
 
                         //add new member
@@ -643,11 +659,11 @@ namespace hypster.Controllers
                         var userData = new Dictionary<string, string>();            //end-user data
                         userData.Add("hema", SolvemediaDAPI.hashEmail(MEMBER_TO_ADD.email));
                         ViewBag.smDAPI = smDAPI.getHTML(userData);                  //generate the data collection code    
-                        //-----------------------------------------------------------------------------------
+                                                                                    //-----------------------------------------------------------------------------------
 
 
 
-                        
+
                         return View("Register_Thanks");
 
                     }
@@ -713,11 +729,11 @@ namespace hypster.Controllers
             {
                 ViewBag.updatesAPlaylists = "";
             }
-            
+
 
 
             return View();
-            
+
         }
         //----------------------------------------------------------------------------------------------------------
 
@@ -764,9 +780,9 @@ namespace hypster.Controllers
 
         //*********************************************************************************************************
         #region AccountPicsManagement
-        
 
-       
+
+
 
 
 
@@ -841,7 +857,7 @@ namespace hypster.Controllers
             //-----------------------------------------------------------------------------------------------------
 
 
-          
+
 
             //1st step
             //check if user folder exist
@@ -908,7 +924,7 @@ namespace hypster.Controllers
             // 2.delete user photo
             //-----------------------------------------------------------------------------------------------------
             if (Request.QueryString["image_id"] != null && Int32.TryParse(Request.QueryString["image_id"], out image_id) == true)
-            {   
+            {
                 photoManager.DeleteUserPhoto(image_id, memberManager.getMemberByUserName(User.Identity.Name).id);
 
                 try
@@ -918,7 +934,9 @@ namespace hypster.Controllers
                     file_large.Delete();
                     file_small.Delete();
                 }
-                catch (Exception ex) { }
+                catch (Exception ex) {
+                    Console.WriteLine(ex.Message.ToString());
+                }
             }
             //-----------------------------------------------------------------------------------------------------
 
@@ -968,7 +986,7 @@ namespace hypster.Controllers
             //-----------------------------------------------------------------------------------------------------
 
 
-            
+
             // 2.parse query string
             //-----------------------------------------------------------------------------------------------------
             string view_pics_user_name = "";
@@ -995,7 +1013,7 @@ namespace hypster.Controllers
             List<hypster_tv_DAL.Photo> photos_list = new List<hypster_tv_DAL.Photo>();
             photos_list = photoManager.GetUserPhotos(member_user.id);
             //-----------------------------------------------------------------------------------------------------
-            
+
 
 
 
@@ -1020,7 +1038,7 @@ namespace hypster.Controllers
         {
             return RedirectToAction("info");
         }
-        
+
 
         [System.Web.Mvc.OutputCache(NoStore = true, Duration = 0)]
         public ActionResult info()
@@ -1046,13 +1064,13 @@ namespace hypster.Controllers
             if (model.curr_user.email_optout == (int)hypster_tv_DAL.NewsletterOptions.Both)
             {
                 ViewBag.checkNewsAboutMusic = true;
-                
+
             }
             if (model.curr_user.email_optout == (int)hypster_tv_DAL.NewsletterOptions.Playlists)
             {
                 ViewBag.checkNewsAboutMusic = true;
             }
-            
+
             if (model.curr_user.email_optout == (int)hypster_tv_DAL.NewsletterOptions.None)
             {
                 ViewBag.checkNewsAboutMusic = false;
@@ -1082,7 +1100,7 @@ namespace hypster.Controllers
             //-----------------------------------------------------------------------------------------------------
             hypster.ViewModels.getAccountInfo_PrivateViewModel model = new ViewModels.getAccountInfo_PrivateViewModel();
             model.curr_user = memberManager.getMemberByUserName(User.Identity.Name);
-            
+
 
             model.userPlaylists_list = playlistManager.GetUserPlaylists(model.curr_user.id);
             model.userPlayers_list = playerManager.GetUserPlayersList(model.curr_user.id);
@@ -1139,7 +1157,7 @@ namespace hypster.Controllers
             //-----------------------------------------------------------------------------------------------------
             hypster.ViewModels.getAccountInfo_PrivateViewModel model = new ViewModels.getAccountInfo_PrivateViewModel();
             model.curr_user = memberManager.getMemberByUserName(User.Identity.Name);
-            
+
 
             model.NumberOfMyFollowers = followersManager.GetNumberOfMyFollowers(model.curr_user.id);
             model.NumberOfMembersIFollow = followersManager.GetNumberOfMembersIFollow(model.curr_user.id);
@@ -1222,7 +1240,7 @@ namespace hypster.Controllers
                 curr_user.city = City;
 
             if (State != null)
-                curr_user.state = State;            
+                curr_user.state = State;
 
             if (Zip != null)
                 curr_user.zipcode = Zip;
@@ -1230,7 +1248,7 @@ namespace hypster.Controllers
             if (Country != null)
                 curr_user.country = Country;
 
-            if (DOB_MM != null && DOB_DD != null && DOB_YYYY != null && DOB_MM != 0 && DOB_DD != 0 && DOB_YYYY != 0)
+            if (DOB_MM != 0 && DOB_DD != 0 && DOB_YYYY != 0) //DOB_MM != null && DOB_DD != null && DOB_YYYY != null && 
             {
                 curr_user.birth = new DateTime(DOB_YYYY, DOB_MM, DOB_DD);
             }
@@ -1254,7 +1272,7 @@ namespace hypster.Controllers
                 USER_INTEREST = (int)interestP;
             }
 
-            
+
             bool updatesAPlaylists = false;
             if (checkNewsAboutMusic == "on")
             {
@@ -1263,12 +1281,12 @@ namespace hypster.Controllers
 
 
             curr_user.email_optout = (int)hypster_tv_DAL.NewsletterOptions.None;
-            
+
             if (updatesAPlaylists == true)
             {
                 curr_user.email_optout = (int)hypster_tv_DAL.NewsletterOptions.Playlists;
             }
-            
+
             memberManager.UpdateMemberProfileDetails(curr_user.username, curr_user.id, curr_user.name, curr_user.AutoshareEnabled, (DateTime)curr_user.birth, curr_user.city, curr_user.country, curr_user.zipcode, (byte)curr_user.sex, USER_INTEREST, curr_user.email_optout);
             memberManager.UpdateMemberProfileDetails(curr_user.username, curr_user.id, curr_user.first_name, curr_user.last_name, curr_user.address, curr_user.state, curr_user.introduce);
 
@@ -1336,7 +1354,7 @@ namespace hypster.Controllers
             // 5.manage music genres
             //----------------------------------------------------------------------------------------
             if (musicGenres_list != null)
-            {   
+            {
                 genreManager.DeleteAllUserMusicGenres(curr_user.id);
 
                 foreach (int music_genre_sel in musicGenres_list)
@@ -1400,7 +1418,7 @@ namespace hypster.Controllers
         public ActionResult AccountPlaylists_MakeActivePlaylist(int Act_PlaylistID)
         {
             hypster_tv_DAL.memberManagement userManager = new hypster_tv_DAL.memberManagement();
-            
+
             userManager.SetUserDefaultPlaylist(User.Identity.Name, userManager.getMemberByUserName(User.Identity.Name).id, Act_PlaylistID);
 
 
@@ -1472,7 +1490,7 @@ namespace hypster.Controllers
 
 
 
-        
+
 
         //*********************************************************************************************************
         #region AccountFollowers_ACTIONS
@@ -1560,7 +1578,7 @@ namespace hypster.Controllers
             {
                 return RedirectPermanent("/create/station");
             }
-            
+
 
             return RedirectPermanent("/account/music");
         }
@@ -1568,7 +1586,7 @@ namespace hypster.Controllers
 
 
 
-        
+
 
 
 
@@ -1591,7 +1609,7 @@ namespace hypster.Controllers
         //*********************************************************************************************************
         #region Public Profile
 
-        
+
         // for public profile
         //
         //----------------------------------------------------------------------------------------------------------
@@ -1602,7 +1620,7 @@ namespace hypster.Controllers
         [OutputCache(Duration = 120, VaryByParam = "none")]
         public ActionResult getPublicProfile(string user_name)
         {
-            
+
             // 1.general declarations
             //-----------------------------------------------------------------------------------------------------
             hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
@@ -1620,8 +1638,8 @@ namespace hypster.Controllers
             hypster.ViewModels.getAccountInfo_PublicViewModel model = new ViewModels.getAccountInfo_PublicViewModel();
             //-----------------------------------------------------------------------------------------------------
 
-            
-            
+
+
 
 
             //-----------------------------------------------------------------------------------------------------
@@ -1687,14 +1705,14 @@ namespace hypster.Controllers
 
             //check if has public music page
             //-----------------------------------------------------------------------------------------------------
-            if(memberManager.GetMemberPublicPageByID(model.curr_user.id).PublicPage_ID > 0)
+            if (memberManager.GetMemberPublicPageByID(model.curr_user.id).PublicPage_ID > 0)
             {
                 return RedirectPermanent("/music/" + user_name);
             }
             //-----------------------------------------------------------------------------------------------------
 
 
-            
+
             return View("getAccountInfo_Public", model);
         }
         //----------------------------------------------------------------------------------------------------------
@@ -2005,7 +2023,7 @@ namespace hypster.Controllers
             else //just for viewing
             {
                 //-----------------------------------------------------------------------------------------------------
-                
+
                 model.member_page = memberManager.GetMemberPublicPageByPlaylistID(plst_id);
 
                 model.curr_user = memberManager.getMemberByID((int)model.member_page.Member_ID);
@@ -2013,7 +2031,7 @@ namespace hypster.Controllers
                 model.songs_list = playlistManager.GetSongsForPlayList((int)model.member_page.Member_ID, plst_id);
                 //-----------------------------------------------------------------------------------------------------
             }
-            
+
 
             return View("PublicMusicPagePlaylist", model);
         }
@@ -2093,12 +2111,12 @@ namespace hypster.Controllers
             int playlist_id = 0;
             int us_id = 0;
 
-            if(Request.QueryString["playlist_id"] != null)
+            if (Request.QueryString["playlist_id"] != null)
             {
                 playlist_id = Int32.Parse(Request.QueryString["playlist_id"].ToString());
             }
 
-            if(Request.QueryString["us_id"] != null)
+            if (Request.QueryString["us_id"] != null)
             {
                 us_id = Int32.Parse(Request.QueryString["us_id"].ToString());
             }
@@ -2106,7 +2124,7 @@ namespace hypster.Controllers
 
             hypster_tv_DAL.playlistLikeManagement playlistLikeManager = new hypster_tv_DAL.playlistLikeManagement();
             playlistLikeManager.DeletePlaylistLike(playlist_id, us_id);
-                
+
 
             return RedirectPermanent("/account/music#dplstLks");
         }
@@ -2137,7 +2155,7 @@ namespace hypster.Controllers
         [AllowAnonymous]
         public ActionResult Confirm_Member_Account_Thanks()
         {
-            
+
 
             return View();
         }
@@ -2179,7 +2197,7 @@ namespace hypster.Controllers
             memberManager.CleanMemberFromCache(User.Identity.Name);
             curr_member = memberManager.getMemberByUserName(User.Identity.Name);
 
-            
+
             //-----------------------------------------------------------------------------------
             emailManager.SendWelcomeEmail("Welcome to Hypster", curr_member.email);
             //-----------------------------------------------------------------------------------
@@ -2188,9 +2206,5 @@ namespace hypster.Controllers
             return RedirectPermanent("Register_Thanks");
         }
         //*********************************************************************************************************
-
-
-
-
     }
 }

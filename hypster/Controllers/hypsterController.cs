@@ -5,8 +5,10 @@ using System.Web;
 using System.Web.Mvc;
 using Recaptcha;
 using System.Web.Security;
-
-
+using hypster.Models;
+using System.IO;
+using System.Net;
+using System.Web.Script.Serialization;
 
 namespace hypster.Controllers
 {
@@ -664,9 +666,5 @@ namespace hypster.Controllers
         {
             return View();
         }
-
-
-      
-
     }
 }

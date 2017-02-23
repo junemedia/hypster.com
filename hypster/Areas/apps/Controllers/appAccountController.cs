@@ -4,12 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using System.Net;
-using System.Net.Mail;
 using System.IO;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using SolveMedia;
+using hypster.Models;
 
 namespace hypster.Areas.apps.Controllers
 {
@@ -111,8 +110,6 @@ namespace hypster.Areas.apps.Controllers
                         }
                         else
                         {
-                            //return RedirectToAction("Index", "appHome");
-                            //return RedirectToAction("info", "appAccount");
                             return RedirectToAction("playlist", "appCreate");
                         }
                     }
@@ -207,7 +204,7 @@ namespace hypster.Areas.apps.Controllers
         [System.Web.Mvc.OutputCache(NoStore = true, Duration = 0)]
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult ForgotPassword(string user_name, string email)
+        public ActionResult ForgotPassword(string user_name, string emailAdr)
         {
             // 1.general declarations
             //-----------------------------------------------------------------------------------------------------
@@ -216,38 +213,41 @@ namespace hypster.Areas.apps.Controllers
             //-----------------------------------------------------------------------------------------------------
 
 
-
-
             //-----------------------------------------------------------------------------------------------------
-            if (email != null && email != "")
-            {
-                hypster_tv_DAL.Member curr_user = new hypster_tv_DAL.Member();
-                curr_user = memberManager.getMemberByEmail(email);
-
-                if (curr_user.id != 0)
-                {
-                    string emailString = string.Format("\r\nYour Hypster login details are as follows:\r\n\r\nUsername: {0}\r\nPassword: {1}\r\n\r\nThank you,\r\nhelp@hypster.com", curr_user.username, curr_user.password);
-                    emailManager.SendPasswordRecoveryEMail(curr_user.email, emailString);
-                }
-            }
-
-
+            hypster_tv_DAL.Member curr_user = new hypster_tv_DAL.Member();
+            Code.SendMails sendEmail = new Code.SendMails();
+            Response resp = new Response();
+            SendEMail email = new SendEMail();
+            Contact contact;
+            Tags tags;
             if (user_name != null && user_name != "")
-            {
-                hypster_tv_DAL.Member curr_user = new hypster_tv_DAL.Member();
                 curr_user = memberManager.getMemberByUserName(user_name);
-
-                if (curr_user.id != 0)
+            else
+                if (email != null && emailAdr != "")
+                curr_user = memberManager.getMemberByEmail(emailAdr);
+            try
+            {
+                if (curr_user.username != "" && curr_user.password != "")
                 {
-                    string emailString = string.Format("\r\nYour Hypster login details are as follows:\r\n\r\nUsername: {0}\r\nPassword: {1}\r\n\r\nThank you,\r\nhelp@hypster.com", curr_user.username, curr_user.password);
-                    emailManager.SendPasswordRecoveryEMail(curr_user.email, emailString);
+                    contact = new Models.Contact { email = curr_user.email };
+                    //contact = new Models.Contact { email = "richardw@junemedia.com" };
+                    tags = new Models.Tags { username = curr_user.username, password = curr_user.password };
+                    email = new SendEMail { campaign_id = "2792210", content_id = "2086466", contact = contact, tags = tags };
+
+                    sendEmail.SendPasswordRecoveryEMail(email);
+
+                    return RedirectToAction("ForgotPasswordDone", "appAccount", new { s_code = email.response.status_code, s_desc = email.response.status_description });
                 }
+                else
+                    return RedirectToAction("ForgotPasswordFail", "appAccount");
             }
-            //-----------------------------------------------------------------------------------------------------
-
-
-
-            return RedirectToAction("ForgotPasswordDone", "appAccount");
+            catch (Exception ex)
+            {
+                string tmp_str = ex.Message.ToString();
+                resp.status_description += "\r\n\r\n" + tmp_str;
+                email.response.status_description = resp.status_description;
+                return RedirectToAction("ForgotPasswordFail", "appAccount", new { s_code = email.response.status_code, s_desc = email.response.status_description });
+            }
         }
         //----------------------------------------------------------------------------------------------------------
 
@@ -266,6 +266,15 @@ namespace hypster.Areas.apps.Controllers
 
 
 
+
+        //----------------------------------------------------------------------------------------------------------
+        [System.Web.Mvc.OutputCache(NoStore = true, Duration = 0)]
+        [AllowAnonymous]
+        public ActionResult ForgotPasswordFail()
+        {
+            return View();
+        }
+        //----------------------------------------------------------------------------------------------------------
 
 
 
@@ -803,7 +812,9 @@ namespace hypster.Areas.apps.Controllers
                     file_large.Delete();
                     file_small.Delete();
                 }
-                catch (Exception ex) { }
+                catch (Exception ex) {
+                    Console.WriteLine(ex.Message.ToString());
+                }
             }
             //-----------------------------------------------------------------------------------------------------
 
@@ -1118,7 +1129,7 @@ namespace hypster.Areas.apps.Controllers
             if (Country != null)
                 curr_user.country = Country;
 
-            if (DOB_MM != null && DOB_DD != null && DOB_YYYY != null && DOB_MM != 0 && DOB_DD != 0 && DOB_YYYY != 0)
+            if (DOB_MM != 0 && DOB_DD != 0 && DOB_YYYY != 0) //DOB_MM != null && DOB_DD != null && DOB_YYYY != null &&
             {
                 curr_user.birth = new DateTime(DOB_YYYY, DOB_MM, DOB_DD);
             }
@@ -1649,340 +1660,6 @@ namespace hypster.Areas.apps.Controllers
         #endregion
         //*********************************************************************************************************
 
-
-
-
-
-
-
-
-
-        //*********************************************************************************************************
-        #region Public_Music_Page
-        /*
-        [System.Web.Mvc.OutputCache(NoStore = true, Duration = 15)]
-        [AllowAnonymous]
-        public ActionResult PublicMusicPage(string user_name)
-        {
-            //-----------------------------------------------------------------------------------------------------
-            if (Request.Url.AbsoluteUri.Contains("www."))
-            {
-                Random r = new Random();
-                string new_url = Request.Url.AbsoluteUri.Replace("www.", "") + "?rnd=" + r.Next(1, 100000).ToString();
-                return RedirectPermanent(new_url);
-            }
-            //-----------------------------------------------------------------------------------------------------
-
-
-
-            //-----------------------------------------------------------------------------------------------------
-            hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
-            hypster_tv_DAL.playlistManagement playlistManager = new hypster_tv_DAL.playlistManagement();
-            hypster_tv_DAL.followersManagement followersManager = new hypster_tv_DAL.followersManagement();
-            hypster_tv_DAL.memberPhotoManagement photoManager = new hypster_tv_DAL.memberPhotoManagement();
-            hypster_tv_DAL.playerManagement playerManager = new hypster_tv_DAL.playerManagement();
-            hypster_tv_DAL.MemberMusicGenreManager genreManager = new hypster_tv_DAL.MemberMusicGenreManager();
-            hypster_tv_DAL.RadioStationManager radioStationManager = new hypster_tv_DAL.RadioStationManager();
-            //-----------------------------------------------------------------------------------------------------
-
-
-
-            //-----------------------------------------------------------------------------------------------------
-            hypster.ViewModels.MemberPublicPageViewModel model = new ViewModels.MemberPublicPageViewModel();
-
-            model.curr_user = memberManager.getMemberByUserName(user_name);
-            model.member_page = memberManager.GetMemberPublicPageByID(model.curr_user.id);
-            model.songs_list = playlistManager.GetSongsForPlayList(model.curr_user.id, (int)model.member_page.Playlist_ID);
-            //-----------------------------------------------------------------------------------------------------
-
-
-
-            //-----------------------------------------------------------------------------------------------------
-            model.New_User_ID = Int32.Parse(System.Configuration.ConfigurationManager.AppSettings["newImageLogicID"]);
-            model.userPhotos_list = photoManager.GetUserPhotos(model.curr_user.id);
-            //-----------------------------------------------------------------------------------------------------
-
-
-
-
-
-            //-----------------------------------------------------------------------------------------------------
-            if (User.Identity.IsAuthenticated)
-            {
-                if (user_name == User.Identity.Name) //SAME USER - NEED TO DISPLAY EDIT CONTROLS
-                {
-                    if (Request.QueryString["isE"] != null && Request.QueryString["isE"] == "y")
-                    {
-                        model.userPlaylists_list = playlistManager.GetUserPlaylists(model.curr_user.id);
-
-                        if (model.member_page.Playlist_ID == 0 && model.userPlaylists_list.Count > 0)
-                        {
-                            model.songs_list = playlistManager.GetSongsForPlayList(model.curr_user.id, model.userPlaylists_list[0].id);
-                        }
-                        return View("PublicMusicPage_EDIT", model);
-                    }
-                    else
-                    {
-                        return View("PublicMusicPage", model);
-                    }
-                }
-            }
-
-            return View("PublicMusicPage", model);
-        }
-
-
-        //ajax function - called to populate playlist
-        public ActionResult GetPublicAcctPlaylist()
-        {
-            hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
-            hypster_tv_DAL.playlistManagement playlistManager = new hypster_tv_DAL.playlistManagement();
-
-
-            int PLST_ID = 0;
-            if (Request.QueryString["PLST_ID"] != null)
-            {
-                Int32.TryParse(Request.QueryString["PLST_ID"], out PLST_ID);
-            }
-
-            int LAYOUT = 1;
-            if (Request.QueryString["LAYOUT"] != null)
-            {
-                Int32.TryParse(Request.QueryString["LAYOUT"], out LAYOUT);
-                ViewBag.LAYOUT = LAYOUT;
-            }
-
-
-            hypster_tv_DAL.Member curr_user = new hypster_tv_DAL.Member();
-            curr_user = memberManager.getMemberByUserName(User.Identity.Name);
-
-
-            List<hypster_tv_DAL.PlaylistData_Song> songs_list = new List<hypster_tv_DAL.PlaylistData_Song>();
-            songs_list = playlistManager.GetSongsForPlayList(curr_user.id, PLST_ID);
-
-
-
-
-            return View(songs_list);
-        }
-
-
-        [HttpPost]
-        public ActionResult SavePublicMusicPage(int? hf_MemberPublicPageID, int? PPPlaylistDD, int layout, int? showHeader, int? showDescription, int? autoplay, int? showLikeButtton, int? showInfoButton, int? showPhotosButton, string header, string description, string hf_HaFBackgroundColor, string hf_BackgroundColor, string hf_LeftSectionColor, string hf_RightSectionColor, string hf_ButtonsBackgroundColor, string hf_SongBackgroundColor, string hf_TextColor, string hf_ButtonsColor)
-        {
-            if (!User.Identity.IsAuthenticated)
-            {
-                return RedirectPermanent("/apps/appHome");
-            }
-
-
-            hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
-
-            hypster_tv_DAL.Member curr_user = new hypster_tv_DAL.Member();
-            curr_user = memberManager.getMemberByUserName(User.Identity.Name);
-
-
-            hypster_tv_DAL.MemberPublicPage member_page = new hypster_tv_DAL.MemberPublicPage();
-            member_page.autoplay = (autoplay > 0) ? true : false;
-            member_page.BackgroundColor = hf_BackgroundColor;
-            member_page.ButtonsBackgroundColor = hf_ButtonsBackgroundColor;
-            member_page.ButtonsColor = hf_ButtonsColor;
-            member_page.description = description;
-            member_page.HaFBackgroundColor = hf_HaFBackgroundColor;
-            member_page.header = header;
-            member_page.LeftSectionColor = hf_LeftSectionColor;
-            member_page.Member_ID = curr_user.id;
-
-            member_page.RightSectionColor = hf_RightSectionColor;
-            member_page.showDescription = (showDescription > 0) ? true : false;
-            member_page.showHeader = (showHeader > 0) ? true : false;
-            member_page.showInfoButton = (showInfoButton > 0) ? true : false;
-            member_page.showLikeButtton = (showLikeButtton > 0) ? true : false;
-            member_page.showPhotosButton = (showPhotosButton > 0) ? true : false;
-            member_page.SongBackgroundColor = hf_SongBackgroundColor;
-            member_page.TextColor = hf_TextColor;
-            if (PPPlaylistDD != null)
-                member_page.Playlist_ID = PPPlaylistDD;
-            else
-                member_page.Playlist_ID = 0;
-            member_page.Playlist_Layout = layout;
-
-
-            if (hf_MemberPublicPageID != null && hf_MemberPublicPageID > 0)
-            {
-                member_page.PublicPage_ID = (int)hf_MemberPublicPageID;
-                memberManager.EditMemberPublicPage(member_page);
-            }
-            else
-            {
-                memberManager.AddMemberPublicPage(member_page);
-            }
-
-
-
-
-            //-------------------------------------------------------------------------------------
-            //genreate random number
-            Random ran = new Random();
-            //-------------------------------------------------------------------------------------
-
-
-            return RedirectPermanent("/music/" + curr_user.username + "?rnum=" + ran.Next(1, 200000).ToString());
-        }
-        */
-        #endregion
-        //*********************************************************************************************************
-
-
-        //*********************************************************************************************************
-        #region Public_Music_Page_Playlist
-        /*
-
-
-
-        [System.Web.Mvc.OutputCache(NoStore = true, Duration = 15)]
-        [AllowAnonymous]
-        public ActionResult PublicMusicPagePlaylist(int plst_id)
-        {
-            //-----------------------------------------------------------------------------------------------------
-            if (Request.Url.AbsoluteUri.Contains("www."))
-            {
-                Random r = new Random();
-                string new_url = Request.Url.AbsoluteUri.Replace("www.", "") + "?rnd=" + r.Next(1, 100000).ToString();
-                return RedirectPermanent(new_url);
-            }
-            //-----------------------------------------------------------------------------------------------------
-
-
-            ViewBag.Playlist_ID = plst_id;
-
-
-            //-----------------------------------------------------------------------------------------------------
-            hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
-            hypster_tv_DAL.playlistManagement playlistManager = new hypster_tv_DAL.playlistManagement();
-            hypster_tv_DAL.followersManagement followersManager = new hypster_tv_DAL.followersManagement();
-            hypster_tv_DAL.memberPhotoManagement photoManager = new hypster_tv_DAL.memberPhotoManagement();
-            hypster_tv_DAL.playerManagement playerManager = new hypster_tv_DAL.playerManagement();
-            hypster_tv_DAL.MemberMusicGenreManager genreManager = new hypster_tv_DAL.MemberMusicGenreManager();
-            hypster_tv_DAL.RadioStationManager radioStationManager = new hypster_tv_DAL.RadioStationManager();
-            //-----------------------------------------------------------------------------------------------------
-
-
-            hypster.ViewModels.MemberPublicPageViewModel model = new ViewModels.MemberPublicPageViewModel();
-
-
-            //-----------------------------------------------------------------------------------------------------
-            if (User.Identity.IsAuthenticated && Request.QueryString["edit"] != null && Request.QueryString["edit"] == "yes")
-            {
-
-                //-----------------------------------------------------------------------------------------------------
-                model.curr_user = memberManager.getMemberByUserName(User.Identity.Name);
-
-                model.member_page = memberManager.GetMemberPublicPageByPlaylistID(model.curr_user.id, plst_id);
-
-                model.songs_list = playlistManager.GetSongsForPlayList(model.curr_user.id, plst_id);
-                //-----------------------------------------------------------------------------------------------------
-
-
-
-                if (Request.QueryString["edit"] != null && Request.QueryString["edit"] == "yes")
-                {
-                    return View("PublicMusicPagePlaylist_EDIT", model);
-                }
-                else
-                {
-                    return View("PublicMusicPagePlaylist", model);
-                }
-            }
-            else //just for viewing
-            {
-                //-----------------------------------------------------------------------------------------------------
-
-                model.member_page = memberManager.GetMemberPublicPageByPlaylistID(plst_id);
-
-                model.curr_user = memberManager.getMemberByID((int)model.member_page.Member_ID);
-
-                model.songs_list = playlistManager.GetSongsForPlayList((int)model.member_page.Member_ID, plst_id);
-                //-----------------------------------------------------------------------------------------------------
-            }
-
-
-            return View("PublicMusicPagePlaylist", model);
-        }
-
-
-        [HttpPost]
-        public ActionResult SavePublicMusicPagePlaylist(int? hf_MemberPublicPageID, int? PPPlaylistDD, int layout, int? showHeader, int? showDescription, int? autoplay, int? showLikeButtton, int? showInfoButton, int? showPhotosButton, string header, string description, string hf_HaFBackgroundColor, string hf_BackgroundColor, string hf_LeftSectionColor, string hf_RightSectionColor, string hf_ButtonsBackgroundColor, string hf_SongBackgroundColor, string hf_TextColor, string hf_ButtonsColor)
-        {
-            if (!User.Identity.IsAuthenticated)
-            {
-                return RedirectPermanent("/");
-            }
-
-
-            hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
-
-            hypster_tv_DAL.Member curr_user = new hypster_tv_DAL.Member();
-            curr_user = memberManager.getMemberByUserName(User.Identity.Name);
-
-
-
-            hypster_tv_DAL.MemberPublicPage member_page = new hypster_tv_DAL.MemberPublicPage();
-            member_page.autoplay = (autoplay > 0) ? true : false;
-            member_page.BackgroundColor = hf_BackgroundColor;
-            member_page.ButtonsBackgroundColor = hf_ButtonsBackgroundColor;
-            member_page.ButtonsColor = hf_ButtonsColor;
-            member_page.description = description;
-            member_page.HaFBackgroundColor = hf_HaFBackgroundColor;
-            member_page.header = header;
-            member_page.LeftSectionColor = hf_LeftSectionColor;
-            member_page.Member_ID = curr_user.id;
-
-            member_page.RightSectionColor = hf_RightSectionColor;
-            member_page.showDescription = (showDescription > 0) ? true : false;
-            member_page.showHeader = (showHeader > 0) ? true : false;
-            member_page.showInfoButton = (showInfoButton > 0) ? true : false;
-            member_page.showLikeButtton = (showLikeButtton > 0) ? true : false;
-            member_page.showPhotosButton = (showPhotosButton > 0) ? true : false;
-            member_page.SongBackgroundColor = hf_SongBackgroundColor;
-            member_page.TextColor = hf_TextColor;
-            if (PPPlaylistDD != null)
-                member_page.Playlist_ID = PPPlaylistDD;
-            else
-                member_page.Playlist_ID = 0;
-            member_page.Playlist_Layout = layout;
-
-
-            if (hf_MemberPublicPageID != null && hf_MemberPublicPageID > 0)
-            {
-                member_page.PublicPage_ID = (int)hf_MemberPublicPageID;
-                memberManager.EditMemberPublicPage(member_page);
-            }
-            else
-            {
-                memberManager.AddMemberPublicPage(member_page);
-            }
-
-
-
-
-            //-------------------------------------------------------------------------------------
-            //genreate random number
-            Random ran = new Random();
-            //-------------------------------------------------------------------------------------
-
-
-            return RedirectPermanent("/music_playlist/" + PPPlaylistDD + "?rnum=" + ran.Next(1, 200000).ToString());
-        }
-        */
-        #endregion
-        //*********************************************************************************************************
-
-
-
-
-
-
         //*********************************************************************************************************
         public ActionResult DeleteLikedPlaylist()
         {
@@ -2008,5 +1685,6 @@ namespace hypster.Areas.apps.Controllers
         }
         //*********************************************************************************************************
 
+        
     }
 }
