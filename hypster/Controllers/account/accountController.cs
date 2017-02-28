@@ -267,9 +267,9 @@ namespace hypster.Controllers
             {
                 if (curr_user.username != "" && curr_user.password != "")
                 {
-                    contact = new Models.Contact { email = curr_user.email };
-                    //contact = new Models.Contact { email = "richardw@junemedia.com" };
-                    tags = new Models.Tags { username = curr_user.username, password = curr_user.password };
+                    contact = new Contact { email = curr_user.email };
+                    //contact = new Contact { email = "richardw@junemedia.com" };
+                    tags = new Tags { username = curr_user.username, password = curr_user.password };
                     email = new SendEMail { campaign_id = "2792210", content_id = "2086466", contact = contact, tags = tags };
                 
                     sendEmail.SendPasswordRecoveryEMail(email);
