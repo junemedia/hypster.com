@@ -6475,6 +6475,7 @@
     <Content Include="Views\breaking\pr_GetLatestNews.cshtml" />
     <Content Include="Views\hypAds\yieldbot.cshtml" />
     <Content Include="Views\account\ForgotPasswordFail.cshtml" />
+    <Content Include="Views\hypster\add_to_address_book.cshtml" />
     <None Include="Web.hypster.com.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
