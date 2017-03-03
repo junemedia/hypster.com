@@ -208,7 +208,7 @@ namespace hypster.Areas.apps.Controllers
         {
             // 1.general declarations
             //-----------------------------------------------------------------------------------------------------
-            hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
+            //hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
             hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
             //-----------------------------------------------------------------------------------------------------
 
@@ -230,11 +230,10 @@ namespace hypster.Areas.apps.Controllers
                 if (curr_user.username != "" && curr_user.password != "")
                 {
                     contact = new Contact { email = curr_user.email };
-                    //contact = new Contact { email = "richardw@junemedia.com" };
                     tags = new Tags { username = curr_user.username, password = curr_user.password };
                     email = new SendEMail { campaign_id = "2792210", content_id = "2086466", contact = contact, tags = tags };
 
-                    sendEmail.SendPasswordRecoveryEMail(email);
+                    sendEmail.sendMailJson(email);
                     return RedirectToAction("ForgotPasswordDone", "appAccount");
                     ///return RedirectToAction("ForgotPasswordDone", "appAccount", new { s_code = email.response.status_code, s_desc = email.response.status_description });
                 }
@@ -298,7 +297,7 @@ namespace hypster.Areas.apps.Controllers
         {
             // 1.general declarations
             //-----------------------------------------------------------------------------------------------------
-            hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
+            //hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
             hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
             //-----------------------------------------------------------------------------------------------------
 
@@ -426,7 +425,7 @@ namespace hypster.Areas.apps.Controllers
             //-----------------------------------------------------------------------------------------------------
             hypster_tv_DAL.memberManagement member_manager = new hypster_tv_DAL.memberManagement();
             hypster_tv_DAL.Hypster_Entities hyDB = new hypster_tv_DAL.Hypster_Entities();
-            hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
+            //hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
             //-----------------------------------------------------------------------------------------------------
 
 
@@ -553,7 +552,28 @@ namespace hypster.Areas.apps.Controllers
                         //need to add email verification logic
                         //-----------------------------------------------------------------------------------
                         FormsAuthentication.SetAuthCookie(username, false);
-                        emailManager.SendWelcomeEmail("Welcome to Hypster", MEMBER_TO_ADD.email);
+                        //emailManager.SendWelcomeEmail("Welcome to Hypster", MEMBER_TO_ADD.email);
+                        Code.SendMails sendEmail = new Code.SendMails();
+                        Response resp = new Response();
+                        SendEMail sendWelcome = new SendEMail();
+                        Contact contact;
+                        Tags tags;
+                        Random rand = new Random();
+
+                        try
+                        {
+                            contact = new Contact { email = MEMBER_TO_ADD.email };
+                            tags = new Tags { email = MEMBER_TO_ADD.email, rand = rand.Next(1, 100000).ToString() };
+                            sendWelcome = new SendEMail { campaign_id = "2855847", content_id = "2141739", contact = contact, tags = tags };
+                            sendEmail.sendMailJson(sendWelcome);
+                        }
+                        catch (Exception ex)
+                        {
+                            string tmp_str = ex.Message.ToString();
+                            resp.status_description += "\r\n\r\n" + tmp_str;
+                            sendWelcome.response.status_description = resp.status_description;
+                        }
+                        //-----------------------------------------------------------------------------------
                         return View("Register_Thanks");
 
                     }

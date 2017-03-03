@@ -9,12 +9,12 @@ namespace hypster.Code
     {
         HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create("http://api.maropost.com/accounts/694/emails/deliver.json?auth_token=bc1bb40f4beaf7e65b6b0a13d73977674380eb2f");
         HttpWebResponse httpResponse = null;
-        
-        public void SendPasswordRecoveryEMail(SendEMail email)
+
+        public void sendMailJson(SendEMail email)
         {
             Response response = new Response();
             httpWebRequest.ContentType = "application/json";
-            httpWebRequest.Method = "POST";                
+            httpWebRequest.Method = "POST";
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
                 string json = new JavaScriptSerializer().Serialize(new

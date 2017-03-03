@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Recaptcha;
 using System.Web.Security;
-
+using hypster.Models;
 
 namespace hypster.Areas.apps.Controllers
 {
@@ -57,9 +57,26 @@ namespace hypster.Areas.apps.Controllers
                 HypDB.SaveChanges();
 
 
-                hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
-                emailManager.SendContactUsEmail("noah@baronsmedia.com", "viktor@baronsmedia.com", "jim@baronsmedia.com", Subject, YourEmail, Message);
-
+                //hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
+                //emailManager.SendContactUsEmail("noah@baronsmedia.com", "viktor@baronsmedia.com", "jim@baronsmedia.com", Subject, YourEmail, Message);
+                Code.SendMails sendEmail = new Code.SendMails();
+                Response resp = new Response();
+                SendEMail sendContactUs = new SendEMail();
+                Contact contact;
+                Tags tags;
+                try
+                {
+                    contact = new Contact { email = "info@hypster.com" };
+                    tags = new Tags { email = YourEmail, subject = Subject, message = Message };
+                    sendContactUs = new SendEMail { campaign_id = "2863827", content_id = "2149018", contact = contact, tags = tags };
+                    sendEmail.sendMailJson(sendContactUs);
+                }
+                catch (Exception ex)
+                {
+                    string tmp_str = ex.Message.ToString();
+                    resp.status_description += "\r\n\r\n" + tmp_str;
+                    sendContactUs.response.status_description = resp.status_description;
+                }
 
                 return View("Contacts_Thanks");
             }
