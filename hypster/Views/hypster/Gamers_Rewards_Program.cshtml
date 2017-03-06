@@ -1,51 +1,43 @@
 ﻿@using Recaptcha;
 @{
     ViewBag.Title = "Gamers Rewards Program";
-
     ViewBag.LinkTag = "<link rel=\"alternate\" media=\"only screen and (max-width: 640px)\" href=\"http://hypster.com/apps/appHypster/Gamers_Rewards_Program\" >";
 }
 
 <div class="ContactUsCont">
-    <div style="float:left; margin-bottom:20px; width:650px; ">
+    <div style="float:left; margin-bottom:20px; width:650px;">
         @using (Html.BeginForm())
         {
-                            
             <div style="float:right; width:100%;">
-                
-                
                 <div style="float:right; width:640px; height:33px; border:1px solid #DEDEDE; background-color:#FFFFFF; border:1px solid #000000; border-radius:2px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                     <div style="float:left; margin:3px 0 0 0; text-align:left; color:#2f5262;">&nbsp;NAME:</div>
-                    <input type="text" name="YourName" id="YourName" value="@ViewBag.YourName" style="float:left; outline: none; width:330px; height:22px; margin:2px 0 0 5px; background-color:#FFFFFF;  border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  />
+                    <input type="text" name="YourName" id="YourName" value="@ViewBag.YourName" style="float:left; outline: none; width:330px; height:22px; margin:2px 0 0 5px; background-color:#FFFFFF;  border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
                 </div>
 
                 <div style="float:right; width:640px; height:33px; margin:5px 0 0 0; border:1px solid #DEDEDE; background-color:#FFFFFF; border:1px solid #000000; border-radius:2px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                     <div style="float:left; margin:3px 0 0 0; text-align:right; color:#2f5262;">&nbsp;TWITCH USERNAME:</div>
-                    <input type="text" name="TwitchName" id="TwitchName" value="@ViewBag.TwitchName" style="float:left; outline: none; width:330px; height:22px; margin:2px 0 0 5px; background-color:#FFFFFF;  border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  />
+                    <input type="text" name="TwitchName" id="TwitchName" value="@ViewBag.TwitchName" style="float:left; outline: none; width:330px; height:22px; margin:2px 0 0 5px; background-color:#FFFFFF;  border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
                 </div>
 
                 <div style="float:right; width:640px; height:33px; margin:5px 0 0 0; border:1px solid #DEDEDE; background-color:#FFFFFF; border:1px solid #000000; border-radius:2px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                     <div style="float:left; margin:3px 0 0 0; text-align:right; color:#2f5262;">&nbsp;HYPSTER USERNAME:</div>
-                    <input type="text" name="HypsterName" id="HypsterName" value="@ViewBag.HypsterName" style="float:left; outline: none; width:330px; height:22px; margin:2px 0 0 5px; background-color:#FFFFFF;  border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  />
+                    <input type="text" name="HypsterName" id="HypsterName" value="@ViewBag.HypsterName" style="float:left; outline: none; width:330px; height:22px; margin:2px 0 0 5px; background-color:#FFFFFF;  border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
                 </div>
 
-            
                 <div style="float:right; width:640px; height:33px; margin:5px 0 0 0; border:1px solid #DEDEDE; background-color:#FFFFFF; border:1px solid #000000; border-radius:2px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                     <div style="float:left; margin:3px 0 0 0; text-align:right; color:#2f5262;">&nbsp;EMAIL:</div>
-                    <input type="text" name="YourEmail" id="YourEmail" value="@ViewBag.YourEmail" style="float:left; outline: none; width:330px; height:22px; margin:2px 0 0 5px; background-color:#FFFFFF;  border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  />
+                    <input type="text" name="YourEmail" id="YourEmail" value="@ViewBag.YourEmail" style="float:left; outline: none; width:330px; height:22px; margin:2px 0 0 5px; background-color:#FFFFFF;  border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
                 </div>
-
 
                 <div style="float:right; width:640px; height:33px; margin:5px 0 0 0; border:1px solid #DEDEDE; background-color:#FFFFFF; border:1px solid #000000; border-radius:2px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                     <div style="float:left;margin:3px 0 0 0; text-align:right; color:#2f5262;">&nbsp;CONFIRM EMAIL:</div>
-                    <input type="text" name="ConfEmail" id="ConfEmail" value="@ViewBag.ConfEmail" style="float:left; outline: none; width:330px; height:22px; margin:2px 0 0 5px; background-color:#FFFFFF;  border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  />
+                    <input type="text" name="ConfEmail" id="ConfEmail" value="@ViewBag.ConfEmail" style="float:left; outline: none; width:330px; height:22px; margin:2px 0 0 5px; background-color:#FFFFFF;  border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;" />
                 </div>
-                
 
                 <div style="float:right; width:640px; height:230px; margin:5px 0 0 0; border:1px solid #DEDEDE; background-color:#FFFFFF; border:1px solid #000000; border-radius:2px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                     <div style="float:left; margin:3px 0 0 0; text-align:right; color:#2f5262;">&nbsp;MESSAGE:</div>
-                    <textarea type="text" name="Message" id="Message" style="float:left; outline: none; width:420px; height:120px; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;"  >@ViewBag.Message</textarea>
+                    <textarea type="text" name="Message" id="Message" style="float:left; outline: none; width:98%; height:85%; margin:2px 0 0 5px; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">@ViewBag.Message</textarea>
                 </div>
-
 
                 <div style="float:left; width:100%;">
                     <div style="float:left; margin:10px 0 0 8px;">
@@ -55,42 +47,27 @@
                         <div style="background-color:#CC0000; color:#FFFFFF;">@ViewBag.ServerMessage</div>
                     </div>
                 </div>
-
-
             </div>
-                            
-        
+
             <div style="float:right; width:100%; text-align:right; margin-top:5px;">
                 <input type="submit" value="SUBMIT" style="width:250px; height:30px; background-color:#47bb90; border:2px solid #47bb90; border-radius:3px; color:#FFFFFF; font-family:'Lato', sans-serif; font-size:16px;" />
             </div>
-            
-            
-            
+
             if (ViewBag.Msg != "")
             {
                 <div style="float:left; width:100%; color:#CC0000; font-size:16px; margin:0 0 10px 0;">
                     @Html.Raw(ViewBag.Msg)
                 </div>
             }
-            
-            
         }
     </div>
 
-
-
-
     <div style="float:right; width:300px; margin-right:20px;">
-
         <div style="float:left; width:300px; height:250px; ">
             <div id="SideAd2">
                 @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
             </div>
             <!-- 06_25 -->
-                        
         </div>
-
     </div>
-                
-
 </div>

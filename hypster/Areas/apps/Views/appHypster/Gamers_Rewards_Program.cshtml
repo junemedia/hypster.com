@@ -2,91 +2,65 @@
 @{
     ViewBag.Title = "Gamers Rewards Program";
     Layout = "~/Areas/apps/Views/Shared/_Layout_Apps.cshtml";
-
     ViewBag.LinkTag = "<link rel=\"canonical\" href=\"http://hypster.com/hypster/Gamers_Rewards_Program\" >";
 }
 
-
-
-
-
-<!--div style=" float:left; width:100%; height:219px; background:url(/imgs/about/game_rewards_bottom.png) no-repeat; margin:0 0 0 0;"></div-->
-
-
-<img alt="" src="/imgs/about/game_rewards_bottom.png" style=" float:left; width:100%;" />
-
+<img alt="" src="/imgs/about/game_rewards_bottom.png" style="float:left; width:100%;" />
 
 <div class="ContactUsCont">
-
-  
     <div class="GMRwdsPrCH">
-        @using (Html.BeginForm())
-        {                   
-            <div style=" float:right; width:100%;">
-                
-                
-                <div class="GMR_name">
-                    <div>&nbsp;NAME:</div>
-                    <input type="text" name="YourName" id="YourName" value="@ViewBag.YourName" />
-                </div>
-
-                <div class="GMR_twitch">
-                    <div>&nbsp;TWITCH USERNAME:</div>
-                    <input type="text" name="TwitchName" id="TwitchName" value="@ViewBag.TwitchName" />
-                </div>
-
-                <div class="GMR_hypname">
-                    <div>&nbsp;HYPSTER USERNAME:</div>
-                    <input type="text" name="HypsterName" id="HypsterName" value="@ViewBag.HypsterName" />
-                </div>
-
-            
-                <div class="GMR_email">
-                    <div>&nbsp;EMAIL:</div>
-                    <input type="text" name="YourEmail" id="YourEmail" value="@ViewBag.YourEmail" />
-                </div>
-
-
-                <div class="GMR_emailC">
-                    <div>&nbsp;CONFIRM EMAIL:</div>
-                    <input type="text" name="ConfEmail" id="ConfEmail" value="@ViewBag.ConfEmail" />
-                </div>
-                
-
-                <div class="GMR_mgs">
-                    <div>&nbsp;MESSAGE:</div>
-                    <textarea type="text" name="Message" id="Message" >@ViewBag.Message</textarea>
-                </div>
-
-
-                <div style=" float:left; width:100%;">
-                    <div style=" float:left; margin:10px 0 0 8px;">
-                        @Html.Raw(Html.GenerateCaptcha())
-                        @Html.ValidationMessage("recaptcha")
-                        <br />
-                        <div style=" background-color:#CC0000; color:#FFFFFF;">@ViewBag.ServerMessage</div>
-                    </div>
-                </div>
-
+    @using (Html.BeginForm())
+    {
+        <div style="float:right; width:100%;">
+            <div class="GMR_name">
+                <div>&nbsp;NAME:</div>
+                <input type="text" name="YourName" id="YourName" value="@ViewBag.YourName" />
             </div>
-                            
-        
-            <div class="GMR_SubCH">
-                <input type="submit" value="SUBMIT" class="GMR_SubBTN" />
+
+            <div class="GMR_twitch">
+                <div>&nbsp;TWITCH USERNAME:</div>
+                <input type="text" name="TwitchName" id="TwitchName" value="@ViewBag.TwitchName" />
             </div>
-            
-            
-            
-            if (ViewBag.Msg != "")
-            {
-                <div style=" float:left; width:100%; color:#CC0000; font-size:16px; margin:0 0 10px 0;">
-                    @Html.Raw(ViewBag.Msg)
+
+            <div class="GMR_hypname">
+                <div>&nbsp;HYPSTER USERNAME:</div>
+                <input type="text" name="HypsterName" id="HypsterName" value="@ViewBag.HypsterName" />
+            </div>
+
+            <div class="GMR_email">
+                <div>&nbsp;EMAIL:</div>
+                <input type="text" name="YourEmail" id="YourEmail" value="@ViewBag.YourEmail" />
+            </div>
+
+            <div class="GMR_emailC">
+                <div>&nbsp;CONFIRM EMAIL:</div>
+                <input type="text" name="ConfEmail" id="ConfEmail" value="@ViewBag.ConfEmail" />
+            </div>
+
+            <div class="GMR_mgs">
+                <div>&nbsp;MESSAGE:</div>
+                <textarea type="text" name="Message" id="Message">@ViewBag.Message</textarea>
+            </div>
+
+            <div style="float:left; width:100%;">
+                <div style="float:left; margin:10px 0 0 8px;">
+                    @Html.Raw(Html.GenerateCaptcha())
+                    @Html.ValidationMessage("recaptcha")
+                    <br />
+                    <div style="background-color:#CC0000; color:#FFFFFF;">@ViewBag.ServerMessage</div>
                 </div>
-            }
-            
-            
+            </div>
+        </div>
+
+        <div class="GMR_SubCH">
+            <input type="submit" value="SUBMIT" class="GMR_SubBTN" />
+        </div>
+        if (ViewBag.Msg != "")
+        {
+            <div style="float:left; width:100%; color:#CC0000; font-size:16px; margin:0 0 10px 0;">
+                @Html.Raw(ViewBag.Msg)
+            </div>
         }
+    }
     </div>
-
-
 </div>

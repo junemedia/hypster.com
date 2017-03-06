@@ -7,6 +7,10 @@ namespace hypster.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string username { get; set; }
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string name { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string twitchname { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string password { get; set; }
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string email { get; set; }

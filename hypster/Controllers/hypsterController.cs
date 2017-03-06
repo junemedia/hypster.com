@@ -15,7 +15,11 @@ namespace hypster.Controllers
     public class hypsterController : ControllerBase
     {
         private string fromPassword = "aLameda#503";
-
+        Code.SendMails sendEmail = new Code.SendMails();
+        Response resp = new Response();
+        SendEMail sendContactUs = new SendEMail();
+        Contact contact;
+        Tags tags;
 
         //
         // GET: /hypster/
@@ -65,11 +69,6 @@ namespace hypster.Controllers
 
                 //hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
                 //emailManager.SendContactUsEmail("noah@baronsmedia.com", "viktor@baronsmedia.com", "jim@baronsmedia.com", Subject, YourEmail, Message);
-                Code.SendMails sendEmail = new Code.SendMails();
-                Response resp = new Response();
-                SendEMail sendContactUs = new SendEMail();
-                Contact contact;
-                Tags tags;
                 try
                 {
                     contact = new Contact { email = "info@hypster.com" };
@@ -156,8 +155,21 @@ namespace hypster.Controllers
             {
                 if (YourEmail == ConfEmail)
                 {
-                    hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
-                    emailManager.SendGamersRewardsEmail(YourName, TwitchName, HypsterName, YourEmail, ConfEmail, Message);
+                    //hypster_tv_DAL.Email_Manager emailManager = new hypster_tv_DAL.Email_Manager();
+                    //emailManager.SendGamersRewardsEmail(YourName, TwitchName, HypsterName, YourEmail, ConfEmail, Message);                    
+                    try
+                    {
+                        contact = new Contact { email = "info@hypster.com" };
+                        tags = new Tags { name = YourName, twitchname = TwitchName, username = HypsterName, email = YourEmail, message = Message };
+                        sendContactUs = new SendEMail { campaign_id = "2889753", content_id = "2165431", contact = contact, tags = tags };
+                        sendEmail.sendMailJson(sendContactUs);
+                    }
+                    catch (Exception ex)
+                    {
+                        string tmp_str = ex.Message.ToString();
+                        resp.status_description += "\r\n\r\n" + tmp_str;
+                        sendContactUs.response.status_description = resp.status_description;
+                    }
 
                     ViewBag.Msg = "<div style='color:#3fbc91; font-size:22px;'>THANKS!</div>WELL CONTACT YOU WITH MORE INFORMATION.<br/> MAKE SURE TO CHECK YOUR SPAM FOLDER IF YOU DON'T HEAR FROM US IN 24 HOURS. <div style='color:#d4ae52;'>HAPPY STREAMING</div>";
                 }
