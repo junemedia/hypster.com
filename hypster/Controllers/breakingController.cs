@@ -105,18 +105,26 @@ namespace hypster.Controllers
         public ActionResult GetBreakingHomeWidget_PR()
         {
             hypster_tv_DAL.newsManagement newsManager = new hypster_tv_DAL.newsManagement();
-
-
             List<hypster_tv_DAL.newsPost> posts_list = new List<hypster_tv_DAL.newsPost>();
             posts_list = newsManager.GetLatestNews_cache();
-
-
             return View(posts_list);
         }
 
 
 
-
+        [OutputCache(Duration = 12)]
+        public ActionResult GetBreakingGenre(string genre)
+        {
+            hypster_tv_DAL.newsManagement newsManager = new hypster_tv_DAL.newsManagement();
+            List<hypster_tv_DAL.newsPost> posts_list = new List<hypster_tv_DAL.newsPost>();
+            posts_list = newsManager.GetLatestNewsOnGenre_cache(genre).ToList();
+            
+            ViewBag.Title = genre;
+            ViewBag.ID = newsManager.GetGenreIdByLabel(genre)[0];
+            ViewBag.Length = posts_list.Count;
+            ViewBag.Width = 212 * posts_list.Count;
+            return View(posts_list);
+        }
 
 
         //[OutputCache(Duration = 60)]

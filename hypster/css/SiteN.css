@@ -287,7 +287,7 @@
 
 .homeBreakingWidget
 {
-    float:left; width:735px; height:280px; margin:auto;
+    float:left; width:735px; height:320px; margin:auto;
 }
 
 .homeGamehype
@@ -329,7 +329,7 @@
 
 .breakingMCH_Home
 {
-    width:100%; height:300px; overflow:hidden;
+    width:100%; height:320px; overflow:hidden;
 }
 
 
@@ -359,14 +359,20 @@
     background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat -44px 100px;
 }
 
-.breakingMCH_Home #newsContHH1
+.breakingMCH_Home #newsContHH1,
+.breakingMCH_Home .newsContHH1
 {
     float:left; width:86%; height:260px; overflow:hidden;
 }
 
 .breakingMCH_Home #newsContHHInn
 {
-    position:relative; width:3183px; height:250px; top:0px; left:0;
+    position:relative; height:250px; top:0px; left:0; width:3183px;
+}
+
+.breakingMCH_Home .newsContHHInn
+{
+    position:relative; height:250px; top:0px; left:0;
 }
 
 .breakingMCH_Home .brkngItm

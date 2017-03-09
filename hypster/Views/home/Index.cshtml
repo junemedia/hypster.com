@@ -20,26 +20,18 @@
     @Html.Action("Get_Home_Slideshow", "home")
 </div>
 
-<div class="sld1_middleCont">
-    <button onclick="window.location='/listen';">
-        <div class="head11">LISTEN WITHOUT LIMITS</div>
-    </button>
-    <button onclick="window.location='/create/playlist';">
-        <h1 class="head11" style="margin:0px;">FREE MUSIC PLAYLIST</h1>
-    </button>
-    <button onclick="window.location='/create/player';">
-        <div class="head11">TUMBLR MUSIC PLAYER</div>
-    </button>
-</div>
-
-<div class="homePopRStations">
-    @Html.Action("PopularRadioStations", "popular")
-</div>
-
 <div class="homeBreakingWidget">
     @Html.Action("GetBreakingHomeWidget_PR", "breaking")
 </div>
 
-<div class="homeGamehype">
-   @Html.Action("GetGamehypeHomeWidget_PR", "Gamehype")
+<div class="homeBreakingWidget">
+    @Html.Action("GetBreakingGenre", "breaking", new { genre = "Indie Pop" })
+</div>
+
+<div class="homeBreakingWidget">
+    @Html.Action("GetBreakingGenre", "breaking", new { genre = "Hip Hop and Rap" })
+</div>
+
+<div class="homeBreakingWidget">
+    @Html.Action("GetBreakingGenre", "breaking", new { genre = "Rock" })
 </div>

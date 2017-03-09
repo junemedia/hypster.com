@@ -90,7 +90,7 @@
     </Reference>
     <Reference Include="hypster_tv_DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\class.hypster.com\bin\Release\hypster_tv_DAL.dll</HintPath>
+      <HintPath>..\..\admin.hypster.com\hypster_admin\bin\hypster_tv_DAL.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Threading.Tasks">
@@ -5992,6 +5992,7 @@
     </Content>
     <Content Include="bin\BotInfo.netmodule" />
     <Content Include="Areas\apps\Views\appAccount\ForgotPasswordFail.cshtml" />
+    <Content Include="Areas\apps\Views\appBreaking\GetBreakingGenre.cshtml" />
     <None Include="Properties\PublishProfiles\hypster.com.pubxml" />
     <None Include="Properties\PublishProfiles\stage.hypster.com.pubxml" />
     <None Include="Properties\PublishProfiles\dev.hypster.com.pubxml" />
@@ -6476,6 +6477,7 @@
     <Content Include="Views\hypAds\yieldbot.cshtml" />
     <Content Include="Views\account\ForgotPasswordFail.cshtml" />
     <Content Include="Views\hypster\add_to_address_book.cshtml" />
+    <Content Include="Views\breaking\GetBreakingGenre.cshtml" />
     <None Include="Web.hypster.com.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

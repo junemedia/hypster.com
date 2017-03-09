@@ -4,13 +4,13 @@
     int OFFSET = 2;
 }
 
-<div class="breakingMCH_Home" >
+<div class="breakingMCH_Home">
     <div class="hmBrkTitle" onclick="window.location='/breaking';">
         NEWS
     </div>
 
     <div class="breakingMCH_MC">
-        <div class="arrLeft" onclick="MoveRight()">&nbsp;</div>
+        <div class="arrLeft" onclick="MoveRightMain()">&nbsp;</div>
         <div id="newsContHH1">
             <div id="newsContHHInn">
             @for (int i = 0; i < 15; i++)
@@ -26,14 +26,14 @@
             }
             </div>
         </div>
-        <div class="arrRight" onclick="MoveLeft()">&nbsp;</div>
+        <div class="arrRight" onclick="MoveLeftMain()">&nbsp;</div>
     </div>
 </div>
 
 <script type="text/javascript">
     var SRL_POS = @(OFFSET);
     $("#newsContHH1").scrollLeft(SRL_POS);
-    function MoveLeft() {
+    function MoveLeftMain() {
         SRL_POS += 636;
         if(SRL_POS > 3181)
         {
@@ -42,7 +42,7 @@
         $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
     }
 
-    function MoveRight() {
+    function MoveRightMain() {
         SRL_POS -= 636;
         if(SRL_POS < 0)
         {

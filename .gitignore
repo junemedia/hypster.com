@@ -5,11 +5,7 @@ Backup
 .nuget
 hypster.v12.suo
 UpgradeLog.htm
-hypster/imgs/home/home_slideshow/
-hypster/imgs/i_posts/
-
-
-
+hypster/imgs/
 Web.config
 
 package.config

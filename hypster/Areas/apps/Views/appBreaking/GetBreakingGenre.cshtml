@@ -1,0 +1,51 @@
+﻿@model List<hypster_tv_DAL.newsPost>
+@{
+    Layout = null;
+}
+
+<div class="breakingMCH_Home">
+    <div class="hmBrkTitle" onclick="window.location='/apps/appBreaking';">@ViewBag.Title</div>
+    <div class="breakingMCH_MC">
+        <div id='@ViewBag.ID' class="newsContHH1">
+            <div class="newsContHHInn">
+            @*@for (int i = 0; i < 15; i++)*@
+            @for (int i = 0; i < ViewBag.Length; i++)
+            {
+                if (i < Model.Count)
+                {
+                            <div class="brkngItm" onclick="window.location='/apps/appBreaking/details/@Model[i].post_guid';">
+                                <div class="brkngItmPost" style="background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
+                                <div class="txtBreakingT">@Model[i].post_title</div>
+                                <div class="txtBreakingD">@Model[i].post_short_content</div>
+                            </div>
+                        }
+                    }
+            </div>
+        </div>
+        <div class="arrLeft">&nbsp;</div>
+        <div class="arrRight">&nbsp;</div>
+    </div>
+    <script type="text/javascript">
+    var SRL_POS_@ViewBag.ID = 2;
+    $("#@ViewBag.ID").scrollLeft(SRL_POS_@ViewBag.ID);
+    $(".breakingMCH_Home #@ViewBag.ID .newsContHHInn").width(@ViewBag.Width);
+    if ($(".breakingMCH_Home #@ViewBag.ID .newsContHHInn").width() <= 636)
+    {
+        $(".breakingMCH_Home #@ViewBag.ID .newsContHHInn").parent().siblings().css("visibility","hidden");
+    }
+    $(document).ready(function(){
+        $("#@ViewBag.ID").siblings("div.arrLeft").click(function () {
+            SRL_POS_@ViewBag.ID -= 413;
+            if (SRL_POS_@ViewBag.ID < 0)
+                SRL_POS_@ViewBag.ID = 0;
+            $("#@ViewBag.ID").animate({ scrollLeft: SRL_POS_@ViewBag.ID }, 700);
+        }),
+        $("#@ViewBag.ID").siblings("div.arrRight").click(function () {
+            SRL_POS_@ViewBag.ID += 413;
+            if (SRL_POS_@ViewBag.ID > @ViewBag.Width)
+            SRL_POS_@ViewBag.ID = @ViewBag.Width;
+            $("#@ViewBag.ID").animate({ scrollLeft: SRL_POS_@ViewBag.ID }, 700);
+        })
+    });
+</script>
+</div>

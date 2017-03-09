@@ -28,7 +28,7 @@
             
                 for (int i = 0; i < Model.Count; i++)
                 {
-                    <div class="brkngItm" onclick="window.location='/apps/appBreaking/details/@Model[i].post_guid';" style="background-image:url('http://news.hypster.com/imgs/i_posts/@Model[i].post_image');">
+                    <div class="brkngItm" onclick="window.location='/apps/appBreaking/details/@Model[i].post_guid';" style="background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');">
                         <div>@Model[i].post_title</div>
                     </div>
                 

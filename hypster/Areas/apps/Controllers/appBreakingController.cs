@@ -90,12 +90,8 @@ namespace hypster.Areas.apps.Controllers
         public ActionResult GetPopularNewsTags_PR()
         {
             hypster_tv_DAL.TagManagement tagManager = new hypster_tv_DAL.TagManagement();
-
-
             List<hypster_tv_DAL.sp_Tag_GetPopularNewsTags_Result> popular_news_tags_list = new List<hypster_tv_DAL.sp_Tag_GetPopularNewsTags_Result>();
             popular_news_tags_list = tagManager.GetPopularNewsTags();
-
-
             return View(popular_news_tags_list);
         }
 
@@ -108,12 +104,24 @@ namespace hypster.Areas.apps.Controllers
         public ActionResult GetBreakingHomeWidget_PR()
         {
             hypster_tv_DAL.newsManagement newsManager = new hypster_tv_DAL.newsManagement();
-
-
             List<hypster_tv_DAL.newsPost> posts_list = new List<hypster_tv_DAL.newsPost>();
             posts_list = newsManager.GetLatestNews_cache();
+            return View(posts_list);
+        }
 
 
+
+
+        [OutputCache(Duration = 12)]
+        public ActionResult GetBreakingGenre(string genre)
+        {
+            hypster_tv_DAL.newsManagement newsManager = new hypster_tv_DAL.newsManagement();
+            List<hypster_tv_DAL.newsPost> posts_list = new List<hypster_tv_DAL.newsPost>();
+            posts_list = newsManager.GetLatestNewsOnGenre_cache(genre).ToList();
+            ViewBag.Title = genre;
+            ViewBag.ID = newsManager.GetGenreIdByLabel(genre)[0];
+            ViewBag.Length = posts_list.Count;
+            ViewBag.Width = 212 * posts_list.Count;            
             return View(posts_list);
         }
 
@@ -126,16 +134,10 @@ namespace hypster.Areas.apps.Controllers
         public ActionResult Tags(string id)
         {
             hypster_tv_DAL.TagManagement tagManager = new hypster_tv_DAL.TagManagement();
-
-
             hypster_tv_DAL.Tag curr_tag = new hypster_tv_DAL.Tag();
             curr_tag = tagManager.GetTagByName(id.Replace("+", " "));
-
-
             List<hypster_tv_DAL.newsPost> posts_list = new List<hypster_tv_DAL.newsPost>();
             posts_list = tagManager.GetNewsByTagId(curr_tag.Tag_ID);
-
-
             return View(posts_list);
         }
 
