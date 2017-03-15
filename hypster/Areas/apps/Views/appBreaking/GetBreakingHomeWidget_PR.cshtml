@@ -13,40 +13,77 @@
             {
                 if (i < Model.Count)
                 {
-                    <div class="brkngItm" onclick="window.location='/apps/appBreaking/details/@Model[i].post_guid';">
+                    <div class="brkngItmBlk" onclick="window.location='/apps/appBreaking/details/@Model[i].post_guid';">
                         <div class="brkngItmPost" style="background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
-                        <div class="txtBreakingT">@Model[i].post_title</div>
-                        <div class="txtBreakingD">@Model[i].post_short_content</div>
+                        <div class="brkngItmTitle">@Model[i].post_title</div>
                     </div>
                 }
             }
             </div>
         </div>
-        <div class="arrLeft" onclick="MoveRightMain()">&nbsp;</div>
-        <div class="arrRight" onclick="MoveLeftMain()">&nbsp;</div>
+        <div class="arrLeft">&nbsp;</div>
+        <div class="arrRight">&nbsp;</div>
     </div>
 </div>
 
 <script type="text/javascript">
-    var SRL_POS = @(OFFSET);
-    $("#newsContHH1").scrollLeft(SRL_POS);
-    function MoveLeftMain() 
-    {
-        SRL_POS += 413;
-        if(SRL_POS > 3744)
+    $(document).ready(function(){
+        var SRL_POS = @(OFFSET);
+        var curr_width = $(window).width();
+        $("#newsContHH1").scrollLeft(SRL_POS);
+        var setUnit = 0;
+        var setWidth = 0;
+        if (curr_width > 1024)
         {
-            SRL_POS = 3744;
+            //appSite2
+            setWidth = 1040;
+            setUnit = 5;
         }
-        $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
-    }
-
-    function MoveRightMain() 
-    {
-        SRL_POS -= 413;
-        if(SRL_POS < 0)
+        else
         {
-            SRL_POS = 0;
+            if (curr_width < 420)
+            {
+                //appSite0
+                setWidth = 358;
+                setUnit = 2;
+            }
+            else if (curr_width >= 420 && curr_width <= 650)
+            {
+                //appSite05
+                setWidth = 600;
+                setUnit = 3;
+            }
+            else
+            {
+                //appSite1
+                setWidth = 800;
+                setUnit = 4;
+            }
         }
-        $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
-    }
+        var maxWidth = 15 * setWidth / setUnit;
+        if ($("#newsContHHInn").width() <= setWidth)
+        {
+            $("#newsContHHInn").parent().siblings().css("visibility","hidden");
+        }
+        $("#newsContHH1").siblings("div.arrLeft").click(function () {
+            SRL_POS -= setWidth;
+            $("#newsContHH1").siblings("div.arrRight").css("visibility","visible");
+            if (SRL_POS < 0) 
+            {
+                SRL_POS = 0;            
+                $(this).css("visibility","hidden");
+            }
+            $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
+        }),
+        $("#newsContHH1").siblings("div.arrRight").click(function () {
+            SRL_POS += setWidth;
+            $("#newsContHH1").siblings("div.arrLeft").css("visibility","visible");
+            if (SRL_POS > maxWidth)
+            {
+                SRL_POS = maxWidth;
+                $(this).css("visibility","hidden");
+            }
+            $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
+        })
+    });
 </script>

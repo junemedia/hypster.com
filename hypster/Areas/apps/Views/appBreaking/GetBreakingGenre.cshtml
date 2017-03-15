@@ -8,44 +8,81 @@
     <div class="breakingMCH_MC">
         <div id='@ViewBag.ID' class="newsContHH1">
             <div class="newsContHHInn">
-            @*@for (int i = 0; i < 15; i++)*@
             @for (int i = 0; i < ViewBag.Length; i++)
             {
                 if (i < Model.Count)
                 {
-                            <div class="brkngItm" onclick="window.location='/apps/appBreaking/details/@Model[i].post_guid';">
-                                <div class="brkngItmPost" style="background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
-                                <div class="txtBreakingT">@Model[i].post_title</div>
-                                <div class="txtBreakingD">@Model[i].post_short_content</div>
-                            </div>
-                        }
-                    }
+                    <div class="brkngItmGenre" onclick="window.location='/apps/appBreaking/details/@Model[i].post_guid';">
+                        <div class="brkngItmPost" style="background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
+                        <div class="brkngItmTitle">@Model[i].post_title</div>
+                    </div>
+                }
+            }
             </div>
         </div>
         <div class="arrLeft">&nbsp;</div>
         <div class="arrRight">&nbsp;</div>
     </div>
     <script type="text/javascript">
-    var SRL_POS_@ViewBag.ID = 2;
-    $("#@ViewBag.ID").scrollLeft(SRL_POS_@ViewBag.ID);
-    $(".breakingMCH_Home #@ViewBag.ID .newsContHHInn").width(@ViewBag.Width);
-    if ($(".breakingMCH_Home #@ViewBag.ID .newsContHHInn").width() <= 636)
-    {
-        $(".breakingMCH_Home #@ViewBag.ID .newsContHHInn").parent().siblings().css("visibility","hidden");
-    }
-    $(document).ready(function(){
-        $("#@ViewBag.ID").siblings("div.arrLeft").click(function () {
-            SRL_POS_@ViewBag.ID -= 413;
-            if (SRL_POS_@ViewBag.ID < 0)
-                SRL_POS_@ViewBag.ID = 0;
-            $("#@ViewBag.ID").animate({ scrollLeft: SRL_POS_@ViewBag.ID }, 700);
-        }),
-        $("#@ViewBag.ID").siblings("div.arrRight").click(function () {
-            SRL_POS_@ViewBag.ID += 413;
-            if (SRL_POS_@ViewBag.ID > @ViewBag.Width)
-            SRL_POS_@ViewBag.ID = @ViewBag.Width;
-            $("#@ViewBag.ID").animate({ scrollLeft: SRL_POS_@ViewBag.ID }, 700);
-        })
-    });
-</script>
+        $(document).ready(function(){
+            var SRL_POS_@ViewBag.ID = 0;
+            var curr_width = $(window).width();
+            $("#@ViewBag.ID").scrollLeft(SRL_POS_@ViewBag.ID);
+            var setUnit = 0;
+            var setWidth = 0;
+            if (curr_width > 1024)
+            {
+                //appSite2
+                setWidth = 1025;
+                setUnit = 5;
+            }
+            else
+            {
+                if (curr_width < 420)
+                {
+                    //appSite0
+                    setWidth = 358;
+                    setUnit = 2;
+                }
+                else if (curr_width >= 420 && curr_width <= 650)
+                {
+                    //appSite05
+                    setWidth = 600;
+                    setUnit = 3;
+                }
+                else
+                {
+                    //appSite1
+                    setWidth = 800;
+                    setUnit = 4;
+                }
+            }
+            var width = @ViewBag.Length * (setWidth / setUnit);
+            $(".breakingMCH_Home #@ViewBag.ID .newsContHHInn").width(width);
+            if ($(".breakingMCH_Home #@ViewBag.ID .newsContHHInn").width() <= setWidth)
+            {
+                $(".breakingMCH_Home #@ViewBag.ID .newsContHHInn").parent().siblings().css("visibility","hidden");
+            }
+            $("#@ViewBag.ID").siblings("div.arrLeft").click(function () {
+                SRL_POS_@ViewBag.ID -= setWidth;
+                $("#@ViewBag.ID").siblings("div.arrRight").css("visibility","visible");
+                if (SRL_POS_@ViewBag.ID < 0)
+                {
+                    SRL_POS_@ViewBag.ID = 0;
+                    $(this).css("visibility","hidden");
+                }
+                $("#@ViewBag.ID").animate({ scrollLeft: SRL_POS_@ViewBag.ID }, 700);
+            }),
+            $("#@ViewBag.ID").siblings("div.arrRight").click(function () {
+                SRL_POS_@ViewBag.ID += setWidth;
+                $("#@ViewBag.ID").siblings("div.arrLeft").css("visibility","visible");
+                if (SRL_POS_@ViewBag.ID > width)
+                {
+                    SRL_POS_@ViewBag.ID = width;
+                    $(this).css("visibility","hidden");
+                }
+                $("#@ViewBag.ID").animate({ scrollLeft: SRL_POS_@ViewBag.ID }, 700);
+            })
+        });
+    </script>
 </div>

@@ -121,7 +121,7 @@ namespace hypster.Areas.apps.Controllers
             ViewBag.Title = genre;
             ViewBag.ID = newsManager.GetGenreIdByLabel(genre)[0];
             ViewBag.Length = posts_list.Count;
-            ViewBag.Width = 212 * posts_list.Count;            
+            //ViewBag.Count = posts_list.Count;            
             return View(posts_list);
         }
 

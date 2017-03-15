@@ -1,16 +1,13 @@
 ﻿@model List<hypster_tv_DAL.newsPost>
 @{
     Layout = null;
-    int OFFSET = 2;
+    int OFFSET = 0;
 }
 
 <div class="breakingMCH_Home">
-    <div class="hmBrkTitle" onclick="window.location='/breaking';">
-        NEWS
-    </div>
-
+    <div class="hmBrkTitle" onclick="window.location='/breaking';">NEWS</div>
     <div class="breakingMCH_MC">
-        <div class="arrLeft" onclick="MoveRightMain()">&nbsp;</div>
+        <div class="arrLeft" style="height:100px; background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat 10px 50px;">&nbsp;</div>
         <div id="newsContHH1">
             <div id="newsContHHInn">
             @for (int i = 0; i < 15; i++)
@@ -18,36 +15,44 @@
                 if (i < Model.Count)
                 {
                     <div title="@Model[i].post_title" class="brkngItm" onclick="window.location='/breaking/details/@Model[i].post_guid';">
-                        <div class="brkngItmPost" style="background-size:195px; background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
-                        <div class="txtBreakingT">@Model[i].post_title</div>
-                        <div class="txtBreakingD">@Model[i].post_short_content</div>
+                        <div class="brkngItmPost" style="background-size:197px; background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
+                        <div style="float:left;padding:7px 0; color:#000000; font-size:14px; margin:0px 5px; width:197px;">@Model[i].post_title</div>
                     </div>
                 }
             }
             </div>
         </div>
-        <div class="arrRight" onclick="MoveLeftMain()">&nbsp;</div>
+        <div class="arrRight" style="height:100px; background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat -44px 50px;">&nbsp;</div>
     </div>
 </div>
 
 <script type="text/javascript">
-    var SRL_POS = @(OFFSET);
-    $("#newsContHH1").scrollLeft(SRL_POS);
-    function MoveLeftMain() {
-        SRL_POS += 636;
-        if(SRL_POS > 3181)
+    $(document).ready(function(){
+        var SRL_POS = @(OFFSET);
+        $("#newsContHH1").scrollLeft(SRL_POS);
+        if ($("#newsContHHInn").width() <= 609)
         {
-            SRL_POS = 3181;
+            $("#newsContHHInn").parent().siblings().css("visibility","hidden");
         }
-        $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
-    }
-
-    function MoveRightMain() {
-        SRL_POS -= 636;
-        if(SRL_POS < 0)
-        {
-            SRL_POS = 0;
-        }
-        $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
-    }
+        $("#newsContHH1").siblings("div.arrLeft").click(function () {
+            SRL_POS -= 609;
+            $("#newsContHH1").siblings("div.arrRight").css("visibility","visible");
+            if (SRL_POS < 0) 
+            {
+                SRL_POS = 0;            
+                $(this).css("visibility","hidden");
+            }
+            $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
+        }),
+        $("#newsContHH1").siblings("div.arrRight").click(function () {
+            SRL_POS += 609;
+            $("#newsContHH1").siblings("div.arrLeft").css("visibility","visible");
+            if (SRL_POS > 3045)
+            {
+                SRL_POS = 3045;
+                $(this).css("visibility","hidden");
+            }
+            $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
+        })
+    });
 </script>
