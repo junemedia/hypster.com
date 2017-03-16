@@ -121,16 +121,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/03/2017 15:50:06</publishTime>
     </File>
     <File Include="Areas/apps/css/appSite0.css">
-      <publishTime>02/10/2017 12:07:31</publishTime>
+      <publishTime>03/16/2017 10:24:38</publishTime>
     </File>
     <File Include="Areas/apps/css/appSite05.css">
-      <publishTime>02/10/2017 12:07:31</publishTime>
+      <publishTime>03/16/2017 10:24:38</publishTime>
     </File>
     <File Include="Areas/apps/css/appSite1.css">
-      <publishTime>02/10/2017 12:07:31</publishTime>
+      <publishTime>03/16/2017 10:25:16</publishTime>
     </File>
     <File Include="Areas/apps/css/appSite2.css">
-      <publishTime>02/10/2017 12:07:31</publishTime>
+      <publishTime>03/16/2017 10:25:58</publishTime>
     </File>
     <File Include="Areas/apps/css/mPlayer.css">
       <publishTime>07/29/2016 10:48:28</publishTime>
@@ -199,10 +199,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:28</publishTime>
     </File>
     <File Include="Areas/apps/Views/appAccount/ForgotPassword.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>03/06/2017 16:05:08</publishTime>
     </File>
     <File Include="Areas/apps/Views/appAccount/ForgotPasswordDone.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>03/06/2017 16:05:08</publishTime>
+    </File>
+    <File Include="Areas/apps/Views/appAccount/ForgotPasswordFail.cshtml">
+      <publishTime>03/06/2017 16:05:08</publishTime>
     </File>
     <File Include="Areas/apps/Views/appAccount/getAccountInfo_Public.cshtml">
       <publishTime>07/29/2016 10:48:28</publishTime>
@@ -255,17 +258,20 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/apps/Views/appBreaking/DetailsO.cshtml">
       <publishTime>01/20/2017 15:57:42</publishTime>
     </File>
+    <File Include="Areas/apps/Views/appBreaking/GetBreakingGenre.cshtml">
+      <publishTime>03/15/2017 17:19:47</publishTime>
+    </File>
     <File Include="Areas/apps/Views/appBreaking/GetBreakingHomeWidget_PR.cshtml">
-      <publishTime>01/20/2017 15:57:42</publishTime>
+      <publishTime>03/15/2017 17:12:41</publishTime>
     </File>
     <File Include="Areas/apps/Views/appBreaking/GetPopularNewsTags_PR.cshtml">
-      <publishTime>01/20/2017 15:57:42</publishTime>
+      <publishTime>03/09/2017 10:19:02</publishTime>
     </File>
     <File Include="Areas/apps/Views/appBreaking/Index.cshtml">
-      <publishTime>01/20/2017 15:57:42</publishTime>
+      <publishTime>03/09/2017 10:19:02</publishTime>
     </File>
     <File Include="Areas/apps/Views/appBreaking/Tags.cshtml">
-      <publishTime>01/20/2017 15:57:42</publishTime>
+      <publishTime>03/09/2017 10:19:02</publishTime>
     </File>
     <File Include="Areas/apps/Views/appCreate/create_music_player.cshtml">
       <publishTime>04/21/2016 17:32:21</publishTime>
@@ -331,7 +337,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/20/2017 15:57:42</publishTime>
     </File>
     <File Include="Areas/apps/Views/appHome/Index.cshtml">
-      <publishTime>02/15/2017 12:10:26</publishTime>
+      <publishTime>03/15/2017 17:12:41</publishTime>
     </File>
     <File Include="Areas/apps/Views/appHome/pr_HomExpCont.cshtml">
       <publishTime>01/20/2017 15:57:42</publishTime>
@@ -355,7 +361,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:28</publishTime>
     </File>
     <File Include="Areas/apps/Views/appHypster/Gamers_Rewards_Program.cshtml">
-      <publishTime>07/29/2016 10:48:28</publishTime>
+      <publishTime>03/06/2017 16:13:32</publishTime>
     </File>
     <File Include="Areas/apps/Views/appHypster/gowilkes.cshtml">
       <publishTime>07/29/2016 10:48:28</publishTime>
@@ -1768,10 +1774,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:32</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>02/15/2017 12:10:52</publishTime>
+      <publishTime>03/16/2017 10:26:38</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>02/15/2017 12:10:52</publishTime>
+      <publishTime>03/16/2017 10:26:38</publishTime>
     </File>
     <File Include="bin/AreYouAHuman.dll">
       <publishTime>01/30/2012 18:17:48</publishTime>
@@ -1813,16 +1819,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/22/2010 14:00:50</publishTime>
     </File>
     <File Include="bin/hypster.dll">
-      <publishTime>02/15/2017 11:47:04</publishTime>
+      <publishTime>03/15/2017 17:20:02</publishTime>
     </File>
     <File Include="bin/hypster.dll.config">
-      <publishTime>02/15/2017 11:47:00</publishTime>
+      <publishTime>03/15/2017 17:20:01</publishTime>
     </File>
     <File Include="bin/hypster.pdb">
       <publishTime>08/19/2016 09:48:58</publishTime>
     </File>
     <File Include="bin/hypster_tv_DAL.dll">
-      <publishTime>02/03/2017 15:50:06</publishTime>
+      <publishTime>03/09/2017 10:19:02</publishTime>
     </File>
     <File Include="bin/Microsoft.Threading.Tasks.dll">
       <publishTime>05/10/2015 03:12:32</publishTime>
@@ -1936,13 +1942,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:36</publishTime>
     </File>
     <File Include="css/Site.css">
-      <publishTime>02/03/2017 15:50:06</publishTime>
+      <publishTime>03/13/2017 17:06:00</publishTime>
     </File>
     <File Include="css/SiteD.css">
-      <publishTime>02/03/2017 15:50:06</publishTime>
+      <publishTime>03/15/2017 17:12:41</publishTime>
     </File>
     <File Include="css/SiteN.css">
-      <publishTime>02/10/2017 12:07:31</publishTime>
+      <publishTime>03/15/2017 17:12:41</publishTime>
     </File>
     <File Include="css/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
       <publishTime>08/09/2012 19:57:06</publishTime>
@@ -2128,7 +2134,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2016 13:15:23</publishTime>
     </File>
     <File Include="flash_n/player.swf">
-      <publishTime>03/10/2016 13:15:23</publishTime>
+      <publishTime>02/28/2017 17:00:02</publishTime>
     </File>
     <File Include="flash_n/player_old.swf">
       <publishTime>03/10/2016 13:15:23</publishTime>
@@ -16573,7 +16579,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2016 13:15:18</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>02/15/2017 12:10:50</publishTime>
+      <publishTime>03/16/2017 10:26:35</publishTime>
     </File>
     <File Include="README.md">
       <publishTime>03/10/2016 13:15:18</publishTime>
@@ -16717,7 +16723,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:36</publishTime>
     </File>
     <File Include="scripts/hypScript.js">
-      <publishTime>02/03/2017 15:50:06</publishTime>
+      <publishTime>03/08/2017 14:55:48</publishTime>
     </File>
     <File Include="scripts/hypScriptD.js">
       <publishTime>02/03/2017 15:50:06</publishTime>
@@ -17239,10 +17245,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:33</publishTime>
     </File>
     <File Include="Views/account/ForgotPassword.cshtml">
-      <publishTime>07/29/2016 10:48:33</publishTime>
+      <publishTime>03/06/2017 16:05:08</publishTime>
     </File>
     <File Include="Views/account/ForgotPasswordDone.cshtml">
-      <publishTime>07/29/2016 10:48:33</publishTime>
+      <publishTime>03/06/2017 16:05:08</publishTime>
+    </File>
+    <File Include="Views/account/ForgotPasswordFail.cshtml">
+      <publishTime>03/06/2017 16:05:08</publishTime>
     </File>
     <File Include="Views/account/getAccountInfo_Public.cshtml">
       <publishTime>02/02/2017 12:13:55</publishTime>
@@ -17313,11 +17322,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/breaking/DetailsO.cshtml">
       <publishTime>02/03/2017 15:50:06</publishTime>
     </File>
+    <File Include="Views/breaking/GetBreakingGenre.cshtml">
+      <publishTime>03/15/2017 17:12:41</publishTime>
+    </File>
     <File Include="Views/breaking/GetBreakingHomeWidget_PR.cshtml">
-      <publishTime>10/04/2016 15:10:29</publishTime>
+      <publishTime>03/15/2017 17:12:41</publishTime>
     </File>
     <File Include="Views/breaking/GetBreakingPlayerWidget_PR.cshtml">
-      <publishTime>01/10/2017 15:22:50</publishTime>
+      <publishTime>03/09/2017 10:19:02</publishTime>
     </File>
     <File Include="Views/breaking/getNewsTags.cshtml">
       <publishTime>07/29/2016 10:48:33</publishTime>
@@ -17326,7 +17338,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:33</publishTime>
     </File>
     <File Include="Views/breaking/Index.cshtml">
-      <publishTime>10/04/2016 15:10:29</publishTime>
+      <publishTime>03/09/2017 10:19:02</publishTime>
     </File>
     <File Include="Views/breaking/pr_GetLatestNews.cshtml">
       <publishTime>02/10/2017 12:07:31</publishTime>
@@ -17335,7 +17347,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/10/2017 12:07:31</publishTime>
     </File>
     <File Include="Views/breaking/Tags.cshtml">
-      <publishTime>02/03/2017 15:50:06</publishTime>
+      <publishTime>03/09/2017 10:19:02</publishTime>
     </File>
     <File Include="Views/celebs/Index.cshtml">
       <publishTime>07/29/2016 10:48:33</publishTime>
@@ -17482,7 +17494,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:33</publishTime>
     </File>
     <File Include="Views/home/Index.cshtml">
-      <publishTime>02/15/2017 12:10:33</publishTime>
+      <publishTime>03/15/2017 17:12:41</publishTime>
     </File>
     <File Include="Views/home/pr_HomExpCont.cshtml">
       <publishTime>07/29/2016 10:48:34</publishTime>
@@ -17613,6 +17625,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/hypster/About_Us.cshtml">
       <publishTime>07/29/2016 10:48:34</publishTime>
     </File>
+    <File Include="Views/hypster/add_to_address_book.cshtml">
+      <publishTime>03/06/2017 16:05:08</publishTime>
+    </File>
     <File Include="Views/hypster/apps.cshtml">
       <publishTime>07/29/2016 10:48:34</publishTime>
     </File>
@@ -17635,7 +17650,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2016 10:48:34</publishTime>
     </File>
     <File Include="Views/hypster/Gamers_Rewards_Program.cshtml">
-      <publishTime>07/29/2016 10:48:34</publishTime>
+      <publishTime>03/06/2017 16:13:32</publishTime>
     </File>
     <File Include="Views/hypster/gowilkes.cshtml">
       <publishTime>07/29/2016 10:48:34</publishTime>

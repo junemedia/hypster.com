@@ -5995,9 +5995,7 @@
     <Content Include="Areas\apps\Views\appBreaking\GetBreakingGenre.cshtml" />
     <None Include="Properties\PublishProfiles\hypster.com.pubxml" />
     <None Include="Properties\PublishProfiles\stage.hypster.com.pubxml" />
-    <None Include="Properties\PublishProfiles\dev.hypster.com.pubxml" />
     <None Include="Properties\PublishProfiles\hypster.local.pubxml" />
-    <None Include="Properties\PublishProfiles\Temp.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
