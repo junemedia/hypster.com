@@ -7,33 +7,33 @@
     ViewBag.LinkTag = "<link rel=\"canonical\" href=\"http://hypster.com/breaking/details/" + Model.post_guid + "\" >";
 }
 
+<style type="text/css">
+    .brkngCont p img,
+    .brkngCont center img {
+        width:100%;
+        height:auto;
+    }
+</style>
+
 <script type="text/javascript">
     active_menu = ".mBreaking";
 </script>
 
 <div style="float:left; width:100%; min-height:620px;">
-
     <div style="float:left; width:99%; margin:0 0 0 1%;">
         <div class="brkLeftCH" style="display:none; ">
             <div class="Post_mainCont" style="width:98%;">
                 <article id="post-@Model.post_guid">
                     <h2>@Model.post_title</h2>
 
-
                     <div class="brkngCont">
                         @Html.Raw(HttpUtility.HtmlDecode(Model.post_content))
                         <br />
                     </div>
 
-
                     <div style="float:left; width:100%; margin-top:12px;">
-                    
-
-                        <div class="plShareCntr1">
-                        
-                            <div style="float:left; width:150px; height:38px; margin:5px 0 0 0; background:url(/imgs/follow_us_btns.png) no-repeat -3px -14px; " onmouseover="this.style.display='none'; $('#SocialHolder1').css('display','block'); ">
-                            </div>
-
+                        <div class="plShareCntr1">                        
+                            <div style="float:left; width:150px; height:38px; margin:5px 0 0 0; background:url(/imgs/follow_us_btns.png) no-repeat -3px -14px; " onmouseover="this.style.display='none'; $('#SocialHolder1').css('display','block'); "></div>
                             <div id="SocialHolder1" class="pw-widget pw-counter-horizontal" style="display:none; margin:17px 0 0 0px;">			
 	                            <a class="pw-button-tumblr pw-look-native"></a>
                                 <a class="pw-button-facebook pw-look-native"></a>
@@ -43,59 +43,31 @@
                             </div>
                             <script src="http://i.po.st/static/v3/post-widget.js#publisherKey=caq8eudavn7j6erou9n3&retina=true" type="text/javascript"></script>
                         </div>
-
                   
                         <div style="float:left; margin:17px 0 0 0px; color:#d4ae52;">
                             Posted on @System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Model.post_date.Value.Month) @Model.post_date.Value.Day, @Model.post_date.Value.Year
                         </div>
                     </div>
-
                 </article>
+            </div>
+        </div>
 
+        <div class="brkRigthCH">
+            <div id="relVideosCth">
+                 @Html.Raw(HttpUtility.HtmlDecode(Model.MusicPlayer))
+            </div>
+        </div>
 
-
-
+        <div class="PostNav_cont">
+            <a class="PrevPost" href="/apps/appBreaking/prevPost?PID=@Model.post_id">PREV POST</a>
+            <a class="HomePost" href="/apps/appBreaking">NEWS HOME</a>
+            <a class="NextPost" href="/apps/appBreaking/nextPost?PID=@Model.post_id">NEXT POST</a>
         </div>
     </div>
-
-
-
-    <div class="brkRigthCH">
-
-        <div id="relVideosCth">
-             @Html.Raw(HttpUtility.HtmlDecode(Model.MusicPlayer))
-        </div>
-        
-    </div>
-
-
-
-
-    <div class="PostNav_cont">
-        <a class="PrevPost" href="/apps/appBreaking/prevPost?PID=@Model.post_id">PREV POST</a>
-        <a class="HomePost" href="/apps/appBreaking">NEWS HOME</a>
-        <a class="NextPost" href="/apps/appBreaking/nextPost?PID=@Model.post_id">NEXT POST</a>
-    </div>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
 </div>
 
 <script>
-
     $(document).ready(function () {
-
         if ($(window).width() < 1024) {
             $(".nPostImg").css("width", $(window).width() * 0.98 + "px");
         }
@@ -109,13 +81,10 @@
             $("#relVideosCth iframe").css("height", 550 + "px");
         }
 
-        $(".brkLeftCH").css("display", "block");
-        
+        $(".brkLeftCH").css("display", "block");        
     });
-
-
+    
     $(window).resize(function () {
-
         if ($(window).width() < 1024) {
             $(".nPostImg").css("width", $(window).width() * 0.98 + "px");
         }
@@ -130,13 +99,5 @@
         }
 
         $(".brkLeftCH").css("display", "block");
-
     });
 </script>
-
-
-
-
-
-
-
