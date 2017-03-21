@@ -7,22 +7,24 @@
 <div class="breakingMCH_Home">
     <div class="hmBrkTitle" onclick="window.location='/apps/appBreaking';">NEWS</div>
     <div class="breakingMCH_MC">
-        <div class="arrLeft">&nbsp;</div>
-        <div id="newsContHH1">
-            <div id="newsContHHInn">
-            @for (int i = 0; i < 15; i++)
-            {
-                if (i < Model.Count)
-                {
-                    <div class="brkngItmBlk" onclick="window.location='/apps/appBreaking/details/@Model[i].post_guid';">
-                        <div class="brkngItmPost" style="background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
-                        <div class="brkngItmTitle">@Model[i].post_title</div>
-                    </div>
-                }
-            }
+        <div style="float:left;width:100%;height:180px;overflow:hidden;">
+            <div class="arrLeft">&nbsp;</div>
+            <div id="newsContHH1">
+                <div id="newsContHHInn">
+                    @for (int i = 0; i < 15; i++)
+                    {
+                        if (i < Model.Count)
+                        {
+                            <div class="brkngItmBlk" onclick="window.location='/apps/appBreaking/details/@Model[i].post_guid';">
+                                <div class="brkngItmPost" style="background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
+                                <div class="brkngItmTitle">@Model[i].post_title</div>
+                            </div>
+                        }
+                    }
+                </div>
             </div>
+            <div class="arrRight">&nbsp;</div>
         </div>
-        <div class="arrRight">&nbsp;</div>
     </div>
 </div>
 

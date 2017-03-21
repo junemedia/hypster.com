@@ -7,22 +7,24 @@
 <div class="breakingMCH_Home">
     <div class="hmBrkTitle" onclick="window.location='/breaking';">NEWS</div>
     <div class="breakingMCH_MC">
-        <div class="arrLeft" onmouseover="this.css">&nbsp;</div>
-        <div id="newsContHH1">
-            <div id="newsContHHInn">
-            @for (int i = 0; i < 15; i++)
-            {
-                if (i < Model.Count)
-                {
-                    <div title="@Model[i].post_title" class="brkngItm" onclick="window.location='/breaking/details/@Model[i].post_guid';">
-                        <div class="brkngItmPost" style="background-size:232px; background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
-                        <div style="float:left;padding:7px 0; color:#000000; font-size:14px; margin:0px 5px; width:232px;">@Model[i].post_title</div>
-                    </div>
-                }
-            }
+        <div style="float:left; width:707px; height:250px; overflow:hidden;">
+            <div class="arrLeft">&nbsp;</div>
+            <div class="arrRight">&nbsp;</div>
+            <div id="newsContHH1">
+                <div id="newsContHHInn">
+                    @for (int i = 0; i < 15; i++)
+                    {
+                        if (i < Model.Count)
+                        {
+                            <div title="@Model[i].post_title" class="brkngItm" onclick="window.location='/breaking/details/@Model[i].post_guid';">
+                                <div class="brkngItmPost" style="background-size:232px; background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
+                                <div style="float:left;padding:7px 0; color:#000000; font-size:14px; margin:0px 5px; width:232px;">@Model[i].post_title</div>
+                            </div>
+                        }
+                    }
+                </div>
             </div>
         </div>
-        <div class="arrRight">&nbsp;</div>
     </div>
 </div>
 

@@ -6819,14 +6819,14 @@ a:visited
 
 .breakingMCH_Home .arrLeft
 {
-    float:left; width:60px; font-size:90px; line-height:160px; text-align:center; cursor:pointer; color:#d4ae52; padding:37px 0px;
-    background:rgba(255, 255, 255, 0.24) url(/imgs/img/a02.png) no-repeat 1px 62px; z-index:3; position:absolute; 
+    float:left; width:60px; font-size:90px; line-height:160px; text-align:center; cursor:pointer; color:#d4ae52;
+    background:rgba(255, 255, 255, 0.24) url(/imgs/img/a02.png) no-repeat 1px 24px; z-index:3; position:absolute; 
 }
 
 .breakingMCH_Home .arrRight
 {
-    float:left; width:60px; font-size:90px; line-height:160px; text-align:center; cursor:pointer; color:#d4ae52; padding:37px 0px;
-    background:rgba(255, 255, 255, 0.27) url(/imgs/img/a02.png) no-repeat -60px 62px; z-index:3; position:absolute; margin-left:646px;
+    float:left; width:60px; font-size:90px; line-height:160px; text-align:center; cursor:pointer; color:#d4ae52;
+    background:rgba(255, 255, 255, 0.27) url(/imgs/img/a02.png) no-repeat -60px 24px; z-index:3; position:absolute; margin-left:646px;
 }
 
 .breakingMCH_Home #newsContHH1, 

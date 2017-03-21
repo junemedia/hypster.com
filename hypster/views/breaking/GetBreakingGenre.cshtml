@@ -3,27 +3,29 @@
     Layout = null;
 }
 <div class="breakingMCH_Home">
-    <div class="hmBrkTitle" onclick="window.location='/breaking';">
+    <div class="hmBrkTitle"> @*onclick="window.location='/breaking';"*@
         @ViewBag.Title
     </div>
 
     <div class="breakingMCH_MC">
-        <div class="arrLeft">&nbsp;</div>
-        <div id='@ViewBag.ID' class="newsContHH1">
-            <div class="newsContHHInn">
-            @for (int i = 0; i < ViewBag.Length; i++)
-            {
-                if (i < Model.Count)
-                {
-                    <div title="@Model[i].post_title" class="brkngItmGenre" onclick="window.location='/breaking/details/@Model[i].post_guid';">
-                        <div class="brkngItmPost" style="background-size:232px; background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
-                        <div class="brkngItmTitle" style="float:left;padding:7px 0; color:#000000; font-size:14px; margin:0px 5px;">@Model[i].post_title</div>
-                    </div>
-                }
-            }
+        <div style="float:left; width:707px; height:250px; overflow:hidden;">
+            <div class="arrLeft">&nbsp;</div>
+            <div class="arrRight">&nbsp;</div>
+            <div id='@ViewBag.ID' class="newsContHH1">
+                <div class="newsContHHInn">
+                    @for (int i = 0; i < ViewBag.Length; i++)
+                    {
+                        if (i < Model.Count)
+                        {
+                            <div title="@Model[i].post_title" class="brkngItmGenre" onclick="window.location='/breaking/details/@Model[i].post_guid';">
+                                <div class="brkngItmPost" style="background-size:232px; background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
+                                <div class="brkngItmTitle" style="float:left;padding:7px 0; color:#000000; font-size:14px; margin:0px 5px;">@Model[i].post_title</div>
+                            </div>
+                        }
+                    }
+                </div>
             </div>
         </div>
-        <div class="arrRight">&nbsp;</div>
     </div>
     <script type="text/javascript">
         $(document).ready(function(){

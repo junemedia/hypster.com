@@ -7482,24 +7482,24 @@ a.captionOrange:hover
 
 .breakingMCH_Home .arrLeft
 {
-    float:left; width:16%; font-size:90px; background:rgba(255, 255, 255, 0.24) url(/imgs/img/a02.png) no-repeat -1px 46px;
-    z-index:3; position:absolute; padding-top:50px; color:#d4ae52; cursor:pointer; text-align:center;
+    float:left; width:16%; height:111px; font-size:90px; background:rgba(255, 255, 255, 0.24) url(/imgs/img/a02.png) no-repeat 0px 3px;
+    z-index:3; position:absolute; color:#d4ae52; cursor:pointer; text-align:center;
 }
 
 .breakingMCH_Home .arrRight
 {
-    float:left; width:16%; font-size:90px; background:rgba(255, 255, 255, 0.24) url(/imgs/img/a02.png) no-repeat -60px 46px;
-    z-index:3; position:absolute; margin-left:83%; padding-top:50px; color:#d4ae52; cursor:pointer; text-align:center;
+    float:left; width:16%; height:111px; font-size:90px; background:rgba(255, 255, 255, 0.24) url(/imgs/img/a02.png) no-repeat -60px 3px;
+    z-index:3; position:absolute; color:#d4ae52; cursor:pointer; text-align:center; margin-left:83%;
 }
 
 .breakingMCH_Home #newsContHH1
 {
-    margin:40px 0px 0px 0px; width:100%; height:180px; overflow:hidden; position:absolute; z-index:1;
+    width:100%; height:180px; overflow:hidden; position:absolute; z-index:1;
 }
 
 .breakingMCH_Home .newsContHH1
 {
-    margin:40px 0px 0px 0px; width:100%; height:200px; overflow:hidden; position:absolute; z-index:1;
+    width:100%; height:200px; overflow:hidden; position:absolute; z-index:1;
 }
 
 .breakingMCH_Home #newsContHHInn
