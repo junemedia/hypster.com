@@ -3,10 +3,11 @@
     Layout = null;
     int OFFSET = 0;
 }
- 
+
 <div class="breakingMCH_Home">
     <div class="hmBrkTitle" onclick="window.location='/apps/appBreaking';">NEWS</div>
     <div class="breakingMCH_MC">
+        <div class="arrLeft">&nbsp;</div>
         <div id="newsContHH1">
             <div id="newsContHHInn">
             @for (int i = 0; i < 15; i++)
@@ -21,7 +22,6 @@
             }
             </div>
         </div>
-        <div class="arrLeft">&nbsp;</div>
         <div class="arrRight">&nbsp;</div>
     </div>
 </div>
@@ -63,25 +63,25 @@
         var maxWidth = 15 * setWidth / setUnit;
         if ($("#newsContHHInn").width() <= setWidth)
         {
-            $("#newsContHHInn").parent().siblings().css("visibility","hidden");
+            $("#newsContHHInn").parent().siblings().hide();
         }
         $("#newsContHH1").siblings("div.arrLeft").click(function () {
             SRL_POS -= setWidth;
-            $("#newsContHH1").siblings("div.arrRight").css("visibility","visible");
+            $("#newsContHH1").siblings("div.arrRight").show();
             if (SRL_POS < 0) 
             {
                 SRL_POS = 0;            
-                $(this).css("visibility","hidden");
+                $(this).hide();
             }
             $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
         }),
         $("#newsContHH1").siblings("div.arrRight").click(function () {
             SRL_POS += setWidth;
-            $("#newsContHH1").siblings("div.arrLeft").css("visibility","visible");
+            $("#newsContHH1").siblings("div.arrLeft").show();
             if (SRL_POS > maxWidth)
             {
                 SRL_POS = maxWidth;
-                $(this).css("visibility","hidden");
+                $(this).hide();
             }
             $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
         })

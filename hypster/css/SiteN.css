@@ -287,7 +287,7 @@
 
 .homeBreakingWidget
 {
-    float:left; width:735px; height:230px; margin:auto;
+    float:left; width:735px; height:260px; margin:auto;
 }
 
 .homeBreakingWidget2
@@ -354,25 +354,25 @@
 
 .breakingMCH_Home .arrLeft
 {
-    float:left; width:7%; font-size:90px; line-height:160px; text-align:center; cursor:pointer; color:#d4ae52;
-    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat 10px 56px;
+    float:left; width:60px; font-size:90px; line-height:160px; text-align:center; cursor:pointer; color:#d4ae52; padding:37px 0px;
+    background:rgba(255, 255, 255, 0.24) url(/imgs/img/a02.png) no-repeat 1px 62px; z-index:3; position:absolute; 
 }
 
 .breakingMCH_Home .arrRight
 {
-    float:left; width:7%; font-size:90px; line-height:160px; text-align:center; cursor:pointer; color:#d4ae52;
-    background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat -44px 56px;
+    float:left; width:60px; font-size:90px; line-height:160px; text-align:center; cursor:pointer; color:#d4ae52; padding:37px 0px;
+    background:rgba(255, 255, 255, 0.27) url(/imgs/img/a02.png) no-repeat -60px 62px; z-index:3; position:absolute; margin-left:646px;
 }
 
 .breakingMCH_Home #newsContHH1,
 .breakingMCH_Home .newsContHH1
 {
-    float:left; width:82%; height:200px; margin:10px; overflow:hidden;
+    float:left; width:707px; height:200px; margin:48px 0px 0px 0px; overflow:hidden; position:absolute; z-index:1;
 }
 
 .breakingMCH_Home #newsContHHInn
 {
-    position:relative; height:180px; top:0px; left:0; width:3045px;
+    position:relative; height:180px; top:0px; left:0; width:3525px;
 }
 
 .breakingMCH_Home .newsContHHInn
@@ -380,19 +380,20 @@
     position:relative; height:250px; top:0px; left:0;
 }
 
-.breakingMCH_Home .brkngItm
-{
-    float:left; width:201px; height:170px; margin:1px 1px 0 1px; background-repeat:no-repeat;
-}
-
+.breakingMCH_Home .brkngItm,
 .breakingMCH_Home .brkngItmGenre
 {
-    float:left; width:199px; height:170px; margin:1px 2px 0 2px; background-repeat:no-repeat;
+    float:left; width:233px; height:200px; margin:1px 1px 0 1px; background-repeat:no-repeat;
 }
+
+/*.breakingMCH_Home .brkngItmGenre
+{
+    float:left; width:232px; height:170px; margin:1px 2px 0 2px; background-repeat:no-repeat;
+}*/
 
 .breakingMCH_Home .brkngItmPost
 {
-    float:left; width:197px; height:110px; margin:1px 0 0 1px; background-repeat:no-repeat;
+    float:left; width:232px; height:139px; margin:1px 0 0 1px; background-repeat:no-repeat;
 }
 
 .breakingMCH_Home .brkngItm .txtBreakingT

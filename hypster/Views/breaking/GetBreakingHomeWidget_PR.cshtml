@@ -7,7 +7,7 @@
 <div class="breakingMCH_Home">
     <div class="hmBrkTitle" onclick="window.location='/breaking';">NEWS</div>
     <div class="breakingMCH_MC">
-        <div class="arrLeft" style="height:100px; background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat 10px 50px;">&nbsp;</div>
+        <div class="arrLeft" onmouseover="this.css">&nbsp;</div>
         <div id="newsContHH1">
             <div id="newsContHHInn">
             @for (int i = 0; i < 15; i++)
@@ -15,14 +15,14 @@
                 if (i < Model.Count)
                 {
                     <div title="@Model[i].post_title" class="brkngItm" onclick="window.location='/breaking/details/@Model[i].post_guid';">
-                        <div class="brkngItmPost" style="background-size:197px; background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
-                        <div style="float:left;padding:7px 0; color:#000000; font-size:14px; margin:0px 5px; width:197px;">@Model[i].post_title</div>
+                        <div class="brkngItmPost" style="background-size:232px; background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
+                        <div style="float:left;padding:7px 0; color:#000000; font-size:14px; margin:0px 5px; width:232px;">@Model[i].post_title</div>
                     </div>
                 }
             }
             </div>
         </div>
-        <div class="arrRight" style="height:100px; background:#FFFFFF url(/imgs/brk_arrows.png) no-repeat -44px 50px;">&nbsp;</div>
+        <div class="arrRight">&nbsp;</div>
     </div>
 </div>
 
@@ -30,29 +30,46 @@
     $(document).ready(function(){
         var SRL_POS = @(OFFSET);
         $("#newsContHH1").scrollLeft(SRL_POS);
-        if ($("#newsContHHInn").width() <= 609)
-        {
-            $("#newsContHHInn").parent().siblings().css("visibility","hidden");
-        }
+        $("#newsContHH1").siblings().hide();
+        $("#newsContHH1").siblings("div.arrLeft").on("mouseout",function () {
+            $("#newsContHH1").siblings().hide();
+        }),
+        $("#newsContHH1").siblings("div.arrRight").on("mouseout",function () {
+            $("#newsContHH1").siblings().hide(); 
+        }),
         $("#newsContHH1").siblings("div.arrLeft").click(function () {
-            SRL_POS -= 609;
-            $("#newsContHH1").siblings("div.arrRight").css("visibility","visible");
+            SRL_POS -= 705;
+            $(this).siblings("div.arrRight").show();
             if (SRL_POS < 0) 
             {
-                SRL_POS = 0;            
-                $(this).css("visibility","hidden");
+                SRL_POS = 0;
+                $(this).hide();
             }
             $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
         }),
         $("#newsContHH1").siblings("div.arrRight").click(function () {
-            SRL_POS += 609;
-            $("#newsContHH1").siblings("div.arrLeft").css("visibility","visible");
-            if (SRL_POS > 3045)
+            SRL_POS += 705;
+            $(this).siblings("div.arrLeft").show();
+            if (SRL_POS > 3500)
             {
-                SRL_POS = 3045;
-                $(this).css("visibility","hidden");
+                SRL_POS = 3525;
+                $(this).hide();
             }
             $("#newsContHH1").animate({ scrollLeft: SRL_POS }, 700);
+        }),
+        $("#newsContHH1").on("mouseover", function()
+        {
+            if (SRL_POS != 0)
+                $(this).siblings("div.arrLeft").show();
+            if (SRL_POS != 3525)
+                $(this).siblings("div.arrRight").show();
+        }),
+        $("#newsContHH1").on("mouseout", function()
+        {
+            if (!$(this).siblings("div.arrLeft").is(':hover') && !$(this).siblings("div.arrRight").is(':hover'))
+            {
+                $(this).siblings().hide();
+            }
         })
     });
 </script>
