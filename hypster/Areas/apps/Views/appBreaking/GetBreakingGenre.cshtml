@@ -4,7 +4,7 @@
 }
 
 <div class="breakingMCH_Home">
-    <div class="hmBrkTitle" onclick="window.location='/apps/appBreaking';">@ViewBag.Title</div>
+    <div class="hmBrkTitle">@ViewBag.Title</div> @*onclick="window.location='/apps/appBreaking';"*@
     <div class="breakingMCH_MC">
         <div style="float:left;width:100%;height:180px;overflow:hidden;">
             <div class="arrLeft">&nbsp;</div>
@@ -78,7 +78,7 @@
             $("#@ViewBag.ID").siblings("div.arrRight").click(function () {
                 SRL_POS_@ViewBag.ID += setWidth;
                 $("#@ViewBag.ID").siblings("div.arrLeft").show();
-                if (SRL_POS_@ViewBag.ID > width)
+                if (SRL_POS_@ViewBag.ID >= width)
                 {
                     SRL_POS_@ViewBag.ID = width;
                     $(this).hide();

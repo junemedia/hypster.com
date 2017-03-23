@@ -7456,11 +7456,6 @@ a.captionOrange:hover
     width:100%; height:250px; overflow:hidden;
 }
 
-.homeBreakingWidget2 .breakingMCH_Home
-{
-    width:100%; height:250px; overflow:hidden;
-}
-
 .breakingMCH_Home .hmBrkTitle
 {
     float:left; width:100%; height:45px; line-height:45px; border-bottom:2px solid #18ae7b; color:#000000; font-size:36px; text-align:left; cursor:pointer;

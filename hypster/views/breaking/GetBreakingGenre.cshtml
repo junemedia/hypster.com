@@ -17,8 +17,8 @@
                     {
                         if (i < Model.Count)
                         {
-                            <div title="@Model[i].post_title" class="brkngItmGenre" onclick="window.location='/breaking/details/@Model[i].post_guid';">
-                                <div class="brkngItmPost" style="background-size:232px; background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
+                            <div title="@Model[i].post_short_content" class="brkngItmGenre" onclick="window.location='/breaking/details/@Model[i].post_guid';">
+                                <div class="brkngItmPost" style="background-size:232px;background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
                                 <div class="brkngItmTitle" style="float:left;padding:7px 0; color:#000000; font-size:14px; margin:0px 5px;">@Model[i].post_title</div>
                             </div>
                         }
@@ -57,7 +57,7 @@
             $("#@ViewBag.ID").siblings("div.arrRight").click(function () {
                 SRL_POS_@ViewBag.ID += 705;
                 $("#@ViewBag.ID").siblings("div.arrLeft").show();
-                if (SRL_POS_@ViewBag.ID > (width-25))
+                if (SRL_POS_@ViewBag.ID >= width)
                 {
                     SRL_POS_@ViewBag.ID = width;
                     $(this).hide();

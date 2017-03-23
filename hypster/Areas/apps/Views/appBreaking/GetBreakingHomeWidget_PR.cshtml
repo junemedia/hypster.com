@@ -80,7 +80,7 @@
         $("#newsContHH1").siblings("div.arrRight").click(function () {
             SRL_POS += setWidth;
             $("#newsContHH1").siblings("div.arrLeft").show();
-            if (SRL_POS > maxWidth)
+            if (SRL_POS >= maxWidth)
             {
                 SRL_POS = maxWidth;
                 $(this).hide();

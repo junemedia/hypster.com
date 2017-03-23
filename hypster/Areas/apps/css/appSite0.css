@@ -7461,11 +7461,6 @@ a.captionOrange:hover
     width:100%; height:250px; overflow:hidden;
 }
 
-.homeBreakingWidget2 .breakingMCH_Home
-{
-    width:100%; height:250px; overflow:hidden;
-}
-
 .breakingMCH_Home .hmBrkTitle
 {
     float:left; width:100%; height:45px; line-height:45px; border-bottom:2px solid #18ae7b; color:#000000; font-size:28px; text-align:left; cursor:pointer;
@@ -7482,13 +7477,13 @@ a.captionOrange:hover
 
 .breakingMCH_Home .arrLeft
 {
-    float:left; width:16%; height:111px; font-size:90px; background:rgba(255, 255, 255, 0.24) url(/imgs/img/a02.png) no-repeat 0px 3px;
+    float:left; width:16%; height:116px; font-size:90px; background:rgba(255, 255, 255, 0.24) url(/imgs/img/a02.png) no-repeat 0px 3px;
     z-index:3; position:absolute; color:#d4ae52; cursor:pointer; text-align:center;
 }
 
 .breakingMCH_Home .arrRight
 {
-    float:left; width:16%; height:111px; font-size:90px; background:rgba(255, 255, 255, 0.24) url(/imgs/img/a02.png) no-repeat -60px 3px;
+    float:left; width:16%; height:116px; font-size:90px; background:rgba(255, 255, 255, 0.24) url(/imgs/img/a02.png) no-repeat -60px 3px;
     z-index:3; position:absolute; color:#d4ae52; cursor:pointer; text-align:center; margin-left:83%;
 }
 
@@ -7513,7 +7508,7 @@ a.captionOrange:hover
 
 .breakingMCH_Home .brkngItmGenre
 {
-    float:left; width:174px; height:190px; margin:10px 5px 0 0; background-repeat:no-repeat;
+    float:left; width:174px; height:190px; margin:10px 4px 0 1px; background-repeat:no-repeat;
 }
 
 #newsContHHInn .brkngItmBlk

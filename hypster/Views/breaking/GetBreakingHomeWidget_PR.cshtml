@@ -16,8 +16,8 @@
                     {
                         if (i < Model.Count)
                         {
-                            <div title="@Model[i].post_title" class="brkngItm" onclick="window.location='/breaking/details/@Model[i].post_guid';">
-                                <div class="brkngItmPost" style="background-size:232px; background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
+                            <div title="@Model[i].post_short_content" class="brkngItm" onclick="window.location='/breaking/details/@Model[i].post_guid';">
+                                <div class="brkngItmPost" style="background-size:232px;background-image:url('http://@System.Configuration.ConfigurationManager.AppSettings["newsHostName"]/imgs/i_posts/@Model[i].post_image');"></div>
                                 <div style="float:left;padding:7px 0; color:#000000; font-size:14px; margin:0px 5px; width:232px;">@Model[i].post_title</div>
                             </div>
                         }
@@ -52,7 +52,7 @@
         $("#newsContHH1").siblings("div.arrRight").click(function () {
             SRL_POS += 705;
             $(this).siblings("div.arrLeft").show();
-            if (SRL_POS > 3500)
+            if (SRL_POS >= 3525)
             {
                 SRL_POS = 3525;
                 $(this).hide();
