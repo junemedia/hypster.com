@@ -14,5 +14,3 @@ package.config
 *.orig
 hypster/bin/*.xml
 downloads
-hypster/imgs/i_posts/*.jpg
-hypster/imgs/i_celebs/*.jpg
