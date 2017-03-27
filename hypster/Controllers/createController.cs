@@ -39,10 +39,6 @@ namespace hypster.Controllers
 
             switch (id)
             {
-                case "BarPlayer":
-                    ViewBag.Action = "EDT";
-                    ViewBag.PlType = id;
-                    break;
                 case "ClassicPlayer":
                     ViewBag.Action = "EDT";
                     ViewBag.PlType = id;

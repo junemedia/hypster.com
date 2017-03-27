@@ -64,26 +64,19 @@ namespace hypster.Areas.es.Controllers
             //******************************************************
 
 
-
-
-
             switch (id)
             {
-                case "BarPlayer":
-                    //get player for editing if exist
-                    int player_ID1 = 0;
-                    if (Request.QueryString["Pl_ID"] != null)
-                    {
-                        if (Int32.TryParse(Request.QueryString["Pl_ID"], out player_ID1) == false)
-                            player_ID1 = 0;
-                        if (player_ID1 != 0)
-                            model.player = playerManager.GetPlayerByID(model.curr_user.id, player_ID1);
-                    }
-
-
-                    return View("getPlayer_Bar", model);
-                    break;
-
+                //case "BarPlayer":
+                //    //get player for editing if exist
+                //    int player_ID1 = 0;
+                //    if (Request.QueryString["Pl_ID"] != null)
+                //    {
+                //        if (Int32.TryParse(Request.QueryString["Pl_ID"], out player_ID1) == false)
+                //            player_ID1 = 0;
+                //        if (player_ID1 != 0)
+                //            model.player = playerManager.GetPlayerByID(model.curr_user.id, player_ID1);
+                //    }
+                //    return View("getPlayer_Bar", model);
                 case "ClassicPlayer":
                     //get player for editing if exist
                     int player_ID2 = 0;
@@ -94,11 +87,7 @@ namespace hypster.Areas.es.Controllers
                         if (player_ID2 != 0)
                             model.player = playerManager.GetPlayerByID(model.curr_user.id, player_ID2);
                     }
-
                     return View("getPlayer_Classic", model);
-                    break;
-
-
                 case "RadioPlayer":
                     //get player for editing if exist
 
@@ -112,27 +101,17 @@ namespace hypster.Areas.es.Controllers
                         if (player_ID3 != 0)
                             model_Radio.player = playerManager.GetPlayerByID(model.curr_user.id, player_ID3);
                     }
-
                     hypster_tv_DAL.MemberMusicGenreManager genreMeneger = new hypster_tv_DAL.MemberMusicGenreManager();
                     model_Radio.music_genres_list = genreMeneger.GetMusicGenresList();
 
                     return View("getPlayer_Radio", model_Radio);
-                    break;
-
                 default:
                     break;
-
             }
-
 
             return View();
         }
         //----------------------------------------------------------------------------------------------------------
-
-
-
-
-
 
 
 
@@ -148,14 +127,11 @@ namespace hypster.Areas.es.Controllers
             //--------------------------------------------------------------------------------------------
 
 
-
             // 1.genral declarations
             //--------------------------------------------------------------------------------------------
             hypster_tv_DAL.playerManagement playerManager = new hypster_tv_DAL.playerManagement();
             hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
             //--------------------------------------------------------------------------------------------
-
-
 
 
             //--------------------------------------------------------------------------------------------
@@ -218,11 +194,6 @@ namespace hypster.Areas.es.Controllers
 
 
 
-
-
-
-
-
         //public getPlayer_classicPlayer
         //----------------------------------------------------------------------------------------------------------
         [HttpPost]
@@ -235,8 +206,6 @@ namespace hypster.Areas.es.Controllers
                 return RedirectPermanent("/es/Crear");
             //--------------------------------------------------------------------------------------------
 
-
-
             // 1.genral declarations
             //--------------------------------------------------------------------------------------------
             hypster_tv_DAL.playerManagement playerManager = new hypster_tv_DAL.playerManagement();
@@ -245,8 +214,6 @@ namespace hypster.Areas.es.Controllers
 
             hypster_tv_DAL.Member curr_user = new hypster_tv_DAL.Member();
             curr_user = memberManager.getMemberByUserName(User.Identity.Name);
-
-
 
             if (Player_Color_Scheme == "6")
             {
@@ -282,9 +249,6 @@ namespace hypster.Areas.es.Controllers
             }
 
 
-
-
-
             //--------------------------------------------------------------------------------------------
 
             hypster_tv_DAL.Player player = new hypster_tv_DAL.Player();
@@ -296,7 +260,6 @@ namespace hypster.Areas.es.Controllers
             player.CLASSIC_playerSkin = Player_Color_Scheme;
             player.CLASSIC_autostart = (bool)CLASSIC_autostart;
             player.CLASSIC_shufflePlayback = (bool)CLASSIC_shufflePlayback;
-
 
 
             //save only if player_id null - new player
@@ -331,9 +294,6 @@ namespace hypster.Areas.es.Controllers
             return View("getPlayer_Classic_Code", player);
         }
         //----------------------------------------------------------------------------------------------------------
-
-
-
 
 
 

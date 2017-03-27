@@ -68,21 +68,6 @@ namespace hypster.Areas.ru.Controllers
 
             switch (id)
             {
-                case "BarPlayer":
-                    //get player for editing if exist
-                    int player_ID1 = 0;
-                    if (Request.QueryString["Pl_ID"] != null)
-                    {
-                        if (Int32.TryParse(Request.QueryString["Pl_ID"], out player_ID1) == false)
-                            player_ID1 = 0;
-                        if (player_ID1 != 0)
-                            model.player = playerManager.GetPlayerByID(model.curr_user.id, player_ID1);
-                    }
-
-
-                    return View("getPlayer_Bar", model);
-                    break;
-
                 case "ClassicPlayer":
                     //get player for editing if exist
                     int player_ID2 = 0;
@@ -95,9 +80,6 @@ namespace hypster.Areas.ru.Controllers
                     }
 
                     return View("getPlayer_Classic", model);
-                    break;
-
-
                 case "RadioPlayer":
                     //get player for editing if exist
 
@@ -116,8 +98,6 @@ namespace hypster.Areas.ru.Controllers
                     model_Radio.music_genres_list = genreMeneger.GetMusicGenresList();
 
                     return View("getPlayer_Radio", model_Radio);
-                    break;
-
                 default:
                     break;
 
