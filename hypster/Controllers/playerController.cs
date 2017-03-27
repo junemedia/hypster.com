@@ -6,15 +6,10 @@ using System.Web.Mvc;
 
 namespace hypster.Controllers
 {
-
     //
     //this controller manages players wizards
     public class playerController : ControllerBase
     {
-
-
-
-
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         //[HttpGet]
         [Authorize]
@@ -27,44 +22,27 @@ namespace hypster.Controllers
             hypster_tv_DAL.playerManagement playerManager = new hypster_tv_DAL.playerManagement();
             //--------------------------------------------------------------------------------------------
 
-
-
-
             //--------------------------------------------------------------------------------------------
             hypster.ViewModels.GetPlayerViewModel model = new ViewModels.GetPlayerViewModel();
             model.curr_user = memberManager.getMemberByUserName(User.Identity.Name);
             model.playlists_list = playlistManager.GetUserPlaylists(model.curr_user.id);
             //--------------------------------------------------------------------------------------------
-
-
-
-
-
             
-
-
-
-
-
-
             //*******Check ACTION***********************************
             if (Request.QueryString["ACT"] != null)
             {
                 switch (Request.QueryString["ACT"])
                 {
-                    case "DeletePlayer":
-                        
+                    case "DeletePlayer":                        
                         int i_player_id = 0;
                         if (Request.QueryString["Pl_ID"] != null && Int32.TryParse(Request.QueryString["Pl_ID"], out i_player_id) == false)
                             i_player_id = 0;
-
 
                         if (i_player_id != 0)
                         {
                             playerManager.DeletePlayer(model.curr_user.id, i_player_id);
                             return RedirectPermanent("/account/music");
                         }
-
                         break;
                     default:
                         break;
@@ -73,43 +51,39 @@ namespace hypster.Controllers
             //******************************************************
 
 
-
-
-
             switch (id)
             {
-                case "BarPlayer":
-                    //get player for editing if exist
-                    int player_ID1 = 0;
-                    if (Request.QueryString["Pl_ID"] != null)
-                    {
-                        if(Int32.TryParse(Request.QueryString["Pl_ID"], out player_ID1) == false)
-                            player_ID1 = 0;
-                        if(player_ID1 != 0)
-                            model.player = playerManager.GetPlayerByID(model.curr_user.id, player_ID1);
-                    }
+                //case "BarPlayer":
+                //    //get player for editing if exist
+                //    int player_ID1 = 0;
+                //    if (Request.QueryString["Pl_ID"] != null)
+                //    {
+                //        if(Int32.TryParse(Request.QueryString["Pl_ID"], out player_ID1) == false)
+                //            player_ID1 = 0;
+                //        if(player_ID1 != 0)
+                //            model.player = playerManager.GetPlayerByID(model.curr_user.id, player_ID1);
+                //    }
 
 
-                    // vvs_tracker
-                    //----------------------------------------------------------------------------------------------------------
-                    hypster_tv_DAL.TrackLoginManagement trackLogin = new hypster_tv_DAL.TrackLoginManagement();
+                //    // vvs_tracker
+                //    //----------------------------------------------------------------------------------------------------------
+                //    hypster_tv_DAL.TrackLoginManagement trackLogin = new hypster_tv_DAL.TrackLoginManagement();
 
-                    hypster_tv_DAL.TrackWebsite recTrack = new hypster_tv_DAL.TrackWebsite();
-                    recTrack.TrackWebsite_Key = "getPlayer_BarPlayer";
-                    recTrack.TrackWebsite_KeyID = 230011;
-                    recTrack.TrackWebsite_Val = User.Identity.Name;
-                    recTrack.TrackDate = DateTime.Now;
+                //    hypster_tv_DAL.TrackWebsite recTrack = new hypster_tv_DAL.TrackWebsite();
+                //    recTrack.TrackWebsite_Key = "getPlayer_BarPlayer";
+                //    recTrack.TrackWebsite_KeyID = 230011;
+                //    recTrack.TrackWebsite_Val = User.Identity.Name;
+                //    recTrack.TrackDate = DateTime.Now;
 
-                    trackLogin.hyDB.TrackWebsites.AddObject(recTrack);
-                    trackLogin.hyDB.SaveChanges();
-                    //----------------------------------------------------------------------------------------------------------
+                //    trackLogin.hyDB.TrackWebsites.AddObject(recTrack);
+                //    trackLogin.hyDB.SaveChanges();
+                //    //----------------------------------------------------------------------------------------------------------
 
 
                     
                     
-                    return View("getPlayer_Bar", model);
-                    break;
-
+                //    return View("getPlayer_Bar", model);
+                    //break;
                 case "ClassicPlayer":
                     //get player for editing if exist
                     int player_ID2 = 0;
@@ -120,7 +94,6 @@ namespace hypster.Controllers
                         if(player_ID2 != 0)
                             model.player = playerManager.GetPlayerByID(model.curr_user.id, player_ID2);
                     }
-
 
                     // vvs_tracker
                     //----------------------------------------------------------------------------------------------------------
@@ -136,11 +109,7 @@ namespace hypster.Controllers
                     trackLogin1.hyDB.SaveChanges();
                     //----------------------------------------------------------------------------------------------------------
 
-
-
                     return View("getPlayer_Classic", model);
-                    break;
-
 
                 case "RadioPlayer":
                     //get player for editing if exist
@@ -159,8 +128,6 @@ namespace hypster.Controllers
                     hypster_tv_DAL.MemberMusicGenreManager genreMeneger = new hypster_tv_DAL.MemberMusicGenreManager();
                     model_Radio.music_genres_list = genreMeneger.GetMusicGenresList();
 
-
-
                     // vvs_tracker
                     //----------------------------------------------------------------------------------------------------------
                     hypster_tv_DAL.TrackLoginManagement trackLogin2 = new hypster_tv_DAL.TrackLoginManagement();
@@ -174,28 +141,17 @@ namespace hypster.Controllers
                     trackLogin2.hyDB.TrackWebsites.AddObject(recTrack2);
                     trackLogin2.hyDB.SaveChanges();
                     //----------------------------------------------------------------------------------------------------------
-
-
-
                     return View("getPlayer_Radio", model_Radio);
-                    break;
 
                 default:
                     break;
 
             }
 
-
             return View();
         }
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-
-
-
-
-
+        
 
         // FORM FOR BAR PLAYER
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -208,26 +164,19 @@ namespace hypster.Controllers
                 return RedirectPermanent("/create");
             //--------------------------------------------------------------------------------------------
 
-
-
             // 1.genral declarations
             //--------------------------------------------------------------------------------------------
             hypster_tv_DAL.playerManagement playerManager = new hypster_tv_DAL.playerManagement();
             hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
             //--------------------------------------------------------------------------------------------
 
-
-
-
             //--------------------------------------------------------------------------------------------
             hypster_tv_DAL.Member curr_user = new hypster_tv_DAL.Member();
             curr_user = memberManager.getMemberByUserName(User.Identity.Name);
 
-
             hypster_tv_DAL.Player player = new hypster_tv_DAL.Player();
             player.user_ID = curr_user.id;
             player.Player_Type = "BarPlayer";
-
 
             player.player_Name = PlayerName;
             player.playlist_ID = Sel_Playlist_ID;
@@ -236,8 +185,6 @@ namespace hypster.Controllers
             player.BAR_shufflePlayback = BAR_shufflePlayback;
             player.BAR_placementOfThePlayer = Placement_of_the_Player;
             player.BAR_showPlaylistByDefault = BAR_showPlaylistByDefault;
-
-
 
             //save only if player_id null - new player
             if (PlayerID == 0)
