@@ -112,25 +112,43 @@ namespace hypster.Areas.apps.Controllers
 
 
 
-        [OutputCache(Duration = 12)]
-        public ActionResult GetBreakingGenre(string genre)
+        [OutputCache(Duration = 50)]
+        public ActionResult GetBreakingGenre(string genre, string title)
         {
             hypster_tv_DAL.newsManagement newsManager = new hypster_tv_DAL.newsManagement();
             List<hypster_tv_DAL.newsPost> posts_list = new List<hypster_tv_DAL.newsPost>();
-            posts_list = newsManager.GetLatestNewsOnGenre_cache(genre).ToList();
-            ViewBag.Title = genre;
-            ViewBag.ID = newsManager.GetGenreIdByLabel(genre)[0];
-            ViewBag.Length = posts_list.Count;
-            //ViewBag.Count = posts_list.Count;            
+            if (genre.Contains(";"))
+            {
+                string last_genre = "";
+                string[] genres = genre.Split(';');
+                foreach (var g in genres)
+                {
+                    List<hypster_tv_DAL.newsPost> list = newsManager.GetLatestNewsOnGenre_cache(g).ToList();
+                    for (int j = 0; j < list.Count; j++)
+                    {
+                        if (!posts_list.Contains(list[j]))
+                            posts_list.Add(list[j]);
+                    }
+                    last_genre = g;
+                }
+                posts_list = posts_list.OrderByDescending(a => a.post_date).ToList();
+                ViewBag.Title = title;
+                ViewBag.ID = newsManager.GetGenreIdByLabel(last_genre)[0];
+            }
+            else
+            {
+                posts_list = newsManager.GetLatestNewsOnGenre_cache(genre).ToList();
+                ViewBag.Title = genre;
+                ViewBag.ID = newsManager.GetGenreIdByLabel(genre)[0];
+            }
+
+            ViewBag.Length = posts_list.Count;            
             return View(posts_list);
         }
 
 
 
 
-
-
-        //[OutputCache(Duration = 120)]
         public ActionResult Tags(string id)
         {
             hypster_tv_DAL.TagManagement tagManager = new hypster_tv_DAL.TagManagement();
