@@ -48,9 +48,12 @@
 
     <div class="pst_rightCH1">
         <div style="float:right;margin-top:10px;">@Html.Partial("~/Views/Shared/pr_RightRail.cshtml")</div>
-        <div id="relVideosCth" style="margin-left:16px;min-width:300px">
-            @Html.Raw(HttpUtility.HtmlDecode(Model.MusicPlayer))
-        </div>
+        @if (Model.MusicPlayer != "" && Model.MusicPlayer != null)
+        {
+            <div id="relVideosCth" style="margin-left:16px;min-width:300px">
+                @Html.Raw(HttpUtility.HtmlDecode(Model.MusicPlayer))
+            </div>
+        }
     </div>
 </div>
 
@@ -58,7 +61,6 @@
 </div>
 
 <div style="float:left; width:100%; margin:0 0 45px 0; ">
-    @*@Html.Action("pr_GetRelatedNews", "breaking",  new { id = Model.post_id } )*@
     @Html.Action("pr_GetLatestNews", "breaking")
 </div>
 
