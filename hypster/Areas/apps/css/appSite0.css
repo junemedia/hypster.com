@@ -5017,12 +5017,14 @@ a:visited
 /*------------------------------------------------------------*/
 
 .PostVideoCont iframe,
+iframe[src^="https://www.youtube.com/"],
 #player
 {
     width:346px !important; height:206px !important;
 }
 
-iframe[src^="https://www.facebook.com/"]{
+iframe[src^="https://www.facebook.com/"]
+{
     width:100% !important; height:530px !important;
 }
 
