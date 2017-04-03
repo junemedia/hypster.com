@@ -925,7 +925,8 @@ function SearchMusic() {
 
 function SearchMusicStr(search_string) {
 
-    $('#listenSlideContHolder').html("<div style='float:right; width:680px;'><span style='font-size:24px; color:#454545;'>Searching...</span></div>");
+    //$('#listenSlideContHolder').html("<div style='float:right; width:680px;'><span style='font-size:24px; color:#454545;'>Searching...</span></div>");
+    $('#listenSlideContHolder').html("<div style='float:right; width:100%;'><span style='font-size:24px; color:#454545;'>Searching...</span></div>");
 
     var ss = search_string;
     ss = ss.replace(" ", "+");
@@ -959,7 +960,8 @@ function SearchMusicStr(search_string) {
 
 function SearchMusicStrPage(search_string, page) {
 
-    $('#listenSlideContHolder').html("<div style='float:right; width:680px;'><span style='font-size:24px; color:#454545;'>Searching...</span></div>");
+    //$('#listenSlideContHolder').html("<div style='float:right; width:680px;'><span style='font-size:24px; color:#454545;'>Searching...</span></div>");
+    $('#listenSlideContHolder').html("<div style='float:right; width:100%;'><span style='font-size:24px; color:#454545;'>Searching...</span></div>");
 
     var ss = search_string;
     ss = ss.replace(" ", "+");
@@ -998,8 +1000,8 @@ function SearchMusicYTID() {
     var ss = $("#txtSearchString_youtube").val();
     ss = ss.replace(" ", "+");
 
-
-    $('#listenSlideContHolder').html("<div style='float:right; width:680px;'><span style='font-size:24px; color:#454545;'>Searching...</span></div>");
+    //$('#listenSlideContHolder').html("<div style='float:right; width:680px;'><span style='font-size:24px; color:#454545;'>Searching...</span></div>");
+    $('#listenSlideContHolder').html("<div style='float:right; width:100%;'><span style='font-size:24px; color:#454545;'>Searching...</span></div>");
 
 
     $.ajax({
