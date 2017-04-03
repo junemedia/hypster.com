@@ -5013,10 +5013,16 @@ a:visited
 }
 /*------------------------------------------------------------*/
 
+.PostVideoCont iframe,
+#player
+{
+    width:420px !important; height:250px !important;
+}
 
 
-
-
+iframe[src^="https://"]{
+    width:100% !important; height:412px !important;
+}
 
 
 
