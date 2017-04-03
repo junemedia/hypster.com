@@ -7674,7 +7674,7 @@ a.captionOrange:hover
 
 #listenSlideContHolder
 {
-    float:right; width:100%; min-height:0px; margin:0 0 20px 0; background-color:Black;
+    float:right; width:100%; min-height:0px; margin:7px 0 20px 0; background-color:Black;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
@@ -7946,7 +7946,7 @@ a.captionOrange:hover
 
 .listenTabCh2 #searchStr
 {
-    float:left; width:100%; height:50px; line-height:55px; font-size:45px; color:#000000;
+    float:left; width:100%; height:50px; line-height:55px; font-size:45px; font-weight:bold; color:#000000; margin:6px;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
