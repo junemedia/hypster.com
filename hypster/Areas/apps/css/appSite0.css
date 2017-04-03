@@ -5012,12 +5012,19 @@ a:visited
 .PostVideoCont
 {
 	float:right; display:block; background-color:#565656; padding:2px; border-radius:2px;
+    width:346px !important; height:206px !important;
 }
 /*------------------------------------------------------------*/
 
+.PostVideoCont iframe,
+#player
+{
+    width:346px !important; height:206px !important;
+}
 
-
-
+iframe[src^="https://"]{
+    width:100% !important; height:530px !important;
+}
 
 
 
