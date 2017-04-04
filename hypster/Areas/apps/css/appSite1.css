@@ -5012,17 +5012,19 @@ a:visited
 }
 /*------------------------------------------------------------*/
 
-.PostVideoCont iframe,
-iframe[src^="https://www.youtube.com/"],
-#player
+iframe
 {
     width:420px !important; height:250px !important;
 }
 
+iframe[src^="http://hypster.com/hypsterPlayer/MPL_News"]
+{
+    width:353px !important; height:562px !important;
+}
 
 iframe[src^="https://www.facebook.com/"]
 {
-    width:100% !important; height:412px !important;
+    width:100% !important; height:412px !important; overflow-y:scroll !important;
 }
 
 
