@@ -5015,10 +5015,16 @@ a:visited
 }
 /*------------------------------------------------------------*/
 
-iframe
+.PostVideoCont iframe
 {
     width:420px !important; height:250px !important;
 }
+
+.MainPlayerHoder iframe
+{
+    width:314px !important; height:187px !important;
+}
+
 
 iframe[src^="http://hypster.com/hypsterPlayer/MPL_News"]
 {
