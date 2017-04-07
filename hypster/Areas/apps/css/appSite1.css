@@ -5019,19 +5019,17 @@ a:visited
 
 .MainPlayerHoder iframe
 {
-    width:314px !important; height:187px !important;
+    width:314px !important; height:187px !important;    
 }
-
 
 iframe[src^="http://hypster.com/hypsterPlayer/MPL_News"]
 {
-    width:353px !important; height:562px !important;
+    width:320px !important; height:580px !important;
 }
 
 iframe[src^="https://www.facebook.com/"]
 {
-    width:100% !important; height:412px !important; overflow-y:scroll !important;
-}
+    width:100% !important;
 
 
 
@@ -8996,7 +8994,7 @@ a.captionOrange:hover
 
 .brkRigthCH
 {
-    float:left; width:100%; height:auto;
+    float:left; width:100%; height:auto; text-align:center;
 }
 
 .brkBtmImg1
@@ -9024,6 +9022,7 @@ a.captionOrange:hover
 {
     background-color:#FFFFFF;
     margin:0 0 0 -3px;
+    text-align:center;
 }
 
 

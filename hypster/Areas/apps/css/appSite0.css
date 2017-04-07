@@ -5023,21 +5023,28 @@ a:visited
 
 .MainPlayerHoder iframe
 {
-    width:314px !important; height:187px !important;
+    width:314px !important; height:187px !important;    
 }
 
 iframe[src^="http://hypster.com/hypsterPlayer/MPL_News"]
 {
-    width:353px !important; height:562px !important;
+    width:320px !important; height:562px !important;
 }
 
 iframe[src^="https://www.facebook.com/"]
 {
-    width:100% !important; height:530px !important; overflow-y:scroll !important;
+    width:100% !important; overflow:scroll !important;
 }
 
+iframe[src^="https://embed.itunes.apple.com/"]
+{
+    min-width:354px !important;
+}
 
-
+.video-container .videoC
+{
+    min-width:354px !important;
+}
 
 /* Styles for basic forms */
 /* -----------------------------------------------------------*/
@@ -9056,7 +9063,7 @@ a.captionOrange:hover
 
 .brkRigthCH
 {
-    float:left; width:100%; height:auto;
+    float:left; width:100%; height:auto; text-align:center;
 }
 
 .brkBtmImg1
