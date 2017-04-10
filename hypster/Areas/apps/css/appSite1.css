@@ -5027,10 +5027,10 @@ iframe[src^="http://hypster.com/hypsterPlayer/MPL_News"]
     width:320px !important; height:580px !important;
 }
 
-iframe[src^="https://www.facebook.com/"]
+iframe[src^="https://www.facebook.com/"] 
 {
-    width:100% !important;
-
+    width: 100% !important;
+}
 
 
 /* Styles for basic forms */
