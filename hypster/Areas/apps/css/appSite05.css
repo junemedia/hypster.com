@@ -500,7 +500,7 @@ a:visited
 {
 	clear:both;
 	width:100%;	
-	min-height:330px;
+	min-height:355px;
 	background-color:#d5af55; 
 	border-top:4px solid #d5af55; 
 	margin-top:0px; 
@@ -7089,7 +7089,7 @@ a.captionOrange:hover
 
 .shrBottomC1
 {
-    margin:5px 0 0 0;
+    margin:5px 0 10px 0;
 }
 
 .shrTopC1 span,
