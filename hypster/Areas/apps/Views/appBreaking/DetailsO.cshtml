@@ -64,6 +64,10 @@
                  @Html.Raw(HttpUtility.HtmlDecode(Model.MusicPlayer))
             </div>
         </div>
+        
+        <div class="shrBtwnC1">
+            <span>@Html.Partial("~/Views/hypAds/ad_300x250_mob.cshtml")</span>
+        </div>
 
         <div class="PostNav_cont">
             <a class="PrevPost" href="/apps/appBreaking/prevPost?PID=@Model.post_id">PREV POST</a>

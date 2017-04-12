@@ -3,24 +3,16 @@
     Layout = null;
 }
 
-
-
-
-<div style=" float:left; width:100%; height:39px; line-height:39px; margin:0 0 10px -12px; font-size:20px; text-align:center; font-weight:bold; color:#000000; border-bottom:1px solid #1b1b1b;">
+<div style="float:left; width:100%; height:39px; line-height:39px; margin:0 0 10px -12px; font-size:20px; text-align:center; font-weight:bold; color:#000000; border-bottom:1px solid #1b1b1b;">
     &nbsp;&nbsp;Radio Stations
 </div>
 
-
-
-
-<div class="contMiddle" style=" display:block; margin-bottom:5px;">
+<div class="contMiddle" style="display:block; margin-bottom:5px;">
     <div class="radioSearch">
         <input type="text" id="stationName" name="stationName" value=" Enter Artist, Song or Genre" onfocus="if(this.value == ' Enter Artist, Song or Genre') this.value = '';" onblur="if(this.value == '') this.value = ' Enter Artist, Song or Genre';" />
         <div class="btnRadioSearch" onclick="CustomRadioStation()">Listen</div>
     </div>
 </div>
-
-
 
 
 @foreach (var item in Model.genres_list)
@@ -33,11 +25,12 @@
 }
 
 
+<div class="shrBtwnC1">
+    <span>@Html.Partial("~/Views/hypAds/ad_300x250_mob.cshtml")</span>
+</div>
 
 
-
-
-<div style=" float:left; width:100%; height:39px; line-height:39px; margin:0 0 10px -12px; font-size:20px; text-align:center; font-weight:bold; color:#000000; border-bottom:1px solid #1b1b1b; ">
+<div style="float:left; width:100%; height:39px; line-height:39px; margin:0 0 10px -12px; font-size:20px; text-align:center; font-weight:bold; color:#000000; border-bottom:1px solid #1b1b1b;">
     &nbsp;&nbsp;Charts
 </div>
 
@@ -52,34 +45,22 @@
 }
 
 
-
-
-
-
-
-
-
-<div style=" float:left; width:100%; height:39px; line-height:39px; margin:0 0 10px -12px; font-size:20px; text-align:center; font-weight:bold; color:#000000; border-bottom:1px solid #1b1b1b; ">
+<div style="float:left; width:100%; height:39px; line-height:39px; margin:0 0 10px -12px; font-size:20px; text-align:center; font-weight:bold; color:#000000; border-bottom:1px solid #1b1b1b;">
     &nbsp;&nbsp;Festivals
 </div>
 
 @foreach (var item in Model.festivals_list)
 {
-<div class="plItem">
-    <a class="plPrw" onclick="DispRadioDetails(this, @item.Festival_Playlist_ID, @item.Festival_User_ID);"></a>
-    <!-- onmouseout="HideRadioDetails(event, this);"></a-->
-    <div class="plName" onclick="OpenPlayerM('/apps/appPlaylists/festival/@(item.Festival_GUID)');">@item.Festival_Name</div>
-    <a class="plPlay" onclick="OpenPlayerM('/apps/appPlaylists/festival/@(item.Festival_GUID)');" ></a>
-</div>  
+    <div class="plItem">
+        <a class="plPrw" onclick="DispRadioDetails(this, @item.Festival_Playlist_ID, @item.Festival_User_ID);"></a>
+        <!-- onmouseout="HideRadioDetails(event, this);"></a-->
+        <div class="plName" onclick="OpenPlayerM('/apps/appPlaylists/festival/@(item.Festival_GUID)');">@item.Festival_Name</div>
+        <a class="plPlay" onclick="OpenPlayerM('/apps/appPlaylists/festival/@(item.Festival_GUID)');" ></a>
+    </div>  
 }
-
-
-
-
-
-
 
 
 <div id="Radio_PlstPreview">
     <div class="LdingPrev">Loading...</div>
 </div>
+

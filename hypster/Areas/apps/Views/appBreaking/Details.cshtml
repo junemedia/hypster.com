@@ -14,11 +14,6 @@
         width:100%;
         height:auto;
     }
-    /*#facebook,
-    .PostVideoCont
-    {
-        width: 100% !important;
-    }*/
 </style>
 
 <script type="text/javascript">
@@ -35,6 +30,10 @@
                     <div class="brkngCont">
                         @Html.Raw(HttpUtility.HtmlDecode(Model.post_content))
                         <br />
+                    </div>
+
+                    <div class="shrBtwnC1">
+                        <span>@Html.Partial("~/Views/hypAds/ad_300x250_mob.cshtml")</span>
                     </div>
 
                     <div style="float:left; width:100%; margin-top:12px;">
