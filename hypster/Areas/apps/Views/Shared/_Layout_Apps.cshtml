@@ -129,7 +129,10 @@
                 <SCRIPT SRC="http://ib.adnxs.com/ttj?id=4080072&cb=[CACHEBUSTER]&referrer=[REFERRER_URL]" TYPE="text/javascript"></SCRIPT>
                 <!-- END TAG -->
                 </div>
-            </div>        
+            </div>
+            <div class="shrTopC1">
+                <span>@Html.Partial("~/Views/hypAds/ad_320x50_atf.cshtml")</span>
+            </div>
             <div class="ContentHeaderCont">
                 @Html.Partial("~/Areas/apps/Views/Shared/pr_TopMenu.cshtml")
             </div>
@@ -149,21 +152,24 @@
                 </div>
             </div>
         </div>
-    <div class="Trans_BACK" id="HideBackDiv" onclick="Show_Content();"></div>
-    <div id="popupContainer"></div>
+        <div class="shrBottomC1">
+            <span>@Html.Partial("~/Views/hypAds/ad_320x50_btf.cshtml")</span>
+        </div>
+        <div class="Trans_BACK" id="HideBackDiv" onclick="Show_Content();"></div>
+        <div id="popupContainer"></div>
 
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-28695705-1']);
-        _gaq.push(['_setDomainName', 'hypster.com']);
-        _gaq.push(['_trackPageview']);
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-28695705-1']);
+            _gaq.push(['_setDomainName', 'hypster.com']);
+            _gaq.push(['_trackPageview']);
 
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
-    </div>
-</body>
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        </div>
+    </body>
 </html>
