@@ -5993,6 +5993,7 @@
     <Content Include="bin\BotInfo.netmodule" />
     <Content Include="Areas\apps\Views\appAccount\ForgotPasswordFail.cshtml" />
     <Content Include="Areas\apps\Views\appBreaking\GetBreakingGenre.cshtml" />
+    <Content Include="Areas\apps\Views\appHypster\add_to_address_book.cshtml" />
     <None Include="Properties\PublishProfiles\hypster.com.pubxml" />
     <None Include="Properties\PublishProfiles\stage.hypster.com.pubxml" />
     <None Include="Properties\PublishProfiles\hypster.local.pubxml" />
