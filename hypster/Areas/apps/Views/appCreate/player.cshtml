@@ -30,28 +30,20 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-<div style=" float:left; width:100%;">
-        <div id="CreateContHolder" style=" float:left; width:100; margin-top:-1px; ">
-            @if (ViewBag.Action == "EDT")
-            {
-                Html.RenderAction("getPlayer", "appPlayer", new { id = ViewBag.PlType });
-            }
-            else
-            {
-                Html.RenderAction("getPlayer", "appPlayer", new { id = "" });   
-            }
-        </div>
+<div style="float:left; width:100%;">
+    <div id="CreateContHolder" style="float:left; width:100px; margin-top:-1px;">
+        @if (ViewBag.Action == "EDT")
+        {
+            Html.RenderAction("getPlayer", "appPlayer", new { id = ViewBag.PlType });
+        }
+        else
+        {
+            Html.RenderAction("getPlayer", "appPlayer", new { id = "" });   
+        }
+    </div>
 </div>
 
 
-
-
+<div class="shrBtwnC1">
+    <span>@Html.Partial("~/Views/hypAds/ad_300x250_mob.cshtml")</span>
+</div>
