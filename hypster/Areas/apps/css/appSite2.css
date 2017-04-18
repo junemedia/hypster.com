@@ -5013,9 +5013,9 @@ a:visited
 }
 /*------------------------------------------------------------*/
 
-iframe[src^="http://hypster.com/hypsterPlayer/MPL_News"]
+iframe[src^="https://www.youtube.com/"]
 {
-    width:320px !important; height:562px !important;
+    width:352px !important; height:198px !important;
 }
 
 .PostVideoCont iframe
@@ -5025,9 +5025,13 @@ iframe[src^="http://hypster.com/hypsterPlayer/MPL_News"]
 
 .MainPlayerHoder iframe
 {
-    width:314px !important; height:187px !important;    
+    width:344px !important; height:194px !important;
 }
 
+iframe[src^="http://hypster.com/hypsterPlayer/MPL_News"]
+{
+    width:352px !important; height:618px !important;
+}
 
 /* Styles for basic forms */
 /* -----------------------------------------------------------*/

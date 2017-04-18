@@ -5015,6 +5015,10 @@ a:visited
     width:346px !important; height:206px !important;
 }
 /*------------------------------------------------------------*/
+iframe[src^="https://www.youtube.com/"]
+{
+    width:352px !important; height:198px !important;
+}
 
 .PostVideoCont iframe
 {
@@ -5023,12 +5027,12 @@ a:visited
 
 .MainPlayerHoder iframe
 {
-    width:314px !important; height:187px !important;    
+    width:344px !important; height:196px !important;
 }
 
 iframe[src^="http://hypster.com/hypsterPlayer/MPL_News"]
 {
-    width:320px !important; height:562px !important;
+    width:352px !important; height:618px !important;
 }
 
 iframe[src^="https://www.facebook.com/"]
