@@ -107,6 +107,7 @@ namespace hypster.Controllers
                             rembr_me = true;
                         }
 
+                        // Set Authentication cookie so the User.Indentity object is set.
                         FormsAuthentication.SetAuthCookie(UserName, rembr_me);
 
                         if (Url.IsLocalUrl(returnUrl))
@@ -769,20 +770,52 @@ namespace hypster.Controllers
 
 
         //----------------------------------------------------------------------------------------------------------
-        [System.Web.Mvc.OutputCache(NoStore = true, Duration = 0)]
-        public ActionResult Deactivate()
-        {
-            hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
+        //[System.Web.Mvc.OutputCache(NoStore = true, Duration = 0)]
+        //public ActionResult Deactivate()
+        //{
+        //    hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
 
-            memberManager.DeactivateUser(memberManager.getMemberByUserName(User.Identity.Name).id);
+        //    memberManager.DeactivateUser(memberManager.getMemberByUserName(User.Identity.Name).id);
 
-            FormsAuthentication.SignOut();
+        //    FormsAuthentication.SignOut();
 
-            return RedirectToAction("Index", "Home");
-        }
+        //    return RedirectToAction("Index", "Home");
+        //}
         //----------------------------------------------------------------------------------------------------------
 
 
+
+
+        //----------------------------------------------------------------------------------------------------------
+        [System.Web.Mvc.OutputCache(NoStore = true, Duration = 0)]
+        public ActionResult Delete()
+        {
+            if (Request.QueryString["confirm"] != null && Request.QueryString["confirm"].ToString() == "true")
+            {
+                hypster_tv_DAL.memberManagement memberManager = new hypster_tv_DAL.memberManagement();
+                int userId = memberManager.getMemberByUserName(User.Identity.Name).id;
+                memberManager.DeleteMemberAccount(userId);
+                try
+                {
+                    System.IO.DirectoryInfo dir = new DirectoryInfo(System.Configuration.ConfigurationManager.AppSettings["userPics_StoragePath"] + "\\" + User.Identity.Name);
+                    if (dir.Exists)
+                    {
+                        dir.Delete(true);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The process failed: {0}", ex.Message.ToString());
+                }
+
+                FormsAuthentication.SignOut();
+
+                return RedirectToAction("Index", "Home");
+            }
+            else
+                return RedirectToAction("info");
+        }
+        //----------------------------------------------------------------------------------------------------------
 
 
         #endregion

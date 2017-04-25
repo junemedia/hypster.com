@@ -221,8 +221,8 @@
                     <div style="float:left; width:100px; height:30px; margin-top:10px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
                         <div style="float:left; margin:3px 0 0 7px; color:#2f5262;">Introduce:</div>
                     </div>
-                    <div style="float:left; width:98%; margin-top:3px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
-                        <textarea rows="10" cols="84" name="Introduce" id="Introduce" style="margin:3px; float:left; outline: none; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">@Model.curr_user.introduce</textarea>
+                    <div style="float:left; width:99%; margin-top:3px; border:1px solid #d4ae52; background-color:#FFFFFF; border-radius:7px; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px;">
+                        <textarea rows="10" cols="84" name="Introduce" id="Introduce" style="margin:3px; float:left; outline: none; background-color:#FFFFFF; border:none; font-family:'Lato', sans-serif; font-weight:lighter; font-size:18px; width:98%">@Model.curr_user.introduce</textarea>
                     </div>
                 </div>
 
@@ -298,8 +298,8 @@
         </div>
 
         <div style="float:left; width:100%;">
-            <div onclick="if(confirm('Are you sure you want to delete?') == true){window.location='/account/Deactivate';}" style="float:left; cursor:pointer; width:250px; margin:20px 0 0 20px; color:#000000; font-size:16px;">
-                Deactivate My Account
+            <div onclick="if (confirm('Are you sure you want to delete?') == true) { if (confirm('Delete account will also delete all your playlists, photos, and all of your activities.\n\nARE YOU SURE YOU STILL WANT TO DELETE?\n') == true) { window.location = '/account/Delete?confirm=true'; } else { window.location = '/account/Delete?confirm=false'; } }" style="float:left; cursor:pointer; width:250px; margin:20px 0 0 20px; background-color:#000000; color:#FFFFFF; border:solid 2px #000000; border-radius:4px; font-size:16px; font-weight:bolder; text-align:center;">
+                Delete My Account
             </div>
             <input type="submit" value="SAVE CHANGES" style="float:right; width:280px; height:40px; line-height:40px; margin:8px 0 0 0; background-color:#3fbc91; border:1px solid #3fbc91; border-radius:3px; color:#FFFFFF; font-family:'Lato', sans-serif; font-weight:lighter; font-size:26px; text-align:center; cursor:pointer;" />
             <div class="mFollowUsCont1">

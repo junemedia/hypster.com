@@ -8936,12 +8936,21 @@ a.captionOrange:hover
     float:right; width:98%; height:40px; line-height:40px; margin:8px 1% 0 0; background-color:#3fbc91; border:1px solid #3fbc91; border-radius:3px; color:#FFFFFF; font-family:'Lato', sans-serif; font-weight:lighter; font-size:26px; text-align:center; cursor:pointer;
 }
 
-.acctInfoSaveCH .deactivateAcct
+/*.acctInfoSaveCH .deactivateAcct,*/
+.acctInfoSaveCH .deleteAcct
 {
-    float:left; cursor:pointer; width:250px; margin:20px 0 0 20px; color:#000000; font-size:16px;
-    display:none;
+    float:left; cursor:pointer; color:#FFFFFF; font-size:16px; border-radius:5px; font-weight:bolder; margin:20px 0 0 17px; width:45%; text-align:center;
 }
 
+/*.acctInfoSaveCH .deactivateAcct
+{
+    background-color:#000000; border:solid 2px #000000;
+}*/
+
+.acctInfoSaveCH .deleteAcct
+{
+    background-color:#000000; border:solid 2px #000000;
+}
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 

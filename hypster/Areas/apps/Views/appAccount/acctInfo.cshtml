@@ -294,8 +294,8 @@
         </div>
     </div>
     <div style="float:left; width:100%;">
-        <div class="deactivateAcct" onclick="if(confirm('Are you sure you want to delete?') == true){window.location='/account/Deactivate';}">
-            Deactivate My Account
+        <div class="deleteAcct" onclick="if (confirm('Are you sure you want to delete?') == true) { if (confirm('Delete account will also delete all your playlists, photos, and all of your activities.\n\nARE YOU SURE YOU STILL WANT TO DELETE?\n') == true) { window.location = '/apps/appAccount/Delete?confirm=true'; } else { window.location = '/apps/appAccount/Delete?confirm=false'; } }">
+            Delete My Account
         </div>
         <input type="submit" value="SAVE CHANGES" class="acctSaveChgsBtn" />
         <input type="button" value="SIGN OUT" class="acctSaveSingOutBtn" onclick="window.location='/apps/appAccount/logoff';" />
