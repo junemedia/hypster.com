@@ -50,10 +50,13 @@
         <div style="float:right;margin-top:10px;">@Html.Partial("~/Views/Shared/pr_RightRail.cshtml")</div>
         @if (Model.MusicPlayer != "" && Model.MusicPlayer != null)
         {
-            <div id="relVideosCth" style="margin-left:16px;min-width:300px">
+            <div id="relVideosCth" style="margin-top:10px;margin-left:16px;min-width:300px">
                 @Html.Raw(HttpUtility.HtmlDecode(Model.MusicPlayer))
             </div>
         }
+        <div style="float:right;margin-top:10px;">
+            @Html.Partial("~/Views/hypAds/ad_zergnet_2x2.cshtml")
+        </div>
     </div>
 </div>
 

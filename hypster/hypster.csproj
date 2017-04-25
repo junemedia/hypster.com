@@ -6480,6 +6480,7 @@
     <Content Include="Views\hypAds\ad_320x50_atf.cshtml" />
     <Content Include="Views\hypAds\ad_320x50_btf.cshtml" />
     <Content Include="Views\hypAds\ad_300x250_mob.cshtml" />
+    <Content Include="Views\hypAds\ad_zergnet_2x2.cshtml" />
     <None Include="Web.hypster.com.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
