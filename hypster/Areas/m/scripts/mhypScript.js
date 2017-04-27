@@ -953,7 +953,7 @@ function SearchMusicStr(search_string) {
         }
     });
 
-    $(document).scrollTop(640);
+    //$(document).scrollTop(640);
 }
 
 
@@ -986,7 +986,7 @@ function SearchMusicStrPage(search_string, page) {
         }
     });
 
-    $(document).scrollTop(640);
+    //$(document).scrollTop(640);
 }
 
 
@@ -1012,7 +1012,7 @@ function SearchMusicYTID() {
         }
     });
 
-    $(document).scrollTop(640);
+    //$(document).scrollTop(640);
 }
 
 
