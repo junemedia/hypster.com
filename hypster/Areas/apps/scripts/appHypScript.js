@@ -31,11 +31,6 @@ function eraseCookie(name) {
 }
 
 
-
-
-
-
-
 String.prototype.replaceAll = function (target, replacement) {
     return this.split(target).join(replacement);
 };
@@ -72,11 +67,10 @@ $(window).resize(function () {
 });
 
 
-
-
 function subMouseOver(sender) {
     $(sender).css('background-color', '#173860');
 }
+
 
 function subMouseOut(sender) {
     $(sender).css('background-color', '');
@@ -1266,7 +1260,6 @@ function SearchMusic() {
 
 function SearchMusicStr(search_string) {
 
-    //$('#listenSlideContHolder').html("<div style='float:right; width:680px;'><span style='font-size:24px; color:#959595;'>Searching...</span></div>");
     $('#listenSlideContHolder').html("<div style='float:right; width:100%;'><span style='font-size:24px; color:#959595;'>Searching...</span></div>");
 
     var ss = search_string;
@@ -1295,18 +1288,13 @@ function SearchMusicStr(search_string) {
         }
     });
 
-
     $("#srRes1").html("");
-
-
-    $(document).scrollTop(750);
 }
 
 
 
 function SearchMusicStrPage(search_string, page) {
 
-    //$('#listenSlideContHolder').html("<div style='float:right; width:680px;'><span style='font-size:24px; color:#959595;'>Searching...</span></div>");
     $('#listenSlideContHolder').html("<div style='float:right; width:100%;'><span style='font-size:24px; color:#959595;'>Searching...</span></div>");
 
     var ss = search_string;
@@ -1333,7 +1321,7 @@ function SearchMusicStrPage(search_string, page) {
         }
     });
 
-    $(document).scrollTop(640);
+    //$(document).scrollTop(640);
 }
 
 
@@ -1347,7 +1335,6 @@ function SearchMusicYTID() {
     ss = ss.replaceAll(" ", "+");
 
 
-    //$('#listenSlideContHolder').html("<div style='float:right; width:680px;'><span style='font-size:24px; color:#454545;'>Searching...</span></div>");
     $('#listenSlideContHolder').html("<div style='float:right; width:100%;'><span style='font-size:24px; color:#454545;'>Searching...</span></div>");
 
     $.ajax({
@@ -1359,7 +1346,7 @@ function SearchMusicYTID() {
         }
     });
 
-    $(document).scrollTop(640);
+    //$(document).scrollTop(640);
 }
 
 

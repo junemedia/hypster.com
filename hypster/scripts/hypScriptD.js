@@ -1140,7 +1140,7 @@ function SearchMusicStr(search_string) {
     $("#srRes1").html("");
 
 
-    $(document).scrollTop(750);
+    //$(document).scrollTop(750);
 }
 
 
@@ -1173,7 +1173,7 @@ function SearchMusicStrPage(search_string, page) {
         }
     });
 
-    $(document).scrollTop(640);
+    //$(document).scrollTop(640);
 }
 
 
@@ -1199,7 +1199,7 @@ function SearchMusicYTID() {
         }
     });
 
-    $(document).scrollTop(640);
+    //$(document).scrollTop(640);
 }
 
 
