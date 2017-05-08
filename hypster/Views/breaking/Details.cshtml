@@ -9,6 +9,11 @@
 <div class="pst_BackCh1">
     <div class="pst_leftCH1">
         <div class="Post_mainCont">
+            <div class="PostNav_contT">
+                <a class="PrevPost" href="/breaking/prevPost?PID=@Model.post_id">PREV POST</a>
+                <a class="NextPost" href="/breaking/nextPost?PID=@Model.post_id">NEXT POST</a>
+            </div>
+
             <article id="post-@Model.post_guid" class="hentry">
                 <h1 class="entry-title">@Model.post_title</h1>
                 <div class="entry-content pst_MainCH1">
