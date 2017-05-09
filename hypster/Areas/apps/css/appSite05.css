@@ -5066,6 +5066,10 @@ iframe[src^="https://www.facebook.com/"]
     width:100% !important;
 }
 
+iframe[src^="http://teamcoco.com/"]
+{
+    min-width:100% !important;
+}
 
 
 /* Styles for basic forms */

@@ -5058,6 +5058,11 @@ iframe[src^="http://hypster.com/hypsterPlayer/MPL_News"]
     width:352px !important; /*height:618px !important;*/
 }
 
+iframe[src^="http://teamcoco.com/"]
+{
+    width: 420px !important;
+}
+
 /* Styles for basic forms */
 /* -----------------------------------------------------------*/
 
