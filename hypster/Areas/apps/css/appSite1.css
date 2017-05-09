@@ -4818,22 +4818,24 @@ a:visited
 /*    POST DETAILS SECTION  */
 /*------------------------------------------------------------*/
 
-.PostNav_cont
+.PostNav_cont,
+.PostNav_contT
 {
 	float:left; 
-	width:98%; 
-	padding:0 2% 0% 0%; 
+	width:98%;
 	border-radius:2px;
 	text-align:left;
 }
 
 .PostNav_cont
 {
+    padding:0 2% 0% 0%;
     margin:35px 0 13px 0;
 }
 
 .PostNav_contT
 {
+    padding:2% 2% 0% 0%; 
     margin:-15px 0 5px 0;
 }
 
