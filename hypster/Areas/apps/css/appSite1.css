@@ -5047,7 +5047,7 @@ a:visited
 
 iframe[src^="http://hypster.com/hypsterPlayer/MPL_News"]
 {
-    width:352px !important; height:618px !important;
+    width:352px !important; /*height:618px !important;*/
 }
 
 iframe[src^="https://www.facebook.com/"] 

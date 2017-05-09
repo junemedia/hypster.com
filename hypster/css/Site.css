@@ -174,13 +174,12 @@ div.Trans_75
 
 .slideRight
 {
-	width:748px; min-height:50px; padding:5px 0 5px 5px; 
-	margin:0 auto 0 auto; border-radius:2px;
+	width:730px; min-height:50px; padding:5px 0 5px 5px; margin:0 auto 0 auto; border-radius:2px;
 }
 
 .slideLeft
 {
-	width:750px; min-height:50px; padding:10px 10px 10px 10px; margin:0 auto 0 auto; border-radius:2px;
+	width:730px; min-height:50px; padding:10px; margin:0 auto; border-radius:2px;
 }
 
 .boxContRightTop
