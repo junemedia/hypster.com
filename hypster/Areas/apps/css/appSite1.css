@@ -5054,12 +5054,12 @@ iframe[src^="http://hypster.com/hypsterPlayer/MPL_News"]
 
 iframe[src^="https://www.facebook.com/"] 
 {
-    width: 100% !important;
+    width:100% !important;
 }
 
 iframe[src^="http://teamcoco.com/"]
 {
-    width: 420px !important;
+    width:420px !important;
 }
 
 /* Styles for basic forms */

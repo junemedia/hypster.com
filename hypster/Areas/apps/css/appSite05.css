@@ -5068,7 +5068,7 @@ iframe[src^="https://www.facebook.com/"]
 
 iframe[src^="http://teamcoco.com/"]
 {
-    min-width:100% !important;
+    min-width:354px !important; width:90% !important;
 }
 
 

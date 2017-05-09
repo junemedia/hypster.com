@@ -5090,7 +5090,7 @@ iframe[src^="https://embed.itunes.apple.com/"]
 
 iframe[src^="http://teamcoco.com/"]
 {
-    min-width:354px !important;
+    min-width:354px !important; width:90% !important;
 }
 
 .video-container .videoC
