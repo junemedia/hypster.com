@@ -58,7 +58,7 @@
 
             <textarea id="PlayerCodeArea" style="width:96%; margin:2%; height:300px;">
                 <!--Hypster Music Player-->
-                <script type="text/javascript" src="http://@System.Configuration.ConfigurationManager.AppSettings["scmHostName"]/script.php" ><!--//--></script>
+                <script type="text/javascript" src="http://scm.hypster.com/script.php" ><!--//--></script>
                 <script type="text/javascript">
                 <!--
                     SCMMusicPlayer.init("{'skin':'skins/@Model.BAR_playerSkin/skin.css','playback':{'autostart':'@(Model.BAR_autostart.ToString().ToLower())','shuffle':'@Model.BAR_shufflePlayback.ToString().ToLower()','volume':'100'},'playlist':'@Model.playlist_ID','placement':'@Model.BAR_placementOfThePlayer','showplaylist':'@Model.BAR_showPlaylistByDefault.ToString().ToLower()'}");                    
