@@ -4165,7 +4165,7 @@ a:visited
 
 .NPFT_ContHolder #SampleCodeHolder
 {
-	float:left; width:960px; margin-bottom:5px; padding:13px; border-radius:3px;
+	float:left; width:698px; margin-bottom:5px; padding:13px; border-radius:3px;
 }
 
 .NPFT_ContHolder #hypPlayer_Playlist_ID
@@ -4180,7 +4180,7 @@ a:visited
 
 .NPFT_ContHolder #PlayerCodeArea
 {
-	width:96%; margin:2%; height:200px; background-color:#FFFFFF; border:none; border:1px solid #757575;
+	width:96%; margin:2%; height:220px; background-color:#FFFFFF; border:none; border:1px solid #757575;
 }
 
 .NPFT_ContHolder #PlayerControlsCodeArea

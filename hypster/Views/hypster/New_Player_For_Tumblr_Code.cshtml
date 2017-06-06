@@ -31,263 +31,161 @@
 </div>
 
 <div class="boxContRight">
-<div id="listenSlide2" class="slideRight" style="min-height:900px;">
-    
-    
-    <div class="NPFT_ContHolder" style="min-height:400px;">
-
-    
-            
-            <div style="float:left; width:100%; margin-top:5px;">
-                    
+    <div id="listenSlide2" class="slideRight" style="min-height:900px;">
+        <div class="NPFT_ContHolder" style="min-height:400px;">
+            <div style="float:left; width:100%; margin-top:5px;">                    
                 <div style="float:left; width:45%; ">
                     <div style="float:left; margin:0px; color:#d4ae52; border-bottom:1px solid #3fbc91; font-family:'Lato', sans-serif; font-size:28px;">
                         HypsterHi5 player
                     </div>
                 </div>
-                
             </div>
-
-
-
     
-            <div id="CPL_Tab2">
-        
-                    
+            <div id="CPL_Tab2">      
+                <div id="SampleSettingsHolder">
+                    <div class="HeaderCompText">PLAYER SETTINGS</div>
+                    <div class="SettingItm">
+                        PLAYLIST: 
+                        <select id="hypPlayer_Playlist_ID" name="hypPlayer_PlaylistID" onchange="refreshPlayer();"> 
+                            @foreach (var item in Model.playlists_list)
+                            {
+                                <option value="@item.id">@item.name</option>
+                            }
+                        </select>
+                    </div>        
+
+                    <div class="SettingItm">
+                        AUTOSTART: <input type="checkbox" checked="checked" id="hypPlayer_Autostart" name="hypPlayer_Autostart" onclick="refreshPlayer()" />
+                    </div>        
+
+                    <div class="SettingItm">
+                        SHUFFLE PLAYBACK: <input type="checkbox" checked="checked" id="hypPlayer_ShufflePlayback" name="hypPlayer_ShufflePlayback" onclick="refreshPlayer()" />
+                    </div>
+
+                    <div class="SettingItm">
+                        MAIN BACK COLOR:&nbsp;
+                        <input id="hf_MainBackColor" name="hf_MainBackColor" class="color" onchange="refreshPlayer()" style="width:52px; height:23px; border:none; border-radius:2px;" value="AF13D6" />
+                    </div>
+
+                    <div class="SettingItm">
+                        BUTTONS COLOR:&nbsp;
+                        <input id="hf_ButtonsColor" name="hf_ButtonsColor" class="color" onchange="refreshPlayer()" style="width:52px; height:23px; border:none; border-radius:2px;" value="4B20A3" />
+                    </div>
+
+                    <div class="SettingItm">
+                        DISPLAY CONTROLS ON PLAYER: <input type="checkbox" checked="checked" id="hypPlayer_DisplayControlsOnPlayer" name="hypPlayer_DisplayControlsOnPlayer" onclick="refreshPlayer()" />
+                    </div>
+
+                    <div class="SettingItm">
+                        SEPARATE PLAYBACK CONTROL: <input type="checkbox" checked="checked" id="hypPlayer_GenegareSeparatePlaybackControl" name="hypPlayer_GenegareSeparatePlaybackControl" onclick="refreshPlayer()" />
+                    </div>
+
+                    <div class="SettingItm">
+                        HIDE PLAYER WINDOW: <input type="checkbox" id="hypPlayer_HidePlayerWindow" name="hypPlayer_HidePlayerWindow" onclick="refreshPlayer()" />
+                        <br /><span style="color:#d4ae52; font-size:11px;">YouTube requires to have video window visible, otherwise certain songs may be disabled.</span>
+                    </div>
+
+                    <div class="SettingItm">
+                        SAVE PLAYBACK STATE: <input type="checkbox" checked="checked" id="hypPlayer_SavePlaybackState" name="hypPlayer_SavePlaybackState" onclick="refreshPlayer()" />
+                    </div>
+
+                    <div class="SettingItm">
+                        SOUND VOLUME: 
+                        <select id="hypPlayer_Volume_Val" name="hypPlayer_Volume_Val" onchange="refreshPlayer();"> 
+                            @for(var i = 10; i<=100; i+=10)
+                            {
+                                <option value="@i" @if(i==80){<text>selected="selected"</text>} >@i</option>
+                            }
+                        </select>
+                    </div>
+                </div>
                 
-                    <div id="SampleSettingsHolder">
-                            
-                            
-
-                            <div class="HeaderCompText">PLAYER SETTINGS</div>
-
-               
-
-                            <div class="SettingItm">
-                                PLAYLIST: 
-                                <select id="hypPlayer_Playlist_ID" name="hypPlayer_PlaylistID" onchange="refreshPlayer();"> 
-                                    @foreach (var item in Model.playlists_list)
-                                    {
-                                        <option value="@item.id">@item.name</option>
-                                    }
-                                </select>
-                            </div>
-        
-
-                            <div class="SettingItm">
-                                AUTOSTART: <input type="checkbox" checked="checked" id="hypPlayer_Autostart" name="hypPlayer_Autostart" onclick="refreshPlayer()" />
-                            </div>
-        
-
-                            <div class="SettingItm">
-                                SHUFFLE PLAYBACK: <input type="checkbox" checked="checked" id="hypPlayer_ShufflePlayback" name="hypPlayer_ShufflePlayback" onclick="refreshPlayer()" />
-                            </div>
-
-
-                            <div class="SettingItm">
-                                MAIN BACK COLOR:&nbsp;
-                                <input id="hf_MainBackColor" name="hf_MainBackColor" class="color" onchange="refreshPlayer()" style="width:52px; height:23px; border:none; border-radius:2px;" value="AF13D6" />
-                            </div>
-
-
-                            <div class="SettingItm">
-                                BUTTONS COLOR:&nbsp;
-                                <input id="hf_ButtonsColor" name="hf_ButtonsColor" class="color" onchange="refreshPlayer()" style="width:52px; height:23px; border:none; border-radius:2px;" value="4B20A3" />
-                            </div>
-
-
-                            <div class="SettingItm">
-                                DISPLAY CONTROLS ON PLAYER: <input type="checkbox" checked="checked" id="hypPlayer_DisplayControlsOnPlayer" name="hypPlayer_DisplayControlsOnPlayer" onclick="refreshPlayer()" />
-                            </div>
-
-
-                            <div class="SettingItm">
-                                SEPARATE PLAYBACK CONTROL: <input type="checkbox" checked="checked" id="hypPlayer_GenegareSeparatePlaybackControl" name="hypPlayer_GenegareSeparatePlaybackControl" onclick="refreshPlayer()" />
-                            </div>
-
-
-                            <div class="SettingItm">
-                                HIDE PLAYER WINDOW: <input type="checkbox" id="hypPlayer_HidePlayerWindow" name="hypPlayer_HidePlayerWindow" onclick="refreshPlayer()" />
-                                <br /><span style="color:#d4ae52; font-size:11px;">YouTube requires to have video window visible, otherwise certain songs may be disabled.</span>
-                            </div>
-
-
-                            <div class="SettingItm">
-                                SAVE PLAYBACK STATE: <input type="checkbox" checked="checked" id="hypPlayer_SavePlaybackState" name="hypPlayer_SavePlaybackState" onclick="refreshPlayer()" />
-                            </div>
-
-
-                            <div class="SettingItm">
-                                SOUND VOLUME: 
-                                <select id="hypPlayer_Volume_Val" name="hypPlayer_Volume_Val" onchange="refreshPlayer();"> 
-                                    @for(var i = 10; i<=100; i+=10)
-                                    {
-                                        <option value="@i" @if(i==80){<text>selected="selected"</text>} >@i</option>
-                                    }
-                                </select>
-                            </div>
-
+                <div id="SampleContHolder" style="min-height:500px; text-align:center; border-left:1px solid #d4ae52; ">                        
+                    <div class="HeaderCompText">PLAYER PREVIEW</div>
+                    <div style="width:100%; height:30px;">
+                        <div class="hypPlayerAddCons" ></div>
+                        <br/>
+                        Please Note: Skipped songs are due to content owner's lack of meeting YouTube Terms and Conditions. <br /><br />
+                        <div style="float:left; margin-left:50px;">
+                            <script id="HypPlayerScript" 
+                                type="text/javascript" 
+                                src="http://@System.Configuration.ConfigurationManager.AppSettings["hypsterHostName"]/a/player5.js"  
+                                hypHostName="@System.Configuration.ConfigurationManager.AppSettings["hypsterHostName"]" 
+                                hypUserID="@Model.curr_user.id" 
+                                hypPlaylistID="@if(Model.playlists_list.Count > 0){ <text>@Model.playlists_list[0].id</text>}else{<text>0</text>}" 
+                                hypPlayerControls="1" 
+                                hypAutostart="0" 
+                                hypPlayerSort="" 
+                                hypMainBackColor="#AF13D6" 
+                                hypButtonsBack="#4B20A3" 
+                                hypVisibility="visible"
+                                hypSaveState="1"
+                                hypVolumeVal="80" >
+                            @*<!-- Hypster Player -->*@
+                            </script>
+                        </div>
                     </div>
-        
+                </div>
 
+                <div id="captchaCont1" style="float:left; width:100%; min-height:55px; margin-top:0px;">
+                    @if (Model.playlists_list != null && Model.playlists_list.Count > 0)
+                    {
+                        <input type="submit" value="GET CODE" onclick="processCaptcha();" style="float:left; width:400px; height:47px; line-height:47px; text-align:center; background-color:#3fbc91; border:1px solid #3fbc91; border-radius:2px; margin:0 0 0 50px; font-size:23px; font-weight:bold; cursor:pointer;" />
+                    }
+                    else
+                    {
+                        <div style="float:left; width:100%; color:#CC0000; margin:15px 0 0 0; font-size:16px; ">
+                            You need to have ​a ​playlist before ​you can ​creat​e a ​player.
+                        </div>
+                    }                        
+                </div>                  
 
-
-                    <div id="SampleContHolder" style="min-height:500px; text-align:center; border-left:1px solid #d4ae52; ">
-                        
-                            <div class="HeaderCompText">PLAYER PREVIEW</div>
-
-                            <div style="width:100%; height:30px;">
-
-                                    <div class="hypPlayerAddCons" ></div>
-
-                                    <br/>
-                                    Please Note: Skipped songs are due to content owner's lack of meeting YouTube Terms and Conditions. <br /><br />
-
-                                    <div style="float:left; margin-left:140px; ">
-                                    <script id="HypPlayerScript" 
-                                    type="text/javascript" 
-                                    src="http://@System.Configuration.ConfigurationManager.AppSettings["hypsterHostName"]/a/player5.js"  
-                                    hypHostName="@System.Configuration.ConfigurationManager.AppSettings["hypsterHostName"]" 
-                                    hypUserID="@Model.curr_user.id" 
-                                    hypPlaylistID="@if(Model.playlists_list.Count > 0){ <text>@Model.playlists_list[0].id</text>}else{<text>0</text>}" 
-                                    hypPlayerControls="1" 
-                                    hypAutostart="0" 
-                                    hypPlayerSort="" 
-                                    hypMainBackColor="#AF13D6" 
-                                    hypButtonsBack="#4B20A3" 
-                                    hypVisibility="visible"
-                                    hypSaveState="1"
-                                    hypVolumeVal="80" >
-                                    <!-- Hypster Player --></script>
-                                    </div>
-                            </div>
-
+                <div id="SampleCodeHolder" style="display:none; margin-top:15px;">
+                    <div class="HeaderCompText">
+                        PLAYER CODE
+                        <br /><span style="color:#000000; font-size:12px;">User may paste Hypster player anywhere within "&lt;body&gt;" and "&lt;/body&gt;" tags.</span>
                     </div>
 
+                    <textarea id="PlayerCodeArea"></textarea>
 
-
-
-                    <div id="captchaCont1" style="float:left; width:100%; min-height:55px; margin-top:0px;">
-
-                        @if (Model.playlists_list != null && Model.playlists_list.Count > 0)
-                        {
-                            <input type="submit" value="GET CODE" onclick="processCaptcha();" style="float:left; width:400px; height:47px; line-height:47px; text-align:center; background-color:#3fbc91; border:1px solid #3fbc91; border-radius:2px; margin:0 0 0 50px; font-size:23px; font-weight:bold; cursor:pointer;" />
-                        }
-                        else
-                        {
-                            <div style="float:left; width:100%; color:#CC0000; margin:15px 0 0 0; font-size:16px; ">
-                                You need to have ​a ​playlist before ​you can ​creat​e a ​player.
-                            </div>
-                        }
-                        
+                    <div class="HeaderCompText">
+                        SEPARATE PLAYER CONTROLS CODE:
+                        <br /><span style="color:#000000; font-size:12px;">User may paste Hypster player controls anywhere within "&lt;body&gt;" and "&lt;/body&gt;" tags.</span>
                     </div>
-                    
-
-
-
-
-                    <div id="SampleCodeHolder" style="display:none; margin-top:15px;">
                 
-                            <div class="HeaderCompText">
-                                PLAYER CODE
-                                <br /><span style="color:#000000; font-size:12px;">User may paste Hypster player anywhere within "&lt;body&gt;" and "&lt;/body&gt;" tags.</span>
-                            </div>
+                    <textarea id="PlayerControlsCodeArea"></textarea>
 
-
-                            <textarea id="PlayerCodeArea">
-                            </textarea>
-
-
-                            <div class="HeaderCompText">
-                                SEPARATE PLAYER CONTROLS CODE:
-                                <br /><span style="color:#000000; font-size:12px;">User may paste Hypster player controls anywhere within "&lt;body&gt;" and "&lt;/body&gt;" tags.</span>
-                            </div>
-                
-
-                            <textarea id="PlayerControlsCodeArea">
-                            </textarea>
-
-
-                             <div class="mFollowUsCont1">
-                        
-                                <div class="fuText">
-                                    Follow Us:
-                                </div>
-                                <div style="float:left; margin:0px 0 0 5px;">
-                                    <a class="flwUs_wt_fbk" href="https://www.facebook.com/Hypster" target="_blank"></a>
-                                    <a class="flwUs_wt_twr" href="https://twitter.com/Hypsterdotcom" target="_blank"></a>
-                                    <a class="flwUs_wt_tum" href="http://hypsterblog.tumblr.com/" target="_blank"></a>
-                                </div>
-                            </div>
-                                
-
+                    <div class="mFollowUsCont1">                        
+                        <div class="fuText">
+                            Follow Us:
+                        </div>
+                        <div style="float:left; margin:0px 0 0 5px;">
+                            <a class="flwUs_wt_fbk" href="https://www.facebook.com/Hypster" target="_blank"></a>
+                            <a class="flwUs_wt_twr" href="https://twitter.com/Hypsterdotcom" target="_blank"></a>
+                            <a class="flwUs_wt_tum" href="http://hypsterblog.tumblr.com/" target="_blank"></a>
+                        </div>
                     </div>
-
-        
-
+                </div>
             </div>
-
-
-
+        </div>
     </div>
-
-
 </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <div style="float:left; width:100%; margin:20px 0 20px 0;">
-            
-        <div class="NPFT_BHead">
-                    
-            
-                <div id="TopAdd12938tgdeux" style="width:728px; margin:auto;">
-                    @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
-                </div>
-                <!-- 06_25 -->
-            
+    <div class="NPFT_BHead">            
+        <div id="TopAdd12938tgdeux" style="width:728px; margin:auto;">
+            @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
         </div>
-
+        <!-- 06_25 -->
+    </div>
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script type="text/javascript">
-
-
     var isLoaded = false;
     function refreshPlayer() {
         var sample_code = "";
-
 
         //-----------------------------------------------------------------------------------------------
         var hypPlayerControls_var = "0";
@@ -380,8 +278,6 @@
 
         $("#PlayerCodeArea").val($("#PlayerCodeArea").val() + "<" + "script id=\"HypPlayerScript\" type=\"text/javascript\" src=\"http://@System.Configuration.ConfigurationManager.AppSettings["hypsterHostName"]/a/player5.js\"  hypHostName=\"@System.Configuration.ConfigurationManager.AppSettings["hypsterHostName"]\" hypUserID=\"@Model.curr_user.id\" hypPlaylistID=\"" + Playlist_ID_var + "\" hypPlayerControls=\"" + hypPlayerControls_var + "\" hypAutostart=\"" + hypAutostart_var + "\" hypPlayerSort=\"" + hypPlayerSort_var + "\" hypMainBackColor=\"#" + $("#hf_MainBackColor").val() + "\" hypButtonsBack=\"#" + $("#hf_ButtonsColor").val() + "\" hypVisibility=\"" + HidePlayerWindow_var + "\"  hypSaveState=\"" + hypPlayerSavePlaybackState_var + "\" hypVolumeVal=\"" + Volume_Val_var + "\"   " + ">" + "<" + "!-- Hypster Player --" + ">" + "<" + "/script" + ">");
         //-----------------------------------------------------------------------------------------------
-
-
 
         isLoaded = true;
     }
