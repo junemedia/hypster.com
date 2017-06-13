@@ -603,9 +603,9 @@ function getCookie(c_name) {
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-28695705-6', 'auto', { 'name': 'prodTracker', 'legacyCookieDomain': 'hypster.com' });
-ga('prodTracker.send', 'pageview');
-ga('create', 'UA-99868480-2', 'auto', { 'name': 'stageTracker' });
-ga('stageTracker.set', 'dimension5', 'HypFM');
-ga('stageTracker.send', 'pageview');
+ga('create', 'UA-28695705-6', 'auto', { 'name': 'baron', 'legacyCookieDomain': 'hypster.com' });
+ga('baron.send', 'pageview');
+ga('create', 'UA-99868480-2', 'auto', { 'name': 'junemedia' });
+ga('junemedia.set', 'dimension5', 'HypFM');
+ga('junemedia.send', 'pageview');
 //**************************************************************************************************************************
