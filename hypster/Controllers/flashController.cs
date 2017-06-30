@@ -41,7 +41,8 @@ namespace hypster.Controllers
                 { "t", "pageview" },
                 { "dh", Request.ServerVariables["REMOTE_HOST"].ToString() },
                 { "dp", Request.ServerVariables["SCRIPT_NAME"].ToString() },
-                { "cd5", cd },
+                //{ "ds", "app" },
+                { "cd5", cd }, // Custom Dimension is defined here.
             };
             // Aggregate the postDataString:
             var postDataString = postData.Aggregate("", (data, next) => string.Format("{0}&{1}={2}", data, next.Key, HttpUtility.UrlEncode(next.Value))).TrimEnd('&');
