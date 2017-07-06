@@ -9319,3 +9319,8 @@ a.captionOrange:hover
 {
     display:block; float:left; width:47%; padding:1%; margin-right:1%; cursor:pointer; font-size:14px; 
 }
+
+#insticator-container 
+{
+    margin:10px 120px;
+}

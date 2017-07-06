@@ -41,7 +41,20 @@
             Adjust_Lang_Btns();
         });
     </script>
-
+    <!-- Header Tag Code -->
+    <script data-cfasync='false' type='text/javascript'>
+        /*<![CDATA[*/
+        (function (a, c, s, u) {
+            'Insticator' in a || (a.Insticator = {
+                ad: { loadAd: function (b) { Insticator.ad.q.push(b) }, q: [] }, helper: {}, embed: {}, version: "3.0", q: [],
+                load: function (t, o) { Insticator.q.push({ t: t, o: o }) }
+            });
+            var b = c.createElement(s); b.src = u; b.async = !0;
+            var d = c.getElementsByTagName(s)[0]; d.parentNode.insertBefore(b, d)
+        })(window, document, 'script', '//d2na2p72vtqyok.cloudfront.net/client-embed/7dff547e-1b12-4a78-8930-6f4948138390.js');
+        /*]]>*/
+    </script>
+    <!-- End Header Tag Code -->
 </head>
 
 
@@ -84,7 +97,7 @@
                     
                 </div>
 
-                <div id="header_Bar" style=" display:none; float:left; width:2px; height:23px; margin-top:-3px; background-color:#2e2e2e; border-bottom:3px solid #191919;"></div>
+                <div id="header_Bar" style="display:none; float:left; width:2px; height:23px; margin-top:-3px; background-color:#2e2e2e; border-bottom:3px solid #191919;"></div>
         </div>
 
 
@@ -93,7 +106,19 @@
              @RenderBody()
         </div>
 
-
+        <!-- Insticator API Fire Widget -->
+        <div id="insticator-container">
+            <div id="div-insticator-ad-1" adonis-marker></div>
+            <div id="insticator-embed"></div>
+            <div id="div-insticator-ad-2" adonis-marker></div>
+            <script data-cfasync='false' type="text/javascript">
+            /*<![CDATA[*/
+            Insticator.ad.loadAd("div-insticator-ad-1");
+            Insticator.ad.loadAd("div-insticator-ad-2");
+            Insticator.load("em", { id: "26cb097d-a1e1-40aa-b8b4-3d634d6000b7" })
+            /*]]>*/
+            </script>
+        </div>
         
         <div class="push"></div>
     </div>

@@ -7536,13 +7536,13 @@ a.captionOrange:hover
 
 .breakingMCH_Home .arrLeft
 {
-    float:left; width:5%; font-size:90px; text-align:center; cursor:pointer; color:#d4ae52; z-index:3; position:absolute;
+    float:left; width:4%; font-size:90px; text-align:center; cursor:pointer; color:#d4ae52; z-index:3; position:absolute;
     background:rgba(255, 255, 255, 0.24) url(/imgs/img/a02.png) no-repeat 0px 8px; height:121px;
 }
 
 .breakingMCH_Home .arrRight
 {
-    float:left; width:5%; font-size:90px; text-align:center; cursor:pointer; color:#d4ae52; z-index:3; position:absolute; margin-left:77%;
+    float:left; width:4%; font-size:90px; text-align:center; cursor:pointer; color:#d4ae52; z-index:3; position:absolute; margin-left:77%;
     background:rgba(255, 255, 255, 0.24) url(/imgs/img/a02.png) no-repeat -60px 8px; height:121px;
 }
 
@@ -9044,4 +9044,9 @@ a.captionOrange:hover
 .Artists_MCH1 a
 {
     display:block; float:left; width:30%; padding:1%; margin-right:1%; cursor:pointer; font-size:14px; 
+}
+
+#insticator-container 
+{    
+    margin:10px 550px;
 }

@@ -6,7 +6,7 @@
 {
 	float:left; width:1050px;
 	background-color:#FFFFFF;
-	margin-top:0px;
+	margin-top:-15px;
 }
 
 .MainRootCont
@@ -17,13 +17,12 @@
 
 .MainNHypPlayer #MainContHolder
 {
-	float:left; width:688px; min-height:1350px; background-color:#000000;
+	float:left; width:688px; min-height:2200px; background-color:#000000;
 }
 
 .MainNHypPlayer .MainAdsHoder
 {
-	float:left; width:100%;
-	width:320px; margin:0 0 20px 20px;
+	float:left; width:320px; margin:0 0 20px 20px;
 }
 
 .MainNHypPlayer .AdUntL

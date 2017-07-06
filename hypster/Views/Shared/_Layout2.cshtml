@@ -44,8 +44,20 @@
         $(document).ready(function () {RenderLayout(); Adjust_Lang_Btns(); Adjust_Like_Btns();});
         $(window).resize(function () { RenderLayout(); Adjust_Lang_Btns(); Adjust_Like_Btns(); });        
     </script>
-
-        
+    <!-- Header Tag Code -->
+    <script data-cfasync='false' type='text/javascript'>
+        /*<![CDATA[*/
+        (function (a, c, s, u) {
+            'Insticator' in a || (a.Insticator = {
+                ad: { loadAd: function (b) { Insticator.ad.q.push(b) }, q: [] }, helper: {}, embed: {}, version: "3.0", q: [],
+                load: function (t, o) { Insticator.q.push({ t: t, o: o }) }
+            });
+            var b = c.createElement(s); b.src = u; b.async = !0;
+            var d = c.getElementsByTagName(s)[0]; d.parentNode.insertBefore(b, d)
+        })(window, document, 'script', '//d2na2p72vtqyok.cloudfront.net/client-embed/7dff547e-1b12-4a78-8930-6f4948138390.js');
+        /*]]>*/
+    </script>
+    <!-- End Header Tag Code -->        
 </head>
 <body>
     <div class="MainBD13">
@@ -59,9 +71,22 @@
                 <div style="float:left;margin:10px 0px 20px 0px;">
                     @Html.Partial("~/Views/hypAds/ad_zergnet_2x2.cshtml")
                 </div>
+                <div class="push"></div>
+                <!-- Insticator API Fire Widget -->
+                <div id="insticator-container" style="margin:10px 0px;">
+                    <div id="div-insticator-ad-1" adonis-marker></div>
+                    <div id="insticator-embed"></div>
+                    <div id="div-insticator-ad-2" adonis-marker></div>
+                    <script data-cfasync='false' type="text/javascript">
+                        /*<![CDATA[*/
+                        Insticator.ad.loadAd("div-insticator-ad-1");
+                        Insticator.ad.loadAd("div-insticator-ad-2");
+                        Insticator.load("em", { id: "26cb097d-a1e1-40aa-b8b4-3d634d6000b7" })
+                        /*]]>*/
+                    </script>
+                </div>
             </div>
         </div>
-        <div class="push"></div>
     </div>
     <div class="ContentFooterCont">
         @Html.Partial("~/Views/Shared/pr_BottomFooter.cshtml")
