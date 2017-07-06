@@ -7536,24 +7536,24 @@ a.captionOrange:hover
 
 .breakingMCH_Home .arrLeft
 {
-    float:left; width:4%; font-size:90px; text-align:center; cursor:pointer; color:#d4ae52; z-index:3; position:absolute;
+    float:left; width:4.5%; font-size:90px; text-align:center; cursor:pointer; color:#d4ae52; z-index:3; position:absolute;
     background:rgba(255, 255, 255, 0.24) url(/imgs/img/a02.png) no-repeat 0px 8px; height:121px;
 }
 
 .breakingMCH_Home .arrRight
 {
-    float:left; width:4%; font-size:90px; text-align:center; cursor:pointer; color:#d4ae52; z-index:3; position:absolute; margin-left:77%;
+    float:left; width:4.5%; font-size:90px; text-align:center; cursor:pointer; color:#d4ae52; z-index:3; position:absolute; margin-left:73%;
     background:rgba(255, 255, 255, 0.24) url(/imgs/img/a02.png) no-repeat -60px 8px; height:121px;
 }
 
 .breakingMCH_Home #newsContHH1
 {
-    width:82%; height:195px; overflow:hidden; position:absolute; z-index:1;
+    width:75%; height:195px; overflow:hidden; position:absolute; z-index:1;
 }
 
 .breakingMCH_Home .newsContHH1
 {
-    float:left; width:82%; height:195px; overflow:hidden; position:absolute; z-index:1;
+    float:left; width:75%; height:195px; overflow:hidden; position:absolute; z-index:1;
 }
 
 .breakingMCH_Home #newsContHHInn

@@ -87,23 +87,10 @@
             @Html.Partial("~/Views/hypAds/ad_300x250_btf.cshtml")
         </div>
         <!-- 06_25 -->        
-        <!-- End Insticator API Fire Widget --> 
         <div style="margin:10px 0px 20px 0px;">
             @Html.Partial("~/Views/hypAds/ad_zergnet_2x2.cshtml")
         </div>
-        <!-- Insticator API Fire Widget -->
-        <div id="insticator-container" style="margin:10px 0 0 0;">
-            <div id="div-insticator-ad-1" adonis-marker></div>
-            <div id="insticator-embed"></div>
-            <div id="div-insticator-ad-2" adonis-marker></div>
-            <script data-cfasync='false' type="text/javascript">
-                /*<![CDATA[*/
-                Insticator.ad.loadAd("div-insticator-ad-1");
-                Insticator.ad.loadAd("div-insticator-ad-2");
-                Insticator.load("em", { id: "26cb097d-a1e1-40aa-b8b4-3d634d6000b7" })
-                /*]]>*/
-            </script>
-        </div>
+        @Html.Partial("~/Views/hypAds/insticator_body.cshtml")
     </div>
 </div>
 

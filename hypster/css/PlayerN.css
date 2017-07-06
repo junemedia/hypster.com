@@ -4,9 +4,7 @@
 
 .MainNHypPlayer
 {
-	float:left; width:1050px;
-	background-color:#FFFFFF;
-	margin-top:-15px;
+	float:left; width:1050px; background-color:#FFFFFF;
 }
 
 .MainRootCont
@@ -188,4 +186,9 @@
 .simPlaylistsHolder1 #PopPlstsCH1
 {
     float:left; width:100%; height:82px; padding:2px 0 2px 0; background-color:#3fbc91; margin:10px 0 0 0; color:#FFFFFF;
+}
+
+#insticator-container 
+{
+    margin:10px 0px;
 }

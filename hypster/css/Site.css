@@ -104,7 +104,7 @@ img
 
 .MainBD13
 {
-	float:left; width:100%; min-width:1040px; min-height: 100%; height: auto !important; height: 100%;
+	float:left; width:100%; min-width:1040px; min-height:1078px; height: auto !important;
 }
 
 
@@ -6964,4 +6964,9 @@ figure.image figcaption
     font-style: italic;
     font-family: -webkit-body;
     font-size: 0.8em;
+}
+
+#insticator-container 
+{
+    margin:10px 0px;
 }

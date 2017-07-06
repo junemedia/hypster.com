@@ -9211,5 +9211,5 @@ a.captionOrange:hover
 
 #insticator-container 
 {    
-    margin:10px 248px;
+    position:relative; margin:10px 248px;
 }
