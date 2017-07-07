@@ -14,20 +14,6 @@
     <script src="/scripts/hypScript.js?id=56007210299" type="text/javascript"></script>
     <script src="/scripts/hypSlide.js?id=56007210299" type="text/javascript"></script>
     <link href="/css/Site.css?id=56007210299" rel="stylesheet" type="text/css" />
-    <!-- Header Tag Code -->
-    <script data-cfasync='false' type='text/javascript'>
-        /*<![CDATA[*/
-        (function (a, c, s, u) {
-            'Insticator' in a || (a.Insticator = {
-                ad: { loadAd: function (b) { Insticator.ad.q.push(b) }, q: [] }, helper: {}, embed: {}, version: "3.0", q: [],
-                load: function (t, o) { Insticator.q.push({ t: t, o: o }) }
-            });
-            var b = c.createElement(s); b.src = u; b.async = !0;
-            var d = c.getElementsByTagName(s)[0]; d.parentNode.insertBefore(b, d)
-        })(window, document, 'script', '//d2na2p72vtqyok.cloudfront.net/client-embed/7dff547e-1b12-4a78-8930-6f4948138390.js');
-        /*]]>*/
-    </script>
-    <!-- End Header Tag Code -->
 </head>
 
 <body style="background:#202020;">
@@ -39,18 +25,17 @@
 
     <div class="Trans_BACK" id="HideBackDiv" onclick="Show_Content();"></div>
     <div id="popupContainer"></div>
-    @Html.Partial("~/Views/hypAds/insticator_body.cshtml")
     <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-28695705-1']);
-        _gaq.push(['_setDomainName', 'hypster.com']);
-        _gaq.push(['_trackPageview']);
-
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>   
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-28695705-1', 'auto', { 'name': 'prodTracker', 'legacyCookieDomain': 'hypster.com' });
+        ga('prodTracker.send', 'pageview');
+        ga('create', 'UA-99868480-1', 'auto', { 'name': 'stageTracker' });
+        ga('stageTracker.send', 'pageview');
+    </script>
 </body>
 </html>
