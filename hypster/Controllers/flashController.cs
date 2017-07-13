@@ -39,9 +39,8 @@ namespace hypster.Controllers
                 { "tid", "UA-99868480-2" },
                 { "cid", Guid.NewGuid().ToString() },
                 { "t", "pageview" },
-                { "dh", Request.ServerVariables["REMOTE_HOST"].ToString() },
+                { "dh", Dns.GetHostEntry(Request.ServerVariables["REMOTE_ADDR"]).HostName.ToString() },
                 { "dp", Request.ServerVariables["SCRIPT_NAME"].ToString() },
-                //{ "ds", "app" },
                 { "cd5", cd }, // Custom Dimension is defined here.
             };
             // Aggregate the postDataString:
