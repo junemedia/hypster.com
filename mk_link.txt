@@ -1,0 +1,17 @@
+// mklinks that need to be set up on server
+
+
+mklink /J D:\WEBS\hypster_new.com\imgs\home\home_slideshow D:\WEBS_DATA\hypster.com\home_slideshow
+mklink /J D:\WEBS\hypster_new.com\imgs\i_posts D:\WEBS_DATA\news.hypster.com\imgs\i_posts
+mklink /J D:\WEBS\hypster_new.com\imgs\manuals D:\WEBS_DATA\hypster.com\manuals
+mklink /J D:\WEBS\hypster_new.com\imgs\radio\genres D:\WEBS_DATA\hypster.com\genres
+mklink /J D:\WEBS\hypster_new.com\imgs\visualSearch D:\WEBS_DATA\hypster.com\visualSearch
+mklink /J D:\WEBS\hypster_new.com\userpics D:\WEBS_DATA\hypster.com\userpics
+
+mklink /J D:\WEBS\news.hypster.com\imgs\i_celebs D:\WEBS_DATA\news.hypster.com\imgs\i_celebs
+mklink /J D:\WEBS\news.hypster.com\imgs\i_posts D:\WEBS_DATA\news.hypster.com\imgs\i_posts
+
+mklink /J D:\WEBS\tablet.hypster.com\imgs\visualSearch D:\WEBS_DATA\hypster.com\visualSearch
+
+mklink /J D:\WEBS\tv.hypster.com\uploads D:\WEBS_DATA\tv.hypster.com\uploads
+mklink /J D:\WEBS\tv.hypster.com\uploads_pending D:\WEBS_DATA\tv.hypster.com\uploads_pending
