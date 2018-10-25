@@ -67,22 +67,6 @@ appnexus.com, 1356, RESELLER, f5ab79cb980f11d1
 emxdgt.com, 326, RESELLER, 1e1d41537f7cad7f
 
 
-#   Media.net
-# ----------------------------------------------------------------------
-media.net, 8CU52X6SM, Direct
-
-
-
-
-
-
-
-
-
-
-
-
-
 #   LiveIntent
 # ----------------------------------------------------------------------
 liveintent.com, 783, DIRECT
