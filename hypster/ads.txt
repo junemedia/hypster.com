@@ -78,11 +78,6 @@ liveintent.com, 4510, DIRECT
 solvemedia.com, vQxz-cNMrdedf8OW, DIRECT
 
 
-#   Content.ad
-# ----------------------------------------------------------------------
-content-ad.net,280619,DIRECT
-
-
 #   BidGear
 # ----------------------------------------------------------------------
 bidgear.com, 1702, DIRECT
