@@ -130,11 +130,6 @@
                         <div style=" float:left; width:304px; min-height:377px; margin-left:19px;">
                                 
                                 
-                                <div id="SideAd@(slideNum)" class="AdCont300x250_Drk" style=" float:left; margin-top:5px; ">
-                                    @Html.Partial("~/Views/hypAds/ad_300x250.cshtml")
-                                </div>
-                                <!-- 06_25 -->
-                                
 
                                 @if (celebsNum % 2 > 0)
                                 {
@@ -154,29 +149,7 @@
                         
                                 celebsNum = celebsNum + 1;
                     }
-                    else
-                    {
-                        <div style=" float:left; width:304px; min-height:377px; margin-left:9px;">
-                            <div id="zergnet-widget-22103"></div>
-                        </div>
-
-                        <script language="javascript" type="text/javascript">
-                            (function () {
-                                var zergnet = document.createElement('script');
-                                zergnet.type = 'text/javascript'; zergnet.async = true;
-                                zergnet.src = 'http://www.zergnet.com/zerg.js?id=22103';
-                                var znscr = document.getElementsByTagName('script')[0];
-                                znscr.parentNode.insertBefore(zergnet, znscr);
-                            })();
-                        </script>
-                        
-                        
-                        <!--div style=" float:left; width:304px; min-height:377px; margin-left:9px; ">
-                                <div id="SideAd@(slideNum)" style=" float:right; width:300px; height:375px; overflow:hidden; background-color:#747e83; border-radius:3px; margin-top:0px; margin-right:-8px; ">
-                                    @*Html.Action("GetSideVideos", "HypNewsVideo")*@
-                                </div>
-                        </div-->
-                    }
+                    else { }
 
 
         </div>

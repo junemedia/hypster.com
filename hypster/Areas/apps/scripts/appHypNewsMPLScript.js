@@ -631,8 +631,6 @@ function Reps(a) {
 }
 
 
-function rLoad() {
-    $('#SideAd1_id2328971cvbc').html("<iframe src=\"/hypAds/i_ad_300x250\" width=\"300\" height=\"250\" scrolling=\"no\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>");
-}
+function rLoad() {}
 
 //-------------------------------------------------------------------------------------------------------

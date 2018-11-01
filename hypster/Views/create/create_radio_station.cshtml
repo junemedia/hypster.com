@@ -91,12 +91,6 @@
     <div class="slideLeft" style=" min-height:95px;">
             
             <div class="ManualDtAdCont">
-                <!-- 06_25 -->
-                <div style="float:left; width:728px; height:90px; background-color:#4a4a4a; border:3px solid #4a4a4a; border-radius:2px;">
-                    @Html.Partial("~/Views/hypAds/ad_728x90.cshtml")
-                    
-                </div>
-
                 @if (User.Identity.IsAuthenticated == false)
                 {
                     <div class="NPFT_GoOnTop" onclick="window.location='/account/SignIn?ReturnUrl=%2fcreate%2fstation';">LOGIN</div>

@@ -673,15 +673,6 @@ function rLoad() {
     fill_ad_2();
     
 
-    /*try {
-        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-        if (hashes.indexOf("ads_pr") > 0) {
-            $('#SideAd1_id2328971cvbc').html("<iframe src=\"/hypAds/i_ad_300x250\" width=\"300\" height=\"250\" scrolling=\"no\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>");
-            $('#SideAd2_w8392791skc').html("<iframe src=\"/hypAds/i_ad_300x250\" width=\"300\" height=\"250\" scrolling=\"no\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>");
-        }
-    } 
-    catch (ex) {
-    }*/
 }
 
 
